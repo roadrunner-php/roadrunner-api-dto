@@ -1,0 +1,6 @@
+/.github export-ignore
+/api export-ignore
+.gitattributes export-ignore
+.gitignore export-ignore
+generate.sh export-ignore
+.gitmodules export-ignore

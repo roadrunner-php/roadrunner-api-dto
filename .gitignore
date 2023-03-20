@@ -1,0 +1,12 @@
+# IDEA
+.idea/
+*.iml
+
+# Composer
+composer.phar
+vendor/
+composer.lock
+
+# OS
+.DS_Store
+Thumbs.db
