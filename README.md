@@ -26,6 +26,17 @@ You can install the package. Simply run the following command:
 composer require roadrunner-php/api
 ```
 
+## Generating DTOs
+
+If you would like to generate the DTOs yourself, you can use the `generate.sh` script. This script will generate the
+DTOs for all of the plugins, and place them in the `generated/` directory.
+
+```bash
+./generate.sh
+```
+
+> Note: You will need to have the `protoc` >= 3.15 binary installed on your system.
+
 ## Contribution
 
 Contributions are welcome! If you would like to contribute to this project, please open an issue or pull request.
