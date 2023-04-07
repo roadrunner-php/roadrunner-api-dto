@@ -169,11 +169,21 @@ class SubscribeOptions extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.proxy.SubscribeOptionOverride override = 6;</code>
-     * @return \RoadRunner\Centrifugal\Proxy\DTO\V1\SubscribeOptionOverride
+     * @return \RoadRunner\Centrifugal\Proxy\DTO\V1\SubscribeOptionOverride|null
      */
     public function getOverride()
     {
-        return $this->override;
+        return isset($this->override) ? $this->override : null;
+    }
+
+    public function hasOverride()
+    {
+        return isset($this->override);
+    }
+
+    public function clearOverride()
+    {
+        unset($this->override);
     }
 
     /**

@@ -54,11 +54,21 @@ class PushNotification extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.FcmPushNotification fcm = 1;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\FcmPushNotification
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\FcmPushNotification|null
      */
     public function getFcm()
     {
-        return $this->fcm;
+        return isset($this->fcm) ? $this->fcm : null;
+    }
+
+    public function hasFcm()
+    {
+        return isset($this->fcm);
+    }
+
+    public function clearFcm()
+    {
+        unset($this->fcm);
     }
 
     /**
@@ -76,11 +86,21 @@ class PushNotification extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.HmsPushNotification hms = 2;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\HmsPushNotification
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\HmsPushNotification|null
      */
     public function getHms()
     {
-        return $this->hms;
+        return isset($this->hms) ? $this->hms : null;
+    }
+
+    public function hasHms()
+    {
+        return isset($this->hms);
+    }
+
+    public function clearHms()
+    {
+        unset($this->hms);
     }
 
     /**
@@ -98,11 +118,21 @@ class PushNotification extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.ApnsPushNotification apns = 3;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\ApnsPushNotification
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\ApnsPushNotification|null
      */
     public function getApns()
     {
-        return $this->apns;
+        return isset($this->apns) ? $this->apns : null;
+    }
+
+    public function hasApns()
+    {
+        return isset($this->apns);
+    }
+
+    public function clearApns()
+    {
+        unset($this->apns);
     }
 
     /**

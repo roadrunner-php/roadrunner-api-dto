@@ -39,11 +39,21 @@ class SendPushNotificationRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.PushRecipient recipient = 1;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\PushRecipient
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\PushRecipient|null
      */
     public function getRecipient()
     {
-        return $this->recipient;
+        return isset($this->recipient) ? $this->recipient : null;
+    }
+
+    public function hasRecipient()
+    {
+        return isset($this->recipient);
+    }
+
+    public function clearRecipient()
+    {
+        unset($this->recipient);
     }
 
     /**
@@ -61,11 +71,21 @@ class SendPushNotificationRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.PushNotification notification = 2;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\PushNotification
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\PushNotification|null
      */
     public function getNotification()
     {
-        return $this->notification;
+        return isset($this->notification) ? $this->notification : null;
+    }
+
+    public function hasNotification()
+    {
+        return isset($this->notification);
+    }
+
+    public function clearNotification()
+    {
+        unset($this->notification);
     }
 
     /**

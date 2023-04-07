@@ -78,11 +78,21 @@ class Publication extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.ClientInfo info = 3;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\ClientInfo
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\ClientInfo|null
      */
     public function getInfo()
     {
-        return $this->info;
+        return isset($this->info) ? $this->info : null;
+    }
+
+    public function hasInfo()
+    {
+        return isset($this->info);
+    }
+
+    public function clearInfo()
+    {
+        unset($this->info);
     }
 
     /**

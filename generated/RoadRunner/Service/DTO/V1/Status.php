@@ -147,11 +147,21 @@ class Status extends \Google\Protobuf\Internal\Message
      * error state
      *
      * Generated from protobuf field <code>.shared.v1.Status status = 5;</code>
-     * @return \RoadRunner\Shared\DTO\V1\Status
+     * @return \RoadRunner\Shared\DTO\V1\Status|null
      */
     public function getStatus()
     {
-        return $this->status;
+        return isset($this->status) ? $this->status : null;
+    }
+
+    public function hasStatus()
+    {
+        return isset($this->status);
+    }
+
+    public function clearStatus()
+    {
+        unset($this->status);
     }
 
     /**

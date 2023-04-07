@@ -14,9 +14,20 @@ class Kv
         if (static::$is_initialized == true) {
           return;
         }
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0af7010a0e6b762f76312f6b762e70726f746f12056b762e763122360a0752657175657374120f0a0773746f72616765180120012809121a0a056974656d7318022003280b320b2e6b762e76312e4974656d22330a044974656d120b0a036b6579180120012809120d0a0576616c756518022001280c120f0a0774696d656f757418032001280922260a08526573706f6e7365121a0a056974656d7318012003280b320b2e6b762e76312e4974656d42415a056b762f7631ca0214526f616452756e6e65725c4b565c44544f5c5631e20220526f616452756e6e65725c4b565c44544f5c56315c4750424d65746164617461620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+÷
+kv/v1/kv.protokv.v1"6
+Request
+storage (	
+items (2.kv.v1.Item"3
+Item
+key (	
+value (
+timeout (	"&
+Response
+items (2.kv.v1.ItemBAZkv/v1ÊRoadRunner\\KV\\DTO\\V1â RoadRunner\\KV\\DTO\\V1\\GPBMetadatabproto3'
+        , true);
 
         static::$is_initialized = true;
     }

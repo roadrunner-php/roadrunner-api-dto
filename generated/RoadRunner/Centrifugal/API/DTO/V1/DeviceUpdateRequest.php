@@ -130,11 +130,21 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceUserUpdate user_update = 4;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceUserUpdate
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceUserUpdate|null
      */
     public function getUserUpdate()
     {
-        return $this->user_update;
+        return isset($this->user_update) ? $this->user_update : null;
+    }
+
+    public function hasUserUpdate()
+    {
+        return isset($this->user_update);
+    }
+
+    public function clearUserUpdate()
+    {
+        unset($this->user_update);
     }
 
     /**
@@ -152,11 +162,21 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceMetaUpdate meta_update = 5;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceMetaUpdate
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceMetaUpdate|null
      */
     public function getMetaUpdate()
     {
-        return $this->meta_update;
+        return isset($this->meta_update) ? $this->meta_update : null;
+    }
+
+    public function hasMetaUpdate()
+    {
+        return isset($this->meta_update);
+    }
+
+    public function clearMetaUpdate()
+    {
+        unset($this->meta_update);
     }
 
     /**
@@ -174,11 +194,21 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceTagsUpdate tags_update = 6;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceTagsUpdate
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceTagsUpdate|null
      */
     public function getTagsUpdate()
     {
-        return $this->tags_update;
+        return isset($this->tags_update) ? $this->tags_update : null;
+    }
+
+    public function hasTagsUpdate()
+    {
+        return isset($this->tags_update);
+    }
+
+    public function clearTagsUpdate()
+    {
+        unset($this->tags_update);
     }
 
     /**
@@ -196,11 +226,21 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceChannelsUpdate channels_update = 7;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceChannelsUpdate
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceChannelsUpdate|null
      */
     public function getChannelsUpdate()
     {
-        return $this->channels_update;
+        return isset($this->channels_update) ? $this->channels_update : null;
+    }
+
+    public function hasChannelsUpdate()
+    {
+        return isset($this->channels_update);
+    }
+
+    public function clearChannelsUpdate()
+    {
+        unset($this->channels_update);
     }
 
     /**

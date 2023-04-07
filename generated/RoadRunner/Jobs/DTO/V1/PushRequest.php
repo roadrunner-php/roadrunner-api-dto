@@ -37,11 +37,21 @@ class PushRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.jobs.v1.Job job = 1;</code>
-     * @return \RoadRunner\Jobs\DTO\V1\Job
+     * @return \RoadRunner\Jobs\DTO\V1\Job|null
      */
     public function getJob()
     {
-        return $this->job;
+        return isset($this->job) ? $this->job : null;
+    }
+
+    public function hasJob()
+    {
+        return isset($this->job);
+    }
+
+    public function clearJob()
+    {
+        unset($this->job);
     }
 
     /**

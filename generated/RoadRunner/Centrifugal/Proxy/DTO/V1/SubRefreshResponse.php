@@ -44,11 +44,21 @@ class SubRefreshResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.proxy.SubRefreshResult result = 1;</code>
-     * @return \RoadRunner\Centrifugal\Proxy\DTO\V1\SubRefreshResult
+     * @return \RoadRunner\Centrifugal\Proxy\DTO\V1\SubRefreshResult|null
      */
     public function getResult()
     {
-        return $this->result;
+        return isset($this->result) ? $this->result : null;
+    }
+
+    public function hasResult()
+    {
+        return isset($this->result);
+    }
+
+    public function clearResult()
+    {
+        unset($this->result);
     }
 
     /**
@@ -66,11 +76,21 @@ class SubRefreshResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.proxy.Error error = 2;</code>
-     * @return \RoadRunner\Centrifugal\Proxy\DTO\V1\Error
+     * @return \RoadRunner\Centrifugal\Proxy\DTO\V1\Error|null
      */
     public function getError()
     {
-        return $this->error;
+        return isset($this->error) ? $this->error : null;
+    }
+
+    public function hasError()
+    {
+        return isset($this->error);
+    }
+
+    public function clearError()
+    {
+        unset($this->error);
     }
 
     /**
@@ -88,11 +108,21 @@ class SubRefreshResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.proxy.Disconnect disconnect = 3;</code>
-     * @return \RoadRunner\Centrifugal\Proxy\DTO\V1\Disconnect
+     * @return \RoadRunner\Centrifugal\Proxy\DTO\V1\Disconnect|null
      */
     public function getDisconnect()
     {
-        return $this->disconnect;
+        return isset($this->disconnect) ? $this->disconnect : null;
+    }
+
+    public function hasDisconnect()
+    {
+        return isset($this->disconnect);
+    }
+
+    public function clearDisconnect()
+    {
+        unset($this->disconnect);
     }
 
     /**

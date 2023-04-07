@@ -169,11 +169,21 @@ class FileUpload extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.google.protobuf.Any header = 9;</code>
-     * @return \Google\Protobuf\Any
+     * @return \Google\Protobuf\Any|null
      */
     public function getHeader()
     {
-        return $this->header;
+        return isset($this->header) ? $this->header : null;
+    }
+
+    public function hasHeader()
+    {
+        return isset($this->header);
+    }
+
+    public function clearHeader()
+    {
+        unset($this->header);
     }
 
     /**

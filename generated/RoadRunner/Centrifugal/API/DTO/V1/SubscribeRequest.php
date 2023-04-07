@@ -260,11 +260,21 @@ class SubscribeRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.StreamPosition recover_since = 9;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\StreamPosition
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\StreamPosition|null
      */
     public function getRecoverSince()
     {
-        return $this->recover_since;
+        return isset($this->recover_since) ? $this->recover_since : null;
+    }
+
+    public function hasRecoverSince()
+    {
+        return isset($this->recover_since);
+    }
+
+    public function clearRecoverSince()
+    {
+        unset($this->recover_since);
     }
 
     /**
@@ -282,11 +292,21 @@ class SubscribeRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.SubscribeOptionOverride override = 10;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\SubscribeOptionOverride
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\SubscribeOptionOverride|null
      */
     public function getOverride()
     {
-        return $this->override;
+        return isset($this->override) ? $this->override : null;
+    }
+
+    public function hasOverride()
+    {
+        return isset($this->override);
+    }
+
+    public function clearOverride()
+    {
+        unset($this->override);
     }
 
     /**

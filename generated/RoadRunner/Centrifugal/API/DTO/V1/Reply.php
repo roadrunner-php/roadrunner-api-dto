@@ -206,11 +206,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.Error error = 2;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\Error
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\Error|null
      */
     public function getError()
     {
-        return $this->error;
+        return isset($this->error) ? $this->error : null;
+    }
+
+    public function hasError()
+    {
+        return isset($this->error);
+    }
+
+    public function clearError()
+    {
+        unset($this->error);
     }
 
     /**
@@ -250,11 +260,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.PublishResult publish = 4;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\PublishResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\PublishResult|null
      */
     public function getPublish()
     {
-        return $this->publish;
+        return isset($this->publish) ? $this->publish : null;
+    }
+
+    public function hasPublish()
+    {
+        return isset($this->publish);
+    }
+
+    public function clearPublish()
+    {
+        unset($this->publish);
     }
 
     /**
@@ -272,11 +292,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.BroadcastResult broadcast = 5;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\BroadcastResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\BroadcastResult|null
      */
     public function getBroadcast()
     {
-        return $this->broadcast;
+        return isset($this->broadcast) ? $this->broadcast : null;
+    }
+
+    public function hasBroadcast()
+    {
+        return isset($this->broadcast);
+    }
+
+    public function clearBroadcast()
+    {
+        unset($this->broadcast);
     }
 
     /**
@@ -294,11 +324,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.SubscribeResult subscribe = 6;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\SubscribeResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\SubscribeResult|null
      */
     public function getSubscribe()
     {
-        return $this->subscribe;
+        return isset($this->subscribe) ? $this->subscribe : null;
+    }
+
+    public function hasSubscribe()
+    {
+        return isset($this->subscribe);
+    }
+
+    public function clearSubscribe()
+    {
+        unset($this->subscribe);
     }
 
     /**
@@ -316,11 +356,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.UnsubscribeResult unsubscribe = 7;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\UnsubscribeResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\UnsubscribeResult|null
      */
     public function getUnsubscribe()
     {
-        return $this->unsubscribe;
+        return isset($this->unsubscribe) ? $this->unsubscribe : null;
+    }
+
+    public function hasUnsubscribe()
+    {
+        return isset($this->unsubscribe);
+    }
+
+    public function clearUnsubscribe()
+    {
+        unset($this->unsubscribe);
     }
 
     /**
@@ -338,11 +388,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.DisconnectResult disconnect = 8;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\DisconnectResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\DisconnectResult|null
      */
     public function getDisconnect()
     {
-        return $this->disconnect;
+        return isset($this->disconnect) ? $this->disconnect : null;
+    }
+
+    public function hasDisconnect()
+    {
+        return isset($this->disconnect);
+    }
+
+    public function clearDisconnect()
+    {
+        unset($this->disconnect);
     }
 
     /**
@@ -360,11 +420,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.PresenceResult presence = 9;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\PresenceResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\PresenceResult|null
      */
     public function getPresence()
     {
-        return $this->presence;
+        return isset($this->presence) ? $this->presence : null;
+    }
+
+    public function hasPresence()
+    {
+        return isset($this->presence);
+    }
+
+    public function clearPresence()
+    {
+        unset($this->presence);
     }
 
     /**
@@ -382,11 +452,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.PresenceStatsResult presence_stats = 10;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\PresenceStatsResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\PresenceStatsResult|null
      */
     public function getPresenceStats()
     {
-        return $this->presence_stats;
+        return isset($this->presence_stats) ? $this->presence_stats : null;
+    }
+
+    public function hasPresenceStats()
+    {
+        return isset($this->presence_stats);
+    }
+
+    public function clearPresenceStats()
+    {
+        unset($this->presence_stats);
     }
 
     /**
@@ -404,11 +484,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.HistoryResult history = 11;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\HistoryResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\HistoryResult|null
      */
     public function getHistory()
     {
-        return $this->history;
+        return isset($this->history) ? $this->history : null;
+    }
+
+    public function hasHistory()
+    {
+        return isset($this->history);
+    }
+
+    public function clearHistory()
+    {
+        unset($this->history);
     }
 
     /**
@@ -426,11 +516,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.HistoryRemoveResult history_remove = 12;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\HistoryRemoveResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\HistoryRemoveResult|null
      */
     public function getHistoryRemove()
     {
-        return $this->history_remove;
+        return isset($this->history_remove) ? $this->history_remove : null;
+    }
+
+    public function hasHistoryRemove()
+    {
+        return isset($this->history_remove);
+    }
+
+    public function clearHistoryRemove()
+    {
+        unset($this->history_remove);
     }
 
     /**
@@ -448,11 +548,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.InfoResult info = 13;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\InfoResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\InfoResult|null
      */
     public function getInfo()
     {
-        return $this->info;
+        return isset($this->info) ? $this->info : null;
+    }
+
+    public function hasInfo()
+    {
+        return isset($this->info);
+    }
+
+    public function clearInfo()
+    {
+        unset($this->info);
     }
 
     /**
@@ -470,11 +580,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.RPCResult rpc = 14;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\RPCResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\RPCResult|null
      */
     public function getRpc()
     {
-        return $this->rpc;
+        return isset($this->rpc) ? $this->rpc : null;
+    }
+
+    public function hasRpc()
+    {
+        return isset($this->rpc);
+    }
+
+    public function clearRpc()
+    {
+        unset($this->rpc);
     }
 
     /**
@@ -492,11 +612,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.RefreshResult refresh = 15;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\RefreshResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\RefreshResult|null
      */
     public function getRefresh()
     {
-        return $this->refresh;
+        return isset($this->refresh) ? $this->refresh : null;
+    }
+
+    public function hasRefresh()
+    {
+        return isset($this->refresh);
+    }
+
+    public function clearRefresh()
+    {
+        unset($this->refresh);
     }
 
     /**
@@ -514,11 +644,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.ChannelsResult channels = 16;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\ChannelsResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\ChannelsResult|null
      */
     public function getChannels()
     {
-        return $this->channels;
+        return isset($this->channels) ? $this->channels : null;
+    }
+
+    public function hasChannels()
+    {
+        return isset($this->channels);
+    }
+
+    public function clearChannels()
+    {
+        unset($this->channels);
     }
 
     /**
@@ -536,11 +676,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.ConnectionsResult connections = 17;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\ConnectionsResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\ConnectionsResult|null
      */
     public function getConnections()
     {
-        return $this->connections;
+        return isset($this->connections) ? $this->connections : null;
+    }
+
+    public function hasConnections()
+    {
+        return isset($this->connections);
+    }
+
+    public function clearConnections()
+    {
+        unset($this->connections);
     }
 
     /**
@@ -558,11 +708,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.UpdateUserStatusResult update_user_status = 18;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\UpdateUserStatusResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\UpdateUserStatusResult|null
      */
     public function getUpdateUserStatus()
     {
-        return $this->update_user_status;
+        return isset($this->update_user_status) ? $this->update_user_status : null;
+    }
+
+    public function hasUpdateUserStatus()
+    {
+        return isset($this->update_user_status);
+    }
+
+    public function clearUpdateUserStatus()
+    {
+        unset($this->update_user_status);
     }
 
     /**
@@ -580,11 +740,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.GetUserStatusResult get_user_status = 19;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\GetUserStatusResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\GetUserStatusResult|null
      */
     public function getGetUserStatus()
     {
-        return $this->get_user_status;
+        return isset($this->get_user_status) ? $this->get_user_status : null;
+    }
+
+    public function hasGetUserStatus()
+    {
+        return isset($this->get_user_status);
+    }
+
+    public function clearGetUserStatus()
+    {
+        unset($this->get_user_status);
     }
 
     /**
@@ -602,11 +772,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeleteUserStatusResult delete_user_status = 20;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeleteUserStatusResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeleteUserStatusResult|null
      */
     public function getDeleteUserStatus()
     {
-        return $this->delete_user_status;
+        return isset($this->delete_user_status) ? $this->delete_user_status : null;
+    }
+
+    public function hasDeleteUserStatus()
+    {
+        return isset($this->delete_user_status);
+    }
+
+    public function clearDeleteUserStatus()
+    {
+        unset($this->delete_user_status);
     }
 
     /**
@@ -624,11 +804,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.BlockUserResult block_user = 21;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\BlockUserResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\BlockUserResult|null
      */
     public function getBlockUser()
     {
-        return $this->block_user;
+        return isset($this->block_user) ? $this->block_user : null;
+    }
+
+    public function hasBlockUser()
+    {
+        return isset($this->block_user);
+    }
+
+    public function clearBlockUser()
+    {
+        unset($this->block_user);
     }
 
     /**
@@ -646,11 +836,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.UnblockUserResult unblock_user = 22;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\UnblockUserResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\UnblockUserResult|null
      */
     public function getUnblockUser()
     {
-        return $this->unblock_user;
+        return isset($this->unblock_user) ? $this->unblock_user : null;
+    }
+
+    public function hasUnblockUser()
+    {
+        return isset($this->unblock_user);
+    }
+
+    public function clearUnblockUser()
+    {
+        unset($this->unblock_user);
     }
 
     /**
@@ -668,11 +868,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.RevokeTokenResult revoke_token = 23;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\RevokeTokenResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\RevokeTokenResult|null
      */
     public function getRevokeToken()
     {
-        return $this->revoke_token;
+        return isset($this->revoke_token) ? $this->revoke_token : null;
+    }
+
+    public function hasRevokeToken()
+    {
+        return isset($this->revoke_token);
+    }
+
+    public function clearRevokeToken()
+    {
+        unset($this->revoke_token);
     }
 
     /**
@@ -690,11 +900,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.InvalidateUserTokensResult invalidate_user_tokens = 24;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\InvalidateUserTokensResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\InvalidateUserTokensResult|null
      */
     public function getInvalidateUserTokens()
     {
-        return $this->invalidate_user_tokens;
+        return isset($this->invalidate_user_tokens) ? $this->invalidate_user_tokens : null;
+    }
+
+    public function hasInvalidateUserTokens()
+    {
+        return isset($this->invalidate_user_tokens);
+    }
+
+    public function clearInvalidateUserTokens()
+    {
+        unset($this->invalidate_user_tokens);
     }
 
     /**
@@ -712,11 +932,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceRegisterResult device_register = 25;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceRegisterResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceRegisterResult|null
      */
     public function getDeviceRegister()
     {
-        return $this->device_register;
+        return isset($this->device_register) ? $this->device_register : null;
+    }
+
+    public function hasDeviceRegister()
+    {
+        return isset($this->device_register);
+    }
+
+    public function clearDeviceRegister()
+    {
+        unset($this->device_register);
     }
 
     /**
@@ -734,11 +964,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceUpdateResult device_update = 26;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceUpdateResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceUpdateResult|null
      */
     public function getDeviceUpdate()
     {
-        return $this->device_update;
+        return isset($this->device_update) ? $this->device_update : null;
+    }
+
+    public function hasDeviceUpdate()
+    {
+        return isset($this->device_update);
+    }
+
+    public function clearDeviceUpdate()
+    {
+        unset($this->device_update);
     }
 
     /**
@@ -756,11 +996,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceRemoveResult device_remove = 27;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceRemoveResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceRemoveResult|null
      */
     public function getDeviceRemove()
     {
-        return $this->device_remove;
+        return isset($this->device_remove) ? $this->device_remove : null;
+    }
+
+    public function hasDeviceRemove()
+    {
+        return isset($this->device_remove);
+    }
+
+    public function clearDeviceRemove()
+    {
+        unset($this->device_remove);
     }
 
     /**
@@ -778,11 +1028,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceListResult device_list = 28;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceListResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceListResult|null
      */
     public function getDeviceList()
     {
-        return $this->device_list;
+        return isset($this->device_list) ? $this->device_list : null;
+    }
+
+    public function hasDeviceList()
+    {
+        return isset($this->device_list);
+    }
+
+    public function clearDeviceList()
+    {
+        unset($this->device_list);
     }
 
     /**
@@ -800,11 +1060,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.PushUserChannelListResult push_user_channel_list = 29;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\PushUserChannelListResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\PushUserChannelListResult|null
      */
     public function getPushUserChannelList()
     {
-        return $this->push_user_channel_list;
+        return isset($this->push_user_channel_list) ? $this->push_user_channel_list : null;
+    }
+
+    public function hasPushUserChannelList()
+    {
+        return isset($this->push_user_channel_list);
+    }
+
+    public function clearPushUserChannelList()
+    {
+        unset($this->push_user_channel_list);
     }
 
     /**
@@ -822,11 +1092,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.PushUserChannelUpdateResult push_user_channel_update = 30;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\PushUserChannelUpdateResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\PushUserChannelUpdateResult|null
      */
     public function getPushUserChannelUpdate()
     {
-        return $this->push_user_channel_update;
+        return isset($this->push_user_channel_update) ? $this->push_user_channel_update : null;
+    }
+
+    public function hasPushUserChannelUpdate()
+    {
+        return isset($this->push_user_channel_update);
+    }
+
+    public function clearPushUserChannelUpdate()
+    {
+        unset($this->push_user_channel_update);
     }
 
     /**
@@ -844,11 +1124,21 @@ class Reply extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.SendPushNotificationResult send_push_notification = 31;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\SendPushNotificationResult
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\SendPushNotificationResult|null
      */
     public function getSendPushNotification()
     {
-        return $this->send_push_notification;
+        return isset($this->send_push_notification) ? $this->send_push_notification : null;
+    }
+
+    public function hasSendPushNotification()
+    {
+        return isset($this->send_push_notification);
+    }
+
+    public function clearSendPushNotification()
+    {
+        unset($this->send_push_notification);
     }
 
     /**

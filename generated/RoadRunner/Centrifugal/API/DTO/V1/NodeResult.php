@@ -233,11 +233,21 @@ class NodeResult extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.Metrics metrics = 8;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\Metrics
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\Metrics|null
      */
     public function getMetrics()
     {
-        return $this->metrics;
+        return isset($this->metrics) ? $this->metrics : null;
+    }
+
+    public function hasMetrics()
+    {
+        return isset($this->metrics);
+    }
+
+    public function clearMetrics()
+    {
+        unset($this->metrics);
     }
 
     /**
@@ -255,11 +265,21 @@ class NodeResult extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.Process process = 9;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\Process
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\Process|null
      */
     public function getProcess()
     {
-        return $this->process;
+        return isset($this->process) ? $this->process : null;
+    }
+
+    public function hasProcess()
+    {
+        return isset($this->process);
+    }
+
+    public function clearProcess()
+    {
+        unset($this->process);
     }
 
     /**

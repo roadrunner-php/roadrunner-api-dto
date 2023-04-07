@@ -34,11 +34,21 @@ class DeviceRegisterResult extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.Device device = 1;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\Device
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\Device|null
      */
     public function getDevice()
     {
-        return $this->device;
+        return isset($this->device) ? $this->device : null;
+    }
+
+    public function hasDevice()
+    {
+        return isset($this->device);
+    }
+
+    public function clearDevice()
+    {
+        unset($this->device);
     }
 
     /**

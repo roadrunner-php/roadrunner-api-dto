@@ -176,11 +176,21 @@ class ConnectionInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.ConnectionState state = 9;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\ConnectionState
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\ConnectionState|null
      */
     public function getState()
     {
-        return $this->state;
+        return isset($this->state) ? $this->state : null;
+    }
+
+    public function hasState()
+    {
+        return isset($this->state);
+    }
+
+    public function clearState()
+    {
+        unset($this->state);
     }
 
     /**

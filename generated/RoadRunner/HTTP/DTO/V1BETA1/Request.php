@@ -277,11 +277,21 @@ class Request extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.http.v1beta.Uploads uploads = 10;</code>
-     * @return \RoadRunner\HTTP\DTO\V1BETA1\Uploads
+     * @return \RoadRunner\HTTP\DTO\V1BETA1\Uploads|null
      */
     public function getUploads()
     {
-        return $this->uploads;
+        return isset($this->uploads) ? $this->uploads : null;
+    }
+
+    public function hasUploads()
+    {
+        return isset($this->uploads);
+    }
+
+    public function clearUploads()
+    {
+        unset($this->uploads);
     }
 
     /**

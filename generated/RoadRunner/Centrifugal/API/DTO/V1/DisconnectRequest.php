@@ -76,11 +76,21 @@ class DisconnectRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.Disconnect disconnect = 2;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\Disconnect
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\Disconnect|null
      */
     public function getDisconnect()
     {
-        return $this->disconnect;
+        return isset($this->disconnect) ? $this->disconnect : null;
+    }
+
+    public function hasDisconnect()
+    {
+        return isset($this->disconnect);
+    }
+
+    public function clearDisconnect()
+    {
+        unset($this->disconnect);
     }
 
     /**

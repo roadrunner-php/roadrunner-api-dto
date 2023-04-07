@@ -93,11 +93,21 @@ class HistoryRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.StreamPosition since = 3;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\StreamPosition
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\StreamPosition|null
      */
     public function getSince()
     {
-        return $this->since;
+        return isset($this->since) ? $this->since : null;
+    }
+
+    public function hasSince()
+    {
+        return isset($this->since);
+    }
+
+    public function clearSince()
+    {
+        unset($this->since);
     }
 
     /**

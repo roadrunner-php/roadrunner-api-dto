@@ -15,9 +15,15 @@ class Status
           return;
         }
         \GPBMetadata\Google\Protobuf\Any::initOnce();
-        $pool->internalAddGeneratedFile(hex2bin(
-            "0aca010a167368617265642f76312f7374617475732e70726f746f12097368617265642e7631224e0a06537461747573120c0a04636f6465180120012805120f0a076d65737361676518022001280912250a0764657461696c7318032003280b32142e676f6f676c652e70726f746f6275662e416e79424d5a097374617475732f7631ca0218526f616452756e6e65725c5368617265645c44544f5c5631e20224526f616452756e6e65725c5368617265645c44544f5c56315c4750424d65746164617461620670726f746f33"
-        ), true);
+        $pool->internalAddGeneratedFile(
+            '
+Ê
+shared/v1/status.proto	shared.v1"N
+Status
+code (
+message (	%
+details (2.google.protobuf.AnyBMZ	status/v1ÊRoadRunner\\Shared\\DTO\\V1â$RoadRunner\\Shared\\DTO\\V1\\GPBMetadatabproto3'
+        , true);
 
         static::$is_initialized = true;
     }

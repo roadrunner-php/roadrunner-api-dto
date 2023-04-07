@@ -177,11 +177,21 @@ class Job extends \Google\Protobuf\Internal\Message
      * job options, contains common and driver specific fields
      *
      * Generated from protobuf field <code>.jobs.v1.Options options = 5;</code>
-     * @return \RoadRunner\Jobs\DTO\V1\Options
+     * @return \RoadRunner\Jobs\DTO\V1\Options|null
      */
     public function getOptions()
     {
-        return $this->options;
+        return isset($this->options) ? $this->options : null;
+    }
+
+    public function hasOptions()
+    {
+        return isset($this->options);
+    }
+
+    public function clearOptions()
+    {
+        unset($this->options);
     }
 
     /**

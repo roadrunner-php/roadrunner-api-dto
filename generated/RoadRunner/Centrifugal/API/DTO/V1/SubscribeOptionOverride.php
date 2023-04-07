@@ -54,11 +54,21 @@ class SubscribeOptionOverride extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.BoolValue presence = 1;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\BoolValue
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\BoolValue|null
      */
     public function getPresence()
     {
-        return $this->presence;
+        return isset($this->presence) ? $this->presence : null;
+    }
+
+    public function hasPresence()
+    {
+        return isset($this->presence);
+    }
+
+    public function clearPresence()
+    {
+        unset($this->presence);
     }
 
     /**
@@ -76,11 +86,21 @@ class SubscribeOptionOverride extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.BoolValue join_leave = 2;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\BoolValue
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\BoolValue|null
      */
     public function getJoinLeave()
     {
-        return $this->join_leave;
+        return isset($this->join_leave) ? $this->join_leave : null;
+    }
+
+    public function hasJoinLeave()
+    {
+        return isset($this->join_leave);
+    }
+
+    public function clearJoinLeave()
+    {
+        unset($this->join_leave);
     }
 
     /**
@@ -98,11 +118,21 @@ class SubscribeOptionOverride extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.BoolValue force_recovery = 3;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\BoolValue
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\BoolValue|null
      */
     public function getForceRecovery()
     {
-        return $this->force_recovery;
+        return isset($this->force_recovery) ? $this->force_recovery : null;
+    }
+
+    public function hasForceRecovery()
+    {
+        return isset($this->force_recovery);
+    }
+
+    public function clearForceRecovery()
+    {
+        unset($this->force_recovery);
     }
 
     /**
@@ -120,11 +150,21 @@ class SubscribeOptionOverride extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.BoolValue force_positioning = 4;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\BoolValue
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\BoolValue|null
      */
     public function getForcePositioning()
     {
-        return $this->force_positioning;
+        return isset($this->force_positioning) ? $this->force_positioning : null;
+    }
+
+    public function hasForcePositioning()
+    {
+        return isset($this->force_positioning);
+    }
+
+    public function clearForcePositioning()
+    {
+        unset($this->force_positioning);
     }
 
     /**
@@ -142,11 +182,21 @@ class SubscribeOptionOverride extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.BoolValue force_push_join_leave = 5;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\BoolValue
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\BoolValue|null
      */
     public function getForcePushJoinLeave()
     {
-        return $this->force_push_join_leave;
+        return isset($this->force_push_join_leave) ? $this->force_push_join_leave : null;
+    }
+
+    public function hasForcePushJoinLeave()
+    {
+        return isset($this->force_push_join_leave);
+    }
+
+    public function clearForcePushJoinLeave()
+    {
+        unset($this->force_push_join_leave);
     }
 
     /**

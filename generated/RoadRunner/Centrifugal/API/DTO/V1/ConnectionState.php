@@ -71,11 +71,21 @@ class ConnectionState extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.ConnectionTokenInfo connection_token = 2;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\ConnectionTokenInfo
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\ConnectionTokenInfo|null
      */
     public function getConnectionToken()
     {
-        return $this->connection_token;
+        return isset($this->connection_token) ? $this->connection_token : null;
+    }
+
+    public function hasConnectionToken()
+    {
+        return isset($this->connection_token);
+    }
+
+    public function clearConnectionToken()
+    {
+        unset($this->connection_token);
     }
 
     /**
