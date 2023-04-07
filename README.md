@@ -1,5 +1,9 @@
 # RoadRunner PHP API DTO
 
+[![PHP Version Require](https://poser.pugx.org/roadrunner-php/roadrunner-api-dto/require/php)](https://packagist.org/packages/roadrunner-php/roadrunner-api-dto)
+[![Latest Stable Version](https://poser.pugx.org/roadrunner-php/roadrunner-api-dto/v/stable)](https://packagist.org/packages/roadrunner-php/roadrunner-api-dto)
+[![Total Downloads](https://poser.pugx.org/roadrunner-php/roadrunner-api-dto/downloads)](https://packagist.org/packages/roadrunner-php/roadrunner-api-dto)
+
 This is a GitHub repository and Composer package that provides PHP Data Transfer Object (DTO) messages for RoadRunner
 API protocol buffer files, available at https://github.com/roadrunner-server/api.
 
@@ -23,7 +27,7 @@ making RPC calls to the RoadRunner server.
 You can install the package. Simply run the following command:
 
 ```bash
-composer require roadrunner-php/api
+composer require roadrunner-php/roadrunner-api-dto
 ```
 
 ## Generating DTOs
