@@ -17,13 +17,13 @@ class Service
         \RoadRunner\Shared\DTO\V1\GPBMetadata\Status::initOnce();
         $pool->internalAddGeneratedFile(
             '
-›
+ï
 service/v1/service.proto
 service.v1"\'
 Response
 message (	
 
-ok ("ÿ
+ok ("ê
 Create
 name (	
 command (	
@@ -31,7 +31,9 @@ service.v1"\'
 exec_timeout (
 remain_after_exit ((
 env (2.service.v1.Create.EnvEntry
-restart_sec (*
+restart_sec (
+service_name_in_logs (
+timeout_stop_sec	 (*
 EnvEntry
 key (	
 value (	:8".
