@@ -254,7 +254,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getPublish()
     {
-        return isset($this->publish) ? $this->publish : null;
+        return $this->publish;
     }
 
     public function hasPublish()
@@ -286,7 +286,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getBroadcast()
     {
-        return isset($this->broadcast) ? $this->broadcast : null;
+        return $this->broadcast;
     }
 
     public function hasBroadcast()
@@ -318,7 +318,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getSubscribe()
     {
-        return isset($this->subscribe) ? $this->subscribe : null;
+        return $this->subscribe;
     }
 
     public function hasSubscribe()
@@ -350,7 +350,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getUnsubscribe()
     {
-        return isset($this->unsubscribe) ? $this->unsubscribe : null;
+        return $this->unsubscribe;
     }
 
     public function hasUnsubscribe()
@@ -382,7 +382,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getDisconnect()
     {
-        return isset($this->disconnect) ? $this->disconnect : null;
+        return $this->disconnect;
     }
 
     public function hasDisconnect()
@@ -414,7 +414,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getPresence()
     {
-        return isset($this->presence) ? $this->presence : null;
+        return $this->presence;
     }
 
     public function hasPresence()
@@ -446,7 +446,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getPresenceStats()
     {
-        return isset($this->presence_stats) ? $this->presence_stats : null;
+        return $this->presence_stats;
     }
 
     public function hasPresenceStats()
@@ -478,7 +478,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getHistory()
     {
-        return isset($this->history) ? $this->history : null;
+        return $this->history;
     }
 
     public function hasHistory()
@@ -510,7 +510,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getHistoryRemove()
     {
-        return isset($this->history_remove) ? $this->history_remove : null;
+        return $this->history_remove;
     }
 
     public function hasHistoryRemove()
@@ -542,7 +542,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getInfo()
     {
-        return isset($this->info) ? $this->info : null;
+        return $this->info;
     }
 
     public function hasInfo()
@@ -574,7 +574,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getRpc()
     {
-        return isset($this->rpc) ? $this->rpc : null;
+        return $this->rpc;
     }
 
     public function hasRpc()
@@ -606,7 +606,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getRefresh()
     {
-        return isset($this->refresh) ? $this->refresh : null;
+        return $this->refresh;
     }
 
     public function hasRefresh()
@@ -638,7 +638,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getChannels()
     {
-        return isset($this->channels) ? $this->channels : null;
+        return $this->channels;
     }
 
     public function hasChannels()
@@ -670,7 +670,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getConnections()
     {
-        return isset($this->connections) ? $this->connections : null;
+        return $this->connections;
     }
 
     public function hasConnections()
@@ -702,7 +702,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getUpdateUserStatus()
     {
-        return isset($this->update_user_status) ? $this->update_user_status : null;
+        return $this->update_user_status;
     }
 
     public function hasUpdateUserStatus()
@@ -734,7 +734,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getGetUserStatus()
     {
-        return isset($this->get_user_status) ? $this->get_user_status : null;
+        return $this->get_user_status;
     }
 
     public function hasGetUserStatus()
@@ -766,7 +766,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getDeleteUserStatus()
     {
-        return isset($this->delete_user_status) ? $this->delete_user_status : null;
+        return $this->delete_user_status;
     }
 
     public function hasDeleteUserStatus()
@@ -798,7 +798,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getBlockUser()
     {
-        return isset($this->block_user) ? $this->block_user : null;
+        return $this->block_user;
     }
 
     public function hasBlockUser()
@@ -830,7 +830,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getUnblockUser()
     {
-        return isset($this->unblock_user) ? $this->unblock_user : null;
+        return $this->unblock_user;
     }
 
     public function hasUnblockUser()
@@ -862,7 +862,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getRevokeToken()
     {
-        return isset($this->revoke_token) ? $this->revoke_token : null;
+        return $this->revoke_token;
     }
 
     public function hasRevokeToken()
@@ -894,7 +894,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getInvalidateUserTokens()
     {
-        return isset($this->invalidate_user_tokens) ? $this->invalidate_user_tokens : null;
+        return $this->invalidate_user_tokens;
     }
 
     public function hasInvalidateUserTokens()
@@ -926,7 +926,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getDeviceRegister()
     {
-        return isset($this->device_register) ? $this->device_register : null;
+        return $this->device_register;
     }
 
     public function hasDeviceRegister()
@@ -958,7 +958,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getDeviceUpdate()
     {
-        return isset($this->device_update) ? $this->device_update : null;
+        return $this->device_update;
     }
 
     public function hasDeviceUpdate()
@@ -990,7 +990,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getDeviceRemove()
     {
-        return isset($this->device_remove) ? $this->device_remove : null;
+        return $this->device_remove;
     }
 
     public function hasDeviceRemove()
@@ -1022,7 +1022,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getDeviceList()
     {
-        return isset($this->device_list) ? $this->device_list : null;
+        return $this->device_list;
     }
 
     public function hasDeviceList()
@@ -1054,7 +1054,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getPushUserChannelList()
     {
-        return isset($this->push_user_channel_list) ? $this->push_user_channel_list : null;
+        return $this->push_user_channel_list;
     }
 
     public function hasPushUserChannelList()
@@ -1086,7 +1086,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getPushUserChannelUpdate()
     {
-        return isset($this->push_user_channel_update) ? $this->push_user_channel_update : null;
+        return $this->push_user_channel_update;
     }
 
     public function hasPushUserChannelUpdate()
@@ -1118,7 +1118,7 @@ class Command extends \Google\Protobuf\Internal\Message
      */
     public function getSendPushNotification()
     {
-        return isset($this->send_push_notification) ? $this->send_push_notification : null;
+        return $this->send_push_notification;
     }
 
     public function hasSendPushNotification()

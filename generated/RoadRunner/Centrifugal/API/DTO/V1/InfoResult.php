@@ -24,7 +24,7 @@ class InfoResult extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \RoadRunner\Centrifugal\API\DTO\V1\NodeResult[]|\Google\Protobuf\Internal\RepeatedField $nodes
+     *     @type array<\RoadRunner\Centrifugal\API\DTO\V1\NodeResult>|\Google\Protobuf\Internal\RepeatedField $nodes
      * }
      */
     public function __construct($data = NULL) {
@@ -43,7 +43,7 @@ class InfoResult extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.NodeResult nodes = 1;</code>
-     * @param \RoadRunner\Centrifugal\API\DTO\V1\NodeResult[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\RoadRunner\Centrifugal\API\DTO\V1\NodeResult>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setNodes($var)

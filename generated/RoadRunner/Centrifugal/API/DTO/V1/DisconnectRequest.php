@@ -43,7 +43,7 @@ class DisconnectRequest extends \Google\Protobuf\Internal\Message
      *     @type string $user
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\Disconnect $disconnect
      *     @type string $client
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $whitelist
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $whitelist
      *     @type string $session
      * }
      */
@@ -80,7 +80,7 @@ class DisconnectRequest extends \Google\Protobuf\Internal\Message
      */
     public function getDisconnect()
     {
-        return isset($this->disconnect) ? $this->disconnect : null;
+        return $this->disconnect;
     }
 
     public function hasDisconnect()
@@ -139,7 +139,7 @@ class DisconnectRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string whitelist = 4;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setWhitelist($var)

@@ -24,7 +24,7 @@ class Stats extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \RoadRunner\Jobs\DTO\V1\Stat[]|\Google\Protobuf\Internal\RepeatedField $stats
+     *     @type array<\RoadRunner\Jobs\DTO\V1\Stat>|\Google\Protobuf\Internal\RepeatedField $stats
      * }
      */
     public function __construct($data = NULL) {
@@ -43,7 +43,7 @@ class Stats extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .jobs.v1.Stat stats = 1;</code>
-     * @param \RoadRunner\Jobs\DTO\V1\Stat[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\RoadRunner\Jobs\DTO\V1\Stat>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setStats($var)

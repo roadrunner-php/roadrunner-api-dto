@@ -49,7 +49,7 @@ class RefreshResult extends \Google\Protobuf\Internal\Message
      *     @type string $info
      *     @type string $b64info
      *     @type string $meta
-     *     @type \RoadRunner\Centrifugal\Proxy\DTO\V1\ChannelsCapability[]|\Google\Protobuf\Internal\RepeatedField $caps
+     *     @type array<\RoadRunner\Centrifugal\Proxy\DTO\V1\ChannelsCapability>|\Google\Protobuf\Internal\RepeatedField $caps
      * }
      */
     public function __construct($data = NULL) {
@@ -178,7 +178,7 @@ class RefreshResult extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .centrifugal.centrifugo.proxy.ChannelsCapability caps = 6;</code>
-     * @param \RoadRunner\Centrifugal\Proxy\DTO\V1\ChannelsCapability[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\RoadRunner\Centrifugal\Proxy\DTO\V1\ChannelsCapability>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setCaps($var)

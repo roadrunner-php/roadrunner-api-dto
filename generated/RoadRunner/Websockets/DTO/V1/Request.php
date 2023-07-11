@@ -26,7 +26,7 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \RoadRunner\Websockets\DTO\V1\Message[]|\Google\Protobuf\Internal\RepeatedField $messages
+     *     @type array<\RoadRunner\Websockets\DTO\V1\Message>|\Google\Protobuf\Internal\RepeatedField $messages
      * }
      */
     public function __construct($data = NULL) {
@@ -45,7 +45,7 @@ class Request extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .websockets.v1.Message messages = 1;</code>
-     * @param \RoadRunner\Websockets\DTO\V1\Message[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\RoadRunner\Websockets\DTO\V1\Message>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setMessages($var)

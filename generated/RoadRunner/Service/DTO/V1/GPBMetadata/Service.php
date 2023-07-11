@@ -14,7 +14,7 @@ class Service
         if (static::$is_initialized == true) {
           return;
         }
-        \RoadRunner\Shared\DTO\V1\GPBMetadata\Status::initOnce();
+        \RoadRunner\Shared\DTO\V1\GPBMetadata\GrpcStatus::initOnce();
         $pool->internalAddGeneratedFile(
             '
 •

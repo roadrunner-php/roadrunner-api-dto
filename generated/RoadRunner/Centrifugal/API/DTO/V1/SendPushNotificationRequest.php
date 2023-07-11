@@ -43,7 +43,7 @@ class SendPushNotificationRequest extends \Google\Protobuf\Internal\Message
      */
     public function getRecipient()
     {
-        return isset($this->recipient) ? $this->recipient : null;
+        return $this->recipient;
     }
 
     public function hasRecipient()
@@ -75,7 +75,7 @@ class SendPushNotificationRequest extends \Google\Protobuf\Internal\Message
      */
     public function getNotification()
     {
-        return isset($this->notification) ? $this->notification : null;
+        return $this->notification;
     }
 
     public function hasNotification()

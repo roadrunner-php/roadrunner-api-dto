@@ -97,7 +97,7 @@ class HistoryRequest extends \Google\Protobuf\Internal\Message
      */
     public function getSince()
     {
-        return isset($this->since) ? $this->since : null;
+        return $this->since;
     }
 
     public function hasSince()

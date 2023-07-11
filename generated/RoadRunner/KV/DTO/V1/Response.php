@@ -26,7 +26,7 @@ class Response extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \RoadRunner\KV\DTO\V1\Item[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type array<\RoadRunner\KV\DTO\V1\Item>|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
     public function __construct($data = NULL) {
@@ -45,7 +45,7 @@ class Response extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .kv.v1.Item items = 1;</code>
-     * @param \RoadRunner\KV\DTO\V1\Item[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\RoadRunner\KV\DTO\V1\Item>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)

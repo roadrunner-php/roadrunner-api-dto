@@ -32,9 +32,9 @@ class DeviceRemoveRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $ids
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $users
-     *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceProviderTokens[]|\Google\Protobuf\Internal\RepeatedField $provider_tokens
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $users
+     *     @type array<\RoadRunner\Centrifugal\API\DTO\V1\DeviceProviderTokens>|\Google\Protobuf\Internal\RepeatedField $provider_tokens
      * }
      */
     public function __construct($data = NULL) {
@@ -53,7 +53,7 @@ class DeviceRemoveRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string ids = 1;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setIds($var)
@@ -75,7 +75,7 @@ class DeviceRemoveRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string users = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUsers($var)
@@ -97,7 +97,7 @@ class DeviceRemoveRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.DeviceProviderTokens provider_tokens = 3;</code>
-     * @param \RoadRunner\Centrifugal\API\DTO\V1\DeviceProviderTokens[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\RoadRunner\Centrifugal\API\DTO\V1\DeviceProviderTokens>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setProviderTokens($var)

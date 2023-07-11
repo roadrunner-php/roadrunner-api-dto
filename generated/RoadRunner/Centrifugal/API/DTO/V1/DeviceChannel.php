@@ -92,7 +92,7 @@ class DeviceChannel extends \Google\Protobuf\Internal\Message
      */
     public function getDevice()
     {
-        return isset($this->device) ? $this->device : null;
+        return $this->device;
     }
 
     public function hasDevice()

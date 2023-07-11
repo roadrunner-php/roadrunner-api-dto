@@ -24,7 +24,7 @@ class Statuses extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \RoadRunner\Service\DTO\V1\Status[]|\Google\Protobuf\Internal\RepeatedField $status
+     *     @type array<\RoadRunner\Service\DTO\V1\Status>|\Google\Protobuf\Internal\RepeatedField $status
      * }
      */
     public function __construct($data = NULL) {
@@ -43,7 +43,7 @@ class Statuses extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .service.v1.Status status = 1;</code>
-     * @param \RoadRunner\Service\DTO\V1\Status[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\RoadRunner\Service\DTO\V1\Status>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setStatus($var)

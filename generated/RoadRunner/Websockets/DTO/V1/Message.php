@@ -33,7 +33,7 @@ class Message extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $command
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $topics
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $topics
      *     @type string $payload
      * }
      */
@@ -75,7 +75,7 @@ class Message extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string topics = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setTopics($var)

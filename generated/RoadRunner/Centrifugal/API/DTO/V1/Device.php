@@ -58,7 +58,7 @@ class Device extends \Google\Protobuf\Internal\Message
      *     @type string $token
      *     @type string $user
      *     @type array|\Google\Protobuf\Internal\MapField $meta
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $channels
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $channels
      *     @type array|\Google\Protobuf\Internal\MapField $tags
      * }
      */
@@ -210,7 +210,7 @@ class Device extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string channels = 7;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setChannels($var)

@@ -58,7 +58,7 @@ class SubscribeOptionOverride extends \Google\Protobuf\Internal\Message
      */
     public function getPresence()
     {
-        return isset($this->presence) ? $this->presence : null;
+        return $this->presence;
     }
 
     public function hasPresence()
@@ -90,7 +90,7 @@ class SubscribeOptionOverride extends \Google\Protobuf\Internal\Message
      */
     public function getJoinLeave()
     {
-        return isset($this->join_leave) ? $this->join_leave : null;
+        return $this->join_leave;
     }
 
     public function hasJoinLeave()
@@ -122,7 +122,7 @@ class SubscribeOptionOverride extends \Google\Protobuf\Internal\Message
      */
     public function getForceRecovery()
     {
-        return isset($this->force_recovery) ? $this->force_recovery : null;
+        return $this->force_recovery;
     }
 
     public function hasForceRecovery()
@@ -154,7 +154,7 @@ class SubscribeOptionOverride extends \Google\Protobuf\Internal\Message
      */
     public function getForcePositioning()
     {
-        return isset($this->force_positioning) ? $this->force_positioning : null;
+        return $this->force_positioning;
     }
 
     public function hasForcePositioning()
@@ -186,7 +186,7 @@ class SubscribeOptionOverride extends \Google\Protobuf\Internal\Message
      */
     public function getForcePushJoinLeave()
     {
-        return isset($this->force_push_join_leave) ? $this->force_push_join_leave : null;
+        return $this->force_push_join_leave;
     }
 
     public function hasForcePushJoinLeave()

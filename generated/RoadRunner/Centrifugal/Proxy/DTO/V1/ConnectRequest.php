@@ -64,7 +64,7 @@ class ConnectRequest extends \Google\Protobuf\Internal\Message
      *     @type string $b64data
      *     @type string $name
      *     @type string $version
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $channels
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $channels
      * }
      */
     public function __construct($data = NULL) {
@@ -259,7 +259,7 @@ class ConnectRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string channels = 14;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setChannels($var)

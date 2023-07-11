@@ -27,7 +27,7 @@ class PushBatchRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \RoadRunner\Jobs\DTO\V1\Job[]|\Google\Protobuf\Internal\RepeatedField $jobs
+     *     @type array<\RoadRunner\Jobs\DTO\V1\Job>|\Google\Protobuf\Internal\RepeatedField $jobs
      * }
      */
     public function __construct($data = NULL) {
@@ -46,7 +46,7 @@ class PushBatchRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .jobs.v1.Job jobs = 1;</code>
-     * @param \RoadRunner\Jobs\DTO\V1\Job[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\RoadRunner\Jobs\DTO\V1\Job>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setJobs($var)

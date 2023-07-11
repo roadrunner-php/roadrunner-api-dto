@@ -32,7 +32,7 @@ class Request extends \Google\Protobuf\Internal\Message
      *
      *     @type string $storage
      *           could be an enum in the future
-     *     @type \RoadRunner\KV\DTO\V1\Item[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type array<\RoadRunner\KV\DTO\V1\Item>|\Google\Protobuf\Internal\RepeatedField $items
      * }
      */
     public function __construct($data = NULL) {
@@ -77,7 +77,7 @@ class Request extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .kv.v1.Item items = 2;</code>
-     * @param \RoadRunner\KV\DTO\V1\Item[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\RoadRunner\KV\DTO\V1\Item>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)
