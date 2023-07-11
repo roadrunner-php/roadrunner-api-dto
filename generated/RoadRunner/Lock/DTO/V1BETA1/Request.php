@@ -22,11 +22,11 @@ class Request extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
-     * Generated from protobuf field <code>int64 ttl = 3;</code>
+     * Generated from protobuf field <code>optional int64 ttl = 3;</code>
      */
     protected $ttl = null;
     /**
-     * Generated from protobuf field <code>int64 wait = 4;</code>
+     * Generated from protobuf field <code>optional int64 wait = 4;</code>
      */
     protected $wait = null;
 
@@ -92,7 +92,7 @@ class Request extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int64 ttl = 3;</code>
+     * Generated from protobuf field <code>optional int64 ttl = 3;</code>
      * @return int|string
      */
     public function getTtl()
@@ -111,7 +111,7 @@ class Request extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int64 ttl = 3;</code>
+     * Generated from protobuf field <code>optional int64 ttl = 3;</code>
      * @param int|string $var
      * @return $this
      */
@@ -124,7 +124,7 @@ class Request extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int64 wait = 4;</code>
+     * Generated from protobuf field <code>optional int64 wait = 4;</code>
      * @return int|string
      */
     public function getWait()
@@ -143,7 +143,7 @@ class Request extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int64 wait = 4;</code>
+     * Generated from protobuf field <code>optional int64 wait = 4;</code>
      * @param int|string $var
      * @return $this
      */

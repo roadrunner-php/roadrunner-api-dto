@@ -41,6 +41,16 @@ class Create extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>uint64 restart_sec = 7;</code>
      */
     protected $restart_sec = 0;
+    /**
+     * new in 2023.2
+     *
+     * Generated from protobuf field <code>bool service_name_in_logs = 8;</code>
+     */
+    protected $service_name_in_logs = false;
+    /**
+     * Generated from protobuf field <code>uint64 timeout_stop_sec = 9;</code>
+     */
+    protected $timeout_stop_sec = 0;
 
     /**
      * Constructor.
@@ -55,6 +65,9 @@ class Create extends \Google\Protobuf\Internal\Message
      *     @type bool $remain_after_exit
      *     @type array|\Google\Protobuf\Internal\MapField $env
      *     @type int|string $restart_sec
+     *     @type bool $service_name_in_logs
+     *           new in 2023.2
+     *     @type int|string $timeout_stop_sec
      * }
      */
     public function __construct($data = NULL) {
@@ -212,6 +225,54 @@ class Create extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint64($var);
         $this->restart_sec = $var;
+
+        return $this;
+    }
+
+    /**
+     * new in 2023.2
+     *
+     * Generated from protobuf field <code>bool service_name_in_logs = 8;</code>
+     * @return bool
+     */
+    public function getServiceNameInLogs()
+    {
+        return $this->service_name_in_logs;
+    }
+
+    /**
+     * new in 2023.2
+     *
+     * Generated from protobuf field <code>bool service_name_in_logs = 8;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setServiceNameInLogs($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->service_name_in_logs = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 timeout_stop_sec = 9;</code>
+     * @return int|string
+     */
+    public function getTimeoutStopSec()
+    {
+        return $this->timeout_stop_sec;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 timeout_stop_sec = 9;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setTimeoutStopSec($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->timeout_stop_sec = $var;
 
         return $this;
     }
