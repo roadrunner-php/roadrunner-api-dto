@@ -16,7 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class ReplayResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.shared.v1.Status status = 1;</code>
+     * Generated from protobuf field <code>.common.v1.Status status = 1;</code>
      */
     protected $status = null;
 
@@ -26,7 +26,7 @@ class ReplayResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \RoadRunner\Shared\DTO\V1\Status $status
+     *     @type \RoadRunner\Common\DTO\V1\Status $status
      * }
      */
     public function __construct($data = NULL) {
@@ -35,8 +35,8 @@ class ReplayResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.shared.v1.Status status = 1;</code>
-     * @return \RoadRunner\Shared\DTO\V1\Status|null
+     * Generated from protobuf field <code>.common.v1.Status status = 1;</code>
+     * @return \RoadRunner\Common\DTO\V1\Status|null
      */
     public function getStatus()
     {
@@ -54,13 +54,13 @@ class ReplayResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.shared.v1.Status status = 1;</code>
-     * @param \RoadRunner\Shared\DTO\V1\Status $var
+     * Generated from protobuf field <code>.common.v1.Status status = 1;</code>
+     * @param \RoadRunner\Common\DTO\V1\Status $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Shared\DTO\V1\Status::class);
+        GPBUtil::checkMessage($var, \RoadRunner\Common\DTO\V1\Status::class);
         $this->status = $var;
 
         return $this;

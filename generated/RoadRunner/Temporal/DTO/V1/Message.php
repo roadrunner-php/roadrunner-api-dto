@@ -57,6 +57,12 @@ class Message extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int64 history_length = 7;</code>
      */
     protected $history_length = 0;
+    /**
+     * rr_run id
+     *
+     * Generated from protobuf field <code>string run_id = 8;</code>
+     */
+    protected $run_id = '';
 
     /**
      * Constructor.
@@ -78,6 +84,8 @@ class Message extends \Google\Protobuf\Internal\Message
      *           invocation or result payloads.
      *     @type int|string $history_length
      *           workflow history length
+     *     @type string $run_id
+     *           rr_run id
      * }
      */
     public function __construct($data = NULL) {
@@ -293,6 +301,32 @@ class Message extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->history_length = $var;
+
+        return $this;
+    }
+
+    /**
+     * rr_run id
+     *
+     * Generated from protobuf field <code>string run_id = 8;</code>
+     * @return string
+     */
+    public function getRunId()
+    {
+        return $this->run_id;
+    }
+
+    /**
+     * rr_run id
+     *
+     * Generated from protobuf field <code>string run_id = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRunId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->run_id = $var;
 
         return $this;
     }

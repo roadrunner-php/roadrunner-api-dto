@@ -25,6 +25,10 @@ class ReplayRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string save_path = 3;</code>
      */
     protected $save_path = '';
+    /**
+     * Generated from protobuf field <code>int64 last_event_id = 4;</code>
+     */
+    protected $last_event_id = 0;
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class ReplayRequest extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $workflow_execution
      *     @type \Temporal\Api\Common\V1\WorkflowType $workflow_type
      *     @type string $save_path
+     *     @type int|string $last_event_id
      * }
      */
     public function __construct($data = NULL) {
@@ -124,6 +129,28 @@ class ReplayRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->save_path = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 last_event_id = 4;</code>
+     * @return int|string
+     */
+    public function getLastEventId()
+    {
+        return $this->last_event_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 last_event_id = 4;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setLastEventId($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->last_event_id = $var;
 
         return $this;
     }

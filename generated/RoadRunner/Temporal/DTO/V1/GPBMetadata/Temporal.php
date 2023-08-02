@@ -14,15 +14,15 @@ class Temporal
         if (static::$is_initialized == true) {
           return;
         }
-        \RoadRunner\Shared\DTO\V1\GPBMetadata\GrpcStatus::initOnce();
+        \RoadRunner\Common\DTO\V1\GPBMetadata\GrpcStatus::initOnce();
         \GPBMetadata\Temporal\Api\Common\V1\Message::initOnce();
         \GPBMetadata\Temporal\Api\Failure\V1\Message::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ë
+ò
 temporal/v1/temporal.prototemporal.v1$temporal/api/common/v1/message.proto%temporal/api/failure/v1/message.proto"/
 Frame&
-messages (2.temporal.v1.Message"æ
+messages (2.temporal.v1.Message"ö
 Message
 
 id (
@@ -31,13 +31,15 @@ class Temporal
 failure (2 .temporal.api.failure.v1.Failure2
 payloads (2 .temporal.api.common.v1.Payloads.
 header (2.temporal.api.common.v1.Header
-history_length ("¦
+history_length (
+run_id (	"½
 ReplayRequestE
 workflow_execution (2).temporal.api.common.v1.WorkflowExecution;
 workflow_type (2$.temporal.api.common.v1.WorkflowType
-	save_path (	"3
+	save_path (	
+last_event_id ("3
 ReplayResponse!
-status (2.shared.v1.StatusBSZtemporal/v1ÊRoadRunner\\Temporal\\DTO\\V1â&RoadRunner\\Temporal\\DTO\\V1\\GPBMetadatabproto3'
+status (2.common.v1.StatusBSZtemporal/v1ÊRoadRunner\\Temporal\\DTO\\V1â&RoadRunner\\Temporal\\DTO\\V1\\GPBMetadatabproto3'
         , true);
 
         static::$is_initialized = true;
