@@ -54,7 +54,7 @@ class SubscribeResult extends \Google\Protobuf\Internal\Message
      *     @type string $data
      *     @type string $b64data
      *     @type \RoadRunner\Centrifugal\Proxy\DTO\V1\SubscribeOptionOverride $override
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $allow
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $allow
      * }
      */
     public function __construct($data = NULL) {
@@ -178,7 +178,7 @@ class SubscribeResult extends \Google\Protobuf\Internal\Message
      */
     public function getOverride()
     {
-        return isset($this->override) ? $this->override : null;
+        return $this->override;
     }
 
     public function hasOverride()
@@ -215,7 +215,7 @@ class SubscribeResult extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string allow = 7;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setAllow($var)

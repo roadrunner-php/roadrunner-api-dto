@@ -180,7 +180,7 @@ class ConnectionInfo extends \Google\Protobuf\Internal\Message
      */
     public function getState()
     {
-        return isset($this->state) ? $this->state : null;
+        return $this->state;
     }
 
     public function hasState()

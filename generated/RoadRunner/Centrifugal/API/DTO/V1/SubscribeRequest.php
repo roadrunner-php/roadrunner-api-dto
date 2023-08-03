@@ -264,7 +264,7 @@ class SubscribeRequest extends \Google\Protobuf\Internal\Message
      */
     public function getRecoverSince()
     {
-        return isset($this->recover_since) ? $this->recover_since : null;
+        return $this->recover_since;
     }
 
     public function hasRecoverSince()
@@ -296,7 +296,7 @@ class SubscribeRequest extends \Google\Protobuf\Internal\Message
      */
     public function getOverride()
     {
-        return isset($this->override) ? $this->override : null;
+        return $this->override;
     }
 
     public function hasOverride()

@@ -36,8 +36,8 @@ class PushUserChannelListRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $users
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $channels
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $users
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $channels
      *     @type string $since
      *     @type int $limit
      * }
@@ -58,7 +58,7 @@ class PushUserChannelListRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string users = 1;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUsers($var)
@@ -80,7 +80,7 @@ class PushUserChannelListRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string channels = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setChannels($var)

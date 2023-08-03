@@ -28,7 +28,7 @@ class DeviceListResult extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \RoadRunner\Centrifugal\API\DTO\V1\Device[]|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type array<\RoadRunner\Centrifugal\API\DTO\V1\Device>|\Google\Protobuf\Internal\RepeatedField $items
      *     @type bool $has_more
      * }
      */
@@ -48,7 +48,7 @@ class DeviceListResult extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.Device items = 1;</code>
-     * @param \RoadRunner\Centrifugal\API\DTO\V1\Device[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\RoadRunner\Centrifugal\API\DTO\V1\Device>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)

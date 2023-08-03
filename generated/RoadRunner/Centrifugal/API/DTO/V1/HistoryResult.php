@@ -32,7 +32,7 @@ class HistoryResult extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \RoadRunner\Centrifugal\API\DTO\V1\Publication[]|\Google\Protobuf\Internal\RepeatedField $publications
+     *     @type array<\RoadRunner\Centrifugal\API\DTO\V1\Publication>|\Google\Protobuf\Internal\RepeatedField $publications
      *     @type string $epoch
      *     @type int|string $offset
      * }
@@ -53,7 +53,7 @@ class HistoryResult extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.Publication publications = 1;</code>
-     * @param \RoadRunner\Centrifugal\API\DTO\V1\Publication[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\RoadRunner\Centrifugal\API\DTO\V1\Publication>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPublications($var)

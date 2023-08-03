@@ -48,7 +48,7 @@ class RefreshResponse extends \Google\Protobuf\Internal\Message
      */
     public function getResult()
     {
-        return isset($this->result) ? $this->result : null;
+        return $this->result;
     }
 
     public function hasResult()
@@ -80,7 +80,7 @@ class RefreshResponse extends \Google\Protobuf\Internal\Message
      */
     public function getError()
     {
-        return isset($this->error) ? $this->error : null;
+        return $this->error;
     }
 
     public function hasError()
@@ -112,7 +112,7 @@ class RefreshResponse extends \Google\Protobuf\Internal\Message
      */
     public function getDisconnect()
     {
-        return isset($this->disconnect) ? $this->disconnect : null;
+        return $this->disconnect;
     }
 
     public function hasDisconnect()

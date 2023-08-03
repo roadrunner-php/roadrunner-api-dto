@@ -24,7 +24,7 @@ class Uploads extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \RoadRunner\HTTP\DTO\V1BETA1\FileUpload[]|\Google\Protobuf\Internal\RepeatedField $list
+     *     @type array<\RoadRunner\HTTP\DTO\V1BETA1\FileUpload>|\Google\Protobuf\Internal\RepeatedField $list
      * }
      */
     public function __construct($data = NULL) {
@@ -43,7 +43,7 @@ class Uploads extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .http.v1beta.FileUpload list = 1;</code>
-     * @param \RoadRunner\HTTP\DTO\V1BETA1\FileUpload[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\RoadRunner\HTTP\DTO\V1BETA1\FileUpload>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setList($var)

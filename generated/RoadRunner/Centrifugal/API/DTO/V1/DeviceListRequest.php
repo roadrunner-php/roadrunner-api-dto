@@ -64,12 +64,12 @@ class DeviceListRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $ids
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $providers
-     *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceProviderTokens[]|\Google\Protobuf\Internal\RepeatedField $provider_tokens
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $platforms
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $users
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $channels
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $providers
+     *     @type array<\RoadRunner\Centrifugal\API\DTO\V1\DeviceProviderTokens>|\Google\Protobuf\Internal\RepeatedField $provider_tokens
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $platforms
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $users
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $channels
      *     @type string $since
      *     @type int $limit
      *     @type bool $include_channels
@@ -93,7 +93,7 @@ class DeviceListRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string ids = 1;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setIds($var)
@@ -115,7 +115,7 @@ class DeviceListRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string providers = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setProviders($var)
@@ -137,7 +137,7 @@ class DeviceListRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.DeviceProviderTokens provider_tokens = 3;</code>
-     * @param \RoadRunner\Centrifugal\API\DTO\V1\DeviceProviderTokens[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\RoadRunner\Centrifugal\API\DTO\V1\DeviceProviderTokens>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setProviderTokens($var)
@@ -159,7 +159,7 @@ class DeviceListRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string platforms = 4;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPlatforms($var)
@@ -181,7 +181,7 @@ class DeviceListRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string users = 5;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUsers($var)
@@ -203,7 +203,7 @@ class DeviceListRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string channels = 6;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setChannels($var)

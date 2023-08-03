@@ -75,7 +75,7 @@ class ConnectionState extends \Google\Protobuf\Internal\Message
      */
     public function getConnectionToken()
     {
-        return isset($this->connection_token) ? $this->connection_token : null;
+        return $this->connection_token;
     }
 
     public function hasConnectionToken()

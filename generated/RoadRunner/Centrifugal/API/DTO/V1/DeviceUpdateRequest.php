@@ -48,9 +48,9 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $ids
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $users
-     *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceProviderTokens[]|\Google\Protobuf\Internal\RepeatedField $provider_tokens
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $users
+     *     @type array<\RoadRunner\Centrifugal\API\DTO\V1\DeviceProviderTokens>|\Google\Protobuf\Internal\RepeatedField $provider_tokens
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceUserUpdate $user_update
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceMetaUpdate $meta_update
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceTagsUpdate $tags_update
@@ -73,7 +73,7 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string ids = 1;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setIds($var)
@@ -95,7 +95,7 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string users = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setUsers($var)
@@ -117,7 +117,7 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.DeviceProviderTokens provider_tokens = 3;</code>
-     * @param \RoadRunner\Centrifugal\API\DTO\V1\DeviceProviderTokens[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\RoadRunner\Centrifugal\API\DTO\V1\DeviceProviderTokens>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setProviderTokens($var)
@@ -134,7 +134,7 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
      */
     public function getUserUpdate()
     {
-        return isset($this->user_update) ? $this->user_update : null;
+        return $this->user_update;
     }
 
     public function hasUserUpdate()
@@ -166,7 +166,7 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
      */
     public function getMetaUpdate()
     {
-        return isset($this->meta_update) ? $this->meta_update : null;
+        return $this->meta_update;
     }
 
     public function hasMetaUpdate()
@@ -198,7 +198,7 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
      */
     public function getTagsUpdate()
     {
-        return isset($this->tags_update) ? $this->tags_update : null;
+        return $this->tags_update;
     }
 
     public function hasTagsUpdate()
@@ -230,7 +230,7 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
      */
     public function getChannelsUpdate()
     {
-        return isset($this->channels_update) ? $this->channels_update : null;
+        return $this->channels_update;
     }
 
     public function hasChannelsUpdate()

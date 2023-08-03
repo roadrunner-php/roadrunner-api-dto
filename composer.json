@@ -39,7 +39,9 @@
   },
   "autoload": {
     "psr-4": {
-      "RoadRunner\\": "generated/RoadRunner"
+      "RoadRunner\\": "generated/RoadRunner",
+      "GPBMetadata\\": "generated/GPBMetadata",
+      "Temporal\\": "generated/Temporal"
     }
   }
 }

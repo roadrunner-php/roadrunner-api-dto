@@ -56,15 +56,15 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $device_ids
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $channels
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $fcm_tokens
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $device_ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $channels
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $fcm_tokens
      *     @type string $fcm_topic
      *     @type string $fcm_condition
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $hms_tokens
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $hms_tokens
      *     @type string $hms_topic
      *     @type string $hms_condition
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $apns_tokens
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $apns_tokens
      * }
      */
     public function __construct($data = NULL) {
@@ -83,7 +83,7 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string device_ids = 1;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setDeviceIds($var)
@@ -105,7 +105,7 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string channels = 2;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setChannels($var)
@@ -127,7 +127,7 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string fcm_tokens = 3;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setFcmTokens($var)
@@ -193,7 +193,7 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string hms_tokens = 6;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setHmsTokens($var)
@@ -259,7 +259,7 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string apns_tokens = 9;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setApnsTokens($var)

@@ -14,7 +14,7 @@ class Service
         if (static::$is_initialized == true) {
           return;
         }
-        \RoadRunner\Shared\DTO\V1\GPBMetadata\Status::initOnce();
+        \RoadRunner\Common\DTO\V1\GPBMetadata\GrpcStatus::initOnce();
         $pool->internalAddGeneratedFile(
             '
 •
@@ -44,7 +44,7 @@ service.v1"\'
 pid (
 memory_usage (
 command (	!
-status (2.shared.v1.Status"
+status (2.common.v1.Status"
 Service
 name (	"
 List

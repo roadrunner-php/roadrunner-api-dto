@@ -173,7 +173,7 @@ class FileUpload extends \Google\Protobuf\Internal\Message
      */
     public function getHeader()
     {
-        return isset($this->header) ? $this->header : null;
+        return $this->header;
     }
 
     public function hasHeader()

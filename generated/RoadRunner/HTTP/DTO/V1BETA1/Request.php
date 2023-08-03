@@ -281,7 +281,7 @@ class Request extends \Google\Protobuf\Internal\Message
      */
     public function getUploads()
     {
-        return isset($this->uploads) ? $this->uploads : null;
+        return $this->uploads;
     }
 
     public function hasUploads()

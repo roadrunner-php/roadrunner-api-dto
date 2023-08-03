@@ -32,7 +32,7 @@ class Status extends \Google\Protobuf\Internal\Message
     /**
      * error state
      *
-     * Generated from protobuf field <code>.shared.v1.Status status = 5;</code>
+     * Generated from protobuf field <code>.common.v1.Status status = 5;</code>
      */
     protected $status = null;
 
@@ -46,7 +46,7 @@ class Status extends \Google\Protobuf\Internal\Message
      *     @type int $pid
      *     @type int|string $memory_usage
      *     @type string $command
-     *     @type \RoadRunner\Shared\DTO\V1\Status $status
+     *     @type \RoadRunner\Common\DTO\V1\Status $status
      *           error state
      * }
      */
@@ -146,12 +146,12 @@ class Status extends \Google\Protobuf\Internal\Message
     /**
      * error state
      *
-     * Generated from protobuf field <code>.shared.v1.Status status = 5;</code>
-     * @return \RoadRunner\Shared\DTO\V1\Status|null
+     * Generated from protobuf field <code>.common.v1.Status status = 5;</code>
+     * @return \RoadRunner\Common\DTO\V1\Status|null
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : null;
+        return $this->status;
     }
 
     public function hasStatus()
@@ -167,13 +167,13 @@ class Status extends \Google\Protobuf\Internal\Message
     /**
      * error state
      *
-     * Generated from protobuf field <code>.shared.v1.Status status = 5;</code>
-     * @param \RoadRunner\Shared\DTO\V1\Status $var
+     * Generated from protobuf field <code>.common.v1.Status status = 5;</code>
+     * @param \RoadRunner\Common\DTO\V1\Status $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Shared\DTO\V1\Status::class);
+        GPBUtil::checkMessage($var, \RoadRunner\Common\DTO\V1\Status::class);
         $this->status = $var;
 
         return $this;

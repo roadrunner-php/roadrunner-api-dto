@@ -24,7 +24,7 @@ class BroadcastResult extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \RoadRunner\Centrifugal\API\DTO\V1\PublishResponse[]|\Google\Protobuf\Internal\RepeatedField $responses
+     *     @type array<\RoadRunner\Centrifugal\API\DTO\V1\PublishResponse>|\Google\Protobuf\Internal\RepeatedField $responses
      * }
      */
     public function __construct($data = NULL) {
@@ -43,7 +43,7 @@ class BroadcastResult extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.PublishResponse responses = 1;</code>
-     * @param \RoadRunner\Centrifugal\API\DTO\V1\PublishResponse[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<\RoadRunner\Centrifugal\API\DTO\V1\PublishResponse>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setResponses($var)

@@ -181,7 +181,7 @@ class Job extends \Google\Protobuf\Internal\Message
      */
     public function getOptions()
     {
-        return isset($this->options) ? $this->options : null;
+        return $this->options;
     }
 
     public function hasOptions()

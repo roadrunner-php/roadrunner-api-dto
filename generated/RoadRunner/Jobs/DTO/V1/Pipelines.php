@@ -27,7 +27,7 @@ class Pipelines extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $pipelines
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $pipelines
      * }
      */
     public function __construct($data = NULL) {
@@ -46,7 +46,7 @@ class Pipelines extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string pipelines = 1;</code>
-     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setPipelines($var)

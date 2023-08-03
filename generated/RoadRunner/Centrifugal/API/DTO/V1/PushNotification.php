@@ -58,7 +58,7 @@ class PushNotification extends \Google\Protobuf\Internal\Message
      */
     public function getFcm()
     {
-        return isset($this->fcm) ? $this->fcm : null;
+        return $this->fcm;
     }
 
     public function hasFcm()
@@ -90,7 +90,7 @@ class PushNotification extends \Google\Protobuf\Internal\Message
      */
     public function getHms()
     {
-        return isset($this->hms) ? $this->hms : null;
+        return $this->hms;
     }
 
     public function hasHms()
@@ -122,7 +122,7 @@ class PushNotification extends \Google\Protobuf\Internal\Message
      */
     public function getApns()
     {
-        return isset($this->apns) ? $this->apns : null;
+        return $this->apns;
     }
 
     public function hasApns()
