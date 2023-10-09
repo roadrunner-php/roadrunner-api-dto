@@ -35,6 +35,10 @@ composer require roadrunner-php/roadrunner-api-dto
 If you would like to generate the DTOs yourself, you can use the `generate.sh` script. This script will generate the
 DTOs for all of the plugins, and place them in the `generated/` directory.
 
+But before that, you will need to compile the `grpc_php_plugin` file and place it in the root folder. Follow [this instruction](https://github.com/grpc/grpc/blob/master/src/php/README.md#grpc_php_plugin-protoc-plugin) to build the file.
+
+Then run:
+
 ```bash
 ./generate.sh
 ```
