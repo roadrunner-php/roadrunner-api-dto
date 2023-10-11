@@ -9,12 +9,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>centrifugal.centrifugo.api.DeviceListResult</code>
+ * Generated from protobuf message <code>centrifugal.centrifugo.api.DeviceTopicListResult</code>
  */
-class DeviceListResult extends \Google\Protobuf\Internal\Message
+class DeviceTopicListResult extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.Device items = 1;</code>
+     * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.DeviceTopic items = 1;</code>
      */
     private $items;
     /**
@@ -32,7 +32,7 @@ class DeviceListResult extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\RoadRunner\Centrifugal\API\DTO\V1\Device>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type array<\RoadRunner\Centrifugal\API\DTO\V1\DeviceTopic>|\Google\Protobuf\Internal\RepeatedField $items
      *     @type string $next_cursor
      *     @type int|string $total_count
      * }
@@ -43,7 +43,7 @@ class DeviceListResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.Device items = 1;</code>
+     * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.DeviceTopic items = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getItems()
@@ -52,13 +52,13 @@ class DeviceListResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.Device items = 1;</code>
-     * @param array<\RoadRunner\Centrifugal\API\DTO\V1\Device>|\Google\Protobuf\Internal\RepeatedField $var
+     * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.DeviceTopic items = 1;</code>
+     * @param array<\RoadRunner\Centrifugal\API\DTO\V1\DeviceTopic>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
     public function setItems($var)
     {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\Centrifugal\API\DTO\V1\Device::class);
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\Centrifugal\API\DTO\V1\DeviceTopic::class);
         $this->items = $arr;
 
         return $this;

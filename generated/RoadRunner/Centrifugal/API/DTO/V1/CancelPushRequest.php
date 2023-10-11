@@ -9,13 +9,11 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>centrifugal.centrifugo.api.SendPushNotificationResult</code>
+ * Generated from protobuf message <code>centrifugal.centrifugo.api.CancelPushRequest</code>
  */
-class SendPushNotificationResult extends \Google\Protobuf\Internal\Message
+class CancelPushRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Unique identifier of notification send request (it's not a FCM message id).
-     *
      * Generated from protobuf field <code>string uid = 1;</code>
      */
     protected $uid = '';
@@ -27,7 +25,6 @@ class SendPushNotificationResult extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $uid
-     *           Unique identifier of notification send request (it's not a FCM message id).
      * }
      */
     public function __construct($data = NULL) {
@@ -36,8 +33,6 @@ class SendPushNotificationResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Unique identifier of notification send request (it's not a FCM message id).
-     *
      * Generated from protobuf field <code>string uid = 1;</code>
      * @return string
      */
@@ -47,8 +42,6 @@ class SendPushNotificationResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Unique identifier of notification send request (it's not a FCM message id).
-     *
      * Generated from protobuf field <code>string uid = 1;</code>
      * @param string $var
      * @return $this

@@ -17,8 +17,8 @@ class Http
         \GPBMetadata\Google\Protobuf\Any::initOnce();
         $pool->internalAddGeneratedFile(
             '
-è
-http/v1beta/http.protohttp.v1beta"ó
+Ø
+http/v1beta/http.protohttp.v1beta"∑
 Request
 remote_addr (	
 protocol (	
@@ -31,7 +31,9 @@ class Http
 
 attributes	 (2$.http.v1beta.Request.AttributesEntry%
 uploads
- (2.http.v1beta.UploadsG
+ (2.http.v1beta.Uploads
+body (
+raw_body (G
 HeaderEntry
 key (	\'
 value (2.http.v1beta.HeaderValue:8H

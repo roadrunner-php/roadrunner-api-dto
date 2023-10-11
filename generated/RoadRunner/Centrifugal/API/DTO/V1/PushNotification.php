@@ -26,10 +26,8 @@ class PushNotification extends \Google\Protobuf\Internal\Message
      */
     protected $apns = null;
     /**
-     * Generated from protobuf field <code>string uid = 4;</code>
-     */
-    protected $uid = '';
-    /**
+     * timestamp in the future when Centrifugo should stop trying to send push notification.
+     *
      * Generated from protobuf field <code>int64 expire_at = 5;</code>
      */
     protected $expire_at = 0;
@@ -43,8 +41,8 @@ class PushNotification extends \Google\Protobuf\Internal\Message
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\FcmPushNotification $fcm
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\HmsPushNotification $hms
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\ApnsPushNotification $apns
-     *     @type string $uid
      *     @type int|string $expire_at
+     *           timestamp in the future when Centrifugo should stop trying to send push notification.
      * }
      */
     public function __construct($data = NULL) {
@@ -149,28 +147,8 @@ class PushNotification extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string uid = 4;</code>
-     * @return string
-     */
-    public function getUid()
-    {
-        return $this->uid;
-    }
-
-    /**
-     * Generated from protobuf field <code>string uid = 4;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setUid($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->uid = $var;
-
-        return $this;
-    }
-
-    /**
+     * timestamp in the future when Centrifugo should stop trying to send push notification.
+     *
      * Generated from protobuf field <code>int64 expire_at = 5;</code>
      * @return int|string
      */
@@ -180,6 +158,8 @@ class PushNotification extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * timestamp in the future when Centrifugo should stop trying to send push notification.
+     *
      * Generated from protobuf field <code>int64 expire_at = 5;</code>
      * @param int|string $var
      * @return $this

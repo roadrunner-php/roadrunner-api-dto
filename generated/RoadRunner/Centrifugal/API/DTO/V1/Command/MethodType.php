@@ -112,17 +112,37 @@ class MethodType
      */
     const DEVICE_LIST = 25;
     /**
-     * Generated from protobuf enum <code>PUSH_USER_CHANNEL_LIST = 26;</code>
+     * Generated from protobuf enum <code>DEVICE_TOPIC_LIST = 26;</code>
      */
-    const PUSH_USER_CHANNEL_LIST = 26;
+    const DEVICE_TOPIC_LIST = 26;
     /**
-     * Generated from protobuf enum <code>PUSH_USER_CHANNEL_UPDATE = 27;</code>
+     * Generated from protobuf enum <code>DEVICE_TOPIC_UPDATE = 27;</code>
      */
-    const PUSH_USER_CHANNEL_UPDATE = 27;
+    const DEVICE_TOPIC_UPDATE = 27;
     /**
-     * Generated from protobuf enum <code>SEND_PUSH_NOTIFICATION = 28;</code>
+     * Generated from protobuf enum <code>USER_TOPIC_LIST = 28;</code>
      */
-    const SEND_PUSH_NOTIFICATION = 28;
+    const USER_TOPIC_LIST = 28;
+    /**
+     * Generated from protobuf enum <code>USER_TOPIC_UPDATE = 29;</code>
+     */
+    const USER_TOPIC_UPDATE = 29;
+    /**
+     * Generated from protobuf enum <code>SEND_PUSH_NOTIFICATION = 30;</code>
+     */
+    const SEND_PUSH_NOTIFICATION = 30;
+    /**
+     * Generated from protobuf enum <code>UPDATE_PUSH_STATUS = 31;</code>
+     */
+    const UPDATE_PUSH_STATUS = 31;
+    /**
+     * Generated from protobuf enum <code>CANCEL_PUSH = 32;</code>
+     */
+    const CANCEL_PUSH = 32;
+    /**
+     * Generated from protobuf enum <code>RATE_LIMIT = 47;</code>
+     */
+    const RATE_LIMIT = 47;
 
     private static $valueToName = [
         self::PUBLISH => 'PUBLISH',
@@ -150,9 +170,14 @@ class MethodType
         self::DEVICE_UPDATE => 'DEVICE_UPDATE',
         self::DEVICE_REMOVE => 'DEVICE_REMOVE',
         self::DEVICE_LIST => 'DEVICE_LIST',
-        self::PUSH_USER_CHANNEL_LIST => 'PUSH_USER_CHANNEL_LIST',
-        self::PUSH_USER_CHANNEL_UPDATE => 'PUSH_USER_CHANNEL_UPDATE',
+        self::DEVICE_TOPIC_LIST => 'DEVICE_TOPIC_LIST',
+        self::DEVICE_TOPIC_UPDATE => 'DEVICE_TOPIC_UPDATE',
+        self::USER_TOPIC_LIST => 'USER_TOPIC_LIST',
+        self::USER_TOPIC_UPDATE => 'USER_TOPIC_UPDATE',
         self::SEND_PUSH_NOTIFICATION => 'SEND_PUSH_NOTIFICATION',
+        self::UPDATE_PUSH_STATUS => 'UPDATE_PUSH_STATUS',
+        self::CANCEL_PUSH => 'CANCEL_PUSH',
+        self::RATE_LIMIT => 'RATE_LIMIT',
     ];
 
     public static function name($value)
