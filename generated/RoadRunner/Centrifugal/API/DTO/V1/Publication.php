@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class Publication extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Removed: string uid =1;
+     * Removed: string uid = 1;
      *
      * Generated from protobuf field <code>bytes data = 2;</code>
      */
@@ -39,7 +39,7 @@ class Publication extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $data
-     *           Removed: string uid =1;
+     *           Removed: string uid = 1;
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\ClientInfo $info
      *     @type int|string $offset
      *     @type array|\Google\Protobuf\Internal\MapField $tags
@@ -51,7 +51,7 @@ class Publication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Removed: string uid =1;
+     * Removed: string uid = 1;
      *
      * Generated from protobuf field <code>bytes data = 2;</code>
      * @return string
@@ -62,7 +62,7 @@ class Publication extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Removed: string uid =1;
+     * Removed: string uid = 1;
      *
      * Generated from protobuf field <code>bytes data = 2;</code>
      * @param string $var

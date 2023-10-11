@@ -49,8 +49,6 @@ class Options extends \Google\Protobuf\Internal\Message
      */
     protected $offset = 0;
     /**
-     * -------------
-     *
      * Generated from protobuf field <code>int32 partition = 10;</code>
      */
     protected $partition = 0;
@@ -72,7 +70,6 @@ class Options extends \Google\Protobuf\Internal\Message
      *     @type string $metadata
      *     @type int|string $offset
      *     @type int $partition
-     *           -------------
      * }
      */
     public function __construct($data = NULL) {
@@ -245,8 +242,6 @@ class Options extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * -------------
-     *
      * Generated from protobuf field <code>int32 partition = 10;</code>
      * @return int
      */
@@ -256,8 +251,6 @@ class Options extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * -------------
-     *
      * Generated from protobuf field <code>int32 partition = 10;</code>
      * @param int $var
      * @return $this

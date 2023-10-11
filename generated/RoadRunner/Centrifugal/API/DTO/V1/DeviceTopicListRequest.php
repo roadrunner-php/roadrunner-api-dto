@@ -9,12 +9,12 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>centrifugal.centrifugo.api.DeviceListRequest</code>
+ * Generated from protobuf message <code>centrifugal.centrifugo.api.DeviceTopicListRequest</code>
  */
-class DeviceListRequest extends \Google\Protobuf\Internal\Message
+class DeviceTopicListRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceFilter filter = 1;</code>
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceTopicFilter filter = 1;</code>
      */
     protected $filter = null;
     /**
@@ -22,16 +22,9 @@ class DeviceListRequest extends \Google\Protobuf\Internal\Message
      */
     protected $include_total_count = false;
     /**
-     * Generated from protobuf field <code>bool include_meta = 3;</code>
+     * Generated from protobuf field <code>bool include_device = 3;</code>
      */
-    protected $include_meta = false;
-    /**
-     *bool include_labels = 5;
-     *bool include_scores = 6;
-     *
-     * Generated from protobuf field <code>bool include_topics = 4;</code>
-     */
-    protected $include_topics = false;
+    protected $include_device = false;
     /**
      * Generated from protobuf field <code>string cursor = 10;</code>
      */
@@ -47,12 +40,9 @@ class DeviceListRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceFilter $filter
+     *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicFilter $filter
      *     @type bool $include_total_count
-     *     @type bool $include_meta
-     *     @type bool $include_topics
-     *          bool include_labels = 5;
-     *          bool include_scores = 6;
+     *     @type bool $include_device
      *     @type string $cursor
      *     @type int $limit
      * }
@@ -63,8 +53,8 @@ class DeviceListRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceFilter filter = 1;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceFilter|null
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceTopicFilter filter = 1;</code>
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicFilter|null
      */
     public function getFilter()
     {
@@ -82,13 +72,13 @@ class DeviceListRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceFilter filter = 1;</code>
-     * @param \RoadRunner\Centrifugal\API\DTO\V1\DeviceFilter $var
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceTopicFilter filter = 1;</code>
+     * @param \RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicFilter $var
      * @return $this
      */
     public function setFilter($var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\DeviceFilter::class);
+        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicFilter::class);
         $this->filter = $var;
 
         return $this;
@@ -117,51 +107,23 @@ class DeviceListRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool include_meta = 3;</code>
+     * Generated from protobuf field <code>bool include_device = 3;</code>
      * @return bool
      */
-    public function getIncludeMeta()
+    public function getIncludeDevice()
     {
-        return $this->include_meta;
+        return $this->include_device;
     }
 
     /**
-     * Generated from protobuf field <code>bool include_meta = 3;</code>
+     * Generated from protobuf field <code>bool include_device = 3;</code>
      * @param bool $var
      * @return $this
      */
-    public function setIncludeMeta($var)
+    public function setIncludeDevice($var)
     {
         GPBUtil::checkBool($var);
-        $this->include_meta = $var;
-
-        return $this;
-    }
-
-    /**
-     *bool include_labels = 5;
-     *bool include_scores = 6;
-     *
-     * Generated from protobuf field <code>bool include_topics = 4;</code>
-     * @return bool
-     */
-    public function getIncludeTopics()
-    {
-        return $this->include_topics;
-    }
-
-    /**
-     *bool include_labels = 5;
-     *bool include_scores = 6;
-     *
-     * Generated from protobuf field <code>bool include_topics = 4;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setIncludeTopics($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->include_topics = $var;
+        $this->include_device = $var;
 
         return $this;
     }

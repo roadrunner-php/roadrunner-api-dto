@@ -30,7 +30,7 @@ class Job extends \Google\Protobuf\Internal\Message
     /**
      * payload, might be embedded json or just byte-string
      *
-     * Generated from protobuf field <code>string payload = 3;</code>
+     * Generated from protobuf field <code>bytes payload = 3;</code>
      */
     protected $payload = '';
     /**
@@ -124,7 +124,7 @@ class Job extends \Google\Protobuf\Internal\Message
     /**
      * payload, might be embedded json or just byte-string
      *
-     * Generated from protobuf field <code>string payload = 3;</code>
+     * Generated from protobuf field <code>bytes payload = 3;</code>
      * @return string
      */
     public function getPayload()
@@ -135,13 +135,13 @@ class Job extends \Google\Protobuf\Internal\Message
     /**
      * payload, might be embedded json or just byte-string
      *
-     * Generated from protobuf field <code>string payload = 3;</code>
+     * Generated from protobuf field <code>bytes payload = 3;</code>
      * @param string $var
      * @return $this
      */
     public function setPayload($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, False);
         $this->payload = $var;
 
         return $this;

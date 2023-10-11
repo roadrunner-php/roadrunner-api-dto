@@ -14,9 +14,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeviceRegisterResult extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.centrifugal.centrifugo.api.Device device = 1;</code>
+     * Generated from protobuf field <code>string id = 1;</code>
      */
-    protected $device = null;
+    protected $id = '';
 
     /**
      * Constructor.
@@ -24,7 +24,7 @@ class DeviceRegisterResult extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \RoadRunner\Centrifugal\API\DTO\V1\Device $device
+     *     @type string $id
      * }
      */
     public function __construct($data = NULL) {
@@ -33,33 +33,23 @@ class DeviceRegisterResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.centrifugal.centrifugo.api.Device device = 1;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\Device|null
+     * Generated from protobuf field <code>string id = 1;</code>
+     * @return string
      */
-    public function getDevice()
+    public function getId()
     {
-        return $this->device;
-    }
-
-    public function hasDevice()
-    {
-        return isset($this->device);
-    }
-
-    public function clearDevice()
-    {
-        unset($this->device);
+        return $this->id;
     }
 
     /**
-     * Generated from protobuf field <code>.centrifugal.centrifugo.api.Device device = 1;</code>
-     * @param \RoadRunner\Centrifugal\API\DTO\V1\Device $var
+     * Generated from protobuf field <code>string id = 1;</code>
+     * @param string $var
      * @return $this
      */
-    public function setDevice($var)
+    public function setId($var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\Device::class);
-        $this->device = $var;
+        GPBUtil::checkString($var, True);
+        $this->id = $var;
 
         return $this;
     }

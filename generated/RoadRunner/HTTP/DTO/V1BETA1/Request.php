@@ -53,6 +53,14 @@ class Request extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.http.v1beta.Uploads uploads = 10;</code>
      */
     protected $uploads = null;
+    /**
+     * Generated from protobuf field <code>bytes body = 11;</code>
+     */
+    protected $body = '';
+    /**
+     * Generated from protobuf field <code>bytes raw_body = 12;</code>
+     */
+    protected $raw_body = '';
 
     /**
      * Constructor.
@@ -70,6 +78,8 @@ class Request extends \Google\Protobuf\Internal\Message
      *     @type bool $parsed
      *     @type array|\Google\Protobuf\Internal\MapField $attributes
      *     @type \RoadRunner\HTTP\DTO\V1BETA1\Uploads $uploads
+     *     @type string $body
+     *     @type string $raw_body
      * }
      */
     public function __construct($data = NULL) {
@@ -303,6 +313,50 @@ class Request extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \RoadRunner\HTTP\DTO\V1BETA1\Uploads::class);
         $this->uploads = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bytes body = 11;</code>
+     * @return string
+     */
+    public function getBody()
+    {
+        return $this->body;
+    }
+
+    /**
+     * Generated from protobuf field <code>bytes body = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBody($var)
+    {
+        GPBUtil::checkString($var, False);
+        $this->body = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bytes raw_body = 12;</code>
+     * @return string
+     */
+    public function getRawBody()
+    {
+        return $this->raw_body;
+    }
+
+    /**
+     * Generated from protobuf field <code>bytes raw_body = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRawBody($var)
+    {
+        GPBUtil::checkString($var, False);
+        $this->raw_body = $var;
 
         return $this;
     }

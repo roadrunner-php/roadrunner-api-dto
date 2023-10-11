@@ -126,17 +126,37 @@ class Reply extends \Google\Protobuf\Internal\Message
      */
     protected $device_list = null;
     /**
-     * Generated from protobuf field <code>.centrifugal.centrifugo.api.PushUserChannelListResult push_user_channel_list = 29;</code>
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceTopicListResult device_topic_list = 29;</code>
      */
-    protected $push_user_channel_list = null;
+    protected $device_topic_list = null;
     /**
-     * Generated from protobuf field <code>.centrifugal.centrifugo.api.PushUserChannelUpdateResult push_user_channel_update = 30;</code>
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceTopicUpdateResult device_topic_update = 30;</code>
      */
-    protected $push_user_channel_update = null;
+    protected $device_topic_update = null;
     /**
-     * Generated from protobuf field <code>.centrifugal.centrifugo.api.SendPushNotificationResult send_push_notification = 31;</code>
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.UserTopicListResult user_topic_list = 31;</code>
+     */
+    protected $user_topic_list = null;
+    /**
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.UserTopicUpdateResult user_topic_update = 32;</code>
+     */
+    protected $user_topic_update = null;
+    /**
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.SendPushNotificationResult send_push_notification = 33;</code>
      */
     protected $send_push_notification = null;
+    /**
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.UpdatePushStatusResult update_push_status = 34;</code>
+     */
+    protected $update_push_status = null;
+    /**
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.CancelPushResult cancel_push = 35;</code>
+     */
+    protected $cancel_push = null;
+    /**
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.RateLimitResult rate_limit = 50;</code>
+     */
+    protected $rate_limit = null;
 
     /**
      * Constructor.
@@ -172,9 +192,14 @@ class Reply extends \Google\Protobuf\Internal\Message
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceUpdateResult $device_update
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceRemoveResult $device_remove
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceListResult $device_list
-     *     @type \RoadRunner\Centrifugal\API\DTO\V1\PushUserChannelListResult $push_user_channel_list
-     *     @type \RoadRunner\Centrifugal\API\DTO\V1\PushUserChannelUpdateResult $push_user_channel_update
+     *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicListResult $device_topic_list
+     *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicUpdateResult $device_topic_update
+     *     @type \RoadRunner\Centrifugal\API\DTO\V1\UserTopicListResult $user_topic_list
+     *     @type \RoadRunner\Centrifugal\API\DTO\V1\UserTopicUpdateResult $user_topic_update
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\SendPushNotificationResult $send_push_notification
+     *     @type \RoadRunner\Centrifugal\API\DTO\V1\UpdatePushStatusResult $update_push_status
+     *     @type \RoadRunner\Centrifugal\API\DTO\V1\CancelPushResult $cancel_push
+     *     @type \RoadRunner\Centrifugal\API\DTO\V1\RateLimitResult $rate_limit
      * }
      */
     public function __construct($data = NULL) {
@@ -1059,71 +1084,135 @@ class Reply extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.centrifugal.centrifugo.api.PushUserChannelListResult push_user_channel_list = 29;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\PushUserChannelListResult|null
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceTopicListResult device_topic_list = 29;</code>
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicListResult|null
      */
-    public function getPushUserChannelList()
+    public function getDeviceTopicList()
     {
-        return $this->push_user_channel_list;
+        return $this->device_topic_list;
     }
 
-    public function hasPushUserChannelList()
+    public function hasDeviceTopicList()
     {
-        return isset($this->push_user_channel_list);
+        return isset($this->device_topic_list);
     }
 
-    public function clearPushUserChannelList()
+    public function clearDeviceTopicList()
     {
-        unset($this->push_user_channel_list);
+        unset($this->device_topic_list);
     }
 
     /**
-     * Generated from protobuf field <code>.centrifugal.centrifugo.api.PushUserChannelListResult push_user_channel_list = 29;</code>
-     * @param \RoadRunner\Centrifugal\API\DTO\V1\PushUserChannelListResult $var
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceTopicListResult device_topic_list = 29;</code>
+     * @param \RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicListResult $var
      * @return $this
      */
-    public function setPushUserChannelList($var)
+    public function setDeviceTopicList($var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\PushUserChannelListResult::class);
-        $this->push_user_channel_list = $var;
+        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicListResult::class);
+        $this->device_topic_list = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.centrifugal.centrifugo.api.PushUserChannelUpdateResult push_user_channel_update = 30;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\PushUserChannelUpdateResult|null
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceTopicUpdateResult device_topic_update = 30;</code>
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicUpdateResult|null
      */
-    public function getPushUserChannelUpdate()
+    public function getDeviceTopicUpdate()
     {
-        return $this->push_user_channel_update;
+        return $this->device_topic_update;
     }
 
-    public function hasPushUserChannelUpdate()
+    public function hasDeviceTopicUpdate()
     {
-        return isset($this->push_user_channel_update);
+        return isset($this->device_topic_update);
     }
 
-    public function clearPushUserChannelUpdate()
+    public function clearDeviceTopicUpdate()
     {
-        unset($this->push_user_channel_update);
+        unset($this->device_topic_update);
     }
 
     /**
-     * Generated from protobuf field <code>.centrifugal.centrifugo.api.PushUserChannelUpdateResult push_user_channel_update = 30;</code>
-     * @param \RoadRunner\Centrifugal\API\DTO\V1\PushUserChannelUpdateResult $var
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceTopicUpdateResult device_topic_update = 30;</code>
+     * @param \RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicUpdateResult $var
      * @return $this
      */
-    public function setPushUserChannelUpdate($var)
+    public function setDeviceTopicUpdate($var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\PushUserChannelUpdateResult::class);
-        $this->push_user_channel_update = $var;
+        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicUpdateResult::class);
+        $this->device_topic_update = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>.centrifugal.centrifugo.api.SendPushNotificationResult send_push_notification = 31;</code>
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.UserTopicListResult user_topic_list = 31;</code>
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\UserTopicListResult|null
+     */
+    public function getUserTopicList()
+    {
+        return $this->user_topic_list;
+    }
+
+    public function hasUserTopicList()
+    {
+        return isset($this->user_topic_list);
+    }
+
+    public function clearUserTopicList()
+    {
+        unset($this->user_topic_list);
+    }
+
+    /**
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.UserTopicListResult user_topic_list = 31;</code>
+     * @param \RoadRunner\Centrifugal\API\DTO\V1\UserTopicListResult $var
+     * @return $this
+     */
+    public function setUserTopicList($var)
+    {
+        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\UserTopicListResult::class);
+        $this->user_topic_list = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.UserTopicUpdateResult user_topic_update = 32;</code>
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\UserTopicUpdateResult|null
+     */
+    public function getUserTopicUpdate()
+    {
+        return $this->user_topic_update;
+    }
+
+    public function hasUserTopicUpdate()
+    {
+        return isset($this->user_topic_update);
+    }
+
+    public function clearUserTopicUpdate()
+    {
+        unset($this->user_topic_update);
+    }
+
+    /**
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.UserTopicUpdateResult user_topic_update = 32;</code>
+     * @param \RoadRunner\Centrifugal\API\DTO\V1\UserTopicUpdateResult $var
+     * @return $this
+     */
+    public function setUserTopicUpdate($var)
+    {
+        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\UserTopicUpdateResult::class);
+        $this->user_topic_update = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.SendPushNotificationResult send_push_notification = 33;</code>
      * @return \RoadRunner\Centrifugal\API\DTO\V1\SendPushNotificationResult|null
      */
     public function getSendPushNotification()
@@ -1142,7 +1231,7 @@ class Reply extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.centrifugal.centrifugo.api.SendPushNotificationResult send_push_notification = 31;</code>
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.SendPushNotificationResult send_push_notification = 33;</code>
      * @param \RoadRunner\Centrifugal\API\DTO\V1\SendPushNotificationResult $var
      * @return $this
      */
@@ -1150,6 +1239,102 @@ class Reply extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\SendPushNotificationResult::class);
         $this->send_push_notification = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.UpdatePushStatusResult update_push_status = 34;</code>
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\UpdatePushStatusResult|null
+     */
+    public function getUpdatePushStatus()
+    {
+        return $this->update_push_status;
+    }
+
+    public function hasUpdatePushStatus()
+    {
+        return isset($this->update_push_status);
+    }
+
+    public function clearUpdatePushStatus()
+    {
+        unset($this->update_push_status);
+    }
+
+    /**
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.UpdatePushStatusResult update_push_status = 34;</code>
+     * @param \RoadRunner\Centrifugal\API\DTO\V1\UpdatePushStatusResult $var
+     * @return $this
+     */
+    public function setUpdatePushStatus($var)
+    {
+        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\UpdatePushStatusResult::class);
+        $this->update_push_status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.CancelPushResult cancel_push = 35;</code>
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\CancelPushResult|null
+     */
+    public function getCancelPush()
+    {
+        return $this->cancel_push;
+    }
+
+    public function hasCancelPush()
+    {
+        return isset($this->cancel_push);
+    }
+
+    public function clearCancelPush()
+    {
+        unset($this->cancel_push);
+    }
+
+    /**
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.CancelPushResult cancel_push = 35;</code>
+     * @param \RoadRunner\Centrifugal\API\DTO\V1\CancelPushResult $var
+     * @return $this
+     */
+    public function setCancelPush($var)
+    {
+        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\CancelPushResult::class);
+        $this->cancel_push = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.RateLimitResult rate_limit = 50;</code>
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\RateLimitResult|null
+     */
+    public function getRateLimit()
+    {
+        return $this->rate_limit;
+    }
+
+    public function hasRateLimit()
+    {
+        return isset($this->rate_limit);
+    }
+
+    public function clearRateLimit()
+    {
+        unset($this->rate_limit);
+    }
+
+    /**
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.RateLimitResult rate_limit = 50;</code>
+     * @param \RoadRunner\Centrifugal\API\DTO\V1\RateLimitResult $var
+     * @return $this
+     */
+    public function setRateLimit($var)
+    {
+        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\RateLimitResult::class);
+        $this->rate_limit = $var;
 
         return $this;
     }
