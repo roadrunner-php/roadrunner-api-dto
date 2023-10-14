@@ -32,4 +32,4 @@ RUN for i in `find ./api/third_party/api -name "*.proto" -type f`; do \
 	--experimental_allow_proto3_optional \ 
 	; done
 
-RUN chmod -R 777 /generated
+RUN chmod -R 755 /generated
