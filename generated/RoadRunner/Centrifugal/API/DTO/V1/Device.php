@@ -34,24 +34,17 @@ class Device extends \Google\Protobuf\Internal\Message
      */
     protected $user = '';
     /**
-     * Generated from protobuf field <code>int64 created_at = 6;</code>
-     */
-    protected $created_at = 0;
-    /**
-     * Generated from protobuf field <code>int64 updated_at = 7;</code>
-     */
-    protected $updated_at = 0;
-    /**
-     * Generated from protobuf field <code>map<string, string> meta = 10;</code>
+     * Generated from protobuf field <code>map<string, string> meta = 6;</code>
      */
     private $meta;
     /**
-     *map<string, string> labels = 12;
-     *map<string, int64> scores = 13;
-     *
-     * Generated from protobuf field <code>repeated string topics = 11;</code>
+     * Generated from protobuf field <code>repeated string channels = 7;</code>
      */
-    private $topics;
+    private $channels;
+    /**
+     * Generated from protobuf field <code>map<string, string> tags = 8;</code>
+     */
+    private $tags;
 
     /**
      * Constructor.
@@ -64,12 +57,9 @@ class Device extends \Google\Protobuf\Internal\Message
      *     @type string $provider
      *     @type string $token
      *     @type string $user
-     *     @type int|string $created_at
-     *     @type int|string $updated_at
      *     @type array|\Google\Protobuf\Internal\MapField $meta
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $topics
-     *          map<string, string> labels = 12;
-     *          map<string, int64> scores = 13;
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $channels
+     *     @type array|\Google\Protobuf\Internal\MapField $tags
      * }
      */
     public function __construct($data = NULL) {
@@ -188,51 +178,7 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>int64 created_at = 6;</code>
-     * @return int|string
-     */
-    public function getCreatedAt()
-    {
-        return $this->created_at;
-    }
-
-    /**
-     * Generated from protobuf field <code>int64 created_at = 6;</code>
-     * @param int|string $var
-     * @return $this
-     */
-    public function setCreatedAt($var)
-    {
-        GPBUtil::checkInt64($var);
-        $this->created_at = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>int64 updated_at = 7;</code>
-     * @return int|string
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updated_at;
-    }
-
-    /**
-     * Generated from protobuf field <code>int64 updated_at = 7;</code>
-     * @param int|string $var
-     * @return $this
-     */
-    public function setUpdatedAt($var)
-    {
-        GPBUtil::checkInt64($var);
-        $this->updated_at = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>map<string, string> meta = 10;</code>
+     * Generated from protobuf field <code>map<string, string> meta = 6;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getMeta()
@@ -241,7 +187,7 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> meta = 10;</code>
+     * Generated from protobuf field <code>map<string, string> meta = 6;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
@@ -254,29 +200,45 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *map<string, string> labels = 12;
-     *map<string, int64> scores = 13;
-     *
-     * Generated from protobuf field <code>repeated string topics = 11;</code>
+     * Generated from protobuf field <code>repeated string channels = 7;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getTopics()
+    public function getChannels()
     {
-        return $this->topics;
+        return $this->channels;
     }
 
     /**
-     *map<string, string> labels = 12;
-     *map<string, int64> scores = 13;
-     *
-     * Generated from protobuf field <code>repeated string topics = 11;</code>
+     * Generated from protobuf field <code>repeated string channels = 7;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setTopics($var)
+    public function setChannels($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->topics = $arr;
+        $this->channels = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> tags = 8;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> tags = 8;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setTags($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->tags = $arr;
 
         return $this;
     }

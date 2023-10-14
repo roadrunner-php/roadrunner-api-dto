@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class SendPushNotificationResult extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Unique identifier of notification send request (it's not a FCM message id).
+     * Unique identifier of notification send request (not a FCM message id).
      *
      * Generated from protobuf field <code>string uid = 1;</code>
      */
@@ -27,7 +27,7 @@ class SendPushNotificationResult extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $uid
-     *           Unique identifier of notification send request (it's not a FCM message id).
+     *           Unique identifier of notification send request (not a FCM message id).
      * }
      */
     public function __construct($data = NULL) {
@@ -36,7 +36,7 @@ class SendPushNotificationResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Unique identifier of notification send request (it's not a FCM message id).
+     * Unique identifier of notification send request (not a FCM message id).
      *
      * Generated from protobuf field <code>string uid = 1;</code>
      * @return string
@@ -47,7 +47,7 @@ class SendPushNotificationResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Unique identifier of notification send request (it's not a FCM message id).
+     * Unique identifier of notification send request (not a FCM message id).
      *
      * Generated from protobuf field <code>string uid = 1;</code>
      * @param string $var

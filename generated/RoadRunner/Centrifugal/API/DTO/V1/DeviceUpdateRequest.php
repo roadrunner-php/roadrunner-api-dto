@@ -22,6 +22,10 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
      */
     private $users;
     /**
+     * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.DeviceProviderTokens provider_tokens = 3;</code>
+     */
+    private $provider_tokens;
+    /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceUserUpdate user_update = 4;</code>
      */
     protected $user_update = null;
@@ -30,12 +34,13 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
      */
     protected $meta_update = null;
     /**
-     *DeviceLabelsUpdate labels_update = 7;
-     *DeviceScoresUpdate scores_update = 8;
-     *
-     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceTopicsUpdate topics_update = 6;</code>
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceTagsUpdate tags_update = 6;</code>
      */
-    protected $topics_update = null;
+    protected $tags_update = null;
+    /**
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceChannelsUpdate channels_update = 7;</code>
+     */
+    protected $channels_update = null;
 
     /**
      * Constructor.
@@ -45,11 +50,11 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ids
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $users
+     *     @type array<\RoadRunner\Centrifugal\API\DTO\V1\DeviceProviderTokens>|\Google\Protobuf\Internal\RepeatedField $provider_tokens
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceUserUpdate $user_update
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceMetaUpdate $meta_update
-     *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicsUpdate $topics_update
-     *          DeviceLabelsUpdate labels_update = 7;
-     *          DeviceScoresUpdate scores_update = 8;
+     *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceTagsUpdate $tags_update
+     *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceChannelsUpdate $channels_update
      * }
      */
     public function __construct($data = NULL) {
@@ -97,6 +102,28 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->users = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.DeviceProviderTokens provider_tokens = 3;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getProviderTokens()
+    {
+        return $this->provider_tokens;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.DeviceProviderTokens provider_tokens = 3;</code>
+     * @param array<\RoadRunner\Centrifugal\API\DTO\V1\DeviceProviderTokens>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setProviderTokens($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\Centrifugal\API\DTO\V1\DeviceProviderTokens::class);
+        $this->provider_tokens = $arr;
 
         return $this;
     }
@@ -166,39 +193,65 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *DeviceLabelsUpdate labels_update = 7;
-     *DeviceScoresUpdate scores_update = 8;
-     *
-     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceTopicsUpdate topics_update = 6;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicsUpdate|null
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceTagsUpdate tags_update = 6;</code>
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceTagsUpdate|null
      */
-    public function getTopicsUpdate()
+    public function getTagsUpdate()
     {
-        return $this->topics_update;
+        return $this->tags_update;
     }
 
-    public function hasTopicsUpdate()
+    public function hasTagsUpdate()
     {
-        return isset($this->topics_update);
+        return isset($this->tags_update);
     }
 
-    public function clearTopicsUpdate()
+    public function clearTagsUpdate()
     {
-        unset($this->topics_update);
+        unset($this->tags_update);
     }
 
     /**
-     *DeviceLabelsUpdate labels_update = 7;
-     *DeviceScoresUpdate scores_update = 8;
-     *
-     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceTopicsUpdate topics_update = 6;</code>
-     * @param \RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicsUpdate $var
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceTagsUpdate tags_update = 6;</code>
+     * @param \RoadRunner\Centrifugal\API\DTO\V1\DeviceTagsUpdate $var
      * @return $this
      */
-    public function setTopicsUpdate($var)
+    public function setTagsUpdate($var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicsUpdate::class);
-        $this->topics_update = $var;
+        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\DeviceTagsUpdate::class);
+        $this->tags_update = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceChannelsUpdate channels_update = 7;</code>
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceChannelsUpdate|null
+     */
+    public function getChannelsUpdate()
+    {
+        return $this->channels_update;
+    }
+
+    public function hasChannelsUpdate()
+    {
+        return isset($this->channels_update);
+    }
+
+    public function clearChannelsUpdate()
+    {
+        unset($this->channels_update);
+    }
+
+    /**
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceChannelsUpdate channels_update = 7;</code>
+     * @param \RoadRunner\Centrifugal\API\DTO\V1\DeviceChannelsUpdate $var
+     * @return $this
+     */
+    public function setChannelsUpdate($var)
+    {
+        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\DeviceChannelsUpdate::class);
+        $this->channels_update = $var;
 
         return $this;
     }

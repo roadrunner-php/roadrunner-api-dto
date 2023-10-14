@@ -14,35 +14,39 @@ use Google\Protobuf\Internal\GPBUtil;
 class PushRecipient extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceFilter filter = 1;</code>
+     * Generated from protobuf field <code>repeated string device_ids = 1;</code>
      */
-    protected $filter = null;
+    private $device_ids;
     /**
-     * Generated from protobuf field <code>repeated string fcm_tokens = 2;</code>
+     * Generated from protobuf field <code>repeated string channels = 2;</code>
+     */
+    private $channels;
+    /**
+     * Generated from protobuf field <code>repeated string fcm_tokens = 3;</code>
      */
     private $fcm_tokens;
     /**
-     * Generated from protobuf field <code>string fcm_topic = 3;</code>
+     * Generated from protobuf field <code>string fcm_topic = 4;</code>
      */
     protected $fcm_topic = '';
     /**
-     * Generated from protobuf field <code>string fcm_condition = 4;</code>
+     * Generated from protobuf field <code>string fcm_condition = 5;</code>
      */
     protected $fcm_condition = '';
     /**
-     * Generated from protobuf field <code>repeated string hms_tokens = 5;</code>
+     * Generated from protobuf field <code>repeated string hms_tokens = 6;</code>
      */
     private $hms_tokens;
     /**
-     * Generated from protobuf field <code>string hms_topic = 6;</code>
+     * Generated from protobuf field <code>string hms_topic = 7;</code>
      */
     protected $hms_topic = '';
     /**
-     * Generated from protobuf field <code>string hms_condition = 7;</code>
+     * Generated from protobuf field <code>string hms_condition = 8;</code>
      */
     protected $hms_condition = '';
     /**
-     * Generated from protobuf field <code>repeated string apns_tokens = 8;</code>
+     * Generated from protobuf field <code>repeated string apns_tokens = 9;</code>
      */
     private $apns_tokens;
 
@@ -52,7 +56,8 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceFilter $filter
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $device_ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $channels
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $fcm_tokens
      *     @type string $fcm_topic
      *     @type string $fcm_condition
@@ -68,39 +73,51 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceFilter filter = 1;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceFilter|null
+     * Generated from protobuf field <code>repeated string device_ids = 1;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getFilter()
+    public function getDeviceIds()
     {
-        return $this->filter;
-    }
-
-    public function hasFilter()
-    {
-        return isset($this->filter);
-    }
-
-    public function clearFilter()
-    {
-        unset($this->filter);
+        return $this->device_ids;
     }
 
     /**
-     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceFilter filter = 1;</code>
-     * @param \RoadRunner\Centrifugal\API\DTO\V1\DeviceFilter $var
+     * Generated from protobuf field <code>repeated string device_ids = 1;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setFilter($var)
+    public function setDeviceIds($var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\DeviceFilter::class);
-        $this->filter = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->device_ids = $arr;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>repeated string fcm_tokens = 2;</code>
+     * Generated from protobuf field <code>repeated string channels = 2;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getChannels()
+    {
+        return $this->channels;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string channels = 2;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setChannels($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->channels = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string fcm_tokens = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getFcmTokens()
@@ -109,7 +126,7 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string fcm_tokens = 2;</code>
+     * Generated from protobuf field <code>repeated string fcm_tokens = 3;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -122,7 +139,7 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string fcm_topic = 3;</code>
+     * Generated from protobuf field <code>string fcm_topic = 4;</code>
      * @return string
      */
     public function getFcmTopic()
@@ -131,7 +148,7 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string fcm_topic = 3;</code>
+     * Generated from protobuf field <code>string fcm_topic = 4;</code>
      * @param string $var
      * @return $this
      */
@@ -144,7 +161,7 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string fcm_condition = 4;</code>
+     * Generated from protobuf field <code>string fcm_condition = 5;</code>
      * @return string
      */
     public function getFcmCondition()
@@ -153,7 +170,7 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string fcm_condition = 4;</code>
+     * Generated from protobuf field <code>string fcm_condition = 5;</code>
      * @param string $var
      * @return $this
      */
@@ -166,7 +183,7 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string hms_tokens = 5;</code>
+     * Generated from protobuf field <code>repeated string hms_tokens = 6;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getHmsTokens()
@@ -175,7 +192,7 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string hms_tokens = 5;</code>
+     * Generated from protobuf field <code>repeated string hms_tokens = 6;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -188,7 +205,7 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string hms_topic = 6;</code>
+     * Generated from protobuf field <code>string hms_topic = 7;</code>
      * @return string
      */
     public function getHmsTopic()
@@ -197,7 +214,7 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string hms_topic = 6;</code>
+     * Generated from protobuf field <code>string hms_topic = 7;</code>
      * @param string $var
      * @return $this
      */
@@ -210,7 +227,7 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string hms_condition = 7;</code>
+     * Generated from protobuf field <code>string hms_condition = 8;</code>
      * @return string
      */
     public function getHmsCondition()
@@ -219,7 +236,7 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string hms_condition = 7;</code>
+     * Generated from protobuf field <code>string hms_condition = 8;</code>
      * @param string $var
      * @return $this
      */
@@ -232,7 +249,7 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string apns_tokens = 8;</code>
+     * Generated from protobuf field <code>repeated string apns_tokens = 9;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getApnsTokens()
@@ -241,7 +258,7 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated string apns_tokens = 8;</code>
+     * Generated from protobuf field <code>repeated string apns_tokens = 9;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

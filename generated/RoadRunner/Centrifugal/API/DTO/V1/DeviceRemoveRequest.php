@@ -21,6 +21,10 @@ class DeviceRemoveRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string users = 2;</code>
      */
     private $users;
+    /**
+     * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.DeviceProviderTokens provider_tokens = 3;</code>
+     */
+    private $provider_tokens;
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class DeviceRemoveRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ids
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $users
+     *     @type array<\RoadRunner\Centrifugal\API\DTO\V1\DeviceProviderTokens>|\Google\Protobuf\Internal\RepeatedField $provider_tokens
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class DeviceRemoveRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->users = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.DeviceProviderTokens provider_tokens = 3;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getProviderTokens()
+    {
+        return $this->provider_tokens;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.DeviceProviderTokens provider_tokens = 3;</code>
+     * @param array<\RoadRunner\Centrifugal\API\DTO\V1\DeviceProviderTokens>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setProviderTokens($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\Centrifugal\API\DTO\V1\DeviceProviderTokens::class);
+        $this->provider_tokens = $arr;
 
         return $this;
     }

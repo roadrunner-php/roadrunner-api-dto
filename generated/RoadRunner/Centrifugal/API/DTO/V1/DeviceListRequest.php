@@ -14,32 +14,49 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeviceListRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceFilter filter = 1;</code>
+     * Generated from protobuf field <code>repeated string ids = 1;</code>
      */
-    protected $filter = null;
+    private $ids;
     /**
-     * Generated from protobuf field <code>bool include_total_count = 2;</code>
+     * Generated from protobuf field <code>repeated string providers = 2;</code>
      */
-    protected $include_total_count = false;
+    private $providers;
     /**
-     * Generated from protobuf field <code>bool include_meta = 3;</code>
+     * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.DeviceProviderTokens provider_tokens = 3;</code>
+     */
+    private $provider_tokens;
+    /**
+     * Generated from protobuf field <code>repeated string platforms = 4;</code>
+     */
+    private $platforms;
+    /**
+     * Generated from protobuf field <code>repeated string users = 5;</code>
+     */
+    private $users;
+    /**
+     * Generated from protobuf field <code>repeated string channels = 6;</code>
+     */
+    private $channels;
+    /**
+     * Generated from protobuf field <code>string since = 7;</code>
+     */
+    protected $since = '';
+    /**
+     * Generated from protobuf field <code>int32 limit = 8;</code>
+     */
+    protected $limit = 0;
+    /**
+     * Generated from protobuf field <code>bool include_channels = 10;</code>
+     */
+    protected $include_channels = false;
+    /**
+     * Generated from protobuf field <code>bool include_meta = 11;</code>
      */
     protected $include_meta = false;
     /**
-     *bool include_labels = 5;
-     *bool include_scores = 6;
-     *
-     * Generated from protobuf field <code>bool include_topics = 4;</code>
+     * Generated from protobuf field <code>bool include_tags = 12;</code>
      */
-    protected $include_topics = false;
-    /**
-     * Generated from protobuf field <code>string cursor = 10;</code>
-     */
-    protected $cursor = '';
-    /**
-     * Generated from protobuf field <code>int32 limit = 11;</code>
-     */
-    protected $limit = 0;
+    protected $include_tags = false;
 
     /**
      * Constructor.
@@ -47,14 +64,17 @@ class DeviceListRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceFilter $filter
-     *     @type bool $include_total_count
-     *     @type bool $include_meta
-     *     @type bool $include_topics
-     *          bool include_labels = 5;
-     *          bool include_scores = 6;
-     *     @type string $cursor
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ids
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $providers
+     *     @type array<\RoadRunner\Centrifugal\API\DTO\V1\DeviceProviderTokens>|\Google\Protobuf\Internal\RepeatedField $provider_tokens
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $platforms
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $users
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $channels
+     *     @type string $since
      *     @type int $limit
+     *     @type bool $include_channels
+     *     @type bool $include_meta
+     *     @type bool $include_tags
      * }
      */
     public function __construct($data = NULL) {
@@ -63,61 +83,205 @@ class DeviceListRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceFilter filter = 1;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceFilter|null
+     * Generated from protobuf field <code>repeated string ids = 1;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getFilter()
+    public function getIds()
     {
-        return $this->filter;
-    }
-
-    public function hasFilter()
-    {
-        return isset($this->filter);
-    }
-
-    public function clearFilter()
-    {
-        unset($this->filter);
+        return $this->ids;
     }
 
     /**
-     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceFilter filter = 1;</code>
-     * @param \RoadRunner\Centrifugal\API\DTO\V1\DeviceFilter $var
+     * Generated from protobuf field <code>repeated string ids = 1;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setFilter($var)
+    public function setIds($var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\DeviceFilter::class);
-        $this->filter = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->ids = $arr;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>bool include_total_count = 2;</code>
-     * @return bool
+     * Generated from protobuf field <code>repeated string providers = 2;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getIncludeTotalCount()
+    public function getProviders()
     {
-        return $this->include_total_count;
+        return $this->providers;
     }
 
     /**
-     * Generated from protobuf field <code>bool include_total_count = 2;</code>
+     * Generated from protobuf field <code>repeated string providers = 2;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setProviders($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->providers = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.DeviceProviderTokens provider_tokens = 3;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getProviderTokens()
+    {
+        return $this->provider_tokens;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.DeviceProviderTokens provider_tokens = 3;</code>
+     * @param array<\RoadRunner\Centrifugal\API\DTO\V1\DeviceProviderTokens>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setProviderTokens($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\Centrifugal\API\DTO\V1\DeviceProviderTokens::class);
+        $this->provider_tokens = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string platforms = 4;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPlatforms()
+    {
+        return $this->platforms;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string platforms = 4;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setPlatforms($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->platforms = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string users = 5;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string users = 5;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setUsers($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->users = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string channels = 6;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getChannels()
+    {
+        return $this->channels;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string channels = 6;</code>
+     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setChannels($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->channels = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string since = 7;</code>
+     * @return string
+     */
+    public function getSince()
+    {
+        return $this->since;
+    }
+
+    /**
+     * Generated from protobuf field <code>string since = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSince($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->since = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 limit = 8;</code>
+     * @return int
+     */
+    public function getLimit()
+    {
+        return $this->limit;
+    }
+
+    /**
+     * Generated from protobuf field <code>int32 limit = 8;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setLimit($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->limit = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool include_channels = 10;</code>
+     * @return bool
+     */
+    public function getIncludeChannels()
+    {
+        return $this->include_channels;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool include_channels = 10;</code>
      * @param bool $var
      * @return $this
      */
-    public function setIncludeTotalCount($var)
+    public function setIncludeChannels($var)
     {
         GPBUtil::checkBool($var);
-        $this->include_total_count = $var;
+        $this->include_channels = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>bool include_meta = 3;</code>
+     * Generated from protobuf field <code>bool include_meta = 11;</code>
      * @return bool
      */
     public function getIncludeMeta()
@@ -126,7 +290,7 @@ class DeviceListRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool include_meta = 3;</code>
+     * Generated from protobuf field <code>bool include_meta = 11;</code>
      * @param bool $var
      * @return $this
      */
@@ -139,73 +303,23 @@ class DeviceListRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *bool include_labels = 5;
-     *bool include_scores = 6;
-     *
-     * Generated from protobuf field <code>bool include_topics = 4;</code>
+     * Generated from protobuf field <code>bool include_tags = 12;</code>
      * @return bool
      */
-    public function getIncludeTopics()
+    public function getIncludeTags()
     {
-        return $this->include_topics;
+        return $this->include_tags;
     }
 
     /**
-     *bool include_labels = 5;
-     *bool include_scores = 6;
-     *
-     * Generated from protobuf field <code>bool include_topics = 4;</code>
+     * Generated from protobuf field <code>bool include_tags = 12;</code>
      * @param bool $var
      * @return $this
      */
-    public function setIncludeTopics($var)
+    public function setIncludeTags($var)
     {
         GPBUtil::checkBool($var);
-        $this->include_topics = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string cursor = 10;</code>
-     * @return string
-     */
-    public function getCursor()
-    {
-        return $this->cursor;
-    }
-
-    /**
-     * Generated from protobuf field <code>string cursor = 10;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setCursor($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->cursor = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 limit = 11;</code>
-     * @return int
-     */
-    public function getLimit()
-    {
-        return $this->limit;
-    }
-
-    /**
-     * Generated from protobuf field <code>int32 limit = 11;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setLimit($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->limit = $var;
+        $this->include_tags = $var;
 
         return $this;
     }

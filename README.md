@@ -5,7 +5,7 @@
 [![Total Downloads](https://poser.pugx.org/roadrunner-php/roadrunner-api-dto/downloads)](https://packagist.org/packages/roadrunner-php/roadrunner-api-dto)
 
 This is a GitHub repository and Composer package that provides PHP Data Transfer Object (DTO) messages for RoadRunner
-API protocol buffer files, available at https://github.com/roadrunner-server/api.
+API protocol buffer files, available at <https://github.com/roadrunner-server/api>.
 
 With this repository, you can use pre-generated DTO messages for the following RoadRunner plugins:
 
@@ -41,6 +41,34 @@ Then run:
 
 ```bash
 ./generate.sh
+```
+
+### Generating DTOs with Docker
+
+You can also generate the DTOs using Docker. Simply run the following commands:
+
+1. Build the Docker image:
+
+```bash
+docker buildx build . -t api
+```
+
+2. Run the Docker image:
+
+```bash
+docker run --name api-dto api
+```
+
+3. Copy the generated files from the Docker container:
+
+```bash
+docker cp api-dto:/generated ./generated
+```
+
+4. Remove the Docker container:
+
+```bash
+docker rm api-dto
 ```
 
 > Note: You will need to have the `protoc` >= 3.15 binary installed on your system.

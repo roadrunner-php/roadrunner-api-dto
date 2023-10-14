@@ -38,12 +38,13 @@ class DeviceRegisterRequest extends \Google\Protobuf\Internal\Message
      */
     private $meta;
     /**
-     *map<string, string> labels = 8;
-     *map<string, int64> scores = 9;
-     *
-     * Generated from protobuf field <code>repeated string topics = 7;</code>
+     * Generated from protobuf field <code>map<string, string> tags = 7;</code>
      */
-    private $topics;
+    private $tags;
+    /**
+     * Generated from protobuf field <code>repeated string channels = 8;</code>
+     */
+    private $channels;
 
     /**
      * Constructor.
@@ -57,9 +58,8 @@ class DeviceRegisterRequest extends \Google\Protobuf\Internal\Message
      *     @type string $platform
      *     @type string $user
      *     @type array|\Google\Protobuf\Internal\MapField $meta
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $topics
-     *          map<string, string> labels = 8;
-     *          map<string, int64> scores = 9;
+     *     @type array|\Google\Protobuf\Internal\MapField $tags
+     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $channels
      * }
      */
     public function __construct($data = NULL) {
@@ -200,29 +200,45 @@ class DeviceRegisterRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *map<string, string> labels = 8;
-     *map<string, int64> scores = 9;
-     *
-     * Generated from protobuf field <code>repeated string topics = 7;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * Generated from protobuf field <code>map<string, string> tags = 7;</code>
+     * @return \Google\Protobuf\Internal\MapField
      */
-    public function getTopics()
+    public function getTags()
     {
-        return $this->topics;
+        return $this->tags;
     }
 
     /**
-     *map<string, string> labels = 8;
-     *map<string, int64> scores = 9;
-     *
-     * Generated from protobuf field <code>repeated string topics = 7;</code>
+     * Generated from protobuf field <code>map<string, string> tags = 7;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setTags($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->tags = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string channels = 8;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getChannels()
+    {
+        return $this->channels;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string channels = 8;</code>
      * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setTopics($var)
+    public function setChannels($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        $this->topics = $arr;
+        $this->channels = $arr;
 
         return $this;
     }

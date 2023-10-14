@@ -21,6 +21,10 @@ class Disconnect extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string reason = 2;</code>
      */
     protected $reason = '';
+    /**
+     * Generated from protobuf field <code>bool reconnect = 3;</code>
+     */
+    protected $reconnect = false;
 
     /**
      * Constructor.
@@ -30,6 +34,7 @@ class Disconnect extends \Google\Protobuf\Internal\Message
      *
      *     @type int $code
      *     @type string $reason
+     *     @type bool $reconnect
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +82,28 @@ class Disconnect extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->reason = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool reconnect = 3;</code>
+     * @return bool
+     */
+    public function getReconnect()
+    {
+        return $this->reconnect;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool reconnect = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setReconnect($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->reconnect = $var;
 
         return $this;
     }

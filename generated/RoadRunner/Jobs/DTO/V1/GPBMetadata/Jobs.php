@@ -26,7 +26,7 @@ class Jobs
 job (	
 
 id (	
-payload (*
+payload (	*
 headers (2.jobs.v1.Job.HeadersEntry!
 options (2.jobs.v1.OptionsD
 HeadersEntry

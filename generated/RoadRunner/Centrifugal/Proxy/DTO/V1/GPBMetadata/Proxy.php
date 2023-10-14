@@ -16,12 +16,13 @@ class Proxy
         }
         $pool->internalAddGeneratedFile(
             '
-ê$
-centrifugo/proxy/v1/proxy.protocentrifugal.centrifugo.proxy"0
+ù$
+centrifugo/proxy/v1/proxy.protocentrifugal.centrifugo.proxy"=
 
 Disconnect
 code (
-reason (	J"9
+reason (	
+	reconnect ("9
 Error
 code (
 message (	

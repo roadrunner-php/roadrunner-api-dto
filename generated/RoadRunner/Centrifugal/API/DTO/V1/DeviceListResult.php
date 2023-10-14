@@ -18,13 +18,9 @@ class DeviceListResult extends \Google\Protobuf\Internal\Message
      */
     private $items;
     /**
-     * Generated from protobuf field <code>string next_cursor = 2;</code>
+     * Generated from protobuf field <code>bool has_more = 2;</code>
      */
-    protected $next_cursor = '';
-    /**
-     * Generated from protobuf field <code>int64 total_count = 3;</code>
-     */
-    protected $total_count = 0;
+    protected $has_more = false;
 
     /**
      * Constructor.
@@ -33,8 +29,7 @@ class DeviceListResult extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type array<\RoadRunner\Centrifugal\API\DTO\V1\Device>|\Google\Protobuf\Internal\RepeatedField $items
-     *     @type string $next_cursor
-     *     @type int|string $total_count
+     *     @type bool $has_more
      * }
      */
     public function __construct($data = NULL) {
@@ -65,45 +60,23 @@ class DeviceListResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string next_cursor = 2;</code>
-     * @return string
+     * Generated from protobuf field <code>bool has_more = 2;</code>
+     * @return bool
      */
-    public function getNextCursor()
+    public function getHasMore()
     {
-        return $this->next_cursor;
+        return $this->has_more;
     }
 
     /**
-     * Generated from protobuf field <code>string next_cursor = 2;</code>
-     * @param string $var
+     * Generated from protobuf field <code>bool has_more = 2;</code>
+     * @param bool $var
      * @return $this
      */
-    public function setNextCursor($var)
+    public function setHasMore($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->next_cursor = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>int64 total_count = 3;</code>
-     * @return int|string
-     */
-    public function getTotalCount()
-    {
-        return $this->total_count;
-    }
-
-    /**
-     * Generated from protobuf field <code>int64 total_count = 3;</code>
-     * @param int|string $var
-     * @return $this
-     */
-    public function setTotalCount($var)
-    {
-        GPBUtil::checkInt64($var);
-        $this->total_count = $var;
+        GPBUtil::checkBool($var);
+        $this->has_more = $var;
 
         return $this;
     }
