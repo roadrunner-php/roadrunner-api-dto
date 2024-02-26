@@ -25,6 +25,10 @@ class UserStatus extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int64 online = 3;</code>
      */
     protected $online = 0;
+    /**
+     * Generated from protobuf field <code>string state = 4;</code>
+     */
+    protected $state = '';
 
     /**
      * Constructor.
@@ -35,6 +39,7 @@ class UserStatus extends \Google\Protobuf\Internal\Message
      *     @type string $user
      *     @type int|string $active
      *     @type int|string $online
+     *     @type string $state
      * }
      */
     public function __construct($data = NULL) {
@@ -104,6 +109,28 @@ class UserStatus extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->online = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string state = 4;</code>
+     * @return string
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    /**
+     * Generated from protobuf field <code>string state = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setState($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->state = $var;
 
         return $this;
     }

@@ -17,6 +17,10 @@ class UpdateUserStatusRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string users = 1;</code>
      */
     private $users;
+    /**
+     * Generated from protobuf field <code>string state = 2;</code>
+     */
+    protected $state = '';
 
     /**
      * Constructor.
@@ -25,6 +29,7 @@ class UpdateUserStatusRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $users
+     *     @type string $state
      * }
      */
     public function __construct($data = NULL) {
@@ -50,6 +55,28 @@ class UpdateUserStatusRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->users = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string state = 2;</code>
+     * @return string
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    /**
+     * Generated from protobuf field <code>string state = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setState($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->state = $var;
 
         return $this;
     }

@@ -17,30 +17,26 @@ class Http
         \GPBMetadata\Google\Protobuf\Any::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¯
-http/v1beta/http.protohttp.v1beta"·
+ê
+http/v1beta/http.protohttp.v1beta"ò
 Request
 remote_addr (	
 protocol (	
 method (	
 uri (	0
 header (2 .http.v1beta.Request.HeaderEntry2
-cookies (2!.http.v1beta.Request.CookiesEntry
-	raw_query (	
-parsed (8
+cookies (2!.http.v1beta.Request.CookiesEntry7
 
-attributes	 (2$.http.v1beta.Request.AttributesEntry%
+form_query (2#.http.v1beta.Request.FormQueryEntry%
 uploads
- (2.http.v1beta.Uploads
-body (
-raw_body (G
+ (2.http.v1beta.UploadsG
 HeaderEntry
 key (	\'
 value (2.http.v1beta.HeaderValue:8H
 CookiesEntry
 key (	\'
-value (2.http.v1beta.HeaderValue:8K
-AttributesEntry
+value (2.http.v1beta.HeaderValue:8J
+FormQueryEntry
 key (	\'
 value (2.http.v1beta.HeaderValue:8"™
 Response

@@ -22,11 +22,11 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      */
     protected $type = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 3 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 3;</code>
      */
     protected $start_time = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp close_time = 4 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp close_time = 4;</code>
      */
     protected $close_time = null;
     /**
@@ -46,7 +46,7 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      */
     protected $parent_execution = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp execution_time = 9 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp execution_time = 9;</code>
      */
     protected $execution_time = null;
     /**
@@ -175,7 +175,7 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 3 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 3;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartTime()
@@ -194,7 +194,7 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 3 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 3;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -207,7 +207,7 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp close_time = 4 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp close_time = 4;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getCloseTime()
@@ -226,7 +226,7 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp close_time = 4 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp close_time = 4;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -337,7 +337,7 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp execution_time = 9 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp execution_time = 9;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getExecutionTime()
@@ -356,7 +356,7 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp execution_time = 9 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp execution_time = 9;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */

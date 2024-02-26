@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class TriggerImmediatelyRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Override overlap policy for this one request.
+     * If set, override overlap policy for this one request.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ScheduleOverlapPolicy overlap_policy = 1;</code>
      */
@@ -27,7 +27,7 @@ class TriggerImmediatelyRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $overlap_policy
-     *           Override overlap policy for this one request.
+     *           If set, override overlap policy for this one request.
      * }
      */
     public function __construct($data = NULL) {
@@ -36,7 +36,7 @@ class TriggerImmediatelyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Override overlap policy for this one request.
+     * If set, override overlap policy for this one request.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ScheduleOverlapPolicy overlap_policy = 1;</code>
      * @return int
@@ -47,7 +47,7 @@ class TriggerImmediatelyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Override overlap policy for this one request.
+     * If set, override overlap policy for this one request.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ScheduleOverlapPolicy overlap_policy = 1;</code>
      * @param int $var

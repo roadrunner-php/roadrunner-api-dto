@@ -32,7 +32,7 @@ class VersionInfo extends \Google\Protobuf\Internal\Message
      */
     private $alerts;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp last_update_time = 5 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_update_time = 5;</code>
      */
     protected $last_update_time = null;
 
@@ -163,7 +163,7 @@ class VersionInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp last_update_time = 5 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_update_time = 5;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getLastUpdateTime()
@@ -182,7 +182,7 @@ class VersionInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp last_update_time = 5 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_update_time = 5;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */

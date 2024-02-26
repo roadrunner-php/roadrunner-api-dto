@@ -40,19 +40,19 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     /**
      * Total workflow execution timeout including retries and continue as new
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 6 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 6;</code>
      */
     protected $workflow_execution_timeout = null;
     /**
      * Timeout of a single workflow run
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 7 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 7;</code>
      */
     protected $workflow_run_timeout = null;
     /**
      * Timeout of a single workflow task
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 8 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 8;</code>
      */
     protected $workflow_task_timeout = null;
     /**
@@ -121,7 +121,7 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * will be ignored, even if that request also had a delay. Signal via SignalWorkflowExecution
      * will not unblock the workflow.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_start_delay = 20 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_start_delay = 20;</code>
      */
     protected $workflow_start_delay = null;
     /**
@@ -335,7 +335,7 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     /**
      * Total workflow execution timeout including retries and continue as new
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 6 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 6;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getWorkflowExecutionTimeout()
@@ -356,7 +356,7 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     /**
      * Total workflow execution timeout including retries and continue as new
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 6 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 6;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
@@ -371,7 +371,7 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     /**
      * Timeout of a single workflow run
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 7 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 7;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getWorkflowRunTimeout()
@@ -392,7 +392,7 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     /**
      * Timeout of a single workflow run
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 7 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 7;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
@@ -407,7 +407,7 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     /**
      * Timeout of a single workflow task
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 8 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 8;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getWorkflowTaskTimeout()
@@ -428,7 +428,7 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     /**
      * Timeout of a single workflow task
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 8 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 8;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
@@ -768,7 +768,7 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * will be ignored, even if that request also had a delay. Signal via SignalWorkflowExecution
      * will not unblock the workflow.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_start_delay = 20 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_start_delay = 20;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getWorkflowStartDelay()
@@ -794,7 +794,7 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * will be ignored, even if that request also had a delay. Signal via SignalWorkflowExecution
      * will not unblock the workflow.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_start_delay = 20 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_start_delay = 20;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */

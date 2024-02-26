@@ -41,7 +41,7 @@ class ActivityTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_close_timeout = 7 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_close_timeout = 7;</code>
      */
     protected $schedule_to_close_timeout = null;
     /**
@@ -52,7 +52,7 @@ class ActivityTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_start_timeout = 8 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_start_timeout = 8;</code>
      */
     protected $schedule_to_start_timeout = null;
     /**
@@ -62,13 +62,13 @@ class ActivityTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration start_to_close_timeout = 9 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration start_to_close_timeout = 9;</code>
      */
     protected $start_to_close_timeout = null;
     /**
      * Maximum permitted time between successful worker heartbeats.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration heartbeat_timeout = 10 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration heartbeat_timeout = 10;</code>
      */
     protected $heartbeat_timeout = null;
     /**
@@ -303,7 +303,7 @@ class ActivityTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_close_timeout = 7 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_close_timeout = 7;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getScheduleToCloseTimeout()
@@ -327,7 +327,7 @@ class ActivityTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_close_timeout = 7 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_close_timeout = 7;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
@@ -347,7 +347,7 @@ class ActivityTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_start_timeout = 8 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_start_timeout = 8;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getScheduleToStartTimeout()
@@ -373,7 +373,7 @@ class ActivityTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_start_timeout = 8 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_start_timeout = 8;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
@@ -392,7 +392,7 @@ class ActivityTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration start_to_close_timeout = 9 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration start_to_close_timeout = 9;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getStartToCloseTimeout()
@@ -417,7 +417,7 @@ class ActivityTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration start_to_close_timeout = 9 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration start_to_close_timeout = 9;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
@@ -432,7 +432,7 @@ class ActivityTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
     /**
      * Maximum permitted time between successful worker heartbeats.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration heartbeat_timeout = 10 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration heartbeat_timeout = 10;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getHeartbeatTimeout()
@@ -453,7 +453,7 @@ class ActivityTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
     /**
      * Maximum permitted time between successful worker heartbeats.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration heartbeat_timeout = 10 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration heartbeat_timeout = 10;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */

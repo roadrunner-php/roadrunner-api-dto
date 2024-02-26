@@ -25,6 +25,17 @@ class ApplicationFailureInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads details = 3;</code>
      */
     protected $details = null;
+    /**
+     * next_retry_delay can be used by the client to override the activity
+     * retry interval calculated by the retry policy. Retry attempts will
+     * still be subject to the maximum retries limit and total time limit
+     * defined by the policy.
+     * ATTENTION: this value will be ignored if set for failures produced by
+     * the workflow.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration next_retry_delay = 4;</code>
+     */
+    protected $next_retry_delay = null;
 
     /**
      * Constructor.
@@ -35,6 +46,13 @@ class ApplicationFailureInfo extends \Google\Protobuf\Internal\Message
      *     @type string $type
      *     @type bool $non_retryable
      *     @type \Temporal\Api\Common\V1\Payloads $details
+     *     @type \Google\Protobuf\Duration $next_retry_delay
+     *           next_retry_delay can be used by the client to override the activity
+     *           retry interval calculated by the retry policy. Retry attempts will
+     *           still be subject to the maximum retries limit and total time limit
+     *           defined by the policy.
+     *           ATTENTION: this value will be ignored if set for failures produced by
+     *           the workflow.
      * }
      */
     public function __construct($data = NULL) {
@@ -114,6 +132,52 @@ class ApplicationFailureInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->details = $var;
+
+        return $this;
+    }
+
+    /**
+     * next_retry_delay can be used by the client to override the activity
+     * retry interval calculated by the retry policy. Retry attempts will
+     * still be subject to the maximum retries limit and total time limit
+     * defined by the policy.
+     * ATTENTION: this value will be ignored if set for failures produced by
+     * the workflow.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration next_retry_delay = 4;</code>
+     * @return \Google\Protobuf\Duration|null
+     */
+    public function getNextRetryDelay()
+    {
+        return $this->next_retry_delay;
+    }
+
+    public function hasNextRetryDelay()
+    {
+        return isset($this->next_retry_delay);
+    }
+
+    public function clearNextRetryDelay()
+    {
+        unset($this->next_retry_delay);
+    }
+
+    /**
+     * next_retry_delay can be used by the client to override the activity
+     * retry interval calculated by the retry policy. Retry attempts will
+     * still be subject to the maximum retries limit and total time limit
+     * defined by the policy.
+     * ATTENTION: this value will be ignored if set for failures produced by
+     * the workflow.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration next_retry_delay = 4;</code>
+     * @param \Google\Protobuf\Duration $var
+     * @return $this
+     */
+    public function setNextRetryDelay($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
+        $this->next_retry_delay = $var;
 
         return $this;
     }

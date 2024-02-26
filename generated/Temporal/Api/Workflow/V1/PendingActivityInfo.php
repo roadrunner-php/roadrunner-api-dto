@@ -30,11 +30,11 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      */
     protected $heartbeat_details = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp last_heartbeat_time = 5 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_heartbeat_time = 5;</code>
      */
     protected $last_heartbeat_time = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp last_started_time = 6 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_started_time = 6;</code>
      */
     protected $last_started_time = null;
     /**
@@ -46,11 +46,11 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      */
     protected $maximum_attempts = 0;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 9 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 9;</code>
      */
     protected $scheduled_time = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp expiration_time = 10 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expiration_time = 10;</code>
      */
     protected $expiration_time = null;
     /**
@@ -196,7 +196,7 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp last_heartbeat_time = 5 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_heartbeat_time = 5;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getLastHeartbeatTime()
@@ -215,7 +215,7 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp last_heartbeat_time = 5 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_heartbeat_time = 5;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -228,7 +228,7 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp last_started_time = 6 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_started_time = 6;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getLastStartedTime()
@@ -247,7 +247,7 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp last_started_time = 6 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_started_time = 6;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -304,7 +304,7 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 9 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 9;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getScheduledTime()
@@ -323,7 +323,7 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 9 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 9;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -336,7 +336,7 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp expiration_time = 10 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expiration_time = 10;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getExpirationTime()
@@ -355,7 +355,7 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp expiration_time = 10 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expiration_time = 10;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */

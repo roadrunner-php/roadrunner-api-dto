@@ -44,6 +44,12 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
      * Generated from protobuf field <code>bool skip_generate_workflow_task = 5;</code>
      */
     protected $skip_generate_workflow_task = false;
+    /**
+     * When signal origin is a workflow execution, this field is set.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.WorkflowExecution external_workflow_execution = 6;</code>
+     */
+    protected $external_workflow_execution = null;
 
     /**
      * Constructor.
@@ -62,6 +68,8 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
      *           server into the workflow task.
      *     @type bool $skip_generate_workflow_task
      *           Indicates the signal did not generate a new workflow task when received.
+     *     @type \Temporal\Api\Common\V1\WorkflowExecution $external_workflow_execution
+     *           When signal origin is a workflow execution, this field is set.
      * }
      */
     public function __construct($data = NULL) {
@@ -217,6 +225,42 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
     {
         GPBUtil::checkBool($var);
         $this->skip_generate_workflow_task = $var;
+
+        return $this;
+    }
+
+    /**
+     * When signal origin is a workflow execution, this field is set.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.WorkflowExecution external_workflow_execution = 6;</code>
+     * @return \Temporal\Api\Common\V1\WorkflowExecution|null
+     */
+    public function getExternalWorkflowExecution()
+    {
+        return $this->external_workflow_execution;
+    }
+
+    public function hasExternalWorkflowExecution()
+    {
+        return isset($this->external_workflow_execution);
+    }
+
+    public function clearExternalWorkflowExecution()
+    {
+        unset($this->external_workflow_execution);
+    }
+
+    /**
+     * When signal origin is a workflow execution, this field is set.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.WorkflowExecution external_workflow_execution = 6;</code>
+     * @param \Temporal\Api\Common\V1\WorkflowExecution $var
+     * @return $this
+     */
+    public function setExternalWorkflowExecution($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
+        $this->external_workflow_execution = $var;
 
         return $this;
     }

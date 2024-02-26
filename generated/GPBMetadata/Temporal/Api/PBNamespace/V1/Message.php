@@ -16,12 +16,11 @@ class Message
         }
         \GPBMetadata\Google\Protobuf\Duration::initOnce();
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
-        \GPBMetadata\Dependencies\Gogoproto\Gogo::initOnce();
         \GPBMetadata\Temporal\Api\Enums\V1\PBNamespace::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Æ
-\'temporal/api/namespace/v1/message.prototemporal.api.namespace.v1google/protobuf/timestamp.proto!dependencies/gogoproto/gogo.proto%temporal/api/enums/v1/namespace.proto"”
+½
+\'temporal/api/namespace/v1/message.prototemporal.api.namespace.v1google/protobuf/timestamp.proto%temporal/api/enums/v1/namespace.proto"º
 NamespaceInfo
 name (	4
 state (2%.temporal.api.enums.v1.NamespaceState
@@ -29,13 +28,18 @@ class Message
 owner_email (	@
 data (22.temporal.api.namespace.v1.NamespaceInfo.DataEntry
 
-id (	
+id (	K
+capabilities (25.temporal.api.namespace.v1.NamespaceInfo.Capabilities
 supports_schedulesd (+
 	DataEntry
 key (	
-value (	:8"¤
-NamespaceConfigI
- workflow_execution_retention_ttl (2.google.protobuf.DurationB˜ß<
+value (	:8W
+Capabilities
+eager_workflow_start (
+sync_update (
+async_update ("ž
+NamespaceConfigC
+ workflow_execution_retention_ttl (2.google.protobuf.Duration<
 bad_binaries (2&.temporal.api.namespace.v1.BadBinariesD
 history_archival_state (2$.temporal.api.enums.v1.ArchivalState
 history_archival_uri (	G
@@ -49,11 +53,11 @@ class Message
 binaries (24.temporal.api.namespace.v1.BadBinaries.BinariesEntryY
 BinariesEntry
 key (	7
-value (2(.temporal.api.namespace.v1.BadBinaryInfo:8"h
+value (2(.temporal.api.namespace.v1.BadBinaryInfo:8"b
 BadBinaryInfo
 reason (	
-operator (	5
-create_time (2.google.protobuf.TimestampBß"ê
+operator (	/
+create_time (2.google.protobuf.Timestamp"ê
 UpdateNamespaceInfo
 description (	
 owner_email (	F

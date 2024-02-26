@@ -45,6 +45,12 @@ class ResourceExhaustedCause
      * Generated from protobuf enum <code>RESOURCE_EXHAUSTED_CAUSE_BUSY_WORKFLOW = 5;</code>
      */
     const RESOURCE_EXHAUSTED_CAUSE_BUSY_WORKFLOW = 5;
+    /**
+     * Caller exceeds action per second limit.
+     *
+     * Generated from protobuf enum <code>RESOURCE_EXHAUSTED_CAUSE_APS_LIMIT = 6;</code>
+     */
+    const RESOURCE_EXHAUSTED_CAUSE_APS_LIMIT = 6;
 
     private static $valueToName = [
         self::RESOURCE_EXHAUSTED_CAUSE_UNSPECIFIED => 'RESOURCE_EXHAUSTED_CAUSE_UNSPECIFIED',
@@ -53,6 +59,7 @@ class ResourceExhaustedCause
         self::RESOURCE_EXHAUSTED_CAUSE_SYSTEM_OVERLOADED => 'RESOURCE_EXHAUSTED_CAUSE_SYSTEM_OVERLOADED',
         self::RESOURCE_EXHAUSTED_CAUSE_PERSISTENCE_LIMIT => 'RESOURCE_EXHAUSTED_CAUSE_PERSISTENCE_LIMIT',
         self::RESOURCE_EXHAUSTED_CAUSE_BUSY_WORKFLOW => 'RESOURCE_EXHAUSTED_CAUSE_BUSY_WORKFLOW',
+        self::RESOURCE_EXHAUSTED_CAUSE_APS_LIMIT => 'RESOURCE_EXHAUSTED_CAUSE_APS_LIMIT',
     ];
 
     public static function name($value)

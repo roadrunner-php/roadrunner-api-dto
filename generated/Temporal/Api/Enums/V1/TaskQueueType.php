@@ -27,11 +27,18 @@ class TaskQueueType
      * Generated from protobuf enum <code>TASK_QUEUE_TYPE_ACTIVITY = 2;</code>
      */
     const TASK_QUEUE_TYPE_ACTIVITY = 2;
+    /**
+     * Task queue type for dispatching Nexus requests.
+     *
+     * Generated from protobuf enum <code>TASK_QUEUE_TYPE_NEXUS = 3;</code>
+     */
+    const TASK_QUEUE_TYPE_NEXUS = 3;
 
     private static $valueToName = [
         self::TASK_QUEUE_TYPE_UNSPECIFIED => 'TASK_QUEUE_TYPE_UNSPECIFIED',
         self::TASK_QUEUE_TYPE_WORKFLOW => 'TASK_QUEUE_TYPE_WORKFLOW',
         self::TASK_QUEUE_TYPE_ACTIVITY => 'TASK_QUEUE_TYPE_ACTIVITY',
+        self::TASK_QUEUE_TYPE_NEXUS => 'TASK_QUEUE_TYPE_NEXUS',
     ];
 
     public static function name($value)

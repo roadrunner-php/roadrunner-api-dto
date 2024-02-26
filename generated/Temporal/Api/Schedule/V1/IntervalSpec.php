@@ -26,11 +26,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class IntervalSpec extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.protobuf.Duration interval = 1 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration interval = 1;</code>
      */
     protected $interval = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Duration phase = 2 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration phase = 2;</code>
      */
     protected $phase = null;
 
@@ -50,7 +50,7 @@ class IntervalSpec extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Duration interval = 1 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration interval = 1;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getInterval()
@@ -69,7 +69,7 @@ class IntervalSpec extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Duration interval = 1 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration interval = 1;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
@@ -82,7 +82,7 @@ class IntervalSpec extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Duration phase = 2 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration phase = 2;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getPhase()
@@ -101,7 +101,7 @@ class IntervalSpec extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Duration phase = 2 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration phase = 2;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */

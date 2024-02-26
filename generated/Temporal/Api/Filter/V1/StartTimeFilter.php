@@ -14,11 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class StartTimeFilter extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp earliest_time = 1 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp earliest_time = 1;</code>
      */
     protected $earliest_time = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp latest_time = 2 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp latest_time = 2;</code>
      */
     protected $latest_time = null;
 
@@ -38,7 +38,7 @@ class StartTimeFilter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp earliest_time = 1 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp earliest_time = 1;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getEarliestTime()
@@ -57,7 +57,7 @@ class StartTimeFilter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp earliest_time = 1 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp earliest_time = 1;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -70,7 +70,7 @@ class StartTimeFilter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp latest_time = 2 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp latest_time = 2;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getLatestTime()
@@ -89,7 +89,7 @@ class StartTimeFilter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp latest_time = 2 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp latest_time = 2;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */

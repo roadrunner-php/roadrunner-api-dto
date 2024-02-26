@@ -33,6 +33,8 @@ class ScheduleState extends \Google\Protobuf\Internal\Message
      * is zero. Actions may still be taken by explicit request (i.e. trigger
      * immediately or backfill). Skipped actions (due to overlap policy) do not
      * count against remaining actions.
+     * If a schedule has no more remaining actions, then the schedule will be
+     * subject to automatic deletion (after several days).
      *
      * Generated from protobuf field <code>bool limited_actions = 3;</code>
      */
@@ -60,6 +62,8 @@ class ScheduleState extends \Google\Protobuf\Internal\Message
      *           is zero. Actions may still be taken by explicit request (i.e. trigger
      *           immediately or backfill). Skipped actions (due to overlap policy) do not
      *           count against remaining actions.
+     *           If a schedule has no more remaining actions, then the schedule will be
+     *           subject to automatic deletion (after several days).
      *     @type int|string $remaining_actions
      * }
      */
@@ -130,6 +134,8 @@ class ScheduleState extends \Google\Protobuf\Internal\Message
      * is zero. Actions may still be taken by explicit request (i.e. trigger
      * immediately or backfill). Skipped actions (due to overlap policy) do not
      * count against remaining actions.
+     * If a schedule has no more remaining actions, then the schedule will be
+     * subject to automatic deletion (after several days).
      *
      * Generated from protobuf field <code>bool limited_actions = 3;</code>
      * @return bool
@@ -145,6 +151,8 @@ class ScheduleState extends \Google\Protobuf\Internal\Message
      * is zero. Actions may still be taken by explicit request (i.e. trigger
      * immediately or backfill). Skipped actions (due to overlap policy) do not
      * count against remaining actions.
+     * If a schedule has no more remaining actions, then the schedule will be
+     * subject to automatic deletion (after several days).
      *
      * Generated from protobuf field <code>bool limited_actions = 3;</code>
      * @param bool $var

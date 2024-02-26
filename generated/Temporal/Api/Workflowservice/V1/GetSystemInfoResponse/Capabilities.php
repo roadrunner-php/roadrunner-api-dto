@@ -75,6 +75,13 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool sdk_metadata = 9;</code>
      */
     protected $sdk_metadata = false;
+    /**
+     * True if the server supports count group by execution status
+     * (-- api-linter: core::0140::prepositions=disabled --)
+     *
+     * Generated from protobuf field <code>bool count_group_by_execution_status = 10;</code>
+     */
+    protected $count_group_by_execution_status = false;
 
     /**
      * Constructor.
@@ -106,6 +113,9 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      *     @type bool $sdk_metadata
      *           True if the server knows about the sdk metadata field on WFT completions and will record
      *           it in history
+     *     @type bool $count_group_by_execution_status
+     *           True if the server supports count group by execution status
+     *           (-- api-linter: core::0140::prepositions=disabled --)
      * }
      */
     public function __construct($data = NULL) {
@@ -355,6 +365,34 @@ class Capabilities extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->sdk_metadata = $var;
+
+        return $this;
+    }
+
+    /**
+     * True if the server supports count group by execution status
+     * (-- api-linter: core::0140::prepositions=disabled --)
+     *
+     * Generated from protobuf field <code>bool count_group_by_execution_status = 10;</code>
+     * @return bool
+     */
+    public function getCountGroupByExecutionStatus()
+    {
+        return $this->count_group_by_execution_status;
+    }
+
+    /**
+     * True if the server supports count group by execution status
+     * (-- api-linter: core::0140::prepositions=disabled --)
+     *
+     * Generated from protobuf field <code>bool count_group_by_execution_status = 10;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setCountGroupByExecutionStatus($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->count_group_by_execution_status = $var;
 
         return $this;
     }

@@ -38,29 +38,19 @@ class Request extends \Google\Protobuf\Internal\Message
      */
     private $cookies;
     /**
-     * Generated from protobuf field <code>string raw_query = 7;</code>
+     * Generated from protobuf field <code>map<string, .http.v1beta.HeaderValue> form_query = 7;</code>
      */
-    protected $raw_query = '';
+    private $form_query;
     /**
-     * Generated from protobuf field <code>bool parsed = 8;</code>
-     */
-    protected $parsed = false;
-    /**
-     * Generated from protobuf field <code>map<string, .http.v1beta.HeaderValue> attributes = 9;</code>
-     */
-    private $attributes;
-    /**
+     * string raw_query = 7;
+     * bool parsed = 8;
+     * map<string, HeaderValue> attributes = 9;
+     * bytes body = 11;
+     * bytes raw_body = 12;
+     *
      * Generated from protobuf field <code>.http.v1beta.Uploads uploads = 10;</code>
      */
     protected $uploads = null;
-    /**
-     * Generated from protobuf field <code>bytes body = 11;</code>
-     */
-    protected $body = '';
-    /**
-     * Generated from protobuf field <code>bytes raw_body = 12;</code>
-     */
-    protected $raw_body = '';
 
     /**
      * Constructor.
@@ -74,12 +64,13 @@ class Request extends \Google\Protobuf\Internal\Message
      *     @type string $uri
      *     @type array|\Google\Protobuf\Internal\MapField $header
      *     @type array|\Google\Protobuf\Internal\MapField $cookies
-     *     @type string $raw_query
-     *     @type bool $parsed
-     *     @type array|\Google\Protobuf\Internal\MapField $attributes
+     *     @type array|\Google\Protobuf\Internal\MapField $form_query
      *     @type \RoadRunner\HTTP\DTO\V1BETA1\Uploads $uploads
-     *     @type string $body
-     *     @type string $raw_body
+     *           string raw_query = 7;
+     *           bool parsed = 8;
+     *           map<string, HeaderValue> attributes = 9;
+     *           bytes body = 11;
+     *           bytes raw_body = 12;
      * }
      */
     public function __construct($data = NULL) {
@@ -220,72 +211,34 @@ class Request extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string raw_query = 7;</code>
-     * @return string
-     */
-    public function getRawQuery()
-    {
-        return $this->raw_query;
-    }
-
-    /**
-     * Generated from protobuf field <code>string raw_query = 7;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setRawQuery($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->raw_query = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool parsed = 8;</code>
-     * @return bool
-     */
-    public function getParsed()
-    {
-        return $this->parsed;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool parsed = 8;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setParsed($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->parsed = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>map<string, .http.v1beta.HeaderValue> attributes = 9;</code>
+     * Generated from protobuf field <code>map<string, .http.v1beta.HeaderValue> form_query = 7;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
-    public function getAttributes()
+    public function getFormQuery()
     {
-        return $this->attributes;
+        return $this->form_query;
     }
 
     /**
-     * Generated from protobuf field <code>map<string, .http.v1beta.HeaderValue> attributes = 9;</code>
+     * Generated from protobuf field <code>map<string, .http.v1beta.HeaderValue> form_query = 7;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setAttributes($var)
+    public function setFormQuery($var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\HTTP\DTO\V1BETA1\HeaderValue::class);
-        $this->attributes = $arr;
+        $this->form_query = $arr;
 
         return $this;
     }
 
     /**
+     * string raw_query = 7;
+     * bool parsed = 8;
+     * map<string, HeaderValue> attributes = 9;
+     * bytes body = 11;
+     * bytes raw_body = 12;
+     *
      * Generated from protobuf field <code>.http.v1beta.Uploads uploads = 10;</code>
      * @return \RoadRunner\HTTP\DTO\V1BETA1\Uploads|null
      */
@@ -305,6 +258,12 @@ class Request extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * string raw_query = 7;
+     * bool parsed = 8;
+     * map<string, HeaderValue> attributes = 9;
+     * bytes body = 11;
+     * bytes raw_body = 12;
+     *
      * Generated from protobuf field <code>.http.v1beta.Uploads uploads = 10;</code>
      * @param \RoadRunner\HTTP\DTO\V1BETA1\Uploads $var
      * @return $this
@@ -313,50 +272,6 @@ class Request extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \RoadRunner\HTTP\DTO\V1BETA1\Uploads::class);
         $this->uploads = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bytes body = 11;</code>
-     * @return string
-     */
-    public function getBody()
-    {
-        return $this->body;
-    }
-
-    /**
-     * Generated from protobuf field <code>bytes body = 11;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setBody($var)
-    {
-        GPBUtil::checkString($var, False);
-        $this->body = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bytes raw_body = 12;</code>
-     * @return string
-     */
-    public function getRawBody()
-    {
-        return $this->raw_body;
-    }
-
-    /**
-     * Generated from protobuf field <code>bytes raw_body = 12;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setRawBody($var)
-    {
-        GPBUtil::checkString($var, False);
-        $this->raw_body = $var;
 
         return $this;
     }

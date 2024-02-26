@@ -157,4 +157,68 @@ class OperatorServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Get a registered incoming Nexus service by name. The returned version can be used for optimistic updates.
+     * @param \Temporal\Api\Operatorservice\V1\GetNexusIncomingServiceRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetNexusIncomingService(\Temporal\Api\Operatorservice\V1\GetNexusIncomingServiceRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.operatorservice.v1.OperatorService/GetNexusIncomingService',
+        $argument,
+        ['\Temporal\Api\Operatorservice\V1\GetNexusIncomingServiceResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Optimistically create or update a Nexus service based on provided version.
+     * To update an existing service, get the current service record via the `GetNexusIncomingService` API, modify it
+     * and submit to this API.
+     * Set version to 0 to create a new service.
+     * Returns the updated service with the updated version, which can be used for subsequent updates.
+     * @param \Temporal\Api\Operatorservice\V1\CreateOrUpdateNexusIncomingServiceRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function CreateOrUpdateNexusIncomingService(\Temporal\Api\Operatorservice\V1\CreateOrUpdateNexusIncomingServiceRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.operatorservice.v1.OperatorService/CreateOrUpdateNexusIncomingService',
+        $argument,
+        ['\Temporal\Api\Operatorservice\V1\CreateOrUpdateNexusIncomingServiceResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete an incoming Nexus service by name.
+     * @param \Temporal\Api\Operatorservice\V1\DeleteNexusIncomingServiceRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteNexusIncomingService(\Temporal\Api\Operatorservice\V1\DeleteNexusIncomingServiceRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.operatorservice.v1.OperatorService/DeleteNexusIncomingService',
+        $argument,
+        ['\Temporal\Api\Operatorservice\V1\DeleteNexusIncomingServiceResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * List all nexus incoming service names. Use next_page_token in the response for pagination.
+     * @param \Temporal\Api\Operatorservice\V1\ListNexusIncomingServicesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListNexusIncomingServices(\Temporal\Api\Operatorservice\V1\ListNexusIncomingServicesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.operatorservice.v1.OperatorService/ListNexusIncomingServices',
+        $argument,
+        ['\Temporal\Api\Operatorservice\V1\ListNexusIncomingServicesResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

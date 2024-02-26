@@ -17,13 +17,12 @@ class Message
         \GPBMetadata\Google\Protobuf\Duration::initOnce();
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         \GPBMetadata\Google\Protobuf\Wrappers::initOnce();
-        \GPBMetadata\Dependencies\Gogoproto\Gogo::initOnce();
         \GPBMetadata\Temporal\Api\Enums\V1\TaskQueue::initOnce();
         \GPBMetadata\Temporal\Api\Common\V1\Message::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ˆ
-\'temporal/api/taskqueue/v1/message.prototemporal.api.taskqueue.v1google/protobuf/timestamp.protogoogle/protobuf/wrappers.proto!dependencies/gogoproto/gogo.proto&temporal/api/enums/v1/task_queue.proto$temporal/api/common/v1/message.proto"b
+«
+\'temporal/api/taskqueue/v1/message.prototemporal.api.taskqueue.v1google/protobuf/timestamp.protogoogle/protobuf/wrappers.proto&temporal/api/enums/v1/task_queue.proto$temporal/api/common/v1/message.proto"b
 	TaskQueue
 name (	2
 kind (2$.temporal.api.enums.v1.TaskQueueKind
@@ -42,16 +41,16 @@ read_level (
 end_id ("B
 TaskQueuePartitionMetadata
 key (	
-owner_host_name (	"À
+owner_host_name (	"≈
 
-PollerInfo:
-last_access_time (2.google.protobuf.TimestampBêﬂ
+PollerInfo4
+last_access_time (2.google.protobuf.Timestamp
 identity (	
 rate_per_second (V
-worker_version_capabilities (21.temporal.api.common.v1.WorkerVersionCapabilities"†
+worker_version_capabilities (21.temporal.api.common.v1.WorkerVersionCapabilities"ö
 StickyExecutionAttributes?
-worker_task_queue (2$.temporal.api.taskqueue.v1.TaskQueueB
-schedule_to_start_timeout (2.google.protobuf.DurationBòﬂ")
+worker_task_queue (2$.temporal.api.taskqueue.v1.TaskQueue<
+schedule_to_start_timeout (2.google.protobuf.Duration")
 CompatibleVersionSet
 	build_ids (	"j
 TaskQueueReachability

@@ -18,15 +18,15 @@ class WorkflowExecutionConfig extends \Google\Protobuf\Internal\Message
      */
     protected $task_queue = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 2 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 2;</code>
      */
     protected $workflow_execution_timeout = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 3 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 3;</code>
      */
     protected $workflow_run_timeout = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Duration default_workflow_task_timeout = 4 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration default_workflow_task_timeout = 4;</code>
      */
     protected $default_workflow_task_timeout = null;
 
@@ -80,7 +80,7 @@ class WorkflowExecutionConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 2 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 2;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getWorkflowExecutionTimeout()
@@ -99,7 +99,7 @@ class WorkflowExecutionConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 2 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 2;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
@@ -112,7 +112,7 @@ class WorkflowExecutionConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 3 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 3;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getWorkflowRunTimeout()
@@ -131,7 +131,7 @@ class WorkflowExecutionConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 3 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 3;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
@@ -144,7 +144,7 @@ class WorkflowExecutionConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Duration default_workflow_task_timeout = 4 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration default_workflow_task_timeout = 4;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getDefaultWorkflowTaskTimeout()
@@ -163,7 +163,7 @@ class WorkflowExecutionConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Duration default_workflow_task_timeout = 4 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration default_workflow_task_timeout = 4;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */

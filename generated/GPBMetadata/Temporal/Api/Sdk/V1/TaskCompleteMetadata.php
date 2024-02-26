@@ -16,11 +16,13 @@ class TaskCompleteMetadata
         }
         $pool->internalAddGeneratedFile(
             '
-¬
-0temporal/api/sdk/v1/task_complete_metadata.prototemporal.api.sdk.v1"Q
+Ó
+0temporal/api/sdk/v1/task_complete_metadata.prototemporal.api.sdk.v1"x
 WorkflowTaskCompletedMetadata
 core_used_flags (
-lang_used_flags (B‡
+lang_used_flags (
+sdk_name (	
+sdk_version (	B‡
 io.temporal.api.sdk.v1BTaskCompleteMetadataProtoPZgo.temporal.io/api/sdk/v1;sdkªTemporalio.Api.Sdk.V1êTemporalio::Api::Sdk::V1bproto3'
         , true);
 

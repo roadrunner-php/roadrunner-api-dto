@@ -18,7 +18,7 @@ class RetryPolicy extends \Google\Protobuf\Internal\Message
     /**
      * Interval of the first retry. If retryBackoffCoefficient is 1.0 then it is used for all retries.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration initial_interval = 1 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration initial_interval = 1;</code>
      */
     protected $initial_interval = null;
     /**
@@ -33,7 +33,7 @@ class RetryPolicy extends \Google\Protobuf\Internal\Message
      * Maximum interval between retries. Exponential backoff leads to interval increase.
      * This value is the cap of the increase. Default is 100x of the initial interval.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration maximum_interval = 3 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration maximum_interval = 3;</code>
      */
     protected $maximum_interval = null;
     /**
@@ -82,7 +82,7 @@ class RetryPolicy extends \Google\Protobuf\Internal\Message
     /**
      * Interval of the first retry. If retryBackoffCoefficient is 1.0 then it is used for all retries.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration initial_interval = 1 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration initial_interval = 1;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getInitialInterval()
@@ -103,7 +103,7 @@ class RetryPolicy extends \Google\Protobuf\Internal\Message
     /**
      * Interval of the first retry. If retryBackoffCoefficient is 1.0 then it is used for all retries.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration initial_interval = 1 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration initial_interval = 1;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
@@ -149,7 +149,7 @@ class RetryPolicy extends \Google\Protobuf\Internal\Message
      * Maximum interval between retries. Exponential backoff leads to interval increase.
      * This value is the cap of the increase. Default is 100x of the initial interval.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration maximum_interval = 3 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration maximum_interval = 3;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getMaximumInterval()
@@ -171,7 +171,7 @@ class RetryPolicy extends \Google\Protobuf\Internal\Message
      * Maximum interval between retries. Exponential backoff leads to interval increase.
      * This value is the cap of the increase. Default is 100x of the initial interval.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration maximum_interval = 3 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration maximum_interval = 3;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */

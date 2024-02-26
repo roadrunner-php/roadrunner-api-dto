@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class PollerInfo extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp last_access_time = 1 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_access_time = 1;</code>
      */
     protected $last_access_time = null;
     /**
@@ -53,7 +53,7 @@ class PollerInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp last_access_time = 1 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_access_time = 1;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getLastAccessTime()
@@ -72,7 +72,7 @@ class PollerInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp last_access_time = 1 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_access_time = 1;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */

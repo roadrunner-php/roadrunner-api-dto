@@ -22,6 +22,7 @@ class RequestResponse
         \GPBMetadata\Temporal\Api\Enums\V1\Query::initOnce();
         \GPBMetadata\Temporal\Api\Enums\V1\Reset::initOnce();
         \GPBMetadata\Temporal\Api\Enums\V1\TaskQueue::initOnce();
+        \GPBMetadata\Temporal\Api\Enums\V1\Update::initOnce();
         \GPBMetadata\Temporal\Api\Common\V1\Message::initOnce();
         \GPBMetadata\Temporal\Api\History\V1\Message::initOnce();
         \GPBMetadata\Temporal\Api\Workflow\V1\Message::initOnce();
@@ -38,18 +39,18 @@ class RequestResponse
         \GPBMetadata\Temporal\Api\Version\V1\Message::initOnce();
         \GPBMetadata\Temporal\Api\Batch\V1\Message::initOnce();
         \GPBMetadata\Temporal\Api\Sdk\V1\TaskCompleteMetadata::initOnce();
+        \GPBMetadata\Temporal\Api\Nexus\V1\Message::initOnce();
         \GPBMetadata\Google\Protobuf\Duration::initOnce();
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
-        \GPBMetadata\Dependencies\Gogoproto\Gogo::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Õπ
-6temporal/api/workflowservice/v1/request_response.prototemporal.api.workflowservice.v1$temporal/api/enums/v1/workflow.proto%temporal/api/enums/v1/namespace.proto(temporal/api/enums/v1/failed_cause.proto"temporal/api/enums/v1/common.proto!temporal/api/enums/v1/query.proto!temporal/api/enums/v1/reset.proto&temporal/api/enums/v1/task_queue.proto$temporal/api/common/v1/message.proto%temporal/api/history/v1/message.proto&temporal/api/workflow/v1/message.proto%temporal/api/command/v1/message.proto%temporal/api/failure/v1/message.proto$temporal/api/filter/v1/message.proto&temporal/api/protocol/v1/message.proto\'temporal/api/namespace/v1/message.proto#temporal/api/query/v1/message.proto)temporal/api/replication/v1/message.proto&temporal/api/schedule/v1/message.proto\'temporal/api/taskqueue/v1/message.proto$temporal/api/update/v1/message.proto%temporal/api/version/v1/message.proto#temporal/api/batch/v1/message.proto0temporal/api/sdk/v1/task_complete_metadata.protogoogle/protobuf/duration.protogoogle/protobuf/timestamp.proto!dependencies/gogoproto/gogo.proto"é
+∏√
+6temporal/api/workflowservice/v1/request_response.prototemporal.api.workflowservice.v1$temporal/api/enums/v1/workflow.proto%temporal/api/enums/v1/namespace.proto(temporal/api/enums/v1/failed_cause.proto"temporal/api/enums/v1/common.proto!temporal/api/enums/v1/query.proto!temporal/api/enums/v1/reset.proto&temporal/api/enums/v1/task_queue.proto"temporal/api/enums/v1/update.proto$temporal/api/common/v1/message.proto%temporal/api/history/v1/message.proto&temporal/api/workflow/v1/message.proto%temporal/api/command/v1/message.proto%temporal/api/failure/v1/message.proto$temporal/api/filter/v1/message.proto&temporal/api/protocol/v1/message.proto\'temporal/api/namespace/v1/message.proto#temporal/api/query/v1/message.proto)temporal/api/replication/v1/message.proto&temporal/api/schedule/v1/message.proto\'temporal/api/taskqueue/v1/message.proto$temporal/api/update/v1/message.proto%temporal/api/version/v1/message.proto#temporal/api/batch/v1/message.proto0temporal/api/sdk/v1/task_complete_metadata.proto#temporal/api/nexus/v1/message.protogoogle/protobuf/duration.protogoogle/protobuf/timestamp.proto"à
 RegisterNamespaceRequest
 	namespace (	
 description (	
-owner_email (	L
-#workflow_execution_retention_period (2.google.protobuf.DurationBòﬂG
+owner_email (	F
+#workflow_execution_retention_period (2.google.protobuf.DurationG
 clusters (25.temporal.api.replication.v1.ClusterReplicationConfig
 active_cluster_name (	Q
 data (2C.temporal.api.workflowservice.v1.RegisterNamespaceRequest.DataEntry
@@ -100,17 +101,17 @@ namespaces (2:.temporal.api.workflowservice.v1.DescribeNamespaceResponse
 DeprecateNamespaceRequest
 	namespace (	
 security_token (	"
-DeprecateNamespaceResponse"˚
+DeprecateNamespaceResponse"£
 StartWorkflowExecutionRequest
 	namespace (	
 workflow_id (	;
 workflow_type (2$.temporal.api.common.v1.WorkflowType8
 
 task_queue (2$.temporal.api.taskqueue.v1.TaskQueue/
-input (2 .temporal.api.common.v1.PayloadsC
-workflow_execution_timeout (2.google.protobuf.DurationBòﬂ=
-workflow_run_timeout (2.google.protobuf.DurationBòﬂ>
-workflow_task_timeout (2.google.protobuf.DurationBòﬂ
+input (2 .temporal.api.common.v1.Payloads=
+workflow_execution_timeout (2.google.protobuf.Duration7
+workflow_run_timeout (2.google.protobuf.Duration8
+workflow_task_timeout (2.google.protobuf.Duration
 identity	 (	
 
 request_id
@@ -123,8 +124,9 @@ request_id
 header (2.temporal.api.common.v1.Header
 request_eager_execution (;
 continued_failure (2 .temporal.api.failure.v1.Failure@
-last_completion_result (2 .temporal.api.common.v1.Payloads=
-workflow_start_delay (2.google.protobuf.DurationBòﬂ"ç
+last_completion_result (2 .temporal.api.common.v1.Payloads7
+workflow_start_delay (2.google.protobuf.Duration>
+completion_callbacks (2 .temporal.api.common.v1.Callback"ç
 StartWorkflowExecutionResponse
 run_id (	[
 eager_workflow_task (2>.temporal.api.workflowservice.v1.PollWorkflowTaskQueueResponse"™
@@ -155,7 +157,7 @@ request_id
 task_queue (2$.temporal.api.taskqueue.v1.TaskQueue
 identity (	
 binary_checksum (	V
-worker_version_capabilities (21.temporal.api.common.v1.WorkerVersionCapabilities" 
+worker_version_capabilities (21.temporal.api.common.v1.WorkerVersionCapabilities"æ
 PollWorkflowTaskQueueResponse
 
 task_token (E
@@ -169,9 +171,9 @@ task_token (E
 next_page_token	 (3
 query
  (2$.temporal.api.query.v1.WorkflowQueryK
-workflow_execution_task_queue (2$.temporal.api.taskqueue.v1.TaskQueue8
-scheduled_time (2.google.protobuf.TimestampBêﬂ6
-started_time (2.google.protobuf.TimestampBêﬂ\\
+workflow_execution_task_queue (2$.temporal.api.taskqueue.v1.TaskQueue2
+scheduled_time (2.google.protobuf.Timestamp0
+started_time (2.google.protobuf.Timestamp\\
 queries (2K.temporal.api.workflowservice.v1.PollWorkflowTaskQueueResponse.QueriesEntry3
 messages (2!.temporal.api.protocol.v1.MessageT
 QueriesEntry
@@ -217,7 +219,7 @@ task_token (=
 task_queue (2$.temporal.api.taskqueue.v1.TaskQueue
 identity (	I
 task_queue_metadata (2,.temporal.api.taskqueue.v1.TaskQueueMetadataV
-worker_version_capabilities (21.temporal.api.common.v1.WorkerVersionCapabilities"å
+worker_version_capabilities (21.temporal.api.common.v1.WorkerVersionCapabilities"Ë
 PollActivityTaskQueueResponse
 
 task_token (
@@ -228,15 +230,15 @@ task_token (
 activity_id (	.
 header (2.temporal.api.common.v1.Header/
 input (2 .temporal.api.common.v1.Payloads;
-heartbeat_details	 (2 .temporal.api.common.v1.Payloads8
+heartbeat_details	 (2 .temporal.api.common.v1.Payloads2
 scheduled_time
- (2.google.protobuf.TimestampBêﬂH
-current_attempt_scheduled_time (2.google.protobuf.TimestampBêﬂ6
-started_time (2.google.protobuf.TimestampBêﬂ
-attempt (B
-schedule_to_close_timeout (2.google.protobuf.DurationBòﬂ?
-start_to_close_timeout (2.google.protobuf.DurationBòﬂ:
-heartbeat_timeout (2.google.protobuf.DurationBòﬂ9
+ (2.google.protobuf.TimestampB
+current_attempt_scheduled_time (2.google.protobuf.Timestamp0
+started_time (2.google.protobuf.Timestamp
+attempt (<
+schedule_to_close_timeout (2.google.protobuf.Duration9
+start_to_close_timeout (2.google.protobuf.Duration4
+heartbeat_timeout (2.google.protobuf.Duration9
 retry_policy (2#.temporal.api.common.v1.RetryPolicy"ê
 "RecordActivityTaskHeartbeatRequest
 
@@ -327,17 +329,17 @@ request_id (	
 control (	.
 header (2.temporal.api.common.v1.Header#
 skip_generate_workflow_task	 ("!
-SignalWorkflowExecutionResponse"Ë
+SignalWorkflowExecutionResponse"–
 \'SignalWithStartWorkflowExecutionRequest
 	namespace (	
 workflow_id (	;
 workflow_type (2$.temporal.api.common.v1.WorkflowType8
 
 task_queue (2$.temporal.api.taskqueue.v1.TaskQueue/
-input (2 .temporal.api.common.v1.PayloadsC
-workflow_execution_timeout (2.google.protobuf.DurationBòﬂ=
-workflow_run_timeout (2.google.protobuf.DurationBòﬂ>
-workflow_task_timeout (2.google.protobuf.DurationBòﬂ
+input (2 .temporal.api.common.v1.Payloads=
+workflow_execution_timeout (2.google.protobuf.Duration7
+workflow_run_timeout (2.google.protobuf.Duration8
+workflow_task_timeout (2.google.protobuf.Duration
 identity	 (	
 
 request_id
@@ -350,11 +352,11 @@ request_id
 cron_schedule (	*
 memo (2.temporal.api.common.v1.MemoC
 search_attributes (2(.temporal.api.common.v1.SearchAttributes.
-header (2.temporal.api.common.v1.Header=
-workflow_start_delay (2.google.protobuf.DurationBòﬂ#
+header (2.temporal.api.common.v1.Header7
+workflow_start_delay (2.google.protobuf.Duration#
 skip_generate_workflow_task (":
 (SignalWithStartWorkflowExecutionResponse
-run_id (	"â
+run_id (	"ﬁ
 ResetWorkflowExecutionRequest
 	namespace (	E
 workflow_execution (2).temporal.api.common.v1.WorkflowExecution
@@ -362,7 +364,8 @@ request_id
 workflow_task_finish_event_id (
 
 request_id (	C
-reset_reapply_type (2\'.temporal.api.enums.v1.ResetReapplyType"0
+reset_reapply_type (2\'.temporal.api.enums.v1.ResetReapplyTypeS
+reset_reapply_exclude_types (2..temporal.api.enums.v1.ResetReapplyExcludeType"0
 ResetWorkflowExecutionResponse
 run_id (	"Ú
 !TerminateWorkflowExecutionRequest
@@ -431,9 +434,13 @@ executions (2/.temporal.api.workflow.v1.WorkflowExecutionInfo
 next_page_token ("B
 CountWorkflowExecutionsRequest
 	namespace (	
-query (	"0
+query (	"Ì
 CountWorkflowExecutionsResponse
-count ("
+count (a
+groups (2Q.temporal.api.workflowservice.v1.CountWorkflowExecutionsResponse.AggregationGroupX
+AggregationGroup5
+group_values (2.temporal.api.common.v1.Payload
+count ("
 GetSearchAttributesRequest"…
 GetSearchAttributesResponseT
 keys (2F.temporal.api.workflowservice.v1.GetSearchAttributesResponse.KeysEntryT
@@ -462,13 +469,14 @@ task_token (>
 query_rejected (2$.temporal.api.query.v1.QueryRejected"s
  DescribeWorkflowExecutionRequest
 	namespace (	<
-	execution (2).temporal.api.common.v1.WorkflowExecution"Æ
+	execution (2).temporal.api.common.v1.WorkflowExecution"È
 !DescribeWorkflowExecutionResponseK
 execution_config (21.temporal.api.workflow.v1.WorkflowExecutionConfigP
 workflow_execution_info (2/.temporal.api.workflow.v1.WorkflowExecutionInfoI
 pending_activities (2-.temporal.api.workflow.v1.PendingActivityInfoM
 pending_children (23.temporal.api.workflow.v1.PendingChildExecutionInfoP
-pending_workflow_task (21.temporal.api.workflow.v1.PendingWorkflowTaskInfo"…
+pending_workflow_task (21.temporal.api.workflow.v1.PendingWorkflowTaskInfo9
+	callbacks (2&.temporal.api.workflow.v1.CallbackInfo"…
 DescribeTaskQueueRequest
 	namespace (	8
 
@@ -492,10 +500,10 @@ cluster_id (	:
 SupportedClientsEntry
 key (	
 value (	:8"
-GetSystemInfoRequest"º
+GetSystemInfoRequest"Â
 GetSystemInfoResponse
 server_version (	Y
-capabilities (2C.temporal.api.workflowservice.v1.GetSystemInfoResponse.CapabilitiesØ
+capabilities (2C.temporal.api.workflowservice.v1.GetSystemInfoResponse.Capabilitiesÿ
 Capabilities
 signal_and_query_header (&
 internal_error_differentiation (*
@@ -505,7 +513,9 @@ cluster_id (	:
 build_id_based_versioning (
 upsert_memo (
 eager_workflow_start (
-sdk_metadata	 ("m
+sdk_metadata	 (\'
+count_group_by_execution_status
+ ("m
 ListTaskQueuePartitionsRequest
 	namespace (	8
 
@@ -550,16 +560,16 @@ request_id (	"
 identity (	
 
 request_id (	"
-PatchScheduleResponse"¥
+PatchScheduleResponse"®
  ListScheduleMatchingTimesRequest
 	namespace (	
-schedule_id (	4
+schedule_id (	.
 
-start_time (2.google.protobuf.TimestampBêﬂ2
-end_time (2.google.protobuf.TimestampBêﬂ"Y
-!ListScheduleMatchingTimesResponse4
+start_time (2.google.protobuf.Timestamp,
+end_time (2.google.protobuf.Timestamp"S
+!ListScheduleMatchingTimesResponse.
 
-start_time (2.google.protobuf.TimestampBêﬂ"Q
+start_time (2.google.protobuf.Timestamp"Q
 DeleteScheduleRequest
 	namespace (	
 schedule_id (	
@@ -589,9 +599,8 @@ merge_sets (2R.temporal.api.workflowservice.v1.UpdateWorkerBuildIdCompatibil
 	MergeSets
 primary_set_build_id (	
 secondary_set_build_id (	B
-	operation"B
-(UpdateWorkerBuildIdCompatibilityResponse
-version_set_id (	"_
+	operation"@
+(UpdateWorkerBuildIdCompatibilityResponseJRversion_set_id"_
 $GetWorkerBuildIdCompatibilityRequest
 	namespace (	
 
@@ -611,18 +620,20 @@ task_queue (	
 workflow_execution (2).temporal.api.common.v1.WorkflowExecution
 first_execution_run_id (	7
 wait_policy (2".temporal.api.update.v1.WaitPolicy0
-request (2.temporal.api.update.v1.Request"ä
+request (2.temporal.api.update.v1.Request"◊
 UpdateWorkflowExecutionResponse5
 
 update_ref (2!.temporal.api.update.v1.UpdateRef0
-outcome (2.temporal.api.update.v1.Outcome"∫
+outcome (2.temporal.api.update.v1.OutcomeK
+stage (2<.temporal.api.enums.v1.UpdateWorkflowExecutionLifecycleStage"›
 StartBatchOperationRequest
 	namespace (	
 visibility_query (	
 job_id (	
 reason (	=
 
-executions (2).temporal.api.common.v1.WorkflowExecutionQ
+executions (2).temporal.api.common.v1.WorkflowExecution!
+max_operations_per_second (Q
 termination_operation
  (20.temporal.api.batch.v1.BatchOperationTerminationH G
 signal_operation (2+.temporal.api.batch.v1.BatchOperationSignalH S
@@ -639,15 +650,15 @@ executions (2).temporal.api.common.v1.WorkflowExecutionQ
 StopBatchOperationResponse"B
 DescribeBatchOperationRequest
 	namespace (	
-job_id (	"û
+job_id (	"í
 DescribeBatchOperationResponseA
 operation_type (2).temporal.api.enums.v1.BatchOperationType
 job_id (	9
-state (2*.temporal.api.enums.v1.BatchOperationState4
+state (2*.temporal.api.enums.v1.BatchOperationState.
 
-start_time (2.google.protobuf.TimestampBêﬂ4
+start_time (2.google.protobuf.Timestamp.
 
-close_time (2.google.protobuf.TimestampBêﬂ
+close_time (2.google.protobuf.Timestamp
 total_operation_count ( 
 complete_operation_count (
 failure_operation_count (
@@ -666,9 +677,36 @@ close_time (2.google.protobuf.TimestampBêﬂ
 
 update_ref (2!.temporal.api.update.v1.UpdateRef
 identity (	7
-wait_policy (2".temporal.api.update.v1.WaitPolicy"W
+wait_policy (2".temporal.api.update.v1.WaitPolicy"€
 #PollWorkflowExecutionUpdateResponse0
-outcome (2.temporal.api.update.v1.OutcomeBæ
+outcome (2.temporal.api.update.v1.OutcomeK
+stage (2<.temporal.api.enums.v1.UpdateWorkflowExecutionLifecycleStage5
+
+update_ref (2!.temporal.api.update.v1.UpdateRef"“
+PollNexusTaskQueueRequest
+	namespace (	
+identity (	8
+
+task_queue (2$.temporal.api.taskqueue.v1.TaskQueueV
+worker_version_capabilities (21.temporal.api.common.v1.WorkerVersionCapabilities"a
+PollNexusTaskQueueResponse
+
+task_token (/
+request (2.temporal.api.nexus.v1.Request"é
+ RespondNexusTaskCompletedRequest
+	namespace (	
+identity (	
+
+task_token (1
+response (2.temporal.api.nexus.v1.Response"#
+!RespondNexusTaskCompletedResponse"å
+RespondNexusTaskFailedRequest
+	namespace (	
+identity (	
+
+task_token (2
+error (2#.temporal.api.nexus.v1.HandlerError" 
+RespondNexusTaskFailedResponseBæ
 "io.temporal.api.workflowservice.v1BRequestResponseProtoPZ5go.temporal.io/api/workflowservice/v1;workflowservice™!Temporalio.Api.WorkflowService.V1Í$Temporalio::Api::WorkflowService::V1bproto3'
         , true);
 

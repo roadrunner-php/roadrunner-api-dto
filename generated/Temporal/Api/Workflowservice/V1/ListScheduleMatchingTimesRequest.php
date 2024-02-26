@@ -28,11 +28,11 @@ class ListScheduleMatchingTimesRequest extends \Google\Protobuf\Internal\Message
     /**
      * Time range to query.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 3 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 3;</code>
      */
     protected $start_time = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 4 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 4;</code>
      */
     protected $end_time = null;
 
@@ -111,7 +111,7 @@ class ListScheduleMatchingTimesRequest extends \Google\Protobuf\Internal\Message
     /**
      * Time range to query.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 3 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 3;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartTime()
@@ -132,7 +132,7 @@ class ListScheduleMatchingTimesRequest extends \Google\Protobuf\Internal\Message
     /**
      * Time range to query.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 3 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 3;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -145,7 +145,7 @@ class ListScheduleMatchingTimesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 4 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 4;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getEndTime()
@@ -164,7 +164,7 @@ class ListScheduleMatchingTimesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 4 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 4;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */

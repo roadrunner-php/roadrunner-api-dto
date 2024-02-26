@@ -37,19 +37,19 @@ class NewWorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
     /**
      * Total workflow execution timeout including retries and continue as new.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 5 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 5;</code>
      */
     protected $workflow_execution_timeout = null;
     /**
      * Timeout of a single workflow run.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 6 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 6;</code>
      */
     protected $workflow_run_timeout = null;
     /**
      * Timeout of a single workflow task.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 7 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 7;</code>
      */
     protected $workflow_task_timeout = null;
     /**
@@ -241,7 +241,7 @@ class NewWorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
     /**
      * Total workflow execution timeout including retries and continue as new.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 5 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 5;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getWorkflowExecutionTimeout()
@@ -262,7 +262,7 @@ class NewWorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
     /**
      * Total workflow execution timeout including retries and continue as new.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 5 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 5;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
@@ -277,7 +277,7 @@ class NewWorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
     /**
      * Timeout of a single workflow run.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 6 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 6;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getWorkflowRunTimeout()
@@ -298,7 +298,7 @@ class NewWorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
     /**
      * Timeout of a single workflow run.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 6 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 6;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
@@ -313,7 +313,7 @@ class NewWorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
     /**
      * Timeout of a single workflow task.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 7 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 7;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getWorkflowTaskTimeout()
@@ -334,7 +334,7 @@ class NewWorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
     /**
      * Timeout of a single workflow task.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 7 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 7;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */

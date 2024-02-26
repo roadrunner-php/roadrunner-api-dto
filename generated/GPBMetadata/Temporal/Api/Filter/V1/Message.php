@@ -15,20 +15,19 @@ class Message
           return;
         }
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
-        \GPBMetadata\Dependencies\Gogoproto\Gogo::initOnce();
         \GPBMetadata\Temporal\Api\Enums\V1\Workflow::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ó
-$temporal/api/filter/v1/message.prototemporal.api.filter.v1!dependencies/gogoproto/gogo.proto$temporal/api/enums/v1/workflow.proto">
+£
+$temporal/api/filter/v1/message.prototemporal.api.filter.v1$temporal/api/enums/v1/workflow.proto">
 WorkflowExecutionFilter
 workflow_id (	
 run_id (	""
 WorkflowTypeFilter
-name (	"
-StartTimeFilter7
-earliest_time (2.google.protobuf.TimestampBß5
-latest_time (2.google.protobuf.TimestampBß"N
+name (	"u
+StartTimeFilter1
+earliest_time (2.google.protobuf.Timestamp/
+latest_time (2.google.protobuf.Timestamp"N
 StatusFilter>
 status (2..temporal.api.enums.v1.WorkflowExecutionStatusB‰
 io.temporal.api.filter.v1BMessageProtoPZ#go.temporal.io/api/filter/v1;filterªTemporalio.Api.Filter.V1êTemporalio::Api::Filter::V1bproto3'

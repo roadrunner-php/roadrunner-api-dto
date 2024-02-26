@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class NamespaceConfig extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_retention_ttl = 1 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_retention_ttl = 1;</code>
      */
     protected $workflow_execution_retention_ttl = null;
     /**
@@ -72,7 +72,7 @@ class NamespaceConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_retention_ttl = 1 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_retention_ttl = 1;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getWorkflowExecutionRetentionTtl()
@@ -91,7 +91,7 @@ class NamespaceConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_retention_ttl = 1 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_retention_ttl = 1;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */

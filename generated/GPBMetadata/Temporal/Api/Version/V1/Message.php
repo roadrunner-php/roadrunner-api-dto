@@ -15,25 +15,24 @@ class Message
           return;
         }
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
-        \GPBMetadata\Dependencies\Gogoproto\Gogo::initOnce();
         \GPBMetadata\Temporal\Api\Enums\V1\Common::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ÿ
-%temporal/api/version/v1/message.prototemporal.api.version.v1!dependencies/gogoproto/gogo.proto"temporal/api/enums/v1/common.proto"e
+©
+%temporal/api/version/v1/message.prototemporal.api.version.v1"temporal/api/enums/v1/common.proto"_
 ReleaseInfo
-version (	6
-release_time (2.google.protobuf.TimestampBêﬂ
+version (	0
+release_time (2.google.protobuf.Timestamp
 notes (	"K
 Alert
 message (	1
-severity (2.temporal.api.enums.v1.Severity"Å
+severity (2.temporal.api.enums.v1.Severity"˚
 VersionInfo5
 current (2$.temporal.api.version.v1.ReleaseInfo9
 recommended (2$.temporal.api.version.v1.ReleaseInfo
 instructions (	.
-alerts (2.temporal.api.version.v1.Alert:
-last_update_time (2.google.protobuf.TimestampBêﬂBé
+alerts (2.temporal.api.version.v1.Alert4
+last_update_time (2.google.protobuf.TimestampBé
 io.temporal.api.version.v1BMessageProtoPZ%go.temporal.io/api/version/v1;version™Temporalio.Api.Version.V1ÍTemporalio::Api::Version::V1bproto3'
         , true);
 

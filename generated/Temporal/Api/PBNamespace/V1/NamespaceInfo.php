@@ -40,6 +40,12 @@ class NamespaceInfo extends \Google\Protobuf\Internal\Message
      */
     protected $id = '';
     /**
+     * All capabilities the namespace supports.
+     *
+     * Generated from protobuf field <code>.temporal.api.namespace.v1.NamespaceInfo.Capabilities capabilities = 7;</code>
+     */
+    protected $capabilities = null;
+    /**
      * Whether scheduled workflows are supported on this namespace. This is only needed
      * temporarily while the feature is experimental, so we can give it a high tag.
      *
@@ -60,6 +66,8 @@ class NamespaceInfo extends \Google\Protobuf\Internal\Message
      *     @type array|\Google\Protobuf\Internal\MapField $data
      *           A key-value map for any customized purpose.
      *     @type string $id
+     *     @type \Temporal\Api\PBNamespace\V1\NamespaceInfo\Capabilities $capabilities
+     *           All capabilities the namespace supports.
      *     @type bool $supports_schedules
      *           Whether scheduled workflows are supported on this namespace. This is only needed
      *           temporarily while the feature is experimental, so we can give it a high tag.
@@ -202,6 +210,42 @@ class NamespaceInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * All capabilities the namespace supports.
+     *
+     * Generated from protobuf field <code>.temporal.api.namespace.v1.NamespaceInfo.Capabilities capabilities = 7;</code>
+     * @return \Temporal\Api\PBNamespace\V1\NamespaceInfo\Capabilities|null
+     */
+    public function getCapabilities()
+    {
+        return $this->capabilities;
+    }
+
+    public function hasCapabilities()
+    {
+        return isset($this->capabilities);
+    }
+
+    public function clearCapabilities()
+    {
+        unset($this->capabilities);
+    }
+
+    /**
+     * All capabilities the namespace supports.
+     *
+     * Generated from protobuf field <code>.temporal.api.namespace.v1.NamespaceInfo.Capabilities capabilities = 7;</code>
+     * @param \Temporal\Api\PBNamespace\V1\NamespaceInfo\Capabilities $var
+     * @return $this
+     */
+    public function setCapabilities($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\PBNamespace\V1\NamespaceInfo\Capabilities::class);
+        $this->capabilities = $var;
 
         return $this;
     }

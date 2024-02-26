@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListScheduleMatchingTimesResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .google.protobuf.Timestamp start_time = 1 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.Timestamp start_time = 1;</code>
      */
     private $start_time;
 
@@ -33,7 +33,7 @@ class ListScheduleMatchingTimesResponse extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Generated from protobuf field <code>repeated .google.protobuf.Timestamp start_time = 1 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.Timestamp start_time = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getStartTime()
@@ -42,7 +42,7 @@ class ListScheduleMatchingTimesResponse extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Generated from protobuf field <code>repeated .google.protobuf.Timestamp start_time = 1 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.Timestamp start_time = 1;</code>
      * @param array<\Google\Protobuf\Timestamp>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

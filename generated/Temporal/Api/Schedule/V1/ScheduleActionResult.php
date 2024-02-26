@@ -16,13 +16,13 @@ class ScheduleActionResult extends \Google\Protobuf\Internal\Message
     /**
      * Time that the action was taken (according to the schedule, including jitter).
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp schedule_time = 1 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp schedule_time = 1;</code>
      */
     protected $schedule_time = null;
     /**
      * Time that the action was taken (real time).
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp actual_time = 2 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp actual_time = 2;</code>
      */
     protected $actual_time = null;
     /**
@@ -54,7 +54,7 @@ class ScheduleActionResult extends \Google\Protobuf\Internal\Message
     /**
      * Time that the action was taken (according to the schedule, including jitter).
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp schedule_time = 1 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp schedule_time = 1;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getScheduleTime()
@@ -75,7 +75,7 @@ class ScheduleActionResult extends \Google\Protobuf\Internal\Message
     /**
      * Time that the action was taken (according to the schedule, including jitter).
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp schedule_time = 1 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp schedule_time = 1;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -90,7 +90,7 @@ class ScheduleActionResult extends \Google\Protobuf\Internal\Message
     /**
      * Time that the action was taken (real time).
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp actual_time = 2 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp actual_time = 2;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getActualTime()
@@ -111,7 +111,7 @@ class ScheduleActionResult extends \Google\Protobuf\Internal\Message
     /**
      * Time that the action was taken (real time).
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp actual_time = 2 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp actual_time = 2;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */

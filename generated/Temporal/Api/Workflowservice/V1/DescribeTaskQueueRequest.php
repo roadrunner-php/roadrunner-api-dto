@@ -22,6 +22,8 @@ class DescribeTaskQueueRequest extends \Google\Protobuf\Internal\Message
      */
     protected $task_queue = null;
     /**
+     * If unspecified (TASK_QUEUE_TYPE_UNSPECIFIED), then default value (TASK_QUEUE_TYPE_WORKFLOW) will be used.
+     *
      * Generated from protobuf field <code>.temporal.api.enums.v1.TaskQueueType task_queue_type = 3;</code>
      */
     protected $task_queue_type = 0;
@@ -39,6 +41,7 @@ class DescribeTaskQueueRequest extends \Google\Protobuf\Internal\Message
      *     @type string $namespace
      *     @type \Temporal\Api\Taskqueue\V1\TaskQueue $task_queue
      *     @type int $task_queue_type
+     *           If unspecified (TASK_QUEUE_TYPE_UNSPECIFIED), then default value (TASK_QUEUE_TYPE_WORKFLOW) will be used.
      *     @type bool $include_task_queue_status
      * }
      */
@@ -102,6 +105,8 @@ class DescribeTaskQueueRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * If unspecified (TASK_QUEUE_TYPE_UNSPECIFIED), then default value (TASK_QUEUE_TYPE_WORKFLOW) will be used.
+     *
      * Generated from protobuf field <code>.temporal.api.enums.v1.TaskQueueType task_queue_type = 3;</code>
      * @return int
      */
@@ -111,6 +116,8 @@ class DescribeTaskQueueRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * If unspecified (TASK_QUEUE_TYPE_UNSPECIFIED), then default value (TASK_QUEUE_TYPE_WORKFLOW) will be used.
+     *
      * Generated from protobuf field <code>.temporal.api.enums.v1.TaskQueueType task_queue_type = 3;</code>
      * @param int $var
      * @return $this
