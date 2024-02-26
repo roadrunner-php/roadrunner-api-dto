@@ -29,3 +29,8 @@ for i in `find ./api/third_party/api -name "*.proto" -type f`; do
   --grpc_out=generated \
   --experimental_allow_proto3_optional
 done
+
+echo "Removing Google Protobuf files"
+
+rm -rf ./generated/Google/Protobuf
+rm -rf ./generated/GPBMetadata/Google/Protobuf
