@@ -32,5 +32,5 @@ done
 
 echo "Removing Google Protobuf files"
 
-rm -rf ./generated/Google/Protobuf
-rm -rf ./generated/GPBMetadata/Google/Protobuf
+rm -rf ./generated/Google
+rm -rf ./generated/GPBMetadata/Google
