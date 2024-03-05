@@ -10,7 +10,6 @@ for i in `find ./api -name "*.proto" -type f`; do
   --experimental_allow_proto3_optional
 done
 
-
 echo "Generating Temporal API"
 
 GRPC_PLUGIN=`which grpc_php_plugin`
@@ -27,6 +26,15 @@ for i in `find ./api/third_party/api -name "*.proto" -type f`; do
   --php_out=generated $i \
   --plugin=protoc-gen-grpc=$GRPC_PLUGIN \
   --grpc_out=generated \
+  --experimental_allow_proto3_optional
+done
+
+echo "Generating Gogo proto"
+
+for i in `find ./proto -name "*.proto" -type f`; do
+  protoc \
+  --proto_path=proto \
+  --php_out=generated $i \
   --experimental_allow_proto3_optional
 done
 
