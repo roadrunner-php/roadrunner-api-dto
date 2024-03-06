@@ -34,7 +34,7 @@ class FileUpload extends \Google\Protobuf\Internal\Message
      */
     protected $temp_filename = '';
     /**
-     * Generated from protobuf field <code>.google.protobuf.Any header = 9;</code>
+     * Generated from protobuf field <code>.http.v1beta.FileHeader header = 6;</code>
      */
     protected $header = null;
 
@@ -49,7 +49,7 @@ class FileUpload extends \Google\Protobuf\Internal\Message
      *     @type int|string $size
      *     @type int|string $error
      *     @type string $temp_filename
-     *     @type \Google\Protobuf\Any $header
+     *     @type \RoadRunner\HTTP\DTO\V1BETA1\FileHeader $header
      * }
      */
     public function __construct($data = NULL) {
@@ -168,8 +168,8 @@ class FileUpload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Any header = 9;</code>
-     * @return \Google\Protobuf\Any|null
+     * Generated from protobuf field <code>.http.v1beta.FileHeader header = 6;</code>
+     * @return \RoadRunner\HTTP\DTO\V1BETA1\FileHeader|null
      */
     public function getHeader()
     {
@@ -187,13 +187,13 @@ class FileUpload extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Any header = 9;</code>
-     * @param \Google\Protobuf\Any $var
+     * Generated from protobuf field <code>.http.v1beta.FileHeader header = 6;</code>
+     * @param \RoadRunner\HTTP\DTO\V1BETA1\FileHeader $var
      * @return $this
      */
     public function setHeader($var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Any::class);
+        GPBUtil::checkMessage($var, \RoadRunner\HTTP\DTO\V1BETA1\FileHeader::class);
         $this->header = $var;
 
         return $this;

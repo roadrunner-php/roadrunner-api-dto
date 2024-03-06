@@ -38,19 +38,19 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     /**
      * Total workflow execution timeout including retries and continue as new.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 6 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 6;</code>
      */
     protected $workflow_execution_timeout = null;
     /**
      * Timeout of a single workflow run.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 7 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 7;</code>
      */
     protected $workflow_run_timeout = null;
     /**
      * Timeout of a single workflow task.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 8 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 8;</code>
      */
     protected $workflow_task_timeout = null;
     /**
@@ -122,9 +122,17 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * If the workflow gets a signal before the delay, a workflow task will be dispatched and the rest
      * of the delay will be ignored.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_start_delay = 20 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_start_delay = 20;</code>
      */
     protected $workflow_start_delay = null;
+    /**
+     * Callbacks to be called by the server when this workflow reaches a terminal state.
+     * If the workflow continues-as-new, these callbacks will be carried over to the new execution.
+     * Callback addresses must be whitelisted in the server's dynamic configuration.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Callback completion_callbacks = 21;</code>
+     */
+    private $completion_callbacks;
 
     /**
      * Constructor.
@@ -172,6 +180,10 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      *           Time to wait before dispatching the first workflow task. Cannot be used with `cron_schedule`.
      *           If the workflow gets a signal before the delay, a workflow task will be dispatched and the rest
      *           of the delay will be ignored.
+     *     @type array<\Temporal\Api\Common\V1\Callback>|\Google\Protobuf\Internal\RepeatedField $completion_callbacks
+     *           Callbacks to be called by the server when this workflow reaches a terminal state.
+     *           If the workflow continues-as-new, these callbacks will be carried over to the new execution.
+     *           Callback addresses must be whitelisted in the server's dynamic configuration.
      * }
      */
     public function __construct($data = NULL) {
@@ -326,7 +338,7 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     /**
      * Total workflow execution timeout including retries and continue as new.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 6 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 6;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getWorkflowExecutionTimeout()
@@ -347,7 +359,7 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     /**
      * Total workflow execution timeout including retries and continue as new.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 6 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 6;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
@@ -362,7 +374,7 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     /**
      * Timeout of a single workflow run.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 7 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 7;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getWorkflowRunTimeout()
@@ -383,7 +395,7 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     /**
      * Timeout of a single workflow run.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 7 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 7;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
@@ -398,7 +410,7 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     /**
      * Timeout of a single workflow task.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 8 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 8;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getWorkflowTaskTimeout()
@@ -419,7 +431,7 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     /**
      * Timeout of a single workflow task.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 8 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 8;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
@@ -778,7 +790,7 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * If the workflow gets a signal before the delay, a workflow task will be dispatched and the rest
      * of the delay will be ignored.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_start_delay = 20 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_start_delay = 20;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getWorkflowStartDelay()
@@ -801,7 +813,7 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * If the workflow gets a signal before the delay, a workflow task will be dispatched and the rest
      * of the delay will be ignored.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_start_delay = 20 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_start_delay = 20;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
@@ -809,6 +821,36 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->workflow_start_delay = $var;
+
+        return $this;
+    }
+
+    /**
+     * Callbacks to be called by the server when this workflow reaches a terminal state.
+     * If the workflow continues-as-new, these callbacks will be carried over to the new execution.
+     * Callback addresses must be whitelisted in the server's dynamic configuration.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Callback completion_callbacks = 21;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getCompletionCallbacks()
+    {
+        return $this->completion_callbacks;
+    }
+
+    /**
+     * Callbacks to be called by the server when this workflow reaches a terminal state.
+     * If the workflow continues-as-new, these callbacks will be carried over to the new execution.
+     * Callback addresses must be whitelisted in the server's dynamic configuration.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Callback completion_callbacks = 21;</code>
+     * @param array<\Temporal\Api\Common\V1\Callback>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setCompletionCallbacks($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Callback::class);
+        $this->completion_callbacks = $arr;
 
         return $this;
     }

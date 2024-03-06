@@ -18,7 +18,7 @@ class PendingWorkflowTaskInfo extends \Google\Protobuf\Internal\Message
      */
     protected $state = 0;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 2 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 2;</code>
      */
     protected $scheduled_time = null;
     /**
@@ -27,11 +27,11 @@ class PendingWorkflowTaskInfo extends \Google\Protobuf\Internal\Message
      * In this case, OriginalScheduledTime won't change. Then when current time - original_scheduled_time exceeds
      * some threshold, the workflow task will be forced timeout.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp original_scheduled_time = 3 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp original_scheduled_time = 3;</code>
      */
     protected $original_scheduled_time = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp started_time = 4 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_time = 4;</code>
      */
     protected $started_time = null;
     /**
@@ -84,7 +84,7 @@ class PendingWorkflowTaskInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 2 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 2;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getScheduledTime()
@@ -103,7 +103,7 @@ class PendingWorkflowTaskInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 2 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 2;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -121,7 +121,7 @@ class PendingWorkflowTaskInfo extends \Google\Protobuf\Internal\Message
      * In this case, OriginalScheduledTime won't change. Then when current time - original_scheduled_time exceeds
      * some threshold, the workflow task will be forced timeout.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp original_scheduled_time = 3 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp original_scheduled_time = 3;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getOriginalScheduledTime()
@@ -145,7 +145,7 @@ class PendingWorkflowTaskInfo extends \Google\Protobuf\Internal\Message
      * In this case, OriginalScheduledTime won't change. Then when current time - original_scheduled_time exceeds
      * some threshold, the workflow task will be forced timeout.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp original_scheduled_time = 3 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp original_scheduled_time = 3;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -158,7 +158,7 @@ class PendingWorkflowTaskInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp started_time = 4 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_time = 4;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartedTime()
@@ -177,7 +177,7 @@ class PendingWorkflowTaskInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp started_time = 4 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_time = 4;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */

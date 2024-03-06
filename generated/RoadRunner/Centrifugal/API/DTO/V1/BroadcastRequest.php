@@ -33,6 +33,10 @@ class BroadcastRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<string, string> tags = 5;</code>
      */
     private $tags;
+    /**
+     * Generated from protobuf field <code>string idempotency_key = 6;</code>
+     */
+    protected $idempotency_key = '';
 
     /**
      * Constructor.
@@ -45,6 +49,7 @@ class BroadcastRequest extends \Google\Protobuf\Internal\Message
      *     @type string $b64data
      *     @type bool $skip_history
      *     @type array|\Google\Protobuf\Internal\MapField $tags
+     *     @type string $idempotency_key
      * }
      */
     public function __construct($data = NULL) {
@@ -158,6 +163,28 @@ class BroadcastRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->tags = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string idempotency_key = 6;</code>
+     * @return string
+     */
+    public function getIdempotencyKey()
+    {
+        return $this->idempotency_key;
+    }
+
+    /**
+     * Generated from protobuf field <code>string idempotency_key = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setIdempotencyKey($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->idempotency_key = $var;
 
         return $this;
     }

@@ -34,13 +34,13 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
     /**
      * Timeout of a single workflow run.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 5 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 5;</code>
      */
     protected $workflow_run_timeout = null;
     /**
      * Timeout of a single workflow task.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 6 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 6;</code>
      */
     protected $workflow_task_timeout = null;
     /**
@@ -52,7 +52,7 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
     /**
      * TODO: How and is this used?
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration backoff_start_interval = 8 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration backoff_start_interval = 8;</code>
      */
     protected $backoff_start_interval = null;
     /**
@@ -259,7 +259,7 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
     /**
      * Timeout of a single workflow run.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 5 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 5;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getWorkflowRunTimeout()
@@ -280,7 +280,7 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
     /**
      * Timeout of a single workflow run.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 5 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 5;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
@@ -295,7 +295,7 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
     /**
      * Timeout of a single workflow task.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 6 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 6;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getWorkflowTaskTimeout()
@@ -316,7 +316,7 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
     /**
      * Timeout of a single workflow task.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 6 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 6;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
@@ -357,7 +357,7 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
     /**
      * TODO: How and is this used?
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration backoff_start_interval = 8 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration backoff_start_interval = 8;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getBackoffStartInterval()
@@ -378,7 +378,7 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
     /**
      * TODO: How and is this used?
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration backoff_start_interval = 8 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration backoff_start_interval = 8;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */

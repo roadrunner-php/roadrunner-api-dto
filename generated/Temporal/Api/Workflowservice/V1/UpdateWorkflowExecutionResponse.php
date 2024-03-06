@@ -27,6 +27,21 @@ class UpdateWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.update.v1.Outcome outcome = 2;</code>
      */
     protected $outcome = null;
+    /**
+     * The most advanced lifecycle stage that the Update is known to have
+     * reached, where lifecycle stages are ordered
+     * UPDATE_WORKFLOW_EXECUTION_LIFECYCLE_STAGE_UNSPECIFIED <
+     * UPDATE_WORKFLOW_EXECUTION_LIFECYCLE_STAGE_ADMITTED <
+     * UPDATE_WORKFLOW_EXECUTION_LIFECYCLE_STAGE_ACCEPTED <
+     * UPDATE_WORKFLOW_EXECUTION_LIFECYCLE_STAGE_COMPLETED.
+     * UNSPECIFIED will be returned if and only if the server's maximum wait
+     * time was reached before the Update reached the stage specified in the
+     * request WaitPolicy, and before the context deadline expired; clients may
+     * may then retry the call as needed.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.UpdateWorkflowExecutionLifecycleStage stage = 3;</code>
+     */
+    protected $stage = 0;
 
     /**
      * Constructor.
@@ -40,6 +55,17 @@ class UpdateWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
      *           The outcome of the update if and only if the workflow execution update
      *           has completed. If this response is being returned before the update has
      *           completed then this field will not be set.
+     *     @type int $stage
+     *           The most advanced lifecycle stage that the Update is known to have
+     *           reached, where lifecycle stages are ordered
+     *           UPDATE_WORKFLOW_EXECUTION_LIFECYCLE_STAGE_UNSPECIFIED <
+     *           UPDATE_WORKFLOW_EXECUTION_LIFECYCLE_STAGE_ADMITTED <
+     *           UPDATE_WORKFLOW_EXECUTION_LIFECYCLE_STAGE_ACCEPTED <
+     *           UPDATE_WORKFLOW_EXECUTION_LIFECYCLE_STAGE_COMPLETED.
+     *           UNSPECIFIED will be returned if and only if the server's maximum wait
+     *           time was reached before the Update reached the stage specified in the
+     *           request WaitPolicy, and before the context deadline expired; clients may
+     *           may then retry the call as needed.
      * }
      */
     public function __construct($data = NULL) {
@@ -119,6 +145,50 @@ class UpdateWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Update\V1\Outcome::class);
         $this->outcome = $var;
+
+        return $this;
+    }
+
+    /**
+     * The most advanced lifecycle stage that the Update is known to have
+     * reached, where lifecycle stages are ordered
+     * UPDATE_WORKFLOW_EXECUTION_LIFECYCLE_STAGE_UNSPECIFIED <
+     * UPDATE_WORKFLOW_EXECUTION_LIFECYCLE_STAGE_ADMITTED <
+     * UPDATE_WORKFLOW_EXECUTION_LIFECYCLE_STAGE_ACCEPTED <
+     * UPDATE_WORKFLOW_EXECUTION_LIFECYCLE_STAGE_COMPLETED.
+     * UNSPECIFIED will be returned if and only if the server's maximum wait
+     * time was reached before the Update reached the stage specified in the
+     * request WaitPolicy, and before the context deadline expired; clients may
+     * may then retry the call as needed.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.UpdateWorkflowExecutionLifecycleStage stage = 3;</code>
+     * @return int
+     */
+    public function getStage()
+    {
+        return $this->stage;
+    }
+
+    /**
+     * The most advanced lifecycle stage that the Update is known to have
+     * reached, where lifecycle stages are ordered
+     * UPDATE_WORKFLOW_EXECUTION_LIFECYCLE_STAGE_UNSPECIFIED <
+     * UPDATE_WORKFLOW_EXECUTION_LIFECYCLE_STAGE_ADMITTED <
+     * UPDATE_WORKFLOW_EXECUTION_LIFECYCLE_STAGE_ACCEPTED <
+     * UPDATE_WORKFLOW_EXECUTION_LIFECYCLE_STAGE_COMPLETED.
+     * UNSPECIFIED will be returned if and only if the server's maximum wait
+     * time was reached before the Update reached the stage specified in the
+     * request WaitPolicy, and before the context deadline expired; clients may
+     * may then retry the call as needed.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.UpdateWorkflowExecutionLifecycleStage stage = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStage($var)
+    {
+        GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\UpdateWorkflowExecutionLifecycleStage::class);
+        $this->stage = $var;
 
         return $this;
     }

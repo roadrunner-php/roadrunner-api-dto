@@ -23,7 +23,7 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      */
     protected $event_id = 0;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp event_time = 2 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp event_time = 2;</code>
      */
     protected $event_time = null;
     /**
@@ -118,6 +118,7 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\History\V1\WorkflowPropertiesModifiedExternallyEventAttributes $workflow_properties_modified_externally_event_attributes
      *     @type \Temporal\Api\History\V1\ActivityPropertiesModifiedExternallyEventAttributes $activity_properties_modified_externally_event_attributes
      *     @type \Temporal\Api\History\V1\WorkflowPropertiesModifiedEventAttributes $workflow_properties_modified_event_attributes
+     *     @type \Temporal\Api\History\V1\WorkflowExecutionUpdateRequestedEventAttributes $workflow_execution_update_requested_event_attributes
      * }
      */
     public function __construct($data = NULL) {
@@ -152,7 +153,7 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp event_time = 2 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp event_time = 2;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getEventTime()
@@ -171,7 +172,7 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp event_time = 2 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp event_time = 2;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -1527,6 +1528,33 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\History\V1\WorkflowPropertiesModifiedEventAttributes::class);
         $this->writeOneof(51, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.history.v1.WorkflowExecutionUpdateRequestedEventAttributes workflow_execution_update_requested_event_attributes = 52;</code>
+     * @return \Temporal\Api\History\V1\WorkflowExecutionUpdateRequestedEventAttributes|null
+     */
+    public function getWorkflowExecutionUpdateRequestedEventAttributes()
+    {
+        return $this->readOneof(52);
+    }
+
+    public function hasWorkflowExecutionUpdateRequestedEventAttributes()
+    {
+        return $this->hasOneof(52);
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.history.v1.WorkflowExecutionUpdateRequestedEventAttributes workflow_execution_update_requested_event_attributes = 52;</code>
+     * @param \Temporal\Api\History\V1\WorkflowExecutionUpdateRequestedEventAttributes $var
+     * @return $this
+     */
+    public function setWorkflowExecutionUpdateRequestedEventAttributes($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\WorkflowExecutionUpdateRequestedEventAttributes::class);
+        $this->writeOneof(52, $var);
 
         return $this;
     }

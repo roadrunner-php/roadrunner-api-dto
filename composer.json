@@ -34,6 +34,9 @@
     "php": "^8.1",
     "google/protobuf": "^v3.22"
   },
+  "suggest": {
+    "google/common-protos": "Required for Temporal API"
+  },
   "conflict": {
     "temporal/sdk": "<2.6.0"
   },

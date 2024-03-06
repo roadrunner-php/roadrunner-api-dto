@@ -34,7 +34,8 @@ class PollWorkflowExecutionUpdateRequest extends \Google\Protobuf\Internal\Messa
      */
     protected $identity = '';
     /**
-     * Describes when this poll request should return a response
+     * Describes when this poll request should return a response.
+     * Omit to request a non-blocking poll.
      *
      * Generated from protobuf field <code>.temporal.api.update.v1.WaitPolicy wait_policy = 4;</code>
      */
@@ -55,7 +56,8 @@ class PollWorkflowExecutionUpdateRequest extends \Google\Protobuf\Internal\Messa
      *     @type string $identity
      *           The identity of the worker/client who is polling this update outcome
      *     @type \Temporal\Api\Update\V1\WaitPolicy $wait_policy
-     *           Describes when this poll request should return a response
+     *           Describes when this poll request should return a response.
+     *           Omit to request a non-blocking poll.
      * }
      */
     public function __construct($data = NULL) {
@@ -156,7 +158,8 @@ class PollWorkflowExecutionUpdateRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Describes when this poll request should return a response
+     * Describes when this poll request should return a response.
+     * Omit to request a non-blocking poll.
      *
      * Generated from protobuf field <code>.temporal.api.update.v1.WaitPolicy wait_policy = 4;</code>
      * @return \Temporal\Api\Update\V1\WaitPolicy|null
@@ -177,7 +180,8 @@ class PollWorkflowExecutionUpdateRequest extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Describes when this poll request should return a response
+     * Describes when this poll request should return a response.
+     * Omit to request a non-blocking poll.
      *
      * Generated from protobuf field <code>.temporal.api.update.v1.WaitPolicy wait_policy = 4;</code>
      * @param \Temporal\Api\Update\V1\WaitPolicy $var

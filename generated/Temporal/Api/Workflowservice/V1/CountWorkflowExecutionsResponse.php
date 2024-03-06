@@ -14,9 +14,22 @@ use Google\Protobuf\Internal\GPBUtil;
 class CountWorkflowExecutionsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
+     * If `query` is not grouping by any field, the count is an approximate number
+     * of workflows that matches the query.
+     * If `query` is grouping by a field, the count is simply the sum of the counts
+     * of the groups returned in the response. This number can be smaller than the
+     * total number of workflows matching the query.
+     *
      * Generated from protobuf field <code>int64 count = 1;</code>
      */
     protected $count = 0;
+    /**
+     * `groups` contains the groups if the request is grouping by a field.
+     * The list might not be complete, and the counts of each group is approximate.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.workflowservice.v1.CountWorkflowExecutionsResponse.AggregationGroup groups = 2;</code>
+     */
+    private $groups;
 
     /**
      * Constructor.
@@ -25,6 +38,14 @@ class CountWorkflowExecutionsResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $count
+     *           If `query` is not grouping by any field, the count is an approximate number
+     *           of workflows that matches the query.
+     *           If `query` is grouping by a field, the count is simply the sum of the counts
+     *           of the groups returned in the response. This number can be smaller than the
+     *           total number of workflows matching the query.
+     *     @type array<\Temporal\Api\Workflowservice\V1\CountWorkflowExecutionsResponse\AggregationGroup>|\Google\Protobuf\Internal\RepeatedField $groups
+     *           `groups` contains the groups if the request is grouping by a field.
+     *           The list might not be complete, and the counts of each group is approximate.
      * }
      */
     public function __construct($data = NULL) {
@@ -33,6 +54,12 @@ class CountWorkflowExecutionsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * If `query` is not grouping by any field, the count is an approximate number
+     * of workflows that matches the query.
+     * If `query` is grouping by a field, the count is simply the sum of the counts
+     * of the groups returned in the response. This number can be smaller than the
+     * total number of workflows matching the query.
+     *
      * Generated from protobuf field <code>int64 count = 1;</code>
      * @return int|string
      */
@@ -42,6 +69,12 @@ class CountWorkflowExecutionsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * If `query` is not grouping by any field, the count is an approximate number
+     * of workflows that matches the query.
+     * If `query` is grouping by a field, the count is simply the sum of the counts
+     * of the groups returned in the response. This number can be smaller than the
+     * total number of workflows matching the query.
+     *
      * Generated from protobuf field <code>int64 count = 1;</code>
      * @param int|string $var
      * @return $this
@@ -50,6 +83,34 @@ class CountWorkflowExecutionsResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->count = $var;
+
+        return $this;
+    }
+
+    /**
+     * `groups` contains the groups if the request is grouping by a field.
+     * The list might not be complete, and the counts of each group is approximate.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.workflowservice.v1.CountWorkflowExecutionsResponse.AggregationGroup groups = 2;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getGroups()
+    {
+        return $this->groups;
+    }
+
+    /**
+     * `groups` contains the groups if the request is grouping by a field.
+     * The list might not be complete, and the counts of each group is approximate.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.workflowservice.v1.CountWorkflowExecutionsResponse.AggregationGroup groups = 2;</code>
+     * @param array<\Temporal\Api\Workflowservice\V1\CountWorkflowExecutionsResponse\AggregationGroup>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setGroups($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Workflowservice\V1\CountWorkflowExecutionsResponse\AggregationGroup::class);
+        $this->groups = $arr;
 
         return $this;
     }

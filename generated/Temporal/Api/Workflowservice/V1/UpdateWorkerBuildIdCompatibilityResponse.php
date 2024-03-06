@@ -13,13 +13,6 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class UpdateWorkerBuildIdCompatibilityResponse extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * The id of the compatible set that the updated version was added to, or exists in. Users don't
-     * need to understand or care about this value, but it has value for debugging purposes.
-     *
-     * Generated from protobuf field <code>string version_set_id = 1;</code>
-     */
-    protected $version_set_id = '';
 
     /**
      * Constructor.
@@ -27,42 +20,11 @@ class UpdateWorkerBuildIdCompatibilityResponse extends \Google\Protobuf\Internal
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $version_set_id
-     *           The id of the compatible set that the updated version was added to, or exists in. Users don't
-     *           need to understand or care about this value, but it has value for debugging purposes.
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Temporal\Api\Workflowservice\V1\RequestResponse::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * The id of the compatible set that the updated version was added to, or exists in. Users don't
-     * need to understand or care about this value, but it has value for debugging purposes.
-     *
-     * Generated from protobuf field <code>string version_set_id = 1;</code>
-     * @return string
-     */
-    public function getVersionSetId()
-    {
-        return $this->version_set_id;
-    }
-
-    /**
-     * The id of the compatible set that the updated version was added to, or exists in. Users don't
-     * need to understand or care about this value, but it has value for debugging purposes.
-     *
-     * Generated from protobuf field <code>string version_set_id = 1;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setVersionSetId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->version_set_id = $var;
-
-        return $this;
     }
 
 }

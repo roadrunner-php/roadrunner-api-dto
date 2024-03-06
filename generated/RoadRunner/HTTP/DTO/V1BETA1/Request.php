@@ -9,6 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * proto http request
+ *
  * Generated from protobuf message <code>http.v1beta.Request</code>
  */
 class Request extends \Google\Protobuf\Internal\Message
@@ -46,21 +48,13 @@ class Request extends \Google\Protobuf\Internal\Message
      */
     protected $parsed = false;
     /**
-     * Generated from protobuf field <code>map<string, .http.v1beta.HeaderValue> attributes = 9;</code>
-     */
-    private $attributes;
-    /**
-     * Generated from protobuf field <code>.http.v1beta.Uploads uploads = 10;</code>
+     * Generated from protobuf field <code>.http.v1beta.Uploads uploads = 9;</code>
      */
     protected $uploads = null;
     /**
-     * Generated from protobuf field <code>bytes body = 11;</code>
+     * Generated from protobuf field <code>map<string, .http.v1beta.HeaderValue> attributes = 10;</code>
      */
-    protected $body = '';
-    /**
-     * Generated from protobuf field <code>bytes raw_body = 12;</code>
-     */
-    protected $raw_body = '';
+    private $attributes;
 
     /**
      * Constructor.
@@ -76,10 +70,8 @@ class Request extends \Google\Protobuf\Internal\Message
      *     @type array|\Google\Protobuf\Internal\MapField $cookies
      *     @type string $raw_query
      *     @type bool $parsed
-     *     @type array|\Google\Protobuf\Internal\MapField $attributes
      *     @type \RoadRunner\HTTP\DTO\V1BETA1\Uploads $uploads
-     *     @type string $body
-     *     @type string $raw_body
+     *     @type array|\Google\Protobuf\Internal\MapField $attributes
      * }
      */
     public function __construct($data = NULL) {
@@ -264,29 +256,7 @@ class Request extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, .http.v1beta.HeaderValue> attributes = 9;</code>
-     * @return \Google\Protobuf\Internal\MapField
-     */
-    public function getAttributes()
-    {
-        return $this->attributes;
-    }
-
-    /**
-     * Generated from protobuf field <code>map<string, .http.v1beta.HeaderValue> attributes = 9;</code>
-     * @param array|\Google\Protobuf\Internal\MapField $var
-     * @return $this
-     */
-    public function setAttributes($var)
-    {
-        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\HTTP\DTO\V1BETA1\HeaderValue::class);
-        $this->attributes = $arr;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.http.v1beta.Uploads uploads = 10;</code>
+     * Generated from protobuf field <code>.http.v1beta.Uploads uploads = 9;</code>
      * @return \RoadRunner\HTTP\DTO\V1BETA1\Uploads|null
      */
     public function getUploads()
@@ -305,7 +275,7 @@ class Request extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.http.v1beta.Uploads uploads = 10;</code>
+     * Generated from protobuf field <code>.http.v1beta.Uploads uploads = 9;</code>
      * @param \RoadRunner\HTTP\DTO\V1BETA1\Uploads $var
      * @return $this
      */
@@ -318,45 +288,23 @@ class Request extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bytes body = 11;</code>
-     * @return string
+     * Generated from protobuf field <code>map<string, .http.v1beta.HeaderValue> attributes = 10;</code>
+     * @return \Google\Protobuf\Internal\MapField
      */
-    public function getBody()
+    public function getAttributes()
     {
-        return $this->body;
+        return $this->attributes;
     }
 
     /**
-     * Generated from protobuf field <code>bytes body = 11;</code>
-     * @param string $var
+     * Generated from protobuf field <code>map<string, .http.v1beta.HeaderValue> attributes = 10;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setBody($var)
+    public function setAttributes($var)
     {
-        GPBUtil::checkString($var, False);
-        $this->body = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bytes raw_body = 12;</code>
-     * @return string
-     */
-    public function getRawBody()
-    {
-        return $this->raw_body;
-    }
-
-    /**
-     * Generated from protobuf field <code>bytes raw_body = 12;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setRawBody($var)
-    {
-        GPBUtil::checkString($var, False);
-        $this->raw_body = $var;
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\HTTP\DTO\V1BETA1\HeaderValue::class);
+        $this->attributes = $arr;
 
         return $this;
     }

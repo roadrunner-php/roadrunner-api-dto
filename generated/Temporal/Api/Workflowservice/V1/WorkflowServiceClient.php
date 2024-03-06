@@ -103,11 +103,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     /**
      * UpdateNamespace is used to update the information and configuration of a registered
      * namespace.
-     *
-     * (-- api-linter: core::0134::method-signature=disabled
-     *     aip.dev/not-precedent: UpdateNamespace RPC doesn't follow Google API format. --)
-     * (-- api-linter: core::0134::response-message-name=disabled
-     *     aip.dev/not-precedent: UpdateNamespace RPC doesn't follow Google API format. --)
      * @param \Temporal\Api\Workflowservice\V1\UpdateNamespaceRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -127,6 +122,9 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * Once the namespace is deprecated it cannot be used to start new workflow executions. Existing
      * workflow executions will continue to run on deprecated namespaces.
      * Deprecated.
+     *
+     * (-- api-linter: core::0127::http-annotation=disabled
+     *     aip.dev/not-precedent: Deprecated --)
      * @param \Temporal\Api\Workflowservice\V1\DeprecateNamespaceRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -199,6 +197,9 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * tasks. The worker is expected to call `RespondWorkflowTaskCompleted` when it is done
      * processing the task. The service will create a `WorkflowTaskStarted` event in the history for
      * this task before handing it to the worker.
+     *
+     * (-- api-linter: core::0127::http-annotation=disabled
+     *     aip.dev/not-precedent: We do not expose worker API to HTTP. --)
      * @param \Temporal\Api\Workflowservice\V1\PollWorkflowTaskQueueRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -219,6 +220,9 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * Completing a WorkflowTask will write a `WORKFLOW_TASK_COMPLETED` event to the workflow's
      * history, along with events corresponding to whatever commands the SDK generated while
      * executing the task (ex timer started, activity task scheduled, etc).
+     *
+     * (-- api-linter: core::0127::http-annotation=disabled
+     *     aip.dev/not-precedent: We do not expose worker API to HTTP. --)
      * @param \Temporal\Api\Workflowservice\V1\RespondWorkflowTaskCompletedRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -242,6 +246,9 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      *
      * Temporal will only append first WorkflowTaskFailed event to the history of workflow execution
      * for consecutive failures.
+     *
+     * (-- api-linter: core::0127::http-annotation=disabled
+     *     aip.dev/not-precedent: We do not expose worker API to HTTP. --)
      * @param \Temporal\Api\Workflowservice\V1\RespondWorkflowTaskFailedRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -268,6 +275,9 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * (`ACTIVITY_TASK_COMPLETED` / `ACTIVITY_TASK_FAILED` / `ACTIVITY_TASK_TIMED_OUT`) will both be
      * written permanently to Workflow execution history when Activity is finished. This is done to
      * avoid writing many events in the case of a failure/retry loop.
+     *
+     * (-- api-linter: core::0127::http-annotation=disabled
+     *     aip.dev/not-precedent: We do not expose worker API to HTTP. --)
      * @param \Temporal\Api\Workflowservice\V1\PollActivityTaskQueueRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -539,10 +549,9 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * WorkflowExecution.run_id is provided) or the latest Workflow Execution (when
      * WorkflowExecution.run_id is not provided). If the Workflow Execution is Running, it will be
      * terminated before deletion.
-     * (-- api-linter: core::0135::method-signature=disabled
-     *     aip.dev/not-precedent: DeleteNamespace RPC doesn't follow Google API format. --)
-     * (-- api-linter: core::0135::response-message-name=disabled
-     *     aip.dev/not-precedent: DeleteNamespace RPC doesn't follow Google API format. --)
+     *
+     * (-- api-linter: core::0127::http-annotation=disabled
+     *     aip.dev/not-precedent: Workflow deletion not exposed to HTTP, users should use cancel or terminate. --)
      * @param \Temporal\Api\Workflowservice\V1\DeleteWorkflowExecutionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -558,6 +567,9 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
 
     /**
      * ListOpenWorkflowExecutions is a visibility API to list the open executions in a specific namespace.
+     *
+     * (-- api-linter: core::0127::http-annotation=disabled
+     *     aip.dev/not-precedent: HTTP users should use ListWorkflowExecutions instead. --)
      * @param \Temporal\Api\Workflowservice\V1\ListOpenWorkflowExecutionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -573,6 +585,9 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
 
     /**
      * ListClosedWorkflowExecutions is a visibility API to list the closed executions in a specific namespace.
+     *
+     * (-- api-linter: core::0127::http-annotation=disabled
+     *     aip.dev/not-precedent: HTTP users should use ListWorkflowExecutions instead. --)
      * @param \Temporal\Api\Workflowservice\V1\ListClosedWorkflowExecutionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -618,6 +633,9 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
 
     /**
      * ScanWorkflowExecutions is a visibility API to list large amount of workflow executions in a specific namespace without order.
+     *
+     * (-- api-linter: core::0127::http-annotation=disabled
+     *     aip.dev/not-precedent: HTTP users should use ListWorkflowExecutions instead. --)
      * @param \Temporal\Api\Workflowservice\V1\ScanWorkflowExecutionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -648,6 +666,9 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
 
     /**
      * GetSearchAttributes is a visibility API to get all legal keys that could be used in list APIs
+     *
+     * (-- api-linter: core::0127::http-annotation=disabled
+     *     aip.dev/not-precedent: We do not expose this search attribute API to HTTP (but may expose on OperatorService). --)
      * @param \Temporal\Api\Workflowservice\V1\GetSearchAttributesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -667,6 +688,9 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      *
      * Completing the query will unblock the corresponding client call to `QueryWorkflow` and return
      * the query result a response.
+     *
+     * (-- api-linter: core::0127::http-annotation=disabled
+     *     aip.dev/not-precedent: We do not expose worker API to HTTP. --)
      * @param \Temporal\Api\Workflowservice\V1\RespondQueryTaskCompletedRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -688,6 +712,9 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * Things cleared are:
      * 1. StickyTaskQueue
      * 2. StickyScheduleToStartTimeout
+     *
+     * (-- api-linter: core::0127::http-annotation=disabled
+     *     aip.dev/not-precedent: We do not expose worker API to HTTP. --)
      * @param \Temporal\Api\Workflowservice\V1\ResetStickyTaskQueueRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -777,6 +804,8 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * (-- api-linter: core::0127::http-annotation=disabled
+     *     aip.dev/not-precedent: We do not expose this low-level API to HTTP. --)
      * @param \Temporal\Api\Workflowservice\V1\ListTaskQueuePartitionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -792,12 +821,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
 
     /**
      * Creates a new schedule.
-     * (-- api-linter: core::0133::method-signature=disabled
-     *     aip.dev/not-precedent: CreateSchedule doesn't follow Google API format --)
-     * (-- api-linter: core::0133::response-message-name=disabled
-     *     aip.dev/not-precedent: CreateSchedule doesn't follow Google API format --)
-     * (-- api-linter: core::0133::http-uri-parent=disabled
-     *     aip.dev/not-precedent: CreateSchedule doesn't follow Google API format --)
      * @param \Temporal\Api\Workflowservice\V1\CreateScheduleRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -828,10 +851,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
 
     /**
      * Changes the configuration or state of an existing schedule.
-     * (-- api-linter: core::0134::response-message-name=disabled
-     *     aip.dev/not-precedent: UpdateSchedule RPC doesn't follow Google API format. --)
-     * (-- api-linter: core::0134::method-signature=disabled
-     *     aip.dev/not-precedent: UpdateSchedule RPC doesn't follow Google API format. --)
      * @param \Temporal\Api\Workflowservice\V1\UpdateScheduleRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -847,8 +866,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
 
     /**
      * Makes a specific change to a schedule or triggers an immediate action.
-     * (-- api-linter: core::0134::synonyms=disabled
-     *     aip.dev/not-precedent: we have both patch and update. --)
      * @param \Temporal\Api\Workflowservice\V1\PatchScheduleRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -879,10 +896,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
 
     /**
      * Deletes a schedule, removing it from the system.
-     * (-- api-linter: core::0135::method-signature=disabled
-     *     aip.dev/not-precedent: DeleteSchedule doesn't follow Google API format --)
-     * (-- api-linter: core::0135::response-message-name=disabled
-     *     aip.dev/not-precedent: DeleteSchedule doesn't follow Google API format --)
      * @param \Temporal\Api\Workflowservice\V1\DeleteScheduleRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -925,10 +938,8 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * NOTE: The number of task queues mapped to a single build id is limited by the `limit.taskQueuesPerBuildId`
      * (default is 20), if this limit is exceeded this API will error with a FailedPrecondition.
      *
-     * (-- api-linter: core::0134::response-message-name=disabled
-     *     aip.dev/not-precedent: UpdateWorkerBuildIdCompatibility RPC doesn't follow Google API format. --)
-     * (-- api-linter: core::0134::method-signature=disabled
-     *     aip.dev/not-precedent: UpdateWorkerBuildIdCompatibility RPC doesn't follow Google API format. --)
+     * (-- api-linter: core::0127::http-annotation=disabled
+     *     aip.dev/not-precedent: We do yet expose versioning API to HTTP. --)
      * @param \Temporal\Api\Workflowservice\V1\UpdateWorkerBuildIdCompatibilityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -985,8 +996,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
 
     /**
      * Invokes the specified update function on user workflow code.
-     * (-- api-linter: core::0134=disabled
-     *     aip.dev/not-precedent: UpdateWorkflowExecution doesn't follow Google API format --)
      * @param \Temporal\Api\Workflowservice\V1\UpdateWorkflowExecutionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -1005,8 +1014,9 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * previously issued through the UpdateWorkflowExecution RPC. The effective
      * timeout on this call will be shorter of the the caller-supplied gRPC
      * timeout and the server's configured long-poll timeout.
-     * (-- api-linter: core::0134=disabled
-     *     aip.dev/not-precedent: UpdateWorkflowExecution doesn't follow Google API format --)
+     *
+     * (-- api-linter: core::0127::http-annotation=disabled
+     *     aip.dev/not-precedent: We don't expose update polling API to HTTP in favor of a potential future non-blocking form. --)
      * @param \Temporal\Api\Workflowservice\V1\PollWorkflowExecutionUpdateRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -1077,6 +1087,57 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ListBatchOperations',
         $argument,
         ['\Temporal\Api\Workflowservice\V1\ListBatchOperationsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * PollNexusTaskQueue is a long poll call used by workers to receive Nexus tasks.
+     * (-- api-linter: core::0127::http-annotation=disabled
+     *     aip.dev/not-precedent: We do not expose worker API to HTTP. --)
+     * @param \Temporal\Api\Workflowservice\V1\PollNexusTaskQueueRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function PollNexusTaskQueue(\Temporal\Api\Workflowservice\V1\PollNexusTaskQueueRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/PollNexusTaskQueue',
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\PollNexusTaskQueueResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * RespondNexusTaskCompleted is called by workers to respond to Nexus tasks received via PollNexusTaskQueue.
+     * (-- api-linter: core::0127::http-annotation=disabled
+     *     aip.dev/not-precedent: We do not expose worker API to HTTP. --)
+     * @param \Temporal\Api\Workflowservice\V1\RespondNexusTaskCompletedRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function RespondNexusTaskCompleted(\Temporal\Api\Workflowservice\V1\RespondNexusTaskCompletedRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RespondNexusTaskCompleted',
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\RespondNexusTaskCompletedResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * RespondNexusTaskFailed is called by workers to fail Nexus tasks received via PollNexusTaskQueue.
+     * (-- api-linter: core::0127::http-annotation=disabled
+     *     aip.dev/not-precedent: We do not expose worker API to HTTP. --)
+     * @param \Temporal\Api\Workflowservice\V1\RespondNexusTaskFailedRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function RespondNexusTaskFailed(\Temporal\Api\Workflowservice\V1\RespondNexusTaskFailedRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RespondNexusTaskFailed',
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\RespondNexusTaskFailedResponse', 'decode'],
         $metadata, $options);
     }
 

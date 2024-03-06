@@ -39,11 +39,18 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      */
     protected $request_id = '';
     /**
-     * Reset reapplay(replay) options.
+     * Event types to be reapplied (deprecated)
+     * Default: RESET_REAPPLY_TYPE_ALL_ELIGIBLE
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 6;</code>
      */
     protected $reset_reapply_type = 0;
+    /**
+     * Event types not to be reapplied
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.enums.v1.ResetReapplyExcludeType reset_reapply_exclude_types = 7;</code>
+     */
+    private $reset_reapply_exclude_types;
 
     /**
      * Constructor.
@@ -60,7 +67,10 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      *     @type string $request_id
      *           Used to de-dupe reset requests
      *     @type int $reset_reapply_type
-     *           Reset reapplay(replay) options.
+     *           Event types to be reapplied (deprecated)
+     *           Default: RESET_REAPPLY_TYPE_ALL_ELIGIBLE
+     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $reset_reapply_exclude_types
+     *           Event types not to be reapplied
      * }
      */
     public function __construct($data = NULL) {
@@ -199,7 +209,8 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Reset reapplay(replay) options.
+     * Event types to be reapplied (deprecated)
+     * Default: RESET_REAPPLY_TYPE_ALL_ELIGIBLE
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 6;</code>
      * @return int
@@ -210,7 +221,8 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Reset reapplay(replay) options.
+     * Event types to be reapplied (deprecated)
+     * Default: RESET_REAPPLY_TYPE_ALL_ELIGIBLE
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 6;</code>
      * @param int $var
@@ -220,6 +232,32 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ResetReapplyType::class);
         $this->reset_reapply_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Event types not to be reapplied
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.enums.v1.ResetReapplyExcludeType reset_reapply_exclude_types = 7;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getResetReapplyExcludeTypes()
+    {
+        return $this->reset_reapply_exclude_types;
+    }
+
+    /**
+     * Event types not to be reapplied
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.enums.v1.ResetReapplyExcludeType reset_reapply_exclude_types = 7;</code>
+     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setResetReapplyExcludeTypes($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Temporal\Api\Enums\V1\ResetReapplyExcludeType::class);
+        $this->reset_reapply_exclude_types = $arr;
 
         return $this;
     }

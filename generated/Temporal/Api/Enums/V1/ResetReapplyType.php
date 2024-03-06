@@ -7,9 +7,9 @@ namespace Temporal\Api\Enums\V1;
 use UnexpectedValueException;
 
 /**
- * Reset reapplay(replay) options
- * * RESET_REAPPLY_TYPE_SIGNAL (default) - Signals are reapplied when workflow is reset
- * * RESET_REAPPLY_TYPE_NONE - nothing is reapplied
+ * Event types to include when reapplying events. Deprecated: applications
+ * should use ResetReapplyExcludeType to specify exclusions from this set, and
+ * new event types should be added to ResetReapplyExcludeType instead of here.
  *
  * Protobuf type <code>temporal.api.enums.v1.ResetReapplyType</code>
  */
@@ -20,18 +20,29 @@ class ResetReapplyType
      */
     const RESET_REAPPLY_TYPE_UNSPECIFIED = 0;
     /**
+     * Signals are reapplied when workflow is reset.
+     *
      * Generated from protobuf enum <code>RESET_REAPPLY_TYPE_SIGNAL = 1;</code>
      */
     const RESET_REAPPLY_TYPE_SIGNAL = 1;
     /**
+     * No events are reapplied when workflow is reset.
+     *
      * Generated from protobuf enum <code>RESET_REAPPLY_TYPE_NONE = 2;</code>
      */
     const RESET_REAPPLY_TYPE_NONE = 2;
+    /**
+     * All eligible events are reapplied when workflow is reset.
+     *
+     * Generated from protobuf enum <code>RESET_REAPPLY_TYPE_ALL_ELIGIBLE = 3;</code>
+     */
+    const RESET_REAPPLY_TYPE_ALL_ELIGIBLE = 3;
 
     private static $valueToName = [
         self::RESET_REAPPLY_TYPE_UNSPECIFIED => 'RESET_REAPPLY_TYPE_UNSPECIFIED',
         self::RESET_REAPPLY_TYPE_SIGNAL => 'RESET_REAPPLY_TYPE_SIGNAL',
         self::RESET_REAPPLY_TYPE_NONE => 'RESET_REAPPLY_TYPE_NONE',
+        self::RESET_REAPPLY_TYPE_ALL_ELIGIBLE => 'RESET_REAPPLY_TYPE_ALL_ELIGIBLE',
     ];
 
     public static function name($value)

@@ -16,9 +16,9 @@ class Message
         }
         \GPBMetadata\Google\Protobuf\Duration::initOnce();
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
-        \GPBMetadata\Dependencies\Gogoproto\Gogo::initOnce();
         \GPBMetadata\Temporal\Api\Enums\V1\EventType::initOnce();
         \GPBMetadata\Temporal\Api\Enums\V1\FailedCause::initOnce();
+        \GPBMetadata\Temporal\Api\Enums\V1\Update::initOnce();
         \GPBMetadata\Temporal\Api\Enums\V1\Workflow::initOnce();
         \GPBMetadata\Temporal\Api\Common\V1\Message::initOnce();
         \GPBMetadata\Temporal\Api\Failure\V1\Message::initOnce();
@@ -28,8 +28,8 @@ class Message
         \GPBMetadata\Temporal\Api\Sdk\V1\TaskCompleteMetadata::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ù¢
-%temporal/api/history/v1/message.prototemporal.api.history.v1google/protobuf/timestamp.proto!dependencies/gogoproto/gogo.proto&temporal/api/enums/v1/event_type.proto(temporal/api/enums/v1/failed_cause.proto$temporal/api/enums/v1/workflow.proto$temporal/api/common/v1/message.proto%temporal/api/failure/v1/message.proto\'temporal/api/taskqueue/v1/message.proto$temporal/api/update/v1/message.proto&temporal/api/workflow/v1/message.proto0temporal/api/sdk/v1/task_complete_metadata.proto"ï
+ ¥
+%temporal/api/history/v1/message.prototemporal.api.history.v1google/protobuf/timestamp.proto&temporal/api/enums/v1/event_type.proto(temporal/api/enums/v1/failed_cause.proto"temporal/api/enums/v1/update.proto$temporal/api/enums/v1/workflow.proto$temporal/api/common/v1/message.proto%temporal/api/failure/v1/message.proto\'temporal/api/taskqueue/v1/message.proto$temporal/api/update/v1/message.proto&temporal/api/workflow/v1/message.proto0temporal/api/sdk/v1/task_complete_metadata.proto"‘
 \'WorkflowExecutionStartedEventAttributes;
 workflow_type (2$.temporal.api.common.v1.WorkflowType!
 parent_workflow_namespace (	$
@@ -38,10 +38,10 @@ class Message
 parent_initiated_event_id (8
 
 task_queue (2$.temporal.api.taskqueue.v1.TaskQueue/
-input (2 .temporal.api.common.v1.PayloadsC
-workflow_execution_timeout (2.google.protobuf.DurationB˜ß=
-workflow_run_timeout (2.google.protobuf.DurationB˜ß>
-workflow_task_timeout	 (2.google.protobuf.DurationB˜ß"
+input (2 .temporal.api.common.v1.Payloads=
+workflow_execution_timeout (2.google.protobuf.Duration7
+workflow_run_timeout (2.google.protobuf.Duration8
+workflow_task_timeout	 (2.google.protobuf.Duration"
 continued_execution_run_id
  (	@
 	initiator (2-.temporal.api.enums.v1.ContinueAsNewInitiator;
@@ -51,17 +51,18 @@ task_queue (2$.temporal.api.taskqueue.v1.TaskQueue/
 identity (	
 first_execution_run_id (	9
 retry_policy (2#.temporal.api.common.v1.RetryPolicy
-attempt (L
-"workflow_execution_expiration_time (2.google.protobuf.TimestampBß
-cron_schedule (	D
-first_workflow_task_backoff (2.google.protobuf.DurationB˜ß*
+attempt (F
+"workflow_execution_expiration_time (2.google.protobuf.Timestamp
+cron_schedule (	>
+first_workflow_task_backoff (2.google.protobuf.Duration*
 memo (2.temporal.api.common.v1.MemoC
 search_attributes (2(.temporal.api.common.v1.SearchAttributesE
 prev_auto_reset_points (2%.temporal.api.workflow.v1.ResetPoints.
 header (2.temporal.api.common.v1.Header&
 parent_initiated_event_version (
 workflow_id (	H
-source_version_stamp (2*.temporal.api.common.v1.WorkerVersionStamp"¥
+source_version_stamp (2*.temporal.api.common.v1.WorkerVersionStamp>
+completion_callbacks (2 .temporal.api.common.v1.Callback"¥
 )WorkflowExecutionCompletedEventAttributes0
 result (2 .temporal.api.common.v1.Payloads(
  workflow_task_completed_event_id (
@@ -73,17 +74,17 @@ task_queue (2$.temporal.api.taskqueue.v1.TaskQueue/
 new_execution_run_id (	"€
 (WorkflowExecutionTimedOutEventAttributes6
 retry_state (2!.temporal.api.enums.v1.RetryState
-new_execution_run_id (	"Ø
+new_execution_run_id (	"Æ
 .WorkflowExecutionContinuedAsNewEventAttributes
 new_execution_run_id (	;
 workflow_type (2$.temporal.api.common.v1.WorkflowType8
 
 task_queue (2$.temporal.api.taskqueue.v1.TaskQueue/
-input (2 .temporal.api.common.v1.Payloads=
-workflow_run_timeout (2.google.protobuf.DurationB˜ß>
-workflow_task_timeout (2.google.protobuf.DurationB˜ß(
- workflow_task_completed_event_id (?
-backoff_start_interval (2.google.protobuf.DurationB˜ß@
+input (2 .temporal.api.common.v1.Payloads7
+workflow_run_timeout (2.google.protobuf.Duration8
+workflow_task_timeout (2.google.protobuf.Duration(
+ workflow_task_completed_event_id (9
+backoff_start_interval (2.google.protobuf.Duration@
 	initiator	 (2-.temporal.api.enums.v1.ContinueAsNewInitiator1
 failure
  (2 .temporal.api.failure.v1.Failure@
@@ -91,11 +92,11 @@ task_queue (2$.temporal.api.taskqueue.v1.TaskQueue/
 header (2.temporal.api.common.v1.Header*
 memo (2.temporal.api.common.v1.MemoC
 search_attributes (2(.temporal.api.common.v1.SearchAttributes
-use_compatible_version ("²
+use_compatible_version ("¬
 $WorkflowTaskScheduledEventAttributes8
 
-task_queue (2$.temporal.api.taskqueue.v1.TaskQueue?
-start_to_close_timeout (2.google.protobuf.DurationB˜ß
+task_queue (2$.temporal.api.taskqueue.v1.TaskQueue9
+start_to_close_timeout (2.google.protobuf.Duration
 attempt ("£
 "WorkflowTaskStartedEventAttributes
 scheduled_event_id (
@@ -128,19 +129,19 @@ new_run_id (	
 fork_event_version (
 binary_checksum	 (	B
 worker_version
- (2*.temporal.api.common.v1.WorkerVersionStamp"£
+ (2*.temporal.api.common.v1.WorkerVersionStamp"‹
 $ActivityTaskScheduledEventAttributes
 activity_id (	;
 activity_type (2$.temporal.api.common.v1.ActivityType8
 
 task_queue (2$.temporal.api.taskqueue.v1.TaskQueue.
 header (2.temporal.api.common.v1.Header/
-input (2 .temporal.api.common.v1.PayloadsB
-schedule_to_close_timeout (2.google.protobuf.DurationB˜ßB
-schedule_to_start_timeout (2.google.protobuf.DurationB˜ß?
-start_to_close_timeout	 (2.google.protobuf.DurationB˜ß:
+input (2 .temporal.api.common.v1.Payloads<
+schedule_to_close_timeout (2.google.protobuf.Duration<
+schedule_to_start_timeout (2.google.protobuf.Duration9
+start_to_close_timeout	 (2.google.protobuf.Duration4
 heartbeat_timeout
- (2.google.protobuf.DurationB˜ß(
+ (2.google.protobuf.Duration(
  workflow_task_completed_event_id (9
 retry_policy (2#.temporal.api.common.v1.RetryPolicy
 use_compatible_version (J"¯
@@ -178,10 +179,10 @@ $ActivityTaskCompletedEventAttributes0
 scheduled_event_id (
 started_event_id (
 identity (	B
-worker_version (2*.temporal.api.common.v1.WorkerVersionStamp"™
+worker_version (2*.temporal.api.common.v1.WorkerVersionStamp"“
 TimerStartedEventAttributes
-timer_id (	>
-start_to_fire_timeout (2.google.protobuf.DurationB˜ß(
+timer_id (	8
+start_to_fire_timeout (2.google.protobuf.Duration(
  workflow_task_completed_event_id ("G
 TimerFiredEventAttributes
 timer_id (	
@@ -207,13 +208,14 @@ $ActivityTaskCompletedEventAttributes0
 failure (2 .temporal.api.failure.v1.FailureP
 DetailsEntry
 key (	/
-value (2 .temporal.api.common.v1.Payloads:8"×
+value (2 .temporal.api.common.v1.Payloads:8"§
 (WorkflowExecutionSignaledEventAttributes
 signal_name (	/
 input (2 .temporal.api.common.v1.Payloads
 identity (	.
 header (2.temporal.api.common.v1.Header#
-skip_generate_workflow_task ("
+skip_generate_workflow_task (N
+external_workflow_execution (2).temporal.api.common.v1.WorkflowExecution"
 *WorkflowExecutionTerminatedEventAttributes
 reason (	1
 details (2 .temporal.api.common.v1.Payloads
@@ -268,7 +270,7 @@ $ActivityTaskCompletedEventAttributes0
 search_attributes (2(.temporal.api.common.v1.SearchAttributes"Š
 )WorkflowPropertiesModifiedEventAttributes(
  workflow_task_completed_event_id (3
-upserted_memo (2.temporal.api.common.v1.Memo"Ä
+upserted_memo (2.temporal.api.common.v1.Memo"²
 3StartChildWorkflowExecutionInitiatedEventAttributes
 	namespace (	
 namespace_id (	
@@ -276,10 +278,10 @@ $ActivityTaskCompletedEventAttributes0
 workflow_type (2$.temporal.api.common.v1.WorkflowType8
 
 task_queue (2$.temporal.api.taskqueue.v1.TaskQueue/
-input (2 .temporal.api.common.v1.PayloadsC
-workflow_execution_timeout (2.google.protobuf.DurationB˜ß=
-workflow_run_timeout (2.google.protobuf.DurationB˜ß>
-workflow_task_timeout (2.google.protobuf.DurationB˜ßE
+input (2 .temporal.api.common.v1.Payloads=
+workflow_execution_timeout (2.google.protobuf.Duration7
+workflow_run_timeout (2.google.protobuf.Duration8
+workflow_task_timeout (2.google.protobuf.DurationE
 parent_close_policy	 (2(.temporal.api.enums.v1.ParentClosePolicy
 control
  (	(
@@ -346,12 +348,12 @@ task_queue (2$.temporal.api.taskqueue.v1.TaskQueue/
 workflow_execution (2).temporal.api.common.v1.WorkflowExecution;
 workflow_type (2$.temporal.api.common.v1.WorkflowType
 initiated_event_id (
-started_event_id ("Ò
+started_event_id ("À
 3WorkflowPropertiesModifiedExternallyEventAttributes
-new_task_queue (	B
-new_workflow_task_timeout (2.google.protobuf.DurationB˜ßA
-new_workflow_run_timeout (2.google.protobuf.DurationB˜ßG
-new_workflow_execution_timeout (2.google.protobuf.DurationB˜ß3
+new_task_queue (	<
+new_workflow_task_timeout (2.google.protobuf.Duration;
+new_workflow_run_timeout (2.google.protobuf.DurationA
+new_workflow_execution_timeout (2.google.protobuf.Duration3
 upserted_memo (2.temporal.api.common.v1.Memo"
 3ActivityPropertiesModifiedExternallyEventAttributes
 scheduled_event_id (=
@@ -370,11 +372,14 @@ $accepted_request_sequencing_event_id (9
 rejected_request_message_id (	,
 $rejected_request_sequencing_event_id (9
 rejected_request (2.temporal.api.update.v1.Request1
-failure (2 .temporal.api.failure.v1.Failure"å/
+failure (2 .temporal.api.failure.v1.Failure"¦
+/WorkflowExecutionUpdateRequestedEventAttributes0
+request (2.temporal.api.update.v1.RequestA
+origin (21.temporal.api.enums.v1.UpdateRequestedEventOrigin"ê0
 HistoryEvent
-event_id (4
+event_id (.
 
-event_time (2.google.protobuf.TimestampBß4
+event_time (2.google.protobuf.Timestamp4
 
 event_type (2 .temporal.api.enums.v1.EventType
 version (
@@ -426,7 +431,8 @@ Brequest_cancel_external_workflow_execution_failed_event_attributes (2T.temp
 4workflow_execution_update_completed_event_attributes0 (2H.temporal.api.history.v1.WorkflowExecutionUpdateCompletedEventAttributesH 
 8workflow_properties_modified_externally_event_attributes1 (2L.temporal.api.history.v1.WorkflowPropertiesModifiedExternallyEventAttributesH 
 8activity_properties_modified_externally_event_attributes2 (2L.temporal.api.history.v1.ActivityPropertiesModifiedExternallyEventAttributesH {
--workflow_properties_modified_event_attributes3 (2B.temporal.api.history.v1.WorkflowPropertiesModifiedEventAttributesH B
+-workflow_properties_modified_event_attributes3 (2B.temporal.api.history.v1.WorkflowPropertiesModifiedEventAttributesH ˆ
+4workflow_execution_update_requested_event_attributes4 (2H.temporal.api.history.v1.WorkflowExecutionUpdateRequestedEventAttributesH B
 
 attributes"@
 History5

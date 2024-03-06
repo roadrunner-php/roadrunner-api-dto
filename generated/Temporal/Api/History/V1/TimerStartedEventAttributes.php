@@ -24,7 +24,7 @@ class TimerStartedEventAttributes extends \Google\Protobuf\Internal\Message
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration start_to_fire_timeout = 2 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration start_to_fire_timeout = 2;</code>
      */
     protected $start_to_fire_timeout = null;
     /**
@@ -86,7 +86,7 @@ class TimerStartedEventAttributes extends \Google\Protobuf\Internal\Message
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration start_to_fire_timeout = 2 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration start_to_fire_timeout = 2;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getStartToFireTimeout()
@@ -109,7 +109,7 @@ class TimerStartedEventAttributes extends \Google\Protobuf\Internal\Message
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration start_to_fire_timeout = 2 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration start_to_fire_timeout = 2;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */

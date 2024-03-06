@@ -22,7 +22,7 @@ class BadBinaryInfo extends \Google\Protobuf\Internal\Message
      */
     protected $operator = '';
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 3 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 3;</code>
      */
     protected $create_time = null;
 
@@ -87,7 +87,7 @@ class BadBinaryInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 3 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 3;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
@@ -106,7 +106,7 @@ class BadBinaryInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 3 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 3;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */

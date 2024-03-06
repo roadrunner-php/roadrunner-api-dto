@@ -17,8 +17,8 @@ class Http
         \GPBMetadata\Google\Protobuf\Any::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¯
-http/v1beta/http.protohttp.v1beta"·
+Õ	
+http/v1beta/http.protohttp.v1beta"—
 Request
 remote_addr (	
 protocol (	
@@ -27,13 +27,11 @@ class Http
 header (2 .http.v1beta.Request.HeaderEntry2
 cookies (2!.http.v1beta.Request.CookiesEntry
 	raw_query (	
-parsed (8
+parsed (%
+uploads	 (2.http.v1beta.Uploads8
 
-attributes	 (2$.http.v1beta.Request.AttributesEntry%
-uploads
- (2.http.v1beta.Uploads
-body (
-raw_body (G
+attributes
+ (2$.http.v1beta.Request.AttributesEntryG
 HeaderEntry
 key (	\'
 value (2.http.v1beta.HeaderValue:8H
@@ -50,17 +48,27 @@ attributes	 (2$.http.v1beta.Request.AttributesEntry%
 key (	\'
 value (2.http.v1beta.HeaderValue:8"0
 Uploads%
-list (2.http.v1beta.FileUpload"‚
+list (2.http.v1beta.FileUpload"…
 
 FileUpload
 name (	
 mime (	
 size (
 error (
-temp_filename (	$
-header	 (2.google.protobuf.Any"
+temp_filename (	\'
+header (2.http.v1beta.FileHeader"ª
+
+FileHeader
+filename (	3
+header (2#.http.v1beta.FileHeader.HeaderEntry
+size (G
+HeaderEntry
+key (	\'
+value (2.http.v1beta.HeaderValue:8"
 HeaderValue
-value (	BUZhttp/v1betaÊRoadRunner\\HTTP\\DTO\\V1BETA1â\'RoadRunner\\HTTP\\DTO\\V1BETA1\\GPBMetadatabproto3'
+value (	"
+Body
+body (BUZhttp/v1betaÊRoadRunner\\HTTP\\DTO\\V1BETA1â\'RoadRunner\\HTTP\\DTO\\V1BETA1\\GPBMetadatabproto3'
         , true);
 
         static::$is_initialized = true;

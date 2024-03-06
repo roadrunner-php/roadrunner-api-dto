@@ -26,7 +26,7 @@ class RegisterNamespaceRequest extends \Google\Protobuf\Internal\Message
      */
     protected $owner_email = '';
     /**
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_retention_period = 4 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_retention_period = 4;</code>
      */
     protected $workflow_execution_retention_period = null;
     /**
@@ -168,7 +168,7 @@ class RegisterNamespaceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_retention_period = 4 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_retention_period = 4;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getWorkflowExecutionRetentionPeriod()
@@ -187,7 +187,7 @@ class RegisterNamespaceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_retention_period = 4 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_retention_period = 4;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */

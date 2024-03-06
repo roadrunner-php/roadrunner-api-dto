@@ -28,13 +28,13 @@ class BatchOperationInfo extends \Google\Protobuf\Internal\Message
     /**
      * Batch operation start time
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 3 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 3;</code>
      */
     protected $start_time = null;
     /**
      * Batch operation close time
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp close_time = 4 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp close_time = 4;</code>
      */
     protected $close_time = null;
 
@@ -114,7 +114,7 @@ class BatchOperationInfo extends \Google\Protobuf\Internal\Message
     /**
      * Batch operation start time
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 3 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 3;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartTime()
@@ -135,7 +135,7 @@ class BatchOperationInfo extends \Google\Protobuf\Internal\Message
     /**
      * Batch operation start time
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 3 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 3;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -150,7 +150,7 @@ class BatchOperationInfo extends \Google\Protobuf\Internal\Message
     /**
      * Batch operation close time
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp close_time = 4 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp close_time = 4;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getCloseTime()
@@ -171,7 +171,7 @@ class BatchOperationInfo extends \Google\Protobuf\Internal\Message
     /**
      * Batch operation close time
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp close_time = 4 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp close_time = 4;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */

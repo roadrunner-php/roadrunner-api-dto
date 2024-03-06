@@ -14,22 +14,21 @@ class Message
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Dependencies\Gogoproto\Gogo::initOnce();
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         \GPBMetadata\Temporal\Api\Common\V1\Message::initOnce();
         \GPBMetadata\Temporal\Api\Enums\V1\BatchOperation::initOnce();
         \GPBMetadata\Temporal\Api\Enums\V1\Reset::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ø
-#temporal/api/batch/v1/message.prototemporal.api.batch.v1google/protobuf/timestamp.proto$temporal/api/common/v1/message.proto+temporal/api/enums/v1/batch_operation.proto!temporal/api/enums/v1/reset.proto"À
+π
+#temporal/api/batch/v1/message.prototemporal.api.batch.v1$temporal/api/common/v1/message.proto+temporal/api/enums/v1/batch_operation.proto!temporal/api/enums/v1/reset.proto"ø
 BatchOperationInfo
 job_id (	9
-state (2*.temporal.api.enums.v1.BatchOperationState4
+state (2*.temporal.api.enums.v1.BatchOperationState.
 
-start_time (2.google.protobuf.TimestampBêﬂ4
+start_time (2.google.protobuf.Timestamp.
 
-close_time (2.google.protobuf.TimestampBêﬂ"`
+close_time (2.google.protobuf.Timestamp"`
 BatchOperationTermination1
 details (2 .temporal.api.common.v1.Payloads
 identity (	"ô
@@ -41,12 +40,13 @@ close_time (2.google.protobuf.TimestampBêﬂ"`
 BatchOperationCancellation
 identity (	"*
 BatchOperationDeletion
-identity (	"¢
-BatchOperationReset4
+identity (	"Ÿ
+BatchOperationReset
+identity (	5
+options (2$.temporal.api.common.v1.ResetOptions4
 
 reset_type (2 .temporal.api.enums.v1.ResetTypeC
-reset_reapply_type (2\'.temporal.api.enums.v1.ResetReapplyType
-identity (	BÑ
+reset_reapply_type (2\'.temporal.api.enums.v1.ResetReapplyTypeBÑ
 io.temporal.api.batch.v1BMessageProtoPZ!go.temporal.io/api/batch/v1;batch™Temporalio.Api.Batch.V1ÍTemporalio::Api::Batch::V1bproto3'
         , true);
 

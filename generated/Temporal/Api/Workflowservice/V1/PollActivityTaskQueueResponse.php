@@ -72,19 +72,19 @@ class PollActivityTaskQueueResponse extends \Google\Protobuf\Internal\Message
     /**
      * When was this task first scheduled
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 10 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 10;</code>
      */
     protected $scheduled_time = null;
     /**
      * When was this task attempt scheduled
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp current_attempt_scheduled_time = 11 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp current_attempt_scheduled_time = 11;</code>
      */
     protected $current_attempt_scheduled_time = null;
     /**
      * When was this task started (this attempt)
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp started_time = 12 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_time = 12;</code>
      */
     protected $started_time = null;
     /**
@@ -98,7 +98,7 @@ class PollActivityTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_close_timeout = 14 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_close_timeout = 14;</code>
      */
     protected $schedule_to_close_timeout = null;
     /**
@@ -106,13 +106,13 @@ class PollActivityTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration start_to_close_timeout = 15 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration start_to_close_timeout = 15;</code>
      */
     protected $start_to_close_timeout = null;
     /**
      * Window within which the activity must report a heartbeat, or be timed out.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration heartbeat_timeout = 16 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration heartbeat_timeout = 16;</code>
      */
     protected $heartbeat_timeout = null;
     /**
@@ -481,7 +481,7 @@ class PollActivityTaskQueueResponse extends \Google\Protobuf\Internal\Message
     /**
      * When was this task first scheduled
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 10 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 10;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getScheduledTime()
@@ -502,7 +502,7 @@ class PollActivityTaskQueueResponse extends \Google\Protobuf\Internal\Message
     /**
      * When was this task first scheduled
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 10 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 10;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -517,7 +517,7 @@ class PollActivityTaskQueueResponse extends \Google\Protobuf\Internal\Message
     /**
      * When was this task attempt scheduled
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp current_attempt_scheduled_time = 11 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp current_attempt_scheduled_time = 11;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getCurrentAttemptScheduledTime()
@@ -538,7 +538,7 @@ class PollActivityTaskQueueResponse extends \Google\Protobuf\Internal\Message
     /**
      * When was this task attempt scheduled
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp current_attempt_scheduled_time = 11 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp current_attempt_scheduled_time = 11;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -553,7 +553,7 @@ class PollActivityTaskQueueResponse extends \Google\Protobuf\Internal\Message
     /**
      * When was this task started (this attempt)
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp started_time = 12 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_time = 12;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartedTime()
@@ -574,7 +574,7 @@ class PollActivityTaskQueueResponse extends \Google\Protobuf\Internal\Message
     /**
      * When was this task started (this attempt)
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp started_time = 12 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_time = 12;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -617,7 +617,7 @@ class PollActivityTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_close_timeout = 14 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_close_timeout = 14;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getScheduleToCloseTimeout()
@@ -640,7 +640,7 @@ class PollActivityTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_close_timeout = 14 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_close_timeout = 14;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
@@ -657,7 +657,7 @@ class PollActivityTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration start_to_close_timeout = 15 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration start_to_close_timeout = 15;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getStartToCloseTimeout()
@@ -680,7 +680,7 @@ class PollActivityTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration start_to_close_timeout = 15 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration start_to_close_timeout = 15;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
@@ -695,7 +695,7 @@ class PollActivityTaskQueueResponse extends \Google\Protobuf\Internal\Message
     /**
      * Window within which the activity must report a heartbeat, or be timed out.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration heartbeat_timeout = 16 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration heartbeat_timeout = 16;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getHeartbeatTimeout()
@@ -716,7 +716,7 @@ class PollActivityTaskQueueResponse extends \Google\Protobuf\Internal\Message
     /**
      * Window within which the activity must report a heartbeat, or be timed out.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration heartbeat_timeout = 16 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration heartbeat_timeout = 16;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */

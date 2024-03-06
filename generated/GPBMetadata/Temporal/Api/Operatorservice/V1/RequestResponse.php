@@ -15,10 +15,12 @@ class RequestResponse
           return;
         }
         \GPBMetadata\Temporal\Api\Enums\V1\Common::initOnce();
+        \GPBMetadata\Temporal\Api\Nexus\V1\Message::initOnce();
+        \GPBMetadata\Google\Protobuf\Duration::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ò
-6temporal/api/operatorservice/v1/request_response.prototemporal.api.operatorservice.v1"ˇ
+Å
+6temporal/api/operatorservice/v1/request_response.prototemporal.api.operatorservice.v1#temporal/api/nexus/v1/message.protogoogle/protobuf/duration.proto"ˇ
 AddSearchAttributesRequestl
 search_attributes (2Q.temporal.api.operatorservice.v1.AddSearchAttributesRequest.SearchAttributesEntry
 	namespace (	`
@@ -44,9 +46,11 @@ class RequestResponse
 value (2\'.temporal.api.enums.v1.IndexedValueType:84
 StorageSchemaEntry
 key (	
-value (	:8"+
+value (	:8"|
 DeleteNamespaceRequest
-	namespace (	"4
+	namespace (	
+namespace_id (	9
+namespace_delete_delay (2.google.protobuf.Duration"4
 DeleteNamespaceResponse
 deleted_namespace (	"e
 AddOrUpdateRemoteClusterRequest
@@ -69,7 +73,24 @@ cluster_id (	
 address (	 
 initial_failover_version (
 history_shard_count (
-is_connection_enabled (Bæ
+is_connection_enabled (".
+GetNexusIncomingServiceRequest
+name (	"Z
+GetNexusIncomingServiceResponse7
+service (2&.temporal.api.nexus.v1.IncomingService"d
+)CreateOrUpdateNexusIncomingServiceRequest7
+service (2&.temporal.api.nexus.v1.IncomingService"e
+*CreateOrUpdateNexusIncomingServiceResponse7
+service (2&.temporal.api.nexus.v1.IncomingService"1
+!DeleteNexusIncomingServiceRequest
+name (	"$
+"DeleteNexusIncomingServiceResponse"N
+ ListNexusIncomingServicesRequest
+	page_size (
+next_page_token ("v
+!ListNexusIncomingServicesResponse
+next_page_token (8
+services (2&.temporal.api.nexus.v1.IncomingServiceBæ
 "io.temporal.api.operatorservice.v1BRequestResponseProtoPZ5go.temporal.io/api/operatorservice/v1;operatorservice™!Temporalio.Api.OperatorService.V1Í$Temporalio::Api::OperatorService::V1bproto3'
         , true);
 

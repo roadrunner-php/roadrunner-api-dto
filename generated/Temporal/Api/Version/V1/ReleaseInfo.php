@@ -20,7 +20,7 @@ class ReleaseInfo extends \Google\Protobuf\Internal\Message
      */
     protected $version = '';
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp release_time = 2 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp release_time = 2;</code>
      */
     protected $release_time = null;
     /**
@@ -67,7 +67,7 @@ class ReleaseInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp release_time = 2 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp release_time = 2;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getReleaseTime()
@@ -86,7 +86,7 @@ class ReleaseInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp release_time = 2 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp release_time = 2;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */

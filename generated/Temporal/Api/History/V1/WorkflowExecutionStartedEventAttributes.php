@@ -56,19 +56,19 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     /**
      * Total workflow execution timeout including retries and continue as new.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 7 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 7;</code>
      */
     protected $workflow_execution_timeout = null;
     /**
      * Timeout of a single workflow run.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 8 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 8;</code>
      */
     protected $workflow_run_timeout = null;
     /**
      * Timeout of a single workflow task.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 9 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 9;</code>
      */
     protected $workflow_task_timeout = null;
     /**
@@ -124,7 +124,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      * The absolute time at which the workflow will be timed out.
      * This is passed without change to the next run/retry of a workflow.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp workflow_execution_expiration_time = 19 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp workflow_execution_expiration_time = 19;</code>
      */
     protected $workflow_execution_expiration_time = null;
     /**
@@ -137,7 +137,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      * For a cron workflow, this contains the amount of time between when this iteration of
      * the cron workflow was scheduled and when it should run next per its cron_schedule.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration first_workflow_task_backoff = 21 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration first_workflow_task_backoff = 21;</code>
      */
     protected $first_workflow_task_backoff = null;
     /**
@@ -177,6 +177,12 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp source_version_stamp = 29;</code>
      */
     protected $source_version_stamp = null;
+    /**
+     * Completion callbacks attached when this workflow was started.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Callback completion_callbacks = 30;</code>
+     */
+    private $completion_callbacks;
 
     /**
      * Constructor.
@@ -241,6 +247,8 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      *     @type \Temporal\Api\Common\V1\WorkerVersionStamp $source_version_stamp
      *           If this workflow intends to use anything other than the current overall default version for
      *           the queue, then we include it here.
+     *     @type array<\Temporal\Api\Common\V1\Callback>|\Google\Protobuf\Internal\RepeatedField $completion_callbacks
+     *           Completion callbacks attached when this workflow was started.
      * }
      */
     public function __construct($data = NULL) {
@@ -465,7 +473,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     /**
      * Total workflow execution timeout including retries and continue as new.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 7 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 7;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getWorkflowExecutionTimeout()
@@ -486,7 +494,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     /**
      * Total workflow execution timeout including retries and continue as new.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 7 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_execution_timeout = 7;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
@@ -501,7 +509,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     /**
      * Timeout of a single workflow run.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 8 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 8;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getWorkflowRunTimeout()
@@ -522,7 +530,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     /**
      * Timeout of a single workflow run.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 8 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_run_timeout = 8;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
@@ -537,7 +545,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     /**
      * Timeout of a single workflow task.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 9 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 9;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getWorkflowTaskTimeout()
@@ -558,7 +566,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     /**
      * Timeout of a single workflow task.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 9 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration workflow_task_timeout = 9;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
@@ -828,7 +836,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      * The absolute time at which the workflow will be timed out.
      * This is passed without change to the next run/retry of a workflow.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp workflow_execution_expiration_time = 19 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp workflow_execution_expiration_time = 19;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getWorkflowExecutionExpirationTime()
@@ -850,7 +858,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      * The absolute time at which the workflow will be timed out.
      * This is passed without change to the next run/retry of a workflow.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp workflow_execution_expiration_time = 19 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp workflow_execution_expiration_time = 19;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -892,7 +900,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      * For a cron workflow, this contains the amount of time between when this iteration of
      * the cron workflow was scheduled and when it should run next per its cron_schedule.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration first_workflow_task_backoff = 21 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration first_workflow_task_backoff = 21;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getFirstWorkflowTaskBackoff()
@@ -914,7 +922,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      * For a cron workflow, this contains the amount of time between when this iteration of
      * the cron workflow was scheduled and when it should run next per its cron_schedule.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration first_workflow_task_backoff = 21 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration first_workflow_task_backoff = 21;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
@@ -1144,6 +1152,32 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerVersionStamp::class);
         $this->source_version_stamp = $var;
+
+        return $this;
+    }
+
+    /**
+     * Completion callbacks attached when this workflow was started.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Callback completion_callbacks = 30;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getCompletionCallbacks()
+    {
+        return $this->completion_callbacks;
+    }
+
+    /**
+     * Completion callbacks attached when this workflow was started.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Callback completion_callbacks = 30;</code>
+     * @param array<\Temporal\Api\Common\V1\Callback>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setCompletionCallbacks($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Callback::class);
+        $this->completion_callbacks = $arr;
 
         return $this;
     }

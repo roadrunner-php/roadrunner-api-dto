@@ -23,19 +23,19 @@ class WorkflowPropertiesModifiedExternallyEventAttributes extends \Google\Protob
     /**
      * If set, update the workflow task timeout to this value.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration new_workflow_task_timeout = 2 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration new_workflow_task_timeout = 2;</code>
      */
     protected $new_workflow_task_timeout = null;
     /**
      * If set, update the workflow run timeout to this value. May be set to 0 for no timeout.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration new_workflow_run_timeout = 3 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration new_workflow_run_timeout = 3;</code>
      */
     protected $new_workflow_run_timeout = null;
     /**
      * If set, update the workflow execution timeout to this value. May be set to 0 for no timeout.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration new_workflow_execution_timeout = 4 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration new_workflow_execution_timeout = 4;</code>
      */
     protected $new_workflow_execution_timeout = null;
     /**
@@ -104,7 +104,7 @@ class WorkflowPropertiesModifiedExternallyEventAttributes extends \Google\Protob
     /**
      * If set, update the workflow task timeout to this value.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration new_workflow_task_timeout = 2 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration new_workflow_task_timeout = 2;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getNewWorkflowTaskTimeout()
@@ -125,7 +125,7 @@ class WorkflowPropertiesModifiedExternallyEventAttributes extends \Google\Protob
     /**
      * If set, update the workflow task timeout to this value.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration new_workflow_task_timeout = 2 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration new_workflow_task_timeout = 2;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
@@ -140,7 +140,7 @@ class WorkflowPropertiesModifiedExternallyEventAttributes extends \Google\Protob
     /**
      * If set, update the workflow run timeout to this value. May be set to 0 for no timeout.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration new_workflow_run_timeout = 3 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration new_workflow_run_timeout = 3;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getNewWorkflowRunTimeout()
@@ -161,7 +161,7 @@ class WorkflowPropertiesModifiedExternallyEventAttributes extends \Google\Protob
     /**
      * If set, update the workflow run timeout to this value. May be set to 0 for no timeout.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration new_workflow_run_timeout = 3 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration new_workflow_run_timeout = 3;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
@@ -176,7 +176,7 @@ class WorkflowPropertiesModifiedExternallyEventAttributes extends \Google\Protob
     /**
      * If set, update the workflow execution timeout to this value. May be set to 0 for no timeout.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration new_workflow_execution_timeout = 4 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration new_workflow_execution_timeout = 4;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getNewWorkflowExecutionTimeout()
@@ -197,7 +197,7 @@ class WorkflowPropertiesModifiedExternallyEventAttributes extends \Google\Protob
     /**
      * If set, update the workflow execution timeout to this value. May be set to 0 for no timeout.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration new_workflow_execution_timeout = 4 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration new_workflow_execution_timeout = 4;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */

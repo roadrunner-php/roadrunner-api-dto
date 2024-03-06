@@ -43,6 +43,24 @@ class WorkflowTaskCompletedMetadata extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated uint32 lang_used_flags = 2;</code>
      */
     private $lang_used_flags;
+    /**
+     * Name of the SDK that processed the task. This is usually something like "temporal-go" and is
+     * usually the same as client-name gRPC header. This should only be set if its value changed
+     * since the last time recorded on the workflow (or be set on the first task).
+     * (-- api-linter: core::0122::name-suffix=disabled
+     *     aip.dev/not-precedent: We're ok with a name suffix here. --)
+     *
+     * Generated from protobuf field <code>string sdk_name = 3;</code>
+     */
+    protected $sdk_name = '';
+    /**
+     * Version of the SDK that processed the task. This is usually something like "1.20.0" and is
+     * usually the same as client-version gRPC header. This should only be set if its value changed
+     * since the last time recorded on the workflow (or be set on the first task).
+     *
+     * Generated from protobuf field <code>string sdk_version = 4;</code>
+     */
+    protected $sdk_version = '';
 
     /**
      * Constructor.
@@ -72,6 +90,16 @@ class WorkflowTaskCompletedMetadata extends \Google\Protobuf\Internal\Message
      *           already undefined behavior. See `core_used_patches` for more.
      *           (-- api-linter: core::0141::forbidden-types=disabled
      *               aip.dev/not-precedent: These really shouldn't have negative values. --)
+     *     @type string $sdk_name
+     *           Name of the SDK that processed the task. This is usually something like "temporal-go" and is
+     *           usually the same as client-name gRPC header. This should only be set if its value changed
+     *           since the last time recorded on the workflow (or be set on the first task).
+     *           (-- api-linter: core::0122::name-suffix=disabled
+     *               aip.dev/not-precedent: We're ok with a name suffix here. --)
+     *     @type string $sdk_version
+     *           Version of the SDK that processed the task. This is usually something like "1.20.0" and is
+     *           usually the same as client-version gRPC header. This should only be set if its value changed
+     *           since the last time recorded on the workflow (or be set on the first task).
      * }
      */
     public function __construct($data = NULL) {
@@ -163,6 +191,70 @@ class WorkflowTaskCompletedMetadata extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::UINT32);
         $this->lang_used_flags = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Name of the SDK that processed the task. This is usually something like "temporal-go" and is
+     * usually the same as client-name gRPC header. This should only be set if its value changed
+     * since the last time recorded on the workflow (or be set on the first task).
+     * (-- api-linter: core::0122::name-suffix=disabled
+     *     aip.dev/not-precedent: We're ok with a name suffix here. --)
+     *
+     * Generated from protobuf field <code>string sdk_name = 3;</code>
+     * @return string
+     */
+    public function getSdkName()
+    {
+        return $this->sdk_name;
+    }
+
+    /**
+     * Name of the SDK that processed the task. This is usually something like "temporal-go" and is
+     * usually the same as client-name gRPC header. This should only be set if its value changed
+     * since the last time recorded on the workflow (or be set on the first task).
+     * (-- api-linter: core::0122::name-suffix=disabled
+     *     aip.dev/not-precedent: We're ok with a name suffix here. --)
+     *
+     * Generated from protobuf field <code>string sdk_name = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSdkName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->sdk_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Version of the SDK that processed the task. This is usually something like "1.20.0" and is
+     * usually the same as client-version gRPC header. This should only be set if its value changed
+     * since the last time recorded on the workflow (or be set on the first task).
+     *
+     * Generated from protobuf field <code>string sdk_version = 4;</code>
+     * @return string
+     */
+    public function getSdkVersion()
+    {
+        return $this->sdk_version;
+    }
+
+    /**
+     * Version of the SDK that processed the task. This is usually something like "1.20.0" and is
+     * usually the same as client-version gRPC header. This should only be set if its value changed
+     * since the last time recorded on the workflow (or be set on the first task).
+     *
+     * Generated from protobuf field <code>string sdk_version = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setSdkVersion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->sdk_version = $var;
 
         return $this;
     }

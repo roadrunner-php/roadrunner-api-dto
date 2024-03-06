@@ -33,6 +33,10 @@ class DescribeWorkflowExecutionResponse extends \Google\Protobuf\Internal\Messag
      * Generated from protobuf field <code>.temporal.api.workflow.v1.PendingWorkflowTaskInfo pending_workflow_task = 5;</code>
      */
     protected $pending_workflow_task = null;
+    /**
+     * Generated from protobuf field <code>repeated .temporal.api.workflow.v1.CallbackInfo callbacks = 6;</code>
+     */
+    private $callbacks;
 
     /**
      * Constructor.
@@ -45,6 +49,7 @@ class DescribeWorkflowExecutionResponse extends \Google\Protobuf\Internal\Messag
      *     @type array<\Temporal\Api\Workflow\V1\PendingActivityInfo>|\Google\Protobuf\Internal\RepeatedField $pending_activities
      *     @type array<\Temporal\Api\Workflow\V1\PendingChildExecutionInfo>|\Google\Protobuf\Internal\RepeatedField $pending_children
      *     @type \Temporal\Api\Workflow\V1\PendingWorkflowTaskInfo $pending_workflow_task
+     *     @type array<\Temporal\Api\Workflow\V1\CallbackInfo>|\Google\Protobuf\Internal\RepeatedField $callbacks
      * }
      */
     public function __construct($data = NULL) {
@@ -188,6 +193,28 @@ class DescribeWorkflowExecutionResponse extends \Google\Protobuf\Internal\Messag
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\PendingWorkflowTaskInfo::class);
         $this->pending_workflow_task = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .temporal.api.workflow.v1.CallbackInfo callbacks = 6;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getCallbacks()
+    {
+        return $this->callbacks;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .temporal.api.workflow.v1.CallbackInfo callbacks = 6;</code>
+     * @param array<\Temporal\Api\Workflow\V1\CallbackInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setCallbacks($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Workflow\V1\CallbackInfo::class);
+        $this->callbacks = $arr;
 
         return $this;
     }

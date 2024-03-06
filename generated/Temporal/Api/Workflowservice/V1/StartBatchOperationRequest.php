@@ -21,7 +21,7 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
     protected $namespace = '';
     /**
      * Visibility query defines the the group of workflow to apply the batch operation
-     * This field and Executions are mutually exclusive
+     * This field and `executions` are mutually exclusive
      *
      * Generated from protobuf field <code>string visibility_query = 2;</code>
      */
@@ -40,11 +40,22 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
     protected $reason = '';
     /**
      * Executions to apply the batch operation
-     * This field and VisibilityQuery are mutually exclusive
+     * This field and `visibility_query` are mutually exclusive
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.WorkflowExecution executions = 5;</code>
      */
     private $executions;
+    /**
+     * Limit for the number of operations processed per second within this batch.
+     * Its purpose is to reduce the stress on the system caused by batch operations, which helps to prevent system
+     * overload and minimize potential delays in executing ongoing tasks for user workers.
+     * Note that when no explicit limit is provided, the server will operate according to its limit defined by the
+     * dynamic configuration key `worker.batcherRPS`. This also applies if the value in this field exceeds the
+     * server's configured limit.
+     *
+     * Generated from protobuf field <code>float max_operations_per_second = 6;</code>
+     */
+    protected $max_operations_per_second = 0.0;
     protected $operation;
 
     /**
@@ -57,14 +68,21 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
      *           Namespace that contains the batch operation
      *     @type string $visibility_query
      *           Visibility query defines the the group of workflow to apply the batch operation
-     *           This field and Executions are mutually exclusive
+     *           This field and `executions` are mutually exclusive
      *     @type string $job_id
      *           Job ID defines the unique ID for the batch job
      *     @type string $reason
      *           Reason to perform the batch operation
      *     @type array<\Temporal\Api\Common\V1\WorkflowExecution>|\Google\Protobuf\Internal\RepeatedField $executions
      *           Executions to apply the batch operation
-     *           This field and VisibilityQuery are mutually exclusive
+     *           This field and `visibility_query` are mutually exclusive
+     *     @type float $max_operations_per_second
+     *           Limit for the number of operations processed per second within this batch.
+     *           Its purpose is to reduce the stress on the system caused by batch operations, which helps to prevent system
+     *           overload and minimize potential delays in executing ongoing tasks for user workers.
+     *           Note that when no explicit limit is provided, the server will operate according to its limit defined by the
+     *           dynamic configuration key `worker.batcherRPS`. This also applies if the value in this field exceeds the
+     *           server's configured limit.
      *     @type \Temporal\Api\Batch\V1\BatchOperationTermination $termination_operation
      *     @type \Temporal\Api\Batch\V1\BatchOperationSignal $signal_operation
      *     @type \Temporal\Api\Batch\V1\BatchOperationCancellation $cancellation_operation
@@ -105,7 +123,7 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Visibility query defines the the group of workflow to apply the batch operation
-     * This field and Executions are mutually exclusive
+     * This field and `executions` are mutually exclusive
      *
      * Generated from protobuf field <code>string visibility_query = 2;</code>
      * @return string
@@ -117,7 +135,7 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Visibility query defines the the group of workflow to apply the batch operation
-     * This field and Executions are mutually exclusive
+     * This field and `executions` are mutually exclusive
      *
      * Generated from protobuf field <code>string visibility_query = 2;</code>
      * @param string $var
@@ -185,7 +203,7 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Executions to apply the batch operation
-     * This field and VisibilityQuery are mutually exclusive
+     * This field and `visibility_query` are mutually exclusive
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.WorkflowExecution executions = 5;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -197,7 +215,7 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Executions to apply the batch operation
-     * This field and VisibilityQuery are mutually exclusive
+     * This field and `visibility_query` are mutually exclusive
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.WorkflowExecution executions = 5;</code>
      * @param array<\Temporal\Api\Common\V1\WorkflowExecution>|\Google\Protobuf\Internal\RepeatedField $var
@@ -207,6 +225,42 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->executions = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Limit for the number of operations processed per second within this batch.
+     * Its purpose is to reduce the stress on the system caused by batch operations, which helps to prevent system
+     * overload and minimize potential delays in executing ongoing tasks for user workers.
+     * Note that when no explicit limit is provided, the server will operate according to its limit defined by the
+     * dynamic configuration key `worker.batcherRPS`. This also applies if the value in this field exceeds the
+     * server's configured limit.
+     *
+     * Generated from protobuf field <code>float max_operations_per_second = 6;</code>
+     * @return float
+     */
+    public function getMaxOperationsPerSecond()
+    {
+        return $this->max_operations_per_second;
+    }
+
+    /**
+     * Limit for the number of operations processed per second within this batch.
+     * Its purpose is to reduce the stress on the system caused by batch operations, which helps to prevent system
+     * overload and minimize potential delays in executing ongoing tasks for user workers.
+     * Note that when no explicit limit is provided, the server will operate according to its limit defined by the
+     * dynamic configuration key `worker.batcherRPS`. This also applies if the value in this field exceeds the
+     * server's configured limit.
+     *
+     * Generated from protobuf field <code>float max_operations_per_second = 6;</code>
+     * @param float $var
+     * @return $this
+     */
+    public function setMaxOperationsPerSecond($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->max_operations_per_second = $var;
 
         return $this;
     }

@@ -27,9 +27,9 @@ class SchedulePolicies extends \Google\Protobuf\Internal\Message
      * If the Temporal server misses an action due to one or more components
      * being down, and comes back up, the action will be run if the scheduled
      * time is within this window from the current time.
-     * This value defaults to 60 seconds, and can't be less than 10 seconds.
+     * This value defaults to one year, and can't be less than 10 seconds.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration catchup_window = 2 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration catchup_window = 2;</code>
      */
     protected $catchup_window = null;
     /**
@@ -40,6 +40,13 @@ class SchedulePolicies extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool pause_on_failure = 3;</code>
      */
     protected $pause_on_failure = false;
+    /**
+     * If true, and the action would start a workflow, a timestamp will not be
+     * appended to the scheduled workflow id.
+     *
+     * Generated from protobuf field <code>bool keep_original_workflow_id = 4;</code>
+     */
+    protected $keep_original_workflow_id = false;
 
     /**
      * Constructor.
@@ -57,11 +64,14 @@ class SchedulePolicies extends \Google\Protobuf\Internal\Message
      *           If the Temporal server misses an action due to one or more components
      *           being down, and comes back up, the action will be run if the scheduled
      *           time is within this window from the current time.
-     *           This value defaults to 60 seconds, and can't be less than 10 seconds.
+     *           This value defaults to one year, and can't be less than 10 seconds.
      *     @type bool $pause_on_failure
      *           If true, and a workflow run fails or times out, turn on "paused".
      *           This applies after retry policies: the full chain of retries must fail to
      *           trigger a pause here.
+     *     @type bool $keep_original_workflow_id
+     *           If true, and the action would start a workflow, a timestamp will not be
+     *           appended to the scheduled workflow id.
      * }
      */
     public function __construct($data = NULL) {
@@ -106,9 +116,9 @@ class SchedulePolicies extends \Google\Protobuf\Internal\Message
      * If the Temporal server misses an action due to one or more components
      * being down, and comes back up, the action will be run if the scheduled
      * time is within this window from the current time.
-     * This value defaults to 60 seconds, and can't be less than 10 seconds.
+     * This value defaults to one year, and can't be less than 10 seconds.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration catchup_window = 2 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration catchup_window = 2;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getCatchupWindow()
@@ -131,9 +141,9 @@ class SchedulePolicies extends \Google\Protobuf\Internal\Message
      * If the Temporal server misses an action due to one or more components
      * being down, and comes back up, the action will be run if the scheduled
      * time is within this window from the current time.
-     * This value defaults to 60 seconds, and can't be less than 10 seconds.
+     * This value defaults to one year, and can't be less than 10 seconds.
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration catchup_window = 2 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration catchup_window = 2;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
@@ -171,6 +181,34 @@ class SchedulePolicies extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->pause_on_failure = $var;
+
+        return $this;
+    }
+
+    /**
+     * If true, and the action would start a workflow, a timestamp will not be
+     * appended to the scheduled workflow id.
+     *
+     * Generated from protobuf field <code>bool keep_original_workflow_id = 4;</code>
+     * @return bool
+     */
+    public function getKeepOriginalWorkflowId()
+    {
+        return $this->keep_original_workflow_id;
+    }
+
+    /**
+     * If true, and the action would start a workflow, a timestamp will not be
+     * appended to the scheduled workflow id.
+     *
+     * Generated from protobuf field <code>bool keep_original_workflow_id = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setKeepOriginalWorkflowId($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->keep_original_workflow_id = $var;
 
         return $this;
     }

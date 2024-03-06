@@ -14,17 +14,22 @@ use Google\Protobuf\Internal\GPBUtil;
 class BackfillRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Time range to evaluate schedule in.
+     * Time range to evaluate schedule in. Currently, this time range is
+     * exclusive on start_time and inclusive on end_time. (This is admittedly
+     * counterintuitive and it may change in the future, so to be safe, use a
+     * start time strictly before a scheduled time.) Also note that an action
+     * nominally scheduled in the interval but with jitter that pushes it after
+     * end_time will not be included.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 1 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 1;</code>
      */
     protected $start_time = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 2 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 2;</code>
      */
     protected $end_time = null;
     /**
-     * Override overlap policy for this request.
+     * If set, override overlap policy for this request.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ScheduleOverlapPolicy overlap_policy = 3;</code>
      */
@@ -37,10 +42,15 @@ class BackfillRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Protobuf\Timestamp $start_time
-     *           Time range to evaluate schedule in.
+     *           Time range to evaluate schedule in. Currently, this time range is
+     *           exclusive on start_time and inclusive on end_time. (This is admittedly
+     *           counterintuitive and it may change in the future, so to be safe, use a
+     *           start time strictly before a scheduled time.) Also note that an action
+     *           nominally scheduled in the interval but with jitter that pushes it after
+     *           end_time will not be included.
      *     @type \Google\Protobuf\Timestamp $end_time
      *     @type int $overlap_policy
-     *           Override overlap policy for this request.
+     *           If set, override overlap policy for this request.
      * }
      */
     public function __construct($data = NULL) {
@@ -49,9 +59,14 @@ class BackfillRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Time range to evaluate schedule in.
+     * Time range to evaluate schedule in. Currently, this time range is
+     * exclusive on start_time and inclusive on end_time. (This is admittedly
+     * counterintuitive and it may change in the future, so to be safe, use a
+     * start time strictly before a scheduled time.) Also note that an action
+     * nominally scheduled in the interval but with jitter that pushes it after
+     * end_time will not be included.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 1 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 1;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartTime()
@@ -70,9 +85,14 @@ class BackfillRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Time range to evaluate schedule in.
+     * Time range to evaluate schedule in. Currently, this time range is
+     * exclusive on start_time and inclusive on end_time. (This is admittedly
+     * counterintuitive and it may change in the future, so to be safe, use a
+     * start time strictly before a scheduled time.) Also note that an action
+     * nominally scheduled in the interval but with jitter that pushes it after
+     * end_time will not be included.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 1 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 1;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -85,7 +105,7 @@ class BackfillRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 2 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 2;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getEndTime()
@@ -104,7 +124,7 @@ class BackfillRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 2 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 2;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -117,7 +137,7 @@ class BackfillRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Override overlap policy for this request.
+     * If set, override overlap policy for this request.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ScheduleOverlapPolicy overlap_policy = 3;</code>
      * @return int
@@ -128,7 +148,7 @@ class BackfillRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Override overlap policy for this request.
+     * If set, override overlap policy for this request.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ScheduleOverlapPolicy overlap_policy = 3;</code>
      * @param int $var

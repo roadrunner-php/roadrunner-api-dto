@@ -21,7 +21,7 @@ class StickyExecutionAttributes extends \Google\Protobuf\Internal\Message
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_start_timeout = 2 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_start_timeout = 2;</code>
      */
     protected $schedule_to_start_timeout = null;
 
@@ -78,7 +78,7 @@ class StickyExecutionAttributes extends \Google\Protobuf\Internal\Message
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_start_timeout = 2 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_start_timeout = 2;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getScheduleToStartTimeout()
@@ -100,7 +100,7 @@ class StickyExecutionAttributes extends \Google\Protobuf\Internal\Message
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_start_timeout = 2 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_start_timeout = 2;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */

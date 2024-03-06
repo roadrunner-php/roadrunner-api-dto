@@ -32,6 +32,20 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
      */
     protected $overlap_skipped = 0;
     /**
+     * Number of dropped actions due to buffer limit.
+     *
+     * Generated from protobuf field <code>int64 buffer_dropped = 10;</code>
+     */
+    protected $buffer_dropped = 0;
+    /**
+     * Number of actions in the buffer. The buffer holds the actions that cannot
+     * be immediately triggered (due to the overlap policy). These actions can be a result of
+     * the normal schedule or a backfill.
+     *
+     * Generated from protobuf field <code>int64 buffer_size = 11;</code>
+     */
+    protected $buffer_size = 0;
+    /**
      * Currently-running workflows started by this schedule. (There might be
      * more than one if the overlap policy allows overlaps.)
      * Note that the run_ids in here are the original execution run ids as
@@ -50,17 +64,17 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
     /**
      * Next ten scheduled action times.
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.Timestamp future_action_times = 5 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.Timestamp future_action_times = 5;</code>
      */
     private $future_action_times;
     /**
      * Timestamps of schedule creation and last update.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 6 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 6;</code>
      */
     protected $create_time = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 7 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 7;</code>
      */
     protected $update_time = null;
     /**
@@ -81,6 +95,12 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
      *           Number of times a scheduled action was skipped due to missing the catchup window.
      *     @type int|string $overlap_skipped
      *           Number of skipped actions due to overlap.
+     *     @type int|string $buffer_dropped
+     *           Number of dropped actions due to buffer limit.
+     *     @type int|string $buffer_size
+     *           Number of actions in the buffer. The buffer holds the actions that cannot
+     *           be immediately triggered (due to the overlap policy). These actions can be a result of
+     *           the normal schedule or a backfill.
      *     @type array<\Temporal\Api\Common\V1\WorkflowExecution>|\Google\Protobuf\Internal\RepeatedField $running_workflows
      *           Currently-running workflows started by this schedule. (There might be
      *           more than one if the overlap policy allows overlaps.)
@@ -181,6 +201,62 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Number of dropped actions due to buffer limit.
+     *
+     * Generated from protobuf field <code>int64 buffer_dropped = 10;</code>
+     * @return int|string
+     */
+    public function getBufferDropped()
+    {
+        return $this->buffer_dropped;
+    }
+
+    /**
+     * Number of dropped actions due to buffer limit.
+     *
+     * Generated from protobuf field <code>int64 buffer_dropped = 10;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setBufferDropped($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->buffer_dropped = $var;
+
+        return $this;
+    }
+
+    /**
+     * Number of actions in the buffer. The buffer holds the actions that cannot
+     * be immediately triggered (due to the overlap policy). These actions can be a result of
+     * the normal schedule or a backfill.
+     *
+     * Generated from protobuf field <code>int64 buffer_size = 11;</code>
+     * @return int|string
+     */
+    public function getBufferSize()
+    {
+        return $this->buffer_size;
+    }
+
+    /**
+     * Number of actions in the buffer. The buffer holds the actions that cannot
+     * be immediately triggered (due to the overlap policy). These actions can be a result of
+     * the normal schedule or a backfill.
+     *
+     * Generated from protobuf field <code>int64 buffer_size = 11;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setBufferSize($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->buffer_size = $var;
+
+        return $this;
+    }
+
+    /**
      * Currently-running workflows started by this schedule. (There might be
      * more than one if the overlap policy allows overlaps.)
      * Note that the run_ids in here are the original execution run ids as
@@ -243,7 +319,7 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
     /**
      * Next ten scheduled action times.
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.Timestamp future_action_times = 5 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.Timestamp future_action_times = 5;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getFutureActionTimes()
@@ -254,7 +330,7 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
     /**
      * Next ten scheduled action times.
      *
-     * Generated from protobuf field <code>repeated .google.protobuf.Timestamp future_action_times = 5 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.Timestamp future_action_times = 5;</code>
      * @param array<\Google\Protobuf\Timestamp>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -269,7 +345,7 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
     /**
      * Timestamps of schedule creation and last update.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 6 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 6;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
@@ -290,7 +366,7 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
     /**
      * Timestamps of schedule creation and last update.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 6 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 6;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -303,7 +379,7 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 7 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 7;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdateTime()
@@ -322,7 +398,7 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 7 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 7;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */

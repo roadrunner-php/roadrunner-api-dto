@@ -9,13 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * ResetPointInfo records the workflow event id that is the first one processed by a given
+ * build id or binary checksum. A new reset point will be created if either build id or binary
+ * checksum changes (although in general only one or the other will be used at a time).
+ *
  * Generated from protobuf message <code>temporal.api.workflow.v1.ResetPointInfo</code>
  */
 class ResetPointInfo extends \Google\Protobuf\Internal\Message
 {
     /**
-     * A worker binary version identifier, will be deprecated and superseded by a newer concept of
-     * build_id.
+     * Worker build id.
+     *
+     * Generated from protobuf field <code>string build_id = 7;</code>
+     */
+    protected $build_id = '';
+    /**
+     * A worker binary version identifier (deprecated).
      *
      * Generated from protobuf field <code>string binary_checksum = 1;</code>
      */
@@ -33,7 +42,7 @@ class ResetPointInfo extends \Google\Protobuf\Internal\Message
      */
     protected $first_workflow_task_completed_id = 0;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 4 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 4;</code>
      */
     protected $create_time = null;
     /**
@@ -41,7 +50,7 @@ class ResetPointInfo extends \Google\Protobuf\Internal\Message
      *     aip.dev/not-precedent: TTL is not defined for ResetPointInfo. --)
      * The time that the run is deleted due to retention.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp expire_time = 5 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expire_time = 5;</code>
      */
     protected $expire_time = null;
     /**
@@ -57,9 +66,10 @@ class ResetPointInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $build_id
+     *           Worker build id.
      *     @type string $binary_checksum
-     *           A worker binary version identifier, will be deprecated and superseded by a newer concept of
-     *           build_id.
+     *           A worker binary version identifier (deprecated).
      *     @type string $run_id
      *           The first run ID in the execution chain that was touched by this worker build.
      *     @type int|string $first_workflow_task_completed_id
@@ -79,8 +89,33 @@ class ResetPointInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A worker binary version identifier, will be deprecated and superseded by a newer concept of
-     * build_id.
+     * Worker build id.
+     *
+     * Generated from protobuf field <code>string build_id = 7;</code>
+     * @return string
+     */
+    public function getBuildId()
+    {
+        return $this->build_id;
+    }
+
+    /**
+     * Worker build id.
+     *
+     * Generated from protobuf field <code>string build_id = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBuildId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->build_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * A worker binary version identifier (deprecated).
      *
      * Generated from protobuf field <code>string binary_checksum = 1;</code>
      * @return string
@@ -91,8 +126,7 @@ class ResetPointInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A worker binary version identifier, will be deprecated and superseded by a newer concept of
-     * build_id.
+     * A worker binary version identifier (deprecated).
      *
      * Generated from protobuf field <code>string binary_checksum = 1;</code>
      * @param string $var
@@ -159,7 +193,7 @@ class ResetPointInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 4 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 4;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreateTime()
@@ -178,7 +212,7 @@ class ResetPointInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 4 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 4;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -195,7 +229,7 @@ class ResetPointInfo extends \Google\Protobuf\Internal\Message
      *     aip.dev/not-precedent: TTL is not defined for ResetPointInfo. --)
      * The time that the run is deleted due to retention.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp expire_time = 5 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expire_time = 5;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getExpireTime()
@@ -218,7 +252,7 @@ class ResetPointInfo extends \Google\Protobuf\Internal\Message
      *     aip.dev/not-precedent: TTL is not defined for ResetPointInfo. --)
      * The time that the run is deleted due to retention.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp expire_time = 5 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp expire_time = 5;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */

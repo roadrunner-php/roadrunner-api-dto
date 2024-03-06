@@ -18,7 +18,7 @@ class FailoverStatus extends \Google\Protobuf\Internal\Message
     /**
      * Timestamp when the Cluster switched to the following failover_version
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp failover_time = 1 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp failover_time = 1;</code>
      */
     protected $failover_time = null;
     /**
@@ -45,7 +45,7 @@ class FailoverStatus extends \Google\Protobuf\Internal\Message
     /**
      * Timestamp when the Cluster switched to the following failover_version
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp failover_time = 1 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp failover_time = 1;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getFailoverTime()
@@ -66,7 +66,7 @@ class FailoverStatus extends \Google\Protobuf\Internal\Message
     /**
      * Timestamp when the Cluster switched to the following failover_version
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp failover_time = 1 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp failover_time = 1;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */

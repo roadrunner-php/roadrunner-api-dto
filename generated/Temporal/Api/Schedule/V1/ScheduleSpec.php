@@ -22,6 +22,8 @@ use Google\Protobuf\Internal\GPBUtil;
  * On input, calendar and cron_string fields will be compiled into
  * structured_calendar (and maybe interval and timezone_name), so if you
  * Describe a schedule, you'll see only structured_calendar, interval, etc.
+ * If a spec has no matching times after the current time, then the schedule
+ * will be subject to automatic deletion (after several days).
  *
  * Generated from protobuf message <code>temporal.api.schedule.v1.ScheduleSpec</code>
  */
@@ -85,20 +87,20 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
      * If start_time is set, any timestamps before start_time will be skipped.
      * (Together, start_time and end_time make an inclusive interval.)
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 4 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 4;</code>
      */
     protected $start_time = null;
     /**
      * If end_time is set, any timestamps after end_time will be skipped.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 5 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 5;</code>
      */
     protected $end_time = null;
     /**
      * All timestamps will be incremented by a random value from 0 to this
      * amount of jitter. Default: 0
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration jitter = 6 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration jitter = 6;</code>
      */
     protected $jitter = null;
     /**
@@ -396,7 +398,7 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
      * If start_time is set, any timestamps before start_time will be skipped.
      * (Together, start_time and end_time make an inclusive interval.)
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 4 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 4;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartTime()
@@ -418,7 +420,7 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
      * If start_time is set, any timestamps before start_time will be skipped.
      * (Together, start_time and end_time make an inclusive interval.)
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 4 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 4;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -433,7 +435,7 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
     /**
      * If end_time is set, any timestamps after end_time will be skipped.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 5 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 5;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getEndTime()
@@ -454,7 +456,7 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
     /**
      * If end_time is set, any timestamps after end_time will be skipped.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 5 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp end_time = 5;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -470,7 +472,7 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
      * All timestamps will be incremented by a random value from 0 to this
      * amount of jitter. Default: 0
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration jitter = 6 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration jitter = 6;</code>
      * @return \Google\Protobuf\Duration|null
      */
     public function getJitter()
@@ -492,7 +494,7 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
      * All timestamps will be incremented by a random value from 0 to this
      * amount of jitter. Default: 0
      *
-     * Generated from protobuf field <code>.google.protobuf.Duration jitter = 6 [(.gogoproto.stdduration) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Duration jitter = 6;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */

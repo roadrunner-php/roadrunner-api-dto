@@ -36,7 +36,9 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     protected $previous_started_event_id = 0;
     /**
      * The id of the most recent workflow task started event, which will have been generated as a
-     * result of this poll request being served.
+     * result of this poll request being served. Will be zero if the task
+     * does not contain any events which would advance history (no new WFT started).
+     * Currently this can happen for queries.
      *
      * Generated from protobuf field <code>int64 started_event_id = 5;</code>
      */
@@ -88,13 +90,13 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     /**
      * When this task was scheduled by the server
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 12 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 12;</code>
      */
     protected $scheduled_time = null;
     /**
      * When the current workflow task started event was generated, meaning the current attempt.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp started_time = 13 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_time = 13;</code>
      */
     protected $started_time = null;
     /**
@@ -126,7 +128,9 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      *           Will be zero if no task has ever started.
      *     @type int|string $started_event_id
      *           The id of the most recent workflow task started event, which will have been generated as a
-     *           result of this poll request being served.
+     *           result of this poll request being served. Will be zero if the task
+     *           does not contain any events which would advance history (no new WFT started).
+     *           Currently this can happen for queries.
      *     @type int $attempt
      *           Starting at 1, the number of attempts to complete this task by any worker.
      *     @type int|string $backlog_count_hint
@@ -283,7 +287,9 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * The id of the most recent workflow task started event, which will have been generated as a
-     * result of this poll request being served.
+     * result of this poll request being served. Will be zero if the task
+     * does not contain any events which would advance history (no new WFT started).
+     * Currently this can happen for queries.
      *
      * Generated from protobuf field <code>int64 started_event_id = 5;</code>
      * @return int|string
@@ -295,7 +301,9 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * The id of the most recent workflow task started event, which will have been generated as a
-     * result of this poll request being served.
+     * result of this poll request being served. Will be zero if the task
+     * does not contain any events which would advance history (no new WFT started).
+     * Currently this can happen for queries.
      *
      * Generated from protobuf field <code>int64 started_event_id = 5;</code>
      * @param int|string $var
@@ -514,7 +522,7 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     /**
      * When this task was scheduled by the server
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 12 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 12;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getScheduledTime()
@@ -535,7 +543,7 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     /**
      * When this task was scheduled by the server
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 12 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 12;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -550,7 +558,7 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     /**
      * When the current workflow task started event was generated, meaning the current attempt.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp started_time = 13 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_time = 13;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getStartedTime()
@@ -571,7 +579,7 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     /**
      * When the current workflow task started event was generated, meaning the current attempt.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp started_time = 13 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_time = 13;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */

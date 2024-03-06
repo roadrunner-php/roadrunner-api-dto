@@ -48,7 +48,7 @@ class ScheduleListInfo extends \Google\Protobuf\Internal\Message
      */
     private $recent_actions;
     /**
-     * Generated from protobuf field <code>repeated .google.protobuf.Timestamp future_action_times = 6 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.Timestamp future_action_times = 6;</code>
      */
     private $future_action_times;
 
@@ -231,7 +231,7 @@ class ScheduleListInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .google.protobuf.Timestamp future_action_times = 6 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.Timestamp future_action_times = 6;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getFutureActionTimes()
@@ -240,7 +240,7 @@ class ScheduleListInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .google.protobuf.Timestamp future_action_times = 6 [(.gogoproto.stdtime) = true];</code>
+     * Generated from protobuf field <code>repeated .google.protobuf.Timestamp future_action_times = 6;</code>
      * @param array<\Google\Protobuf\Timestamp>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

@@ -17,23 +17,29 @@ use Google\Protobuf\Internal\GPBUtil;
 class BatchOperationReset extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Reset type.
-     *
-     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetType reset_type = 1;</code>
-     */
-    protected $reset_type = 0;
-    /**
-     * History event reapply options.
-     *
-     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 2;</code>
-     */
-    protected $reset_reapply_type = 0;
-    /**
      * The identity of the worker/client.
      *
      * Generated from protobuf field <code>string identity = 3;</code>
      */
     protected $identity = '';
+    /**
+     * Describes what to reset to and how. If set, `reset_type` and `reset_reapply_type` are ignored.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.ResetOptions options = 4;</code>
+     */
+    protected $options = null;
+    /**
+     * Reset type (deprecated, use `options`).
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetType reset_type = 1;</code>
+     */
+    protected $reset_type = 0;
+    /**
+     * History event reapply options (deprecated, use `options`).
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 2;</code>
+     */
+    protected $reset_reapply_type = 0;
 
     /**
      * Constructor.
@@ -41,69 +47,19 @@ class BatchOperationReset extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $reset_type
-     *           Reset type.
-     *     @type int $reset_reapply_type
-     *           History event reapply options.
      *     @type string $identity
      *           The identity of the worker/client.
+     *     @type \Temporal\Api\Common\V1\ResetOptions $options
+     *           Describes what to reset to and how. If set, `reset_type` and `reset_reapply_type` are ignored.
+     *     @type int $reset_type
+     *           Reset type (deprecated, use `options`).
+     *     @type int $reset_reapply_type
+     *           History event reapply options (deprecated, use `options`).
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Temporal\Api\Batch\V1\Message::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Reset type.
-     *
-     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetType reset_type = 1;</code>
-     * @return int
-     */
-    public function getResetType()
-    {
-        return $this->reset_type;
-    }
-
-    /**
-     * Reset type.
-     *
-     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetType reset_type = 1;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setResetType($var)
-    {
-        GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ResetType::class);
-        $this->reset_type = $var;
-
-        return $this;
-    }
-
-    /**
-     * History event reapply options.
-     *
-     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 2;</code>
-     * @return int
-     */
-    public function getResetReapplyType()
-    {
-        return $this->reset_reapply_type;
-    }
-
-    /**
-     * History event reapply options.
-     *
-     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 2;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setResetReapplyType($var)
-    {
-        GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ResetReapplyType::class);
-        $this->reset_reapply_type = $var;
-
-        return $this;
     }
 
     /**
@@ -128,6 +84,94 @@ class BatchOperationReset extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->identity = $var;
+
+        return $this;
+    }
+
+    /**
+     * Describes what to reset to and how. If set, `reset_type` and `reset_reapply_type` are ignored.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.ResetOptions options = 4;</code>
+     * @return \Temporal\Api\Common\V1\ResetOptions|null
+     */
+    public function getOptions()
+    {
+        return $this->options;
+    }
+
+    public function hasOptions()
+    {
+        return isset($this->options);
+    }
+
+    public function clearOptions()
+    {
+        unset($this->options);
+    }
+
+    /**
+     * Describes what to reset to and how. If set, `reset_type` and `reset_reapply_type` are ignored.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.ResetOptions options = 4;</code>
+     * @param \Temporal\Api\Common\V1\ResetOptions $var
+     * @return $this
+     */
+    public function setOptions($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\ResetOptions::class);
+        $this->options = $var;
+
+        return $this;
+    }
+
+    /**
+     * Reset type (deprecated, use `options`).
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetType reset_type = 1;</code>
+     * @return int
+     */
+    public function getResetType()
+    {
+        return $this->reset_type;
+    }
+
+    /**
+     * Reset type (deprecated, use `options`).
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetType reset_type = 1;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setResetType($var)
+    {
+        GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ResetType::class);
+        $this->reset_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * History event reapply options (deprecated, use `options`).
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 2;</code>
+     * @return int
+     */
+    public function getResetReapplyType()
+    {
+        return $this->reset_reapply_type;
+    }
+
+    /**
+     * History event reapply options (deprecated, use `options`).
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setResetReapplyType($var)
+    {
+        GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ResetReapplyType::class);
+        $this->reset_reapply_type = $var;
 
         return $this;
     }
