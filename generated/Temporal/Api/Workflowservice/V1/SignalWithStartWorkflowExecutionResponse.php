@@ -14,9 +14,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class SignalWithStartWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The run id of the workflow that was started - or just signaled, if it was already running.
+     *
      * Generated from protobuf field <code>string run_id = 1;</code>
      */
     protected $run_id = '';
+    /**
+     * If true, a new workflow was started.
+     *
+     * Generated from protobuf field <code>bool started = 2;</code>
+     */
+    protected $started = false;
 
     /**
      * Constructor.
@@ -25,6 +33,9 @@ class SignalWithStartWorkflowExecutionResponse extends \Google\Protobuf\Internal
      *     Optional. Data for populating the Message object.
      *
      *     @type string $run_id
+     *           The run id of the workflow that was started - or just signaled, if it was already running.
+     *     @type bool $started
+     *           If true, a new workflow was started.
      * }
      */
     public function __construct($data = NULL) {
@@ -33,6 +44,8 @@ class SignalWithStartWorkflowExecutionResponse extends \Google\Protobuf\Internal
     }
 
     /**
+     * The run id of the workflow that was started - or just signaled, if it was already running.
+     *
      * Generated from protobuf field <code>string run_id = 1;</code>
      * @return string
      */
@@ -42,6 +55,8 @@ class SignalWithStartWorkflowExecutionResponse extends \Google\Protobuf\Internal
     }
 
     /**
+     * The run id of the workflow that was started - or just signaled, if it was already running.
+     *
      * Generated from protobuf field <code>string run_id = 1;</code>
      * @param string $var
      * @return $this
@@ -50,6 +65,32 @@ class SignalWithStartWorkflowExecutionResponse extends \Google\Protobuf\Internal
     {
         GPBUtil::checkString($var, True);
         $this->run_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * If true, a new workflow was started.
+     *
+     * Generated from protobuf field <code>bool started = 2;</code>
+     * @return bool
+     */
+    public function getStarted()
+    {
+        return $this->started;
+    }
+
+    /**
+     * If true, a new workflow was started.
+     *
+     * Generated from protobuf field <code>bool started = 2;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setStarted($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->started = $var;
 
         return $this;
     }

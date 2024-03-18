@@ -9,11 +9,6 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * (-- api-linter: core::0134::request-mask-required=disabled
- *     aip.dev/not-precedent: UpdateNamespace RPC doesn't follow Google API format. --)
- * (-- api-linter: core::0134::request-resource-required=disabled
- *     aip.dev/not-precedent: UpdateNamespace RPC doesn't follow Google API format. --)
- *
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.UpdateNamespaceRequest</code>
  */
 class UpdateNamespaceRequest extends \Google\Protobuf\Internal\Message

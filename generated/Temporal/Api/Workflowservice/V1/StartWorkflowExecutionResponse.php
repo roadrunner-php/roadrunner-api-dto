@@ -14,9 +14,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class StartWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
 {
     /**
+     * The run id of the workflow that was started - or used (via WorkflowIdConflictPolicy USE_EXISTING).
+     *
      * Generated from protobuf field <code>string run_id = 1;</code>
      */
     protected $run_id = '';
+    /**
+     * If true, a new workflow was started.
+     *
+     * Generated from protobuf field <code>bool started = 3;</code>
+     */
+    protected $started = false;
     /**
      * When `request_eager_execution` is set on the `StartWorkflowExecutionRequest`, the server - if supported - will
      * return the first workflow task to be eagerly executed.
@@ -33,6 +41,9 @@ class StartWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $run_id
+     *           The run id of the workflow that was started - or used (via WorkflowIdConflictPolicy USE_EXISTING).
+     *     @type bool $started
+     *           If true, a new workflow was started.
      *     @type \Temporal\Api\Workflowservice\V1\PollWorkflowTaskQueueResponse $eager_workflow_task
      *           When `request_eager_execution` is set on the `StartWorkflowExecutionRequest`, the server - if supported - will
      *           return the first workflow task to be eagerly executed.
@@ -45,6 +56,8 @@ class StartWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The run id of the workflow that was started - or used (via WorkflowIdConflictPolicy USE_EXISTING).
+     *
      * Generated from protobuf field <code>string run_id = 1;</code>
      * @return string
      */
@@ -54,6 +67,8 @@ class StartWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The run id of the workflow that was started - or used (via WorkflowIdConflictPolicy USE_EXISTING).
+     *
      * Generated from protobuf field <code>string run_id = 1;</code>
      * @param string $var
      * @return $this
@@ -62,6 +77,32 @@ class StartWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->run_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * If true, a new workflow was started.
+     *
+     * Generated from protobuf field <code>bool started = 3;</code>
+     * @return bool
+     */
+    public function getStarted()
+    {
+        return $this->started;
+    }
+
+    /**
+     * If true, a new workflow was started.
+     *
+     * Generated from protobuf field <code>bool started = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setStarted($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->started = $var;
 
         return $this;
     }

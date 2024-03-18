@@ -9,29 +9,29 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * A cluster-global binding from a service ID to namespace, task queue, and metadata for dispatching incoming Nexus
- * requests.
+ * A per-namespace binding from service name to URL that is used by the service to invoke Nexus requests that are
+ * initiated by workflows.
  *
- * Generated from protobuf message <code>temporal.api.nexus.v1.IncomingService</code>
+ * Generated from protobuf message <code>temporal.api.nexus.v1.OutgoingService</code>
  */
-class IncomingService extends \Google\Protobuf\Internal\Message
+class OutgoingService extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Data version for this service, incremented for every update issued via the UpdateNexusIncomingService API.
+     * Data version for this service, incremented for every mutation.
      *
      * Generated from protobuf field <code>int64 version = 1;</code>
      */
     protected $version = 0;
     /**
-     * Unique server-generated service ID.
+     * Name of the service
      *
-     * Generated from protobuf field <code>string id = 2;</code>
+     * Generated from protobuf field <code>string name = 2;</code>
      */
-    protected $id = '';
+    protected $name = '';
     /**
      * Spec for the service.
      *
-     * Generated from protobuf field <code>.temporal.api.nexus.v1.IncomingServiceSpec spec = 3;</code>
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.OutgoingServiceSpec spec = 3;</code>
      */
     protected $spec = null;
     /**
@@ -51,14 +51,6 @@ class IncomingService extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_modified_time = 5;</code>
      */
     protected $last_modified_time = null;
-    /**
-     * Server exposed URL prefix for invocation of operations on this service.
-     * This doesn't include the protocol, hostname or port as the server does not know how it should be accessed
-     * publicly. The URL is stable in the face of service renames.
-     *
-     * Generated from protobuf field <code>string url_prefix = 6;</code>
-     */
-    protected $url_prefix = '';
 
     /**
      * Constructor.
@@ -67,10 +59,10 @@ class IncomingService extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $version
-     *           Data version for this service, incremented for every update issued via the UpdateNexusIncomingService API.
-     *     @type string $id
-     *           Unique server-generated service ID.
-     *     @type \Temporal\Api\Nexus\V1\IncomingServiceSpec $spec
+     *           Data version for this service, incremented for every mutation.
+     *     @type string $name
+     *           Name of the service
+     *     @type \Temporal\Api\Nexus\V1\OutgoingServiceSpec $spec
      *           Spec for the service.
      *     @type \Google\Protobuf\Timestamp $created_time
      *           The date and time when the service was created.
@@ -81,10 +73,6 @@ class IncomingService extends \Google\Protobuf\Internal\Message
      *           Will not be set if the service has never been modified.
      *           (-- api-linter: core::0142::time-field-names=disabled
      *               aip.dev/not-precedent: Not following linter rules. --)
-     *     @type string $url_prefix
-     *           Server exposed URL prefix for invocation of operations on this service.
-     *           This doesn't include the protocol, hostname or port as the server does not know how it should be accessed
-     *           publicly. The URL is stable in the face of service renames.
      * }
      */
     public function __construct($data = NULL) {
@@ -93,7 +81,7 @@ class IncomingService extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Data version for this service, incremented for every update issued via the UpdateNexusIncomingService API.
+     * Data version for this service, incremented for every mutation.
      *
      * Generated from protobuf field <code>int64 version = 1;</code>
      * @return int|string
@@ -104,7 +92,7 @@ class IncomingService extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Data version for this service, incremented for every update issued via the UpdateNexusIncomingService API.
+     * Data version for this service, incremented for every mutation.
      *
      * Generated from protobuf field <code>int64 version = 1;</code>
      * @param int|string $var
@@ -119,27 +107,27 @@ class IncomingService extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Unique server-generated service ID.
+     * Name of the service
      *
-     * Generated from protobuf field <code>string id = 2;</code>
+     * Generated from protobuf field <code>string name = 2;</code>
      * @return string
      */
-    public function getId()
+    public function getName()
     {
-        return $this->id;
+        return $this->name;
     }
 
     /**
-     * Unique server-generated service ID.
+     * Name of the service
      *
-     * Generated from protobuf field <code>string id = 2;</code>
+     * Generated from protobuf field <code>string name = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setName($var)
     {
         GPBUtil::checkString($var, True);
-        $this->id = $var;
+        $this->name = $var;
 
         return $this;
     }
@@ -147,8 +135,8 @@ class IncomingService extends \Google\Protobuf\Internal\Message
     /**
      * Spec for the service.
      *
-     * Generated from protobuf field <code>.temporal.api.nexus.v1.IncomingServiceSpec spec = 3;</code>
-     * @return \Temporal\Api\Nexus\V1\IncomingServiceSpec|null
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.OutgoingServiceSpec spec = 3;</code>
+     * @return \Temporal\Api\Nexus\V1\OutgoingServiceSpec|null
      */
     public function getSpec()
     {
@@ -168,13 +156,13 @@ class IncomingService extends \Google\Protobuf\Internal\Message
     /**
      * Spec for the service.
      *
-     * Generated from protobuf field <code>.temporal.api.nexus.v1.IncomingServiceSpec spec = 3;</code>
-     * @param \Temporal\Api\Nexus\V1\IncomingServiceSpec $var
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.OutgoingServiceSpec spec = 3;</code>
+     * @param \Temporal\Api\Nexus\V1\OutgoingServiceSpec $var
      * @return $this
      */
     public function setSpec($var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\IncomingServiceSpec::class);
+        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\OutgoingServiceSpec::class);
         $this->spec = $var;
 
         return $this;
@@ -258,36 +246,6 @@ class IncomingService extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_modified_time = $var;
-
-        return $this;
-    }
-
-    /**
-     * Server exposed URL prefix for invocation of operations on this service.
-     * This doesn't include the protocol, hostname or port as the server does not know how it should be accessed
-     * publicly. The URL is stable in the face of service renames.
-     *
-     * Generated from protobuf field <code>string url_prefix = 6;</code>
-     * @return string
-     */
-    public function getUrlPrefix()
-    {
-        return $this->url_prefix;
-    }
-
-    /**
-     * Server exposed URL prefix for invocation of operations on this service.
-     * This doesn't include the protocol, hostname or port as the server does not know how it should be accessed
-     * publicly. The URL is stable in the face of service renames.
-     *
-     * Generated from protobuf field <code>string url_prefix = 6;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setUrlPrefix($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->url_prefix = $var;
 
         return $this;
     }

@@ -44,7 +44,7 @@ class RequestResponse
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¸Ã
+†Å
 6temporal/api/workflowservice/v1/request_response.prototemporal.api.workflowservice.v1$temporal/api/enums/v1/workflow.proto%temporal/api/enums/v1/namespace.proto(temporal/api/enums/v1/failed_cause.proto"temporal/api/enums/v1/common.proto!temporal/api/enums/v1/query.proto!temporal/api/enums/v1/reset.proto&temporal/api/enums/v1/task_queue.proto"temporal/api/enums/v1/update.proto$temporal/api/common/v1/message.proto%temporal/api/history/v1/message.proto&temporal/api/workflow/v1/message.proto%temporal/api/command/v1/message.proto%temporal/api/failure/v1/message.proto$temporal/api/filter/v1/message.proto&temporal/api/protocol/v1/message.proto\'temporal/api/namespace/v1/message.proto#temporal/api/query/v1/message.proto)temporal/api/replication/v1/message.proto&temporal/api/schedule/v1/message.proto\'temporal/api/taskqueue/v1/message.proto$temporal/api/update/v1/message.proto%temporal/api/version/v1/message.proto#temporal/api/batch/v1/message.proto0temporal/api/sdk/v1/task_complete_metadata.proto#temporal/api/nexus/v1/message.protogoogle/protobuf/duration.protogoogle/protobuf/timestamp.proto"ˆ
 RegisterNamespaceRequest
 	namespace (	
@@ -101,7 +101,7 @@ namespaces (2:.temporal.api.workflowservice.v1.DescribeNamespaceResponse
 DeprecateNamespaceRequest
 	namespace (	
 security_token (	"
-DeprecateNamespaceResponse"£
+DeprecateNamespaceResponse"ù
 StartWorkflowExecutionRequest
 	namespace (	
 workflow_id (	;
@@ -116,7 +116,8 @@ task_queue (2$.temporal.api.taskqueue.v1.TaskQueue/
 
 request_id
  (	N
-workflow_id_reuse_policy (2,.temporal.api.enums.v1.WorkflowIdReusePolicy9
+workflow_id_reuse_policy (2,.temporal.api.enums.v1.WorkflowIdReusePolicyT
+workflow_id_conflict_policy (2/.temporal.api.enums.v1.WorkflowIdConflictPolicy9
 retry_policy (2#.temporal.api.common.v1.RetryPolicy
 cron_schedule (	*
 memo (2.temporal.api.common.v1.MemoC
@@ -126,9 +127,10 @@ request_id
 continued_failure (2 .temporal.api.failure.v1.Failure@
 last_completion_result (2 .temporal.api.common.v1.Payloads7
 workflow_start_delay (2.google.protobuf.Duration>
-completion_callbacks (2 .temporal.api.common.v1.Callback"
+completion_callbacks (2 .temporal.api.common.v1.Callback"ž
 StartWorkflowExecutionResponse
-run_id (	[
+run_id (	
+started ([
 eager_workflow_task (2>.temporal.api.workflowservice.v1.PollWorkflowTaskQueueResponse"ª
 "GetWorkflowExecutionHistoryRequest
 	namespace (	<
@@ -329,7 +331,7 @@ request_id (	
 control (	.
 header (2.temporal.api.common.v1.Header#
 skip_generate_workflow_task	 ("!
-SignalWorkflowExecutionResponse"Ð
+SignalWorkflowExecutionResponse"¦
 \'SignalWithStartWorkflowExecutionRequest
 	namespace (	
 workflow_id (	;
@@ -344,7 +346,8 @@ task_queue (2$.temporal.api.taskqueue.v1.TaskQueue/
 
 request_id
  (	N
-workflow_id_reuse_policy (2,.temporal.api.enums.v1.WorkflowIdReusePolicy
+workflow_id_reuse_policy (2,.temporal.api.enums.v1.WorkflowIdReusePolicyT
+workflow_id_conflict_policy (2/.temporal.api.enums.v1.WorkflowIdConflictPolicy
 signal_name (	6
 signal_input (2 .temporal.api.common.v1.Payloads
 control (	9
@@ -354,9 +357,10 @@ request_id
 search_attributes (2(.temporal.api.common.v1.SearchAttributes.
 header (2.temporal.api.common.v1.Header7
 workflow_start_delay (2.google.protobuf.Duration#
-skip_generate_workflow_task (":
+skip_generate_workflow_task ("K
 (SignalWithStartWorkflowExecutionResponse
-run_id (	"Þ
+run_id (	
+started ("Þ
 ResetWorkflowExecutionRequest
 	namespace (	E
 workflow_execution (2).temporal.api.common.v1.WorkflowExecution

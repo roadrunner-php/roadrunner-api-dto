@@ -19,7 +19,7 @@ class RequestResponse
         \GPBMetadata\Google\Protobuf\Duration::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Å
+ô
 6temporal/api/operatorservice/v1/request_response.prototemporal.api.operatorservice.v1#temporal/api/nexus/v1/message.protogoogle/protobuf/duration.proto"ˇ
 AddSearchAttributesRequestl
 search_attributes (2Q.temporal.api.operatorservice.v1.AddSearchAttributesRequest.SearchAttributesEntry
@@ -73,24 +73,65 @@ cluster_id (	
 address (	 
 initial_failover_version (
 history_shard_count (
-is_connection_enabled (".
-GetNexusIncomingServiceRequest
-name (	"Z
+is_connection_enabled (",
+GetNexusIncomingServiceRequest
+
+id (	"Z
 GetNexusIncomingServiceResponse7
-service (2&.temporal.api.nexus.v1.IncomingService"d
-)CreateOrUpdateNexusIncomingServiceRequest7
-service (2&.temporal.api.nexus.v1.IncomingService"e
-*CreateOrUpdateNexusIncomingServiceResponse7
-service (2&.temporal.api.nexus.v1.IncomingService"1
-!DeleteNexusIncomingServiceRequest
-name (	"$
-"DeleteNexusIncomingServiceResponse"N
+service (2&.temporal.api.nexus.v1.IncomingService"]
+!CreateNexusIncomingServiceRequest8
+spec (2*.temporal.api.nexus.v1.IncomingServiceSpec"]
+"CreateNexusIncomingServiceResponse7
+service (2&.temporal.api.nexus.v1.IncomingService"z
+!UpdateNexusIncomingServiceRequest
+
+id (	
+version (8
+spec (2*.temporal.api.nexus.v1.IncomingServiceSpec"]
+"UpdateNexusIncomingServiceResponse7
+service (2&.temporal.api.nexus.v1.IncomingService"@
+!DeleteNexusIncomingServiceRequest
+
+id (	
+version ("$
+"DeleteNexusIncomingServiceResponse"\\
  ListNexusIncomingServicesRequest
 	page_size (
-next_page_token ("v
+next_page_token (
+name (	"v
 !ListNexusIncomingServicesResponse
 next_page_token (8
-services (2&.temporal.api.nexus.v1.IncomingServiceBæ
+services (2&.temporal.api.nexus.v1.IncomingService"A
+GetNexusOutgoingServiceRequest
+	namespace (	
+name (	"Z
+GetNexusOutgoingServiceResponse7
+service (2&.temporal.api.nexus.v1.OutgoingService"~
+!CreateNexusOutgoingServiceRequest
+	namespace (	
+name (	8
+spec (2*.temporal.api.nexus.v1.OutgoingServiceSpec"]
+"CreateNexusOutgoingServiceResponse7
+service (2&.temporal.api.nexus.v1.OutgoingService"è
+!UpdateNexusOutgoingServiceRequest
+	namespace (	
+name (	
+version (8
+spec (2*.temporal.api.nexus.v1.OutgoingServiceSpec"]
+"UpdateNexusOutgoingServiceResponse7
+service (2&.temporal.api.nexus.v1.OutgoingService"D
+!DeleteNexusOutgoingServiceRequest
+	namespace (	
+name (	"$
+"DeleteNexusOutgoingServiceResponse"\\
+ ListNexusOutgoingServicesRequest
+	namespace (	
+	page_size (
+
+page_token ("v
+!ListNexusOutgoingServicesResponse8
+services (2&.temporal.api.nexus.v1.OutgoingService
+next_page_token (Bæ
 "io.temporal.api.operatorservice.v1BRequestResponseProtoPZ5go.temporal.io/api/operatorservice/v1;operatorservice™!Temporalio.Api.OperatorService.V1Í$Temporalio::Api::OperatorService::V1bproto3'
         , true);
 

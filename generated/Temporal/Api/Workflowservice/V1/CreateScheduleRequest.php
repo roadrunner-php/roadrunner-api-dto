@@ -9,12 +9,6 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * (-- api-linter: core::0133::request-parent-required=disabled
- *     aip.dev/not-precedent: CreateSchedule doesn't follow Google API format --)
- * (-- api-linter: core::0133::request-unknown-fields=disabled
- *     aip.dev/not-precedent: CreateSchedule doesn't follow Google API format --)
- * (-- api-linter: core::0133::request-resource-behavior=disabled
- *     aip.dev/not-precedent: field_behavior annotation not available in our gogo fork --)
  * (-- api-linter: core::0203::optional=disabled
  *     aip.dev/not-precedent: field_behavior annotation not available in our gogo fork --)
  *

@@ -9,9 +9,6 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * (-- api-linter: core::0134::request-resource-required=disabled
- *     aip.dev/not-precedent: GetWorkerBuildIdCompatibilityRequest RPC doesn't follow Google API format. --)
- *
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.GetWorkerBuildIdCompatibilityRequest</code>
  */
 class GetWorkerBuildIdCompatibilityRequest extends \Google\Protobuf\Internal\Message

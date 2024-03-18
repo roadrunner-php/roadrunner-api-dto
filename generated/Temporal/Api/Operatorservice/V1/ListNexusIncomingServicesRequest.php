@@ -25,6 +25,14 @@ class ListNexusIncomingServicesRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bytes next_page_token = 2;</code>
      */
     protected $next_page_token = '';
+    /**
+     * Name of the incoming service to filter on - optional. Specifying this will result in zero or one results.
+     * (-- api-linter: core::203::field-behavior-required=disabled
+     *     aip.dev/not-precedent: Not following linter rules. --)
+     *
+     * Generated from protobuf field <code>string name = 3;</code>
+     */
+    protected $name = '';
 
     /**
      * Constructor.
@@ -37,6 +45,10 @@ class ListNexusIncomingServicesRequest extends \Google\Protobuf\Internal\Message
      *           To get the next page, pass in `ListNexusIncomingServicesResponse.next_page_token` from the previous page's
      *           response, the token will be empty if there's no other page.
      *           Note: the last page may be empty if the total number of services registered is a multiple of the page size.
+     *     @type string $name
+     *           Name of the incoming service to filter on - optional. Specifying this will result in zero or one results.
+     *           (-- api-linter: core::203::field-behavior-required=disabled
+     *               aip.dev/not-precedent: Not following linter rules. --)
      * }
      */
     public function __construct($data = NULL) {
@@ -92,6 +104,36 @@ class ListNexusIncomingServicesRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, False);
         $this->next_page_token = $var;
+
+        return $this;
+    }
+
+    /**
+     * Name of the incoming service to filter on - optional. Specifying this will result in zero or one results.
+     * (-- api-linter: core::203::field-behavior-required=disabled
+     *     aip.dev/not-precedent: Not following linter rules. --)
+     *
+     * Generated from protobuf field <code>string name = 3;</code>
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Name of the incoming service to filter on - optional. Specifying this will result in zero or one results.
+     * (-- api-linter: core::203::field-behavior-required=disabled
+     *     aip.dev/not-precedent: Not following linter rules. --)
+     *
+     * Generated from protobuf field <code>string name = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->name = $var;
 
         return $this;
     }
