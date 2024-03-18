@@ -9,9 +9,6 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * (-- api-linter: core::0134::request-mask-required=disabled
- *     aip.dev/not-precedent: UpdateSchedule doesn't follow Google API format --)
- *
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.UpdateScheduleRequest</code>
  */
 class UpdateScheduleRequest extends \Google\Protobuf\Internal\Message

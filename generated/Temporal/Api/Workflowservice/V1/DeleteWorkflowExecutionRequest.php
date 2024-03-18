@@ -9,11 +9,6 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * (-- api-linter: core::0135::request-unknown-fields=disabled
- *     aip.dev/not-precedent: DeleteNamespace RPC doesn't follow Google API format. --)
- * (-- api-linter: core::0135::request-name-required=disabled
- *     aip.dev/not-precedent: DeleteNamespace RPC doesn't follow Google API format. --)
- *
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.DeleteWorkflowExecutionRequest</code>
  */
 class DeleteWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message

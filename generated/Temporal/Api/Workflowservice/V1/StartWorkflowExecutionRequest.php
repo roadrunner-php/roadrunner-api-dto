@@ -66,11 +66,21 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      */
     protected $request_id = '';
     /**
-     * Default: WORKFLOW_ID_REUSE_POLICY_ALLOW_DUPLICATE.
+     * Defines whether to allow re-using the workflow id from a previously *closed* workflow.
+     * The default policy is WORKFLOW_ID_REUSE_POLICY_ALLOW_DUPLICATE.
+     * See `workflow_id_conflict_policy` for handling a workflow id duplication with a *running* workflow.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowIdReusePolicy workflow_id_reuse_policy = 11;</code>
      */
     protected $workflow_id_reuse_policy = 0;
+    /**
+     * Defines how to resolve a workflow id conflict with a *running* workflow.
+     * The default policy is WORKFLOW_ID_CONFLICT_POLICY_FAIL.
+     * See `workflow_id_reuse_policy` for handling a workflow id duplication with a *closed* workflow.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowIdConflictPolicy workflow_id_conflict_policy = 22;</code>
+     */
+    protected $workflow_id_conflict_policy = 0;
     /**
      * The retry policy for the workflow. Will never exceed `workflow_execution_timeout`.
      *
@@ -157,7 +167,13 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      *     @type string $request_id
      *           A unique identifier for this start request. Typically UUIDv4.
      *     @type int $workflow_id_reuse_policy
-     *           Default: WORKFLOW_ID_REUSE_POLICY_ALLOW_DUPLICATE.
+     *           Defines whether to allow re-using the workflow id from a previously *closed* workflow.
+     *           The default policy is WORKFLOW_ID_REUSE_POLICY_ALLOW_DUPLICATE.
+     *           See `workflow_id_conflict_policy` for handling a workflow id duplication with a *running* workflow.
+     *     @type int $workflow_id_conflict_policy
+     *           Defines how to resolve a workflow id conflict with a *running* workflow.
+     *           The default policy is WORKFLOW_ID_CONFLICT_POLICY_FAIL.
+     *           See `workflow_id_reuse_policy` for handling a workflow id duplication with a *closed* workflow.
      *     @type \Temporal\Api\Common\V1\RetryPolicy $retry_policy
      *           The retry policy for the workflow. Will never exceed `workflow_execution_timeout`.
      *     @type string $cron_schedule
@@ -496,7 +512,9 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Default: WORKFLOW_ID_REUSE_POLICY_ALLOW_DUPLICATE.
+     * Defines whether to allow re-using the workflow id from a previously *closed* workflow.
+     * The default policy is WORKFLOW_ID_REUSE_POLICY_ALLOW_DUPLICATE.
+     * See `workflow_id_conflict_policy` for handling a workflow id duplication with a *running* workflow.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowIdReusePolicy workflow_id_reuse_policy = 11;</code>
      * @return int
@@ -507,7 +525,9 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Default: WORKFLOW_ID_REUSE_POLICY_ALLOW_DUPLICATE.
+     * Defines whether to allow re-using the workflow id from a previously *closed* workflow.
+     * The default policy is WORKFLOW_ID_REUSE_POLICY_ALLOW_DUPLICATE.
+     * See `workflow_id_conflict_policy` for handling a workflow id duplication with a *running* workflow.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowIdReusePolicy workflow_id_reuse_policy = 11;</code>
      * @param int $var
@@ -517,6 +537,36 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\WorkflowIdReusePolicy::class);
         $this->workflow_id_reuse_policy = $var;
+
+        return $this;
+    }
+
+    /**
+     * Defines how to resolve a workflow id conflict with a *running* workflow.
+     * The default policy is WORKFLOW_ID_CONFLICT_POLICY_FAIL.
+     * See `workflow_id_reuse_policy` for handling a workflow id duplication with a *closed* workflow.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowIdConflictPolicy workflow_id_conflict_policy = 22;</code>
+     * @return int
+     */
+    public function getWorkflowIdConflictPolicy()
+    {
+        return $this->workflow_id_conflict_policy;
+    }
+
+    /**
+     * Defines how to resolve a workflow id conflict with a *running* workflow.
+     * The default policy is WORKFLOW_ID_CONFLICT_POLICY_FAIL.
+     * See `workflow_id_reuse_policy` for handling a workflow id duplication with a *closed* workflow.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowIdConflictPolicy workflow_id_conflict_policy = 22;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setWorkflowIdConflictPolicy($var)
+    {
+        GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\WorkflowIdConflictPolicy::class);
+        $this->workflow_id_conflict_policy = $var;
 
         return $this;
     }

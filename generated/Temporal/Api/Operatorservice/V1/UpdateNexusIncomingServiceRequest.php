@@ -9,9 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>temporal.api.operatorservice.v1.DeleteNexusIncomingServiceRequest</code>
+ * Generated from protobuf message <code>temporal.api.operatorservice.v1.UpdateNexusIncomingServiceRequest</code>
  */
-class DeleteNexusIncomingServiceRequest extends \Google\Protobuf\Internal\Message
+class UpdateNexusIncomingServiceRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Server-generated unique service ID.
@@ -25,6 +25,10 @@ class DeleteNexusIncomingServiceRequest extends \Google\Protobuf\Internal\Messag
      * Generated from protobuf field <code>int64 version = 2;</code>
      */
     protected $version = 0;
+    /**
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.IncomingServiceSpec spec = 3;</code>
+     */
+    protected $spec = null;
 
     /**
      * Constructor.
@@ -36,6 +40,7 @@ class DeleteNexusIncomingServiceRequest extends \Google\Protobuf\Internal\Messag
      *           Server-generated unique service ID.
      *     @type int|string $version
      *           Data version for this service. Must match current version.
+     *     @type \Temporal\Api\Nexus\V1\IncomingServiceSpec $spec
      * }
      */
     public function __construct($data = NULL) {
@@ -91,6 +96,38 @@ class DeleteNexusIncomingServiceRequest extends \Google\Protobuf\Internal\Messag
     {
         GPBUtil::checkInt64($var);
         $this->version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.IncomingServiceSpec spec = 3;</code>
+     * @return \Temporal\Api\Nexus\V1\IncomingServiceSpec|null
+     */
+    public function getSpec()
+    {
+        return $this->spec;
+    }
+
+    public function hasSpec()
+    {
+        return isset($this->spec);
+    }
+
+    public function clearSpec()
+    {
+        unset($this->spec);
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.IncomingServiceSpec spec = 3;</code>
+     * @param \Temporal\Api\Nexus\V1\IncomingServiceSpec $var
+     * @return $this
+     */
+    public function setSpec($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\IncomingServiceSpec::class);
+        $this->spec = $var;
 
         return $this;
     }

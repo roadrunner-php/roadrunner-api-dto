@@ -19,7 +19,7 @@ class Message
         \GPBMetadata\Temporal\Api\Enums\V1\PBNamespace::initOnce();
         $pool->internalAddGeneratedFile(
             '
-œ
+Û
 *temporal/api/errordetails/v1/message.prototemporal.api.errordetails.v1(temporal/api/enums/v1/failed_cause.proto%temporal/api/enums/v1/namespace.proto"B
 NotFoundFailure
 current_cluster (	
@@ -48,9 +48,10 @@ class Message
 #CancellationAlreadyRequestedFailure"
 QueryFailedFailure")
 PermissionDeniedFailure
-reason (	"X
+reason (	"–
 ResourceExhaustedFailure<
-cause (2-.temporal.api.enums.v1.ResourceExhaustedCause"v
+cause (2-.temporal.api.enums.v1.ResourceExhaustedCause<
+scope (2-.temporal.api.enums.v1.ResourceExhaustedScope"v
 SystemWorkflowFailureE
 workflow_execution (2).temporal.api.common.v1.WorkflowExecution
 workflow_error (	"

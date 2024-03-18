@@ -7,8 +7,9 @@ namespace Temporal\Api\Enums\V1;
 use UnexpectedValueException;
 
 /**
- * Defines how new runs of a workflow with a particular ID may or may not be allowed. Note that
- * it is *never* valid to have two actively running instances of the same workflow id.
+ * Defines whether to allow re-using a workflow id from a previously *closed* workflow.
+ * If the request is denied, a `WorkflowExecutionAlreadyStartedFailure` is returned.
+ * See `WorkflowIdConflictPolicy` for handling workflow id duplication with a *running* workflow.
  *
  * Protobuf type <code>temporal.api.enums.v1.WorkflowIdReusePolicy</code>
  */
@@ -39,8 +40,10 @@ class WorkflowIdReusePolicy
      */
     const WORKFLOW_ID_REUSE_POLICY_REJECT_DUPLICATE = 3;
     /**
-     * If a workflow is running using the same workflow ID, terminate it and start a new one.
-     * If no running workflow, then the behavior is the same as ALLOW_DUPLICATE
+     * This option belongs in WorkflowIdConflictPolicy but is here for backwards compatibility.
+     * If specified, it acts like ALLOW_DUPLICATE, but also the WorkflowId*Conflict*Policy on
+     * the request is treated as WORKFLOW_ID_CONFLICT_POLICY_TERMINATE_EXISTING.
+     * If no running workflow, then the behavior is the same as ALLOW_DUPLICATE.
      *
      * Generated from protobuf enum <code>WORKFLOW_ID_REUSE_POLICY_TERMINATE_IF_RUNNING = 4;</code>
      */
