@@ -13,7 +13,14 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Body extends \Google\Protobuf\Internal\Message
 {
-    protected $data;
+    /**
+     * Generated from protobuf field <code>bytes body = 1;</code>
+     */
+    protected $body = '';
+    /**
+     * Generated from protobuf field <code>bool raw_data = 2;</code>
+     */
+    protected $raw_data = false;
 
     /**
      * Constructor.
@@ -21,8 +28,8 @@ class Body extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \RoadRunner\HTTP\DTO\V1\BodyHeader $header
      *     @type string $body
+     *     @type bool $raw_data
      * }
      */
     public function __construct($data = NULL) {
@@ -31,65 +38,47 @@ class Body extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.http.v1.BodyHeader header = 1;</code>
-     * @return \RoadRunner\HTTP\DTO\V1\BodyHeader|null
-     */
-    public function getHeader()
-    {
-        return $this->readOneof(1);
-    }
-
-    public function hasHeader()
-    {
-        return $this->hasOneof(1);
-    }
-
-    /**
-     * Generated from protobuf field <code>.http.v1.BodyHeader header = 1;</code>
-     * @param \RoadRunner\HTTP\DTO\V1\BodyHeader $var
-     * @return $this
-     */
-    public function setHeader($var)
-    {
-        GPBUtil::checkMessage($var, \RoadRunner\HTTP\DTO\V1\BodyHeader::class);
-        $this->writeOneof(1, $var);
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bytes body = 2;</code>
+     * Generated from protobuf field <code>bytes body = 1;</code>
      * @return string
      */
     public function getBody()
     {
-        return $this->readOneof(2);
-    }
-
-    public function hasBody()
-    {
-        return $this->hasOneof(2);
+        return $this->body;
     }
 
     /**
-     * Generated from protobuf field <code>bytes body = 2;</code>
+     * Generated from protobuf field <code>bytes body = 1;</code>
      * @param string $var
      * @return $this
      */
     public function setBody($var)
     {
         GPBUtil::checkString($var, False);
-        $this->writeOneof(2, $var);
+        $this->body = $var;
 
         return $this;
     }
 
     /**
-     * @return string
+     * Generated from protobuf field <code>bool raw_data = 2;</code>
+     * @return bool
      */
-    public function getData()
+    public function getRawData()
     {
-        return $this->whichOneof("data");
+        return $this->raw_data;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool raw_data = 2;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setRawData($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->raw_data = $var;
+
+        return $this;
     }
 
 }
