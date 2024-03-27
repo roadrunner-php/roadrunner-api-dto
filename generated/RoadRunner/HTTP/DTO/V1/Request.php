@@ -48,9 +48,9 @@ class Request extends \Google\Protobuf\Internal\Message
      */
     protected $parsed = false;
     /**
-     * Generated from protobuf field <code>.http.v1.Uploads uploads = 9;</code>
+     * Generated from protobuf field <code>bytes uploads = 9;</code>
      */
-    protected $uploads = null;
+    protected $uploads = '';
     /**
      * Generated from protobuf field <code>map<string, .http.v1.HeaderValue> attributes = 10;</code>
      */
@@ -70,7 +70,7 @@ class Request extends \Google\Protobuf\Internal\Message
      *     @type array|\Google\Protobuf\Internal\MapField $cookies
      *     @type string $raw_query
      *     @type bool $parsed
-     *     @type \RoadRunner\HTTP\DTO\V1\Uploads $uploads
+     *     @type string $uploads
      *     @type array|\Google\Protobuf\Internal\MapField $attributes
      * }
      */
@@ -256,32 +256,22 @@ class Request extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.http.v1.Uploads uploads = 9;</code>
-     * @return \RoadRunner\HTTP\DTO\V1\Uploads|null
+     * Generated from protobuf field <code>bytes uploads = 9;</code>
+     * @return string
      */
     public function getUploads()
     {
         return $this->uploads;
     }
 
-    public function hasUploads()
-    {
-        return isset($this->uploads);
-    }
-
-    public function clearUploads()
-    {
-        unset($this->uploads);
-    }
-
     /**
-     * Generated from protobuf field <code>.http.v1.Uploads uploads = 9;</code>
-     * @param \RoadRunner\HTTP\DTO\V1\Uploads $var
+     * Generated from protobuf field <code>bytes uploads = 9;</code>
+     * @param string $var
      * @return $this
      */
     public function setUploads($var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\HTTP\DTO\V1\Uploads::class);
+        GPBUtil::checkString($var, False);
         $this->uploads = $var;
 
         return $this;

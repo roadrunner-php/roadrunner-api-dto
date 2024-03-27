@@ -19,7 +19,7 @@ class RequestResponse
         \GPBMetadata\Google\Protobuf\Duration::initOnce();
         $pool->internalAddGeneratedFile(
             '
-™
+Ï
 6temporal/api/operatorservice/v1/request_response.prototemporal.api.operatorservice.v1#temporal/api/nexus/v1/message.protogoogle/protobuf/duration.proto"ÿ
 AddSearchAttributesRequestl
 search_attributes (2Q.temporal.api.operatorservice.v1.AddSearchAttributesRequest.SearchAttributesEntry
@@ -52,10 +52,11 @@ class RequestResponse
 namespace_id (	9
 namespace_delete_delay (2.google.protobuf.Duration"4
 DeleteNamespaceResponse
-deleted_namespace (	"e
+deleted_namespace (	"„
 AddOrUpdateRemoteClusterRequest
 frontend_address (	(
- enable_remote_cluster_connection (""
+ enable_remote_cluster_connection (
+frontend_http_address (	""
  AddOrUpdateRemoteClusterResponse"2
 RemoveRemoteClusterRequest
 cluster_name (	"
@@ -65,12 +66,13 @@ class RequestResponse
 next_page_token ("s
 ListClustersResponseB
 clusters (20.temporal.api.operatorservice.v1.ClusterMetadata
-next_page_token ("ª
+next_page_token ("À
 ClusterMetadata
 cluster_name (	
 
 cluster_id (	
-address (	 
+address (	
+http_address (	 
 initial_failover_version (
 history_shard_count (
 is_connection_enabled (",

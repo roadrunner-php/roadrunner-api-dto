@@ -17,8 +17,8 @@ class Http
         \GPBMetadata\Google\Protobuf\Any::initOnce();
         $pool->internalAddGeneratedFile(
             '
-¬
-http/v1/http.protohttp.v1"û
+ž
+http/v1/http.protohttp.v1"é
 Request
 remote_addr (	
 protocol (	
@@ -27,8 +27,8 @@ class Http
 header (2.http.v1.Request.HeaderEntry.
 cookies (2.http.v1.Request.CookiesEntry
 	raw_query (	
-parsed (!
-uploads	 (2.http.v1.Uploads4
+parsed (
+uploads	 (4
 
 attributes
  (2 .http.v1.Request.AttributesEntryC
@@ -51,35 +51,11 @@ attributes
 headers (2.http.v1.Response.HeadersEntryD
 HeadersEntry
 key (	#
-value (2.http.v1.HeaderValue:8"ƒ
-Uploads.
-uploads (2.http.v1.Uploads.UploadsEntryH
-UploadsEntry
-key (	\'
-value (2.http.v1.FileUploadArray:8"4
-FileUploadArray!
-tree (2.http.v1.FileUpload"†
-
-FileUpload
-name (	
-mime (	
-size (
-error (
-temp_filename (	(
-file_header (2.http.v1.FileHeader"¢
-
-FileHeader
-filename (	/
-header (2.http.v1.FileHeader.HeaderEntry
-size (C
-HeaderEntry
-key (	#
 value (2.http.v1.HeaderValue:8"
 HeaderValue
-value (	"&
+value (	"
 Body
-body (
-raw_data (BGZhttp/v1ÊRoadRunner\\HTTP\\DTO\\V1â"RoadRunner\\HTTP\\DTO\\V1\\GPBMetadatabproto3'
+body (BGZhttp/v1ÊRoadRunner\\HTTP\\DTO\\V1â"RoadRunner\\HTTP\\DTO\\V1\\GPBMetadatabproto3'
         , true);
 
         static::$is_initialized = true;

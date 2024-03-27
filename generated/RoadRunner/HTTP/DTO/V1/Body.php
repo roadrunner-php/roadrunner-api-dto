@@ -17,10 +17,6 @@ class Body extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bytes body = 1;</code>
      */
     protected $body = '';
-    /**
-     * Generated from protobuf field <code>bool raw_data = 2;</code>
-     */
-    protected $raw_data = false;
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class Body extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $body
-     *     @type bool $raw_data
      * }
      */
     public function __construct($data = NULL) {
@@ -55,28 +50,6 @@ class Body extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, False);
         $this->body = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool raw_data = 2;</code>
-     * @return bool
-     */
-    public function getRawData()
-    {
-        return $this->raw_data;
-    }
-
-    /**
-     * Generated from protobuf field <code>bool raw_data = 2;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setRawData($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->raw_data = $var;
 
         return $this;
     }
