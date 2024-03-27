@@ -17,7 +17,7 @@ class Http
         \GPBMetadata\Google\Protobuf\Any::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ž
+ˆ
 http/v1/http.protohttp.v1"é
 Request
 remote_addr (	
@@ -53,9 +53,7 @@ attributes
 key (	#
 value (2.http.v1.HeaderValue:8"
 HeaderValue
-value (	"
-Body
-body (BGZhttp/v1ÊRoadRunner\\HTTP\\DTO\\V1â"RoadRunner\\HTTP\\DTO\\V1\\GPBMetadatabproto3'
+value (	BGZhttp/v1ÊRoadRunner\\HTTP\\DTO\\V1â"RoadRunner\\HTTP\\DTO\\V1\\GPBMetadatabproto3'
         , true);
 
         static::$is_initialized = true;
