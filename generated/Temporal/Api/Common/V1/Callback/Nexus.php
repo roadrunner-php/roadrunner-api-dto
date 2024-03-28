@@ -15,6 +15,8 @@ class Nexus extends \Google\Protobuf\Internal\Message
 {
     /**
      * Callback URL.
+     * (-- api-linter: core::0140::uri=disabled
+     *     aip.dev/not-precedent: Not following this guideline. --)
      *
      * Generated from protobuf field <code>string url = 1;</code>
      */
@@ -28,6 +30,8 @@ class Nexus extends \Google\Protobuf\Internal\Message
      *
      *     @type string $url
      *           Callback URL.
+     *           (-- api-linter: core::0140::uri=disabled
+     *               aip.dev/not-precedent: Not following this guideline. --)
      * }
      */
     public function __construct($data = NULL) {
@@ -37,6 +41,8 @@ class Nexus extends \Google\Protobuf\Internal\Message
 
     /**
      * Callback URL.
+     * (-- api-linter: core::0140::uri=disabled
+     *     aip.dev/not-precedent: Not following this guideline. --)
      *
      * Generated from protobuf field <code>string url = 1;</code>
      * @return string
@@ -48,6 +54,8 @@ class Nexus extends \Google\Protobuf\Internal\Message
 
     /**
      * Callback URL.
+     * (-- api-linter: core::0140::uri=disabled
+     *     aip.dev/not-precedent: Not following this guideline. --)
      *
      * Generated from protobuf field <code>string url = 1;</code>
      * @param string $var

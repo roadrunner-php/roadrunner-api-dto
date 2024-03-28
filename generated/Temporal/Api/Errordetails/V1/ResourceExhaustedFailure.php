@@ -17,10 +17,6 @@ class ResourceExhaustedFailure extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.enums.v1.ResourceExhaustedCause cause = 1;</code>
      */
     protected $cause = 0;
-    /**
-     * Generated from protobuf field <code>.temporal.api.enums.v1.ResourceExhaustedScope scope = 2;</code>
-     */
-    protected $scope = 0;
 
     /**
      * Constructor.
@@ -29,7 +25,6 @@ class ResourceExhaustedFailure extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $cause
-     *     @type int $scope
      * }
      */
     public function __construct($data = NULL) {
@@ -55,28 +50,6 @@ class ResourceExhaustedFailure extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ResourceExhaustedCause::class);
         $this->cause = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.temporal.api.enums.v1.ResourceExhaustedScope scope = 2;</code>
-     * @return int
-     */
-    public function getScope()
-    {
-        return $this->scope;
-    }
-
-    /**
-     * Generated from protobuf field <code>.temporal.api.enums.v1.ResourceExhaustedScope scope = 2;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setScope($var)
-    {
-        GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ResourceExhaustedScope::class);
-        $this->scope = $var;
 
         return $this;
     }

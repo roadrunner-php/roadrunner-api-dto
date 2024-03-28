@@ -9,13 +9,11 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>temporal.api.operatorservice.v1.CreateNexusIncomingServiceResponse</code>
+ * Generated from protobuf message <code>temporal.api.operatorservice.v1.CreateOrUpdateNexusIncomingServiceRequest</code>
  */
-class CreateNexusIncomingServiceResponse extends \Google\Protobuf\Internal\Message
+class CreateOrUpdateNexusIncomingServiceRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Data post acceptance. Can be used to issue additional updates to this record.
-     *
      * Generated from protobuf field <code>.temporal.api.nexus.v1.IncomingService service = 1;</code>
      */
     protected $service = null;
@@ -27,7 +25,6 @@ class CreateNexusIncomingServiceResponse extends \Google\Protobuf\Internal\Messa
      *     Optional. Data for populating the Message object.
      *
      *     @type \Temporal\Api\Nexus\V1\IncomingService $service
-     *           Data post acceptance. Can be used to issue additional updates to this record.
      * }
      */
     public function __construct($data = NULL) {
@@ -36,8 +33,6 @@ class CreateNexusIncomingServiceResponse extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Data post acceptance. Can be used to issue additional updates to this record.
-     *
      * Generated from protobuf field <code>.temporal.api.nexus.v1.IncomingService service = 1;</code>
      * @return \Temporal\Api\Nexus\V1\IncomingService|null
      */
@@ -57,8 +52,6 @@ class CreateNexusIncomingServiceResponse extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * Data post acceptance. Can be used to issue additional updates to this record.
-     *
      * Generated from protobuf field <code>.temporal.api.nexus.v1.IncomingService service = 1;</code>
      * @param \Temporal\Api\Nexus\V1\IncomingService $var
      * @return $this

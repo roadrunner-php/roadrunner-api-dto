@@ -9,56 +9,46 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * A cluster-global binding from a service ID to namespace, task queue, and metadata for dispatching incoming Nexus
- * requests.
+ * A binding from a service name to namespace, task queue, and metadata for dispatching incoming Nexus requests.
  *
  * Generated from protobuf message <code>temporal.api.nexus.v1.IncomingService</code>
  */
 class IncomingService extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Data version for this service, incremented for every update issued via the UpdateNexusIncomingService API.
+     * Data version for this service. Must match current version on update or set to 0 to create a new service.
      *
      * Generated from protobuf field <code>int64 version = 1;</code>
      */
     protected $version = 0;
     /**
-     * Unique server-generated service ID.
+     * Service name, unique for this cluster.
+     * The service name is used to address this service.
+     * By default, when using Nexus over HTTP, the service name is matched against the base URL path.
+     * E.g. the URL /my-service would match a service named "my-service".
+     * The name can contain any characters and is escaped when matched against a URL.
      *
-     * Generated from protobuf field <code>string id = 2;</code>
+     * Generated from protobuf field <code>string name = 2;</code>
      */
-    protected $id = '';
+    protected $name = '';
     /**
-     * Spec for the service.
+     * Namespace to route requests to.
      *
-     * Generated from protobuf field <code>.temporal.api.nexus.v1.IncomingServiceSpec spec = 3;</code>
+     * Generated from protobuf field <code>string namespace = 3;</code>
      */
-    protected $spec = null;
+    protected $namespace = '';
     /**
-     * The date and time when the service was created.
-     * (-- api-linter: core::0142::time-field-names=disabled
-     *     aip.dev/not-precedent: Not following linter rules. --)
+     * Task queue to route requests to.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_time = 4;</code>
+     * Generated from protobuf field <code>string task_queue = 4;</code>
      */
-    protected $created_time = null;
+    protected $task_queue = '';
     /**
-     * The date and time when the service was last modified.
-     * Will not be set if the service has never been modified.
-     * (-- api-linter: core::0142::time-field-names=disabled
-     *     aip.dev/not-precedent: Not following linter rules. --)
+     * Generic service metadata that is available to the server's authorizer.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp last_modified_time = 5;</code>
+     * Generated from protobuf field <code>map<string, .google.protobuf.Any> metadata = 5;</code>
      */
-    protected $last_modified_time = null;
-    /**
-     * Server exposed URL prefix for invocation of operations on this service.
-     * This doesn't include the protocol, hostname or port as the server does not know how it should be accessed
-     * publicly. The URL is stable in the face of service renames.
-     *
-     * Generated from protobuf field <code>string url_prefix = 6;</code>
-     */
-    protected $url_prefix = '';
+    private $metadata;
 
     /**
      * Constructor.
@@ -67,24 +57,19 @@ class IncomingService extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $version
-     *           Data version for this service, incremented for every update issued via the UpdateNexusIncomingService API.
-     *     @type string $id
-     *           Unique server-generated service ID.
-     *     @type \Temporal\Api\Nexus\V1\IncomingServiceSpec $spec
-     *           Spec for the service.
-     *     @type \Google\Protobuf\Timestamp $created_time
-     *           The date and time when the service was created.
-     *           (-- api-linter: core::0142::time-field-names=disabled
-     *               aip.dev/not-precedent: Not following linter rules. --)
-     *     @type \Google\Protobuf\Timestamp $last_modified_time
-     *           The date and time when the service was last modified.
-     *           Will not be set if the service has never been modified.
-     *           (-- api-linter: core::0142::time-field-names=disabled
-     *               aip.dev/not-precedent: Not following linter rules. --)
-     *     @type string $url_prefix
-     *           Server exposed URL prefix for invocation of operations on this service.
-     *           This doesn't include the protocol, hostname or port as the server does not know how it should be accessed
-     *           publicly. The URL is stable in the face of service renames.
+     *           Data version for this service. Must match current version on update or set to 0 to create a new service.
+     *     @type string $name
+     *           Service name, unique for this cluster.
+     *           The service name is used to address this service.
+     *           By default, when using Nexus over HTTP, the service name is matched against the base URL path.
+     *           E.g. the URL /my-service would match a service named "my-service".
+     *           The name can contain any characters and is escaped when matched against a URL.
+     *     @type string $namespace
+     *           Namespace to route requests to.
+     *     @type string $task_queue
+     *           Task queue to route requests to.
+     *     @type array|\Google\Protobuf\Internal\MapField $metadata
+     *           Generic service metadata that is available to the server's authorizer.
      * }
      */
     public function __construct($data = NULL) {
@@ -93,7 +78,7 @@ class IncomingService extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Data version for this service, incremented for every update issued via the UpdateNexusIncomingService API.
+     * Data version for this service. Must match current version on update or set to 0 to create a new service.
      *
      * Generated from protobuf field <code>int64 version = 1;</code>
      * @return int|string
@@ -104,7 +89,7 @@ class IncomingService extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Data version for this service, incremented for every update issued via the UpdateNexusIncomingService API.
+     * Data version for this service. Must match current version on update or set to 0 to create a new service.
      *
      * Generated from protobuf field <code>int64 version = 1;</code>
      * @param int|string $var
@@ -119,175 +104,113 @@ class IncomingService extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Unique server-generated service ID.
+     * Service name, unique for this cluster.
+     * The service name is used to address this service.
+     * By default, when using Nexus over HTTP, the service name is matched against the base URL path.
+     * E.g. the URL /my-service would match a service named "my-service".
+     * The name can contain any characters and is escaped when matched against a URL.
      *
-     * Generated from protobuf field <code>string id = 2;</code>
+     * Generated from protobuf field <code>string name = 2;</code>
      * @return string
      */
-    public function getId()
+    public function getName()
     {
-        return $this->id;
+        return $this->name;
     }
 
     /**
-     * Unique server-generated service ID.
+     * Service name, unique for this cluster.
+     * The service name is used to address this service.
+     * By default, when using Nexus over HTTP, the service name is matched against the base URL path.
+     * E.g. the URL /my-service would match a service named "my-service".
+     * The name can contain any characters and is escaped when matched against a URL.
      *
-     * Generated from protobuf field <code>string id = 2;</code>
+     * Generated from protobuf field <code>string name = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setName($var)
     {
         GPBUtil::checkString($var, True);
-        $this->id = $var;
+        $this->name = $var;
 
         return $this;
     }
 
     /**
-     * Spec for the service.
+     * Namespace to route requests to.
      *
-     * Generated from protobuf field <code>.temporal.api.nexus.v1.IncomingServiceSpec spec = 3;</code>
-     * @return \Temporal\Api\Nexus\V1\IncomingServiceSpec|null
-     */
-    public function getSpec()
-    {
-        return $this->spec;
-    }
-
-    public function hasSpec()
-    {
-        return isset($this->spec);
-    }
-
-    public function clearSpec()
-    {
-        unset($this->spec);
-    }
-
-    /**
-     * Spec for the service.
-     *
-     * Generated from protobuf field <code>.temporal.api.nexus.v1.IncomingServiceSpec spec = 3;</code>
-     * @param \Temporal\Api\Nexus\V1\IncomingServiceSpec $var
-     * @return $this
-     */
-    public function setSpec($var)
-    {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\IncomingServiceSpec::class);
-        $this->spec = $var;
-
-        return $this;
-    }
-
-    /**
-     * The date and time when the service was created.
-     * (-- api-linter: core::0142::time-field-names=disabled
-     *     aip.dev/not-precedent: Not following linter rules. --)
-     *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_time = 4;</code>
-     * @return \Google\Protobuf\Timestamp|null
-     */
-    public function getCreatedTime()
-    {
-        return $this->created_time;
-    }
-
-    public function hasCreatedTime()
-    {
-        return isset($this->created_time);
-    }
-
-    public function clearCreatedTime()
-    {
-        unset($this->created_time);
-    }
-
-    /**
-     * The date and time when the service was created.
-     * (-- api-linter: core::0142::time-field-names=disabled
-     *     aip.dev/not-precedent: Not following linter rules. --)
-     *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_time = 4;</code>
-     * @param \Google\Protobuf\Timestamp $var
-     * @return $this
-     */
-    public function setCreatedTime($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->created_time = $var;
-
-        return $this;
-    }
-
-    /**
-     * The date and time when the service was last modified.
-     * Will not be set if the service has never been modified.
-     * (-- api-linter: core::0142::time-field-names=disabled
-     *     aip.dev/not-precedent: Not following linter rules. --)
-     *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp last_modified_time = 5;</code>
-     * @return \Google\Protobuf\Timestamp|null
-     */
-    public function getLastModifiedTime()
-    {
-        return $this->last_modified_time;
-    }
-
-    public function hasLastModifiedTime()
-    {
-        return isset($this->last_modified_time);
-    }
-
-    public function clearLastModifiedTime()
-    {
-        unset($this->last_modified_time);
-    }
-
-    /**
-     * The date and time when the service was last modified.
-     * Will not be set if the service has never been modified.
-     * (-- api-linter: core::0142::time-field-names=disabled
-     *     aip.dev/not-precedent: Not following linter rules. --)
-     *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp last_modified_time = 5;</code>
-     * @param \Google\Protobuf\Timestamp $var
-     * @return $this
-     */
-    public function setLastModifiedTime($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->last_modified_time = $var;
-
-        return $this;
-    }
-
-    /**
-     * Server exposed URL prefix for invocation of operations on this service.
-     * This doesn't include the protocol, hostname or port as the server does not know how it should be accessed
-     * publicly. The URL is stable in the face of service renames.
-     *
-     * Generated from protobuf field <code>string url_prefix = 6;</code>
+     * Generated from protobuf field <code>string namespace = 3;</code>
      * @return string
      */
-    public function getUrlPrefix()
+    public function getNamespace()
     {
-        return $this->url_prefix;
+        return $this->namespace;
     }
 
     /**
-     * Server exposed URL prefix for invocation of operations on this service.
-     * This doesn't include the protocol, hostname or port as the server does not know how it should be accessed
-     * publicly. The URL is stable in the face of service renames.
+     * Namespace to route requests to.
      *
-     * Generated from protobuf field <code>string url_prefix = 6;</code>
+     * Generated from protobuf field <code>string namespace = 3;</code>
      * @param string $var
      * @return $this
      */
-    public function setUrlPrefix($var)
+    public function setNamespace($var)
     {
         GPBUtil::checkString($var, True);
-        $this->url_prefix = $var;
+        $this->namespace = $var;
+
+        return $this;
+    }
+
+    /**
+     * Task queue to route requests to.
+     *
+     * Generated from protobuf field <code>string task_queue = 4;</code>
+     * @return string
+     */
+    public function getTaskQueue()
+    {
+        return $this->task_queue;
+    }
+
+    /**
+     * Task queue to route requests to.
+     *
+     * Generated from protobuf field <code>string task_queue = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTaskQueue($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->task_queue = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generic service metadata that is available to the server's authorizer.
+     *
+     * Generated from protobuf field <code>map<string, .google.protobuf.Any> metadata = 5;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getMetadata()
+    {
+        return $this->metadata;
+    }
+
+    /**
+     * Generic service metadata that is available to the server's authorizer.
+     *
+     * Generated from protobuf field <code>map<string, .google.protobuf.Any> metadata = 5;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setMetadata($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Protobuf\Any::class);
+        $this->metadata = $arr;
 
         return $this;
     }

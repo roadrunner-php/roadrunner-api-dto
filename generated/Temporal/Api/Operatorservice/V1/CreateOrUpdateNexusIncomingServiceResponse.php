@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Generated from protobuf message <code>temporal.api.operatorservice.v1.UpdateNexusOutgoingServiceResponse</code>
+ * Generated from protobuf message <code>temporal.api.operatorservice.v1.CreateOrUpdateNexusIncomingServiceResponse</code>
  */
-class UpdateNexusOutgoingServiceResponse extends \Google\Protobuf\Internal\Message
+class CreateOrUpdateNexusIncomingServiceResponse extends \Google\Protobuf\Internal\Message
 {
     /**
      * Data post acceptance. Can be used to issue additional updates to this record.
      *
-     * Generated from protobuf field <code>.temporal.api.nexus.v1.OutgoingService service = 1;</code>
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.IncomingService service = 1;</code>
      */
     protected $service = null;
 
@@ -26,7 +26,7 @@ class UpdateNexusOutgoingServiceResponse extends \Google\Protobuf\Internal\Messa
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Temporal\Api\Nexus\V1\OutgoingService $service
+     *     @type \Temporal\Api\Nexus\V1\IncomingService $service
      *           Data post acceptance. Can be used to issue additional updates to this record.
      * }
      */
@@ -38,8 +38,8 @@ class UpdateNexusOutgoingServiceResponse extends \Google\Protobuf\Internal\Messa
     /**
      * Data post acceptance. Can be used to issue additional updates to this record.
      *
-     * Generated from protobuf field <code>.temporal.api.nexus.v1.OutgoingService service = 1;</code>
-     * @return \Temporal\Api\Nexus\V1\OutgoingService|null
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.IncomingService service = 1;</code>
+     * @return \Temporal\Api\Nexus\V1\IncomingService|null
      */
     public function getService()
     {
@@ -59,13 +59,13 @@ class UpdateNexusOutgoingServiceResponse extends \Google\Protobuf\Internal\Messa
     /**
      * Data post acceptance. Can be used to issue additional updates to this record.
      *
-     * Generated from protobuf field <code>.temporal.api.nexus.v1.OutgoingService service = 1;</code>
-     * @param \Temporal\Api\Nexus\V1\OutgoingService $var
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.IncomingService service = 1;</code>
+     * @param \Temporal\Api\Nexus\V1\IncomingService $var
      * @return $this
      */
     public function setService($var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\OutgoingService::class);
+        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\IncomingService::class);
         $this->service = $var;
 
         return $this;

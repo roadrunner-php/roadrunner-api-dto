@@ -14,11 +14,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetNexusIncomingServiceRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Server-generated unique service ID.
+     * Name of service to retrieve.
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string name = 1;</code>
      */
-    protected $id = '';
+    protected $name = '';
 
     /**
      * Constructor.
@@ -26,8 +26,8 @@ class GetNexusIncomingServiceRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $id
-     *           Server-generated unique service ID.
+     *     @type string $name
+     *           Name of service to retrieve.
      * }
      */
     public function __construct($data = NULL) {
@@ -36,27 +36,27 @@ class GetNexusIncomingServiceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Server-generated unique service ID.
+     * Name of service to retrieve.
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string name = 1;</code>
      * @return string
      */
-    public function getId()
+    public function getName()
     {
-        return $this->id;
+        return $this->name;
     }
 
     /**
-     * Server-generated unique service ID.
+     * Name of service to retrieve.
      *
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string name = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setName($var)
     {
         GPBUtil::checkString($var, True);
-        $this->id = $var;
+        $this->name = $var;
 
         return $this;
     }

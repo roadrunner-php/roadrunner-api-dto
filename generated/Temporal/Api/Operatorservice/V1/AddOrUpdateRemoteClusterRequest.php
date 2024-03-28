@@ -14,7 +14,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class AddOrUpdateRemoteClusterRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Frontend Address is a cross cluster accessible address for gRPC traffic. This field is required.
+     * Frontend Address is a cross cluster accessible address.
      *
      * Generated from protobuf field <code>string frontend_address = 1;</code>
      */
@@ -25,13 +25,6 @@ class AddOrUpdateRemoteClusterRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool enable_remote_cluster_connection = 2;</code>
      */
     protected $enable_remote_cluster_connection = false;
-    /**
-     * Frontend HTTP Address is a cross cluster accessible address for HTTP traffic. This field is optional. If not provided
-     *  on update, the existing HTTP address will be removed.
-     *
-     * Generated from protobuf field <code>string frontend_http_address = 3;</code>
-     */
-    protected $frontend_http_address = '';
 
     /**
      * Constructor.
@@ -40,12 +33,9 @@ class AddOrUpdateRemoteClusterRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $frontend_address
-     *           Frontend Address is a cross cluster accessible address for gRPC traffic. This field is required.
+     *           Frontend Address is a cross cluster accessible address.
      *     @type bool $enable_remote_cluster_connection
      *           Flag to enable / disable the cross cluster connection.
-     *     @type string $frontend_http_address
-     *           Frontend HTTP Address is a cross cluster accessible address for HTTP traffic. This field is optional. If not provided
-     *            on update, the existing HTTP address will be removed.
      * }
      */
     public function __construct($data = NULL) {
@@ -54,7 +44,7 @@ class AddOrUpdateRemoteClusterRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Frontend Address is a cross cluster accessible address for gRPC traffic. This field is required.
+     * Frontend Address is a cross cluster accessible address.
      *
      * Generated from protobuf field <code>string frontend_address = 1;</code>
      * @return string
@@ -65,7 +55,7 @@ class AddOrUpdateRemoteClusterRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Frontend Address is a cross cluster accessible address for gRPC traffic. This field is required.
+     * Frontend Address is a cross cluster accessible address.
      *
      * Generated from protobuf field <code>string frontend_address = 1;</code>
      * @param string $var
@@ -101,34 +91,6 @@ class AddOrUpdateRemoteClusterRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->enable_remote_cluster_connection = $var;
-
-        return $this;
-    }
-
-    /**
-     * Frontend HTTP Address is a cross cluster accessible address for HTTP traffic. This field is optional. If not provided
-     *  on update, the existing HTTP address will be removed.
-     *
-     * Generated from protobuf field <code>string frontend_http_address = 3;</code>
-     * @return string
-     */
-    public function getFrontendHttpAddress()
-    {
-        return $this->frontend_http_address;
-    }
-
-    /**
-     * Frontend HTTP Address is a cross cluster accessible address for HTTP traffic. This field is optional. If not provided
-     *  on update, the existing HTTP address will be removed.
-     *
-     * Generated from protobuf field <code>string frontend_http_address = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setFrontendHttpAddress($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->frontend_http_address = $var;
 
         return $this;
     }

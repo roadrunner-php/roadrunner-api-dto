@@ -26,17 +26,11 @@ class ClusterMetadata extends \Google\Protobuf\Internal\Message
      */
     protected $cluster_id = '';
     /**
-     * gRPC address.
+     * Cluster accessible address.
      *
      * Generated from protobuf field <code>string address = 3;</code>
      */
     protected $address = '';
-    /**
-     * HTTP address, if one exists.
-     *
-     * Generated from protobuf field <code>string http_address = 7;</code>
-     */
-    protected $http_address = '';
     /**
      * A unique failover version across all connected clusters.
      *
@@ -67,9 +61,7 @@ class ClusterMetadata extends \Google\Protobuf\Internal\Message
      *     @type string $cluster_id
      *           Id of the cluster.
      *     @type string $address
-     *           gRPC address.
-     *     @type string $http_address
-     *           HTTP address, if one exists.
+     *           Cluster accessible address.
      *     @type int|string $initial_failover_version
      *           A unique failover version across all connected clusters.
      *     @type int $history_shard_count
@@ -136,7 +128,7 @@ class ClusterMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * gRPC address.
+     * Cluster accessible address.
      *
      * Generated from protobuf field <code>string address = 3;</code>
      * @return string
@@ -147,7 +139,7 @@ class ClusterMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * gRPC address.
+     * Cluster accessible address.
      *
      * Generated from protobuf field <code>string address = 3;</code>
      * @param string $var
@@ -157,32 +149,6 @@ class ClusterMetadata extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->address = $var;
-
-        return $this;
-    }
-
-    /**
-     * HTTP address, if one exists.
-     *
-     * Generated from protobuf field <code>string http_address = 7;</code>
-     * @return string
-     */
-    public function getHttpAddress()
-    {
-        return $this->http_address;
-    }
-
-    /**
-     * HTTP address, if one exists.
-     *
-     * Generated from protobuf field <code>string http_address = 7;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setHttpAddress($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->http_address = $var;
 
         return $this;
     }
