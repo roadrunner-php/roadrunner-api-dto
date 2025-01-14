@@ -51,14 +51,14 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      */
     protected $attempt = 0;
     /**
-     * A hint that there are more tasks already present in this task queue 
+     * A hint that there are more tasks already present in this task queue
      * partition. Can be used to prioritize draining a sticky queue.
      * Specifically, the returned number is the number of tasks remaining in
      * the in-memory buffer for this partition, which is currently capped at
-     * 1000. Because sticky queues only have one partition, this number is 
-     * more useful when draining them. Normal queues, typically having more than one 
-     * partition, will return a number representing only some portion of the 
-     * overall backlog. Subsequent RPCs may not hit the same partition as 
+     * 1000. Because sticky queues only have one partition, this number is
+     * more useful when draining them. Normal queues, typically having more than one
+     * partition, will return a number representing only some portion of the
+     * overall backlog. Subsequent RPCs may not hit the same partition as
      * this call.
      *
      * Generated from protobuf field <code>int64 backlog_count_hint = 7;</code>
@@ -142,14 +142,14 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      *     @type int $attempt
      *           Starting at 1, the number of attempts to complete this task by any worker.
      *     @type int|string $backlog_count_hint
-     *           A hint that there are more tasks already present in this task queue 
+     *           A hint that there are more tasks already present in this task queue
      *           partition. Can be used to prioritize draining a sticky queue.
      *           Specifically, the returned number is the number of tasks remaining in
      *           the in-memory buffer for this partition, which is currently capped at
-     *           1000. Because sticky queues only have one partition, this number is 
-     *           more useful when draining them. Normal queues, typically having more than one 
-     *           partition, will return a number representing only some portion of the 
-     *           overall backlog. Subsequent RPCs may not hit the same partition as 
+     *           1000. Because sticky queues only have one partition, this number is
+     *           more useful when draining them. Normal queues, typically having more than one
+     *           partition, will return a number representing only some portion of the
+     *           overall backlog. Subsequent RPCs may not hit the same partition as
      *           this call.
      *     @type \Temporal\Api\History\V1\History $history
      *           The history for this workflow, which will either be complete or partial. Partial histories
@@ -359,14 +359,14 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A hint that there are more tasks already present in this task queue 
+     * A hint that there are more tasks already present in this task queue
      * partition. Can be used to prioritize draining a sticky queue.
      * Specifically, the returned number is the number of tasks remaining in
      * the in-memory buffer for this partition, which is currently capped at
-     * 1000. Because sticky queues only have one partition, this number is 
-     * more useful when draining them. Normal queues, typically having more than one 
-     * partition, will return a number representing only some portion of the 
-     * overall backlog. Subsequent RPCs may not hit the same partition as 
+     * 1000. Because sticky queues only have one partition, this number is
+     * more useful when draining them. Normal queues, typically having more than one
+     * partition, will return a number representing only some portion of the
+     * overall backlog. Subsequent RPCs may not hit the same partition as
      * this call.
      *
      * Generated from protobuf field <code>int64 backlog_count_hint = 7;</code>
@@ -378,14 +378,14 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A hint that there are more tasks already present in this task queue 
+     * A hint that there are more tasks already present in this task queue
      * partition. Can be used to prioritize draining a sticky queue.
      * Specifically, the returned number is the number of tasks remaining in
      * the in-memory buffer for this partition, which is currently capped at
-     * 1000. Because sticky queues only have one partition, this number is 
-     * more useful when draining them. Normal queues, typically having more than one 
-     * partition, will return a number representing only some portion of the 
-     * overall backlog. Subsequent RPCs may not hit the same partition as 
+     * 1000. Because sticky queues only have one partition, this number is
+     * more useful when draining them. Normal queues, typically having more than one
+     * partition, will return a number representing only some portion of the
+     * overall backlog. Subsequent RPCs may not hit the same partition as
      * this call.
      *
      * Generated from protobuf field <code>int64 backlog_count_hint = 7;</code>

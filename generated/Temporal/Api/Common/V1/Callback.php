@@ -25,6 +25,7 @@ class Callback extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Temporal\Api\Common\V1\Callback\Nexus $nexus
+     *     @type \Temporal\Api\Common\V1\Callback\Internal $internal
      * }
      */
     public function __construct($data = NULL) {
@@ -55,6 +56,33 @@ class Callback extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Callback\Nexus::class);
         $this->writeOneof(2, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.common.v1.Callback.Internal internal = 3;</code>
+     * @return \Temporal\Api\Common\V1\Callback\Internal|null
+     */
+    public function getInternal()
+    {
+        return $this->readOneof(3);
+    }
+
+    public function hasInternal()
+    {
+        return $this->hasOneof(3);
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.common.v1.Callback.Internal internal = 3;</code>
+     * @param \Temporal\Api\Common\V1\Callback\Internal $var
+     * @return $this
+     */
+    public function setInternal($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Callback\Internal::class);
+        $this->writeOneof(3, $var);
 
         return $this;
     }

@@ -64,10 +64,46 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
     protected $last_worker_identity = '';
     /**
      * The version stamp of the worker to whom this activity was most recently dispatched
+     * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp last_worker_version_stamp = 15;</code>
      */
     protected $last_worker_version_stamp = null;
+    /**
+     * The time activity will wait until the next retry.
+     * If activity is currently running it will be next retry interval if activity failed.
+     * If activity is currently waiting it will be current retry interval.
+     * If there will be no retry it will be null.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration current_retry_interval = 16;</code>
+     */
+    protected $current_retry_interval = null;
+    /**
+     * The time when the last activity attempt was completed. If activity has not been completed yet then it will be null.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_attempt_complete_time = 17;</code>
+     */
+    protected $last_attempt_complete_time = null;
+    /**
+     * Next time when activity will be scheduled.
+     * If activity is currently scheduled or started it will be null.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp next_attempt_schedule_time = 18;</code>
+     */
+    protected $next_attempt_schedule_time = null;
+    /**
+     * Indicates if activity is paused.
+     *
+     * Generated from protobuf field <code>bool paused = 19;</code>
+     */
+    protected $paused = false;
+    /**
+     * The deployment this activity was dispatched to most recently. Present only if the activity
+     * was dispatched to a versioned worker.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment last_deployment = 20;</code>
+     */
+    protected $last_deployment = null;
     protected $assigned_build_id;
 
     /**
@@ -97,6 +133,22 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      *           rules.
      *     @type \Temporal\Api\Common\V1\WorkerVersionStamp $last_worker_version_stamp
      *           The version stamp of the worker to whom this activity was most recently dispatched
+     *           Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
+     *     @type \Google\Protobuf\Duration $current_retry_interval
+     *           The time activity will wait until the next retry.
+     *           If activity is currently running it will be next retry interval if activity failed.
+     *           If activity is currently waiting it will be current retry interval.
+     *           If there will be no retry it will be null.
+     *     @type \Google\Protobuf\Timestamp $last_attempt_complete_time
+     *           The time when the last activity attempt was completed. If activity has not been completed yet then it will be null.
+     *     @type \Google\Protobuf\Timestamp $next_attempt_schedule_time
+     *           Next time when activity will be scheduled.
+     *           If activity is currently scheduled or started it will be null.
+     *     @type bool $paused
+     *           Indicates if activity is paused.
+     *     @type \Temporal\Api\Deployment\V1\Deployment $last_deployment
+     *           The deployment this activity was dispatched to most recently. Present only if the activity
+     *           was dispatched to a versioned worker.
      * }
      */
     public function __construct($data = NULL) {
@@ -508,6 +560,7 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * The version stamp of the worker to whom this activity was most recently dispatched
+     * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp last_worker_version_stamp = 15;</code>
      * @return \Temporal\Api\Common\V1\WorkerVersionStamp|null
@@ -529,6 +582,7 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * The version stamp of the worker to whom this activity was most recently dispatched
+     * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp last_worker_version_stamp = 15;</code>
      * @param \Temporal\Api\Common\V1\WorkerVersionStamp $var
@@ -538,6 +592,186 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerVersionStamp::class);
         $this->last_worker_version_stamp = $var;
+
+        return $this;
+    }
+
+    /**
+     * The time activity will wait until the next retry.
+     * If activity is currently running it will be next retry interval if activity failed.
+     * If activity is currently waiting it will be current retry interval.
+     * If there will be no retry it will be null.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration current_retry_interval = 16;</code>
+     * @return \Google\Protobuf\Duration|null
+     */
+    public function getCurrentRetryInterval()
+    {
+        return $this->current_retry_interval;
+    }
+
+    public function hasCurrentRetryInterval()
+    {
+        return isset($this->current_retry_interval);
+    }
+
+    public function clearCurrentRetryInterval()
+    {
+        unset($this->current_retry_interval);
+    }
+
+    /**
+     * The time activity will wait until the next retry.
+     * If activity is currently running it will be next retry interval if activity failed.
+     * If activity is currently waiting it will be current retry interval.
+     * If there will be no retry it will be null.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration current_retry_interval = 16;</code>
+     * @param \Google\Protobuf\Duration $var
+     * @return $this
+     */
+    public function setCurrentRetryInterval($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
+        $this->current_retry_interval = $var;
+
+        return $this;
+    }
+
+    /**
+     * The time when the last activity attempt was completed. If activity has not been completed yet then it will be null.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_attempt_complete_time = 17;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getLastAttemptCompleteTime()
+    {
+        return $this->last_attempt_complete_time;
+    }
+
+    public function hasLastAttemptCompleteTime()
+    {
+        return isset($this->last_attempt_complete_time);
+    }
+
+    public function clearLastAttemptCompleteTime()
+    {
+        unset($this->last_attempt_complete_time);
+    }
+
+    /**
+     * The time when the last activity attempt was completed. If activity has not been completed yet then it will be null.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_attempt_complete_time = 17;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setLastAttemptCompleteTime($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->last_attempt_complete_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Next time when activity will be scheduled.
+     * If activity is currently scheduled or started it will be null.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp next_attempt_schedule_time = 18;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getNextAttemptScheduleTime()
+    {
+        return $this->next_attempt_schedule_time;
+    }
+
+    public function hasNextAttemptScheduleTime()
+    {
+        return isset($this->next_attempt_schedule_time);
+    }
+
+    public function clearNextAttemptScheduleTime()
+    {
+        unset($this->next_attempt_schedule_time);
+    }
+
+    /**
+     * Next time when activity will be scheduled.
+     * If activity is currently scheduled or started it will be null.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp next_attempt_schedule_time = 18;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setNextAttemptScheduleTime($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->next_attempt_schedule_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Indicates if activity is paused.
+     *
+     * Generated from protobuf field <code>bool paused = 19;</code>
+     * @return bool
+     */
+    public function getPaused()
+    {
+        return $this->paused;
+    }
+
+    /**
+     * Indicates if activity is paused.
+     *
+     * Generated from protobuf field <code>bool paused = 19;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setPaused($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->paused = $var;
+
+        return $this;
+    }
+
+    /**
+     * The deployment this activity was dispatched to most recently. Present only if the activity
+     * was dispatched to a versioned worker.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment last_deployment = 20;</code>
+     * @return \Temporal\Api\Deployment\V1\Deployment|null
+     */
+    public function getLastDeployment()
+    {
+        return $this->last_deployment;
+    }
+
+    public function hasLastDeployment()
+    {
+        return isset($this->last_deployment);
+    }
+
+    public function clearLastDeployment()
+    {
+        unset($this->last_deployment);
+    }
+
+    /**
+     * The deployment this activity was dispatched to most recently. Present only if the activity
+     * was dispatched to a versioned worker.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment last_deployment = 20;</code>
+     * @param \Temporal\Api\Deployment\V1\Deployment $var
+     * @return $this
+     */
+    public function setLastDeployment($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\Deployment::class);
+        $this->last_deployment = $var;
 
         return $this;
     }

@@ -96,6 +96,12 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int64 scheduled_event_id = 13;</code>
      */
     protected $scheduled_event_id = 0;
+    /**
+     * If the state is BLOCKED, blocked reason provides additional information.
+     *
+     * Generated from protobuf field <code>string blocked_reason = 14;</code>
+     */
+    protected $blocked_reason = '';
 
     /**
      * Constructor.
@@ -133,6 +139,8 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
      *     @type int|string $scheduled_event_id
      *           The event ID of the NexusOperationScheduled event. Can be used to correlate an operation in the
      *           DescribeWorkflowExecution response with workflow history.
+     *     @type string $blocked_reason
+     *           If the state is BLOCKED, blocked reason provides additional information.
      * }
      */
     public function __construct($data = NULL) {
@@ -538,6 +546,32 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->scheduled_event_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * If the state is BLOCKED, blocked reason provides additional information.
+     *
+     * Generated from protobuf field <code>string blocked_reason = 14;</code>
+     * @return string
+     */
+    public function getBlockedReason()
+    {
+        return $this->blocked_reason;
+    }
+
+    /**
+     * If the state is BLOCKED, blocked reason provides additional information.
+     *
+     * Generated from protobuf field <code>string blocked_reason = 14;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBlockedReason($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->blocked_reason = $var;
 
         return $this;
     }
