@@ -42,7 +42,7 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
      * Version info of the worker who processed this workflow task. If present, the `build_id` field
      * within is also used as `binary_checksum`, which may be omitted in that case (it may also be
      * populated to preserve compatibility).
-     * Deprecated. Use the info inside the corresponding WorkflowTaskStartedEvent
+     * Deprecated. Use `deployment` and `versioning_behavior` instead.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version = 5;</code>
      */
@@ -60,6 +60,22 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
      * Generated from protobuf field <code>.temporal.api.common.v1.MeteringMetadata metering_metadata = 13;</code>
      */
     protected $metering_metadata = null;
+    /**
+     * The deployment that completed this task. May or may not be set for unversioned workers,
+     * depending on whether a value is sent by the SDK. This value updates workflow execution's
+     * `versioning_info.deployment`.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 7;</code>
+     */
+    protected $deployment = null;
+    /**
+     * Versioning behavior sent by the worker that completed this task for this particular workflow
+     * execution. UNSPECIFIED means the task was completed by an unversioned worker. This value
+     * updates workflow execution's `versioning_info.behavior`.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.VersioningBehavior versioning_behavior = 8;</code>
+     */
+    protected $versioning_behavior = 0;
 
     /**
      * Constructor.
@@ -79,12 +95,20 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
      *           Version info of the worker who processed this workflow task. If present, the `build_id` field
      *           within is also used as `binary_checksum`, which may be omitted in that case (it may also be
      *           populated to preserve compatibility).
-     *           Deprecated. Use the info inside the corresponding WorkflowTaskStartedEvent
+     *           Deprecated. Use `deployment` and `versioning_behavior` instead.
      *     @type \Temporal\Api\Sdk\V1\WorkflowTaskCompletedMetadata $sdk_metadata
      *           Data the SDK wishes to record for itself, but server need not interpret, and does not
      *           directly impact workflow state.
      *     @type \Temporal\Api\Common\V1\MeteringMetadata $metering_metadata
      *           Local usage data sent during workflow task completion and recorded here for posterity
+     *     @type \Temporal\Api\Deployment\V1\Deployment $deployment
+     *           The deployment that completed this task. May or may not be set for unversioned workers,
+     *           depending on whether a value is sent by the SDK. This value updates workflow execution's
+     *           `versioning_info.deployment`.
+     *     @type int $versioning_behavior
+     *           Versioning behavior sent by the worker that completed this task for this particular workflow
+     *           execution. UNSPECIFIED means the task was completed by an unversioned worker. This value
+     *           updates workflow execution's `versioning_info.behavior`.
      * }
      */
     public function __construct($data = NULL) {
@@ -200,7 +224,7 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
      * Version info of the worker who processed this workflow task. If present, the `build_id` field
      * within is also used as `binary_checksum`, which may be omitted in that case (it may also be
      * populated to preserve compatibility).
-     * Deprecated. Use the info inside the corresponding WorkflowTaskStartedEvent
+     * Deprecated. Use `deployment` and `versioning_behavior` instead.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version = 5;</code>
      * @return \Temporal\Api\Common\V1\WorkerVersionStamp|null
@@ -224,7 +248,7 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
      * Version info of the worker who processed this workflow task. If present, the `build_id` field
      * within is also used as `binary_checksum`, which may be omitted in that case (it may also be
      * populated to preserve compatibility).
-     * Deprecated. Use the info inside the corresponding WorkflowTaskStartedEvent
+     * Deprecated. Use `deployment` and `versioning_behavior` instead.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version = 5;</code>
      * @param \Temporal\Api\Common\V1\WorkerVersionStamp $var
@@ -308,6 +332,76 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\MeteringMetadata::class);
         $this->metering_metadata = $var;
+
+        return $this;
+    }
+
+    /**
+     * The deployment that completed this task. May or may not be set for unversioned workers,
+     * depending on whether a value is sent by the SDK. This value updates workflow execution's
+     * `versioning_info.deployment`.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 7;</code>
+     * @return \Temporal\Api\Deployment\V1\Deployment|null
+     */
+    public function getDeployment()
+    {
+        return $this->deployment;
+    }
+
+    public function hasDeployment()
+    {
+        return isset($this->deployment);
+    }
+
+    public function clearDeployment()
+    {
+        unset($this->deployment);
+    }
+
+    /**
+     * The deployment that completed this task. May or may not be set for unversioned workers,
+     * depending on whether a value is sent by the SDK. This value updates workflow execution's
+     * `versioning_info.deployment`.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 7;</code>
+     * @param \Temporal\Api\Deployment\V1\Deployment $var
+     * @return $this
+     */
+    public function setDeployment($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\Deployment::class);
+        $this->deployment = $var;
+
+        return $this;
+    }
+
+    /**
+     * Versioning behavior sent by the worker that completed this task for this particular workflow
+     * execution. UNSPECIFIED means the task was completed by an unversioned worker. This value
+     * updates workflow execution's `versioning_info.behavior`.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.VersioningBehavior versioning_behavior = 8;</code>
+     * @return int
+     */
+    public function getVersioningBehavior()
+    {
+        return $this->versioning_behavior;
+    }
+
+    /**
+     * Versioning behavior sent by the worker that completed this task for this particular workflow
+     * execution. UNSPECIFIED means the task was completed by an unversioned worker. This value
+     * updates workflow execution's `versioning_info.behavior`.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.VersioningBehavior versioning_behavior = 8;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setVersioningBehavior($var)
+    {
+        GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\VersioningBehavior::class);
+        $this->versioning_behavior = $var;
 
         return $this;
     }

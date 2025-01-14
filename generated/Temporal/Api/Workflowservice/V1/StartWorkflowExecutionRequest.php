@@ -152,6 +152,19 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.sdk.v1.UserMetadata user_metadata = 23;</code>
      */
     protected $user_metadata = null;
+    /**
+     * Links to be associated with the workflow.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 24;</code>
+     */
+    private $links;
+    /**
+     * If set, takes precedence over the Versioning Behavior sent by the SDK on Workflow Task completion.
+     * To unset the override after the workflow is running, use UpdateWorkflowExecutionOptions.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 25;</code>
+     */
+    protected $versioning_override = null;
 
     /**
      * Constructor.
@@ -213,6 +226,11 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      *           Metadata on the workflow if it is started. This is carried over to the WorkflowExecutionInfo
      *           for use by user interfaces to display the fixed as-of-start summary and details of the
      *           workflow.
+     *     @type array<\Temporal\Api\Common\V1\Link>|\Google\Protobuf\Internal\RepeatedField $links
+     *           Links to be associated with the workflow.
+     *     @type \Temporal\Api\Workflow\V1\VersioningOverride $versioning_override
+     *           If set, takes precedence over the Versioning Behavior sent by the SDK on Workflow Task completion.
+     *           To unset the override after the workflow is running, use UpdateWorkflowExecutionOptions.
      * }
      */
     public function __construct($data = NULL) {
@@ -954,6 +972,70 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Sdk\V1\UserMetadata::class);
         $this->user_metadata = $var;
+
+        return $this;
+    }
+
+    /**
+     * Links to be associated with the workflow.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 24;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getLinks()
+    {
+        return $this->links;
+    }
+
+    /**
+     * Links to be associated with the workflow.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 24;</code>
+     * @param array<\Temporal\Api\Common\V1\Link>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setLinks($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Link::class);
+        $this->links = $arr;
+
+        return $this;
+    }
+
+    /**
+     * If set, takes precedence over the Versioning Behavior sent by the SDK on Workflow Task completion.
+     * To unset the override after the workflow is running, use UpdateWorkflowExecutionOptions.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 25;</code>
+     * @return \Temporal\Api\Workflow\V1\VersioningOverride|null
+     */
+    public function getVersioningOverride()
+    {
+        return $this->versioning_override;
+    }
+
+    public function hasVersioningOverride()
+    {
+        return isset($this->versioning_override);
+    }
+
+    public function clearVersioningOverride()
+    {
+        unset($this->versioning_override);
+    }
+
+    /**
+     * If set, takes precedence over the Versioning Behavior sent by the SDK on Workflow Task completion.
+     * To unset the override after the workflow is running, use UpdateWorkflowExecutionOptions.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 25;</code>
+     * @param \Temporal\Api\Workflow\V1\VersioningOverride $var
+     * @return $this
+     */
+    public function setVersioningOverride($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\VersioningOverride::class);
+        $this->versioning_override = $var;
 
         return $this;
     }

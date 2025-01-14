@@ -91,6 +91,13 @@ class NewWorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.sdk.v1.UserMetadata user_metadata = 14;</code>
      */
     protected $user_metadata = null;
+    /**
+     * If set, takes precedence over the Versioning Behavior sent by the SDK on Workflow Task completion.
+     * To unset the override after the workflow is running, use UpdateWorkflowExecutionOptions.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 15;</code>
+     */
+    protected $versioning_override = null;
 
     /**
      * Constructor.
@@ -122,6 +129,9 @@ class NewWorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      *           Metadata on the workflow if it is started. This is carried over to the WorkflowExecutionConfig
      *           for use by user interfaces to display the fixed as-of-start summary and details of the
      *           workflow.
+     *     @type \Temporal\Api\Workflow\V1\VersioningOverride $versioning_override
+     *           If set, takes precedence over the Versioning Behavior sent by the SDK on Workflow Task completion.
+     *           To unset the override after the workflow is running, use UpdateWorkflowExecutionOptions.
      * }
      */
     public function __construct($data = NULL) {
@@ -579,6 +589,44 @@ class NewWorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Sdk\V1\UserMetadata::class);
         $this->user_metadata = $var;
+
+        return $this;
+    }
+
+    /**
+     * If set, takes precedence over the Versioning Behavior sent by the SDK on Workflow Task completion.
+     * To unset the override after the workflow is running, use UpdateWorkflowExecutionOptions.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 15;</code>
+     * @return \Temporal\Api\Workflow\V1\VersioningOverride|null
+     */
+    public function getVersioningOverride()
+    {
+        return $this->versioning_override;
+    }
+
+    public function hasVersioningOverride()
+    {
+        return isset($this->versioning_override);
+    }
+
+    public function clearVersioningOverride()
+    {
+        unset($this->versioning_override);
+    }
+
+    /**
+     * If set, takes precedence over the Versioning Behavior sent by the SDK on Workflow Task completion.
+     * To unset the override after the workflow is running, use UpdateWorkflowExecutionOptions.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 15;</code>
+     * @param \Temporal\Api\Workflow\V1\VersioningOverride $var
+     * @return $this
+     */
+    public function setVersioningOverride($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\VersioningOverride::class);
+        $this->versioning_override = $var;
 
         return $this;
     }

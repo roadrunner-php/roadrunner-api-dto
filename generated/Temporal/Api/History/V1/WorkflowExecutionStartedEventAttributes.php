@@ -174,7 +174,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     /**
      * If this workflow intends to use anything other than the current overall default version for
      * the queue, then we include it here.
-     * Deprecated. use `inherited_build_id` instead
+     * Deprecated. [cleanup-experimental-wv]
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp source_version_stamp = 29;</code>
      */
@@ -208,10 +208,17 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     protected $root_workflow_execution = null;
     /**
      * When present, this execution is assigned to the build ID of its parent or previous execution.
+     * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
      * Generated from protobuf field <code>string inherited_build_id = 32;</code>
      */
     protected $inherited_build_id = '';
+    /**
+     * Versioning override applied to this workflow when it was started.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 33;</code>
+     */
+    protected $versioning_override = null;
 
     /**
      * Constructor.
@@ -276,7 +283,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      *     @type \Temporal\Api\Common\V1\WorkerVersionStamp $source_version_stamp
      *           If this workflow intends to use anything other than the current overall default version for
      *           the queue, then we include it here.
-     *           Deprecated. use `inherited_build_id` instead
+     *           Deprecated. [cleanup-experimental-wv]
      *     @type array<\Temporal\Api\Common\V1\Callback>|\Google\Protobuf\Internal\RepeatedField $completion_callbacks
      *           Completion callbacks attached when this workflow was started.
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $root_workflow_execution
@@ -298,6 +305,9 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      *               - The root workflow of W1 is W1 and the root workflow of W2 is W2.
      *     @type string $inherited_build_id
      *           When present, this execution is assigned to the build ID of its parent or previous execution.
+     *           Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
+     *     @type \Temporal\Api\Workflow\V1\VersioningOverride $versioning_override
+     *           Versioning override applied to this workflow when it was started.
      * }
      */
     public function __construct($data = NULL) {
@@ -1170,7 +1180,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     /**
      * If this workflow intends to use anything other than the current overall default version for
      * the queue, then we include it here.
-     * Deprecated. use `inherited_build_id` instead
+     * Deprecated. [cleanup-experimental-wv]
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp source_version_stamp = 29;</code>
      * @return \Temporal\Api\Common\V1\WorkerVersionStamp|null
@@ -1193,7 +1203,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     /**
      * If this workflow intends to use anything other than the current overall default version for
      * the queue, then we include it here.
-     * Deprecated. use `inherited_build_id` instead
+     * Deprecated. [cleanup-experimental-wv]
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp source_version_stamp = 29;</code>
      * @param \Temporal\Api\Common\V1\WorkerVersionStamp $var
@@ -1301,6 +1311,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
 
     /**
      * When present, this execution is assigned to the build ID of its parent or previous execution.
+     * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
      * Generated from protobuf field <code>string inherited_build_id = 32;</code>
      * @return string
@@ -1312,6 +1323,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
 
     /**
      * When present, this execution is assigned to the build ID of its parent or previous execution.
+     * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
      * Generated from protobuf field <code>string inherited_build_id = 32;</code>
      * @param string $var
@@ -1321,6 +1333,42 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     {
         GPBUtil::checkString($var, True);
         $this->inherited_build_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Versioning override applied to this workflow when it was started.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 33;</code>
+     * @return \Temporal\Api\Workflow\V1\VersioningOverride|null
+     */
+    public function getVersioningOverride()
+    {
+        return $this->versioning_override;
+    }
+
+    public function hasVersioningOverride()
+    {
+        return isset($this->versioning_override);
+    }
+
+    public function clearVersioningOverride()
+    {
+        unset($this->versioning_override);
+    }
+
+    /**
+     * Versioning override applied to this workflow when it was started.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 33;</code>
+     * @param \Temporal\Api\Workflow\V1\VersioningOverride $var
+     * @return $this
+     */
+    public function setVersioningOverride($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\VersioningOverride::class);
+        $this->versioning_override = $var;
 
         return $this;
     }
