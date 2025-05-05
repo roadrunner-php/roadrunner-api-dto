@@ -64,6 +64,12 @@ class ResourceExhaustedCause
      * Generated from protobuf enum <code>RESOURCE_EXHAUSTED_CAUSE_CIRCUIT_BREAKER_OPEN = 8;</code>
      */
     const RESOURCE_EXHAUSTED_CAUSE_CIRCUIT_BREAKER_OPEN = 8;
+    /**
+     * Namespace exceeds operations rate limit.
+     *
+     * Generated from protobuf enum <code>RESOURCE_EXHAUSTED_CAUSE_OPS_LIMIT = 9;</code>
+     */
+    const RESOURCE_EXHAUSTED_CAUSE_OPS_LIMIT = 9;
 
     private static $valueToName = [
         self::RESOURCE_EXHAUSTED_CAUSE_UNSPECIFIED => 'RESOURCE_EXHAUSTED_CAUSE_UNSPECIFIED',
@@ -75,6 +81,7 @@ class ResourceExhaustedCause
         self::RESOURCE_EXHAUSTED_CAUSE_APS_LIMIT => 'RESOURCE_EXHAUSTED_CAUSE_APS_LIMIT',
         self::RESOURCE_EXHAUSTED_CAUSE_PERSISTENCE_STORAGE_LIMIT => 'RESOURCE_EXHAUSTED_CAUSE_PERSISTENCE_STORAGE_LIMIT',
         self::RESOURCE_EXHAUSTED_CAUSE_CIRCUIT_BREAKER_OPEN => 'RESOURCE_EXHAUSTED_CAUSE_CIRCUIT_BREAKER_OPEN',
+        self::RESOURCE_EXHAUSTED_CAUSE_OPS_LIMIT => 'RESOURCE_EXHAUSTED_CAUSE_OPS_LIMIT',
     ];
 
     public static function name($value)

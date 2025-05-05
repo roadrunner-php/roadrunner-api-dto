@@ -158,6 +158,12 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string worker_deployment_name = 23;</code>
      */
     protected $worker_deployment_name = '';
+    /**
+     * Priority metadata
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 24;</code>
+     */
+    protected $priority = null;
 
     /**
      * Constructor.
@@ -229,6 +235,8 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      *     @type string $worker_deployment_name
      *           The name of Worker Deployment that completed the most recent workflow task.
      *           Experimental. Worker Deployments are experimental and might change in the future.
+     *     @type \Temporal\Api\Common\V1\Priority $priority
+     *           Priority metadata
      * }
      */
     public function __construct($data = NULL) {
@@ -966,6 +974,42 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->worker_deployment_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Priority metadata
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 24;</code>
+     * @return \Temporal\Api\Common\V1\Priority|null
+     */
+    public function getPriority()
+    {
+        return $this->priority;
+    }
+
+    public function hasPriority()
+    {
+        return isset($this->priority);
+    }
+
+    public function clearPriority()
+    {
+        unset($this->priority);
+    }
+
+    /**
+     * Priority metadata
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 24;</code>
+     * @param \Temporal\Api\Common\V1\Priority $var
+     * @return $this
+     */
+    public function setPriority($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Priority::class);
+        $this->priority = $var;
 
         return $this;
     }

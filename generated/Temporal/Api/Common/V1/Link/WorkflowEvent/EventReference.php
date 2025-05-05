@@ -10,6 +10,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * EventReference is a direct reference to a history event through the event ID.
+ *
  * Generated from protobuf message <code>temporal.api.common.v1.Link.WorkflowEvent.EventReference</code>
  */
 class EventReference extends \Google\Protobuf\Internal\Message

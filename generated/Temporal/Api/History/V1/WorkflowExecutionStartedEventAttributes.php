@@ -188,20 +188,29 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     /**
      * Contains information about the root workflow execution.
      * The root workflow execution is defined as follows:
-     * 1. A workflow without parent workflow is its own root workflow.
-     * 2. A workflow that has a parent workflow has the same root workflow as its parent workflow.
+     *   1. A workflow without parent workflow is its own root workflow.
+     *   2. A workflow that has a parent workflow has the same root workflow as its parent workflow.
+     * When the workflow is its own root workflow, then root_workflow_execution is nil.
      * Note: workflows continued as new or reseted may or may not have parents, check examples below.
      * Examples:
      *   Scenario 1: Workflow W1 starts child workflow W2, and W2 starts child workflow W3.
      *     - The root workflow of all three workflows is W1.
+     *     - W1 has root_workflow_execution set to nil.
+     *     - W2 and W3 have root_workflow_execution set to W1.
      *   Scenario 2: Workflow W1 starts child workflow W2, and W2 continued as new W3.
      *     - The root workflow of all three workflows is W1.
+     *     - W1 has root_workflow_execution set to nil.
+     *     - W2 and W3 have root_workflow_execution set to W1.
      *   Scenario 3: Workflow W1 continued as new W2.
      *     - The root workflow of W1 is W1 and the root workflow of W2 is W2.
+     *     - W1 and W2 have root_workflow_execution set to nil.
      *   Scenario 4: Workflow W1 starts child workflow W2, and W2 is reseted, creating W3
      *     - The root workflow of all three workflows is W1.
+     *     - W1 has root_workflow_execution set to nil.
+     *     - W2 and W3 have root_workflow_execution set to W1.
      *   Scenario 5: Workflow W1 is reseted, creating W2.
      *     - The root workflow of W1 is W1 and the root workflow of W2 is W2.
+     *     - W1 and W2 have root_workflow_execution set to nil.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkflowExecution root_workflow_execution = 31;</code>
      */
@@ -229,6 +238,12 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      * Generated from protobuf field <code>string parent_pinned_worker_deployment_version = 34;</code>
      */
     protected $parent_pinned_worker_deployment_version = '';
+    /**
+     * Priority metadata
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 35;</code>
+     */
+    protected $priority = null;
 
     /**
      * Constructor.
@@ -299,20 +314,29 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $root_workflow_execution
      *           Contains information about the root workflow execution.
      *           The root workflow execution is defined as follows:
-     *           1. A workflow without parent workflow is its own root workflow.
-     *           2. A workflow that has a parent workflow has the same root workflow as its parent workflow.
+     *             1. A workflow without parent workflow is its own root workflow.
+     *             2. A workflow that has a parent workflow has the same root workflow as its parent workflow.
+     *           When the workflow is its own root workflow, then root_workflow_execution is nil.
      *           Note: workflows continued as new or reseted may or may not have parents, check examples below.
      *           Examples:
      *             Scenario 1: Workflow W1 starts child workflow W2, and W2 starts child workflow W3.
      *               - The root workflow of all three workflows is W1.
+     *               - W1 has root_workflow_execution set to nil.
+     *               - W2 and W3 have root_workflow_execution set to W1.
      *             Scenario 2: Workflow W1 starts child workflow W2, and W2 continued as new W3.
      *               - The root workflow of all three workflows is W1.
+     *               - W1 has root_workflow_execution set to nil.
+     *               - W2 and W3 have root_workflow_execution set to W1.
      *             Scenario 3: Workflow W1 continued as new W2.
      *               - The root workflow of W1 is W1 and the root workflow of W2 is W2.
+     *               - W1 and W2 have root_workflow_execution set to nil.
      *             Scenario 4: Workflow W1 starts child workflow W2, and W2 is reseted, creating W3
      *               - The root workflow of all three workflows is W1.
+     *               - W1 has root_workflow_execution set to nil.
+     *               - W2 and W3 have root_workflow_execution set to W1.
      *             Scenario 5: Workflow W1 is reseted, creating W2.
      *               - The root workflow of W1 is W1 and the root workflow of W2 is W2.
+     *               - W1 and W2 have root_workflow_execution set to nil.
      *     @type string $inherited_build_id
      *           When present, this execution is assigned to the build ID of its parent or previous execution.
      *           Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
@@ -324,6 +348,8 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      *           of starting on the Current Version of its Task Queue.
      *           This is set only if the child workflow is starting on a Task Queue belonging to the same
      *           Worker Deployment Version.
+     *     @type \Temporal\Api\Common\V1\Priority $priority
+     *           Priority metadata
      * }
      */
     public function __construct($data = NULL) {
@@ -1262,20 +1288,29 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     /**
      * Contains information about the root workflow execution.
      * The root workflow execution is defined as follows:
-     * 1. A workflow without parent workflow is its own root workflow.
-     * 2. A workflow that has a parent workflow has the same root workflow as its parent workflow.
+     *   1. A workflow without parent workflow is its own root workflow.
+     *   2. A workflow that has a parent workflow has the same root workflow as its parent workflow.
+     * When the workflow is its own root workflow, then root_workflow_execution is nil.
      * Note: workflows continued as new or reseted may or may not have parents, check examples below.
      * Examples:
      *   Scenario 1: Workflow W1 starts child workflow W2, and W2 starts child workflow W3.
      *     - The root workflow of all three workflows is W1.
+     *     - W1 has root_workflow_execution set to nil.
+     *     - W2 and W3 have root_workflow_execution set to W1.
      *   Scenario 2: Workflow W1 starts child workflow W2, and W2 continued as new W3.
      *     - The root workflow of all three workflows is W1.
+     *     - W1 has root_workflow_execution set to nil.
+     *     - W2 and W3 have root_workflow_execution set to W1.
      *   Scenario 3: Workflow W1 continued as new W2.
      *     - The root workflow of W1 is W1 and the root workflow of W2 is W2.
+     *     - W1 and W2 have root_workflow_execution set to nil.
      *   Scenario 4: Workflow W1 starts child workflow W2, and W2 is reseted, creating W3
      *     - The root workflow of all three workflows is W1.
+     *     - W1 has root_workflow_execution set to nil.
+     *     - W2 and W3 have root_workflow_execution set to W1.
      *   Scenario 5: Workflow W1 is reseted, creating W2.
      *     - The root workflow of W1 is W1 and the root workflow of W2 is W2.
+     *     - W1 and W2 have root_workflow_execution set to nil.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkflowExecution root_workflow_execution = 31;</code>
      * @return \Temporal\Api\Common\V1\WorkflowExecution|null
@@ -1298,20 +1333,29 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     /**
      * Contains information about the root workflow execution.
      * The root workflow execution is defined as follows:
-     * 1. A workflow without parent workflow is its own root workflow.
-     * 2. A workflow that has a parent workflow has the same root workflow as its parent workflow.
+     *   1. A workflow without parent workflow is its own root workflow.
+     *   2. A workflow that has a parent workflow has the same root workflow as its parent workflow.
+     * When the workflow is its own root workflow, then root_workflow_execution is nil.
      * Note: workflows continued as new or reseted may or may not have parents, check examples below.
      * Examples:
      *   Scenario 1: Workflow W1 starts child workflow W2, and W2 starts child workflow W3.
      *     - The root workflow of all three workflows is W1.
+     *     - W1 has root_workflow_execution set to nil.
+     *     - W2 and W3 have root_workflow_execution set to W1.
      *   Scenario 2: Workflow W1 starts child workflow W2, and W2 continued as new W3.
      *     - The root workflow of all three workflows is W1.
+     *     - W1 has root_workflow_execution set to nil.
+     *     - W2 and W3 have root_workflow_execution set to W1.
      *   Scenario 3: Workflow W1 continued as new W2.
      *     - The root workflow of W1 is W1 and the root workflow of W2 is W2.
+     *     - W1 and W2 have root_workflow_execution set to nil.
      *   Scenario 4: Workflow W1 starts child workflow W2, and W2 is reseted, creating W3
      *     - The root workflow of all three workflows is W1.
+     *     - W1 has root_workflow_execution set to nil.
+     *     - W2 and W3 have root_workflow_execution set to W1.
      *   Scenario 5: Workflow W1 is reseted, creating W2.
      *     - The root workflow of W1 is W1 and the root workflow of W2 is W2.
+     *     - W1 and W2 have root_workflow_execution set to nil.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkflowExecution root_workflow_execution = 31;</code>
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
@@ -1419,6 +1463,42 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     {
         GPBUtil::checkString($var, True);
         $this->parent_pinned_worker_deployment_version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Priority metadata
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 35;</code>
+     * @return \Temporal\Api\Common\V1\Priority|null
+     */
+    public function getPriority()
+    {
+        return $this->priority;
+    }
+
+    public function hasPriority()
+    {
+        return isset($this->priority);
+    }
+
+    public function clearPriority()
+    {
+        unset($this->priority);
+    }
+
+    /**
+     * Priority metadata
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 35;</code>
+     * @param \Temporal\Api\Common\V1\Priority $var
+     * @return $this
+     */
+    public function setPriority($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Priority::class);
+        $this->priority = $var;
 
         return $this;
     }

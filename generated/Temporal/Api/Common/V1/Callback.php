@@ -16,6 +16,13 @@ use Google\Protobuf\Internal\GPBUtil;
  */
 class Callback extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Links associated with the callback. It can be used to link to underlying resources of the
+     * callback.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 100;</code>
+     */
+    private $links;
     protected $variant;
 
     /**
@@ -26,6 +33,9 @@ class Callback extends \Google\Protobuf\Internal\Message
      *
      *     @type \Temporal\Api\Common\V1\Callback\Nexus $nexus
      *     @type \Temporal\Api\Common\V1\Callback\Internal $internal
+     *     @type array<\Temporal\Api\Common\V1\Link>|\Google\Protobuf\Internal\RepeatedField $links
+     *           Links associated with the callback. It can be used to link to underlying resources of the
+     *           callback.
      * }
      */
     public function __construct($data = NULL) {
@@ -83,6 +93,34 @@ class Callback extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Callback\Internal::class);
         $this->writeOneof(3, $var);
+
+        return $this;
+    }
+
+    /**
+     * Links associated with the callback. It can be used to link to underlying resources of the
+     * callback.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 100;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getLinks()
+    {
+        return $this->links;
+    }
+
+    /**
+     * Links associated with the callback. It can be used to link to underlying resources of the
+     * callback.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 100;</code>
+     * @param array<\Temporal\Api\Common\V1\Link>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setLinks($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Link::class);
+        $this->links = $arr;
 
         return $this;
     }
