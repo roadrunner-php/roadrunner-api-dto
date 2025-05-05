@@ -110,8 +110,10 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
     /**
      * Deployment info of the worker that completed this task. Must be present if user has set
      * `WorkerDeploymentOptions` regardless of versioning being enabled or not.
+     * Deprecated. Replaced with `deployment_options`.
      *
-     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 15;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 15 [deprecated = true];</code>
+     * @deprecated
      */
     protected $deployment = null;
     /**
@@ -121,6 +123,12 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * Generated from protobuf field <code>.temporal.api.enums.v1.VersioningBehavior versioning_behavior = 16;</code>
      */
     protected $versioning_behavior = 0;
+    /**
+     * Worker deployment options that user has set in the worker.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentOptions deployment_options = 17;</code>
+     */
+    protected $deployment_options = null;
 
     /**
      * Constructor.
@@ -168,9 +176,12 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      *     @type \Temporal\Api\Deployment\V1\Deployment $deployment
      *           Deployment info of the worker that completed this task. Must be present if user has set
      *           `WorkerDeploymentOptions` regardless of versioning being enabled or not.
+     *           Deprecated. Replaced with `deployment_options`.
      *     @type int $versioning_behavior
      *           Versioning behavior of this workflow execution as set on the worker that completed this task.
      *           UNSPECIFIED means versioning is not enabled in the worker.
+     *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentOptions $deployment_options
+     *           Worker deployment options that user has set in the worker.
      * }
      */
     public function __construct($data = NULL) {
@@ -621,35 +632,47 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
     /**
      * Deployment info of the worker that completed this task. Must be present if user has set
      * `WorkerDeploymentOptions` regardless of versioning being enabled or not.
+     * Deprecated. Replaced with `deployment_options`.
      *
-     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 15;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 15 [deprecated = true];</code>
      * @return \Temporal\Api\Deployment\V1\Deployment|null
+     * @deprecated
      */
     public function getDeployment()
     {
+        if (isset($this->deployment)) {
+            @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->deployment;
     }
 
     public function hasDeployment()
     {
+        if (isset($this->deployment)) {
+            @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
+        }
         return isset($this->deployment);
     }
 
     public function clearDeployment()
     {
+        @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
         unset($this->deployment);
     }
 
     /**
      * Deployment info of the worker that completed this task. Must be present if user has set
      * `WorkerDeploymentOptions` regardless of versioning being enabled or not.
+     * Deprecated. Replaced with `deployment_options`.
      *
-     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 15;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 15 [deprecated = true];</code>
      * @param \Temporal\Api\Deployment\V1\Deployment $var
      * @return $this
+     * @deprecated
      */
     public function setDeployment($var)
     {
+        @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\Deployment::class);
         $this->deployment = $var;
 
@@ -680,6 +703,42 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\VersioningBehavior::class);
         $this->versioning_behavior = $var;
+
+        return $this;
+    }
+
+    /**
+     * Worker deployment options that user has set in the worker.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentOptions deployment_options = 17;</code>
+     * @return \Temporal\Api\Deployment\V1\WorkerDeploymentOptions|null
+     */
+    public function getDeploymentOptions()
+    {
+        return $this->deployment_options;
+    }
+
+    public function hasDeploymentOptions()
+    {
+        return isset($this->deployment_options);
+    }
+
+    public function clearDeploymentOptions()
+    {
+        unset($this->deployment_options);
+    }
+
+    /**
+     * Worker deployment options that user has set in the worker.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentOptions deployment_options = 17;</code>
+     * @param \Temporal\Api\Deployment\V1\WorkerDeploymentOptions $var
+     * @return $this
+     */
+    public function setDeploymentOptions($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentOptions::class);
+        $this->deployment_options = $var;
 
         return $this;
     }

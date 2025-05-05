@@ -15,11 +15,31 @@ use Google\Protobuf\Internal\GPBUtil;
 class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Versioning override in the mutable state after event has been applied.
+     * Versioning override upserted in this event.
+     * Ignored if nil or if unset_versioning_override is true.
      *
      * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 1;</code>
      */
     protected $versioning_override = null;
+    /**
+     * Versioning override removed in this event.
+     *
+     * Generated from protobuf field <code>bool unset_versioning_override = 2;</code>
+     */
+    protected $unset_versioning_override = false;
+    /**
+     * Request ID attachedto the running workflow execution so that subsequent requests with same
+     * request ID will be deduped.
+     *
+     * Generated from protobuf field <code>string attached_request_id = 3;</code>
+     */
+    protected $attached_request_id = '';
+    /**
+     * Completion callbacks attached to the running workflow execution.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Callback attached_completion_callbacks = 4;</code>
+     */
+    private $attached_completion_callbacks;
 
     /**
      * Constructor.
@@ -28,7 +48,15 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      *     Optional. Data for populating the Message object.
      *
      *     @type \Temporal\Api\Workflow\V1\VersioningOverride $versioning_override
-     *           Versioning override in the mutable state after event has been applied.
+     *           Versioning override upserted in this event.
+     *           Ignored if nil or if unset_versioning_override is true.
+     *     @type bool $unset_versioning_override
+     *           Versioning override removed in this event.
+     *     @type string $attached_request_id
+     *           Request ID attachedto the running workflow execution so that subsequent requests with same
+     *           request ID will be deduped.
+     *     @type array<\Temporal\Api\Common\V1\Callback>|\Google\Protobuf\Internal\RepeatedField $attached_completion_callbacks
+     *           Completion callbacks attached to the running workflow execution.
      * }
      */
     public function __construct($data = NULL) {
@@ -37,7 +65,8 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
     }
 
     /**
-     * Versioning override in the mutable state after event has been applied.
+     * Versioning override upserted in this event.
+     * Ignored if nil or if unset_versioning_override is true.
      *
      * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 1;</code>
      * @return \Temporal\Api\Workflow\V1\VersioningOverride|null
@@ -58,7 +87,8 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
     }
 
     /**
-     * Versioning override in the mutable state after event has been applied.
+     * Versioning override upserted in this event.
+     * Ignored if nil or if unset_versioning_override is true.
      *
      * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 1;</code>
      * @param \Temporal\Api\Workflow\V1\VersioningOverride $var
@@ -68,6 +98,86 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\VersioningOverride::class);
         $this->versioning_override = $var;
+
+        return $this;
+    }
+
+    /**
+     * Versioning override removed in this event.
+     *
+     * Generated from protobuf field <code>bool unset_versioning_override = 2;</code>
+     * @return bool
+     */
+    public function getUnsetVersioningOverride()
+    {
+        return $this->unset_versioning_override;
+    }
+
+    /**
+     * Versioning override removed in this event.
+     *
+     * Generated from protobuf field <code>bool unset_versioning_override = 2;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUnsetVersioningOverride($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->unset_versioning_override = $var;
+
+        return $this;
+    }
+
+    /**
+     * Request ID attachedto the running workflow execution so that subsequent requests with same
+     * request ID will be deduped.
+     *
+     * Generated from protobuf field <code>string attached_request_id = 3;</code>
+     * @return string
+     */
+    public function getAttachedRequestId()
+    {
+        return $this->attached_request_id;
+    }
+
+    /**
+     * Request ID attachedto the running workflow execution so that subsequent requests with same
+     * request ID will be deduped.
+     *
+     * Generated from protobuf field <code>string attached_request_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAttachedRequestId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->attached_request_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Completion callbacks attached to the running workflow execution.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Callback attached_completion_callbacks = 4;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getAttachedCompletionCallbacks()
+    {
+        return $this->attached_completion_callbacks;
+    }
+
+    /**
+     * Completion callbacks attached to the running workflow execution.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Callback attached_completion_callbacks = 4;</code>
+     * @param array<\Temporal\Api\Common\V1\Callback>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setAttachedCompletionCallbacks($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Callback::class);
+        $this->attached_completion_callbacks = $arr;
 
         return $this;
     }

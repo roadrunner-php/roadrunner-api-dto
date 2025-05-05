@@ -12,6 +12,7 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * DeploymentListInfo is an abbreviated set of fields from DeploymentInfo that's returned in
  * ListDeployments.
+ * Deprecated.
  *
  * Generated from protobuf message <code>temporal.api.deployment.v1.DeploymentListInfo</code>
  */

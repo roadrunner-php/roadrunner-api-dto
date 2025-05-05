@@ -64,8 +64,10 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
      * The deployment that completed this task. May or may not be set for unversioned workers,
      * depending on whether a value is sent by the SDK. This value updates workflow execution's
      * `versioning_info.deployment`.
+     * Deprecated. Replaced with `worker_deployment_version`.
      *
-     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 7;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 7 [deprecated = true];</code>
+     * @deprecated
      */
     protected $deployment = null;
     /**
@@ -76,6 +78,22 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
      * Generated from protobuf field <code>.temporal.api.enums.v1.VersioningBehavior versioning_behavior = 8;</code>
      */
     protected $versioning_behavior = 0;
+    /**
+     * The Worker Deployment Version that completed this task. Must be set if `versioning_behavior`
+     * is set. This value updates workflow execution's `versioning_info.version`.
+     * Experimental. Worker Deployments are experimental and might significantly change in the future.
+     *
+     * Generated from protobuf field <code>string worker_deployment_version = 9;</code>
+     */
+    protected $worker_deployment_version = '';
+    /**
+     * The name of Worker Deployment that completed this task. Must be set if `versioning_behavior`
+     * is set. This value updates workflow execution's `worker_deployment_name`.
+     * Experimental. Worker Deployments are experimental and might significantly change in the future.
+     *
+     * Generated from protobuf field <code>string worker_deployment_name = 10;</code>
+     */
+    protected $worker_deployment_name = '';
 
     /**
      * Constructor.
@@ -105,10 +123,19 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
      *           The deployment that completed this task. May or may not be set for unversioned workers,
      *           depending on whether a value is sent by the SDK. This value updates workflow execution's
      *           `versioning_info.deployment`.
+     *           Deprecated. Replaced with `worker_deployment_version`.
      *     @type int $versioning_behavior
      *           Versioning behavior sent by the worker that completed this task for this particular workflow
      *           execution. UNSPECIFIED means the task was completed by an unversioned worker. This value
      *           updates workflow execution's `versioning_info.behavior`.
+     *     @type string $worker_deployment_version
+     *           The Worker Deployment Version that completed this task. Must be set if `versioning_behavior`
+     *           is set. This value updates workflow execution's `versioning_info.version`.
+     *           Experimental. Worker Deployments are experimental and might significantly change in the future.
+     *     @type string $worker_deployment_name
+     *           The name of Worker Deployment that completed this task. Must be set if `versioning_behavior`
+     *           is set. This value updates workflow execution's `worker_deployment_name`.
+     *           Experimental. Worker Deployments are experimental and might significantly change in the future.
      * }
      */
     public function __construct($data = NULL) {
@@ -340,22 +367,31 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
      * The deployment that completed this task. May or may not be set for unversioned workers,
      * depending on whether a value is sent by the SDK. This value updates workflow execution's
      * `versioning_info.deployment`.
+     * Deprecated. Replaced with `worker_deployment_version`.
      *
-     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 7;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 7 [deprecated = true];</code>
      * @return \Temporal\Api\Deployment\V1\Deployment|null
+     * @deprecated
      */
     public function getDeployment()
     {
+        if (isset($this->deployment)) {
+            @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->deployment;
     }
 
     public function hasDeployment()
     {
+        if (isset($this->deployment)) {
+            @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
+        }
         return isset($this->deployment);
     }
 
     public function clearDeployment()
     {
+        @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
         unset($this->deployment);
     }
 
@@ -363,13 +399,16 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
      * The deployment that completed this task. May or may not be set for unversioned workers,
      * depending on whether a value is sent by the SDK. This value updates workflow execution's
      * `versioning_info.deployment`.
+     * Deprecated. Replaced with `worker_deployment_version`.
      *
-     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 7;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 7 [deprecated = true];</code>
      * @param \Temporal\Api\Deployment\V1\Deployment $var
      * @return $this
+     * @deprecated
      */
     public function setDeployment($var)
     {
+        @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\Deployment::class);
         $this->deployment = $var;
 
@@ -402,6 +441,66 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\VersioningBehavior::class);
         $this->versioning_behavior = $var;
+
+        return $this;
+    }
+
+    /**
+     * The Worker Deployment Version that completed this task. Must be set if `versioning_behavior`
+     * is set. This value updates workflow execution's `versioning_info.version`.
+     * Experimental. Worker Deployments are experimental and might significantly change in the future.
+     *
+     * Generated from protobuf field <code>string worker_deployment_version = 9;</code>
+     * @return string
+     */
+    public function getWorkerDeploymentVersion()
+    {
+        return $this->worker_deployment_version;
+    }
+
+    /**
+     * The Worker Deployment Version that completed this task. Must be set if `versioning_behavior`
+     * is set. This value updates workflow execution's `versioning_info.version`.
+     * Experimental. Worker Deployments are experimental and might significantly change in the future.
+     *
+     * Generated from protobuf field <code>string worker_deployment_version = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setWorkerDeploymentVersion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->worker_deployment_version = $var;
+
+        return $this;
+    }
+
+    /**
+     * The name of Worker Deployment that completed this task. Must be set if `versioning_behavior`
+     * is set. This value updates workflow execution's `worker_deployment_name`.
+     * Experimental. Worker Deployments are experimental and might significantly change in the future.
+     *
+     * Generated from protobuf field <code>string worker_deployment_name = 10;</code>
+     * @return string
+     */
+    public function getWorkerDeploymentName()
+    {
+        return $this->worker_deployment_name;
+    }
+
+    /**
+     * The name of Worker Deployment that completed this task. Must be set if `versioning_behavior`
+     * is set. This value updates workflow execution's `worker_deployment_name`.
+     * Experimental. Worker Deployments are experimental and might significantly change in the future.
+     *
+     * Generated from protobuf field <code>string worker_deployment_name = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setWorkerDeploymentName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->worker_deployment_name = $var;
 
         return $this;
     }

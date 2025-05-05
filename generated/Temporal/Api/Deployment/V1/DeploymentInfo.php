@@ -13,6 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  * `DeploymentInfo` holds information about a deployment. Deployment information is tracked
  * automatically by server as soon as the first poll from that deployment reaches the server. There
  * can be multiple task queue workers in a single deployment which are listed in this message.
+ * Deprecated.
  *
  * Generated from protobuf message <code>temporal.api.deployment.v1.DeploymentInfo</code>
  */

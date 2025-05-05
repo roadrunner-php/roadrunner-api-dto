@@ -11,7 +11,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Holds information about ongoing transition of a workflow execution from one deployment to another.
- * Experimental. Deployment transition is experimental and might change in the future.
+ * Deprecated. Use DeploymentVersionTransition.
  *
  * Generated from protobuf message <code>temporal.api.workflow.v1.DeploymentTransition</code>
  */

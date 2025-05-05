@@ -11,6 +11,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Returns the Current Deployment of a deployment series.
+ * [cleanup-wv-pre-release] Pre-release deployment APIs, clean up later
  *
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.GetCurrentDeploymentRequest</code>
  */

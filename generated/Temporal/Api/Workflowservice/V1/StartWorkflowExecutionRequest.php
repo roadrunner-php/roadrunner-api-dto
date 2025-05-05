@@ -165,6 +165,15 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 25;</code>
      */
     protected $versioning_override = null;
+    /**
+     * Defines actions to be done to the existing running workflow when the conflict policy
+     * WORKFLOW_ID_CONFLICT_POLICY_USE_EXISTING is used. If not set (ie., nil value) or set to a
+     * empty object (ie., all options with default value), it won't do anything to the existing
+     * running workflow. If set, it will add a history event to the running workflow.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.OnConflictOptions on_conflict_options = 26;</code>
+     */
+    protected $on_conflict_options = null;
 
     /**
      * Constructor.
@@ -231,6 +240,11 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Workflow\V1\VersioningOverride $versioning_override
      *           If set, takes precedence over the Versioning Behavior sent by the SDK on Workflow Task completion.
      *           To unset the override after the workflow is running, use UpdateWorkflowExecutionOptions.
+     *     @type \Temporal\Api\Workflow\V1\OnConflictOptions $on_conflict_options
+     *           Defines actions to be done to the existing running workflow when the conflict policy
+     *           WORKFLOW_ID_CONFLICT_POLICY_USE_EXISTING is used. If not set (ie., nil value) or set to a
+     *           empty object (ie., all options with default value), it won't do anything to the existing
+     *           running workflow. If set, it will add a history event to the running workflow.
      * }
      */
     public function __construct($data = NULL) {
@@ -1036,6 +1050,48 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\VersioningOverride::class);
         $this->versioning_override = $var;
+
+        return $this;
+    }
+
+    /**
+     * Defines actions to be done to the existing running workflow when the conflict policy
+     * WORKFLOW_ID_CONFLICT_POLICY_USE_EXISTING is used. If not set (ie., nil value) or set to a
+     * empty object (ie., all options with default value), it won't do anything to the existing
+     * running workflow. If set, it will add a history event to the running workflow.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.OnConflictOptions on_conflict_options = 26;</code>
+     * @return \Temporal\Api\Workflow\V1\OnConflictOptions|null
+     */
+    public function getOnConflictOptions()
+    {
+        return $this->on_conflict_options;
+    }
+
+    public function hasOnConflictOptions()
+    {
+        return isset($this->on_conflict_options);
+    }
+
+    public function clearOnConflictOptions()
+    {
+        unset($this->on_conflict_options);
+    }
+
+    /**
+     * Defines actions to be done to the existing running workflow when the conflict policy
+     * WORKFLOW_ID_CONFLICT_POLICY_USE_EXISTING is used. If not set (ie., nil value) or set to a
+     * empty object (ie., all options with default value), it won't do anything to the existing
+     * running workflow. If set, it will add a history event to the running workflow.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.OnConflictOptions on_conflict_options = 26;</code>
+     * @param \Temporal\Api\Workflow\V1\OnConflictOptions $var
+     * @return $this
+     */
+    public function setOnConflictOptions($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\OnConflictOptions::class);
+        $this->on_conflict_options = $var;
 
         return $this;
     }

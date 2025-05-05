@@ -124,6 +124,12 @@ class PollActivityTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.common.v1.RetryPolicy retry_policy = 17;</code>
      */
     protected $retry_policy = null;
+    /**
+     * Server-advised information the SDK may use to adjust its poller count.
+     *
+     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.PollerScalingDecision poller_scaling_decision = 18;</code>
+     */
+    protected $poller_scaling_decision = null;
 
     /**
      * Constructor.
@@ -174,6 +180,8 @@ class PollActivityTaskQueueResponse extends \Google\Protobuf\Internal\Message
      *           This is the retry policy the service uses which may be different from the one provided
      *           (or not) during activity scheduling. The service can override the provided one if some
      *           values are not specified or exceed configured system limits.
+     *     @type \Temporal\Api\Taskqueue\V1\PollerScalingDecision $poller_scaling_decision
+     *           Server-advised information the SDK may use to adjust its poller count.
      * }
      */
     public function __construct($data = NULL) {
@@ -765,6 +773,42 @@ class PollActivityTaskQueueResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\RetryPolicy::class);
         $this->retry_policy = $var;
+
+        return $this;
+    }
+
+    /**
+     * Server-advised information the SDK may use to adjust its poller count.
+     *
+     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.PollerScalingDecision poller_scaling_decision = 18;</code>
+     * @return \Temporal\Api\Taskqueue\V1\PollerScalingDecision|null
+     */
+    public function getPollerScalingDecision()
+    {
+        return $this->poller_scaling_decision;
+    }
+
+    public function hasPollerScalingDecision()
+    {
+        return isset($this->poller_scaling_decision);
+    }
+
+    public function clearPollerScalingDecision()
+    {
+        unset($this->poller_scaling_decision);
+    }
+
+    /**
+     * Server-advised information the SDK may use to adjust its poller count.
+     *
+     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.PollerScalingDecision poller_scaling_decision = 18;</code>
+     * @param \Temporal\Api\Taskqueue\V1\PollerScalingDecision $var
+     * @return $this
+     */
+    public function setPollerScalingDecision($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\PollerScalingDecision::class);
+        $this->poller_scaling_decision = $var;
 
         return $this;
     }

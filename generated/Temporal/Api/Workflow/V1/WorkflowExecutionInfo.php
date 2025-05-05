@@ -151,6 +151,13 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.workflow.v1.WorkflowExecutionVersioningInfo versioning_info = 22;</code>
      */
     protected $versioning_info = null;
+    /**
+     * The name of Worker Deployment that completed the most recent workflow task.
+     * Experimental. Worker Deployments are experimental and might change in the future.
+     *
+     * Generated from protobuf field <code>string worker_deployment_name = 23;</code>
+     */
+    protected $worker_deployment_name = '';
 
     /**
      * Constructor.
@@ -219,6 +226,9 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      *           Absent value means the workflow execution is not versioned. When present, the execution might
      *           be versioned or unversioned, depending on `versioning_info.behavior` and `versioning_info.versioning_override`.
      *           Experimental. Versioning info is experimental and might change in the future.
+     *     @type string $worker_deployment_name
+     *           The name of Worker Deployment that completed the most recent workflow task.
+     *           Experimental. Worker Deployments are experimental and might change in the future.
      * }
      */
     public function __construct($data = NULL) {
@@ -928,6 +938,34 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\WorkflowExecutionVersioningInfo::class);
         $this->versioning_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * The name of Worker Deployment that completed the most recent workflow task.
+     * Experimental. Worker Deployments are experimental and might change in the future.
+     *
+     * Generated from protobuf field <code>string worker_deployment_name = 23;</code>
+     * @return string
+     */
+    public function getWorkerDeploymentName()
+    {
+        return $this->worker_deployment_name;
+    }
+
+    /**
+     * The name of Worker Deployment that completed the most recent workflow task.
+     * Experimental. Worker Deployments are experimental and might change in the future.
+     *
+     * Generated from protobuf field <code>string worker_deployment_name = 23;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setWorkerDeploymentName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->worker_deployment_name = $var;
 
         return $this;
     }

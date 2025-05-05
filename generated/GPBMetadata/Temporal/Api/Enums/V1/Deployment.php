@@ -16,7 +16,7 @@ class Deployment
           return;
         }
         $pool->internalAddGeneratedFile(
-            "\x0A\x98\x03\x0A&temporal/api/enums/v1/deployment.proto\x12\x15temporal.api.enums.v1*\xC4\x01\x0A\x16DeploymentReachability\x12'\x0A#DEPLOYMENT_REACHABILITY_UNSPECIFIED\x10\x00\x12%\x0A!DEPLOYMENT_REACHABILITY_REACHABLE\x10\x01\x121\x0A-DEPLOYMENT_REACHABILITY_CLOSED_WORKFLOWS_ONLY\x10\x02\x12'\x0A#DEPLOYMENT_REACHABILITY_UNREACHABLE\x10\x03B\x87\x01\x0A\x18io.temporal.api.enums.v1B\x0FDeploymentProtoP\x01Z!go.temporal.io/api/enums/v1;enums\xAA\x02\x17Temporalio.Api.Enums.V1\xEA\x02\x1ATemporalio::Api::Enums::V1b\x06proto3"
+            "\x0A\xB5\x05\x0A&temporal/api/enums/v1/deployment.proto\x12\x15temporal.api.enums.v1*\xC4\x01\x0A\x16DeploymentReachability\x12'\x0A#DEPLOYMENT_REACHABILITY_UNSPECIFIED\x10\x00\x12%\x0A!DEPLOYMENT_REACHABILITY_REACHABLE\x10\x01\x121\x0A-DEPLOYMENT_REACHABILITY_CLOSED_WORKFLOWS_ONLY\x10\x02\x12'\x0A#DEPLOYMENT_REACHABILITY_UNREACHABLE\x10\x03*\x8B\x01\x0A\x15VersionDrainageStatus\x12'\x0A#VERSION_DRAINAGE_STATUS_UNSPECIFIED\x10\x00\x12\$\x0A VERSION_DRAINAGE_STATUS_DRAINING\x10\x01\x12#\x0A\x1FVERSION_DRAINAGE_STATUS_DRAINED\x10\x02*\x8C\x01\x0A\x14WorkerVersioningMode\x12&\x0A\"WORKER_VERSIONING_MODE_UNSPECIFIED\x10\x00\x12&\x0A\"WORKER_VERSIONING_MODE_UNVERSIONED\x10\x01\x12\$\x0A WORKER_VERSIONING_MODE_VERSIONED\x10\x02B\x87\x01\x0A\x18io.temporal.api.enums.v1B\x0FDeploymentProtoP\x01Z!go.temporal.io/api/enums/v1;enums\xAA\x02\x17Temporalio.Api.Enums.V1\xEA\x02\x1ATemporalio::Api::Enums::V1b\x06proto3"
         , true);
 
         static::$is_initialized = true;

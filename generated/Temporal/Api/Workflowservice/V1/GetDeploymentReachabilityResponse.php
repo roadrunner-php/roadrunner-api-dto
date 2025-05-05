@@ -10,6 +10,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * [cleanup-wv-pre-release] Pre-release deployment APIs, clean up later
+ *
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.GetDeploymentReachabilityResponse</code>
  */
 class GetDeploymentReachabilityResponse extends \Google\Protobuf\Internal\Message
