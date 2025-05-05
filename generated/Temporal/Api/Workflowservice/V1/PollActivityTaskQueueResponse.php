@@ -130,6 +130,12 @@ class PollActivityTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.PollerScalingDecision poller_scaling_decision = 18;</code>
      */
     protected $poller_scaling_decision = null;
+    /**
+     * Priority metadata
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 19;</code>
+     */
+    protected $priority = null;
 
     /**
      * Constructor.
@@ -182,6 +188,8 @@ class PollActivityTaskQueueResponse extends \Google\Protobuf\Internal\Message
      *           values are not specified or exceed configured system limits.
      *     @type \Temporal\Api\Taskqueue\V1\PollerScalingDecision $poller_scaling_decision
      *           Server-advised information the SDK may use to adjust its poller count.
+     *     @type \Temporal\Api\Common\V1\Priority $priority
+     *           Priority metadata
      * }
      */
     public function __construct($data = NULL) {
@@ -809,6 +817,42 @@ class PollActivityTaskQueueResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\PollerScalingDecision::class);
         $this->poller_scaling_decision = $var;
+
+        return $this;
+    }
+
+    /**
+     * Priority metadata
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 19;</code>
+     * @return \Temporal\Api\Common\V1\Priority|null
+     */
+    public function getPriority()
+    {
+        return $this->priority;
+    }
+
+    public function hasPriority()
+    {
+        return isset($this->priority);
+    }
+
+    public function clearPriority()
+    {
+        unset($this->priority);
+    }
+
+    /**
+     * Priority metadata
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 19;</code>
+     * @param \Temporal\Api\Common\V1\Priority $var
+     * @return $this
+     */
+    public function setPriority($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Priority::class);
+        $this->priority = $var;
 
         return $this;
     }

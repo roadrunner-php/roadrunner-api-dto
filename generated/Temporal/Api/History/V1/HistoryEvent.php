@@ -156,6 +156,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\History\V1\NexusOperationTimedOutEventAttributes $nexus_operation_timed_out_event_attributes
      *     @type \Temporal\Api\History\V1\NexusOperationCancelRequestedEventAttributes $nexus_operation_cancel_requested_event_attributes
      *     @type \Temporal\Api\History\V1\WorkflowExecutionOptionsUpdatedEventAttributes $workflow_execution_options_updated_event_attributes
+     *     @type \Temporal\Api\History\V1\NexusOperationCancelRequestCompletedEventAttributes $nexus_operation_cancel_request_completed_event_attributes
+     *     @type \Temporal\Api\History\V1\NexusOperationCancelRequestFailedEventAttributes $nexus_operation_cancel_request_failed_event_attributes
      * }
      */
     public function __construct($data = NULL) {
@@ -1882,6 +1884,60 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\History\V1\WorkflowExecutionOptionsUpdatedEventAttributes::class);
         $this->writeOneof(60, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.history.v1.NexusOperationCancelRequestCompletedEventAttributes nexus_operation_cancel_request_completed_event_attributes = 61;</code>
+     * @return \Temporal\Api\History\V1\NexusOperationCancelRequestCompletedEventAttributes|null
+     */
+    public function getNexusOperationCancelRequestCompletedEventAttributes()
+    {
+        return $this->readOneof(61);
+    }
+
+    public function hasNexusOperationCancelRequestCompletedEventAttributes()
+    {
+        return $this->hasOneof(61);
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.history.v1.NexusOperationCancelRequestCompletedEventAttributes nexus_operation_cancel_request_completed_event_attributes = 61;</code>
+     * @param \Temporal\Api\History\V1\NexusOperationCancelRequestCompletedEventAttributes $var
+     * @return $this
+     */
+    public function setNexusOperationCancelRequestCompletedEventAttributes($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\NexusOperationCancelRequestCompletedEventAttributes::class);
+        $this->writeOneof(61, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.history.v1.NexusOperationCancelRequestFailedEventAttributes nexus_operation_cancel_request_failed_event_attributes = 62;</code>
+     * @return \Temporal\Api\History\V1\NexusOperationCancelRequestFailedEventAttributes|null
+     */
+    public function getNexusOperationCancelRequestFailedEventAttributes()
+    {
+        return $this->readOneof(62);
+    }
+
+    public function hasNexusOperationCancelRequestFailedEventAttributes()
+    {
+        return $this->hasOneof(62);
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.history.v1.NexusOperationCancelRequestFailedEventAttributes nexus_operation_cancel_request_failed_event_attributes = 62;</code>
+     * @param \Temporal\Api\History\V1\NexusOperationCancelRequestFailedEventAttributes $var
+     * @return $this
+     */
+    public function setNexusOperationCancelRequestFailedEventAttributes($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\NexusOperationCancelRequestFailedEventAttributes::class);
+        $this->writeOneof(62, $var);
 
         return $this;
     }

@@ -38,6 +38,7 @@ class WorkflowEvent extends \Google\Protobuf\Internal\Message
      *     @type string $workflow_id
      *     @type string $run_id
      *     @type \Temporal\Api\Common\V1\Link\WorkflowEvent\EventReference $event_ref
+     *     @type \Temporal\Api\Common\V1\Link\WorkflowEvent\RequestIdReference $request_id_ref
      * }
      */
     public function __construct($data = NULL) {
@@ -134,6 +135,33 @@ class WorkflowEvent extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Link\WorkflowEvent\EventReference::class);
         $this->writeOneof(100, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.common.v1.Link.WorkflowEvent.RequestIdReference request_id_ref = 101;</code>
+     * @return \Temporal\Api\Common\V1\Link\WorkflowEvent\RequestIdReference|null
+     */
+    public function getRequestIdRef()
+    {
+        return $this->readOneof(101);
+    }
+
+    public function hasRequestIdRef()
+    {
+        return $this->hasOneof(101);
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.common.v1.Link.WorkflowEvent.RequestIdReference request_id_ref = 101;</code>
+     * @param \Temporal\Api\Common\V1\Link\WorkflowEvent\RequestIdReference $var
+     * @return $this
+     */
+    public function setRequestIdRef($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Link\WorkflowEvent\RequestIdReference::class);
+        $this->writeOneof(101, $var);
 
         return $this;
     }

@@ -392,6 +392,18 @@ class EventType
      * Generated from protobuf enum <code>EVENT_TYPE_WORKFLOW_EXECUTION_OPTIONS_UPDATED = 55;</code>
      */
     const EVENT_TYPE_WORKFLOW_EXECUTION_OPTIONS_UPDATED = 55;
+    /**
+     * A cancellation request for a Nexus operation was successfully delivered to the Nexus handler.
+     *
+     * Generated from protobuf enum <code>EVENT_TYPE_NEXUS_OPERATION_CANCEL_REQUEST_COMPLETED = 56;</code>
+     */
+    const EVENT_TYPE_NEXUS_OPERATION_CANCEL_REQUEST_COMPLETED = 56;
+    /**
+     * A cancellation request for a Nexus operation resulted in an error.
+     *
+     * Generated from protobuf enum <code>EVENT_TYPE_NEXUS_OPERATION_CANCEL_REQUEST_FAILED = 57;</code>
+     */
+    const EVENT_TYPE_NEXUS_OPERATION_CANCEL_REQUEST_FAILED = 57;
 
     private static $valueToName = [
         self::EVENT_TYPE_UNSPECIFIED => 'EVENT_TYPE_UNSPECIFIED',
@@ -450,6 +462,8 @@ class EventType
         self::EVENT_TYPE_NEXUS_OPERATION_TIMED_OUT => 'EVENT_TYPE_NEXUS_OPERATION_TIMED_OUT',
         self::EVENT_TYPE_NEXUS_OPERATION_CANCEL_REQUESTED => 'EVENT_TYPE_NEXUS_OPERATION_CANCEL_REQUESTED',
         self::EVENT_TYPE_WORKFLOW_EXECUTION_OPTIONS_UPDATED => 'EVENT_TYPE_WORKFLOW_EXECUTION_OPTIONS_UPDATED',
+        self::EVENT_TYPE_NEXUS_OPERATION_CANCEL_REQUEST_COMPLETED => 'EVENT_TYPE_NEXUS_OPERATION_CANCEL_REQUEST_COMPLETED',
+        self::EVENT_TYPE_NEXUS_OPERATION_CANCEL_REQUEST_FAILED => 'EVENT_TYPE_NEXUS_OPERATION_CANCEL_REQUEST_FAILED',
     ];
 
     public static function name($value)

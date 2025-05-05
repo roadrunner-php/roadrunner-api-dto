@@ -1605,4 +1605,87 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Create a new workflow rule. The rules are used to control the workflow execution.
+     * The rule will be applied to all running and new workflows in the namespace.
+     * If the rule with such ID already exist this call will fail
+     * Note: the rules are part of namespace configuration and will be stored in the namespace config.
+     * Namespace config is eventually consistent.
+     * @param \Temporal\Api\Workflowservice\V1\CreateWorkflowRuleRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function CreateWorkflowRule(\Temporal\Api\Workflowservice\V1\CreateWorkflowRuleRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/CreateWorkflowRule',
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\CreateWorkflowRuleResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * DescribeWorkflowRule return the rule specification for existing rule id.
+     * If there is no rule with such id - NOT FOUND error will be returned.
+     * @param \Temporal\Api\Workflowservice\V1\DescribeWorkflowRuleRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DescribeWorkflowRule(\Temporal\Api\Workflowservice\V1\DescribeWorkflowRuleRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/DescribeWorkflowRule',
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\DescribeWorkflowRuleResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Delete rule by rule id
+     * @param \Temporal\Api\Workflowservice\V1\DeleteWorkflowRuleRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteWorkflowRule(\Temporal\Api\Workflowservice\V1\DeleteWorkflowRuleRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/DeleteWorkflowRule',
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\DeleteWorkflowRuleResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Return all namespace workflow rules
+     * @param \Temporal\Api\Workflowservice\V1\ListWorkflowRulesRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListWorkflowRules(\Temporal\Api\Workflowservice\V1\ListWorkflowRulesRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ListWorkflowRules',
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\ListWorkflowRulesResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * TriggerWorkflowRule allows to:
+     *  * trigger existing rule for a specific workflow execution;
+     *  * trigger rule for a specific workflow execution without creating a rule;
+     * This is useful for one-off operations.
+     * @param \Temporal\Api\Workflowservice\V1\TriggerWorkflowRuleRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function TriggerWorkflowRule(\Temporal\Api\Workflowservice\V1\TriggerWorkflowRuleRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/TriggerWorkflowRule',
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\TriggerWorkflowRuleResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

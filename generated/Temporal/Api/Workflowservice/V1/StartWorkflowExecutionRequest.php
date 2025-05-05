@@ -174,6 +174,12 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.workflow.v1.OnConflictOptions on_conflict_options = 26;</code>
      */
     protected $on_conflict_options = null;
+    /**
+     * Priority metadata
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 27;</code>
+     */
+    protected $priority = null;
 
     /**
      * Constructor.
@@ -245,6 +251,8 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      *           WORKFLOW_ID_CONFLICT_POLICY_USE_EXISTING is used. If not set (ie., nil value) or set to a
      *           empty object (ie., all options with default value), it won't do anything to the existing
      *           running workflow. If set, it will add a history event to the running workflow.
+     *     @type \Temporal\Api\Common\V1\Priority $priority
+     *           Priority metadata
      * }
      */
     public function __construct($data = NULL) {
@@ -1092,6 +1100,42 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\OnConflictOptions::class);
         $this->on_conflict_options = $var;
+
+        return $this;
+    }
+
+    /**
+     * Priority metadata
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 27;</code>
+     * @return \Temporal\Api\Common\V1\Priority|null
+     */
+    public function getPriority()
+    {
+        return $this->priority;
+    }
+
+    public function hasPriority()
+    {
+        return isset($this->priority);
+    }
+
+    public function clearPriority()
+    {
+        unset($this->priority);
+    }
+
+    /**
+     * Priority metadata
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 27;</code>
+     * @param \Temporal\Api\Common\V1\Priority $var
+     * @return $this
+     */
+    public function setPriority($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Priority::class);
+        $this->priority = $var;
 
         return $this;
     }

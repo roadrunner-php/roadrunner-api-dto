@@ -47,6 +47,21 @@ class WorkflowExecutionExtendedInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp original_start_time = 5;</code>
      */
     protected $original_start_time = null;
+    /**
+     * Reset Run ID points to the new run when this execution is reset. If the execution is reset multiple times, it points to the latest run.
+     *
+     * Generated from protobuf field <code>string reset_run_id = 6;</code>
+     */
+    protected $reset_run_id = '';
+    /**
+     * Request ID information (eg: history event information associated with the request ID).
+     * Note: It only contains request IDs from StartWorkflowExecution requests, including indirect
+     * calls (eg: if SignalWithStartWorkflowExecution starts a new workflow, then the request ID is
+     * used in the StartWorkflowExecution request).
+     *
+     * Generated from protobuf field <code>map<string, .temporal.api.workflow.v1.RequestIdInfo> request_id_infos = 7;</code>
+     */
+    private $request_id_infos;
 
     /**
      * Constructor.
@@ -65,6 +80,13 @@ class WorkflowExecutionExtendedInfo extends \Google\Protobuf\Internal\Message
      *           Last workflow reset time. Nil if the workflow was never reset.
      *     @type \Google\Protobuf\Timestamp $original_start_time
      *           Original workflow start time.
+     *     @type string $reset_run_id
+     *           Reset Run ID points to the new run when this execution is reset. If the execution is reset multiple times, it points to the latest run.
+     *     @type array|\Google\Protobuf\Internal\MapField $request_id_infos
+     *           Request ID information (eg: history event information associated with the request ID).
+     *           Note: It only contains request IDs from StartWorkflowExecution requests, including indirect
+     *           calls (eg: if SignalWithStartWorkflowExecution starts a new workflow, then the request ID is
+     *           used in the StartWorkflowExecution request).
      * }
      */
     public function __construct($data = NULL) {
@@ -240,6 +262,64 @@ class WorkflowExecutionExtendedInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->original_start_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Reset Run ID points to the new run when this execution is reset. If the execution is reset multiple times, it points to the latest run.
+     *
+     * Generated from protobuf field <code>string reset_run_id = 6;</code>
+     * @return string
+     */
+    public function getResetRunId()
+    {
+        return $this->reset_run_id;
+    }
+
+    /**
+     * Reset Run ID points to the new run when this execution is reset. If the execution is reset multiple times, it points to the latest run.
+     *
+     * Generated from protobuf field <code>string reset_run_id = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setResetRunId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->reset_run_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Request ID information (eg: history event information associated with the request ID).
+     * Note: It only contains request IDs from StartWorkflowExecution requests, including indirect
+     * calls (eg: if SignalWithStartWorkflowExecution starts a new workflow, then the request ID is
+     * used in the StartWorkflowExecution request).
+     *
+     * Generated from protobuf field <code>map<string, .temporal.api.workflow.v1.RequestIdInfo> request_id_infos = 7;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getRequestIdInfos()
+    {
+        return $this->request_id_infos;
+    }
+
+    /**
+     * Request ID information (eg: history event information associated with the request ID).
+     * Note: It only contains request IDs from StartWorkflowExecution requests, including indirect
+     * calls (eg: if SignalWithStartWorkflowExecution starts a new workflow, then the request ID is
+     * used in the StartWorkflowExecution request).
+     *
+     * Generated from protobuf field <code>map<string, .temporal.api.workflow.v1.RequestIdInfo> request_id_infos = 7;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setRequestIdInfos($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Workflow\V1\RequestIdInfo::class);
+        $this->request_id_infos = $arr;
 
         return $this;
     }

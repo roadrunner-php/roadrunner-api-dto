@@ -98,6 +98,12 @@ class NewWorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 15;</code>
      */
     protected $versioning_override = null;
+    /**
+     * Priority metadata
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 16;</code>
+     */
+    protected $priority = null;
 
     /**
      * Constructor.
@@ -132,6 +138,8 @@ class NewWorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Workflow\V1\VersioningOverride $versioning_override
      *           If set, takes precedence over the Versioning Behavior sent by the SDK on Workflow Task completion.
      *           To unset the override after the workflow is running, use UpdateWorkflowExecutionOptions.
+     *     @type \Temporal\Api\Common\V1\Priority $priority
+     *           Priority metadata
      * }
      */
     public function __construct($data = NULL) {
@@ -627,6 +635,42 @@ class NewWorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\VersioningOverride::class);
         $this->versioning_override = $var;
+
+        return $this;
+    }
+
+    /**
+     * Priority metadata
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 16;</code>
+     * @return \Temporal\Api\Common\V1\Priority|null
+     */
+    public function getPriority()
+    {
+        return $this->priority;
+    }
+
+    public function hasPriority()
+    {
+        return isset($this->priority);
+    }
+
+    public function clearPriority()
+    {
+        unset($this->priority);
+    }
+
+    /**
+     * Priority metadata
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 16;</code>
+     * @param \Temporal\Api\Common\V1\Priority $var
+     * @return $this
+     */
+    public function setPriority($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Priority::class);
+        $this->priority = $var;
 
         return $this;
     }

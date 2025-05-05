@@ -112,6 +112,16 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string last_worker_deployment_version = 21;</code>
      */
     protected $last_worker_deployment_version = '';
+    /**
+     * Priority metadata
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 22;</code>
+     */
+    protected $priority = null;
+    /**
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.PendingActivityInfo.PauseInfo pause_info = 23;</code>
+     */
+    protected $pause_info = null;
     protected $assigned_build_id;
 
     /**
@@ -160,6 +170,9 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      *           Deprecated. Use `last_worker_deployment_version`.
      *     @type string $last_worker_deployment_version
      *           The Worker Deployment Version this activity was dispatched to most recently.
+     *     @type \Temporal\Api\Common\V1\Priority $priority
+     *           Priority metadata
+     *     @type \Temporal\Api\Workflow\V1\PendingActivityInfo\PauseInfo $pause_info
      * }
      */
     public function __construct($data = NULL) {
@@ -821,6 +834,74 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->last_worker_deployment_version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Priority metadata
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 22;</code>
+     * @return \Temporal\Api\Common\V1\Priority|null
+     */
+    public function getPriority()
+    {
+        return $this->priority;
+    }
+
+    public function hasPriority()
+    {
+        return isset($this->priority);
+    }
+
+    public function clearPriority()
+    {
+        unset($this->priority);
+    }
+
+    /**
+     * Priority metadata
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 22;</code>
+     * @param \Temporal\Api\Common\V1\Priority $var
+     * @return $this
+     */
+    public function setPriority($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Priority::class);
+        $this->priority = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.PendingActivityInfo.PauseInfo pause_info = 23;</code>
+     * @return \Temporal\Api\Workflow\V1\PendingActivityInfo\PauseInfo|null
+     */
+    public function getPauseInfo()
+    {
+        return $this->pause_info;
+    }
+
+    public function hasPauseInfo()
+    {
+        return isset($this->pause_info);
+    }
+
+    public function clearPauseInfo()
+    {
+        unset($this->pause_info);
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.PendingActivityInfo.PauseInfo pause_info = 23;</code>
+     * @param \Temporal\Api\Workflow\V1\PendingActivityInfo\PauseInfo $var
+     * @return $this
+     */
+    public function setPauseInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\PendingActivityInfo\PauseInfo::class);
+        $this->pause_info = $var;
 
         return $this;
     }

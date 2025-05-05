@@ -32,6 +32,12 @@ class PauseActivityRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string identity = 3;</code>
      */
     protected $identity = '';
+    /**
+     * Reason to pause the activity.
+     *
+     * Generated from protobuf field <code>string reason = 6;</code>
+     */
+    protected $reason = '';
     protected $activity;
 
     /**
@@ -50,6 +56,8 @@ class PauseActivityRequest extends \Google\Protobuf\Internal\Message
      *           Only the activity with this ID will be paused.
      *     @type string $type
      *           Pause all running activities of this type.
+     *     @type string $reason
+     *           Reason to pause the activity.
      * }
      */
     public function __construct($data = NULL) {
@@ -203,6 +211,32 @@ class PauseActivityRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
+     * Reason to pause the activity.
+     *
+     * Generated from protobuf field <code>string reason = 6;</code>
+     * @return string
+     */
+    public function getReason()
+    {
+        return $this->reason;
+    }
+
+    /**
+     * Reason to pause the activity.
+     *
+     * Generated from protobuf field <code>string reason = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setReason($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->reason = $var;
 
         return $this;
     }
