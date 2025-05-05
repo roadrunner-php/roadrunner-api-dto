@@ -49,10 +49,18 @@ class RespondActivityTaskCanceledRequest extends \Google\Protobuf\Internal\Messa
     /**
      * Deployment info of the worker that completed this task. Must be present if user has set
      * `WorkerDeploymentOptions` regardless of versioning being enabled or not.
+     * Deprecated. Replaced with `deployment_options`.
      *
-     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 6;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 6 [deprecated = true];</code>
+     * @deprecated
      */
     protected $deployment = null;
+    /**
+     * Worker deployment options that user has set in the worker.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentOptions deployment_options = 7;</code>
+     */
+    protected $deployment_options = null;
 
     /**
      * Constructor.
@@ -75,6 +83,9 @@ class RespondActivityTaskCanceledRequest extends \Google\Protobuf\Internal\Messa
      *     @type \Temporal\Api\Deployment\V1\Deployment $deployment
      *           Deployment info of the worker that completed this task. Must be present if user has set
      *           `WorkerDeploymentOptions` regardless of versioning being enabled or not.
+     *           Deprecated. Replaced with `deployment_options`.
+     *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentOptions $deployment_options
+     *           Worker deployment options that user has set in the worker.
      * }
      */
     public function __construct($data = NULL) {
@@ -247,37 +258,85 @@ class RespondActivityTaskCanceledRequest extends \Google\Protobuf\Internal\Messa
     /**
      * Deployment info of the worker that completed this task. Must be present if user has set
      * `WorkerDeploymentOptions` regardless of versioning being enabled or not.
+     * Deprecated. Replaced with `deployment_options`.
      *
-     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 6;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 6 [deprecated = true];</code>
      * @return \Temporal\Api\Deployment\V1\Deployment|null
+     * @deprecated
      */
     public function getDeployment()
     {
+        if (isset($this->deployment)) {
+            @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->deployment;
     }
 
     public function hasDeployment()
     {
+        if (isset($this->deployment)) {
+            @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
+        }
         return isset($this->deployment);
     }
 
     public function clearDeployment()
     {
+        @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
         unset($this->deployment);
     }
 
     /**
      * Deployment info of the worker that completed this task. Must be present if user has set
      * `WorkerDeploymentOptions` regardless of versioning being enabled or not.
+     * Deprecated. Replaced with `deployment_options`.
      *
-     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 6;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 6 [deprecated = true];</code>
      * @param \Temporal\Api\Deployment\V1\Deployment $var
      * @return $this
+     * @deprecated
      */
     public function setDeployment($var)
     {
+        @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\Deployment::class);
         $this->deployment = $var;
+
+        return $this;
+    }
+
+    /**
+     * Worker deployment options that user has set in the worker.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentOptions deployment_options = 7;</code>
+     * @return \Temporal\Api\Deployment\V1\WorkerDeploymentOptions|null
+     */
+    public function getDeploymentOptions()
+    {
+        return $this->deployment_options;
+    }
+
+    public function hasDeploymentOptions()
+    {
+        return isset($this->deployment_options);
+    }
+
+    public function clearDeploymentOptions()
+    {
+        unset($this->deployment_options);
+    }
+
+    /**
+     * Worker deployment options that user has set in the worker.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentOptions deployment_options = 7;</code>
+     * @param \Temporal\Api\Deployment\V1\WorkerDeploymentOptions $var
+     * @return $this
+     */
+    public function setDeploymentOptions($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentOptions::class);
+        $this->deployment_options = $var;
 
         return $this;
     }

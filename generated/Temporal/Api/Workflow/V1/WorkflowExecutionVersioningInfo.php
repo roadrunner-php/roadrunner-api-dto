@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Holds all the information about versioning for a workflow execution.
+ * Holds all the information about worker versioning for a particular workflow execution.
  * Experimental. Versioning info is experimental and might change in the future.
  *
  * Generated from protobuf message <code>temporal.api.workflow.v1.WorkflowExecutionVersioningInfo</code>
@@ -24,6 +24,10 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * behaviors.
      * This field is first set after an execution completes its first workflow task on a versioned
      * worker, and set again on completion of every subsequent workflow task.
+     * For child workflows of Pinned parents, this will be set to Pinned (along with `version`) when
+     * the the child starts so that child's first workflow task goes to the same Version as the
+     * parent. After the first workflow task, it depends on the child workflow itself if it wants
+     * to stay pinned or become unpinned (according to Versioning Behavior set in the worker).
      * Note that `behavior` is overridden by `versioning_override` if the latter is present.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.VersioningBehavior behavior = 1;</code>
@@ -36,15 +40,31 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * a deployment value which will be stored here, so the right way to check if an execution is
      * versioned if an execution is versioned or not is via the `behavior` field.
      * Note that `deployment` is overridden by `versioning_override` if the latter is present.
+     * Deprecated. Use `version`.
      *
-     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 2;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $deployment = null;
     /**
+     * The Worker Deployment Version that completed the last workflow task of this workflow
+     * execution, in the form "<deployment_name>.<build_id>".
+     * Must be present if and only if `behavior` is set. An absent value means no workflow task is
+     * completed, or the workflow is unversioned.
+     * For child workflows of Pinned parents, this will be set to parent's Pinned Version when the
+     * the child starts so that child's first workflow task goes to the same Version as the parent.
+     * Note that if `versioning_override.behavior` is PINNED then `versioning_override.pinned_version`
+     * will override this value.
+     *
+     * Generated from protobuf field <code>string version = 5;</code>
+     */
+    protected $version = '';
+    /**
      * Present if user has set an execution-specific versioning override. This override takes
-     * precedence over SDK-sent `behavior` (and `deployment` when override is PINNED). An override
-     * can be set when starting a new execution, as well as afterwards by calling the
+     * precedence over SDK-sent `behavior` (and `version` when override is PINNED). An
+     * override can be set when starting a new execution, as well as afterwards by calling the
      * `UpdateWorkflowExecutionOptions` API.
+     * Pinned overrides are automatically inherited by child workflows.
      *
      * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 3;</code>
      */
@@ -67,10 +87,35 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * the worker's task completion response.
      * Pending activities will not start new attempts during a transition. Once the transition is
      * completed, pending activities will start their next attempt on the new deployment.
+     * Deprecated. Use version_transition.
      *
-     * Generated from protobuf field <code>.temporal.api.workflow.v1.DeploymentTransition deployment_transition = 4;</code>
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.DeploymentTransition deployment_transition = 4 [deprecated = true];</code>
+     * @deprecated
      */
     protected $deployment_transition = null;
+    /**
+     * When present, indicates the workflow is transitioning to a different deployment version
+     * (which may belong to the same deployment name or another). Can indicate one of the following
+     * transitions: unversioned -> versioned, versioned -> versioned
+     * on a different deployment version, or versioned -> unversioned.
+     * Not applicable to workflows with PINNED behavior.
+     * When a workflow with AUTO_UPGRADE behavior creates a new workflow task, it will automatically
+     * start a transition to the task queue's current version if the task queue's current version is
+     * different from the workflow's current deployment version.
+     * If the AUTO_UPGRADE workflow is stuck due to backlogged activity or workflow tasks, those
+     * tasks will be redirected to the task queue's current version. As soon as a poller from
+     * that deployment version is available to receive the task, the workflow will automatically
+     * start a transition to that version and continue execution there.
+     * A version transition can only exist while there is a pending or started workflow task.
+     * Once the pending workflow task completes on the transition's target version, the
+     * transition completes and the workflow's `behavior`, and `version` fields are updated per the
+     * worker's task completion response.
+     * Pending activities will not start new attempts during a transition. Once the transition is
+     * completed, pending activities will start their next attempt on the new version.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.DeploymentVersionTransition version_transition = 6;</code>
+     */
+    protected $version_transition = null;
 
     /**
      * Constructor.
@@ -85,6 +130,10 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      *           behaviors.
      *           This field is first set after an execution completes its first workflow task on a versioned
      *           worker, and set again on completion of every subsequent workflow task.
+     *           For child workflows of Pinned parents, this will be set to Pinned (along with `version`) when
+     *           the the child starts so that child's first workflow task goes to the same Version as the
+     *           parent. After the first workflow task, it depends on the child workflow itself if it wants
+     *           to stay pinned or become unpinned (according to Versioning Behavior set in the worker).
      *           Note that `behavior` is overridden by `versioning_override` if the latter is present.
      *     @type \Temporal\Api\Deployment\V1\Deployment $deployment
      *           The worker deployment that completed the last workflow task of this workflow execution. Must
@@ -93,11 +142,22 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      *           a deployment value which will be stored here, so the right way to check if an execution is
      *           versioned if an execution is versioned or not is via the `behavior` field.
      *           Note that `deployment` is overridden by `versioning_override` if the latter is present.
+     *           Deprecated. Use `version`.
+     *     @type string $version
+     *           The Worker Deployment Version that completed the last workflow task of this workflow
+     *           execution, in the form "<deployment_name>.<build_id>".
+     *           Must be present if and only if `behavior` is set. An absent value means no workflow task is
+     *           completed, or the workflow is unversioned.
+     *           For child workflows of Pinned parents, this will be set to parent's Pinned Version when the
+     *           the child starts so that child's first workflow task goes to the same Version as the parent.
+     *           Note that if `versioning_override.behavior` is PINNED then `versioning_override.pinned_version`
+     *           will override this value.
      *     @type \Temporal\Api\Workflow\V1\VersioningOverride $versioning_override
      *           Present if user has set an execution-specific versioning override. This override takes
-     *           precedence over SDK-sent `behavior` (and `deployment` when override is PINNED). An override
-     *           can be set when starting a new execution, as well as afterwards by calling the
+     *           precedence over SDK-sent `behavior` (and `version` when override is PINNED). An
+     *           override can be set when starting a new execution, as well as afterwards by calling the
      *           `UpdateWorkflowExecutionOptions` API.
+     *           Pinned overrides are automatically inherited by child workflows.
      *     @type \Temporal\Api\Workflow\V1\DeploymentTransition $deployment_transition
      *           When present, indicates the workflow is transitioning to a different deployment. Can
      *           indicate one of the following transitions: unversioned -> versioned, versioned -> versioned
@@ -116,6 +176,26 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      *           the worker's task completion response.
      *           Pending activities will not start new attempts during a transition. Once the transition is
      *           completed, pending activities will start their next attempt on the new deployment.
+     *           Deprecated. Use version_transition.
+     *     @type \Temporal\Api\Workflow\V1\DeploymentVersionTransition $version_transition
+     *           When present, indicates the workflow is transitioning to a different deployment version
+     *           (which may belong to the same deployment name or another). Can indicate one of the following
+     *           transitions: unversioned -> versioned, versioned -> versioned
+     *           on a different deployment version, or versioned -> unversioned.
+     *           Not applicable to workflows with PINNED behavior.
+     *           When a workflow with AUTO_UPGRADE behavior creates a new workflow task, it will automatically
+     *           start a transition to the task queue's current version if the task queue's current version is
+     *           different from the workflow's current deployment version.
+     *           If the AUTO_UPGRADE workflow is stuck due to backlogged activity or workflow tasks, those
+     *           tasks will be redirected to the task queue's current version. As soon as a poller from
+     *           that deployment version is available to receive the task, the workflow will automatically
+     *           start a transition to that version and continue execution there.
+     *           A version transition can only exist while there is a pending or started workflow task.
+     *           Once the pending workflow task completes on the transition's target version, the
+     *           transition completes and the workflow's `behavior`, and `version` fields are updated per the
+     *           worker's task completion response.
+     *           Pending activities will not start new attempts during a transition. Once the transition is
+     *           completed, pending activities will start their next attempt on the new version.
      * }
      */
     public function __construct($data = NULL) {
@@ -130,6 +210,10 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * behaviors.
      * This field is first set after an execution completes its first workflow task on a versioned
      * worker, and set again on completion of every subsequent workflow task.
+     * For child workflows of Pinned parents, this will be set to Pinned (along with `version`) when
+     * the the child starts so that child's first workflow task goes to the same Version as the
+     * parent. After the first workflow task, it depends on the child workflow itself if it wants
+     * to stay pinned or become unpinned (according to Versioning Behavior set in the worker).
      * Note that `behavior` is overridden by `versioning_override` if the latter is present.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.VersioningBehavior behavior = 1;</code>
@@ -147,6 +231,10 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * behaviors.
      * This field is first set after an execution completes its first workflow task on a versioned
      * worker, and set again on completion of every subsequent workflow task.
+     * For child workflows of Pinned parents, this will be set to Pinned (along with `version`) when
+     * the the child starts so that child's first workflow task goes to the same Version as the
+     * parent. After the first workflow task, it depends on the child workflow itself if it wants
+     * to stay pinned or become unpinned (according to Versioning Behavior set in the worker).
      * Note that `behavior` is overridden by `versioning_override` if the latter is present.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.VersioningBehavior behavior = 1;</code>
@@ -168,22 +256,31 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * a deployment value which will be stored here, so the right way to check if an execution is
      * versioned if an execution is versioned or not is via the `behavior` field.
      * Note that `deployment` is overridden by `versioning_override` if the latter is present.
+     * Deprecated. Use `version`.
      *
-     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 2;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 2 [deprecated = true];</code>
      * @return \Temporal\Api\Deployment\V1\Deployment|null
+     * @deprecated
      */
     public function getDeployment()
     {
+        if (isset($this->deployment)) {
+            @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->deployment;
     }
 
     public function hasDeployment()
     {
+        if (isset($this->deployment)) {
+            @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
+        }
         return isset($this->deployment);
     }
 
     public function clearDeployment()
     {
+        @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
         unset($this->deployment);
     }
 
@@ -194,13 +291,16 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * a deployment value which will be stored here, so the right way to check if an execution is
      * versioned if an execution is versioned or not is via the `behavior` field.
      * Note that `deployment` is overridden by `versioning_override` if the latter is present.
+     * Deprecated. Use `version`.
      *
-     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 2;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 2 [deprecated = true];</code>
      * @param \Temporal\Api\Deployment\V1\Deployment $var
      * @return $this
+     * @deprecated
      */
     public function setDeployment($var)
     {
+        @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\Deployment::class);
         $this->deployment = $var;
 
@@ -208,10 +308,51 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The Worker Deployment Version that completed the last workflow task of this workflow
+     * execution, in the form "<deployment_name>.<build_id>".
+     * Must be present if and only if `behavior` is set. An absent value means no workflow task is
+     * completed, or the workflow is unversioned.
+     * For child workflows of Pinned parents, this will be set to parent's Pinned Version when the
+     * the child starts so that child's first workflow task goes to the same Version as the parent.
+     * Note that if `versioning_override.behavior` is PINNED then `versioning_override.pinned_version`
+     * will override this value.
+     *
+     * Generated from protobuf field <code>string version = 5;</code>
+     * @return string
+     */
+    public function getVersion()
+    {
+        return $this->version;
+    }
+
+    /**
+     * The Worker Deployment Version that completed the last workflow task of this workflow
+     * execution, in the form "<deployment_name>.<build_id>".
+     * Must be present if and only if `behavior` is set. An absent value means no workflow task is
+     * completed, or the workflow is unversioned.
+     * For child workflows of Pinned parents, this will be set to parent's Pinned Version when the
+     * the child starts so that child's first workflow task goes to the same Version as the parent.
+     * Note that if `versioning_override.behavior` is PINNED then `versioning_override.pinned_version`
+     * will override this value.
+     *
+     * Generated from protobuf field <code>string version = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVersion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->version = $var;
+
+        return $this;
+    }
+
+    /**
      * Present if user has set an execution-specific versioning override. This override takes
-     * precedence over SDK-sent `behavior` (and `deployment` when override is PINNED). An override
-     * can be set when starting a new execution, as well as afterwards by calling the
+     * precedence over SDK-sent `behavior` (and `version` when override is PINNED). An
+     * override can be set when starting a new execution, as well as afterwards by calling the
      * `UpdateWorkflowExecutionOptions` API.
+     * Pinned overrides are automatically inherited by child workflows.
      *
      * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 3;</code>
      * @return \Temporal\Api\Workflow\V1\VersioningOverride|null
@@ -233,9 +374,10 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Present if user has set an execution-specific versioning override. This override takes
-     * precedence over SDK-sent `behavior` (and `deployment` when override is PINNED). An override
-     * can be set when starting a new execution, as well as afterwards by calling the
+     * precedence over SDK-sent `behavior` (and `version` when override is PINNED). An
+     * override can be set when starting a new execution, as well as afterwards by calling the
      * `UpdateWorkflowExecutionOptions` API.
+     * Pinned overrides are automatically inherited by child workflows.
      *
      * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 3;</code>
      * @param \Temporal\Api\Workflow\V1\VersioningOverride $var
@@ -267,22 +409,31 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * the worker's task completion response.
      * Pending activities will not start new attempts during a transition. Once the transition is
      * completed, pending activities will start their next attempt on the new deployment.
+     * Deprecated. Use version_transition.
      *
-     * Generated from protobuf field <code>.temporal.api.workflow.v1.DeploymentTransition deployment_transition = 4;</code>
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.DeploymentTransition deployment_transition = 4 [deprecated = true];</code>
      * @return \Temporal\Api\Workflow\V1\DeploymentTransition|null
+     * @deprecated
      */
     public function getDeploymentTransition()
     {
+        if (isset($this->deployment_transition)) {
+            @trigger_error('deployment_transition is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->deployment_transition;
     }
 
     public function hasDeploymentTransition()
     {
+        if (isset($this->deployment_transition)) {
+            @trigger_error('deployment_transition is deprecated.', E_USER_DEPRECATED);
+        }
         return isset($this->deployment_transition);
     }
 
     public function clearDeploymentTransition()
     {
+        @trigger_error('deployment_transition is deprecated.', E_USER_DEPRECATED);
         unset($this->deployment_transition);
     }
 
@@ -304,15 +455,88 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * the worker's task completion response.
      * Pending activities will not start new attempts during a transition. Once the transition is
      * completed, pending activities will start their next attempt on the new deployment.
+     * Deprecated. Use version_transition.
      *
-     * Generated from protobuf field <code>.temporal.api.workflow.v1.DeploymentTransition deployment_transition = 4;</code>
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.DeploymentTransition deployment_transition = 4 [deprecated = true];</code>
      * @param \Temporal\Api\Workflow\V1\DeploymentTransition $var
      * @return $this
+     * @deprecated
      */
     public function setDeploymentTransition($var)
     {
+        @trigger_error('deployment_transition is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\DeploymentTransition::class);
         $this->deployment_transition = $var;
+
+        return $this;
+    }
+
+    /**
+     * When present, indicates the workflow is transitioning to a different deployment version
+     * (which may belong to the same deployment name or another). Can indicate one of the following
+     * transitions: unversioned -> versioned, versioned -> versioned
+     * on a different deployment version, or versioned -> unversioned.
+     * Not applicable to workflows with PINNED behavior.
+     * When a workflow with AUTO_UPGRADE behavior creates a new workflow task, it will automatically
+     * start a transition to the task queue's current version if the task queue's current version is
+     * different from the workflow's current deployment version.
+     * If the AUTO_UPGRADE workflow is stuck due to backlogged activity or workflow tasks, those
+     * tasks will be redirected to the task queue's current version. As soon as a poller from
+     * that deployment version is available to receive the task, the workflow will automatically
+     * start a transition to that version and continue execution there.
+     * A version transition can only exist while there is a pending or started workflow task.
+     * Once the pending workflow task completes on the transition's target version, the
+     * transition completes and the workflow's `behavior`, and `version` fields are updated per the
+     * worker's task completion response.
+     * Pending activities will not start new attempts during a transition. Once the transition is
+     * completed, pending activities will start their next attempt on the new version.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.DeploymentVersionTransition version_transition = 6;</code>
+     * @return \Temporal\Api\Workflow\V1\DeploymentVersionTransition|null
+     */
+    public function getVersionTransition()
+    {
+        return $this->version_transition;
+    }
+
+    public function hasVersionTransition()
+    {
+        return isset($this->version_transition);
+    }
+
+    public function clearVersionTransition()
+    {
+        unset($this->version_transition);
+    }
+
+    /**
+     * When present, indicates the workflow is transitioning to a different deployment version
+     * (which may belong to the same deployment name or another). Can indicate one of the following
+     * transitions: unversioned -> versioned, versioned -> versioned
+     * on a different deployment version, or versioned -> unversioned.
+     * Not applicable to workflows with PINNED behavior.
+     * When a workflow with AUTO_UPGRADE behavior creates a new workflow task, it will automatically
+     * start a transition to the task queue's current version if the task queue's current version is
+     * different from the workflow's current deployment version.
+     * If the AUTO_UPGRADE workflow is stuck due to backlogged activity or workflow tasks, those
+     * tasks will be redirected to the task queue's current version. As soon as a poller from
+     * that deployment version is available to receive the task, the workflow will automatically
+     * start a transition to that version and continue execution there.
+     * A version transition can only exist while there is a pending or started workflow task.
+     * Once the pending workflow task completes on the transition's target version, the
+     * transition completes and the workflow's `behavior`, and `version` fields are updated per the
+     * worker's task completion response.
+     * Pending activities will not start new attempts during a transition. Once the transition is
+     * completed, pending activities will start their next attempt on the new version.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.DeploymentVersionTransition version_transition = 6;</code>
+     * @param \Temporal\Api\Workflow\V1\DeploymentVersionTransition $var
+     * @return $this
+     */
+    public function setVersionTransition($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\DeploymentVersionTransition::class);
+        $this->version_transition = $var;
 
         return $this;
     }

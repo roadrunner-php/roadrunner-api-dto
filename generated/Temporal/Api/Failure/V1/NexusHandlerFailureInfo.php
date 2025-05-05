@@ -21,6 +21,12 @@ class NexusHandlerFailureInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string type = 1;</code>
      */
     protected $type = '';
+    /**
+     * Retry behavior, defaults to the retry behavior of the error type as defined in the spec.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.NexusHandlerErrorRetryBehavior retry_behavior = 2;</code>
+     */
+    protected $retry_behavior = 0;
 
     /**
      * Constructor.
@@ -31,6 +37,8 @@ class NexusHandlerFailureInfo extends \Google\Protobuf\Internal\Message
      *     @type string $type
      *           The Nexus error type as defined in the spec:
      *           https://github.com/nexus-rpc/api/blob/main/SPEC.md#predefined-handler-errors.
+     *     @type int $retry_behavior
+     *           Retry behavior, defaults to the retry behavior of the error type as defined in the spec.
      * }
      */
     public function __construct($data = NULL) {
@@ -62,6 +70,32 @@ class NexusHandlerFailureInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Retry behavior, defaults to the retry behavior of the error type as defined in the spec.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.NexusHandlerErrorRetryBehavior retry_behavior = 2;</code>
+     * @return int
+     */
+    public function getRetryBehavior()
+    {
+        return $this->retry_behavior;
+    }
+
+    /**
+     * Retry behavior, defaults to the retry behavior of the error type as defined in the spec.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.NexusHandlerErrorRetryBehavior retry_behavior = 2;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRetryBehavior($var)
+    {
+        GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\NexusHandlerErrorRetryBehavior::class);
+        $this->retry_behavior = $var;
 
         return $this;
     }

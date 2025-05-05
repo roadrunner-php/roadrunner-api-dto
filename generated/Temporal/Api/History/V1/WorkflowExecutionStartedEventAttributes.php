@@ -219,6 +219,16 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 33;</code>
      */
     protected $versioning_override = null;
+    /**
+     * When present, it means this is a child workflow of a parent that is Pinned to this Worker
+     * Deployment Version. In this case, child workflow will start as Pinned to this Version instead
+     * of starting on the Current Version of its Task Queue.
+     * This is set only if the child workflow is starting on a Task Queue belonging to the same
+     * Worker Deployment Version.
+     *
+     * Generated from protobuf field <code>string parent_pinned_worker_deployment_version = 34;</code>
+     */
+    protected $parent_pinned_worker_deployment_version = '';
 
     /**
      * Constructor.
@@ -308,6 +318,12 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      *           Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *     @type \Temporal\Api\Workflow\V1\VersioningOverride $versioning_override
      *           Versioning override applied to this workflow when it was started.
+     *     @type string $parent_pinned_worker_deployment_version
+     *           When present, it means this is a child workflow of a parent that is Pinned to this Worker
+     *           Deployment Version. In this case, child workflow will start as Pinned to this Version instead
+     *           of starting on the Current Version of its Task Queue.
+     *           This is set only if the child workflow is starting on a Task Queue belonging to the same
+     *           Worker Deployment Version.
      * }
      */
     public function __construct($data = NULL) {
@@ -1369,6 +1385,40 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\VersioningOverride::class);
         $this->versioning_override = $var;
+
+        return $this;
+    }
+
+    /**
+     * When present, it means this is a child workflow of a parent that is Pinned to this Worker
+     * Deployment Version. In this case, child workflow will start as Pinned to this Version instead
+     * of starting on the Current Version of its Task Queue.
+     * This is set only if the child workflow is starting on a Task Queue belonging to the same
+     * Worker Deployment Version.
+     *
+     * Generated from protobuf field <code>string parent_pinned_worker_deployment_version = 34;</code>
+     * @return string
+     */
+    public function getParentPinnedWorkerDeploymentVersion()
+    {
+        return $this->parent_pinned_worker_deployment_version;
+    }
+
+    /**
+     * When present, it means this is a child workflow of a parent that is Pinned to this Worker
+     * Deployment Version. In this case, child workflow will start as Pinned to this Version instead
+     * of starting on the Current Version of its Task Queue.
+     * This is set only if the child workflow is starting on a Task Queue belonging to the same
+     * Worker Deployment Version.
+     *
+     * Generated from protobuf field <code>string parent_pinned_worker_deployment_version = 34;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setParentPinnedWorkerDeploymentVersion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->parent_pinned_worker_deployment_version = $var;
 
         return $this;
     }

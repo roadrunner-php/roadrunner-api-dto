@@ -11,6 +11,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Used as part of Deployment write APIs to update metadata attached to a deployment.
+ * Deprecated.
  *
  * Generated from protobuf message <code>temporal.api.deployment.v1.UpdateDeploymentMetadata</code>
  */

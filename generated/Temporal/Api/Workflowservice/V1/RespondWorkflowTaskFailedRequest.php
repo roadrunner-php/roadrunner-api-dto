@@ -69,10 +69,17 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
     /**
      * Deployment info of the worker that completed this task. Must be present if user has set
      * `WorkerDeploymentOptions` regardless of versioning being enabled or not.
+     * Deprecated. Replaced with `deployment_options`.
      *
      * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 9;</code>
      */
     protected $deployment = null;
+    /**
+     * Worker deployment options that user has set in the worker.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentOptions deployment_options = 10;</code>
+     */
+    protected $deployment_options = null;
 
     /**
      * Constructor.
@@ -103,6 +110,9 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Deployment\V1\Deployment $deployment
      *           Deployment info of the worker that completed this task. Must be present if user has set
      *           `WorkerDeploymentOptions` regardless of versioning being enabled or not.
+     *           Deprecated. Replaced with `deployment_options`.
+     *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentOptions $deployment_options
+     *           Worker deployment options that user has set in the worker.
      * }
      */
     public function __construct($data = NULL) {
@@ -357,6 +367,7 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
     /**
      * Deployment info of the worker that completed this task. Must be present if user has set
      * `WorkerDeploymentOptions` regardless of versioning being enabled or not.
+     * Deprecated. Replaced with `deployment_options`.
      *
      * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 9;</code>
      * @return \Temporal\Api\Deployment\V1\Deployment|null
@@ -379,6 +390,7 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
     /**
      * Deployment info of the worker that completed this task. Must be present if user has set
      * `WorkerDeploymentOptions` regardless of versioning being enabled or not.
+     * Deprecated. Replaced with `deployment_options`.
      *
      * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 9;</code>
      * @param \Temporal\Api\Deployment\V1\Deployment $var
@@ -388,6 +400,42 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\Deployment::class);
         $this->deployment = $var;
+
+        return $this;
+    }
+
+    /**
+     * Worker deployment options that user has set in the worker.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentOptions deployment_options = 10;</code>
+     * @return \Temporal\Api\Deployment\V1\WorkerDeploymentOptions|null
+     */
+    public function getDeploymentOptions()
+    {
+        return $this->deployment_options;
+    }
+
+    public function hasDeploymentOptions()
+    {
+        return isset($this->deployment_options);
+    }
+
+    public function clearDeploymentOptions()
+    {
+        unset($this->deployment_options);
+    }
+
+    /**
+     * Worker deployment options that user has set in the worker.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentOptions deployment_options = 10;</code>
+     * @param \Temporal\Api\Deployment\V1\WorkerDeploymentOptions $var
+     * @return $this
+     */
+    public function setDeploymentOptions($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentOptions::class);
+        $this->deployment_options = $var;
 
         return $this;
     }

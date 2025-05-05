@@ -657,6 +657,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     /**
      * ScanWorkflowExecutions is a visibility API to list large amount of workflow executions in a specific namespace without order.
      *
+     * Deprecated: Replaced with `ListWorkflowExecutions`.
      * (-- api-linter: core::0127::http-annotation=disabled
      *     aip.dev/not-precedent: HTTP users should use ListWorkflowExecutions instead. --)
      * @param \Temporal\Api\Workflowservice\V1\ScanWorkflowExecutionsRequest $argument input argument
@@ -1113,6 +1114,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     /**
      * Describes a worker deployment.
      * Experimental. This API might significantly change or be removed in a future release.
+     * Deprecated. Replaced with `DescribeWorkerDeploymentVersion`.
      * @param \Temporal\Api\Workflowservice\V1\DescribeDeploymentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -1127,9 +1129,26 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * Describes a worker deployment version.
+     * Experimental. This API might significantly change or be removed in a future release.
+     * @param \Temporal\Api\Workflowservice\V1\DescribeWorkerDeploymentVersionRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DescribeWorkerDeploymentVersion(\Temporal\Api\Workflowservice\V1\DescribeWorkerDeploymentVersionRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/DescribeWorkerDeploymentVersion',
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\DescribeWorkerDeploymentVersionResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Lists worker deployments in the namespace. Optionally can filter based on deployment series
      * name.
      * Experimental. This API might significantly change or be removed in a future release.
+     * Deprecated. Replaced with `ListWorkerDeployments`.
      * @param \Temporal\Api\Workflowservice\V1\ListDeploymentsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -1151,6 +1170,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * cached value. In such a case, the `last_update_time` will inform you about the actual
      * reachability calculation time.
      * Experimental. This API might significantly change or be removed in a future release.
+     * Deprecated. Replaced with `DrainageInfo` returned by `DescribeWorkerDeploymentVersion`.
      * @param \Temporal\Api\Workflowservice\V1\GetDeploymentReachabilityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -1167,6 +1187,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     /**
      * Returns the current deployment (and its info) for a given deployment series.
      * Experimental. This API might significantly change or be removed in a future release.
+     * Deprecated. Replaced by `current_version` returned by `DescribeWorkerDeployment`.
      * @param \Temporal\Api\Workflowservice\V1\GetCurrentDeploymentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -1184,6 +1205,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * Sets a deployment as the current deployment for its deployment series. Can optionally update
      * the metadata of the deployment as well.
      * Experimental. This API might significantly change or be removed in a future release.
+     * Deprecated. Replaced by `SetWorkerDeploymentCurrentVersion`.
      * @param \Temporal\Api\Workflowservice\V1\SetCurrentDeploymentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -1194,6 +1216,126 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/SetCurrentDeployment',
         $argument,
         ['\Temporal\Api\Workflowservice\V1\SetCurrentDeploymentResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Set/unset the Current Version of a Worker Deployment. Automatically unsets the Ramping
+     * Version if it is the Version being set as Current.
+     * Experimental. This API might significantly change or be removed in a future release.
+     * @param \Temporal\Api\Workflowservice\V1\SetWorkerDeploymentCurrentVersionRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function SetWorkerDeploymentCurrentVersion(\Temporal\Api\Workflowservice\V1\SetWorkerDeploymentCurrentVersionRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/SetWorkerDeploymentCurrentVersion',
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\SetWorkerDeploymentCurrentVersionResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Describes a Worker Deployment.
+     * Experimental. This API might significantly change or be removed in a future release.
+     * @param \Temporal\Api\Workflowservice\V1\DescribeWorkerDeploymentRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DescribeWorkerDeployment(\Temporal\Api\Workflowservice\V1\DescribeWorkerDeploymentRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/DescribeWorkerDeployment',
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\DescribeWorkerDeploymentResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Deletes records of (an old) Deployment. A deployment can only be deleted if
+     * it has no Version in it.
+     * Experimental. This API might significantly change or be removed in a future release.
+     * @param \Temporal\Api\Workflowservice\V1\DeleteWorkerDeploymentRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteWorkerDeployment(\Temporal\Api\Workflowservice\V1\DeleteWorkerDeploymentRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/DeleteWorkerDeployment',
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\DeleteWorkerDeploymentResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Used for manual deletion of Versions. User can delete a Version only when all the
+     * following conditions are met:
+     *  - It is not the Current or Ramping Version of its Deployment.
+     *  - It has no active pollers (none of the task queues in the Version have pollers)
+     *  - It is not draining (see WorkerDeploymentVersionInfo.drainage_info). This condition
+     *    can be skipped by passing `skip-drainage=true`.
+     * Experimental. This API might significantly change or be removed in a future release.
+     * @param \Temporal\Api\Workflowservice\V1\DeleteWorkerDeploymentVersionRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteWorkerDeploymentVersion(\Temporal\Api\Workflowservice\V1\DeleteWorkerDeploymentVersionRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/DeleteWorkerDeploymentVersion',
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\DeleteWorkerDeploymentVersionResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Set/unset the Ramping Version of a Worker Deployment and its ramp percentage. Can be used for
+     * gradual ramp to unversioned workers too.
+     * Experimental. This API might significantly change or be removed in a future release.
+     * @param \Temporal\Api\Workflowservice\V1\SetWorkerDeploymentRampingVersionRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function SetWorkerDeploymentRampingVersion(\Temporal\Api\Workflowservice\V1\SetWorkerDeploymentRampingVersionRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/SetWorkerDeploymentRampingVersion',
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\SetWorkerDeploymentRampingVersionResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Lists all Worker Deployments that are tracked in the Namespace.
+     * Experimental. This API might significantly change or be removed in a future release.
+     * @param \Temporal\Api\Workflowservice\V1\ListWorkerDeploymentsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListWorkerDeployments(\Temporal\Api\Workflowservice\V1\ListWorkerDeploymentsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ListWorkerDeployments',
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\ListWorkerDeploymentsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Updates the user-given metadata attached to a Worker Deployment Version.
+     * Experimental. This API might significantly change or be removed in a future release.
+     * @param \Temporal\Api\Workflowservice\V1\UpdateWorkerDeploymentVersionMetadataRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function UpdateWorkerDeploymentVersionMetadata(\Temporal\Api\Workflowservice\V1\UpdateWorkerDeploymentVersionMetadataRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/UpdateWorkerDeploymentVersionMetadata',
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\UpdateWorkerDeploymentVersionMetadataResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -1345,19 +1487,18 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * UpdateActivityOptionsById is called by the client to update the options of an activity
-     * (-- api-linter: core::0136::prepositions=disabled
-     *     aip.dev/not-precedent: "By" is used to indicate request type. --)
-     * @param \Temporal\Api\Workflowservice\V1\UpdateActivityOptionsByIdRequest $argument input argument
+     * UpdateActivityOptions is called by the client to update the options of an activity by its ID or type.
+     * If there are multiple pending activities of the provided type - all of them will be updated.
+     * @param \Temporal\Api\Workflowservice\V1\UpdateActivityOptionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function UpdateActivityOptionsById(\Temporal\Api\Workflowservice\V1\UpdateActivityOptionsByIdRequest $argument,
+    public function UpdateActivityOptions(\Temporal\Api\Workflowservice\V1\UpdateActivityOptionsRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/UpdateActivityOptionsById',
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/UpdateActivityOptions',
         $argument,
-        ['\Temporal\Api\Workflowservice\V1\UpdateActivityOptionsByIdResponse', 'decode'],
+        ['\Temporal\Api\Workflowservice\V1\UpdateActivityOptionsResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -1377,8 +1518,8 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * PauseActivityById pauses the execution of an activity specified by its ID.
-     * Returns a `NotFound` error if there is no pending activity with the provided ID.
+     * PauseActivity pauses the execution of an activity specified by its ID or type.
+     * If there are multiple pending activities of the provided type - all of them will be paused
      *
      * Pausing an activity means:
      * - If the activity is currently waiting for a retry or is running and subsequently fails,
@@ -1391,71 +1532,76 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * For long-running activities:
      * - activities in paused state will send a cancellation with "activity_paused" set to 'true' in response to 'RecordActivityTaskHeartbeat'.
      * - The activity should respond to the cancellation accordingly.
-     * (-- api-linter: core::0136::prepositions=disabled
-     *     aip.dev/not-precedent: "By" is used to indicate request type. --)
-     * @param \Temporal\Api\Workflowservice\V1\PauseActivityByIdRequest $argument input argument
+     *
+     * Returns a `NotFound` error if there is no pending activity with the provided ID or type
+     * @param \Temporal\Api\Workflowservice\V1\PauseActivityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function PauseActivityById(\Temporal\Api\Workflowservice\V1\PauseActivityByIdRequest $argument,
+    public function PauseActivity(\Temporal\Api\Workflowservice\V1\PauseActivityRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/PauseActivityById',
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/PauseActivity',
         $argument,
-        ['\Temporal\Api\Workflowservice\V1\PauseActivityByIdResponse', 'decode'],
+        ['\Temporal\Api\Workflowservice\V1\PauseActivityResponse', 'decode'],
         $metadata, $options);
     }
 
     /**
-     * UnpauseActivityById unpauses the execution of an activity specified by its ID.
-     * Returns a `NotFound` error if there is no pending activity with the provided ID.
-     * There are two 'modes' of unpausing an activity:
-     * 'resume' - If the activity is paused, it will be resumed and scheduled for execution.
-     *    * If the activity is currently running Unpause with 'resume' has no effect.
-     *    * if 'no_wait' flag is set and the activity is waiting, the activity will be scheduled immediately.
-     * 'reset' - If the activity is paused, it will be reset to its initial state and (depending on parameters) scheduled for execution.
-     *    * If the activity is currently running, Unpause with 'reset' will reset the number of attempts.
-     *    * if 'no_wait' flag is set, the activity will be scheduled immediately.
-     *    * if 'reset_heartbeats' flag is set, the activity heartbeat timer and heartbeats will be reset.
-     * If the activity is in waiting for retry and past it retry timeout, it will be scheduled immediately.
+     * UnpauseActivity unpauses the execution of an activity specified by its ID or type.
+     * If there are multiple pending activities of the provided type - all of them will be unpaused.
+     *
+     * If activity is not paused, this call will have no effect.
+     * If the activity was paused while waiting for retry, it will be scheduled immediately (* see 'jitter' flag).
      * Once the activity is unpaused, all timeout timers will be regenerated.
-     * (-- api-linter: core::0136::prepositions=disabled
-     *     aip.dev/not-precedent: "By" is used to indicate request type. --)
-     * @param \Temporal\Api\Workflowservice\V1\UnpauseActivityByIdRequest $argument input argument
+     *
+     * Flags:
+     * 'jitter': the activity will be scheduled at a random time within the jitter duration.
+     * 'reset_attempts': the number of attempts will be reset.
+     * 'reset_heartbeat': the activity heartbeat timer and heartbeats will be reset.
+     *
+     * Returns a `NotFound` error if there is no pending activity with the provided ID or type
+     * @param \Temporal\Api\Workflowservice\V1\UnpauseActivityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function UnpauseActivityById(\Temporal\Api\Workflowservice\V1\UnpauseActivityByIdRequest $argument,
+    public function UnpauseActivity(\Temporal\Api\Workflowservice\V1\UnpauseActivityRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/UnpauseActivityById',
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/UnpauseActivity',
         $argument,
-        ['\Temporal\Api\Workflowservice\V1\UnpauseActivityByIdResponse', 'decode'],
+        ['\Temporal\Api\Workflowservice\V1\UnpauseActivityResponse', 'decode'],
         $metadata, $options);
     }
 
     /**
-     * ResetActivityById unpauses the execution of an activity specified by its ID.
-     * Returns a `NotFound` error if there is no pending activity with the provided ID.
+     * ResetActivity resets the execution of an activity specified by its ID or type.
+     * If there are multiple pending activities of the provided type - all of them will be reset.
+     *
      * Resetting an activity means:
      * * number of attempts will be reset to 0.
-     * * activity timeouts will be resetted.
-     * If the activity currently running:
-     * *  if 'no_wait' flag is provided, a new instance of the activity will be scheduled immediately.
-     * *  if 'no_wait' flag is not provided, a new instance of the  activity will be scheduled after current instance completes if needed.
-     * If 'reset_heartbeats' flag is set, the activity heartbeat timer and heartbeats will be reset.
-     * (-- api-linter: core::0136::prepositions=disabled
-     *     aip.dev/not-precedent: "By" is used to indicate request type. --)
-     * @param \Temporal\Api\Workflowservice\V1\ResetActivityByIdRequest $argument input argument
+     * * activity timeouts will be reset.
+     * * if the activity is waiting for retry, and it is not paused or 'keep_paused' is not provided:
+     *    it will be scheduled immediately (* see 'jitter' flag),
+     *
+     * Flags:
+     *
+     * 'jitter': the activity will be scheduled at a random time within the jitter duration.
+     * If the activity currently paused it will be unpaused, unless 'keep_paused' flag is provided.
+     * 'reset_heartbeats': the activity heartbeat timer and heartbeats will be reset.
+     * 'keep_paused': if the activity is paused, it will remain paused.
+     *
+     * Returns a `NotFound` error if there is no pending activity with the provided ID or type.
+     * @param \Temporal\Api\Workflowservice\V1\ResetActivityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function ResetActivityById(\Temporal\Api\Workflowservice\V1\ResetActivityByIdRequest $argument,
+    public function ResetActivity(\Temporal\Api\Workflowservice\V1\ResetActivityRequest $argument,
       $metadata = [], $options = []) {
-        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ResetActivityById',
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ResetActivity',
         $argument,
-        ['\Temporal\Api\Workflowservice\V1\ResetActivityByIdResponse', 'decode'],
+        ['\Temporal\Api\Workflowservice\V1\ResetActivityResponse', 'decode'],
         $metadata, $options);
     }
 

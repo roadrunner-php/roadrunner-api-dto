@@ -13,6 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  * `Deployment` identifies a deployment of Temporal workers. The combination of deployment series
  * name + build ID serves as the identifier. User can use `WorkerDeploymentOptions` in their worker
  * programs to specify these values.
+ * Deprecated.
  *
  * Generated from protobuf message <code>temporal.api.deployment.v1.Deployment</code>
  */

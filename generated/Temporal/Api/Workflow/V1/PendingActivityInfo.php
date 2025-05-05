@@ -100,10 +100,18 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
     /**
      * The deployment this activity was dispatched to most recently. Present only if the activity
      * was dispatched to a versioned worker.
+     * Deprecated. Use `last_worker_deployment_version`.
      *
-     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment last_deployment = 20;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment last_deployment = 20 [deprecated = true];</code>
+     * @deprecated
      */
     protected $last_deployment = null;
+    /**
+     * The Worker Deployment Version this activity was dispatched to most recently.
+     *
+     * Generated from protobuf field <code>string last_worker_deployment_version = 21;</code>
+     */
+    protected $last_worker_deployment_version = '';
     protected $assigned_build_id;
 
     /**
@@ -149,6 +157,9 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Deployment\V1\Deployment $last_deployment
      *           The deployment this activity was dispatched to most recently. Present only if the activity
      *           was dispatched to a versioned worker.
+     *           Deprecated. Use `last_worker_deployment_version`.
+     *     @type string $last_worker_deployment_version
+     *           The Worker Deployment Version this activity was dispatched to most recently.
      * }
      */
     public function __construct($data = NULL) {
@@ -741,37 +752,75 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
     /**
      * The deployment this activity was dispatched to most recently. Present only if the activity
      * was dispatched to a versioned worker.
+     * Deprecated. Use `last_worker_deployment_version`.
      *
-     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment last_deployment = 20;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment last_deployment = 20 [deprecated = true];</code>
      * @return \Temporal\Api\Deployment\V1\Deployment|null
+     * @deprecated
      */
     public function getLastDeployment()
     {
+        if (isset($this->last_deployment)) {
+            @trigger_error('last_deployment is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->last_deployment;
     }
 
     public function hasLastDeployment()
     {
+        if (isset($this->last_deployment)) {
+            @trigger_error('last_deployment is deprecated.', E_USER_DEPRECATED);
+        }
         return isset($this->last_deployment);
     }
 
     public function clearLastDeployment()
     {
+        @trigger_error('last_deployment is deprecated.', E_USER_DEPRECATED);
         unset($this->last_deployment);
     }
 
     /**
      * The deployment this activity was dispatched to most recently. Present only if the activity
      * was dispatched to a versioned worker.
+     * Deprecated. Use `last_worker_deployment_version`.
      *
-     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment last_deployment = 20;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment last_deployment = 20 [deprecated = true];</code>
      * @param \Temporal\Api\Deployment\V1\Deployment $var
      * @return $this
+     * @deprecated
      */
     public function setLastDeployment($var)
     {
+        @trigger_error('last_deployment is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\Deployment::class);
         $this->last_deployment = $var;
+
+        return $this;
+    }
+
+    /**
+     * The Worker Deployment Version this activity was dispatched to most recently.
+     *
+     * Generated from protobuf field <code>string last_worker_deployment_version = 21;</code>
+     * @return string
+     */
+    public function getLastWorkerDeploymentVersion()
+    {
+        return $this->last_worker_deployment_version;
+    }
+
+    /**
+     * The Worker Deployment Version this activity was dispatched to most recently.
+     *
+     * Generated from protobuf field <code>string last_worker_deployment_version = 21;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLastWorkerDeploymentVersion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->last_worker_deployment_version = $var;
 
         return $this;
     }
