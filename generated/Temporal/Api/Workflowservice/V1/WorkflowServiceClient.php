@@ -37,7 +37,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\RegisterNamespaceRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\RegisterNamespaceResponse>
      */
     public function RegisterNamespace(\Temporal\Api\Workflowservice\V1\RegisterNamespaceRequest $argument,
       $metadata = [], $options = []) {
@@ -52,7 +52,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\DescribeNamespaceRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\DescribeNamespaceResponse>
      */
     public function DescribeNamespace(\Temporal\Api\Workflowservice\V1\DescribeNamespaceRequest $argument,
       $metadata = [], $options = []) {
@@ -67,7 +67,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\ListNamespacesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\ListNamespacesResponse>
      */
     public function ListNamespaces(\Temporal\Api\Workflowservice\V1\ListNamespacesRequest $argument,
       $metadata = [], $options = []) {
@@ -83,7 +83,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\UpdateNamespaceRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\UpdateNamespaceResponse>
      */
     public function UpdateNamespace(\Temporal\Api\Workflowservice\V1\UpdateNamespaceRequest $argument,
       $metadata = [], $options = []) {
@@ -105,7 +105,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\DeprecateNamespaceRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\DeprecateNamespaceResponse>
      */
     public function DeprecateNamespace(\Temporal\Api\Workflowservice\V1\DeprecateNamespaceRequest $argument,
       $metadata = [], $options = []) {
@@ -124,7 +124,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\StartWorkflowExecutionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\StartWorkflowExecutionResponse>
      */
     public function StartWorkflowExecution(\Temporal\Api\Workflowservice\V1\StartWorkflowExecutionRequest $argument,
       $metadata = [], $options = []) {
@@ -147,7 +147,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\ExecuteMultiOperationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\ExecuteMultiOperationResponse>
      */
     public function ExecuteMultiOperation(\Temporal\Api\Workflowservice\V1\ExecuteMultiOperationRequest $argument,
       $metadata = [], $options = []) {
@@ -163,7 +163,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\GetWorkflowExecutionHistoryRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\GetWorkflowExecutionHistoryResponse>
      */
     public function GetWorkflowExecutionHistory(\Temporal\Api\Workflowservice\V1\GetWorkflowExecutionHistoryRequest $argument,
       $metadata = [], $options = []) {
@@ -180,7 +180,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\GetWorkflowExecutionHistoryReverseRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\GetWorkflowExecutionHistoryReverseResponse>
      */
     public function GetWorkflowExecutionHistoryReverse(\Temporal\Api\Workflowservice\V1\GetWorkflowExecutionHistoryReverseRequest $argument,
       $metadata = [], $options = []) {
@@ -203,7 +203,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\PollWorkflowTaskQueueRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\PollWorkflowTaskQueueResponse>
      */
     public function PollWorkflowTaskQueue(\Temporal\Api\Workflowservice\V1\PollWorkflowTaskQueueRequest $argument,
       $metadata = [], $options = []) {
@@ -226,7 +226,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\RespondWorkflowTaskCompletedRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\RespondWorkflowTaskCompletedResponse>
      */
     public function RespondWorkflowTaskCompleted(\Temporal\Api\Workflowservice\V1\RespondWorkflowTaskCompletedRequest $argument,
       $metadata = [], $options = []) {
@@ -252,7 +252,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\RespondWorkflowTaskFailedRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\RespondWorkflowTaskFailedResponse>
      */
     public function RespondWorkflowTaskFailed(\Temporal\Api\Workflowservice\V1\RespondWorkflowTaskFailedRequest $argument,
       $metadata = [], $options = []) {
@@ -281,7 +281,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\PollActivityTaskQueueRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\PollActivityTaskQueueResponse>
      */
     public function PollActivityTaskQueue(\Temporal\Api\Workflowservice\V1\PollActivityTaskQueueRequest $argument,
       $metadata = [], $options = []) {
@@ -301,7 +301,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\RecordActivityTaskHeartbeatRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\RecordActivityTaskHeartbeatResponse>
      */
     public function RecordActivityTaskHeartbeat(\Temporal\Api\Workflowservice\V1\RecordActivityTaskHeartbeatRequest $argument,
       $metadata = [], $options = []) {
@@ -320,7 +320,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\RecordActivityTaskHeartbeatByIdRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\RecordActivityTaskHeartbeatByIdResponse>
      */
     public function RecordActivityTaskHeartbeatById(\Temporal\Api\Workflowservice\V1\RecordActivityTaskHeartbeatByIdRequest $argument,
       $metadata = [], $options = []) {
@@ -340,7 +340,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\RespondActivityTaskCompletedRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\RespondActivityTaskCompletedResponse>
      */
     public function RespondActivityTaskCompleted(\Temporal\Api\Workflowservice\V1\RespondActivityTaskCompletedRequest $argument,
       $metadata = [], $options = []) {
@@ -359,7 +359,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\RespondActivityTaskCompletedByIdRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\RespondActivityTaskCompletedByIdResponse>
      */
     public function RespondActivityTaskCompletedById(\Temporal\Api\Workflowservice\V1\RespondActivityTaskCompletedByIdRequest $argument,
       $metadata = [], $options = []) {
@@ -378,7 +378,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\RespondActivityTaskFailedRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\RespondActivityTaskFailedResponse>
      */
     public function RespondActivityTaskFailed(\Temporal\Api\Workflowservice\V1\RespondActivityTaskFailedRequest $argument,
       $metadata = [], $options = []) {
@@ -397,7 +397,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\RespondActivityTaskFailedByIdRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\RespondActivityTaskFailedByIdResponse>
      */
     public function RespondActivityTaskFailedById(\Temporal\Api\Workflowservice\V1\RespondActivityTaskFailedByIdRequest $argument,
       $metadata = [], $options = []) {
@@ -416,7 +416,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\RespondActivityTaskCanceledRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\RespondActivityTaskCanceledResponse>
      */
     public function RespondActivityTaskCanceled(\Temporal\Api\Workflowservice\V1\RespondActivityTaskCanceledRequest $argument,
       $metadata = [], $options = []) {
@@ -435,7 +435,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\RespondActivityTaskCanceledByIdRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\RespondActivityTaskCanceledByIdResponse>
      */
     public function RespondActivityTaskCanceledById(\Temporal\Api\Workflowservice\V1\RespondActivityTaskCanceledByIdRequest $argument,
       $metadata = [], $options = []) {
@@ -455,7 +455,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\RequestCancelWorkflowExecutionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\RequestCancelWorkflowExecutionResponse>
      */
     public function RequestCancelWorkflowExecution(\Temporal\Api\Workflowservice\V1\RequestCancelWorkflowExecutionRequest $argument,
       $metadata = [], $options = []) {
@@ -473,7 +473,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\SignalWorkflowExecutionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\SignalWorkflowExecutionResponse>
      */
     public function SignalWorkflowExecution(\Temporal\Api\Workflowservice\V1\SignalWorkflowExecutionRequest $argument,
       $metadata = [], $options = []) {
@@ -499,7 +499,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\SignalWithStartWorkflowExecutionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\SignalWithStartWorkflowExecutionResponse>
      */
     public function SignalWithStartWorkflowExecution(\Temporal\Api\Workflowservice\V1\SignalWithStartWorkflowExecutionRequest $argument,
       $metadata = [], $options = []) {
@@ -517,7 +517,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\ResetWorkflowExecutionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\ResetWorkflowExecutionResponse>
      */
     public function ResetWorkflowExecution(\Temporal\Api\Workflowservice\V1\ResetWorkflowExecutionRequest $argument,
       $metadata = [], $options = []) {
@@ -534,7 +534,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\TerminateWorkflowExecutionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\TerminateWorkflowExecutionResponse>
      */
     public function TerminateWorkflowExecution(\Temporal\Api\Workflowservice\V1\TerminateWorkflowExecutionRequest $argument,
       $metadata = [], $options = []) {
@@ -555,7 +555,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\DeleteWorkflowExecutionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\DeleteWorkflowExecutionResponse>
      */
     public function DeleteWorkflowExecution(\Temporal\Api\Workflowservice\V1\DeleteWorkflowExecutionRequest $argument,
       $metadata = [], $options = []) {
@@ -573,7 +573,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\ListOpenWorkflowExecutionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\ListOpenWorkflowExecutionsResponse>
      */
     public function ListOpenWorkflowExecutions(\Temporal\Api\Workflowservice\V1\ListOpenWorkflowExecutionsRequest $argument,
       $metadata = [], $options = []) {
@@ -591,7 +591,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\ListClosedWorkflowExecutionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\ListClosedWorkflowExecutionsResponse>
      */
     public function ListClosedWorkflowExecutions(\Temporal\Api\Workflowservice\V1\ListClosedWorkflowExecutionsRequest $argument,
       $metadata = [], $options = []) {
@@ -606,7 +606,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\ListWorkflowExecutionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\ListWorkflowExecutionsResponse>
      */
     public function ListWorkflowExecutions(\Temporal\Api\Workflowservice\V1\ListWorkflowExecutionsRequest $argument,
       $metadata = [], $options = []) {
@@ -621,7 +621,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\ListArchivedWorkflowExecutionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\ListArchivedWorkflowExecutionsResponse>
      */
     public function ListArchivedWorkflowExecutions(\Temporal\Api\Workflowservice\V1\ListArchivedWorkflowExecutionsRequest $argument,
       $metadata = [], $options = []) {
@@ -640,7 +640,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\ScanWorkflowExecutionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\ScanWorkflowExecutionsResponse>
      */
     public function ScanWorkflowExecutions(\Temporal\Api\Workflowservice\V1\ScanWorkflowExecutionsRequest $argument,
       $metadata = [], $options = []) {
@@ -655,7 +655,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\CountWorkflowExecutionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\CountWorkflowExecutionsResponse>
      */
     public function CountWorkflowExecutions(\Temporal\Api\Workflowservice\V1\CountWorkflowExecutionsRequest $argument,
       $metadata = [], $options = []) {
@@ -673,7 +673,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\GetSearchAttributesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\GetSearchAttributesResponse>
      */
     public function GetSearchAttributes(\Temporal\Api\Workflowservice\V1\GetSearchAttributesRequest $argument,
       $metadata = [], $options = []) {
@@ -695,7 +695,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\RespondQueryTaskCompletedRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\RespondQueryTaskCompletedResponse>
      */
     public function RespondQueryTaskCompleted(\Temporal\Api\Workflowservice\V1\RespondQueryTaskCompletedRequest $argument,
       $metadata = [], $options = []) {
@@ -723,7 +723,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\ResetStickyTaskQueueRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\ResetStickyTaskQueueResponse>
      */
     public function ResetStickyTaskQueue(\Temporal\Api\Workflowservice\V1\ResetStickyTaskQueueRequest $argument,
       $metadata = [], $options = []) {
@@ -750,7 +750,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\ShutdownWorkerRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\ShutdownWorkerResponse>
      */
     public function ShutdownWorker(\Temporal\Api\Workflowservice\V1\ShutdownWorkerRequest $argument,
       $metadata = [], $options = []) {
@@ -765,7 +765,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\QueryWorkflowRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\QueryWorkflowResponse>
      */
     public function QueryWorkflow(\Temporal\Api\Workflowservice\V1\QueryWorkflowRequest $argument,
       $metadata = [], $options = []) {
@@ -780,7 +780,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\DescribeWorkflowExecutionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\DescribeWorkflowExecutionResponse>
      */
     public function DescribeWorkflowExecution(\Temporal\Api\Workflowservice\V1\DescribeWorkflowExecutionRequest $argument,
       $metadata = [], $options = []) {
@@ -798,7 +798,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\DescribeTaskQueueRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\DescribeTaskQueueResponse>
      */
     public function DescribeTaskQueue(\Temporal\Api\Workflowservice\V1\DescribeTaskQueueRequest $argument,
       $metadata = [], $options = []) {
@@ -813,7 +813,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\GetClusterInfoRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\GetClusterInfoResponse>
      */
     public function GetClusterInfo(\Temporal\Api\Workflowservice\V1\GetClusterInfoRequest $argument,
       $metadata = [], $options = []) {
@@ -828,7 +828,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\GetSystemInfoRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\GetSystemInfoResponse>
      */
     public function GetSystemInfo(\Temporal\Api\Workflowservice\V1\GetSystemInfoRequest $argument,
       $metadata = [], $options = []) {
@@ -844,7 +844,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\ListTaskQueuePartitionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\ListTaskQueuePartitionsResponse>
      */
     public function ListTaskQueuePartitions(\Temporal\Api\Workflowservice\V1\ListTaskQueuePartitionsRequest $argument,
       $metadata = [], $options = []) {
@@ -859,7 +859,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\CreateScheduleRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\CreateScheduleResponse>
      */
     public function CreateSchedule(\Temporal\Api\Workflowservice\V1\CreateScheduleRequest $argument,
       $metadata = [], $options = []) {
@@ -874,7 +874,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\DescribeScheduleRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\DescribeScheduleResponse>
      */
     public function DescribeSchedule(\Temporal\Api\Workflowservice\V1\DescribeScheduleRequest $argument,
       $metadata = [], $options = []) {
@@ -889,7 +889,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\UpdateScheduleRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\UpdateScheduleResponse>
      */
     public function UpdateSchedule(\Temporal\Api\Workflowservice\V1\UpdateScheduleRequest $argument,
       $metadata = [], $options = []) {
@@ -904,7 +904,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\PatchScheduleRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\PatchScheduleResponse>
      */
     public function PatchSchedule(\Temporal\Api\Workflowservice\V1\PatchScheduleRequest $argument,
       $metadata = [], $options = []) {
@@ -919,7 +919,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\ListScheduleMatchingTimesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\ListScheduleMatchingTimesResponse>
      */
     public function ListScheduleMatchingTimes(\Temporal\Api\Workflowservice\V1\ListScheduleMatchingTimesRequest $argument,
       $metadata = [], $options = []) {
@@ -934,7 +934,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\DeleteScheduleRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\DeleteScheduleResponse>
      */
     public function DeleteSchedule(\Temporal\Api\Workflowservice\V1\DeleteScheduleRequest $argument,
       $metadata = [], $options = []) {
@@ -949,7 +949,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\ListSchedulesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\ListSchedulesResponse>
      */
     public function ListSchedules(\Temporal\Api\Workflowservice\V1\ListSchedulesRequest $argument,
       $metadata = [], $options = []) {
@@ -980,7 +980,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\UpdateWorkerBuildIdCompatibilityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\UpdateWorkerBuildIdCompatibilityResponse>
      */
     public function UpdateWorkerBuildIdCompatibility(\Temporal\Api\Workflowservice\V1\UpdateWorkerBuildIdCompatibilityRequest $argument,
       $metadata = [], $options = []) {
@@ -996,7 +996,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\GetWorkerBuildIdCompatibilityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\GetWorkerBuildIdCompatibilityResponse>
      */
     public function GetWorkerBuildIdCompatibility(\Temporal\Api\Workflowservice\V1\GetWorkerBuildIdCompatibilityRequest $argument,
       $metadata = [], $options = []) {
@@ -1034,7 +1034,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\UpdateWorkerVersioningRulesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\UpdateWorkerVersioningRulesResponse>
      */
     public function UpdateWorkerVersioningRules(\Temporal\Api\Workflowservice\V1\UpdateWorkerVersioningRulesRequest $argument,
       $metadata = [], $options = []) {
@@ -1050,7 +1050,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\GetWorkerVersioningRulesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\GetWorkerVersioningRulesResponse>
      */
     public function GetWorkerVersioningRules(\Temporal\Api\Workflowservice\V1\GetWorkerVersioningRulesRequest $argument,
       $metadata = [], $options = []) {
@@ -1078,7 +1078,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\GetWorkerTaskReachabilityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\GetWorkerTaskReachabilityResponse>
      */
     public function GetWorkerTaskReachability(\Temporal\Api\Workflowservice\V1\GetWorkerTaskReachabilityRequest $argument,
       $metadata = [], $options = []) {
@@ -1095,7 +1095,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\DescribeDeploymentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\DescribeDeploymentResponse>
      */
     public function DescribeDeployment(\Temporal\Api\Workflowservice\V1\DescribeDeploymentRequest $argument,
       $metadata = [], $options = []) {
@@ -1111,7 +1111,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\DescribeWorkerDeploymentVersionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\DescribeWorkerDeploymentVersionResponse>
      */
     public function DescribeWorkerDeploymentVersion(\Temporal\Api\Workflowservice\V1\DescribeWorkerDeploymentVersionRequest $argument,
       $metadata = [], $options = []) {
@@ -1129,7 +1129,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\ListDeploymentsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\ListDeploymentsResponse>
      */
     public function ListDeployments(\Temporal\Api\Workflowservice\V1\ListDeploymentsRequest $argument,
       $metadata = [], $options = []) {
@@ -1151,7 +1151,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\GetDeploymentReachabilityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\GetDeploymentReachabilityResponse>
      */
     public function GetDeploymentReachability(\Temporal\Api\Workflowservice\V1\GetDeploymentReachabilityRequest $argument,
       $metadata = [], $options = []) {
@@ -1168,7 +1168,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\GetCurrentDeploymentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\GetCurrentDeploymentResponse>
      */
     public function GetCurrentDeployment(\Temporal\Api\Workflowservice\V1\GetCurrentDeploymentRequest $argument,
       $metadata = [], $options = []) {
@@ -1186,7 +1186,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\SetCurrentDeploymentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\SetCurrentDeploymentResponse>
      */
     public function SetCurrentDeployment(\Temporal\Api\Workflowservice\V1\SetCurrentDeploymentRequest $argument,
       $metadata = [], $options = []) {
@@ -1203,7 +1203,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\SetWorkerDeploymentCurrentVersionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\SetWorkerDeploymentCurrentVersionResponse>
      */
     public function SetWorkerDeploymentCurrentVersion(\Temporal\Api\Workflowservice\V1\SetWorkerDeploymentCurrentVersionRequest $argument,
       $metadata = [], $options = []) {
@@ -1219,7 +1219,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\DescribeWorkerDeploymentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\DescribeWorkerDeploymentResponse>
      */
     public function DescribeWorkerDeployment(\Temporal\Api\Workflowservice\V1\DescribeWorkerDeploymentRequest $argument,
       $metadata = [], $options = []) {
@@ -1236,7 +1236,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\DeleteWorkerDeploymentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\DeleteWorkerDeploymentResponse>
      */
     public function DeleteWorkerDeployment(\Temporal\Api\Workflowservice\V1\DeleteWorkerDeploymentRequest $argument,
       $metadata = [], $options = []) {
@@ -1257,7 +1257,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\DeleteWorkerDeploymentVersionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\DeleteWorkerDeploymentVersionResponse>
      */
     public function DeleteWorkerDeploymentVersion(\Temporal\Api\Workflowservice\V1\DeleteWorkerDeploymentVersionRequest $argument,
       $metadata = [], $options = []) {
@@ -1274,7 +1274,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\SetWorkerDeploymentRampingVersionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\SetWorkerDeploymentRampingVersionResponse>
      */
     public function SetWorkerDeploymentRampingVersion(\Temporal\Api\Workflowservice\V1\SetWorkerDeploymentRampingVersionRequest $argument,
       $metadata = [], $options = []) {
@@ -1290,7 +1290,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\ListWorkerDeploymentsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\ListWorkerDeploymentsResponse>
      */
     public function ListWorkerDeployments(\Temporal\Api\Workflowservice\V1\ListWorkerDeploymentsRequest $argument,
       $metadata = [], $options = []) {
@@ -1306,7 +1306,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\UpdateWorkerDeploymentVersionMetadataRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\UpdateWorkerDeploymentVersionMetadataResponse>
      */
     public function UpdateWorkerDeploymentVersionMetadata(\Temporal\Api\Workflowservice\V1\UpdateWorkerDeploymentVersionMetadataRequest $argument,
       $metadata = [], $options = []) {
@@ -1321,7 +1321,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\UpdateWorkflowExecutionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\UpdateWorkflowExecutionResponse>
      */
     public function UpdateWorkflowExecution(\Temporal\Api\Workflowservice\V1\UpdateWorkflowExecutionRequest $argument,
       $metadata = [], $options = []) {
@@ -1342,7 +1342,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\PollWorkflowExecutionUpdateRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\PollWorkflowExecutionUpdateResponse>
      */
     public function PollWorkflowExecutionUpdate(\Temporal\Api\Workflowservice\V1\PollWorkflowExecutionUpdateRequest $argument,
       $metadata = [], $options = []) {
@@ -1357,7 +1357,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\StartBatchOperationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\StartBatchOperationResponse>
      */
     public function StartBatchOperation(\Temporal\Api\Workflowservice\V1\StartBatchOperationRequest $argument,
       $metadata = [], $options = []) {
@@ -1372,7 +1372,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\StopBatchOperationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\StopBatchOperationResponse>
      */
     public function StopBatchOperation(\Temporal\Api\Workflowservice\V1\StopBatchOperationRequest $argument,
       $metadata = [], $options = []) {
@@ -1387,7 +1387,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\DescribeBatchOperationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\DescribeBatchOperationResponse>
      */
     public function DescribeBatchOperation(\Temporal\Api\Workflowservice\V1\DescribeBatchOperationRequest $argument,
       $metadata = [], $options = []) {
@@ -1402,7 +1402,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\ListBatchOperationsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\ListBatchOperationsResponse>
      */
     public function ListBatchOperations(\Temporal\Api\Workflowservice\V1\ListBatchOperationsRequest $argument,
       $metadata = [], $options = []) {
@@ -1419,7 +1419,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\PollNexusTaskQueueRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\PollNexusTaskQueueResponse>
      */
     public function PollNexusTaskQueue(\Temporal\Api\Workflowservice\V1\PollNexusTaskQueueRequest $argument,
       $metadata = [], $options = []) {
@@ -1436,7 +1436,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\RespondNexusTaskCompletedRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\RespondNexusTaskCompletedResponse>
      */
     public function RespondNexusTaskCompleted(\Temporal\Api\Workflowservice\V1\RespondNexusTaskCompletedRequest $argument,
       $metadata = [], $options = []) {
@@ -1453,7 +1453,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\RespondNexusTaskFailedRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\RespondNexusTaskFailedResponse>
      */
     public function RespondNexusTaskFailed(\Temporal\Api\Workflowservice\V1\RespondNexusTaskFailedRequest $argument,
       $metadata = [], $options = []) {
@@ -1469,7 +1469,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\UpdateActivityOptionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\UpdateActivityOptionsResponse>
      */
     public function UpdateActivityOptions(\Temporal\Api\Workflowservice\V1\UpdateActivityOptionsRequest $argument,
       $metadata = [], $options = []) {
@@ -1484,7 +1484,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\UpdateWorkflowExecutionOptionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\UpdateWorkflowExecutionOptionsResponse>
      */
     public function UpdateWorkflowExecutionOptions(\Temporal\Api\Workflowservice\V1\UpdateWorkflowExecutionOptionsRequest $argument,
       $metadata = [], $options = []) {
@@ -1514,7 +1514,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\PauseActivityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\PauseActivityResponse>
      */
     public function PauseActivity(\Temporal\Api\Workflowservice\V1\PauseActivityRequest $argument,
       $metadata = [], $options = []) {
@@ -1541,7 +1541,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\UnpauseActivityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\UnpauseActivityResponse>
      */
     public function UnpauseActivity(\Temporal\Api\Workflowservice\V1\UnpauseActivityRequest $argument,
       $metadata = [], $options = []) {
@@ -1572,7 +1572,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\ResetActivityRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\ResetActivityResponse>
      */
     public function ResetActivity(\Temporal\Api\Workflowservice\V1\ResetActivityRequest $argument,
       $metadata = [], $options = []) {
@@ -1591,7 +1591,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\CreateWorkflowRuleRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\CreateWorkflowRuleResponse>
      */
     public function CreateWorkflowRule(\Temporal\Api\Workflowservice\V1\CreateWorkflowRuleRequest $argument,
       $metadata = [], $options = []) {
@@ -1607,7 +1607,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\DescribeWorkflowRuleRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\DescribeWorkflowRuleResponse>
      */
     public function DescribeWorkflowRule(\Temporal\Api\Workflowservice\V1\DescribeWorkflowRuleRequest $argument,
       $metadata = [], $options = []) {
@@ -1622,7 +1622,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\DeleteWorkflowRuleRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\DeleteWorkflowRuleResponse>
      */
     public function DeleteWorkflowRule(\Temporal\Api\Workflowservice\V1\DeleteWorkflowRuleRequest $argument,
       $metadata = [], $options = []) {
@@ -1637,7 +1637,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\ListWorkflowRulesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\ListWorkflowRulesResponse>
      */
     public function ListWorkflowRules(\Temporal\Api\Workflowservice\V1\ListWorkflowRulesRequest $argument,
       $metadata = [], $options = []) {
@@ -1655,7 +1655,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\TriggerWorkflowRuleRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\TriggerWorkflowRuleResponse>
      */
     public function TriggerWorkflowRule(\Temporal\Api\Workflowservice\V1\TriggerWorkflowRuleRequest $argument,
       $metadata = [], $options = []) {
@@ -1670,7 +1670,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\RecordWorkerHeartbeatRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\RecordWorkerHeartbeatResponse>
      */
     public function RecordWorkerHeartbeat(\Temporal\Api\Workflowservice\V1\RecordWorkerHeartbeatRequest $argument,
       $metadata = [], $options = []) {
@@ -1685,7 +1685,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\ListWorkersRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\ListWorkersResponse>
      */
     public function ListWorkers(\Temporal\Api\Workflowservice\V1\ListWorkersRequest $argument,
       $metadata = [], $options = []) {
@@ -1703,7 +1703,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\UpdateTaskQueueConfigRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\UpdateTaskQueueConfigResponse>
      */
     public function UpdateTaskQueueConfig(\Temporal\Api\Workflowservice\V1\UpdateTaskQueueConfigRequest $argument,
       $metadata = [], $options = []) {
@@ -1718,7 +1718,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\FetchWorkerConfigRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\FetchWorkerConfigResponse>
      */
     public function FetchWorkerConfig(\Temporal\Api\Workflowservice\V1\FetchWorkerConfigRequest $argument,
       $metadata = [], $options = []) {
@@ -1735,7 +1735,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Workflowservice\V1\UpdateWorkerConfigRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\UpdateWorkerConfigResponse>
      */
     public function UpdateWorkerConfig(\Temporal\Api\Workflowservice\V1\UpdateWorkerConfigRequest $argument,
       $metadata = [], $options = []) {
