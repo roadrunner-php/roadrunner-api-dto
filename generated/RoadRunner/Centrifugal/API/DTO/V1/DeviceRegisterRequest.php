@@ -6,8 +6,8 @@
 namespace RoadRunner\Centrifugal\API\DTO\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>centrifugal.centrifugo.api.DeviceRegisterRequest</code>
@@ -58,7 +58,7 @@ class DeviceRegisterRequest extends \Google\Protobuf\Internal\Message
      *     @type string $platform
      *     @type string $user
      *     @type array|\Google\Protobuf\Internal\MapField $meta
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $topics
+     *     @type string[] $topics
      *          map<string, string> labels = 8;
      *          map<string, int64> scores = 9;
      * }
@@ -205,7 +205,7 @@ class DeviceRegisterRequest extends \Google\Protobuf\Internal\Message
      *map<string, int64> scores = 9;
      *
      * Generated from protobuf field <code>repeated string topics = 7;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getTopics()
     {
@@ -217,7 +217,7 @@ class DeviceRegisterRequest extends \Google\Protobuf\Internal\Message
      *map<string, int64> scores = 9;
      *
      * Generated from protobuf field <code>repeated string topics = 7;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setTopics($var)

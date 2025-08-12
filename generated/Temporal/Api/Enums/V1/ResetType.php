@@ -8,7 +8,7 @@ namespace Temporal\Api\Enums\V1;
 use UnexpectedValueException;
 
 /**
- * Reset type options. Deprecated, see temporal.api.common.v1.ResetOptions.
+ * Deprecated, see temporal.api.common.v1.ResetOptions.
  *
  * Protobuf type <code>temporal.api.enums.v1.ResetType</code>
  */

@@ -6,8 +6,8 @@
 namespace Temporal\Api\Schedule\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.schedule.v1.TriggerImmediatelyRequest</code>
@@ -20,6 +20,13 @@ class TriggerImmediatelyRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.enums.v1.ScheduleOverlapPolicy overlap_policy = 1;</code>
      */
     protected $overlap_policy = 0;
+    /**
+     * Timestamp used for the identity of the target workflow.
+     * If not set the default value is the current time.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 2;</code>
+     */
+    protected $scheduled_time = null;
 
     /**
      * Constructor.
@@ -29,6 +36,9 @@ class TriggerImmediatelyRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type int $overlap_policy
      *           If set, override overlap policy for this one request.
+     *     @type \Google\Protobuf\Timestamp $scheduled_time
+     *           Timestamp used for the identity of the target workflow.
+     *           If not set the default value is the current time.
      * }
      */
     public function __construct($data = NULL) {
@@ -58,6 +68,44 @@ class TriggerImmediatelyRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ScheduleOverlapPolicy::class);
         $this->overlap_policy = $var;
+
+        return $this;
+    }
+
+    /**
+     * Timestamp used for the identity of the target workflow.
+     * If not set the default value is the current time.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 2;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getScheduledTime()
+    {
+        return $this->scheduled_time;
+    }
+
+    public function hasScheduledTime()
+    {
+        return isset($this->scheduled_time);
+    }
+
+    public function clearScheduledTime()
+    {
+        unset($this->scheduled_time);
+    }
+
+    /**
+     * Timestamp used for the identity of the target workflow.
+     * If not set the default value is the current time.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 2;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setScheduledTime($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->scheduled_time = $var;
 
         return $this;
     }

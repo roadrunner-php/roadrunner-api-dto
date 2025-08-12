@@ -6,8 +6,8 @@
 namespace Temporal\Api\History\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.history.v1.WorkflowExecutionSignaledEventAttributes</code>
@@ -33,14 +33,14 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
      */
     protected $identity = '';
     /**
-     * Headers that were passed by the sender of the signal and copied by temporal 
+     * Headers that were passed by the sender of the signal and copied by temporal
      * server into the workflow task.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.Header header = 4;</code>
      */
     protected $header = null;
     /**
-     * This field is deprecated and never respected. It should always be set to false.
+     * Deprecated. This field is never respected and should always be set to false.
      *
      * Generated from protobuf field <code>bool skip_generate_workflow_task = 5 [deprecated = true];</code>
      * @deprecated
@@ -66,10 +66,10 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
      *     @type string $identity
      *           id of the worker/client who sent this signal
      *     @type \Temporal\Api\Common\V1\Header $header
-     *           Headers that were passed by the sender of the signal and copied by temporal 
+     *           Headers that were passed by the sender of the signal and copied by temporal
      *           server into the workflow task.
      *     @type bool $skip_generate_workflow_task
-     *           This field is deprecated and never respected. It should always be set to false.
+     *           Deprecated. This field is never respected and should always be set to false.
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $external_workflow_execution
      *           When signal origin is a workflow execution, this field is set.
      * }
@@ -168,7 +168,7 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
     }
 
     /**
-     * Headers that were passed by the sender of the signal and copied by temporal 
+     * Headers that were passed by the sender of the signal and copied by temporal
      * server into the workflow task.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.Header header = 4;</code>
@@ -190,7 +190,7 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
     }
 
     /**
-     * Headers that were passed by the sender of the signal and copied by temporal 
+     * Headers that were passed by the sender of the signal and copied by temporal
      * server into the workflow task.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.Header header = 4;</code>
@@ -206,7 +206,7 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
     }
 
     /**
-     * This field is deprecated and never respected. It should always be set to false.
+     * Deprecated. This field is never respected and should always be set to false.
      *
      * Generated from protobuf field <code>bool skip_generate_workflow_task = 5 [deprecated = true];</code>
      * @return bool
@@ -221,7 +221,7 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
     }
 
     /**
-     * This field is deprecated and never respected. It should always be set to false.
+     * Deprecated. This field is never respected and should always be set to false.
      *
      * Generated from protobuf field <code>bool skip_generate_workflow_task = 5 [deprecated = true];</code>
      * @param bool $var

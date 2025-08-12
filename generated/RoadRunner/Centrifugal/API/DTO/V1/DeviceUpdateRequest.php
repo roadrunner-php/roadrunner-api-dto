@@ -6,8 +6,8 @@
 namespace RoadRunner\Centrifugal\API\DTO\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>centrifugal.centrifugo.api.DeviceUpdateRequest</code>
@@ -44,8 +44,8 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $ids
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $users
+     *     @type string[] $ids
+     *     @type string[] $users
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceUserUpdate $user_update
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceMetaUpdate $meta_update
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicsUpdate $topics_update
@@ -60,7 +60,7 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string ids = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getIds()
     {
@@ -69,7 +69,7 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string ids = 1;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setIds($var)
@@ -82,7 +82,7 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string users = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getUsers()
     {
@@ -91,7 +91,7 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string users = 2;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setUsers($var)

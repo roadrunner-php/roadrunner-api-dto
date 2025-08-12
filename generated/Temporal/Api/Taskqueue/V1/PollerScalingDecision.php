@@ -6,8 +6,8 @@
 namespace Temporal\Api\Taskqueue\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Attached to task responses to give hints to the SDK about how it may adjust its number of

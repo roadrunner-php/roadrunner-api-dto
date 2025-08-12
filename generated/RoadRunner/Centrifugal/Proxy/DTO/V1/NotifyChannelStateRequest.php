@@ -6,8 +6,8 @@
 namespace RoadRunner\Centrifugal\Proxy\DTO\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>centrifugal.centrifugo.proxy.NotifyChannelStateRequest</code>
@@ -25,7 +25,7 @@ class NotifyChannelStateRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\RoadRunner\Centrifugal\Proxy\DTO\V1\ChannelEvent>|\Google\Protobuf\Internal\RepeatedField $events
+     *     @type \RoadRunner\Centrifugal\Proxy\DTO\V1\ChannelEvent[] $events
      * }
      */
     public function __construct($data = NULL) {
@@ -35,7 +35,7 @@ class NotifyChannelStateRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .centrifugal.centrifugo.proxy.ChannelEvent events = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\RoadRunner\Centrifugal\Proxy\DTO\V1\ChannelEvent>
      */
     public function getEvents()
     {
@@ -44,7 +44,7 @@ class NotifyChannelStateRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .centrifugal.centrifugo.proxy.ChannelEvent events = 1;</code>
-     * @param array<\RoadRunner\Centrifugal\Proxy\DTO\V1\ChannelEvent>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \RoadRunner\Centrifugal\Proxy\DTO\V1\ChannelEvent[] $var
      * @return $this
      */
     public function setEvents($var)

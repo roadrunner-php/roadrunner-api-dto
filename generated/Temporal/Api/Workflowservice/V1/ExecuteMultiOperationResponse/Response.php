@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1\ExecuteMultiOperationResponse;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.ExecuteMultiOperationResponse.Response</code>

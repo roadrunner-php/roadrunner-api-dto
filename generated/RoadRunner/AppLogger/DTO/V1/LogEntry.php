@@ -6,8 +6,8 @@
 namespace RoadRunner\AppLogger\DTO\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>applogger.v1.LogEntry</code>
@@ -30,7 +30,7 @@ class LogEntry extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $message
-     *     @type array<\RoadRunner\AppLogger\DTO\V1\LogAttrs>|\Google\Protobuf\Internal\RepeatedField $log_attrs
+     *     @type \RoadRunner\AppLogger\DTO\V1\LogAttrs[] $log_attrs
      * }
      */
     public function __construct($data = NULL) {
@@ -62,7 +62,7 @@ class LogEntry extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .applogger.v1.LogAttrs log_attrs = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\RoadRunner\AppLogger\DTO\V1\LogAttrs>
      */
     public function getLogAttrs()
     {
@@ -71,7 +71,7 @@ class LogEntry extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .applogger.v1.LogAttrs log_attrs = 2;</code>
-     * @param array<\RoadRunner\AppLogger\DTO\V1\LogAttrs>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \RoadRunner\AppLogger\DTO\V1\LogAttrs[] $var
      * @return $this
      */
     public function setLogAttrs($var)

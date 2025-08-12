@@ -6,8 +6,8 @@
 namespace Temporal\Api\Nexus\V1\EndpointTarget;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Target a worker polling on a Nexus task queue in a specific namespace.

@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.DescribeWorkerDeploymentVersionResponse</code>
@@ -18,6 +18,12 @@ class DescribeWorkerDeploymentVersionResponse extends \Google\Protobuf\Internal\
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersionInfo worker_deployment_version_info = 1;</code>
      */
     protected $worker_deployment_version_info = null;
+    /**
+     * All the Task Queues that have ever polled from this Deployment version.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.workflowservice.v1.DescribeWorkerDeploymentVersionResponse.VersionTaskQueue version_task_queues = 2;</code>
+     */
+    private $version_task_queues;
 
     /**
      * Constructor.
@@ -26,6 +32,8 @@ class DescribeWorkerDeploymentVersionResponse extends \Google\Protobuf\Internal\
      *     Optional. Data for populating the Message object.
      *
      *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentVersionInfo $worker_deployment_version_info
+     *     @type \Temporal\Api\Workflowservice\V1\DescribeWorkerDeploymentVersionResponse\VersionTaskQueue[] $version_task_queues
+     *           All the Task Queues that have ever polled from this Deployment version.
      * }
      */
     public function __construct($data = NULL) {
@@ -61,6 +69,32 @@ class DescribeWorkerDeploymentVersionResponse extends \Google\Protobuf\Internal\
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersionInfo::class);
         $this->worker_deployment_version_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * All the Task Queues that have ever polled from this Deployment version.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.workflowservice.v1.DescribeWorkerDeploymentVersionResponse.VersionTaskQueue version_task_queues = 2;</code>
+     * @return RepeatedField<\Temporal\Api\Workflowservice\V1\DescribeWorkerDeploymentVersionResponse\VersionTaskQueue>
+     */
+    public function getVersionTaskQueues()
+    {
+        return $this->version_task_queues;
+    }
+
+    /**
+     * All the Task Queues that have ever polled from this Deployment version.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.workflowservice.v1.DescribeWorkerDeploymentVersionResponse.VersionTaskQueue version_task_queues = 2;</code>
+     * @param \Temporal\Api\Workflowservice\V1\DescribeWorkerDeploymentVersionResponse\VersionTaskQueue[] $var
+     * @return $this
+     */
+    public function setVersionTaskQueues($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Workflowservice\V1\DescribeWorkerDeploymentVersionResponse\VersionTaskQueue::class);
+        $this->version_task_queues = $arr;
 
         return $this;
     }

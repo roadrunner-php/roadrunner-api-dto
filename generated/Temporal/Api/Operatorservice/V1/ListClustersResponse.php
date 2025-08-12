@@ -6,8 +6,8 @@
 namespace Temporal\Api\Operatorservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.operatorservice.v1.ListClustersResponse</code>
@@ -31,7 +31,7 @@ class ListClustersResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Temporal\Api\Operatorservice\V1\ClusterMetadata>|\Google\Protobuf\Internal\RepeatedField $clusters
+     *     @type \Temporal\Api\Operatorservice\V1\ClusterMetadata[] $clusters
      *           List of all cluster information
      *     @type string $next_page_token
      * }
@@ -45,7 +45,7 @@ class ListClustersResponse extends \Google\Protobuf\Internal\Message
      * List of all cluster information
      *
      * Generated from protobuf field <code>repeated .temporal.api.operatorservice.v1.ClusterMetadata clusters = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Operatorservice\V1\ClusterMetadata>
      */
     public function getClusters()
     {
@@ -56,7 +56,7 @@ class ListClustersResponse extends \Google\Protobuf\Internal\Message
      * List of all cluster information
      *
      * Generated from protobuf field <code>repeated .temporal.api.operatorservice.v1.ClusterMetadata clusters = 1;</code>
-     * @param array<\Temporal\Api\Operatorservice\V1\ClusterMetadata>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Operatorservice\V1\ClusterMetadata[] $var
      * @return $this
      */
     public function setClusters($var)

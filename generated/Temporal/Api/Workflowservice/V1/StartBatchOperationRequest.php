@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.StartBatchOperationRequest</code>
@@ -74,7 +74,7 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
      *           Job ID defines the unique ID for the batch job
      *     @type string $reason
      *           Reason to perform the batch operation
-     *     @type array<\Temporal\Api\Common\V1\WorkflowExecution>|\Google\Protobuf\Internal\RepeatedField $executions
+     *     @type \Temporal\Api\Common\V1\WorkflowExecution[] $executions
      *           Executions to apply the batch operation
      *           This field and `visibility_query` are mutually exclusive
      *     @type float $max_operations_per_second
@@ -91,6 +91,8 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Batch\V1\BatchOperationReset $reset_operation
      *     @type \Temporal\Api\Batch\V1\BatchOperationUpdateWorkflowExecutionOptions $update_workflow_options_operation
      *     @type \Temporal\Api\Batch\V1\BatchOperationUnpauseActivities $unpause_activities_operation
+     *     @type \Temporal\Api\Batch\V1\BatchOperationResetActivities $reset_activities_operation
+     *     @type \Temporal\Api\Batch\V1\BatchOperationUpdateActivityOptions $update_activity_options_operation
      * }
      */
     public function __construct($data = NULL) {
@@ -209,7 +211,7 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
      * This field and `visibility_query` are mutually exclusive
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.WorkflowExecution executions = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Common\V1\WorkflowExecution>
      */
     public function getExecutions()
     {
@@ -221,7 +223,7 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
      * This field and `visibility_query` are mutually exclusive
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.WorkflowExecution executions = 5;</code>
-     * @param array<\Temporal\Api\Common\V1\WorkflowExecution>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Common\V1\WorkflowExecution[] $var
      * @return $this
      */
     public function setExecutions($var)
@@ -453,6 +455,60 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Batch\V1\BatchOperationUnpauseActivities::class);
         $this->writeOneof(16, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.batch.v1.BatchOperationResetActivities reset_activities_operation = 17;</code>
+     * @return \Temporal\Api\Batch\V1\BatchOperationResetActivities|null
+     */
+    public function getResetActivitiesOperation()
+    {
+        return $this->readOneof(17);
+    }
+
+    public function hasResetActivitiesOperation()
+    {
+        return $this->hasOneof(17);
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.batch.v1.BatchOperationResetActivities reset_activities_operation = 17;</code>
+     * @param \Temporal\Api\Batch\V1\BatchOperationResetActivities $var
+     * @return $this
+     */
+    public function setResetActivitiesOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Batch\V1\BatchOperationResetActivities::class);
+        $this->writeOneof(17, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.batch.v1.BatchOperationUpdateActivityOptions update_activity_options_operation = 18;</code>
+     * @return \Temporal\Api\Batch\V1\BatchOperationUpdateActivityOptions|null
+     */
+    public function getUpdateActivityOptionsOperation()
+    {
+        return $this->readOneof(18);
+    }
+
+    public function hasUpdateActivityOptionsOperation()
+    {
+        return $this->hasOneof(18);
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.batch.v1.BatchOperationUpdateActivityOptions update_activity_options_operation = 18;</code>
+     * @param \Temporal\Api\Batch\V1\BatchOperationUpdateActivityOptions $var
+     * @return $this
+     */
+    public function setUpdateActivityOptionsOperation($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Batch\V1\BatchOperationUpdateActivityOptions::class);
+        $this->writeOneof(18, $var);
 
         return $this;
     }

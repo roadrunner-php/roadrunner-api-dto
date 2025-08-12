@@ -6,8 +6,8 @@
 namespace Temporal\Api\Batch\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * BatchOperationUpdateWorkflowExecutionOptions sends UpdateWorkflowExecutionOptions requests to batch workflows.
@@ -24,7 +24,7 @@ class BatchOperationUpdateWorkflowExecutionOptions extends \Google\Protobuf\Inte
      */
     protected $identity = '';
     /**
-     * Workflow Execution options. Partial updates are accepted and controlled by update_mask.
+     * Update Workflow options that were originally specified via StartWorkflowExecution. Partial updates are accepted and controlled by update_mask.
      *
      * Generated from protobuf field <code>.temporal.api.workflow.v1.WorkflowExecutionOptions workflow_execution_options = 2;</code>
      */
@@ -46,7 +46,7 @@ class BatchOperationUpdateWorkflowExecutionOptions extends \Google\Protobuf\Inte
      *     @type string $identity
      *           The identity of the worker/client.
      *     @type \Temporal\Api\Workflow\V1\WorkflowExecutionOptions $workflow_execution_options
-     *           Workflow Execution options. Partial updates are accepted and controlled by update_mask.
+     *           Update Workflow options that were originally specified via StartWorkflowExecution. Partial updates are accepted and controlled by update_mask.
      *     @type \Google\Protobuf\FieldMask $update_mask
      *           Controls which fields from `workflow_execution_options` will be applied.
      *           To unset a field, set it to null and use the update mask to indicate that it should be mutated.
@@ -84,7 +84,7 @@ class BatchOperationUpdateWorkflowExecutionOptions extends \Google\Protobuf\Inte
     }
 
     /**
-     * Workflow Execution options. Partial updates are accepted and controlled by update_mask.
+     * Update Workflow options that were originally specified via StartWorkflowExecution. Partial updates are accepted and controlled by update_mask.
      *
      * Generated from protobuf field <code>.temporal.api.workflow.v1.WorkflowExecutionOptions workflow_execution_options = 2;</code>
      * @return \Temporal\Api\Workflow\V1\WorkflowExecutionOptions|null
@@ -105,7 +105,7 @@ class BatchOperationUpdateWorkflowExecutionOptions extends \Google\Protobuf\Inte
     }
 
     /**
-     * Workflow Execution options. Partial updates are accepted and controlled by update_mask.
+     * Update Workflow options that were originally specified via StartWorkflowExecution. Partial updates are accepted and controlled by update_mask.
      *
      * Generated from protobuf field <code>.temporal.api.workflow.v1.WorkflowExecutionOptions workflow_execution_options = 2;</code>
      * @param \Temporal\Api\Workflow\V1\WorkflowExecutionOptions $var

@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.ListScheduleMatchingTimesResponse</code>
@@ -25,7 +25,7 @@ class ListScheduleMatchingTimesResponse extends \Google\Protobuf\Internal\Messag
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Google\Protobuf\Timestamp>|\Google\Protobuf\Internal\RepeatedField $start_time
+     *     @type \Google\Protobuf\Timestamp[] $start_time
      * }
      */
     public function __construct($data = NULL) {
@@ -35,7 +35,7 @@ class ListScheduleMatchingTimesResponse extends \Google\Protobuf\Internal\Messag
 
     /**
      * Generated from protobuf field <code>repeated .google.protobuf.Timestamp start_time = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Protobuf\Timestamp>
      */
     public function getStartTime()
     {
@@ -44,7 +44,7 @@ class ListScheduleMatchingTimesResponse extends \Google\Protobuf\Internal\Messag
 
     /**
      * Generated from protobuf field <code>repeated .google.protobuf.Timestamp start_time = 1;</code>
-     * @param array<\Google\Protobuf\Timestamp>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Protobuf\Timestamp[] $var
      * @return $this
      */
     public function setStartTime($var)

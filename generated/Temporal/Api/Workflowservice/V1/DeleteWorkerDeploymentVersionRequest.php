@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Used for manual deletion of Versions. User can delete a Version only when all the
@@ -26,11 +26,18 @@ class DeleteWorkerDeploymentVersionRequest extends \Google\Protobuf\Internal\Mes
      */
     protected $namespace = '';
     /**
-     * Deployment Version identifier in the form "<deployment_name>.<build_id>".
+     * Deprecated. Use `deployment_version`.
      *
-     * Generated from protobuf field <code>string version = 2;</code>
+     * Generated from protobuf field <code>string version = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $version = '';
+    /**
+     * Required.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion deployment_version = 5;</code>
+     */
+    protected $deployment_version = null;
     /**
      * Pass to force deletion even if the Version is draining. In this case the open pinned
      * workflows will be stuck until manually moved to another version by UpdateWorkflowExecutionOptions.
@@ -53,7 +60,9 @@ class DeleteWorkerDeploymentVersionRequest extends \Google\Protobuf\Internal\Mes
      *
      *     @type string $namespace
      *     @type string $version
-     *           Deployment Version identifier in the form "<deployment_name>.<build_id>".
+     *           Deprecated. Use `deployment_version`.
+     *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $deployment_version
+     *           Required.
      *     @type bool $skip_drainage
      *           Pass to force deletion even if the Version is draining. In this case the open pinned
      *           workflows will be stuck until manually moved to another version by UpdateWorkflowExecutionOptions.
@@ -89,27 +98,69 @@ class DeleteWorkerDeploymentVersionRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
-     * Deployment Version identifier in the form "<deployment_name>.<build_id>".
+     * Deprecated. Use `deployment_version`.
      *
-     * Generated from protobuf field <code>string version = 2;</code>
+     * Generated from protobuf field <code>string version = 2 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getVersion()
     {
+        if ($this->version !== '') {
+            @trigger_error('version is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->version;
     }
 
     /**
-     * Deployment Version identifier in the form "<deployment_name>.<build_id>".
+     * Deprecated. Use `deployment_version`.
      *
-     * Generated from protobuf field <code>string version = 2;</code>
+     * Generated from protobuf field <code>string version = 2 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setVersion($var)
     {
+        @trigger_error('version is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Required.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion deployment_version = 5;</code>
+     * @return \Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null
+     */
+    public function getDeploymentVersion()
+    {
+        return $this->deployment_version;
+    }
+
+    public function hasDeploymentVersion()
+    {
+        return isset($this->deployment_version);
+    }
+
+    public function clearDeploymentVersion()
+    {
+        unset($this->deployment_version);
+    }
+
+    /**
+     * Required.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion deployment_version = 5;</code>
+     * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
+     * @return $this
+     */
+    public function setDeploymentVersion($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
+        $this->deployment_version = $var;
 
         return $this;
     }

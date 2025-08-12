@@ -6,8 +6,8 @@
 namespace Temporal\Api\Deployment\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * `Deployment` identifies a deployment of Temporal workers. The combination of deployment series

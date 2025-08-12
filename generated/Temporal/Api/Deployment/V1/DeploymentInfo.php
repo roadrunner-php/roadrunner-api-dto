@@ -6,8 +6,8 @@
 namespace Temporal\Api\Deployment\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * `DeploymentInfo` holds information about a deployment. Deployment information is tracked
@@ -53,7 +53,7 @@ class DeploymentInfo extends \Google\Protobuf\Internal\Message
      *
      *     @type \Temporal\Api\Deployment\V1\Deployment $deployment
      *     @type \Google\Protobuf\Timestamp $create_time
-     *     @type array<\Temporal\Api\Deployment\V1\DeploymentInfo\TaskQueueInfo>|\Google\Protobuf\Internal\RepeatedField $task_queue_infos
+     *     @type \Temporal\Api\Deployment\V1\DeploymentInfo\TaskQueueInfo[] $task_queue_infos
      *     @type array|\Google\Protobuf\Internal\MapField $metadata
      *           A user-defined set of key-values. Can be updated as part of write operations to the
      *           deployment, such as `SetCurrentDeployment`.
@@ -132,7 +132,7 @@ class DeploymentInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.deployment.v1.DeploymentInfo.TaskQueueInfo task_queue_infos = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Deployment\V1\DeploymentInfo\TaskQueueInfo>
      */
     public function getTaskQueueInfos()
     {
@@ -141,7 +141,7 @@ class DeploymentInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.deployment.v1.DeploymentInfo.TaskQueueInfo task_queue_infos = 3;</code>
-     * @param array<\Temporal\Api\Deployment\V1\DeploymentInfo\TaskQueueInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Deployment\V1\DeploymentInfo\TaskQueueInfo[] $var
      * @return $this
      */
     public function setTaskQueueInfos($var)

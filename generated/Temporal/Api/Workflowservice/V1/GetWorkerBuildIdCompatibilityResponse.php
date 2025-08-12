@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * [cleanup-wv-pre-release]
@@ -32,7 +32,7 @@ class GetWorkerBuildIdCompatibilityResponse extends \Google\Protobuf\Internal\Me
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Temporal\Api\Taskqueue\V1\CompatibleVersionSet>|\Google\Protobuf\Internal\RepeatedField $major_version_sets
+     *     @type \Temporal\Api\Taskqueue\V1\CompatibleVersionSet[] $major_version_sets
      *           Major version sets, in order from oldest to newest. The last element of the list will always
      *           be the current default major version. IE: New workflows will target the most recent version
      *           in that version set.
@@ -51,7 +51,7 @@ class GetWorkerBuildIdCompatibilityResponse extends \Google\Protobuf\Internal\Me
      * There may be fewer sets returned than exist, if the request chose to limit this response.
      *
      * Generated from protobuf field <code>repeated .temporal.api.taskqueue.v1.CompatibleVersionSet major_version_sets = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Taskqueue\V1\CompatibleVersionSet>
      */
     public function getMajorVersionSets()
     {
@@ -65,7 +65,7 @@ class GetWorkerBuildIdCompatibilityResponse extends \Google\Protobuf\Internal\Me
      * There may be fewer sets returned than exist, if the request chose to limit this response.
      *
      * Generated from protobuf field <code>repeated .temporal.api.taskqueue.v1.CompatibleVersionSet major_version_sets = 1;</code>
-     * @param array<\Temporal\Api\Taskqueue\V1\CompatibleVersionSet>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Taskqueue\V1\CompatibleVersionSet[] $var
      * @return $this
      */
     public function setMajorVersionSets($var)

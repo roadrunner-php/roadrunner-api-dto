@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.ExecuteMultiOperationRequest</code>
@@ -37,7 +37,7 @@ class ExecuteMultiOperationRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $namespace
-     *     @type array<\Temporal\Api\Workflowservice\V1\ExecuteMultiOperationRequest\Operation>|\Google\Protobuf\Internal\RepeatedField $operations
+     *     @type \Temporal\Api\Workflowservice\V1\ExecuteMultiOperationRequest\Operation[] $operations
      *           List of operations to execute within a single workflow.
      *           Preconditions:
      *           - The list of operations must not be empty.
@@ -82,7 +82,7 @@ class ExecuteMultiOperationRequest extends \Google\Protobuf\Internal\Message
      * Note that additional operation-specific restrictions have to be considered.
      *
      * Generated from protobuf field <code>repeated .temporal.api.workflowservice.v1.ExecuteMultiOperationRequest.Operation operations = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Workflowservice\V1\ExecuteMultiOperationRequest\Operation>
      */
     public function getOperations()
     {
@@ -98,7 +98,7 @@ class ExecuteMultiOperationRequest extends \Google\Protobuf\Internal\Message
      * Note that additional operation-specific restrictions have to be considered.
      *
      * Generated from protobuf field <code>repeated .temporal.api.workflowservice.v1.ExecuteMultiOperationRequest.Operation operations = 2;</code>
-     * @param array<\Temporal\Api\Workflowservice\V1\ExecuteMultiOperationRequest\Operation>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Workflowservice\V1\ExecuteMultiOperationRequest\Operation[] $var
      * @return $this
      */
     public function setOperations($var)

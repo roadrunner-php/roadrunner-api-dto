@@ -6,8 +6,8 @@
 namespace Temporal\Api\History\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.history.v1.RequestCancelExternalWorkflowExecutionInitiatedEventAttributes</code>
@@ -36,9 +36,10 @@ class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes extends \Go
      */
     protected $workflow_execution = null;
     /**
-     * Deprecated
+     * Deprecated.
      *
-     * Generated from protobuf field <code>string control = 4;</code>
+     * Generated from protobuf field <code>string control = 4 [deprecated = true];</code>
+     * @deprecated
      */
     protected $control = '';
     /**
@@ -69,7 +70,7 @@ class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes extends \Go
      *     @type string $namespace_id
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $workflow_execution
      *     @type string $control
-     *           Deprecated
+     *           Deprecated.
      *     @type bool $child_workflow_only
      *           Workers are expected to set this to true if the workflow they are requesting to cancel is
      *           a child of the workflow which issued the request
@@ -191,25 +192,31 @@ class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes extends \Go
     }
 
     /**
-     * Deprecated
+     * Deprecated.
      *
-     * Generated from protobuf field <code>string control = 4;</code>
+     * Generated from protobuf field <code>string control = 4 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getControl()
     {
+        if ($this->control !== '') {
+            @trigger_error('control is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->control;
     }
 
     /**
-     * Deprecated
+     * Deprecated.
      *
-     * Generated from protobuf field <code>string control = 4;</code>
+     * Generated from protobuf field <code>string control = 4 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setControl($var)
     {
+        @trigger_error('control is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->control = $var;
 

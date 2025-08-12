@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * [cleanup-wv-pre-release]
@@ -39,8 +39,8 @@ class GetWorkerVersioningRulesResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Temporal\Api\Taskqueue\V1\TimestampedBuildIdAssignmentRule>|\Google\Protobuf\Internal\RepeatedField $assignment_rules
-     *     @type array<\Temporal\Api\Taskqueue\V1\TimestampedCompatibleBuildIdRedirectRule>|\Google\Protobuf\Internal\RepeatedField $compatible_redirect_rules
+     *     @type \Temporal\Api\Taskqueue\V1\TimestampedBuildIdAssignmentRule[] $assignment_rules
+     *     @type \Temporal\Api\Taskqueue\V1\TimestampedCompatibleBuildIdRedirectRule[] $compatible_redirect_rules
      *     @type string $conflict_token
      *           This value can be passed back to UpdateWorkerVersioningRulesRequest to
      *           ensure that the rules were not modified between this List and the Update,
@@ -54,7 +54,7 @@ class GetWorkerVersioningRulesResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.taskqueue.v1.TimestampedBuildIdAssignmentRule assignment_rules = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Taskqueue\V1\TimestampedBuildIdAssignmentRule>
      */
     public function getAssignmentRules()
     {
@@ -63,7 +63,7 @@ class GetWorkerVersioningRulesResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.taskqueue.v1.TimestampedBuildIdAssignmentRule assignment_rules = 1;</code>
-     * @param array<\Temporal\Api\Taskqueue\V1\TimestampedBuildIdAssignmentRule>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Taskqueue\V1\TimestampedBuildIdAssignmentRule[] $var
      * @return $this
      */
     public function setAssignmentRules($var)
@@ -76,7 +76,7 @@ class GetWorkerVersioningRulesResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.taskqueue.v1.TimestampedCompatibleBuildIdRedirectRule compatible_redirect_rules = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Taskqueue\V1\TimestampedCompatibleBuildIdRedirectRule>
      */
     public function getCompatibleRedirectRules()
     {
@@ -85,7 +85,7 @@ class GetWorkerVersioningRulesResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.taskqueue.v1.TimestampedCompatibleBuildIdRedirectRule compatible_redirect_rules = 2;</code>
-     * @param array<\Temporal\Api\Taskqueue\V1\TimestampedCompatibleBuildIdRedirectRule>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Taskqueue\V1\TimestampedCompatibleBuildIdRedirectRule[] $var
      * @return $this
      */
     public function setCompatibleRedirectRules($var)

@@ -6,8 +6,8 @@
 namespace RoadRunner\Websockets\DTO\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * RPC request with messages
@@ -27,7 +27,7 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\RoadRunner\Websockets\DTO\V1\Message>|\Google\Protobuf\Internal\RepeatedField $messages
+     *     @type \RoadRunner\Websockets\DTO\V1\Message[] $messages
      * }
      */
     public function __construct($data = NULL) {
@@ -37,7 +37,7 @@ class Request extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .websockets.v1.Message messages = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\RoadRunner\Websockets\DTO\V1\Message>
      */
     public function getMessages()
     {
@@ -46,7 +46,7 @@ class Request extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .websockets.v1.Message messages = 1;</code>
-     * @param array<\RoadRunner\Websockets\DTO\V1\Message>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \RoadRunner\Websockets\DTO\V1\Message[] $var
      * @return $this
      */
     public function setMessages($var)

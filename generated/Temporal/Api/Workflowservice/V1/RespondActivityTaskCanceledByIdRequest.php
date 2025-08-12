@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.RespondActivityTaskCanceledByIdRequest</code>
@@ -50,6 +50,12 @@ class RespondActivityTaskCanceledByIdRequest extends \Google\Protobuf\Internal\M
      * Generated from protobuf field <code>string identity = 6;</code>
      */
     protected $identity = '';
+    /**
+     * Worker deployment options that user has set in the worker.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentOptions deployment_options = 7;</code>
+     */
+    protected $deployment_options = null;
 
     /**
      * Constructor.
@@ -69,6 +75,8 @@ class RespondActivityTaskCanceledByIdRequest extends \Google\Protobuf\Internal\M
      *           Serialized additional information to attach to the cancellation
      *     @type string $identity
      *           The identity of the worker/client
+     *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentOptions $deployment_options
+     *           Worker deployment options that user has set in the worker.
      * }
      */
     public function __construct($data = NULL) {
@@ -238,6 +246,42 @@ class RespondActivityTaskCanceledByIdRequest extends \Google\Protobuf\Internal\M
     {
         GPBUtil::checkString($var, True);
         $this->identity = $var;
+
+        return $this;
+    }
+
+    /**
+     * Worker deployment options that user has set in the worker.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentOptions deployment_options = 7;</code>
+     * @return \Temporal\Api\Deployment\V1\WorkerDeploymentOptions|null
+     */
+    public function getDeploymentOptions()
+    {
+        return $this->deployment_options;
+    }
+
+    public function hasDeploymentOptions()
+    {
+        return isset($this->deployment_options);
+    }
+
+    public function clearDeploymentOptions()
+    {
+        unset($this->deployment_options);
+    }
+
+    /**
+     * Worker deployment options that user has set in the worker.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentOptions deployment_options = 7;</code>
+     * @param \Temporal\Api\Deployment\V1\WorkerDeploymentOptions $var
+     * @return $this
+     */
+    public function setDeploymentOptions($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentOptions::class);
+        $this->deployment_options = $var;
 
         return $this;
     }

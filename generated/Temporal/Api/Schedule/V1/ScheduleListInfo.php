@@ -6,8 +6,8 @@
 namespace Temporal\Api\Schedule\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * ScheduleListInfo is an abbreviated set of values from Schedule and ScheduleInfo
@@ -69,9 +69,9 @@ class ScheduleListInfo extends \Google\Protobuf\Internal\Message
      *     @type string $notes
      *           From state:
      *     @type bool $paused
-     *     @type array<\Temporal\Api\Schedule\V1\ScheduleActionResult>|\Google\Protobuf\Internal\RepeatedField $recent_actions
+     *     @type \Temporal\Api\Schedule\V1\ScheduleActionResult[] $recent_actions
      *           From info (maybe fewer entries):
-     *     @type array<\Google\Protobuf\Timestamp>|\Google\Protobuf\Internal\RepeatedField $future_action_times
+     *     @type \Google\Protobuf\Timestamp[] $future_action_times
      * }
      */
     public function __construct($data = NULL) {
@@ -209,7 +209,7 @@ class ScheduleListInfo extends \Google\Protobuf\Internal\Message
      * From info (maybe fewer entries):
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.ScheduleActionResult recent_actions = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Schedule\V1\ScheduleActionResult>
      */
     public function getRecentActions()
     {
@@ -220,7 +220,7 @@ class ScheduleListInfo extends \Google\Protobuf\Internal\Message
      * From info (maybe fewer entries):
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.ScheduleActionResult recent_actions = 5;</code>
-     * @param array<\Temporal\Api\Schedule\V1\ScheduleActionResult>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Schedule\V1\ScheduleActionResult[] $var
      * @return $this
      */
     public function setRecentActions($var)
@@ -233,7 +233,7 @@ class ScheduleListInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .google.protobuf.Timestamp future_action_times = 6;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Protobuf\Timestamp>
      */
     public function getFutureActionTimes()
     {
@@ -242,7 +242,7 @@ class ScheduleListInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .google.protobuf.Timestamp future_action_times = 6;</code>
-     * @param array<\Google\Protobuf\Timestamp>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Protobuf\Timestamp[] $var
      * @return $this
      */
     public function setFutureActionTimes($var)

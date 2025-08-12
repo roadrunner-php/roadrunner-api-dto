@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1\UpdateWorkerVersioningRulesRequest;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Replaces the assignment rule at a given index.

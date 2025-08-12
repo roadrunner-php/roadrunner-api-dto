@@ -6,8 +6,8 @@
 namespace Temporal\Api\Export\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * WorkflowExecutions is used by the Cloud Export feature to deserialize 
@@ -28,7 +28,7 @@ class WorkflowExecutions extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Temporal\Api\Export\V1\WorkflowExecution>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \Temporal\Api\Export\V1\WorkflowExecution[] $items
      * }
      */
     public function __construct($data = NULL) {
@@ -38,7 +38,7 @@ class WorkflowExecutions extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.export.v1.WorkflowExecution items = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Export\V1\WorkflowExecution>
      */
     public function getItems()
     {
@@ -47,7 +47,7 @@ class WorkflowExecutions extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.export.v1.WorkflowExecution items = 1;</code>
-     * @param array<\Temporal\Api\Export\V1\WorkflowExecution>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Export\V1\WorkflowExecution[] $var
      * @return $this
      */
     public function setItems($var)

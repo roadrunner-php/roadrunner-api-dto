@@ -6,8 +6,8 @@
 namespace Temporal\Api\Batch\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * BatchOperationReset sends reset requests to batch workflows.
@@ -30,17 +30,27 @@ class BatchOperationReset extends \Google\Protobuf\Internal\Message
      */
     protected $options = null;
     /**
-     * Reset type (deprecated, use `options`).
+     * Deprecated. Use `options`.
      *
-     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetType reset_type = 1;</code>
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetType reset_type = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $reset_type = 0;
     /**
-     * History event reapply options (deprecated, use `options`).
+     * Deprecated. Use `options`.
      *
-     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 2;</code>
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $reset_reapply_type = 0;
+    /**
+     * Operations to perform after the workflow has been reset. These operations will be applied
+     * to the *new* run of the workflow execution in the order they are provided.
+     * All operations are applied to the workflow before the first new workflow task is generated
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.workflow.v1.PostResetOperation post_reset_operations = 5;</code>
+     */
+    private $post_reset_operations;
 
     /**
      * Constructor.
@@ -53,9 +63,13 @@ class BatchOperationReset extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Common\V1\ResetOptions $options
      *           Describes what to reset to and how. If set, `reset_type` and `reset_reapply_type` are ignored.
      *     @type int $reset_type
-     *           Reset type (deprecated, use `options`).
+     *           Deprecated. Use `options`.
      *     @type int $reset_reapply_type
-     *           History event reapply options (deprecated, use `options`).
+     *           Deprecated. Use `options`.
+     *     @type \Temporal\Api\Workflow\V1\PostResetOperation[] $post_reset_operations
+     *           Operations to perform after the workflow has been reset. These operations will be applied
+     *           to the *new* run of the workflow execution in the order they are provided.
+     *           All operations are applied to the workflow before the first new workflow task is generated
      * }
      */
     public function __construct($data = NULL) {
@@ -126,25 +140,31 @@ class BatchOperationReset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Reset type (deprecated, use `options`).
+     * Deprecated. Use `options`.
      *
-     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetType reset_type = 1;</code>
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetType reset_type = 1 [deprecated = true];</code>
      * @return int
+     * @deprecated
      */
     public function getResetType()
     {
+        if ($this->reset_type !== 0) {
+            @trigger_error('reset_type is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->reset_type;
     }
 
     /**
-     * Reset type (deprecated, use `options`).
+     * Deprecated. Use `options`.
      *
-     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetType reset_type = 1;</code>
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetType reset_type = 1 [deprecated = true];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setResetType($var)
     {
+        @trigger_error('reset_type is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ResetType::class);
         $this->reset_type = $var;
 
@@ -152,27 +172,63 @@ class BatchOperationReset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * History event reapply options (deprecated, use `options`).
+     * Deprecated. Use `options`.
      *
-     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 2;</code>
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 2 [deprecated = true];</code>
      * @return int
+     * @deprecated
      */
     public function getResetReapplyType()
     {
+        if ($this->reset_reapply_type !== 0) {
+            @trigger_error('reset_reapply_type is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->reset_reapply_type;
     }
 
     /**
-     * History event reapply options (deprecated, use `options`).
+     * Deprecated. Use `options`.
      *
-     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 2;</code>
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 2 [deprecated = true];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setResetReapplyType($var)
     {
+        @trigger_error('reset_reapply_type is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ResetReapplyType::class);
         $this->reset_reapply_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Operations to perform after the workflow has been reset. These operations will be applied
+     * to the *new* run of the workflow execution in the order they are provided.
+     * All operations are applied to the workflow before the first new workflow task is generated
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.workflow.v1.PostResetOperation post_reset_operations = 5;</code>
+     * @return RepeatedField<\Temporal\Api\Workflow\V1\PostResetOperation>
+     */
+    public function getPostResetOperations()
+    {
+        return $this->post_reset_operations;
+    }
+
+    /**
+     * Operations to perform after the workflow has been reset. These operations will be applied
+     * to the *new* run of the workflow execution in the order they are provided.
+     * All operations are applied to the workflow before the first new workflow task is generated
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.workflow.v1.PostResetOperation post_reset_operations = 5;</code>
+     * @param \Temporal\Api\Workflow\V1\PostResetOperation[] $var
+     * @return $this
+     */
+    public function setPostResetOperations($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Workflow\V1\PostResetOperation::class);
+        $this->post_reset_operations = $arr;
 
         return $this;
     }

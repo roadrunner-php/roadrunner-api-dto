@@ -6,8 +6,8 @@
 namespace Temporal\Api\Failure\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.failure.v1.NexusOperationFailureInfo</code>
@@ -40,9 +40,10 @@ class NexusOperationFailureInfo extends \Google\Protobuf\Internal\Message
     protected $operation = '';
     /**
      * Operation ID - may be empty if the operation completed synchronously.
-     * Deprecated: Renamed to operation_token.
+     * Deprecated. Renamed to operation_token.
      *
-     * Generated from protobuf field <code>string operation_id = 5;</code>
+     * Generated from protobuf field <code>string operation_id = 5 [deprecated = true];</code>
+     * @deprecated
      */
     protected $operation_id = '';
     /**
@@ -68,7 +69,7 @@ class NexusOperationFailureInfo extends \Google\Protobuf\Internal\Message
      *           Operation name.
      *     @type string $operation_id
      *           Operation ID - may be empty if the operation completed synchronously.
-     *           Deprecated: Renamed to operation_token.
+     *           Deprecated. Renamed to operation_token.
      *     @type string $operation_token
      *           Operation token - may be empty if the operation completed synchronously.
      * }
@@ -184,26 +185,32 @@ class NexusOperationFailureInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Operation ID - may be empty if the operation completed synchronously.
-     * Deprecated: Renamed to operation_token.
+     * Deprecated. Renamed to operation_token.
      *
-     * Generated from protobuf field <code>string operation_id = 5;</code>
+     * Generated from protobuf field <code>string operation_id = 5 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getOperationId()
     {
+        if ($this->operation_id !== '') {
+            @trigger_error('operation_id is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->operation_id;
     }
 
     /**
      * Operation ID - may be empty if the operation completed synchronously.
-     * Deprecated: Renamed to operation_token.
+     * Deprecated. Renamed to operation_token.
      *
-     * Generated from protobuf field <code>string operation_id = 5;</code>
+     * Generated from protobuf field <code>string operation_id = 5 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setOperationId($var)
     {
+        @trigger_error('operation_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->operation_id = $var;
 

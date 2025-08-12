@@ -6,8 +6,8 @@
 namespace Temporal\Api\Command\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.command.v1.StartChildWorkflowExecutionCommandAttributes</code>
@@ -93,8 +93,10 @@ class StartChildWorkflowExecutionCommandAttributes extends \Google\Protobuf\Inte
     /**
      * If this is set, the child workflow inherits the Build ID of the parent. Otherwise, the assignment
      * rules of the child's Task Queue will be used to independently assign a Build ID to it.
+     * Deprecated. Only considered for versioning v0.2.
      *
-     * Generated from protobuf field <code>bool inherit_build_id = 17;</code>
+     * Generated from protobuf field <code>bool inherit_build_id = 17 [deprecated = true];</code>
+     * @deprecated
      */
     protected $inherit_build_id = false;
     /**
@@ -136,6 +138,7 @@ class StartChildWorkflowExecutionCommandAttributes extends \Google\Protobuf\Inte
      *     @type bool $inherit_build_id
      *           If this is set, the child workflow inherits the Build ID of the parent. Otherwise, the assignment
      *           rules of the child's Task Queue will be used to independently assign a Build ID to it.
+     *           Deprecated. Only considered for versioning v0.2.
      *     @type \Temporal\Api\Common\V1\Priority $priority
      *           Priority metadata. If this message is not present, or any fields are not
      *           present, they inherit the values from the workflow.
@@ -625,25 +628,33 @@ class StartChildWorkflowExecutionCommandAttributes extends \Google\Protobuf\Inte
     /**
      * If this is set, the child workflow inherits the Build ID of the parent. Otherwise, the assignment
      * rules of the child's Task Queue will be used to independently assign a Build ID to it.
+     * Deprecated. Only considered for versioning v0.2.
      *
-     * Generated from protobuf field <code>bool inherit_build_id = 17;</code>
+     * Generated from protobuf field <code>bool inherit_build_id = 17 [deprecated = true];</code>
      * @return bool
+     * @deprecated
      */
     public function getInheritBuildId()
     {
+        if ($this->inherit_build_id !== false) {
+            @trigger_error('inherit_build_id is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->inherit_build_id;
     }
 
     /**
      * If this is set, the child workflow inherits the Build ID of the parent. Otherwise, the assignment
      * rules of the child's Task Queue will be used to independently assign a Build ID to it.
+     * Deprecated. Only considered for versioning v0.2.
      *
-     * Generated from protobuf field <code>bool inherit_build_id = 17;</code>
+     * Generated from protobuf field <code>bool inherit_build_id = 17 [deprecated = true];</code>
      * @param bool $var
      * @return $this
+     * @deprecated
      */
     public function setInheritBuildId($var)
     {
+        @trigger_error('inherit_build_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkBool($var);
         $this->inherit_build_id = $var;
 

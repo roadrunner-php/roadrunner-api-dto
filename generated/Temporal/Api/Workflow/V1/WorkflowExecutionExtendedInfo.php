@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflow\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Holds all the extra information about workflow execution that is not part of Visibility.

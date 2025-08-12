@@ -6,8 +6,8 @@
 namespace Temporal\Api\Common\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Describes where and how to reset a workflow, used for batch reset currently
@@ -18,10 +18,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class ResetOptions extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Event types to be reapplied (deprecated)
+     * Deprecated. Use `options`.
      * Default: RESET_REAPPLY_TYPE_SIGNAL
      *
-     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 10;</code>
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 10 [deprecated = true];</code>
+     * @deprecated
      */
     protected $reset_reapply_type = 0;
     /**
@@ -60,12 +61,12 @@ class ResetOptions extends \Google\Protobuf\Internal\Message
      *           Note that by default, this reset is allowed to be to a prior run in a chain of
      *           continue-as-new.
      *     @type int $reset_reapply_type
-     *           Event types to be reapplied (deprecated)
+     *           Deprecated. Use `options`.
      *           Default: RESET_REAPPLY_TYPE_SIGNAL
      *     @type bool $current_run_only
      *           If true, limit the reset to only within the current run. (Applies to build_id targets and
      *           possibly others in the future.)
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $reset_reapply_exclude_types
+     *     @type int[] $reset_reapply_exclude_types
      *           Event types not to be reapplied
      * }
      */
@@ -211,27 +212,33 @@ class ResetOptions extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Event types to be reapplied (deprecated)
+     * Deprecated. Use `options`.
      * Default: RESET_REAPPLY_TYPE_SIGNAL
      *
-     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 10;</code>
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 10 [deprecated = true];</code>
      * @return int
+     * @deprecated
      */
     public function getResetReapplyType()
     {
+        if ($this->reset_reapply_type !== 0) {
+            @trigger_error('reset_reapply_type is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->reset_reapply_type;
     }
 
     /**
-     * Event types to be reapplied (deprecated)
+     * Deprecated. Use `options`.
      * Default: RESET_REAPPLY_TYPE_SIGNAL
      *
-     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 10;</code>
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 10 [deprecated = true];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setResetReapplyType($var)
     {
+        @trigger_error('reset_reapply_type is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ResetReapplyType::class);
         $this->reset_reapply_type = $var;
 
@@ -270,7 +277,7 @@ class ResetOptions extends \Google\Protobuf\Internal\Message
      * Event types not to be reapplied
      *
      * Generated from protobuf field <code>repeated .temporal.api.enums.v1.ResetReapplyExcludeType reset_reapply_exclude_types = 12;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getResetReapplyExcludeTypes()
     {
@@ -281,7 +288,7 @@ class ResetOptions extends \Google\Protobuf\Internal\Message
      * Event types not to be reapplied
      *
      * Generated from protobuf field <code>repeated .temporal.api.enums.v1.ResetReapplyExcludeType reset_reapply_exclude_types = 12;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setResetReapplyExcludeTypes($var)

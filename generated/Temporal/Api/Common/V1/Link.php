@@ -6,8 +6,8 @@
 namespace Temporal\Api\Common\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Link can be associated with history events. It might contain information about an external entity

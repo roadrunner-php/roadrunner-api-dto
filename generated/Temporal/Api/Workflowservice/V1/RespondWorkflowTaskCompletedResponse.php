@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.RespondWorkflowTaskCompletedResponse</code>
@@ -43,7 +43,7 @@ class RespondWorkflowTaskCompletedResponse extends \Google\Protobuf\Internal\Mes
      *
      *     @type \Temporal\Api\Workflowservice\V1\PollWorkflowTaskQueueResponse $workflow_task
      *           See `RespondWorkflowTaskCompletedResponse::return_new_workflow_task`
-     *     @type array<\Temporal\Api\Workflowservice\V1\PollActivityTaskQueueResponse>|\Google\Protobuf\Internal\RepeatedField $activity_tasks
+     *     @type \Temporal\Api\Workflowservice\V1\PollActivityTaskQueueResponse[] $activity_tasks
      *           See `ScheduleActivityTaskCommandAttributes::request_eager_execution`
      *     @type int|string $reset_history_event_id
      *           If non zero, indicates the server has discarded the workflow task that was being responded to.
@@ -96,7 +96,7 @@ class RespondWorkflowTaskCompletedResponse extends \Google\Protobuf\Internal\Mes
      * See `ScheduleActivityTaskCommandAttributes::request_eager_execution`
      *
      * Generated from protobuf field <code>repeated .temporal.api.workflowservice.v1.PollActivityTaskQueueResponse activity_tasks = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Workflowservice\V1\PollActivityTaskQueueResponse>
      */
     public function getActivityTasks()
     {
@@ -107,7 +107,7 @@ class RespondWorkflowTaskCompletedResponse extends \Google\Protobuf\Internal\Mes
      * See `ScheduleActivityTaskCommandAttributes::request_eager_execution`
      *
      * Generated from protobuf field <code>repeated .temporal.api.workflowservice.v1.PollActivityTaskQueueResponse activity_tasks = 2;</code>
-     * @param array<\Temporal\Api\Workflowservice\V1\PollActivityTaskQueueResponse>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Workflowservice\V1\PollActivityTaskQueueResponse[] $var
      * @return $this
      */
     public function setActivityTasks($var)

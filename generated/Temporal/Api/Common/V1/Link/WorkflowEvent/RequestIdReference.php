@@ -6,8 +6,8 @@
 namespace Temporal\Api\Common\V1\Link\WorkflowEvent;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * RequestIdReference is a indirect reference to a history event through the request ID.

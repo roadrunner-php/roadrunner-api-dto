@@ -6,8 +6,8 @@
 namespace RoadRunner\Centrifugal\API\DTO\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>centrifugal.centrifugo.api.BatchRequest</code>
@@ -29,7 +29,7 @@ class BatchRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\RoadRunner\Centrifugal\API\DTO\V1\Command>|\Google\Protobuf\Internal\RepeatedField $commands
+     *     @type \RoadRunner\Centrifugal\API\DTO\V1\Command[] $commands
      *     @type bool $parallel
      * }
      */
@@ -40,7 +40,7 @@ class BatchRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.Command commands = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\RoadRunner\Centrifugal\API\DTO\V1\Command>
      */
     public function getCommands()
     {
@@ -49,7 +49,7 @@ class BatchRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.Command commands = 1;</code>
-     * @param array<\RoadRunner\Centrifugal\API\DTO\V1\Command>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \RoadRunner\Centrifugal\API\DTO\V1\Command[] $var
      * @return $this
      */
     public function setCommands($var)

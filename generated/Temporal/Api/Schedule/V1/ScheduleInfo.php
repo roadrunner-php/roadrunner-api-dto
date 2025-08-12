@@ -6,8 +6,8 @@
 namespace Temporal\Api\Schedule\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.schedule.v1.ScheduleInfo</code>
@@ -79,6 +79,8 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
      */
     protected $update_time = null;
     /**
+     * Deprecated.
+     *
      * Generated from protobuf field <code>string invalid_schedule_error = 8 [deprecated = true];</code>
      * @deprecated
      */
@@ -102,20 +104,21 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
      *           Number of actions in the buffer. The buffer holds the actions that cannot
      *           be immediately triggered (due to the overlap policy). These actions can be a result of
      *           the normal schedule or a backfill.
-     *     @type array<\Temporal\Api\Common\V1\WorkflowExecution>|\Google\Protobuf\Internal\RepeatedField $running_workflows
+     *     @type \Temporal\Api\Common\V1\WorkflowExecution[] $running_workflows
      *           Currently-running workflows started by this schedule. (There might be
      *           more than one if the overlap policy allows overlaps.)
      *           Note that the run_ids in here are the original execution run ids as
      *           started by the schedule. If the workflows retried, did continue-as-new,
      *           or were reset, they might still be running but with a different run_id.
-     *     @type array<\Temporal\Api\Schedule\V1\ScheduleActionResult>|\Google\Protobuf\Internal\RepeatedField $recent_actions
+     *     @type \Temporal\Api\Schedule\V1\ScheduleActionResult[] $recent_actions
      *           Most recent ten actual action times (including manual triggers).
-     *     @type array<\Google\Protobuf\Timestamp>|\Google\Protobuf\Internal\RepeatedField $future_action_times
+     *     @type \Google\Protobuf\Timestamp[] $future_action_times
      *           Next ten scheduled action times.
      *     @type \Google\Protobuf\Timestamp $create_time
      *           Timestamps of schedule creation and last update.
      *     @type \Google\Protobuf\Timestamp $update_time
      *     @type string $invalid_schedule_error
+     *           Deprecated.
      * }
      */
     public function __construct($data = NULL) {
@@ -265,7 +268,7 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
      * or were reset, they might still be running but with a different run_id.
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.WorkflowExecution running_workflows = 9;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Common\V1\WorkflowExecution>
      */
     public function getRunningWorkflows()
     {
@@ -280,7 +283,7 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
      * or were reset, they might still be running but with a different run_id.
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.WorkflowExecution running_workflows = 9;</code>
-     * @param array<\Temporal\Api\Common\V1\WorkflowExecution>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Common\V1\WorkflowExecution[] $var
      * @return $this
      */
     public function setRunningWorkflows($var)
@@ -295,7 +298,7 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
      * Most recent ten actual action times (including manual triggers).
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.ScheduleActionResult recent_actions = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Schedule\V1\ScheduleActionResult>
      */
     public function getRecentActions()
     {
@@ -306,7 +309,7 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
      * Most recent ten actual action times (including manual triggers).
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.ScheduleActionResult recent_actions = 4;</code>
-     * @param array<\Temporal\Api\Schedule\V1\ScheduleActionResult>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Schedule\V1\ScheduleActionResult[] $var
      * @return $this
      */
     public function setRecentActions($var)
@@ -321,7 +324,7 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
      * Next ten scheduled action times.
      *
      * Generated from protobuf field <code>repeated .google.protobuf.Timestamp future_action_times = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Protobuf\Timestamp>
      */
     public function getFutureActionTimes()
     {
@@ -332,7 +335,7 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
      * Next ten scheduled action times.
      *
      * Generated from protobuf field <code>repeated .google.protobuf.Timestamp future_action_times = 5;</code>
-     * @param array<\Google\Protobuf\Timestamp>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Protobuf\Timestamp[] $var
      * @return $this
      */
     public function setFutureActionTimes($var)
@@ -412,6 +415,8 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Deprecated.
+     *
      * Generated from protobuf field <code>string invalid_schedule_error = 8 [deprecated = true];</code>
      * @return string
      * @deprecated
@@ -425,6 +430,8 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Deprecated.
+     *
      * Generated from protobuf field <code>string invalid_schedule_error = 8 [deprecated = true];</code>
      * @param string $var
      * @return $this

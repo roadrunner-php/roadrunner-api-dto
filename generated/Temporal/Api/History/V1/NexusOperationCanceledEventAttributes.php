@@ -6,8 +6,8 @@
 namespace Temporal\Api\History\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Nexus operation completed as canceled. May or may not have been due to a cancellation request by the workflow.

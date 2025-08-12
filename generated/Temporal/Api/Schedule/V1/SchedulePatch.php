@@ -6,8 +6,8 @@
 namespace Temporal\Api\Schedule\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.schedule.v1.SchedulePatch</code>
@@ -48,7 +48,7 @@ class SchedulePatch extends \Google\Protobuf\Internal\Message
      *
      *     @type \Temporal\Api\Schedule\V1\TriggerImmediatelyRequest $trigger_immediately
      *           If set, trigger one action immediately.
-     *     @type array<\Temporal\Api\Schedule\V1\BackfillRequest>|\Google\Protobuf\Internal\RepeatedField $backfill_request
+     *     @type \Temporal\Api\Schedule\V1\BackfillRequest[] $backfill_request
      *           If set, runs though the specified time period(s) and takes actions as if that time
      *           passed by right now, all at once. The overlap policy can be overridden for the
      *           scope of the backfill.
@@ -105,7 +105,7 @@ class SchedulePatch extends \Google\Protobuf\Internal\Message
      * scope of the backfill.
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.BackfillRequest backfill_request = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Schedule\V1\BackfillRequest>
      */
     public function getBackfillRequest()
     {
@@ -118,7 +118,7 @@ class SchedulePatch extends \Google\Protobuf\Internal\Message
      * scope of the backfill.
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.BackfillRequest backfill_request = 2;</code>
-     * @param array<\Temporal\Api\Schedule\V1\BackfillRequest>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Schedule\V1\BackfillRequest[] $var
      * @return $this
      */
     public function setBackfillRequest($var)

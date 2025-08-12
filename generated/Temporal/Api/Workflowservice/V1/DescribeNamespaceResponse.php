@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.DescribeNamespaceResponse</code>
@@ -53,7 +53,7 @@ class DescribeNamespaceResponse extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Replication\V1\NamespaceReplicationConfig $replication_config
      *     @type int|string $failover_version
      *     @type bool $is_global_namespace
-     *     @type array<\Temporal\Api\Replication\V1\FailoverStatus>|\Google\Protobuf\Internal\RepeatedField $failover_history
+     *     @type \Temporal\Api\Replication\V1\FailoverStatus[] $failover_history
      *           Contains the historical state of failover_versions for the cluster, truncated to contain only the last N
      *           states to ensure that the list does not grow unbounded.
      * }
@@ -208,7 +208,7 @@ class DescribeNamespaceResponse extends \Google\Protobuf\Internal\Message
      * states to ensure that the list does not grow unbounded.
      *
      * Generated from protobuf field <code>repeated .temporal.api.replication.v1.FailoverStatus failover_history = 6;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Replication\V1\FailoverStatus>
      */
     public function getFailoverHistory()
     {
@@ -220,7 +220,7 @@ class DescribeNamespaceResponse extends \Google\Protobuf\Internal\Message
      * states to ensure that the list does not grow unbounded.
      *
      * Generated from protobuf field <code>repeated .temporal.api.replication.v1.FailoverStatus failover_history = 6;</code>
-     * @param array<\Temporal\Api\Replication\V1\FailoverStatus>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Replication\V1\FailoverStatus[] $var
      * @return $this
      */
     public function setFailoverHistory($var)

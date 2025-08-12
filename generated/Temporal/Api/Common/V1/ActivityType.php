@@ -6,8 +6,8 @@
 namespace Temporal\Api\Common\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Represents the identifier used by a activity author to define the activity. Typically, the

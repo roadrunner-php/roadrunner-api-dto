@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflow\V1\PendingActivityInfo\PauseInfo;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflow.v1.PendingActivityInfo.PauseInfo.Manual</code>

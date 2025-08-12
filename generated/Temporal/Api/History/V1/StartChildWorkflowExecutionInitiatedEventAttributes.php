@@ -6,8 +6,8 @@
 namespace Temporal\Api\History\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.history.v1.StartChildWorkflowExecutionInitiatedEventAttributes</code>
@@ -66,9 +66,10 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      */
     protected $parent_close_policy = 0;
     /**
-     * Deprecated
+     * Deprecated.
      *
-     * Generated from protobuf field <code>string control = 10;</code>
+     * Generated from protobuf field <code>string control = 10 [deprecated = true];</code>
+     * @deprecated
      */
     protected $control = '';
     /**
@@ -108,8 +109,10 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
     /**
      * If this is set, the child workflow inherits the Build ID of the parent. Otherwise, the assignment
      * rules of the child's Task Queue will be used to independently assign a Build ID to it.
+     * Deprecated. Only considered for versioning v0.2.
      *
-     * Generated from protobuf field <code>bool inherit_build_id = 19;</code>
+     * Generated from protobuf field <code>bool inherit_build_id = 19 [deprecated = true];</code>
+     * @deprecated
      */
     protected $inherit_build_id = false;
     /**
@@ -142,7 +145,7 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      *     @type int $parent_close_policy
      *           Default: PARENT_CLOSE_POLICY_TERMINATE.
      *     @type string $control
-     *           Deprecated
+     *           Deprecated.
      *     @type int|string $workflow_task_completed_event_id
      *           The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
      *     @type int $workflow_id_reuse_policy
@@ -156,6 +159,7 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      *     @type bool $inherit_build_id
      *           If this is set, the child workflow inherits the Build ID of the parent. Otherwise, the assignment
      *           rules of the child's Task Queue will be used to independently assign a Build ID to it.
+     *           Deprecated. Only considered for versioning v0.2.
      *     @type \Temporal\Api\Common\V1\Priority $priority
      *           Priority metadata
      * }
@@ -468,25 +472,31 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
     }
 
     /**
-     * Deprecated
+     * Deprecated.
      *
-     * Generated from protobuf field <code>string control = 10;</code>
+     * Generated from protobuf field <code>string control = 10 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getControl()
     {
+        if ($this->control !== '') {
+            @trigger_error('control is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->control;
     }
 
     /**
-     * Deprecated
+     * Deprecated.
      *
-     * Generated from protobuf field <code>string control = 10;</code>
+     * Generated from protobuf field <code>string control = 10 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setControl($var)
     {
+        @trigger_error('control is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->control = $var;
 
@@ -702,25 +712,33 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
     /**
      * If this is set, the child workflow inherits the Build ID of the parent. Otherwise, the assignment
      * rules of the child's Task Queue will be used to independently assign a Build ID to it.
+     * Deprecated. Only considered for versioning v0.2.
      *
-     * Generated from protobuf field <code>bool inherit_build_id = 19;</code>
+     * Generated from protobuf field <code>bool inherit_build_id = 19 [deprecated = true];</code>
      * @return bool
+     * @deprecated
      */
     public function getInheritBuildId()
     {
+        if ($this->inherit_build_id !== false) {
+            @trigger_error('inherit_build_id is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->inherit_build_id;
     }
 
     /**
      * If this is set, the child workflow inherits the Build ID of the parent. Otherwise, the assignment
      * rules of the child's Task Queue will be used to independently assign a Build ID to it.
+     * Deprecated. Only considered for versioning v0.2.
      *
-     * Generated from protobuf field <code>bool inherit_build_id = 19;</code>
+     * Generated from protobuf field <code>bool inherit_build_id = 19 [deprecated = true];</code>
      * @param bool $var
      * @return $this
+     * @deprecated
      */
     public function setInheritBuildId($var)
     {
+        @trigger_error('inherit_build_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkBool($var);
         $this->inherit_build_id = $var;
 

@@ -6,8 +6,8 @@
 namespace Temporal\Api\Deployment\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A Worker Deployment (Deployment, for short) represents all workers serving 
@@ -64,7 +64,7 @@ class WorkerDeploymentInfo extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *           Identifies a Worker Deployment. Must be unique within the namespace.
-     *     @type array<\Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary>|\Google\Protobuf\Internal\RepeatedField $version_summaries
+     *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary[] $version_summaries
      *           Deployment Versions that are currently tracked in this Deployment. A DeploymentVersion will be
      *           cleaned up automatically if all the following conditions meet:
      *           - It does not receive new executions (is not current or ramping)
@@ -117,7 +117,7 @@ class WorkerDeploymentInfo extends \Google\Protobuf\Internal\Message
      * - It is drained (see WorkerDeploymentVersionInfo.drainage_status) 
      *
      * Generated from protobuf field <code>repeated .temporal.api.deployment.v1.WorkerDeploymentInfo.WorkerDeploymentVersionSummary version_summaries = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary>
      */
     public function getVersionSummaries()
     {
@@ -132,7 +132,7 @@ class WorkerDeploymentInfo extends \Google\Protobuf\Internal\Message
      * - It is drained (see WorkerDeploymentVersionInfo.drainage_status) 
      *
      * Generated from protobuf field <code>repeated .temporal.api.deployment.v1.WorkerDeploymentInfo.WorkerDeploymentVersionSummary version_summaries = 2;</code>
-     * @param array<\Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary[] $var
      * @return $this
      */
     public function setVersionSummaries($var)

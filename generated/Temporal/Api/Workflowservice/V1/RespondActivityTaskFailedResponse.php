@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.RespondActivityTaskFailedResponse</code>
@@ -28,7 +28,7 @@ class RespondActivityTaskFailedResponse extends \Google\Protobuf\Internal\Messag
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Temporal\Api\Failure\V1\Failure>|\Google\Protobuf\Internal\RepeatedField $failures
+     *     @type \Temporal\Api\Failure\V1\Failure[] $failures
      *           Server validation failures could include
      *           last_heartbeat_details payload is too large, request failure is too large
      * }
@@ -43,7 +43,7 @@ class RespondActivityTaskFailedResponse extends \Google\Protobuf\Internal\Messag
      * last_heartbeat_details payload is too large, request failure is too large
      *
      * Generated from protobuf field <code>repeated .temporal.api.failure.v1.Failure failures = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Failure\V1\Failure>
      */
     public function getFailures()
     {
@@ -55,7 +55,7 @@ class RespondActivityTaskFailedResponse extends \Google\Protobuf\Internal\Messag
      * last_heartbeat_details payload is too large, request failure is too large
      *
      * Generated from protobuf field <code>repeated .temporal.api.failure.v1.Failure failures = 1;</code>
-     * @param array<\Temporal\Api\Failure\V1\Failure>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Failure\V1\Failure[] $var
      * @return $this
      */
     public function setFailures($var)

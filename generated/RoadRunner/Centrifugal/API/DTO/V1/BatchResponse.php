@@ -6,8 +6,8 @@
 namespace RoadRunner\Centrifugal\API\DTO\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>centrifugal.centrifugo.api.BatchResponse</code>
@@ -25,7 +25,7 @@ class BatchResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\RoadRunner\Centrifugal\API\DTO\V1\Reply>|\Google\Protobuf\Internal\RepeatedField $replies
+     *     @type \RoadRunner\Centrifugal\API\DTO\V1\Reply[] $replies
      * }
      */
     public function __construct($data = NULL) {
@@ -35,7 +35,7 @@ class BatchResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.Reply replies = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\RoadRunner\Centrifugal\API\DTO\V1\Reply>
      */
     public function getReplies()
     {
@@ -44,7 +44,7 @@ class BatchResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.Reply replies = 1;</code>
-     * @param array<\RoadRunner\Centrifugal\API\DTO\V1\Reply>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \RoadRunner\Centrifugal\API\DTO\V1\Reply[] $var
      * @return $this
      */
     public function setReplies($var)

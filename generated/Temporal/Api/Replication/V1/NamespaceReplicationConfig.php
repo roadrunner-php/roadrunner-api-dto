@@ -6,8 +6,8 @@
 namespace Temporal\Api\Replication\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.replication.v1.NamespaceReplicationConfig</code>
@@ -34,7 +34,7 @@ class NamespaceReplicationConfig extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $active_cluster_name
-     *     @type array<\Temporal\Api\Replication\V1\ClusterReplicationConfig>|\Google\Protobuf\Internal\RepeatedField $clusters
+     *     @type \Temporal\Api\Replication\V1\ClusterReplicationConfig[] $clusters
      *     @type int $state
      * }
      */
@@ -67,7 +67,7 @@ class NamespaceReplicationConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.replication.v1.ClusterReplicationConfig clusters = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Replication\V1\ClusterReplicationConfig>
      */
     public function getClusters()
     {
@@ -76,7 +76,7 @@ class NamespaceReplicationConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.replication.v1.ClusterReplicationConfig clusters = 2;</code>
-     * @param array<\Temporal\Api\Replication\V1\ClusterReplicationConfig>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Replication\V1\ClusterReplicationConfig[] $var
      * @return $this
      */
     public function setClusters($var)

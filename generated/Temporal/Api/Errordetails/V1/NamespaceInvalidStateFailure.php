@@ -6,8 +6,8 @@
 namespace Temporal\Api\Errordetails\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.errordetails.v1.NamespaceInvalidStateFailure</code>
@@ -41,7 +41,7 @@ class NamespaceInvalidStateFailure extends \Google\Protobuf\Internal\Message
      *     @type string $namespace
      *     @type int $state
      *           Current state of the requested namespace.
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $allowed_states
+     *     @type int[] $allowed_states
      *           Allowed namespace states for requested operation.
      *           For example NAMESPACE_STATE_DELETED is forbidden for most operations but allowed for DescribeNamespace.
      * }
@@ -104,7 +104,7 @@ class NamespaceInvalidStateFailure extends \Google\Protobuf\Internal\Message
      * For example NAMESPACE_STATE_DELETED is forbidden for most operations but allowed for DescribeNamespace.
      *
      * Generated from protobuf field <code>repeated .temporal.api.enums.v1.NamespaceState allowed_states = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getAllowedStates()
     {
@@ -116,7 +116,7 @@ class NamespaceInvalidStateFailure extends \Google\Protobuf\Internal\Message
      * For example NAMESPACE_STATE_DELETED is forbidden for most operations but allowed for DescribeNamespace.
      *
      * Generated from protobuf field <code>repeated .temporal.api.enums.v1.NamespaceState allowed_states = 3;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setAllowedStates($var)

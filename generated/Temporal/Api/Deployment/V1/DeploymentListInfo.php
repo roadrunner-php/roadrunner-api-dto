@@ -6,8 +6,8 @@
 namespace Temporal\Api\Deployment\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * DeploymentListInfo is an abbreviated set of fields from DeploymentInfo that's returned in

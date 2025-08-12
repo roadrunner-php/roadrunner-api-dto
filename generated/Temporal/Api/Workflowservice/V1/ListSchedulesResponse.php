@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.ListSchedulesResponse</code>
@@ -29,7 +29,7 @@ class ListSchedulesResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Temporal\Api\Schedule\V1\ScheduleListEntry>|\Google\Protobuf\Internal\RepeatedField $schedules
+     *     @type \Temporal\Api\Schedule\V1\ScheduleListEntry[] $schedules
      *     @type string $next_page_token
      * }
      */
@@ -40,7 +40,7 @@ class ListSchedulesResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.ScheduleListEntry schedules = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Schedule\V1\ScheduleListEntry>
      */
     public function getSchedules()
     {
@@ -49,7 +49,7 @@ class ListSchedulesResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.ScheduleListEntry schedules = 1;</code>
-     * @param array<\Temporal\Api\Schedule\V1\ScheduleListEntry>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Schedule\V1\ScheduleListEntry[] $var
      * @return $this
      */
     public function setSchedules($var)

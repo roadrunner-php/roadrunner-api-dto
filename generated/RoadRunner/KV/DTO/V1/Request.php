@@ -6,8 +6,8 @@
 namespace RoadRunner\KV\DTO\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>kv.v1.Request</code>
@@ -33,7 +33,7 @@ class Request extends \Google\Protobuf\Internal\Message
      *
      *     @type string $storage
      *           could be an enum in the future
-     *     @type array<\RoadRunner\KV\DTO\V1\Item>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \RoadRunner\KV\DTO\V1\Item[] $items
      * }
      */
     public function __construct($data = NULL) {
@@ -69,7 +69,7 @@ class Request extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .kv.v1.Item items = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\RoadRunner\KV\DTO\V1\Item>
      */
     public function getItems()
     {
@@ -78,7 +78,7 @@ class Request extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .kv.v1.Item items = 2;</code>
-     * @param array<\RoadRunner\KV\DTO\V1\Item>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \RoadRunner\KV\DTO\V1\Item[] $var
      * @return $this
      */
     public function setItems($var)

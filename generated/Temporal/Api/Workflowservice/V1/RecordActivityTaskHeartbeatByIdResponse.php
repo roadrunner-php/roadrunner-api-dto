@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.RecordActivityTaskHeartbeatByIdResponse</code>
@@ -27,6 +27,13 @@ class RecordActivityTaskHeartbeatByIdResponse extends \Google\Protobuf\Internal\
      * Generated from protobuf field <code>bool activity_paused = 2;</code>
      */
     protected $activity_paused = false;
+    /**
+     * Will be set to true if the activity was reset.
+     * Applies only to the current run.
+     *
+     * Generated from protobuf field <code>bool activity_reset = 3;</code>
+     */
+    protected $activity_reset = false;
 
     /**
      * Constructor.
@@ -39,6 +46,9 @@ class RecordActivityTaskHeartbeatByIdResponse extends \Google\Protobuf\Internal\
      *           notify the activity of cancellation if it is still running.
      *     @type bool $activity_paused
      *           Will be set to true if the activity is paused.
+     *     @type bool $activity_reset
+     *           Will be set to true if the activity was reset.
+     *           Applies only to the current run.
      * }
      */
     public function __construct($data = NULL) {
@@ -96,6 +106,34 @@ class RecordActivityTaskHeartbeatByIdResponse extends \Google\Protobuf\Internal\
     {
         GPBUtil::checkBool($var);
         $this->activity_paused = $var;
+
+        return $this;
+    }
+
+    /**
+     * Will be set to true if the activity was reset.
+     * Applies only to the current run.
+     *
+     * Generated from protobuf field <code>bool activity_reset = 3;</code>
+     * @return bool
+     */
+    public function getActivityReset()
+    {
+        return $this->activity_reset;
+    }
+
+    /**
+     * Will be set to true if the activity was reset.
+     * Applies only to the current run.
+     *
+     * Generated from protobuf field <code>bool activity_reset = 3;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setActivityReset($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->activity_reset = $var;
 
         return $this;
     }

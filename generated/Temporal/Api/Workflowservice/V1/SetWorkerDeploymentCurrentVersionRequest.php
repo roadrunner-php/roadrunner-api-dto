@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Set/unset the Current Version of a Worker Deployment.
@@ -25,14 +25,20 @@ class SetWorkerDeploymentCurrentVersionRequest extends \Google\Protobuf\Internal
      */
     protected $deployment_name = '';
     /**
-     * Required. Can be one of the following:
-     * - A Deployment Version identifier in the form "<deployment_name>.<build_id>".
-     * - Or, the "__unversioned__" special value, to represent all the unversioned workers (those
-     *   with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.)
+     * Deprecated. Use `build_id`.
      *
-     * Generated from protobuf field <code>string version = 3;</code>
+     * Generated from protobuf field <code>string version = 3 [deprecated = true];</code>
+     * @deprecated
      */
     protected $version = '';
+    /**
+     * The build id of the Version that you want to set as Current.
+     * Pass an empty value to set the Current Version to nil.
+     * A nil Current Version represents all the unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.)
+     *
+     * Generated from protobuf field <code>string build_id = 7;</code>
+     */
+    protected $build_id = '';
     /**
      * Optional. This can be the value of conflict_token from a Describe, or another Worker
      * Deployment API. Passing a non-nil conflict token will cause this request to fail if the
@@ -76,10 +82,11 @@ class SetWorkerDeploymentCurrentVersionRequest extends \Google\Protobuf\Internal
      *     @type string $namespace
      *     @type string $deployment_name
      *     @type string $version
-     *           Required. Can be one of the following:
-     *           - A Deployment Version identifier in the form "<deployment_name>.<build_id>".
-     *           - Or, the "__unversioned__" special value, to represent all the unversioned workers (those
-     *             with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.)
+     *           Deprecated. Use `build_id`.
+     *     @type string $build_id
+     *           The build id of the Version that you want to set as Current.
+     *           Pass an empty value to set the Current Version to nil.
+     *           A nil Current Version represents all the unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.)
      *     @type string $conflict_token
      *           Optional. This can be the value of conflict_token from a Describe, or another Worker
      *           Deployment API. Passing a non-nil conflict token will cause this request to fail if the
@@ -153,33 +160,63 @@ class SetWorkerDeploymentCurrentVersionRequest extends \Google\Protobuf\Internal
     }
 
     /**
-     * Required. Can be one of the following:
-     * - A Deployment Version identifier in the form "<deployment_name>.<build_id>".
-     * - Or, the "__unversioned__" special value, to represent all the unversioned workers (those
-     *   with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.)
+     * Deprecated. Use `build_id`.
      *
-     * Generated from protobuf field <code>string version = 3;</code>
+     * Generated from protobuf field <code>string version = 3 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getVersion()
     {
+        if ($this->version !== '') {
+            @trigger_error('version is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->version;
     }
 
     /**
-     * Required. Can be one of the following:
-     * - A Deployment Version identifier in the form "<deployment_name>.<build_id>".
-     * - Or, the "__unversioned__" special value, to represent all the unversioned workers (those
-     *   with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.)
+     * Deprecated. Use `build_id`.
      *
-     * Generated from protobuf field <code>string version = 3;</code>
+     * Generated from protobuf field <code>string version = 3 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setVersion($var)
     {
+        @trigger_error('version is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->version = $var;
+
+        return $this;
+    }
+
+    /**
+     * The build id of the Version that you want to set as Current.
+     * Pass an empty value to set the Current Version to nil.
+     * A nil Current Version represents all the unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.)
+     *
+     * Generated from protobuf field <code>string build_id = 7;</code>
+     * @return string
+     */
+    public function getBuildId()
+    {
+        return $this->build_id;
+    }
+
+    /**
+     * The build id of the Version that you want to set as Current.
+     * Pass an empty value to set the Current Version to nil.
+     * A nil Current Version represents all the unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.)
+     *
+     * Generated from protobuf field <code>string build_id = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBuildId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->build_id = $var;
 
         return $this;
     }

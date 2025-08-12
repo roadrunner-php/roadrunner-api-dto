@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * [cleanup-wv-pre-release]
@@ -59,12 +59,12 @@ class GetWorkerTaskReachabilityRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $namespace
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $build_ids
+     *     @type string[] $build_ids
      *           Build ids to retrieve reachability for. An empty string will be interpreted as an unversioned worker.
      *           The number of build ids that can be queried in a single API call is limited.
      *           Open source users can adjust this limit by setting the server's dynamic config value for
      *           `limit.reachabilityQueryBuildIds` with the caveat that this call can strain the visibility store.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $task_queues
+     *     @type string[] $task_queues
      *           Task queues to retrieve reachability for. Leave this empty to query for all task queues associated with given
      *           build ids in the namespace.
      *           Must specify at least one task queue if querying for an unversioned worker.
@@ -113,7 +113,7 @@ class GetWorkerTaskReachabilityRequest extends \Google\Protobuf\Internal\Message
      * `limit.reachabilityQueryBuildIds` with the caveat that this call can strain the visibility store.
      *
      * Generated from protobuf field <code>repeated string build_ids = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getBuildIds()
     {
@@ -127,7 +127,7 @@ class GetWorkerTaskReachabilityRequest extends \Google\Protobuf\Internal\Message
      * `limit.reachabilityQueryBuildIds` with the caveat that this call can strain the visibility store.
      *
      * Generated from protobuf field <code>repeated string build_ids = 2;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setBuildIds($var)
@@ -146,7 +146,7 @@ class GetWorkerTaskReachabilityRequest extends \Google\Protobuf\Internal\Message
      * See the `GetWorkerTaskReachabilityResponse` documentation for more information.
      *
      * Generated from protobuf field <code>repeated string task_queues = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getTaskQueues()
     {
@@ -161,7 +161,7 @@ class GetWorkerTaskReachabilityRequest extends \Google\Protobuf\Internal\Message
      * See the `GetWorkerTaskReachabilityResponse` documentation for more information.
      *
      * Generated from protobuf field <code>repeated string task_queues = 3;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setTaskQueues($var)

@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.RequestCancelWorkflowExecutionRequest</code>
@@ -73,7 +73,7 @@ class RequestCancelWorkflowExecutionRequest extends \Google\Protobuf\Internal\Me
      *           execution chain as this id.
      *     @type string $reason
      *           Reason for requesting the cancellation
-     *     @type array<\Temporal\Api\Common\V1\Link>|\Google\Protobuf\Internal\RepeatedField $links
+     *     @type \Temporal\Api\Common\V1\Link[] $links
      *           Links to be associated with the WorkflowExecutionCanceled event.
      * }
      */
@@ -248,7 +248,7 @@ class RequestCancelWorkflowExecutionRequest extends \Google\Protobuf\Internal\Me
      * Links to be associated with the WorkflowExecutionCanceled event.
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 7;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Common\V1\Link>
      */
     public function getLinks()
     {
@@ -259,7 +259,7 @@ class RequestCancelWorkflowExecutionRequest extends \Google\Protobuf\Internal\Me
      * Links to be associated with the WorkflowExecutionCanceled event.
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 7;</code>
-     * @param array<\Temporal\Api\Common\V1\Link>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Common\V1\Link[] $var
      * @return $this
      */
     public function setLinks($var)

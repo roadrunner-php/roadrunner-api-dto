@@ -6,8 +6,8 @@
 namespace RoadRunner\Centrifugal\Proxy\DTO\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>centrifugal.centrifugo.proxy.ChannelsCapability</code>
@@ -33,8 +33,8 @@ class ChannelsCapability extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $channels
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $allow
+     *     @type string[] $channels
+     *     @type string[] $allow
      *     @type string $match
      * }
      */
@@ -45,7 +45,7 @@ class ChannelsCapability extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string channels = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getChannels()
     {
@@ -54,7 +54,7 @@ class ChannelsCapability extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string channels = 1;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setChannels($var)
@@ -67,7 +67,7 @@ class ChannelsCapability extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string allow = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getAllow()
     {
@@ -76,7 +76,7 @@ class ChannelsCapability extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string allow = 2;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setAllow($var)

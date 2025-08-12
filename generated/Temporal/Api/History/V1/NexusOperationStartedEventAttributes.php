@@ -6,8 +6,8 @@
 namespace Temporal\Api\History\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Event marking an asynchronous operation was started by the responding Nexus handler.
@@ -30,7 +30,8 @@ class NexusOperationStartedEventAttributes extends \Google\Protobuf\Internal\Mes
      * This ID is used when canceling the operation.
      * Deprecated: Renamed to operation_token.
      *
-     * Generated from protobuf field <code>string operation_id = 3;</code>
+     * Generated from protobuf field <code>string operation_id = 3 [deprecated = true];</code>
+     * @deprecated
      */
     protected $operation_id = '';
     /**
@@ -102,11 +103,15 @@ class NexusOperationStartedEventAttributes extends \Google\Protobuf\Internal\Mes
      * This ID is used when canceling the operation.
      * Deprecated: Renamed to operation_token.
      *
-     * Generated from protobuf field <code>string operation_id = 3;</code>
+     * Generated from protobuf field <code>string operation_id = 3 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getOperationId()
     {
+        if ($this->operation_id !== '') {
+            @trigger_error('operation_id is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->operation_id;
     }
 
@@ -115,12 +120,14 @@ class NexusOperationStartedEventAttributes extends \Google\Protobuf\Internal\Mes
      * This ID is used when canceling the operation.
      * Deprecated: Renamed to operation_token.
      *
-     * Generated from protobuf field <code>string operation_id = 3;</code>
+     * Generated from protobuf field <code>string operation_id = 3 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setOperationId($var)
     {
+        @trigger_error('operation_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->operation_id = $var;
 

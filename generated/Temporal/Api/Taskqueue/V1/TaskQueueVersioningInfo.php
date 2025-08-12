@@ -6,8 +6,8 @@
 namespace Temporal\Api\Taskqueue\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Experimental. Worker Deployments are experimental and might significantly change in the future.
@@ -17,35 +17,44 @@ use Google\Protobuf\Internal\GPBUtil;
 class TaskQueueVersioningInfo extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Always present. Specifies which Deployment Version should receive new workflow
-     * executions and tasks of existing unversioned or AutoUpgrade workflows.
-     * Can be one of the following:
-     * - A Deployment Version identifier in the form "<deployment_name>.<build_id>".
-     * - Or, the "__unversioned__" special value, to represent all the unversioned workers (those
-     *   with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.)
-     * Note: Current Version is overridden by the Ramping Version for a portion of traffic when a ramp
-     * is set (see `ramping_version`.)
+     * Specifies which Deployment Version should receive new workflow executions and tasks of
+     * existing unversioned or AutoUpgrade workflows.
+     * Nil value represents all the unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.)
+     * Note: Current Version is overridden by the Ramping Version for a portion of traffic when ramp percentage
+     * is non-zero (see `ramping_deployment_version` and `ramping_version_percentage`).
      *
-     * Generated from protobuf field <code>string current_version = 1;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion current_deployment_version = 7;</code>
+     */
+    protected $current_deployment_version = null;
+    /**
+     * Deprecated. Use `current_deployment_version`.
+     *
+     * Generated from protobuf field <code>string current_version = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $current_version = '';
     /**
-     * When present, it means the traffic is being shifted from the Current Version to the Ramping
-     * Version.
-     * Must always be different from `current_version`. Can be one of the following:
-     * - A Deployment Version identifier in the form "<deployment_name>.<build_id>".
-     * - Or, the "__unversioned__" special value, to represent all the unversioned workers (those
-     *   with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.)
+     * When ramp percentage is non-zero, that portion of traffic is shifted from the Current Version to the Ramping Version.
+     * Must always be different from `current_deployment_version` unless both are nil.
+     * Nil value represents all the unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.)
      * Note that it is possible to ramp from one Version to another Version, or from unversioned
      * workers to a particular Version, or from a particular Version to unversioned workers.
      *
-     * Generated from protobuf field <code>string ramping_version = 2;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion ramping_deployment_version = 9;</code>
+     */
+    protected $ramping_deployment_version = null;
+    /**
+     * Deprecated. Use `ramping_deployment_version`.
+     *
+     * Generated from protobuf field <code>string ramping_version = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $ramping_version = '';
     /**
      * Percentage of tasks that are routed to the Ramping Version instead of the Current Version.
      * Valid range: [0, 100]. A 100% value means the Ramping Version is receiving full traffic but
      * not yet "promoted" to be the Current Version, likely due to pending validations.
+     * A 0% value means the Ramping Version is receiving no traffic.
      *
      * Generated from protobuf field <code>float ramping_version_percentage = 3;</code>
      */
@@ -63,28 +72,27 @@ class TaskQueueVersioningInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $current_deployment_version
+     *           Specifies which Deployment Version should receive new workflow executions and tasks of
+     *           existing unversioned or AutoUpgrade workflows.
+     *           Nil value represents all the unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.)
+     *           Note: Current Version is overridden by the Ramping Version for a portion of traffic when ramp percentage
+     *           is non-zero (see `ramping_deployment_version` and `ramping_version_percentage`).
      *     @type string $current_version
-     *           Always present. Specifies which Deployment Version should receive new workflow
-     *           executions and tasks of existing unversioned or AutoUpgrade workflows.
-     *           Can be one of the following:
-     *           - A Deployment Version identifier in the form "<deployment_name>.<build_id>".
-     *           - Or, the "__unversioned__" special value, to represent all the unversioned workers (those
-     *             with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.)
-     *           Note: Current Version is overridden by the Ramping Version for a portion of traffic when a ramp
-     *           is set (see `ramping_version`.)
-     *     @type string $ramping_version
-     *           When present, it means the traffic is being shifted from the Current Version to the Ramping
-     *           Version.
-     *           Must always be different from `current_version`. Can be one of the following:
-     *           - A Deployment Version identifier in the form "<deployment_name>.<build_id>".
-     *           - Or, the "__unversioned__" special value, to represent all the unversioned workers (those
-     *             with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.)
+     *           Deprecated. Use `current_deployment_version`.
+     *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $ramping_deployment_version
+     *           When ramp percentage is non-zero, that portion of traffic is shifted from the Current Version to the Ramping Version.
+     *           Must always be different from `current_deployment_version` unless both are nil.
+     *           Nil value represents all the unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.)
      *           Note that it is possible to ramp from one Version to another Version, or from unversioned
      *           workers to a particular Version, or from a particular Version to unversioned workers.
+     *     @type string $ramping_version
+     *           Deprecated. Use `ramping_deployment_version`.
      *     @type float $ramping_version_percentage
      *           Percentage of tasks that are routed to the Ramping Version instead of the Current Version.
      *           Valid range: [0, 100]. A 100% value means the Ramping Version is receiving full traffic but
      *           not yet "promoted" to be the Current Version, likely due to pending validations.
+     *           A 0% value means the Ramping Version is receiving no traffic.
      *     @type \Google\Protobuf\Timestamp $update_time
      *           Last time versioning information of this Task Queue changed.
      * }
@@ -95,39 +103,75 @@ class TaskQueueVersioningInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Always present. Specifies which Deployment Version should receive new workflow
-     * executions and tasks of existing unversioned or AutoUpgrade workflows.
-     * Can be one of the following:
-     * - A Deployment Version identifier in the form "<deployment_name>.<build_id>".
-     * - Or, the "__unversioned__" special value, to represent all the unversioned workers (those
-     *   with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.)
-     * Note: Current Version is overridden by the Ramping Version for a portion of traffic when a ramp
-     * is set (see `ramping_version`.)
+     * Specifies which Deployment Version should receive new workflow executions and tasks of
+     * existing unversioned or AutoUpgrade workflows.
+     * Nil value represents all the unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.)
+     * Note: Current Version is overridden by the Ramping Version for a portion of traffic when ramp percentage
+     * is non-zero (see `ramping_deployment_version` and `ramping_version_percentage`).
      *
-     * Generated from protobuf field <code>string current_version = 1;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion current_deployment_version = 7;</code>
+     * @return \Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null
+     */
+    public function getCurrentDeploymentVersion()
+    {
+        return $this->current_deployment_version;
+    }
+
+    public function hasCurrentDeploymentVersion()
+    {
+        return isset($this->current_deployment_version);
+    }
+
+    public function clearCurrentDeploymentVersion()
+    {
+        unset($this->current_deployment_version);
+    }
+
+    /**
+     * Specifies which Deployment Version should receive new workflow executions and tasks of
+     * existing unversioned or AutoUpgrade workflows.
+     * Nil value represents all the unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.)
+     * Note: Current Version is overridden by the Ramping Version for a portion of traffic when ramp percentage
+     * is non-zero (see `ramping_deployment_version` and `ramping_version_percentage`).
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion current_deployment_version = 7;</code>
+     * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
+     * @return $this
+     */
+    public function setCurrentDeploymentVersion($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
+        $this->current_deployment_version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Deprecated. Use `current_deployment_version`.
+     *
+     * Generated from protobuf field <code>string current_version = 1 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getCurrentVersion()
     {
+        if ($this->current_version !== '') {
+            @trigger_error('current_version is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->current_version;
     }
 
     /**
-     * Always present. Specifies which Deployment Version should receive new workflow
-     * executions and tasks of existing unversioned or AutoUpgrade workflows.
-     * Can be one of the following:
-     * - A Deployment Version identifier in the form "<deployment_name>.<build_id>".
-     * - Or, the "__unversioned__" special value, to represent all the unversioned workers (those
-     *   with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.)
-     * Note: Current Version is overridden by the Ramping Version for a portion of traffic when a ramp
-     * is set (see `ramping_version`.)
+     * Deprecated. Use `current_deployment_version`.
      *
-     * Generated from protobuf field <code>string current_version = 1;</code>
+     * Generated from protobuf field <code>string current_version = 1 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setCurrentVersion($var)
     {
+        @trigger_error('current_version is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->current_version = $var;
 
@@ -135,39 +179,75 @@ class TaskQueueVersioningInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * When present, it means the traffic is being shifted from the Current Version to the Ramping
-     * Version.
-     * Must always be different from `current_version`. Can be one of the following:
-     * - A Deployment Version identifier in the form "<deployment_name>.<build_id>".
-     * - Or, the "__unversioned__" special value, to represent all the unversioned workers (those
-     *   with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.)
+     * When ramp percentage is non-zero, that portion of traffic is shifted from the Current Version to the Ramping Version.
+     * Must always be different from `current_deployment_version` unless both are nil.
+     * Nil value represents all the unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.)
      * Note that it is possible to ramp from one Version to another Version, or from unversioned
      * workers to a particular Version, or from a particular Version to unversioned workers.
      *
-     * Generated from protobuf field <code>string ramping_version = 2;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion ramping_deployment_version = 9;</code>
+     * @return \Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null
+     */
+    public function getRampingDeploymentVersion()
+    {
+        return $this->ramping_deployment_version;
+    }
+
+    public function hasRampingDeploymentVersion()
+    {
+        return isset($this->ramping_deployment_version);
+    }
+
+    public function clearRampingDeploymentVersion()
+    {
+        unset($this->ramping_deployment_version);
+    }
+
+    /**
+     * When ramp percentage is non-zero, that portion of traffic is shifted from the Current Version to the Ramping Version.
+     * Must always be different from `current_deployment_version` unless both are nil.
+     * Nil value represents all the unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.)
+     * Note that it is possible to ramp from one Version to another Version, or from unversioned
+     * workers to a particular Version, or from a particular Version to unversioned workers.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion ramping_deployment_version = 9;</code>
+     * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
+     * @return $this
+     */
+    public function setRampingDeploymentVersion($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
+        $this->ramping_deployment_version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Deprecated. Use `ramping_deployment_version`.
+     *
+     * Generated from protobuf field <code>string ramping_version = 2 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getRampingVersion()
     {
+        if ($this->ramping_version !== '') {
+            @trigger_error('ramping_version is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->ramping_version;
     }
 
     /**
-     * When present, it means the traffic is being shifted from the Current Version to the Ramping
-     * Version.
-     * Must always be different from `current_version`. Can be one of the following:
-     * - A Deployment Version identifier in the form "<deployment_name>.<build_id>".
-     * - Or, the "__unversioned__" special value, to represent all the unversioned workers (those
-     *   with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.)
-     * Note that it is possible to ramp from one Version to another Version, or from unversioned
-     * workers to a particular Version, or from a particular Version to unversioned workers.
+     * Deprecated. Use `ramping_deployment_version`.
      *
-     * Generated from protobuf field <code>string ramping_version = 2;</code>
+     * Generated from protobuf field <code>string ramping_version = 2 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setRampingVersion($var)
     {
+        @trigger_error('ramping_version is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->ramping_version = $var;
 
@@ -178,6 +258,7 @@ class TaskQueueVersioningInfo extends \Google\Protobuf\Internal\Message
      * Percentage of tasks that are routed to the Ramping Version instead of the Current Version.
      * Valid range: [0, 100]. A 100% value means the Ramping Version is receiving full traffic but
      * not yet "promoted" to be the Current Version, likely due to pending validations.
+     * A 0% value means the Ramping Version is receiving no traffic.
      *
      * Generated from protobuf field <code>float ramping_version_percentage = 3;</code>
      * @return float
@@ -191,6 +272,7 @@ class TaskQueueVersioningInfo extends \Google\Protobuf\Internal\Message
      * Percentage of tasks that are routed to the Ramping Version instead of the Current Version.
      * Valid range: [0, 100]. A 100% value means the Ramping Version is receiving full traffic but
      * not yet "promoted" to be the Current Version, likely due to pending validations.
+     * A 0% value means the Ramping Version is receiving no traffic.
      *
      * Generated from protobuf field <code>float ramping_version_percentage = 3;</code>
      * @param float $var

@@ -6,8 +6,8 @@
 namespace Temporal\Api\Taskqueue\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Used by the worker versioning APIs, represents an unordered set of one or more versions which are
@@ -30,7 +30,7 @@ class CompatibleVersionSet extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $build_ids
+     *     @type string[] $build_ids
      *           All the compatible versions, unordered, except for the last element, which is considered the set "default".
      * }
      */
@@ -43,7 +43,7 @@ class CompatibleVersionSet extends \Google\Protobuf\Internal\Message
      * All the compatible versions, unordered, except for the last element, which is considered the set "default".
      *
      * Generated from protobuf field <code>repeated string build_ids = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getBuildIds()
     {
@@ -54,7 +54,7 @@ class CompatibleVersionSet extends \Google\Protobuf\Internal\Message
      * All the compatible versions, unordered, except for the last element, which is considered the set "default".
      *
      * Generated from protobuf field <code>repeated string build_ids = 1;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setBuildIds($var)

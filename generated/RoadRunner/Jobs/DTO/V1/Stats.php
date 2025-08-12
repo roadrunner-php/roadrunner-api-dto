@@ -6,8 +6,8 @@
 namespace RoadRunner\Jobs\DTO\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>jobs.v1.Stats</code>
@@ -25,7 +25,7 @@ class Stats extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\RoadRunner\Jobs\DTO\V1\Stat>|\Google\Protobuf\Internal\RepeatedField $stats
+     *     @type \RoadRunner\Jobs\DTO\V1\Stat[] $stats
      * }
      */
     public function __construct($data = NULL) {
@@ -35,7 +35,7 @@ class Stats extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .jobs.v1.Stat stats = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\RoadRunner\Jobs\DTO\V1\Stat>
      */
     public function getStats()
     {
@@ -44,7 +44,7 @@ class Stats extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .jobs.v1.Stat stats = 1;</code>
-     * @param array<\RoadRunner\Jobs\DTO\V1\Stat>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \RoadRunner\Jobs\DTO\V1\Stat[] $var
      * @return $this
      */
     public function setStats($var)

@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.RespondWorkflowTaskCompletedRequest</code>
@@ -56,10 +56,11 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      */
     protected $force_create_new_workflow_task = false;
     /**
-     * DEPRECATED since 1.21 - use `worker_version_stamp` instead.
+     * Deprecated. Use `deployment_options` instead.
      * Worker process' unique binary id
      *
-     * Generated from protobuf field <code>string binary_checksum = 7;</code>
+     * Generated from protobuf field <code>string binary_checksum = 7 [deprecated = true];</code>
+     * @deprecated
      */
     protected $binary_checksum = '';
     /**
@@ -76,7 +77,7 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * Version info of the worker who processed this task. This message's `build_id` field should
      * always be set by SDKs. Workers opting into versioning will also set the `use_versioning`
      * field to true. See message docstrings for more.
-     * Deprecated. Use `deployment` and `versioning_behavior` instead.
+     * Deprecated. Use `deployment_options` and `versioning_behavior` instead.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version_stamp = 10 [deprecated = true];</code>
      * @deprecated
@@ -138,7 +139,7 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      *
      *     @type string $task_token
      *           The task token as received in `PollWorkflowTaskQueueResponse`
-     *     @type array<\Temporal\Api\Command\V1\Command>|\Google\Protobuf\Internal\RepeatedField $commands
+     *     @type \Temporal\Api\Command\V1\Command[] $commands
      *           A list of commands generated when driving the workflow code in response to the new task
      *     @type string $identity
      *           The identity of the worker/client
@@ -154,7 +155,7 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      *           something useful, but cannot complete it within the workflow task timeout. Local activities
      *           which run for longer than the task timeout being the prime example.
      *     @type string $binary_checksum
-     *           DEPRECATED since 1.21 - use `worker_version_stamp` instead.
+     *           Deprecated. Use `deployment_options` instead.
      *           Worker process' unique binary id
      *     @type array|\Google\Protobuf\Internal\MapField $query_results
      *           Responses to the `queries` field in the task being responded to
@@ -163,8 +164,8 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      *           Version info of the worker who processed this task. This message's `build_id` field should
      *           always be set by SDKs. Workers opting into versioning will also set the `use_versioning`
      *           field to true. See message docstrings for more.
-     *           Deprecated. Use `deployment` and `versioning_behavior` instead.
-     *     @type array<\Temporal\Api\Protocol\V1\Message>|\Google\Protobuf\Internal\RepeatedField $messages
+     *           Deprecated. Use `deployment_options` and `versioning_behavior` instead.
+     *     @type \Temporal\Api\Protocol\V1\Message[] $messages
      *           Protocol messages piggybacking on a WFT as a transport
      *     @type \Temporal\Api\Sdk\V1\WorkflowTaskCompletedMetadata $sdk_metadata
      *           Data the SDK wishes to record for itself, but server need not interpret, and does not
@@ -219,7 +220,7 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * A list of commands generated when driving the workflow code in response to the new task
      *
      * Generated from protobuf field <code>repeated .temporal.api.command.v1.Command commands = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Command\V1\Command>
      */
     public function getCommands()
     {
@@ -230,7 +231,7 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * A list of commands generated when driving the workflow code in response to the new task
      *
      * Generated from protobuf field <code>repeated .temporal.api.command.v1.Command commands = 2;</code>
-     * @param array<\Temporal\Api\Command\V1\Command>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Command\V1\Command[] $var
      * @return $this
      */
     public function setCommands($var)
@@ -366,27 +367,33 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * DEPRECATED since 1.21 - use `worker_version_stamp` instead.
+     * Deprecated. Use `deployment_options` instead.
      * Worker process' unique binary id
      *
-     * Generated from protobuf field <code>string binary_checksum = 7;</code>
+     * Generated from protobuf field <code>string binary_checksum = 7 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getBinaryChecksum()
     {
+        if ($this->binary_checksum !== '') {
+            @trigger_error('binary_checksum is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->binary_checksum;
     }
 
     /**
-     * DEPRECATED since 1.21 - use `worker_version_stamp` instead.
+     * Deprecated. Use `deployment_options` instead.
      * Worker process' unique binary id
      *
-     * Generated from protobuf field <code>string binary_checksum = 7;</code>
+     * Generated from protobuf field <code>string binary_checksum = 7 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setBinaryChecksum($var)
     {
+        @trigger_error('binary_checksum is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->binary_checksum = $var;
 
@@ -445,7 +452,7 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * Version info of the worker who processed this task. This message's `build_id` field should
      * always be set by SDKs. Workers opting into versioning will also set the `use_versioning`
      * field to true. See message docstrings for more.
-     * Deprecated. Use `deployment` and `versioning_behavior` instead.
+     * Deprecated. Use `deployment_options` and `versioning_behavior` instead.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version_stamp = 10 [deprecated = true];</code>
      * @return \Temporal\Api\Common\V1\WorkerVersionStamp|null
@@ -477,7 +484,7 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * Version info of the worker who processed this task. This message's `build_id` field should
      * always be set by SDKs. Workers opting into versioning will also set the `use_versioning`
      * field to true. See message docstrings for more.
-     * Deprecated. Use `deployment` and `versioning_behavior` instead.
+     * Deprecated. Use `deployment_options` and `versioning_behavior` instead.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version_stamp = 10 [deprecated = true];</code>
      * @param \Temporal\Api\Common\V1\WorkerVersionStamp $var
@@ -497,7 +504,7 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * Protocol messages piggybacking on a WFT as a transport
      *
      * Generated from protobuf field <code>repeated .temporal.api.protocol.v1.Message messages = 11;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Protocol\V1\Message>
      */
     public function getMessages()
     {
@@ -508,7 +515,7 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * Protocol messages piggybacking on a WFT as a transport
      *
      * Generated from protobuf field <code>repeated .temporal.api.protocol.v1.Message messages = 11;</code>
-     * @param array<\Temporal\Api\Protocol\V1\Message>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Protocol\V1\Message[] $var
      * @return $this
      */
     public function setMessages($var)

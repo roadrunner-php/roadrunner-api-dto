@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.PollNexusTaskQueueRequest</code>
@@ -43,6 +43,12 @@ class PollNexusTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentOptions deployment_options = 6;</code>
      */
     protected $deployment_options = null;
+    /**
+     * Worker info to be sent to the server.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.worker.v1.WorkerHeartbeat worker_heartbeat = 7;</code>
+     */
+    private $worker_heartbeat;
 
     /**
      * Constructor.
@@ -60,6 +66,8 @@ class PollNexusTaskQueueRequest extends \Google\Protobuf\Internal\Message
      *           Deprecated. Replaced by deployment_options.
      *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentOptions $deployment_options
      *           Worker deployment options that user has set in the worker.
+     *     @type \Temporal\Api\Worker\V1\WorkerHeartbeat[] $worker_heartbeat
+     *           Worker info to be sent to the server.
      * }
      */
     public function __construct($data = NULL) {
@@ -229,6 +237,32 @@ class PollNexusTaskQueueRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentOptions::class);
         $this->deployment_options = $var;
+
+        return $this;
+    }
+
+    /**
+     * Worker info to be sent to the server.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.worker.v1.WorkerHeartbeat worker_heartbeat = 7;</code>
+     * @return RepeatedField<\Temporal\Api\Worker\V1\WorkerHeartbeat>
+     */
+    public function getWorkerHeartbeat()
+    {
+        return $this->worker_heartbeat;
+    }
+
+    /**
+     * Worker info to be sent to the server.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.worker.v1.WorkerHeartbeat worker_heartbeat = 7;</code>
+     * @param \Temporal\Api\Worker\V1\WorkerHeartbeat[] $var
+     * @return $this
+     */
+    public function setWorkerHeartbeat($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Worker\V1\WorkerHeartbeat::class);
+        $this->worker_heartbeat = $arr;
 
         return $this;
     }

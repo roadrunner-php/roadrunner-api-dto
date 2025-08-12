@@ -6,8 +6,8 @@
 namespace Temporal\Api\History\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.history.v1.ActivityTaskFailedEventAttributes</code>
@@ -44,9 +44,10 @@ class ActivityTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     protected $retry_state = 0;
     /**
      * Version info of the worker who processed this workflow task.
-     * Deprecated. Use the info inside the corresponding ActivityTaskStartedEvent
+     * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version = 6;</code>
+     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version = 6 [deprecated = true];</code>
+     * @deprecated
      */
     protected $worker_version = null;
 
@@ -67,7 +68,7 @@ class ActivityTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      *     @type int $retry_state
      *     @type \Temporal\Api\Common\V1\WorkerVersionStamp $worker_version
      *           Version info of the worker who processed this workflow task.
-     *           Deprecated. Use the info inside the corresponding ActivityTaskStartedEvent
+     *           Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      * }
      */
     public function __construct($data = NULL) {
@@ -213,36 +214,46 @@ class ActivityTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
 
     /**
      * Version info of the worker who processed this workflow task.
-     * Deprecated. Use the info inside the corresponding ActivityTaskStartedEvent
+     * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version = 6;</code>
+     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version = 6 [deprecated = true];</code>
      * @return \Temporal\Api\Common\V1\WorkerVersionStamp|null
+     * @deprecated
      */
     public function getWorkerVersion()
     {
+        if (isset($this->worker_version)) {
+            @trigger_error('worker_version is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->worker_version;
     }
 
     public function hasWorkerVersion()
     {
+        if (isset($this->worker_version)) {
+            @trigger_error('worker_version is deprecated.', E_USER_DEPRECATED);
+        }
         return isset($this->worker_version);
     }
 
     public function clearWorkerVersion()
     {
+        @trigger_error('worker_version is deprecated.', E_USER_DEPRECATED);
         unset($this->worker_version);
     }
 
     /**
      * Version info of the worker who processed this workflow task.
-     * Deprecated. Use the info inside the corresponding ActivityTaskStartedEvent
+     * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version = 6;</code>
+     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version = 6 [deprecated = true];</code>
      * @param \Temporal\Api\Common\V1\WorkerVersionStamp $var
      * @return $this
+     * @deprecated
      */
     public function setWorkerVersion($var)
     {
+        @trigger_error('worker_version is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerVersionStamp::class);
         $this->worker_version = $var;
 

@@ -6,8 +6,8 @@
 namespace Temporal\Api\History\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.history.v1.History</code>
@@ -25,7 +25,7 @@ class History extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Temporal\Api\History\V1\HistoryEvent>|\Google\Protobuf\Internal\RepeatedField $events
+     *     @type \Temporal\Api\History\V1\HistoryEvent[] $events
      * }
      */
     public function __construct($data = NULL) {
@@ -35,7 +35,7 @@ class History extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.history.v1.HistoryEvent events = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\History\V1\HistoryEvent>
      */
     public function getEvents()
     {
@@ -44,7 +44,7 @@ class History extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.history.v1.HistoryEvent events = 1;</code>
-     * @param array<\Temporal\Api\History\V1\HistoryEvent>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\History\V1\HistoryEvent[] $var
      * @return $this
      */
     public function setEvents($var)

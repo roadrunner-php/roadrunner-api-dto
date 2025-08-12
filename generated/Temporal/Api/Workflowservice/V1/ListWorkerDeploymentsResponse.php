@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.ListWorkerDeploymentsResponse</code>
@@ -32,7 +32,7 @@ class ListWorkerDeploymentsResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $next_page_token
-     *     @type array<\Temporal\Api\Workflowservice\V1\ListWorkerDeploymentsResponse\WorkerDeploymentSummary>|\Google\Protobuf\Internal\RepeatedField $worker_deployments
+     *     @type \Temporal\Api\Workflowservice\V1\ListWorkerDeploymentsResponse\WorkerDeploymentSummary[] $worker_deployments
      *           The list of worker deployments.
      * }
      */
@@ -67,7 +67,7 @@ class ListWorkerDeploymentsResponse extends \Google\Protobuf\Internal\Message
      * The list of worker deployments.
      *
      * Generated from protobuf field <code>repeated .temporal.api.workflowservice.v1.ListWorkerDeploymentsResponse.WorkerDeploymentSummary worker_deployments = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Workflowservice\V1\ListWorkerDeploymentsResponse\WorkerDeploymentSummary>
      */
     public function getWorkerDeployments()
     {
@@ -78,7 +78,7 @@ class ListWorkerDeploymentsResponse extends \Google\Protobuf\Internal\Message
      * The list of worker deployments.
      *
      * Generated from protobuf field <code>repeated .temporal.api.workflowservice.v1.ListWorkerDeploymentsResponse.WorkerDeploymentSummary worker_deployments = 2;</code>
-     * @param array<\Temporal\Api\Workflowservice\V1\ListWorkerDeploymentsResponse\WorkerDeploymentSummary>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Workflowservice\V1\ListWorkerDeploymentsResponse\WorkerDeploymentSummary[] $var
      * @return $this
      */
     public function setWorkerDeployments($var)

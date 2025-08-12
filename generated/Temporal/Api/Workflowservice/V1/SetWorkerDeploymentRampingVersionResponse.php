@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.SetWorkerDeploymentRampingVersionResponse</code>
@@ -23,12 +23,18 @@ class SetWorkerDeploymentRampingVersionResponse extends \Google\Protobuf\Interna
      */
     protected $conflict_token = '';
     /**
-     * The version that was ramping before executing this operation, in the form
-     * "<deployment_name>.<build_id>". Can also be the `__unversioned__` special value.
+     * Deprecated. Use `previous_deployment_version`.
      *
-     * Generated from protobuf field <code>string previous_version = 2;</code>
+     * Generated from protobuf field <code>string previous_version = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $previous_version = '';
+    /**
+     * The version that was ramping before executing this operation.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion previous_deployment_version = 4;</code>
+     */
+    protected $previous_deployment_version = null;
     /**
      * The ramping version percentage before executing this operation.
      *
@@ -47,8 +53,9 @@ class SetWorkerDeploymentRampingVersionResponse extends \Google\Protobuf\Interna
      *           that write to the Worker Deployment state to ensure that the state
      *           did not change between this API call and a future write.
      *     @type string $previous_version
-     *           The version that was ramping before executing this operation, in the form
-     *           "<deployment_name>.<build_id>". Can also be the `__unversioned__` special value.
+     *           Deprecated. Use `previous_deployment_version`.
+     *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $previous_deployment_version
+     *           The version that was ramping before executing this operation.
      *     @type float $previous_percentage
      *           The ramping version percentage before executing this operation.
      * }
@@ -89,29 +96,69 @@ class SetWorkerDeploymentRampingVersionResponse extends \Google\Protobuf\Interna
     }
 
     /**
-     * The version that was ramping before executing this operation, in the form
-     * "<deployment_name>.<build_id>". Can also be the `__unversioned__` special value.
+     * Deprecated. Use `previous_deployment_version`.
      *
-     * Generated from protobuf field <code>string previous_version = 2;</code>
+     * Generated from protobuf field <code>string previous_version = 2 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getPreviousVersion()
     {
+        if ($this->previous_version !== '') {
+            @trigger_error('previous_version is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->previous_version;
     }
 
     /**
-     * The version that was ramping before executing this operation, in the form
-     * "<deployment_name>.<build_id>". Can also be the `__unversioned__` special value.
+     * Deprecated. Use `previous_deployment_version`.
      *
-     * Generated from protobuf field <code>string previous_version = 2;</code>
+     * Generated from protobuf field <code>string previous_version = 2 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setPreviousVersion($var)
     {
+        @trigger_error('previous_version is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->previous_version = $var;
+
+        return $this;
+    }
+
+    /**
+     * The version that was ramping before executing this operation.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion previous_deployment_version = 4;</code>
+     * @return \Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null
+     */
+    public function getPreviousDeploymentVersion()
+    {
+        return $this->previous_deployment_version;
+    }
+
+    public function hasPreviousDeploymentVersion()
+    {
+        return isset($this->previous_deployment_version);
+    }
+
+    public function clearPreviousDeploymentVersion()
+    {
+        unset($this->previous_deployment_version);
+    }
+
+    /**
+     * The version that was ramping before executing this operation.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion previous_deployment_version = 4;</code>
+     * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
+     * @return $this
+     */
+    public function setPreviousDeploymentVersion($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
+        $this->previous_deployment_version = $var;
 
         return $this;
     }

@@ -6,8 +6,8 @@
 namespace Temporal\Api\Schedule\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * CalendarSpec describes an event specification relative to the calendar,

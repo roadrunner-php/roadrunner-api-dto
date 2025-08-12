@@ -6,10 +6,12 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
+ * NOTE: keep in sync with temporal.api.batch.v1.BatchOperationResetActivities
+ *
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.ResetActivityRequest</code>
  */
 class ResetActivityRequest extends \Google\Protobuf\Internal\Message
@@ -40,7 +42,7 @@ class ResetActivityRequest extends \Google\Protobuf\Internal\Message
      */
     protected $reset_heartbeat = false;
     /**
-     * if activity is paused, it will remain paused after reset
+     * If activity is paused, it will remain paused after reset
      *
      * Generated from protobuf field <code>bool keep_paused = 7;</code>
      */
@@ -52,6 +54,14 @@ class ResetActivityRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Duration jitter = 8;</code>
      */
     protected $jitter = null;
+    /**
+     * If set, the activity options will be restored to the defaults.
+     * Default options are then options activity was created with.
+     * They are part of the first SCHEDULE event.
+     *
+     * Generated from protobuf field <code>bool restore_original_options = 9;</code>
+     */
+    protected $restore_original_options = false;
     protected $activity;
 
     /**
@@ -70,14 +80,20 @@ class ResetActivityRequest extends \Google\Protobuf\Internal\Message
      *           Only activity with this ID will be reset.
      *     @type string $type
      *           Reset all running activities with of this type.
+     *     @type bool $match_all
+     *           Reset all running activities.
      *     @type bool $reset_heartbeat
      *           Indicates that activity should reset heartbeat details.
      *           This flag will be applied only to the new instance of the activity.
      *     @type bool $keep_paused
-     *           if activity is paused, it will remain paused after reset
+     *           If activity is paused, it will remain paused after reset
      *     @type \Google\Protobuf\Duration $jitter
      *           If set, and activity is in backoff, the activity will start at a random time within the specified jitter duration.
      *           (unless it is paused and keep_paused is set)
+     *     @type bool $restore_original_options
+     *           If set, the activity options will be restored to the defaults.
+     *           Default options are then options activity was created with.
+     *           They are part of the first SCHEDULE event.
      * }
      */
     public function __construct($data = NULL) {
@@ -236,6 +252,37 @@ class ResetActivityRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Reset all running activities.
+     *
+     * Generated from protobuf field <code>bool match_all = 10;</code>
+     * @return bool
+     */
+    public function getMatchAll()
+    {
+        return $this->readOneof(10);
+    }
+
+    public function hasMatchAll()
+    {
+        return $this->hasOneof(10);
+    }
+
+    /**
+     * Reset all running activities.
+     *
+     * Generated from protobuf field <code>bool match_all = 10;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setMatchAll($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(10, $var);
+
+        return $this;
+    }
+
+    /**
      * Indicates that activity should reset heartbeat details.
      * This flag will be applied only to the new instance of the activity.
      *
@@ -264,7 +311,7 @@ class ResetActivityRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * if activity is paused, it will remain paused after reset
+     * If activity is paused, it will remain paused after reset
      *
      * Generated from protobuf field <code>bool keep_paused = 7;</code>
      * @return bool
@@ -275,7 +322,7 @@ class ResetActivityRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * if activity is paused, it will remain paused after reset
+     * If activity is paused, it will remain paused after reset
      *
      * Generated from protobuf field <code>bool keep_paused = 7;</code>
      * @param bool $var
@@ -323,6 +370,36 @@ class ResetActivityRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->jitter = $var;
+
+        return $this;
+    }
+
+    /**
+     * If set, the activity options will be restored to the defaults.
+     * Default options are then options activity was created with.
+     * They are part of the first SCHEDULE event.
+     *
+     * Generated from protobuf field <code>bool restore_original_options = 9;</code>
+     * @return bool
+     */
+    public function getRestoreOriginalOptions()
+    {
+        return $this->restore_original_options;
+    }
+
+    /**
+     * If set, the activity options will be restored to the defaults.
+     * Default options are then options activity was created with.
+     * They are part of the first SCHEDULE event.
+     *
+     * Generated from protobuf field <code>bool restore_original_options = 9;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setRestoreOriginalOptions($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->restore_original_options = $var;
 
         return $this;
     }

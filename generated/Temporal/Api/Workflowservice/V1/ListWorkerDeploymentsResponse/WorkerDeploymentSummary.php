@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1\ListWorkerDeploymentsResponse;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * (-- api-linter: core::0123::resource-annotation=disabled --)
@@ -29,6 +29,24 @@ class WorkerDeploymentSummary extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.deployment.v1.RoutingConfig routing_config = 3;</code>
      */
     protected $routing_config = null;
+    /**
+     * Summary of the version that was added most recently in the Worker Deployment.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentInfo.WorkerDeploymentVersionSummary latest_version_summary = 4;</code>
+     */
+    protected $latest_version_summary = null;
+    /**
+     * Summary of the current version of the Worker Deployment. 
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentInfo.WorkerDeploymentVersionSummary current_version_summary = 5;</code>
+     */
+    protected $current_version_summary = null;
+    /**
+     * Summary of the ramping version of the Worker Deployment.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentInfo.WorkerDeploymentVersionSummary ramping_version_summary = 6;</code>
+     */
+    protected $ramping_version_summary = null;
 
     /**
      * Constructor.
@@ -39,6 +57,12 @@ class WorkerDeploymentSummary extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type \Google\Protobuf\Timestamp $create_time
      *     @type \Temporal\Api\Deployment\V1\RoutingConfig $routing_config
+     *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary $latest_version_summary
+     *           Summary of the version that was added most recently in the Worker Deployment.
+     *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary $current_version_summary
+     *           Summary of the current version of the Worker Deployment. 
+     *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary $ramping_version_summary
+     *           Summary of the ramping version of the Worker Deployment.
      * }
      */
     public function __construct($data = NULL) {
@@ -128,6 +152,114 @@ class WorkerDeploymentSummary extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\RoutingConfig::class);
         $this->routing_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * Summary of the version that was added most recently in the Worker Deployment.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentInfo.WorkerDeploymentVersionSummary latest_version_summary = 4;</code>
+     * @return \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary|null
+     */
+    public function getLatestVersionSummary()
+    {
+        return $this->latest_version_summary;
+    }
+
+    public function hasLatestVersionSummary()
+    {
+        return isset($this->latest_version_summary);
+    }
+
+    public function clearLatestVersionSummary()
+    {
+        unset($this->latest_version_summary);
+    }
+
+    /**
+     * Summary of the version that was added most recently in the Worker Deployment.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentInfo.WorkerDeploymentVersionSummary latest_version_summary = 4;</code>
+     * @param \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary $var
+     * @return $this
+     */
+    public function setLatestVersionSummary($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary::class);
+        $this->latest_version_summary = $var;
+
+        return $this;
+    }
+
+    /**
+     * Summary of the current version of the Worker Deployment. 
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentInfo.WorkerDeploymentVersionSummary current_version_summary = 5;</code>
+     * @return \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary|null
+     */
+    public function getCurrentVersionSummary()
+    {
+        return $this->current_version_summary;
+    }
+
+    public function hasCurrentVersionSummary()
+    {
+        return isset($this->current_version_summary);
+    }
+
+    public function clearCurrentVersionSummary()
+    {
+        unset($this->current_version_summary);
+    }
+
+    /**
+     * Summary of the current version of the Worker Deployment. 
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentInfo.WorkerDeploymentVersionSummary current_version_summary = 5;</code>
+     * @param \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary $var
+     * @return $this
+     */
+    public function setCurrentVersionSummary($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary::class);
+        $this->current_version_summary = $var;
+
+        return $this;
+    }
+
+    /**
+     * Summary of the ramping version of the Worker Deployment.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentInfo.WorkerDeploymentVersionSummary ramping_version_summary = 6;</code>
+     * @return \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary|null
+     */
+    public function getRampingVersionSummary()
+    {
+        return $this->ramping_version_summary;
+    }
+
+    public function hasRampingVersionSummary()
+    {
+        return isset($this->ramping_version_summary);
+    }
+
+    public function clearRampingVersionSummary()
+    {
+        unset($this->ramping_version_summary);
+    }
+
+    /**
+     * Summary of the ramping version of the Worker Deployment.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentInfo.WorkerDeploymentVersionSummary ramping_version_summary = 6;</code>
+     * @param \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary $var
+     * @return $this
+     */
+    public function setRampingVersionSummary($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary::class);
+        $this->ramping_version_summary = $var;
 
         return $this;
     }

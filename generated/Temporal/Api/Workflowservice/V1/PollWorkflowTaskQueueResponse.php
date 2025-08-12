@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.PollWorkflowTaskQueueResponse</code>
@@ -179,7 +179,7 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      *     @type array|\Google\Protobuf\Internal\MapField $queries
      *           Queries that should be executed after applying the history in this task. Responses should be
      *           attached to `RespondWorkflowTaskCompletedRequest::query_results`
-     *     @type array<\Temporal\Api\Protocol\V1\Message>|\Google\Protobuf\Internal\RepeatedField $messages
+     *     @type \Temporal\Api\Protocol\V1\Message[] $messages
      *           Protocol messages piggybacking on a WFT as a transport
      *     @type \Temporal\Api\Taskqueue\V1\PollerScalingDecision $poller_scaling_decision
      *           Server-advised information the SDK may use to adjust its poller count.
@@ -660,7 +660,7 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * Protocol messages piggybacking on a WFT as a transport
      *
      * Generated from protobuf field <code>repeated .temporal.api.protocol.v1.Message messages = 15;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Protocol\V1\Message>
      */
     public function getMessages()
     {
@@ -671,7 +671,7 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * Protocol messages piggybacking on a WFT as a transport
      *
      * Generated from protobuf field <code>repeated .temporal.api.protocol.v1.Message messages = 15;</code>
-     * @param array<\Temporal\Api\Protocol\V1\Message>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Protocol\V1\Message[] $var
      * @return $this
      */
     public function setMessages($var)

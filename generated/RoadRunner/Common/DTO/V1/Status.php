@@ -6,8 +6,8 @@
 namespace RoadRunner\Common\DTO\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The `Status` type defines a logical error model that is suitable for
@@ -51,7 +51,7 @@ class Status extends \Google\Protobuf\Internal\Message
      *     @type string $message
      *           A developer-facing human-readable error message in English. It should
      *           both explain the error and offer an actionable resolution to it.
-     *     @type array<\Google\Protobuf\Any>|\Google\Protobuf\Internal\RepeatedField $details
+     *     @type \Google\Protobuf\Any[] $details
      *           Additional error information that the client code can use to handle
      *           the error, such as retry info or a help link.
      * }
@@ -122,7 +122,7 @@ class Status extends \Google\Protobuf\Internal\Message
      * the error, such as retry info or a help link.
      *
      * Generated from protobuf field <code>repeated .google.protobuf.Any details = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Protobuf\Any>
      */
     public function getDetails()
     {
@@ -134,7 +134,7 @@ class Status extends \Google\Protobuf\Internal\Message
      * the error, such as retry info or a help link.
      *
      * Generated from protobuf field <code>repeated .google.protobuf.Any details = 3;</code>
-     * @param array<\Google\Protobuf\Any>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Protobuf\Any[] $var
      * @return $this
      */
     public function setDetails($var)
