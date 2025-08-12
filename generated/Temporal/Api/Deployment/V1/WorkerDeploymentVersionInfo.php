@@ -6,8 +6,8 @@
 namespace Temporal\Api\Deployment\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A Worker Deployment Version (Version, for short) represents all workers of the same 
@@ -23,11 +23,24 @@ use Google\Protobuf\Internal\GPBUtil;
 class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The fully-qualified string representation of the version, in the form "<deployment_name>.<build_id>".
+     * Deprecated. Use `deployment_version`.
      *
-     * Generated from protobuf field <code>string version = 1;</code>
+     * Generated from protobuf field <code>string version = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $version = '';
+    /**
+     * The status of the Worker Deployment Version.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.WorkerDeploymentVersionStatus status = 14;</code>
+     */
+    protected $status = 0;
+    /**
+     * Required.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion deployment_version = 11;</code>
+     */
+    protected $deployment_version = null;
     /**
      * Generated from protobuf field <code>string deployment_name = 2;</code>
      */
@@ -45,7 +58,7 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
     /**
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: 'Since' captures the field semantics despite being a preposition. --)
-     * Nil if not current.
+     * Unset if not current.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp current_since_time = 5;</code>
      */
@@ -53,11 +66,23 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
     /**
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: 'Since' captures the field semantics despite being a preposition. --)
-     * Nil if not ramping. Updated when the version first starts ramping, not on each ramp change.
+     * Unset if not ramping. Updated when the version first starts ramping, not on each ramp change.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp ramping_since_time = 6;</code>
      */
     protected $ramping_since_time = null;
+    /**
+     * Timestamp when this version first became current or ramping.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp first_activation_time = 12;</code>
+     */
+    protected $first_activation_time = null;
+    /**
+     * Timestamp when this version last stopped being current or ramping.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_deactivation_time = 13;</code>
+     */
+    protected $last_deactivation_time = null;
     /**
      * Range: [0, 100]. Must be zero if the version is not ramping (i.e. `ramping_since_time` is nil).
      * Can be in the range [0, 100] if the version is ramping.
@@ -67,6 +92,7 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
     protected $ramp_percentage = 0.0;
     /**
      * All the Task Queues that have ever polled from this Deployment version.
+     * Deprecated. Use `version_task_queues` in DescribeWorkerDeploymentVersionResponse instead.
      *
      * Generated from protobuf field <code>repeated .temporal.api.deployment.v1.WorkerDeploymentVersionInfo.VersionTaskQueueInfo task_queue_infos = 8;</code>
      */
@@ -103,7 +129,11 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $version
-     *           The fully-qualified string representation of the version, in the form "<deployment_name>.<build_id>".
+     *           Deprecated. Use `deployment_version`.
+     *     @type int $status
+     *           The status of the Worker Deployment Version.
+     *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $deployment_version
+     *           Required.
      *     @type string $deployment_name
      *     @type \Google\Protobuf\Timestamp $create_time
      *     @type \Google\Protobuf\Timestamp $routing_changed_time
@@ -111,16 +141,21 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $current_since_time
      *           (-- api-linter: core::0140::prepositions=disabled
      *               aip.dev/not-precedent: 'Since' captures the field semantics despite being a preposition. --)
-     *           Nil if not current.
+     *           Unset if not current.
      *     @type \Google\Protobuf\Timestamp $ramping_since_time
      *           (-- api-linter: core::0140::prepositions=disabled
      *               aip.dev/not-precedent: 'Since' captures the field semantics despite being a preposition. --)
-     *           Nil if not ramping. Updated when the version first starts ramping, not on each ramp change.
+     *           Unset if not ramping. Updated when the version first starts ramping, not on each ramp change.
+     *     @type \Google\Protobuf\Timestamp $first_activation_time
+     *           Timestamp when this version first became current or ramping.
+     *     @type \Google\Protobuf\Timestamp $last_deactivation_time
+     *           Timestamp when this version last stopped being current or ramping.
      *     @type float $ramp_percentage
      *           Range: [0, 100]. Must be zero if the version is not ramping (i.e. `ramping_since_time` is nil).
      *           Can be in the range [0, 100] if the version is ramping.
-     *     @type array<\Temporal\Api\Deployment\V1\WorkerDeploymentVersionInfo\VersionTaskQueueInfo>|\Google\Protobuf\Internal\RepeatedField $task_queue_infos
+     *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentVersionInfo\VersionTaskQueueInfo[] $task_queue_infos
      *           All the Task Queues that have ever polled from this Deployment version.
+     *           Deprecated. Use `version_task_queues` in DescribeWorkerDeploymentVersionResponse instead.
      *     @type \Temporal\Api\Deployment\V1\VersionDrainageInfo $drainage_info
      *           Helps user determine when it is safe to decommission the workers of this
      *           Version. Not present when version is current or ramping.
@@ -145,27 +180,95 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The fully-qualified string representation of the version, in the form "<deployment_name>.<build_id>".
+     * Deprecated. Use `deployment_version`.
      *
-     * Generated from protobuf field <code>string version = 1;</code>
+     * Generated from protobuf field <code>string version = 1 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getVersion()
     {
+        if ($this->version !== '') {
+            @trigger_error('version is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->version;
     }
 
     /**
-     * The fully-qualified string representation of the version, in the form "<deployment_name>.<build_id>".
+     * Deprecated. Use `deployment_version`.
      *
-     * Generated from protobuf field <code>string version = 1;</code>
+     * Generated from protobuf field <code>string version = 1 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setVersion($var)
     {
+        @trigger_error('version is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->version = $var;
+
+        return $this;
+    }
+
+    /**
+     * The status of the Worker Deployment Version.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.WorkerDeploymentVersionStatus status = 14;</code>
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * The status of the Worker Deployment Version.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.WorkerDeploymentVersionStatus status = 14;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\WorkerDeploymentVersionStatus::class);
+        $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Required.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion deployment_version = 11;</code>
+     * @return \Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null
+     */
+    public function getDeploymentVersion()
+    {
+        return $this->deployment_version;
+    }
+
+    public function hasDeploymentVersion()
+    {
+        return isset($this->deployment_version);
+    }
+
+    public function clearDeploymentVersion()
+    {
+        unset($this->deployment_version);
+    }
+
+    /**
+     * Required.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion deployment_version = 11;</code>
+     * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
+     * @return $this
+     */
+    public function setDeploymentVersion($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
+        $this->deployment_version = $var;
 
         return $this;
     }
@@ -263,7 +366,7 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
     /**
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: 'Since' captures the field semantics despite being a preposition. --)
-     * Nil if not current.
+     * Unset if not current.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp current_since_time = 5;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -286,7 +389,7 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
     /**
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: 'Since' captures the field semantics despite being a preposition. --)
-     * Nil if not current.
+     * Unset if not current.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp current_since_time = 5;</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -303,7 +406,7 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
     /**
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: 'Since' captures the field semantics despite being a preposition. --)
-     * Nil if not ramping. Updated when the version first starts ramping, not on each ramp change.
+     * Unset if not ramping. Updated when the version first starts ramping, not on each ramp change.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp ramping_since_time = 6;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -326,7 +429,7 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
     /**
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: 'Since' captures the field semantics despite being a preposition. --)
-     * Nil if not ramping. Updated when the version first starts ramping, not on each ramp change.
+     * Unset if not ramping. Updated when the version first starts ramping, not on each ramp change.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp ramping_since_time = 6;</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -336,6 +439,78 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->ramping_since_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Timestamp when this version first became current or ramping.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp first_activation_time = 12;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getFirstActivationTime()
+    {
+        return $this->first_activation_time;
+    }
+
+    public function hasFirstActivationTime()
+    {
+        return isset($this->first_activation_time);
+    }
+
+    public function clearFirstActivationTime()
+    {
+        unset($this->first_activation_time);
+    }
+
+    /**
+     * Timestamp when this version first became current or ramping.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp first_activation_time = 12;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setFirstActivationTime($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->first_activation_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Timestamp when this version last stopped being current or ramping.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_deactivation_time = 13;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getLastDeactivationTime()
+    {
+        return $this->last_deactivation_time;
+    }
+
+    public function hasLastDeactivationTime()
+    {
+        return isset($this->last_deactivation_time);
+    }
+
+    public function clearLastDeactivationTime()
+    {
+        unset($this->last_deactivation_time);
+    }
+
+    /**
+     * Timestamp when this version last stopped being current or ramping.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_deactivation_time = 13;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setLastDeactivationTime($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->last_deactivation_time = $var;
 
         return $this;
     }
@@ -370,9 +545,10 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * All the Task Queues that have ever polled from this Deployment version.
+     * Deprecated. Use `version_task_queues` in DescribeWorkerDeploymentVersionResponse instead.
      *
      * Generated from protobuf field <code>repeated .temporal.api.deployment.v1.WorkerDeploymentVersionInfo.VersionTaskQueueInfo task_queue_infos = 8;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Deployment\V1\WorkerDeploymentVersionInfo\VersionTaskQueueInfo>
      */
     public function getTaskQueueInfos()
     {
@@ -381,9 +557,10 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * All the Task Queues that have ever polled from this Deployment version.
+     * Deprecated. Use `version_task_queues` in DescribeWorkerDeploymentVersionResponse instead.
      *
      * Generated from protobuf field <code>repeated .temporal.api.deployment.v1.WorkerDeploymentVersionInfo.VersionTaskQueueInfo task_queue_infos = 8;</code>
-     * @param array<\Temporal\Api\Deployment\V1\WorkerDeploymentVersionInfo\VersionTaskQueueInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersionInfo\VersionTaskQueueInfo[] $var
      * @return $this
      */
     public function setTaskQueueInfos($var)

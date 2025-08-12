@@ -6,8 +6,8 @@
 namespace Temporal\Api\Common\V1\Callback;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.common.v1.Callback.Nexus</code>

@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.ListBatchOperationsResponse</code>
@@ -31,7 +31,7 @@ class ListBatchOperationsResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Temporal\Api\Batch\V1\BatchOperationInfo>|\Google\Protobuf\Internal\RepeatedField $operation_info
+     *     @type \Temporal\Api\Batch\V1\BatchOperationInfo[] $operation_info
      *           BatchOperationInfo contains the basic info about batch operation
      *     @type string $next_page_token
      * }
@@ -45,7 +45,7 @@ class ListBatchOperationsResponse extends \Google\Protobuf\Internal\Message
      * BatchOperationInfo contains the basic info about batch operation
      *
      * Generated from protobuf field <code>repeated .temporal.api.batch.v1.BatchOperationInfo operation_info = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Batch\V1\BatchOperationInfo>
      */
     public function getOperationInfo()
     {
@@ -56,7 +56,7 @@ class ListBatchOperationsResponse extends \Google\Protobuf\Internal\Message
      * BatchOperationInfo contains the basic info about batch operation
      *
      * Generated from protobuf field <code>repeated .temporal.api.batch.v1.BatchOperationInfo operation_info = 1;</code>
-     * @param array<\Temporal\Api\Batch\V1\BatchOperationInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Batch\V1\BatchOperationInfo[] $var
      * @return $this
      */
     public function setOperationInfo($var)

@@ -6,8 +6,8 @@
 namespace Temporal\Api\Deployment\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Worker Deployment options set in SDK that need to be sent to server in every poll.
@@ -25,7 +25,7 @@ class WorkerDeploymentOptions extends \Google\Protobuf\Internal\Message
     protected $deployment_name = '';
     /**
      * The Build ID of the worker. Required when `worker_versioning_mode==VERSIONED`, in which case,
-     * the worker will be part of a Deployment Version identified by "<deployment_name>.<build_id>".
+     * the worker will be part of a Deployment Version.
      *
      * Generated from protobuf field <code>string build_id = 2;</code>
      */
@@ -33,8 +33,7 @@ class WorkerDeploymentOptions extends \Google\Protobuf\Internal\Message
     /**
      * Required. Versioning Mode for this worker. Must be the same for all workers with the
      * same `deployment_name` and `build_id` combination, across all Task Queues.
-     * When `worker_versioning_mode==VERSIONED`, the worker will be part of a Deployment Version
-     * identified by "<deployment_name>.<build_id>".
+     * When `worker_versioning_mode==VERSIONED`, the worker will be part of a Deployment Version.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkerVersioningMode worker_versioning_mode = 3;</code>
      */
@@ -50,12 +49,11 @@ class WorkerDeploymentOptions extends \Google\Protobuf\Internal\Message
      *           Required. Worker Deployment name.
      *     @type string $build_id
      *           The Build ID of the worker. Required when `worker_versioning_mode==VERSIONED`, in which case,
-     *           the worker will be part of a Deployment Version identified by "<deployment_name>.<build_id>".
+     *           the worker will be part of a Deployment Version.
      *     @type int $worker_versioning_mode
      *           Required. Versioning Mode for this worker. Must be the same for all workers with the
      *           same `deployment_name` and `build_id` combination, across all Task Queues.
-     *           When `worker_versioning_mode==VERSIONED`, the worker will be part of a Deployment Version
-     *           identified by "<deployment_name>.<build_id>".
+     *           When `worker_versioning_mode==VERSIONED`, the worker will be part of a Deployment Version.
      * }
      */
     public function __construct($data = NULL) {
@@ -91,7 +89,7 @@ class WorkerDeploymentOptions extends \Google\Protobuf\Internal\Message
 
     /**
      * The Build ID of the worker. Required when `worker_versioning_mode==VERSIONED`, in which case,
-     * the worker will be part of a Deployment Version identified by "<deployment_name>.<build_id>".
+     * the worker will be part of a Deployment Version.
      *
      * Generated from protobuf field <code>string build_id = 2;</code>
      * @return string
@@ -103,7 +101,7 @@ class WorkerDeploymentOptions extends \Google\Protobuf\Internal\Message
 
     /**
      * The Build ID of the worker. Required when `worker_versioning_mode==VERSIONED`, in which case,
-     * the worker will be part of a Deployment Version identified by "<deployment_name>.<build_id>".
+     * the worker will be part of a Deployment Version.
      *
      * Generated from protobuf field <code>string build_id = 2;</code>
      * @param string $var
@@ -120,8 +118,7 @@ class WorkerDeploymentOptions extends \Google\Protobuf\Internal\Message
     /**
      * Required. Versioning Mode for this worker. Must be the same for all workers with the
      * same `deployment_name` and `build_id` combination, across all Task Queues.
-     * When `worker_versioning_mode==VERSIONED`, the worker will be part of a Deployment Version
-     * identified by "<deployment_name>.<build_id>".
+     * When `worker_versioning_mode==VERSIONED`, the worker will be part of a Deployment Version.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkerVersioningMode worker_versioning_mode = 3;</code>
      * @return int
@@ -134,8 +131,7 @@ class WorkerDeploymentOptions extends \Google\Protobuf\Internal\Message
     /**
      * Required. Versioning Mode for this worker. Must be the same for all workers with the
      * same `deployment_name` and `build_id` combination, across all Task Queues.
-     * When `worker_versioning_mode==VERSIONED`, the worker will be part of a Deployment Version
-     * identified by "<deployment_name>.<build_id>".
+     * When `worker_versioning_mode==VERSIONED`, the worker will be part of a Deployment Version.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkerVersioningMode worker_versioning_mode = 3;</code>
      * @param int $var

@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflow\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflow.v1.PendingActivityInfo</code>
@@ -63,10 +63,11 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      */
     protected $last_worker_identity = '';
     /**
-     * The version stamp of the worker to whom this activity was most recently dispatched
-     * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
+     * Deprecated. The version stamp of the worker to whom this activity was most recently dispatched
+     * This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp last_worker_version_stamp = 15;</code>
+     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp last_worker_version_stamp = 15 [deprecated = true];</code>
+     * @deprecated
      */
     protected $last_worker_version_stamp = null;
     /**
@@ -100,7 +101,7 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
     /**
      * The deployment this activity was dispatched to most recently. Present only if the activity
      * was dispatched to a versioned worker.
-     * Deprecated. Use `last_worker_deployment_version`.
+     * Deprecated. Use `last_deployment_version`.
      *
      * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment last_deployment = 20 [deprecated = true];</code>
      * @deprecated
@@ -108,10 +109,19 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
     protected $last_deployment = null;
     /**
      * The Worker Deployment Version this activity was dispatched to most recently.
+     * Deprecated. Use `last_deployment_version`.
      *
-     * Generated from protobuf field <code>string last_worker_deployment_version = 21;</code>
+     * Generated from protobuf field <code>string last_worker_deployment_version = 21 [deprecated = true];</code>
+     * @deprecated
      */
     protected $last_worker_deployment_version = '';
+    /**
+     * The Worker Deployment Version this activity was dispatched to most recently.
+     * If nil, the activity has not yet been dispatched or was last dispatched to an unversioned worker.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion last_deployment_version = 25;</code>
+     */
+    protected $last_deployment_version = null;
     /**
      * Priority metadata
      *
@@ -122,6 +132,12 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.workflow.v1.PendingActivityInfo.PauseInfo pause_info = 23;</code>
      */
     protected $pause_info = null;
+    /**
+     * Current activity options. May be different from the one used to start the activity.
+     *
+     * Generated from protobuf field <code>.temporal.api.activity.v1.ActivityOptions activity_options = 24;</code>
+     */
+    protected $activity_options = null;
     protected $assigned_build_id;
 
     /**
@@ -143,15 +159,15 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Failure\V1\Failure $last_failure
      *     @type string $last_worker_identity
      *     @type \Google\Protobuf\GPBEmpty $use_workflow_build_id
-     *           When present, it means this activity is assigned to the build ID of its workflow.
+     *           Deprecated. When present, it means this activity is assigned to the build ID of its workflow.
      *     @type string $last_independently_assigned_build_id
-     *           This means the activity is independently versioned and not bound to the build ID of its workflow.
+     *           Deprecated. This means the activity is independently versioned and not bound to the build ID of its workflow.
      *           The activity will use the build id in this field instead.
      *           If the task fails and is scheduled again, the assigned build ID may change according to the latest versioning
      *           rules.
      *     @type \Temporal\Api\Common\V1\WorkerVersionStamp $last_worker_version_stamp
-     *           The version stamp of the worker to whom this activity was most recently dispatched
-     *           Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
+     *           Deprecated. The version stamp of the worker to whom this activity was most recently dispatched
+     *           This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *     @type \Google\Protobuf\Duration $current_retry_interval
      *           The time activity will wait until the next retry.
      *           If activity is currently running it will be next retry interval if activity failed.
@@ -167,12 +183,18 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Deployment\V1\Deployment $last_deployment
      *           The deployment this activity was dispatched to most recently. Present only if the activity
      *           was dispatched to a versioned worker.
-     *           Deprecated. Use `last_worker_deployment_version`.
+     *           Deprecated. Use `last_deployment_version`.
      *     @type string $last_worker_deployment_version
      *           The Worker Deployment Version this activity was dispatched to most recently.
+     *           Deprecated. Use `last_deployment_version`.
+     *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $last_deployment_version
+     *           The Worker Deployment Version this activity was dispatched to most recently.
+     *           If nil, the activity has not yet been dispatched or was last dispatched to an unversioned worker.
      *     @type \Temporal\Api\Common\V1\Priority $priority
      *           Priority metadata
      *     @type \Temporal\Api\Workflow\V1\PendingActivityInfo\PauseInfo $pause_info
+     *     @type \Temporal\Api\Activity\V1\ActivityOptions $activity_options
+     *           Current activity options. May be different from the one used to start the activity.
      * }
      */
     public function __construct($data = NULL) {
@@ -515,30 +537,39 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * When present, it means this activity is assigned to the build ID of its workflow.
+     * Deprecated. When present, it means this activity is assigned to the build ID of its workflow.
      *
-     * Generated from protobuf field <code>.google.protobuf.Empty use_workflow_build_id = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.Empty use_workflow_build_id = 13 [deprecated = true];</code>
      * @return \Google\Protobuf\GPBEmpty|null
+     * @deprecated
      */
     public function getUseWorkflowBuildId()
     {
+        if ($this->hasOneof(13)) {
+            @trigger_error('use_workflow_build_id is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->readOneof(13);
     }
 
     public function hasUseWorkflowBuildId()
     {
+        if ($this->hasOneof(13)) {
+            @trigger_error('use_workflow_build_id is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->hasOneof(13);
     }
 
     /**
-     * When present, it means this activity is assigned to the build ID of its workflow.
+     * Deprecated. When present, it means this activity is assigned to the build ID of its workflow.
      *
-     * Generated from protobuf field <code>.google.protobuf.Empty use_workflow_build_id = 13;</code>
+     * Generated from protobuf field <code>.google.protobuf.Empty use_workflow_build_id = 13 [deprecated = true];</code>
      * @param \Google\Protobuf\GPBEmpty $var
      * @return $this
+     * @deprecated
      */
     public function setUseWorkflowBuildId($var)
     {
+        @trigger_error('use_workflow_build_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Google\Protobuf\GPBEmpty::class);
         $this->writeOneof(13, $var);
 
@@ -546,36 +577,45 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * This means the activity is independently versioned and not bound to the build ID of its workflow.
+     * Deprecated. This means the activity is independently versioned and not bound to the build ID of its workflow.
      * The activity will use the build id in this field instead.
      * If the task fails and is scheduled again, the assigned build ID may change according to the latest versioning
      * rules.
      *
-     * Generated from protobuf field <code>string last_independently_assigned_build_id = 14;</code>
+     * Generated from protobuf field <code>string last_independently_assigned_build_id = 14 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getLastIndependentlyAssignedBuildId()
     {
+        if ($this->hasOneof(14)) {
+            @trigger_error('last_independently_assigned_build_id is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->readOneof(14);
     }
 
     public function hasLastIndependentlyAssignedBuildId()
     {
+        if ($this->hasOneof(14)) {
+            @trigger_error('last_independently_assigned_build_id is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->hasOneof(14);
     }
 
     /**
-     * This means the activity is independently versioned and not bound to the build ID of its workflow.
+     * Deprecated. This means the activity is independently versioned and not bound to the build ID of its workflow.
      * The activity will use the build id in this field instead.
      * If the task fails and is scheduled again, the assigned build ID may change according to the latest versioning
      * rules.
      *
-     * Generated from protobuf field <code>string last_independently_assigned_build_id = 14;</code>
+     * Generated from protobuf field <code>string last_independently_assigned_build_id = 14 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setLastIndependentlyAssignedBuildId($var)
     {
+        @trigger_error('last_independently_assigned_build_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->writeOneof(14, $var);
 
@@ -583,37 +623,47 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The version stamp of the worker to whom this activity was most recently dispatched
-     * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
+     * Deprecated. The version stamp of the worker to whom this activity was most recently dispatched
+     * This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp last_worker_version_stamp = 15;</code>
+     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp last_worker_version_stamp = 15 [deprecated = true];</code>
      * @return \Temporal\Api\Common\V1\WorkerVersionStamp|null
+     * @deprecated
      */
     public function getLastWorkerVersionStamp()
     {
+        if (isset($this->last_worker_version_stamp)) {
+            @trigger_error('last_worker_version_stamp is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->last_worker_version_stamp;
     }
 
     public function hasLastWorkerVersionStamp()
     {
+        if (isset($this->last_worker_version_stamp)) {
+            @trigger_error('last_worker_version_stamp is deprecated.', E_USER_DEPRECATED);
+        }
         return isset($this->last_worker_version_stamp);
     }
 
     public function clearLastWorkerVersionStamp()
     {
+        @trigger_error('last_worker_version_stamp is deprecated.', E_USER_DEPRECATED);
         unset($this->last_worker_version_stamp);
     }
 
     /**
-     * The version stamp of the worker to whom this activity was most recently dispatched
-     * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
+     * Deprecated. The version stamp of the worker to whom this activity was most recently dispatched
+     * This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp last_worker_version_stamp = 15;</code>
+     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp last_worker_version_stamp = 15 [deprecated = true];</code>
      * @param \Temporal\Api\Common\V1\WorkerVersionStamp $var
      * @return $this
+     * @deprecated
      */
     public function setLastWorkerVersionStamp($var)
     {
+        @trigger_error('last_worker_version_stamp is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerVersionStamp::class);
         $this->last_worker_version_stamp = $var;
 
@@ -765,7 +815,7 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
     /**
      * The deployment this activity was dispatched to most recently. Present only if the activity
      * was dispatched to a versioned worker.
-     * Deprecated. Use `last_worker_deployment_version`.
+     * Deprecated. Use `last_deployment_version`.
      *
      * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment last_deployment = 20 [deprecated = true];</code>
      * @return \Temporal\Api\Deployment\V1\Deployment|null
@@ -796,7 +846,7 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
     /**
      * The deployment this activity was dispatched to most recently. Present only if the activity
      * was dispatched to a versioned worker.
-     * Deprecated. Use `last_worker_deployment_version`.
+     * Deprecated. Use `last_deployment_version`.
      *
      * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment last_deployment = 20 [deprecated = true];</code>
      * @param \Temporal\Api\Deployment\V1\Deployment $var
@@ -814,26 +864,72 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * The Worker Deployment Version this activity was dispatched to most recently.
+     * Deprecated. Use `last_deployment_version`.
      *
-     * Generated from protobuf field <code>string last_worker_deployment_version = 21;</code>
+     * Generated from protobuf field <code>string last_worker_deployment_version = 21 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getLastWorkerDeploymentVersion()
     {
+        if ($this->last_worker_deployment_version !== '') {
+            @trigger_error('last_worker_deployment_version is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->last_worker_deployment_version;
     }
 
     /**
      * The Worker Deployment Version this activity was dispatched to most recently.
+     * Deprecated. Use `last_deployment_version`.
      *
-     * Generated from protobuf field <code>string last_worker_deployment_version = 21;</code>
+     * Generated from protobuf field <code>string last_worker_deployment_version = 21 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setLastWorkerDeploymentVersion($var)
     {
+        @trigger_error('last_worker_deployment_version is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->last_worker_deployment_version = $var;
+
+        return $this;
+    }
+
+    /**
+     * The Worker Deployment Version this activity was dispatched to most recently.
+     * If nil, the activity has not yet been dispatched or was last dispatched to an unversioned worker.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion last_deployment_version = 25;</code>
+     * @return \Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null
+     */
+    public function getLastDeploymentVersion()
+    {
+        return $this->last_deployment_version;
+    }
+
+    public function hasLastDeploymentVersion()
+    {
+        return isset($this->last_deployment_version);
+    }
+
+    public function clearLastDeploymentVersion()
+    {
+        unset($this->last_deployment_version);
+    }
+
+    /**
+     * The Worker Deployment Version this activity was dispatched to most recently.
+     * If nil, the activity has not yet been dispatched or was last dispatched to an unversioned worker.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion last_deployment_version = 25;</code>
+     * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
+     * @return $this
+     */
+    public function setLastDeploymentVersion($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
+        $this->last_deployment_version = $var;
 
         return $this;
     }
@@ -902,6 +998,42 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\PendingActivityInfo\PauseInfo::class);
         $this->pause_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Current activity options. May be different from the one used to start the activity.
+     *
+     * Generated from protobuf field <code>.temporal.api.activity.v1.ActivityOptions activity_options = 24;</code>
+     * @return \Temporal\Api\Activity\V1\ActivityOptions|null
+     */
+    public function getActivityOptions()
+    {
+        return $this->activity_options;
+    }
+
+    public function hasActivityOptions()
+    {
+        return isset($this->activity_options);
+    }
+
+    public function clearActivityOptions()
+    {
+        unset($this->activity_options);
+    }
+
+    /**
+     * Current activity options. May be different from the one used to start the activity.
+     *
+     * Generated from protobuf field <code>.temporal.api.activity.v1.ActivityOptions activity_options = 24;</code>
+     * @param \Temporal\Api\Activity\V1\ActivityOptions $var
+     * @return $this
+     */
+    public function setActivityOptions($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Activity\V1\ActivityOptions::class);
+        $this->activity_options = $var;
 
         return $this;
     }

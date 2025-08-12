@@ -6,10 +6,12 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
+ * NOTE: keep in sync with temporal.api.batch.v1.BatchOperationUpdateActivityOptions
+ *
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.UpdateActivityOptionsRequest</code>
  */
 class UpdateActivityOptionsRequest extends \Google\Protobuf\Internal\Message
@@ -44,6 +46,16 @@ class UpdateActivityOptionsRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 5;</code>
      */
     protected $update_mask = null;
+    /**
+     * If set, the activity options will be restored to the default.
+     * Default options are then options activity was created with.
+     * They are part of the first SCHEDULE event.
+     * This flag cannot be combined with any other option; if you supply
+     * restore_original together with other options, the request will be rejected.
+     *
+     * Generated from protobuf field <code>bool restore_original = 8;</code>
+     */
+    protected $restore_original = false;
     protected $activity;
 
     /**
@@ -66,6 +78,14 @@ class UpdateActivityOptionsRequest extends \Google\Protobuf\Internal\Message
      *           Only activity with this ID will be updated.
      *     @type string $type
      *           Update all running activities of this type.
+     *     @type bool $match_all
+     *           Update all running activities.
+     *     @type bool $restore_original
+     *           If set, the activity options will be restored to the default.
+     *           Default options are then options activity was created with.
+     *           They are part of the first SCHEDULE event.
+     *           This flag cannot be combined with any other option; if you supply
+     *           restore_original together with other options, the request will be rejected.
      * }
      */
     public function __construct($data = NULL) {
@@ -291,6 +311,71 @@ class UpdateActivityOptionsRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->writeOneof(7, $var);
+
+        return $this;
+    }
+
+    /**
+     * Update all running activities.
+     *
+     * Generated from protobuf field <code>bool match_all = 9;</code>
+     * @return bool
+     */
+    public function getMatchAll()
+    {
+        return $this->readOneof(9);
+    }
+
+    public function hasMatchAll()
+    {
+        return $this->hasOneof(9);
+    }
+
+    /**
+     * Update all running activities.
+     *
+     * Generated from protobuf field <code>bool match_all = 9;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setMatchAll($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(9, $var);
+
+        return $this;
+    }
+
+    /**
+     * If set, the activity options will be restored to the default.
+     * Default options are then options activity was created with.
+     * They are part of the first SCHEDULE event.
+     * This flag cannot be combined with any other option; if you supply
+     * restore_original together with other options, the request will be rejected.
+     *
+     * Generated from protobuf field <code>bool restore_original = 8;</code>
+     * @return bool
+     */
+    public function getRestoreOriginal()
+    {
+        return $this->restore_original;
+    }
+
+    /**
+     * If set, the activity options will be restored to the default.
+     * Default options are then options activity was created with.
+     * They are part of the first SCHEDULE event.
+     * This flag cannot be combined with any other option; if you supply
+     * restore_original together with other options, the request will be rejected.
+     *
+     * Generated from protobuf field <code>bool restore_original = 8;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setRestoreOriginal($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->restore_original = $var;
 
         return $this;
     }

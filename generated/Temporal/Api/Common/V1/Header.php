@@ -6,8 +6,8 @@
 namespace Temporal\Api\Common\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Contains metadata that can be attached to a variety of requests, like starting a workflow, and

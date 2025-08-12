@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.DescribeTaskQueueResponse</code>
@@ -15,25 +15,25 @@ use Google\Protobuf\Internal\GPBUtil;
 class DescribeTaskQueueResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Deprecated. Use `versions_info.types_info.pollers` with `ENHANCED` mode instead.
-     * Not set in `ENHANCED` mode.
-     *
      * Generated from protobuf field <code>repeated .temporal.api.taskqueue.v1.PollerInfo pollers = 1;</code>
      */
     private $pollers;
     /**
-     * Deprecated. Not set in `ENHANCED` mode.
+     * Statistics for the task queue.
+     * Only set if `report_stats` is set on the request.
      *
-     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueueStatus task_queue_status = 2;</code>
+     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueueStats stats = 5;</code>
      */
-    protected $task_queue_status = null;
+    protected $stats = null;
     /**
-     * This map contains Task Queue information for each Build ID. Empty string as key value means unversioned.
-     * Only set in `ENHANCED` mode.
+     * Task queue stats breakdown by priority key. Only contains actively used priority keys.
+     * Only set if `report_stats` is set on the request.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "by" is used to clarify the keys and values. --)
      *
-     * Generated from protobuf field <code>map<string, .temporal.api.taskqueue.v1.TaskQueueVersionInfo> versions_info = 3;</code>
+     * Generated from protobuf field <code>map<int32, .temporal.api.taskqueue.v1.TaskQueueStats> stats_by_priority_key = 8;</code>
      */
-    private $versions_info;
+    private $stats_by_priority_key;
     /**
      * Specifies which Worker Deployment Version(s) Server routes this Task Queue's tasks to.
      * When not present, it means the tasks are routed to Unversioned workers (workers with
@@ -48,6 +48,33 @@ class DescribeTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueueVersioningInfo versioning_info = 4;</code>
      */
     protected $versioning_info = null;
+    /**
+     * Only populated if report_task_queue_config is set to true.
+     *
+     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueueConfig config = 6;</code>
+     */
+    protected $config = null;
+    /**
+     * Generated from protobuf field <code>.temporal.api.workflowservice.v1.DescribeTaskQueueResponse.EffectiveRateLimit effective_rate_limit = 7;</code>
+     */
+    protected $effective_rate_limit = null;
+    /**
+     * Deprecated.
+     * Status of the task queue. Only populated when `include_task_queue_status` is set to true in the request.
+     *
+     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueueStatus task_queue_status = 2 [deprecated = true];</code>
+     * @deprecated
+     */
+    protected $task_queue_status = null;
+    /**
+     * Deprecated.
+     * Only returned in ENHANCED mode.
+     * This map contains Task Queue information for each Build ID. Empty string as key value means unversioned.
+     *
+     * Generated from protobuf field <code>map<string, .temporal.api.taskqueue.v1.TaskQueueVersionInfo> versions_info = 3 [deprecated = true];</code>
+     * @deprecated
+     */
+    private $versions_info;
 
     /**
      * Constructor.
@@ -55,14 +82,15 @@ class DescribeTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Temporal\Api\Taskqueue\V1\PollerInfo>|\Google\Protobuf\Internal\RepeatedField $pollers
-     *           Deprecated. Use `versions_info.types_info.pollers` with `ENHANCED` mode instead.
-     *           Not set in `ENHANCED` mode.
-     *     @type \Temporal\Api\Taskqueue\V1\TaskQueueStatus $task_queue_status
-     *           Deprecated. Not set in `ENHANCED` mode.
-     *     @type array|\Google\Protobuf\Internal\MapField $versions_info
-     *           This map contains Task Queue information for each Build ID. Empty string as key value means unversioned.
-     *           Only set in `ENHANCED` mode.
+     *     @type \Temporal\Api\Taskqueue\V1\PollerInfo[] $pollers
+     *     @type \Temporal\Api\Taskqueue\V1\TaskQueueStats $stats
+     *           Statistics for the task queue.
+     *           Only set if `report_stats` is set on the request.
+     *     @type array|\Google\Protobuf\Internal\MapField $stats_by_priority_key
+     *           Task queue stats breakdown by priority key. Only contains actively used priority keys.
+     *           Only set if `report_stats` is set on the request.
+     *           (-- api-linter: core::0140::prepositions=disabled
+     *               aip.dev/not-precedent: "by" is used to clarify the keys and values. --)
      *     @type \Temporal\Api\Taskqueue\V1\TaskQueueVersioningInfo $versioning_info
      *           Specifies which Worker Deployment Version(s) Server routes this Task Queue's tasks to.
      *           When not present, it means the tasks are routed to Unversioned workers (workers with
@@ -73,6 +101,16 @@ class DescribeTaskQueueResponse extends \Google\Protobuf\Internal\Message
      *           they are always routed to their Pinned Deployment Version. However, new workflow executions
      *           are typically not Pinned until they complete their first task (unless they are started with
      *           a Pinned VersioningOverride or are Child Workflows of a Pinned parent).
+     *     @type \Temporal\Api\Taskqueue\V1\TaskQueueConfig $config
+     *           Only populated if report_task_queue_config is set to true.
+     *     @type \Temporal\Api\Workflowservice\V1\DescribeTaskQueueResponse\EffectiveRateLimit $effective_rate_limit
+     *     @type \Temporal\Api\Taskqueue\V1\TaskQueueStatus $task_queue_status
+     *           Deprecated.
+     *           Status of the task queue. Only populated when `include_task_queue_status` is set to true in the request.
+     *     @type array|\Google\Protobuf\Internal\MapField $versions_info
+     *           Deprecated.
+     *           Only returned in ENHANCED mode.
+     *           This map contains Task Queue information for each Build ID. Empty string as key value means unversioned.
      * }
      */
     public function __construct($data = NULL) {
@@ -81,11 +119,8 @@ class DescribeTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deprecated. Use `versions_info.types_info.pollers` with `ENHANCED` mode instead.
-     * Not set in `ENHANCED` mode.
-     *
      * Generated from protobuf field <code>repeated .temporal.api.taskqueue.v1.PollerInfo pollers = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Taskqueue\V1\PollerInfo>
      */
     public function getPollers()
     {
@@ -93,11 +128,8 @@ class DescribeTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deprecated. Use `versions_info.types_info.pollers` with `ENHANCED` mode instead.
-     * Not set in `ENHANCED` mode.
-     *
      * Generated from protobuf field <code>repeated .temporal.api.taskqueue.v1.PollerInfo pollers = 1;</code>
-     * @param array<\Temporal\Api\Taskqueue\V1\PollerInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Taskqueue\V1\PollerInfo[] $var
      * @return $this
      */
     public function setPollers($var)
@@ -109,65 +141,71 @@ class DescribeTaskQueueResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deprecated. Not set in `ENHANCED` mode.
+     * Statistics for the task queue.
+     * Only set if `report_stats` is set on the request.
      *
-     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueueStatus task_queue_status = 2;</code>
-     * @return \Temporal\Api\Taskqueue\V1\TaskQueueStatus|null
+     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueueStats stats = 5;</code>
+     * @return \Temporal\Api\Taskqueue\V1\TaskQueueStats|null
      */
-    public function getTaskQueueStatus()
+    public function getStats()
     {
-        return $this->task_queue_status;
+        return $this->stats;
     }
 
-    public function hasTaskQueueStatus()
+    public function hasStats()
     {
-        return isset($this->task_queue_status);
+        return isset($this->stats);
     }
 
-    public function clearTaskQueueStatus()
+    public function clearStats()
     {
-        unset($this->task_queue_status);
+        unset($this->stats);
     }
 
     /**
-     * Deprecated. Not set in `ENHANCED` mode.
+     * Statistics for the task queue.
+     * Only set if `report_stats` is set on the request.
      *
-     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueueStatus task_queue_status = 2;</code>
-     * @param \Temporal\Api\Taskqueue\V1\TaskQueueStatus $var
+     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueueStats stats = 5;</code>
+     * @param \Temporal\Api\Taskqueue\V1\TaskQueueStats $var
      * @return $this
      */
-    public function setTaskQueueStatus($var)
+    public function setStats($var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueueStatus::class);
-        $this->task_queue_status = $var;
+        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueueStats::class);
+        $this->stats = $var;
 
         return $this;
     }
 
     /**
-     * This map contains Task Queue information for each Build ID. Empty string as key value means unversioned.
-     * Only set in `ENHANCED` mode.
+     * Task queue stats breakdown by priority key. Only contains actively used priority keys.
+     * Only set if `report_stats` is set on the request.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "by" is used to clarify the keys and values. --)
      *
-     * Generated from protobuf field <code>map<string, .temporal.api.taskqueue.v1.TaskQueueVersionInfo> versions_info = 3;</code>
+     * Generated from protobuf field <code>map<int32, .temporal.api.taskqueue.v1.TaskQueueStats> stats_by_priority_key = 8;</code>
      * @return \Google\Protobuf\Internal\MapField
      */
-    public function getVersionsInfo()
+    public function getStatsByPriorityKey()
     {
-        return $this->versions_info;
+        return $this->stats_by_priority_key;
     }
 
     /**
-     * This map contains Task Queue information for each Build ID. Empty string as key value means unversioned.
-     * Only set in `ENHANCED` mode.
+     * Task queue stats breakdown by priority key. Only contains actively used priority keys.
+     * Only set if `report_stats` is set on the request.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "by" is used to clarify the keys and values. --)
      *
-     * Generated from protobuf field <code>map<string, .temporal.api.taskqueue.v1.TaskQueueVersionInfo> versions_info = 3;</code>
+     * Generated from protobuf field <code>map<int32, .temporal.api.taskqueue.v1.TaskQueueStats> stats_by_priority_key = 8;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setVersionsInfo($var)
+    public function setStatsByPriorityKey($var)
     {
-        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Taskqueue\V1\TaskQueueVersionInfo::class);
-        $this->versions_info = $arr;
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::INT32, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Taskqueue\V1\TaskQueueStats::class);
+        $this->stats_by_priority_key = $arr;
 
         return $this;
     }
@@ -220,6 +258,160 @@ class DescribeTaskQueueResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueueVersioningInfo::class);
         $this->versioning_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Only populated if report_task_queue_config is set to true.
+     *
+     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueueConfig config = 6;</code>
+     * @return \Temporal\Api\Taskqueue\V1\TaskQueueConfig|null
+     */
+    public function getConfig()
+    {
+        return $this->config;
+    }
+
+    public function hasConfig()
+    {
+        return isset($this->config);
+    }
+
+    public function clearConfig()
+    {
+        unset($this->config);
+    }
+
+    /**
+     * Only populated if report_task_queue_config is set to true.
+     *
+     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueueConfig config = 6;</code>
+     * @param \Temporal\Api\Taskqueue\V1\TaskQueueConfig $var
+     * @return $this
+     */
+    public function setConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueueConfig::class);
+        $this->config = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.workflowservice.v1.DescribeTaskQueueResponse.EffectiveRateLimit effective_rate_limit = 7;</code>
+     * @return \Temporal\Api\Workflowservice\V1\DescribeTaskQueueResponse\EffectiveRateLimit|null
+     */
+    public function getEffectiveRateLimit()
+    {
+        return $this->effective_rate_limit;
+    }
+
+    public function hasEffectiveRateLimit()
+    {
+        return isset($this->effective_rate_limit);
+    }
+
+    public function clearEffectiveRateLimit()
+    {
+        unset($this->effective_rate_limit);
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.workflowservice.v1.DescribeTaskQueueResponse.EffectiveRateLimit effective_rate_limit = 7;</code>
+     * @param \Temporal\Api\Workflowservice\V1\DescribeTaskQueueResponse\EffectiveRateLimit $var
+     * @return $this
+     */
+    public function setEffectiveRateLimit($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Workflowservice\V1\DescribeTaskQueueResponse\EffectiveRateLimit::class);
+        $this->effective_rate_limit = $var;
+
+        return $this;
+    }
+
+    /**
+     * Deprecated.
+     * Status of the task queue. Only populated when `include_task_queue_status` is set to true in the request.
+     *
+     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueueStatus task_queue_status = 2 [deprecated = true];</code>
+     * @return \Temporal\Api\Taskqueue\V1\TaskQueueStatus|null
+     * @deprecated
+     */
+    public function getTaskQueueStatus()
+    {
+        if (isset($this->task_queue_status)) {
+            @trigger_error('task_queue_status is deprecated.', E_USER_DEPRECATED);
+        }
+        return $this->task_queue_status;
+    }
+
+    public function hasTaskQueueStatus()
+    {
+        if (isset($this->task_queue_status)) {
+            @trigger_error('task_queue_status is deprecated.', E_USER_DEPRECATED);
+        }
+        return isset($this->task_queue_status);
+    }
+
+    public function clearTaskQueueStatus()
+    {
+        @trigger_error('task_queue_status is deprecated.', E_USER_DEPRECATED);
+        unset($this->task_queue_status);
+    }
+
+    /**
+     * Deprecated.
+     * Status of the task queue. Only populated when `include_task_queue_status` is set to true in the request.
+     *
+     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueueStatus task_queue_status = 2 [deprecated = true];</code>
+     * @param \Temporal\Api\Taskqueue\V1\TaskQueueStatus $var
+     * @return $this
+     * @deprecated
+     */
+    public function setTaskQueueStatus($var)
+    {
+        @trigger_error('task_queue_status is deprecated.', E_USER_DEPRECATED);
+        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueueStatus::class);
+        $this->task_queue_status = $var;
+
+        return $this;
+    }
+
+    /**
+     * Deprecated.
+     * Only returned in ENHANCED mode.
+     * This map contains Task Queue information for each Build ID. Empty string as key value means unversioned.
+     *
+     * Generated from protobuf field <code>map<string, .temporal.api.taskqueue.v1.TaskQueueVersionInfo> versions_info = 3 [deprecated = true];</code>
+     * @return \Google\Protobuf\Internal\MapField
+     * @deprecated
+     */
+    public function getVersionsInfo()
+    {
+        if ($this->versions_info->count() !== 0) {
+            @trigger_error('versions_info is deprecated.', E_USER_DEPRECATED);
+        }
+        return $this->versions_info;
+    }
+
+    /**
+     * Deprecated.
+     * Only returned in ENHANCED mode.
+     * This map contains Task Queue information for each Build ID. Empty string as key value means unversioned.
+     *
+     * Generated from protobuf field <code>map<string, .temporal.api.taskqueue.v1.TaskQueueVersionInfo> versions_info = 3 [deprecated = true];</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     * @deprecated
+     */
+    public function setVersionsInfo($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Taskqueue\V1\TaskQueueVersionInfo::class);
+        if ($arr->count() !== 0) {
+            @trigger_error('versions_info is deprecated.', E_USER_DEPRECATED);
+        }
+        $this->versions_info = $arr;
 
         return $this;
     }

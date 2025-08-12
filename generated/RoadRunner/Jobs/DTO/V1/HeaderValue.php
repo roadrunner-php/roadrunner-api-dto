@@ -6,8 +6,8 @@
 namespace RoadRunner\Jobs\DTO\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * HeaderValue represents []string value for the header (map[string][]string)
@@ -27,7 +27,7 @@ class HeaderValue extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $value
+     *     @type string[] $value
      * }
      */
     public function __construct($data = NULL) {
@@ -37,7 +37,7 @@ class HeaderValue extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string value = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getValue()
     {
@@ -46,7 +46,7 @@ class HeaderValue extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string value = 1;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setValue($var)

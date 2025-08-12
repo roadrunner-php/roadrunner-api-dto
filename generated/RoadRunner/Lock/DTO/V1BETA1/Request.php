@@ -6,8 +6,8 @@
 namespace RoadRunner\Lock\DTO\V1BETA1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>lock.v1beta1.Request</code>

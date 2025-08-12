@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflow\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * CallbackInfo contains the state of an attached workflow callback.

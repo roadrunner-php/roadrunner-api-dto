@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.DescribeWorkerDeploymentVersionRequest</code>
@@ -19,11 +19,24 @@ class DescribeWorkerDeploymentVersionRequest extends \Google\Protobuf\Internal\M
      */
     protected $namespace = '';
     /**
-     * Deployment Version identifier in the form "<deployment_name>.<build_id>".
+     * Deprecated. Use `deployment_version`.
      *
-     * Generated from protobuf field <code>string version = 2;</code>
+     * Generated from protobuf field <code>string version = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $version = '';
+    /**
+     * Required.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion deployment_version = 3;</code>
+     */
+    protected $deployment_version = null;
+    /**
+     * Report stats for task queues which have been polled by this version.
+     *
+     * Generated from protobuf field <code>bool report_task_queue_stats = 4;</code>
+     */
+    protected $report_task_queue_stats = false;
 
     /**
      * Constructor.
@@ -33,7 +46,11 @@ class DescribeWorkerDeploymentVersionRequest extends \Google\Protobuf\Internal\M
      *
      *     @type string $namespace
      *     @type string $version
-     *           Deployment Version identifier in the form "<deployment_name>.<build_id>".
+     *           Deprecated. Use `deployment_version`.
+     *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $deployment_version
+     *           Required.
+     *     @type bool $report_task_queue_stats
+     *           Report stats for task queues which have been polled by this version.
      * }
      */
     public function __construct($data = NULL) {
@@ -64,27 +81,95 @@ class DescribeWorkerDeploymentVersionRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * Deployment Version identifier in the form "<deployment_name>.<build_id>".
+     * Deprecated. Use `deployment_version`.
      *
-     * Generated from protobuf field <code>string version = 2;</code>
+     * Generated from protobuf field <code>string version = 2 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getVersion()
     {
+        if ($this->version !== '') {
+            @trigger_error('version is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->version;
     }
 
     /**
-     * Deployment Version identifier in the form "<deployment_name>.<build_id>".
+     * Deprecated. Use `deployment_version`.
      *
-     * Generated from protobuf field <code>string version = 2;</code>
+     * Generated from protobuf field <code>string version = 2 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setVersion($var)
     {
+        @trigger_error('version is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Required.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion deployment_version = 3;</code>
+     * @return \Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null
+     */
+    public function getDeploymentVersion()
+    {
+        return $this->deployment_version;
+    }
+
+    public function hasDeploymentVersion()
+    {
+        return isset($this->deployment_version);
+    }
+
+    public function clearDeploymentVersion()
+    {
+        unset($this->deployment_version);
+    }
+
+    /**
+     * Required.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion deployment_version = 3;</code>
+     * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
+     * @return $this
+     */
+    public function setDeploymentVersion($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
+        $this->deployment_version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Report stats for task queues which have been polled by this version.
+     *
+     * Generated from protobuf field <code>bool report_task_queue_stats = 4;</code>
+     * @return bool
+     */
+    public function getReportTaskQueueStats()
+    {
+        return $this->report_task_queue_stats;
+    }
+
+    /**
+     * Report stats for task queues which have been polled by this version.
+     *
+     * Generated from protobuf field <code>bool report_task_queue_stats = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setReportTaskQueueStats($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->report_task_queue_stats = $var;
 
         return $this;
     }

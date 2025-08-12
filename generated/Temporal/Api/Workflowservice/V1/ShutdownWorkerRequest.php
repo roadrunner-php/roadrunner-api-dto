@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.ShutdownWorkerRequest</code>
@@ -30,6 +30,10 @@ class ShutdownWorkerRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string reason = 4;</code>
      */
     protected $reason = '';
+    /**
+     * Generated from protobuf field <code>.temporal.api.worker.v1.WorkerHeartbeat worker_heartbeat = 5;</code>
+     */
+    protected $worker_heartbeat = null;
 
     /**
      * Constructor.
@@ -41,6 +45,7 @@ class ShutdownWorkerRequest extends \Google\Protobuf\Internal\Message
      *     @type string $sticky_task_queue
      *     @type string $identity
      *     @type string $reason
+     *     @type \Temporal\Api\Worker\V1\WorkerHeartbeat $worker_heartbeat
      * }
      */
     public function __construct($data = NULL) {
@@ -132,6 +137,38 @@ class ShutdownWorkerRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->reason = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.worker.v1.WorkerHeartbeat worker_heartbeat = 5;</code>
+     * @return \Temporal\Api\Worker\V1\WorkerHeartbeat|null
+     */
+    public function getWorkerHeartbeat()
+    {
+        return $this->worker_heartbeat;
+    }
+
+    public function hasWorkerHeartbeat()
+    {
+        return isset($this->worker_heartbeat);
+    }
+
+    public function clearWorkerHeartbeat()
+    {
+        unset($this->worker_heartbeat);
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.worker.v1.WorkerHeartbeat worker_heartbeat = 5;</code>
+     * @param \Temporal\Api\Worker\V1\WorkerHeartbeat $var
+     * @return $this
+     */
+    public function setWorkerHeartbeat($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Worker\V1\WorkerHeartbeat::class);
+        $this->worker_heartbeat = $var;
 
         return $this;
     }

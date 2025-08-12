@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflow\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Used to override the versioning behavior (and pinned deployment version, if applicable) of a
@@ -15,6 +15,8 @@ use Google\Protobuf\Internal\GPBUtil;
  * `WorkflowExecutionInfo.VersioningInfo` for more information. To remove the override, call
  * `UpdateWorkflowExecutionOptions` with a null `VersioningOverride`, and use the `update_mask`
  * to indicate that it should be mutated.
+ * Pinned overrides are automatically inherited by child workflows, continue-as-new workflows,
+ * workflow retries, and cron workflows.
  *
  * Generated from protobuf message <code>temporal.api.workflow.v1.VersioningOverride</code>
  */
@@ -22,14 +24,16 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required.
+     * Deprecated. Use `override`.
      *
-     * Generated from protobuf field <code>.temporal.api.enums.v1.VersioningBehavior behavior = 1;</code>
+     * Generated from protobuf field <code>.temporal.api.enums.v1.VersioningBehavior behavior = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $behavior = 0;
     /**
      * Required if behavior is `PINNED`. Must be null if behavior is `AUTO_UPGRADE`.
      * Identifies the worker deployment to pin the workflow to.
-     * Deprecated. Use `pinned_version`.
+     * Deprecated. Use `override.pinned.version`.
      *
      * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 2 [deprecated = true];</code>
      * @deprecated
@@ -39,10 +43,13 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
      * Required if behavior is `PINNED`. Must be absent if behavior is not `PINNED`.
      * Identifies the worker deployment version to pin the workflow to, in the format
      * "<deployment_name>.<build_id>".
+     * Deprecated. Use `override.pinned.version`.
      *
-     * Generated from protobuf field <code>string pinned_version = 9;</code>
+     * Generated from protobuf field <code>string pinned_version = 9 [deprecated = true];</code>
+     * @deprecated
      */
     protected $pinned_version = '';
+    protected $override;
 
     /**
      * Constructor.
@@ -50,16 +57,23 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type \Temporal\Api\Workflow\V1\VersioningOverride\PinnedOverride $pinned
+     *           Send the next workflow task to the Version specified in the override.
+     *     @type bool $auto_upgrade
+     *           Send the next workflow task to the Current Deployment Version
+     *           of its Task Queue when the next workflow task is dispatched.
      *     @type int $behavior
      *           Required.
+     *           Deprecated. Use `override`.
      *     @type \Temporal\Api\Deployment\V1\Deployment $deployment
      *           Required if behavior is `PINNED`. Must be null if behavior is `AUTO_UPGRADE`.
      *           Identifies the worker deployment to pin the workflow to.
-     *           Deprecated. Use `pinned_version`.
+     *           Deprecated. Use `override.pinned.version`.
      *     @type string $pinned_version
      *           Required if behavior is `PINNED`. Must be absent if behavior is not `PINNED`.
      *           Identifies the worker deployment version to pin the workflow to, in the format
      *           "<deployment_name>.<build_id>".
+     *           Deprecated. Use `override.pinned.version`.
      * }
      */
     public function __construct($data = NULL) {
@@ -68,25 +82,97 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required.
+     * Send the next workflow task to the Version specified in the override.
      *
-     * Generated from protobuf field <code>.temporal.api.enums.v1.VersioningBehavior behavior = 1;</code>
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride.PinnedOverride pinned = 3;</code>
+     * @return \Temporal\Api\Workflow\V1\VersioningOverride\PinnedOverride|null
+     */
+    public function getPinned()
+    {
+        return $this->readOneof(3);
+    }
+
+    public function hasPinned()
+    {
+        return $this->hasOneof(3);
+    }
+
+    /**
+     * Send the next workflow task to the Version specified in the override.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride.PinnedOverride pinned = 3;</code>
+     * @param \Temporal\Api\Workflow\V1\VersioningOverride\PinnedOverride $var
+     * @return $this
+     */
+    public function setPinned($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\VersioningOverride\PinnedOverride::class);
+        $this->writeOneof(3, $var);
+
+        return $this;
+    }
+
+    /**
+     * Send the next workflow task to the Current Deployment Version
+     * of its Task Queue when the next workflow task is dispatched.
+     *
+     * Generated from protobuf field <code>bool auto_upgrade = 4;</code>
+     * @return bool
+     */
+    public function getAutoUpgrade()
+    {
+        return $this->readOneof(4);
+    }
+
+    public function hasAutoUpgrade()
+    {
+        return $this->hasOneof(4);
+    }
+
+    /**
+     * Send the next workflow task to the Current Deployment Version
+     * of its Task Queue when the next workflow task is dispatched.
+     *
+     * Generated from protobuf field <code>bool auto_upgrade = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAutoUpgrade($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->writeOneof(4, $var);
+
+        return $this;
+    }
+
+    /**
+     * Required.
+     * Deprecated. Use `override`.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.VersioningBehavior behavior = 1 [deprecated = true];</code>
      * @return int
+     * @deprecated
      */
     public function getBehavior()
     {
+        if ($this->behavior !== 0) {
+            @trigger_error('behavior is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->behavior;
     }
 
     /**
      * Required.
+     * Deprecated. Use `override`.
      *
-     * Generated from protobuf field <code>.temporal.api.enums.v1.VersioningBehavior behavior = 1;</code>
+     * Generated from protobuf field <code>.temporal.api.enums.v1.VersioningBehavior behavior = 1 [deprecated = true];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setBehavior($var)
     {
+        @trigger_error('behavior is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\VersioningBehavior::class);
         $this->behavior = $var;
 
@@ -96,7 +182,7 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
     /**
      * Required if behavior is `PINNED`. Must be null if behavior is `AUTO_UPGRADE`.
      * Identifies the worker deployment to pin the workflow to.
-     * Deprecated. Use `pinned_version`.
+     * Deprecated. Use `override.pinned.version`.
      *
      * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 2 [deprecated = true];</code>
      * @return \Temporal\Api\Deployment\V1\Deployment|null
@@ -127,7 +213,7 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
     /**
      * Required if behavior is `PINNED`. Must be null if behavior is `AUTO_UPGRADE`.
      * Identifies the worker deployment to pin the workflow to.
-     * Deprecated. Use `pinned_version`.
+     * Deprecated. Use `override.pinned.version`.
      *
      * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 2 [deprecated = true];</code>
      * @param \Temporal\Api\Deployment\V1\Deployment $var
@@ -147,12 +233,17 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
      * Required if behavior is `PINNED`. Must be absent if behavior is not `PINNED`.
      * Identifies the worker deployment version to pin the workflow to, in the format
      * "<deployment_name>.<build_id>".
+     * Deprecated. Use `override.pinned.version`.
      *
-     * Generated from protobuf field <code>string pinned_version = 9;</code>
+     * Generated from protobuf field <code>string pinned_version = 9 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getPinnedVersion()
     {
+        if ($this->pinned_version !== '') {
+            @trigger_error('pinned_version is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->pinned_version;
     }
 
@@ -160,17 +251,28 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
      * Required if behavior is `PINNED`. Must be absent if behavior is not `PINNED`.
      * Identifies the worker deployment version to pin the workflow to, in the format
      * "<deployment_name>.<build_id>".
+     * Deprecated. Use `override.pinned.version`.
      *
-     * Generated from protobuf field <code>string pinned_version = 9;</code>
+     * Generated from protobuf field <code>string pinned_version = 9 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setPinnedVersion($var)
     {
+        @trigger_error('pinned_version is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->pinned_version = $var;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getOverride()
+    {
+        return $this->whichOneof("override");
     }
 
 }

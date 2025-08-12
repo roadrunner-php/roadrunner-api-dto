@@ -6,8 +6,8 @@
 namespace RoadRunner\Centrifugal\Proxy\DTO\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>centrifugal.centrifugo.proxy.SubscribeResult</code>
@@ -55,7 +55,7 @@ class SubscribeResult extends \Google\Protobuf\Internal\Message
      *     @type string $data
      *     @type string $b64data
      *     @type \RoadRunner\Centrifugal\Proxy\DTO\V1\SubscribeOptionOverride $override
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $allow
+     *     @type string[] $allow
      * }
      */
     public function __construct($data = NULL) {
@@ -207,7 +207,7 @@ class SubscribeResult extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string allow = 7;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getAllow()
     {
@@ -216,7 +216,7 @@ class SubscribeResult extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string allow = 7;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setAllow($var)

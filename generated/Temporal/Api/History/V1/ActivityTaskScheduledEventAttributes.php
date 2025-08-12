@@ -6,8 +6,8 @@
 namespace Temporal\Api\History\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.history.v1.ActivityTaskScheduledEventAttributes</code>
@@ -89,8 +89,10 @@ class ActivityTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
     /**
      * If this is set, the activity would be assigned to the Build ID of the workflow. Otherwise,
      * Assignment rules of the activity's Task Queue will be used to determine the Build ID.
+     * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>bool use_workflow_build_id = 13;</code>
+     * Generated from protobuf field <code>bool use_workflow_build_id = 13 [deprecated = true];</code>
+     * @deprecated
      */
     protected $use_workflow_build_id = false;
     /**
@@ -142,6 +144,7 @@ class ActivityTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      *     @type bool $use_workflow_build_id
      *           If this is set, the activity would be assigned to the Build ID of the workflow. Otherwise,
      *           Assignment rules of the activity's Task Queue will be used to determine the Build ID.
+     *           Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *     @type \Temporal\Api\Common\V1\Priority $priority
      *           Priority metadata. If this message is not present, or any fields are not
      *           present, they inherit the values from the workflow.
@@ -543,25 +546,33 @@ class ActivityTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
     /**
      * If this is set, the activity would be assigned to the Build ID of the workflow. Otherwise,
      * Assignment rules of the activity's Task Queue will be used to determine the Build ID.
+     * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>bool use_workflow_build_id = 13;</code>
+     * Generated from protobuf field <code>bool use_workflow_build_id = 13 [deprecated = true];</code>
      * @return bool
+     * @deprecated
      */
     public function getUseWorkflowBuildId()
     {
+        if ($this->use_workflow_build_id !== false) {
+            @trigger_error('use_workflow_build_id is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->use_workflow_build_id;
     }
 
     /**
      * If this is set, the activity would be assigned to the Build ID of the workflow. Otherwise,
      * Assignment rules of the activity's Task Queue will be used to determine the Build ID.
+     * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>bool use_workflow_build_id = 13;</code>
+     * Generated from protobuf field <code>bool use_workflow_build_id = 13 [deprecated = true];</code>
      * @param bool $var
      * @return $this
+     * @deprecated
      */
     public function setUseWorkflowBuildId($var)
     {
+        @trigger_error('use_workflow_build_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkBool($var);
         $this->use_workflow_build_id = $var;
 

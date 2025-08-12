@@ -6,8 +6,8 @@
 namespace Temporal\Api\Errordetails\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * NamespaceUnavailableFailure is returned by the service when a request addresses a namespace that is unavailable. For

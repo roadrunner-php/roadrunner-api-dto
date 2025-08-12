@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.TerminateWorkflowExecutionRequest</code>
@@ -70,7 +70,7 @@ class TerminateWorkflowExecutionRequest extends \Google\Protobuf\Internal\Messag
      *           If set, this call will error if the most recent (if no run id is set on
      *           `workflow_execution`), or specified (if it is) workflow execution is not part of the same
      *           execution chain as this id.
-     *     @type array<\Temporal\Api\Common\V1\Link>|\Google\Protobuf\Internal\RepeatedField $links
+     *     @type \Temporal\Api\Common\V1\Link[] $links
      *           Links to be associated with the WorkflowExecutionTerminated event.
      * }
      */
@@ -251,7 +251,7 @@ class TerminateWorkflowExecutionRequest extends \Google\Protobuf\Internal\Messag
      * Links to be associated with the WorkflowExecutionTerminated event.
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 7;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Common\V1\Link>
      */
     public function getLinks()
     {
@@ -262,7 +262,7 @@ class TerminateWorkflowExecutionRequest extends \Google\Protobuf\Internal\Messag
      * Links to be associated with the WorkflowExecutionTerminated event.
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 7;</code>
-     * @param array<\Temporal\Api\Common\V1\Link>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Common\V1\Link[] $var
      * @return $this
      */
     public function setLinks($var)

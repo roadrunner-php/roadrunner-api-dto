@@ -6,8 +6,8 @@
 namespace Temporal\Api\History\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * History events are the method by which Temporal SDKs advance (or recreate) workflow state.
@@ -99,7 +99,7 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      *            * workflow_execution_started_event_attributes - summary and details from start workflow.
      *            * timer_started_event_attributes - summary represents an identifier for the timer for use by
      *              user interfaces.
-     *     @type array<\Temporal\Api\Common\V1\Link>|\Google\Protobuf\Internal\RepeatedField $links
+     *     @type \Temporal\Api\Common\V1\Link[] $links
      *           Links associated with the event.
      *     @type \Temporal\Api\History\V1\WorkflowExecutionStartedEventAttributes $workflow_execution_started_event_attributes
      *     @type \Temporal\Api\History\V1\WorkflowExecutionCompletedEventAttributes $workflow_execution_completed_event_attributes
@@ -381,7 +381,7 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * Links associated with the event.
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 302;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Common\V1\Link>
      */
     public function getLinks()
     {
@@ -392,7 +392,7 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * Links associated with the event.
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 302;</code>
-     * @param array<\Temporal\Api\Common\V1\Link>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Common\V1\Link[] $var
      * @return $this
      */
     public function setLinks($var)

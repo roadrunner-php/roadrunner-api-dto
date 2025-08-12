@@ -6,8 +6,8 @@
 namespace Temporal\Api\Operatorservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.operatorservice.v1.ListNexusEndpointsResponse</code>
@@ -33,7 +33,7 @@ class ListNexusEndpointsResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type string $next_page_token
      *           Token for getting the next page.
-     *     @type array<\Temporal\Api\Nexus\V1\Endpoint>|\Google\Protobuf\Internal\RepeatedField $endpoints
+     *     @type \Temporal\Api\Nexus\V1\Endpoint[] $endpoints
      * }
      */
     public function __construct($data = NULL) {
@@ -69,7 +69,7 @@ class ListNexusEndpointsResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.nexus.v1.Endpoint endpoints = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Nexus\V1\Endpoint>
      */
     public function getEndpoints()
     {
@@ -78,7 +78,7 @@ class ListNexusEndpointsResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.nexus.v1.Endpoint endpoints = 2;</code>
-     * @param array<\Temporal\Api\Nexus\V1\Endpoint>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Nexus\V1\Endpoint[] $var
      * @return $this
      */
     public function setEndpoints($var)

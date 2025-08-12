@@ -6,8 +6,8 @@
 namespace Temporal\Api\History\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.history.v1.WorkflowTaskStartedEventAttributes</code>
@@ -51,7 +51,8 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * Version info of the worker to whom this task was dispatched.
      * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version = 6;</code>
+     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version = 6 [deprecated = true];</code>
+     * @deprecated
      */
     protected $worker_version = null;
     /**
@@ -59,7 +60,8 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * when rebuilding it from events.
      * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>int64 build_id_redirect_counter = 7;</code>
+     * Generated from protobuf field <code>int64 build_id_redirect_counter = 7 [deprecated = true];</code>
+     * @deprecated
      */
     protected $build_id_redirect_counter = 0;
 
@@ -236,21 +238,29 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * Version info of the worker to whom this task was dispatched.
      * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version = 6;</code>
+     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version = 6 [deprecated = true];</code>
      * @return \Temporal\Api\Common\V1\WorkerVersionStamp|null
+     * @deprecated
      */
     public function getWorkerVersion()
     {
+        if (isset($this->worker_version)) {
+            @trigger_error('worker_version is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->worker_version;
     }
 
     public function hasWorkerVersion()
     {
+        if (isset($this->worker_version)) {
+            @trigger_error('worker_version is deprecated.', E_USER_DEPRECATED);
+        }
         return isset($this->worker_version);
     }
 
     public function clearWorkerVersion()
     {
+        @trigger_error('worker_version is deprecated.', E_USER_DEPRECATED);
         unset($this->worker_version);
     }
 
@@ -258,12 +268,14 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * Version info of the worker to whom this task was dispatched.
      * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version = 6;</code>
+     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version = 6 [deprecated = true];</code>
      * @param \Temporal\Api\Common\V1\WorkerVersionStamp $var
      * @return $this
+     * @deprecated
      */
     public function setWorkerVersion($var)
     {
+        @trigger_error('worker_version is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerVersionStamp::class);
         $this->worker_version = $var;
 
@@ -275,11 +287,15 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * when rebuilding it from events.
      * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>int64 build_id_redirect_counter = 7;</code>
+     * Generated from protobuf field <code>int64 build_id_redirect_counter = 7 [deprecated = true];</code>
      * @return int|string
+     * @deprecated
      */
     public function getBuildIdRedirectCounter()
     {
+        if ($this->build_id_redirect_counter !== 0) {
+            @trigger_error('build_id_redirect_counter is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->build_id_redirect_counter;
     }
 
@@ -288,12 +304,14 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * when rebuilding it from events.
      * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>int64 build_id_redirect_counter = 7;</code>
+     * Generated from protobuf field <code>int64 build_id_redirect_counter = 7 [deprecated = true];</code>
      * @param int|string $var
      * @return $this
+     * @deprecated
      */
     public function setBuildIdRedirectCounter($var)
     {
+        @trigger_error('build_id_redirect_counter is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkInt64($var);
         $this->build_id_redirect_counter = $var;
 

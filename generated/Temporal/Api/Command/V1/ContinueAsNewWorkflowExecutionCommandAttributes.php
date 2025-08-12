@@ -6,8 +6,8 @@
 namespace Temporal\Api\Command\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.command.v1.ContinueAsNewWorkflowExecutionCommandAttributes</code>
@@ -87,8 +87,10 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
     /**
      * If this is set, the new execution inherits the Build ID of the current execution. Otherwise,
      * the assignment rules will be used to independently assign a Build ID to the new execution.
+     * Deprecated. Only considered for versioning v0.2.
      *
-     * Generated from protobuf field <code>bool inherit_build_id = 15;</code>
+     * Generated from protobuf field <code>bool inherit_build_id = 15 [deprecated = true];</code>
+     * @deprecated
      */
     protected $inherit_build_id = false;
 
@@ -122,6 +124,7 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
      *     @type bool $inherit_build_id
      *           If this is set, the new execution inherits the Build ID of the current execution. Otherwise,
      *           the assignment rules will be used to independently assign a Build ID to the new execution.
+     *           Deprecated. Only considered for versioning v0.2.
      * }
      */
     public function __construct($data = NULL) {
@@ -588,25 +591,33 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
     /**
      * If this is set, the new execution inherits the Build ID of the current execution. Otherwise,
      * the assignment rules will be used to independently assign a Build ID to the new execution.
+     * Deprecated. Only considered for versioning v0.2.
      *
-     * Generated from protobuf field <code>bool inherit_build_id = 15;</code>
+     * Generated from protobuf field <code>bool inherit_build_id = 15 [deprecated = true];</code>
      * @return bool
+     * @deprecated
      */
     public function getInheritBuildId()
     {
+        if ($this->inherit_build_id !== false) {
+            @trigger_error('inherit_build_id is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->inherit_build_id;
     }
 
     /**
      * If this is set, the new execution inherits the Build ID of the current execution. Otherwise,
      * the assignment rules will be used to independently assign a Build ID to the new execution.
+     * Deprecated. Only considered for versioning v0.2.
      *
-     * Generated from protobuf field <code>bool inherit_build_id = 15;</code>
+     * Generated from protobuf field <code>bool inherit_build_id = 15 [deprecated = true];</code>
      * @param bool $var
      * @return $this
+     * @deprecated
      */
     public function setInheritBuildId($var)
     {
+        @trigger_error('inherit_build_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkBool($var);
         $this->inherit_build_id = $var;
 

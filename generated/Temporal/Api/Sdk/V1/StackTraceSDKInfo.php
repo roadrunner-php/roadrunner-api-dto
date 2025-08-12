@@ -6,8 +6,8 @@
 namespace Temporal\Api\Sdk\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Information pertaining to the SDK that the trace has been captured from.

@@ -6,8 +6,8 @@
 namespace Temporal\Api\Deployment\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Used as part of Deployment write APIs to update metadata attached to a deployment.
@@ -35,7 +35,7 @@ class UpdateDeploymentMetadata extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type array|\Google\Protobuf\Internal\MapField $upsert_entries
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $remove_entries
+     *     @type string[] $remove_entries
      *           List of keys to remove from the metadata.
      * }
      */
@@ -70,7 +70,7 @@ class UpdateDeploymentMetadata extends \Google\Protobuf\Internal\Message
      * List of keys to remove from the metadata.
      *
      * Generated from protobuf field <code>repeated string remove_entries = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getRemoveEntries()
     {
@@ -81,7 +81,7 @@ class UpdateDeploymentMetadata extends \Google\Protobuf\Internal\Message
      * List of keys to remove from the metadata.
      *
      * Generated from protobuf field <code>repeated string remove_entries = 2;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setRemoveEntries($var)

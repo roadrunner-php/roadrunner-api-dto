@@ -6,8 +6,8 @@
 namespace RoadRunner\Centrifugal\API\DTO\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>centrifugal.centrifugo.api.UserTopicFilter</code>
@@ -33,8 +33,8 @@ class UserTopicFilter extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $users
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $topics
+     *     @type string[] $users
+     *     @type string[] $topics
      *     @type string $topic_prefix
      * }
      */
@@ -45,7 +45,7 @@ class UserTopicFilter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string users = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getUsers()
     {
@@ -54,7 +54,7 @@ class UserTopicFilter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string users = 1;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setUsers($var)
@@ -67,7 +67,7 @@ class UserTopicFilter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string topics = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getTopics()
     {
@@ -76,7 +76,7 @@ class UserTopicFilter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string topics = 2;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setTopics($var)

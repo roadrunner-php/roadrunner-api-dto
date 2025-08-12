@@ -6,8 +6,8 @@
 namespace Temporal\Api\Schedule\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * ScheduleSpec is a complete description of a set of absolute timestamps
@@ -75,6 +75,7 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
     private $interval;
     /**
      * Any timestamps matching any of exclude_* will be skipped.
+     * Deprecated. Use exclude_structured_calendar.
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.CalendarSpec exclude_calendar = 3 [deprecated = true];</code>
      * @deprecated
@@ -137,9 +138,9 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Temporal\Api\Schedule\V1\StructuredCalendarSpec>|\Google\Protobuf\Internal\RepeatedField $structured_calendar
+     *     @type \Temporal\Api\Schedule\V1\StructuredCalendarSpec[] $structured_calendar
      *           Calendar-based specifications of times.
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $cron_string
+     *     @type string[] $cron_string
      *           cron_string holds a traditional cron specification as a string. It
      *           accepts 5, 6, or 7 fields, separated by spaces, and interprets them the
      *           same way as CalendarSpec.
@@ -160,13 +161,14 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
      *           \@every <interval>[/<phase>] is accepted and gets compiled into an
      *           IntervalSpec instead. <interval> and <phase> should be a decimal integer
      *           with a unit suffix s, m, h, or d.
-     *     @type array<\Temporal\Api\Schedule\V1\CalendarSpec>|\Google\Protobuf\Internal\RepeatedField $calendar
+     *     @type \Temporal\Api\Schedule\V1\CalendarSpec[] $calendar
      *           Calendar-based specifications of times.
-     *     @type array<\Temporal\Api\Schedule\V1\IntervalSpec>|\Google\Protobuf\Internal\RepeatedField $interval
+     *     @type \Temporal\Api\Schedule\V1\IntervalSpec[] $interval
      *           Interval-based specifications of times.
-     *     @type array<\Temporal\Api\Schedule\V1\CalendarSpec>|\Google\Protobuf\Internal\RepeatedField $exclude_calendar
+     *     @type \Temporal\Api\Schedule\V1\CalendarSpec[] $exclude_calendar
      *           Any timestamps matching any of exclude_* will be skipped.
-     *     @type array<\Temporal\Api\Schedule\V1\StructuredCalendarSpec>|\Google\Protobuf\Internal\RepeatedField $exclude_structured_calendar
+     *           Deprecated. Use exclude_structured_calendar.
+     *     @type \Temporal\Api\Schedule\V1\StructuredCalendarSpec[] $exclude_structured_calendar
      *     @type \Google\Protobuf\Timestamp $start_time
      *           If start_time is set, any timestamps before start_time will be skipped.
      *           (Together, start_time and end_time make an inclusive interval.)
@@ -205,7 +207,7 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
      * Calendar-based specifications of times.
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.StructuredCalendarSpec structured_calendar = 7;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Schedule\V1\StructuredCalendarSpec>
      */
     public function getStructuredCalendar()
     {
@@ -216,7 +218,7 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
      * Calendar-based specifications of times.
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.StructuredCalendarSpec structured_calendar = 7;</code>
-     * @param array<\Temporal\Api\Schedule\V1\StructuredCalendarSpec>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Schedule\V1\StructuredCalendarSpec[] $var
      * @return $this
      */
     public function setStructuredCalendar($var)
@@ -250,7 +252,7 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
      * with a unit suffix s, m, h, or d.
      *
      * Generated from protobuf field <code>repeated string cron_string = 8;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getCronString()
     {
@@ -280,7 +282,7 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
      * with a unit suffix s, m, h, or d.
      *
      * Generated from protobuf field <code>repeated string cron_string = 8;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setCronString($var)
@@ -295,7 +297,7 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
      * Calendar-based specifications of times.
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.CalendarSpec calendar = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Schedule\V1\CalendarSpec>
      */
     public function getCalendar()
     {
@@ -306,7 +308,7 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
      * Calendar-based specifications of times.
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.CalendarSpec calendar = 1;</code>
-     * @param array<\Temporal\Api\Schedule\V1\CalendarSpec>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Schedule\V1\CalendarSpec[] $var
      * @return $this
      */
     public function setCalendar($var)
@@ -321,7 +323,7 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
      * Interval-based specifications of times.
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.IntervalSpec interval = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Schedule\V1\IntervalSpec>
      */
     public function getInterval()
     {
@@ -332,7 +334,7 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
      * Interval-based specifications of times.
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.IntervalSpec interval = 2;</code>
-     * @param array<\Temporal\Api\Schedule\V1\IntervalSpec>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Schedule\V1\IntervalSpec[] $var
      * @return $this
      */
     public function setInterval($var)
@@ -345,9 +347,10 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
 
     /**
      * Any timestamps matching any of exclude_* will be skipped.
+     * Deprecated. Use exclude_structured_calendar.
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.CalendarSpec exclude_calendar = 3 [deprecated = true];</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Schedule\V1\CalendarSpec>
      * @deprecated
      */
     public function getExcludeCalendar()
@@ -360,9 +363,10 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
 
     /**
      * Any timestamps matching any of exclude_* will be skipped.
+     * Deprecated. Use exclude_structured_calendar.
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.CalendarSpec exclude_calendar = 3 [deprecated = true];</code>
-     * @param array<\Temporal\Api\Schedule\V1\CalendarSpec>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Schedule\V1\CalendarSpec[] $var
      * @return $this
      * @deprecated
      */
@@ -379,7 +383,7 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.StructuredCalendarSpec exclude_structured_calendar = 9;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Schedule\V1\StructuredCalendarSpec>
      */
     public function getExcludeStructuredCalendar()
     {
@@ -388,7 +392,7 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.StructuredCalendarSpec exclude_structured_calendar = 9;</code>
-     * @param array<\Temporal\Api\Schedule\V1\StructuredCalendarSpec>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Schedule\V1\StructuredCalendarSpec[] $var
      * @return $this
      */
     public function setExcludeStructuredCalendar($var)

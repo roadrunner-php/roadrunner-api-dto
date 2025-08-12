@@ -6,8 +6,8 @@
 namespace RoadRunner\Service\DTO\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>service.v1.Statuses</code>
@@ -25,7 +25,7 @@ class Statuses extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\RoadRunner\Service\DTO\V1\Status>|\Google\Protobuf\Internal\RepeatedField $status
+     *     @type \RoadRunner\Service\DTO\V1\Status[] $status
      * }
      */
     public function __construct($data = NULL) {
@@ -35,7 +35,7 @@ class Statuses extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .service.v1.Status status = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\RoadRunner\Service\DTO\V1\Status>
      */
     public function getStatus()
     {
@@ -44,7 +44,7 @@ class Statuses extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .service.v1.Status status = 1;</code>
-     * @param array<\RoadRunner\Service\DTO\V1\Status>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \RoadRunner\Service\DTO\V1\Status[] $var
      * @return $this
      */
     public function setStatus($var)

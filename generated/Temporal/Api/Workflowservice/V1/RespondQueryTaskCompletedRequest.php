@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.RespondQueryTaskCompletedRequest</code>
@@ -54,6 +54,13 @@ class RespondQueryTaskCompletedRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 7;</code>
      */
     protected $failure = null;
+    /**
+     * Why did the task fail? It's important to note that many of the variants in this enum cannot
+     * apply to worker responses. See the type's doc for more.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowTaskFailedCause cause = 8;</code>
+     */
+    protected $cause = 0;
 
     /**
      * Constructor.
@@ -80,6 +87,9 @@ class RespondQueryTaskCompletedRequest extends \Google\Protobuf\Internal\Message
      *           encoded by the SDK's failure converter to support E2E encryption of messages and stack
      *           traces.
      *           Mutually exclusive with `query_result`. Set when the query fails.
+     *     @type int $cause
+     *           Why did the task fail? It's important to note that many of the variants in this enum cannot
+     *           apply to worker responses. See the type's doc for more.
      * }
      */
     public function __construct($data = NULL) {
@@ -267,6 +277,34 @@ class RespondQueryTaskCompletedRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
         $this->failure = $var;
+
+        return $this;
+    }
+
+    /**
+     * Why did the task fail? It's important to note that many of the variants in this enum cannot
+     * apply to worker responses. See the type's doc for more.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowTaskFailedCause cause = 8;</code>
+     * @return int
+     */
+    public function getCause()
+    {
+        return $this->cause;
+    }
+
+    /**
+     * Why did the task fail? It's important to note that many of the variants in this enum cannot
+     * apply to worker responses. See the type's doc for more.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowTaskFailedCause cause = 8;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCause($var)
+    {
+        GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\WorkflowTaskFailedCause::class);
+        $this->cause = $var;
 
         return $this;
     }

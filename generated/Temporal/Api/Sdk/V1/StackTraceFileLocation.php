@@ -6,8 +6,8 @@
 namespace Temporal\Api\Sdk\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * More specific location details of a file: its path, precise line and column numbers if applicable, and function name if available.

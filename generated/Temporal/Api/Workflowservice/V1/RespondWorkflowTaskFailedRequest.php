@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.RespondWorkflowTaskFailedRequest</code>
@@ -40,10 +40,11 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      */
     protected $identity = '';
     /**
-     * DEPRECATED since 1.21 - use `worker_version_stamp` instead.
+     * Deprecated. Use `deployment_options` instead.
      * Worker process' unique binary id
      *
-     * Generated from protobuf field <code>string binary_checksum = 5;</code>
+     * Generated from protobuf field <code>string binary_checksum = 5 [deprecated = true];</code>
+     * @deprecated
      */
     protected $binary_checksum = '';
     /**
@@ -60,7 +61,7 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * Version info of the worker who processed this task. This message's `build_id` field should
      * always be set by SDKs. Workers opting into versioning will also set the `use_versioning`
      * field to true. See message docstrings for more.
-     * Deprecated. Use `deployment` instead.
+     * Deprecated. Use `deployment_options` instead.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version = 8 [deprecated = true];</code>
      * @deprecated
@@ -71,7 +72,8 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * `WorkerDeploymentOptions` regardless of versioning being enabled or not.
      * Deprecated. Replaced with `deployment_options`.
      *
-     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 9;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 9 [deprecated = true];</code>
+     * @deprecated
      */
     protected $deployment = null;
     /**
@@ -97,16 +99,16 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      *     @type string $identity
      *           The identity of the worker/client
      *     @type string $binary_checksum
-     *           DEPRECATED since 1.21 - use `worker_version_stamp` instead.
+     *           Deprecated. Use `deployment_options` instead.
      *           Worker process' unique binary id
      *     @type string $namespace
-     *     @type array<\Temporal\Api\Protocol\V1\Message>|\Google\Protobuf\Internal\RepeatedField $messages
+     *     @type \Temporal\Api\Protocol\V1\Message[] $messages
      *           Protocol messages piggybacking on a WFT as a transport
      *     @type \Temporal\Api\Common\V1\WorkerVersionStamp $worker_version
      *           Version info of the worker who processed this task. This message's `build_id` field should
      *           always be set by SDKs. Workers opting into versioning will also set the `use_versioning`
      *           field to true. See message docstrings for more.
-     *           Deprecated. Use `deployment` instead.
+     *           Deprecated. Use `deployment_options` instead.
      *     @type \Temporal\Api\Deployment\V1\Deployment $deployment
      *           Deployment info of the worker that completed this task. Must be present if user has set
      *           `WorkerDeploymentOptions` regardless of versioning being enabled or not.
@@ -237,27 +239,33 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * DEPRECATED since 1.21 - use `worker_version_stamp` instead.
+     * Deprecated. Use `deployment_options` instead.
      * Worker process' unique binary id
      *
-     * Generated from protobuf field <code>string binary_checksum = 5;</code>
+     * Generated from protobuf field <code>string binary_checksum = 5 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getBinaryChecksum()
     {
+        if ($this->binary_checksum !== '') {
+            @trigger_error('binary_checksum is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->binary_checksum;
     }
 
     /**
-     * DEPRECATED since 1.21 - use `worker_version_stamp` instead.
+     * Deprecated. Use `deployment_options` instead.
      * Worker process' unique binary id
      *
-     * Generated from protobuf field <code>string binary_checksum = 5;</code>
+     * Generated from protobuf field <code>string binary_checksum = 5 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setBinaryChecksum($var)
     {
+        @trigger_error('binary_checksum is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->binary_checksum = $var;
 
@@ -290,7 +298,7 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * Protocol messages piggybacking on a WFT as a transport
      *
      * Generated from protobuf field <code>repeated .temporal.api.protocol.v1.Message messages = 7;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Protocol\V1\Message>
      */
     public function getMessages()
     {
@@ -301,7 +309,7 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * Protocol messages piggybacking on a WFT as a transport
      *
      * Generated from protobuf field <code>repeated .temporal.api.protocol.v1.Message messages = 7;</code>
-     * @param array<\Temporal\Api\Protocol\V1\Message>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Protocol\V1\Message[] $var
      * @return $this
      */
     public function setMessages($var)
@@ -316,7 +324,7 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * Version info of the worker who processed this task. This message's `build_id` field should
      * always be set by SDKs. Workers opting into versioning will also set the `use_versioning`
      * field to true. See message docstrings for more.
-     * Deprecated. Use `deployment` instead.
+     * Deprecated. Use `deployment_options` instead.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version = 8 [deprecated = true];</code>
      * @return \Temporal\Api\Common\V1\WorkerVersionStamp|null
@@ -348,7 +356,7 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * Version info of the worker who processed this task. This message's `build_id` field should
      * always be set by SDKs. Workers opting into versioning will also set the `use_versioning`
      * field to true. See message docstrings for more.
-     * Deprecated. Use `deployment` instead.
+     * Deprecated. Use `deployment_options` instead.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version = 8 [deprecated = true];</code>
      * @param \Temporal\Api\Common\V1\WorkerVersionStamp $var
@@ -369,21 +377,29 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * `WorkerDeploymentOptions` regardless of versioning being enabled or not.
      * Deprecated. Replaced with `deployment_options`.
      *
-     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 9;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 9 [deprecated = true];</code>
      * @return \Temporal\Api\Deployment\V1\Deployment|null
+     * @deprecated
      */
     public function getDeployment()
     {
+        if (isset($this->deployment)) {
+            @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->deployment;
     }
 
     public function hasDeployment()
     {
+        if (isset($this->deployment)) {
+            @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
+        }
         return isset($this->deployment);
     }
 
     public function clearDeployment()
     {
+        @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
         unset($this->deployment);
     }
 
@@ -392,12 +408,14 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * `WorkerDeploymentOptions` regardless of versioning being enabled or not.
      * Deprecated. Replaced with `deployment_options`.
      *
-     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 9;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.Deployment deployment = 9 [deprecated = true];</code>
      * @param \Temporal\Api\Deployment\V1\Deployment $var
      * @return $this
+     * @deprecated
      */
     public function setDeployment($var)
     {
+        @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\Deployment::class);
         $this->deployment = $var;
 

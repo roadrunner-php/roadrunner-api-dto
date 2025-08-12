@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflow\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Hold basic information about a workflow execution.
@@ -81,7 +81,8 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * If set, the most recent worker version stamp that appeared in a workflow task completion
      * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp most_recent_worker_version_stamp = 16;</code>
+     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp most_recent_worker_version_stamp = 16 [deprecated = true];</code>
+     * @deprecated
      */
     protected $most_recent_worker_version_stamp = null;
     /**
@@ -121,7 +122,8 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * this execution.
      * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>string assigned_build_id = 19;</code>
+     * Generated from protobuf field <code>string assigned_build_id = 19 [deprecated = true];</code>
+     * @deprecated
      */
     protected $assigned_build_id = '';
     /**
@@ -129,7 +131,8 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * of using the assignment rules.
      * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>string inherited_build_id = 20;</code>
+     * Generated from protobuf field <code>string inherited_build_id = 20 [deprecated = true];</code>
+     * @deprecated
      */
     protected $inherited_build_id = '';
     /**
@@ -668,21 +671,29 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * If set, the most recent worker version stamp that appeared in a workflow task completion
      * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp most_recent_worker_version_stamp = 16;</code>
+     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp most_recent_worker_version_stamp = 16 [deprecated = true];</code>
      * @return \Temporal\Api\Common\V1\WorkerVersionStamp|null
+     * @deprecated
      */
     public function getMostRecentWorkerVersionStamp()
     {
+        if (isset($this->most_recent_worker_version_stamp)) {
+            @trigger_error('most_recent_worker_version_stamp is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->most_recent_worker_version_stamp;
     }
 
     public function hasMostRecentWorkerVersionStamp()
     {
+        if (isset($this->most_recent_worker_version_stamp)) {
+            @trigger_error('most_recent_worker_version_stamp is deprecated.', E_USER_DEPRECATED);
+        }
         return isset($this->most_recent_worker_version_stamp);
     }
 
     public function clearMostRecentWorkerVersionStamp()
     {
+        @trigger_error('most_recent_worker_version_stamp is deprecated.', E_USER_DEPRECATED);
         unset($this->most_recent_worker_version_stamp);
     }
 
@@ -690,12 +701,14 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * If set, the most recent worker version stamp that appeared in a workflow task completion
      * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp most_recent_worker_version_stamp = 16;</code>
+     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp most_recent_worker_version_stamp = 16 [deprecated = true];</code>
      * @param \Temporal\Api\Common\V1\WorkerVersionStamp $var
      * @return $this
+     * @deprecated
      */
     public function setMostRecentWorkerVersionStamp($var)
     {
+        @trigger_error('most_recent_worker_version_stamp is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerVersionStamp::class);
         $this->most_recent_worker_version_stamp = $var;
 
@@ -815,11 +828,15 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * this execution.
      * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>string assigned_build_id = 19;</code>
+     * Generated from protobuf field <code>string assigned_build_id = 19 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getAssignedBuildId()
     {
+        if ($this->assigned_build_id !== '') {
+            @trigger_error('assigned_build_id is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->assigned_build_id;
     }
 
@@ -832,12 +849,14 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * this execution.
      * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>string assigned_build_id = 19;</code>
+     * Generated from protobuf field <code>string assigned_build_id = 19 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setAssignedBuildId($var)
     {
+        @trigger_error('assigned_build_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->assigned_build_id = $var;
 
@@ -849,11 +868,15 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * of using the assignment rules.
      * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>string inherited_build_id = 20;</code>
+     * Generated from protobuf field <code>string inherited_build_id = 20 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getInheritedBuildId()
     {
+        if ($this->inherited_build_id !== '') {
+            @trigger_error('inherited_build_id is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->inherited_build_id;
     }
 
@@ -862,12 +885,14 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * of using the assignment rules.
      * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>string inherited_build_id = 20;</code>
+     * Generated from protobuf field <code>string inherited_build_id = 20 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setInheritedBuildId($var)
     {
+        @trigger_error('inherited_build_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->inherited_build_id = $var;
 

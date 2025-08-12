@@ -6,10 +6,14 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
+ * Keep the parameters in sync with:
+ *   - temporal.api.batch.v1.BatchOperationUpdateWorkflowExecutionOptions.
+ *   - temporal.api.workflow.v1.PostResetOperation.UpdateWorkflowOptions.
+ *
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.UpdateWorkflowExecutionOptionsRequest</code>
  */
 class UpdateWorkflowExecutionOptionsRequest extends \Google\Protobuf\Internal\Message

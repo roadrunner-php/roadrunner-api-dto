@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.StartWorkflowExecutionRequest</code>
@@ -233,7 +233,7 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      *           Time to wait before dispatching the first workflow task. Cannot be used with `cron_schedule`.
      *           If the workflow gets a signal before the delay, a workflow task will be dispatched and the rest
      *           of the delay will be ignored.
-     *     @type array<\Temporal\Api\Common\V1\Callback>|\Google\Protobuf\Internal\RepeatedField $completion_callbacks
+     *     @type \Temporal\Api\Common\V1\Callback[] $completion_callbacks
      *           Callbacks to be called by the server when this workflow reaches a terminal state.
      *           If the workflow continues-as-new, these callbacks will be carried over to the new execution.
      *           Callback addresses must be whitelisted in the server's dynamic configuration.
@@ -241,7 +241,7 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      *           Metadata on the workflow if it is started. This is carried over to the WorkflowExecutionInfo
      *           for use by user interfaces to display the fixed as-of-start summary and details of the
      *           workflow.
-     *     @type array<\Temporal\Api\Common\V1\Link>|\Google\Protobuf\Internal\RepeatedField $links
+     *     @type \Temporal\Api\Common\V1\Link[] $links
      *           Links to be associated with the workflow.
      *     @type \Temporal\Api\Workflow\V1\VersioningOverride $versioning_override
      *           If set, takes precedence over the Versioning Behavior sent by the SDK on Workflow Task completion.
@@ -934,7 +934,7 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * Callback addresses must be whitelisted in the server's dynamic configuration.
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.Callback completion_callbacks = 21;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Common\V1\Callback>
      */
     public function getCompletionCallbacks()
     {
@@ -947,7 +947,7 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * Callback addresses must be whitelisted in the server's dynamic configuration.
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.Callback completion_callbacks = 21;</code>
-     * @param array<\Temporal\Api\Common\V1\Callback>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Common\V1\Callback[] $var
      * @return $this
      */
     public function setCompletionCallbacks($var)
@@ -1002,7 +1002,7 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * Links to be associated with the workflow.
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 24;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Common\V1\Link>
      */
     public function getLinks()
     {
@@ -1013,7 +1013,7 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * Links to be associated with the workflow.
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 24;</code>
-     * @param array<\Temporal\Api\Common\V1\Link>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Common\V1\Link[] $var
      * @return $this
      */
     public function setLinks($var)

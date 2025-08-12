@@ -6,10 +6,14 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
+ * Keep the parameters in sync with:
+ *   - temporal.api.batch.v1.BatchOperationSignal.
+ *   - temporal.api.workflow.v1.PostResetOperation.SignalWorkflow.
+ *
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.SignalWorkflowExecutionRequest</code>
  */
 class SignalWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
@@ -47,9 +51,10 @@ class SignalWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      */
     protected $request_id = '';
     /**
-     * Deprecated
+     * Deprecated.
      *
-     * Generated from protobuf field <code>string control = 7;</code>
+     * Generated from protobuf field <code>string control = 7 [deprecated = true];</code>
+     * @deprecated
      */
     protected $control = '';
     /**
@@ -83,11 +88,11 @@ class SignalWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      *     @type string $request_id
      *           Used to de-dupe sent signals
      *     @type string $control
-     *           Deprecated
+     *           Deprecated.
      *     @type \Temporal\Api\Common\V1\Header $header
      *           Headers that are passed with the signal to the processing workflow.
      *           These can include things like auth or tracing tokens.
-     *     @type array<\Temporal\Api\Common\V1\Link>|\Google\Protobuf\Internal\RepeatedField $links
+     *     @type \Temporal\Api\Common\V1\Link[] $links
      *           Links to be associated with the WorkflowExecutionSignaled event.
      * }
      */
@@ -265,25 +270,31 @@ class SignalWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deprecated
+     * Deprecated.
      *
-     * Generated from protobuf field <code>string control = 7;</code>
+     * Generated from protobuf field <code>string control = 7 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getControl()
     {
+        if ($this->control !== '') {
+            @trigger_error('control is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->control;
     }
 
     /**
-     * Deprecated
+     * Deprecated.
      *
-     * Generated from protobuf field <code>string control = 7;</code>
+     * Generated from protobuf field <code>string control = 7 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setControl($var)
     {
+        @trigger_error('control is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->control = $var;
 
@@ -332,7 +343,7 @@ class SignalWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * Links to be associated with the WorkflowExecutionSignaled event.
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Common\V1\Link>
      */
     public function getLinks()
     {
@@ -343,7 +354,7 @@ class SignalWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * Links to be associated with the WorkflowExecutionSignaled event.
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 10;</code>
-     * @param array<\Temporal\Api\Common\V1\Link>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Common\V1\Link[] $var
      * @return $this
      */
     public function setLinks($var)

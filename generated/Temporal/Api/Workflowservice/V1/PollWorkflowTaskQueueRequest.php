@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.PollWorkflowTaskQueueRequest</code>
@@ -29,17 +29,18 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
      */
     protected $identity = '';
     /**
-     * DEPRECATED since 1.21 - use `worker_version_capabilities` instead.
+     * Deprecated. Use deployment_options instead.
      * Each worker process should provide an ID unique to the specific set of code it is running
      * "checksum" in this field name isn't very accurate, it should be though of as an id.
      *
-     * Generated from protobuf field <code>string binary_checksum = 4;</code>
+     * Generated from protobuf field <code>string binary_checksum = 4 [deprecated = true];</code>
+     * @deprecated
      */
     protected $binary_checksum = '';
     /**
+     * Deprecated. Use deployment_options instead.
      * Information about this worker's build identifier and if it is choosing to use the versioning
      * feature. See the `WorkerVersionCapabilities` docstring for more.
-     * Deprecated. Replaced by deployment_options.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionCapabilities worker_version_capabilities = 5 [deprecated = true];</code>
      * @deprecated
@@ -52,6 +53,12 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentOptions deployment_options = 6;</code>
      */
     protected $deployment_options = null;
+    /**
+     * Worker info to be sent to the server.
+     *
+     * Generated from protobuf field <code>.temporal.api.worker.v1.WorkerHeartbeat worker_heartbeat = 7;</code>
+     */
+    protected $worker_heartbeat = null;
 
     /**
      * Constructor.
@@ -64,16 +71,18 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
      *     @type string $identity
      *           The identity of the worker/client who is polling this task queue
      *     @type string $binary_checksum
-     *           DEPRECATED since 1.21 - use `worker_version_capabilities` instead.
+     *           Deprecated. Use deployment_options instead.
      *           Each worker process should provide an ID unique to the specific set of code it is running
      *           "checksum" in this field name isn't very accurate, it should be though of as an id.
      *     @type \Temporal\Api\Common\V1\WorkerVersionCapabilities $worker_version_capabilities
+     *           Deprecated. Use deployment_options instead.
      *           Information about this worker's build identifier and if it is choosing to use the versioning
      *           feature. See the `WorkerVersionCapabilities` docstring for more.
-     *           Deprecated. Replaced by deployment_options.
      *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentOptions $deployment_options
      *           Worker deployment options that user has set in the worker.
      *           Experimental. Worker Deployments are experimental and might significantly change in the future.
+     *     @type \Temporal\Api\Worker\V1\WorkerHeartbeat $worker_heartbeat
+     *           Worker info to be sent to the server.
      * }
      */
     public function __construct($data = NULL) {
@@ -162,29 +171,35 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * DEPRECATED since 1.21 - use `worker_version_capabilities` instead.
+     * Deprecated. Use deployment_options instead.
      * Each worker process should provide an ID unique to the specific set of code it is running
      * "checksum" in this field name isn't very accurate, it should be though of as an id.
      *
-     * Generated from protobuf field <code>string binary_checksum = 4;</code>
+     * Generated from protobuf field <code>string binary_checksum = 4 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getBinaryChecksum()
     {
+        if ($this->binary_checksum !== '') {
+            @trigger_error('binary_checksum is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->binary_checksum;
     }
 
     /**
-     * DEPRECATED since 1.21 - use `worker_version_capabilities` instead.
+     * Deprecated. Use deployment_options instead.
      * Each worker process should provide an ID unique to the specific set of code it is running
      * "checksum" in this field name isn't very accurate, it should be though of as an id.
      *
-     * Generated from protobuf field <code>string binary_checksum = 4;</code>
+     * Generated from protobuf field <code>string binary_checksum = 4 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setBinaryChecksum($var)
     {
+        @trigger_error('binary_checksum is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->binary_checksum = $var;
 
@@ -192,9 +207,9 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Deprecated. Use deployment_options instead.
      * Information about this worker's build identifier and if it is choosing to use the versioning
      * feature. See the `WorkerVersionCapabilities` docstring for more.
-     * Deprecated. Replaced by deployment_options.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionCapabilities worker_version_capabilities = 5 [deprecated = true];</code>
      * @return \Temporal\Api\Common\V1\WorkerVersionCapabilities|null
@@ -223,9 +238,9 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Deprecated. Use deployment_options instead.
      * Information about this worker's build identifier and if it is choosing to use the versioning
      * feature. See the `WorkerVersionCapabilities` docstring for more.
-     * Deprecated. Replaced by deployment_options.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionCapabilities worker_version_capabilities = 5 [deprecated = true];</code>
      * @param \Temporal\Api\Common\V1\WorkerVersionCapabilities $var
@@ -275,6 +290,42 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentOptions::class);
         $this->deployment_options = $var;
+
+        return $this;
+    }
+
+    /**
+     * Worker info to be sent to the server.
+     *
+     * Generated from protobuf field <code>.temporal.api.worker.v1.WorkerHeartbeat worker_heartbeat = 7;</code>
+     * @return \Temporal\Api\Worker\V1\WorkerHeartbeat|null
+     */
+    public function getWorkerHeartbeat()
+    {
+        return $this->worker_heartbeat;
+    }
+
+    public function hasWorkerHeartbeat()
+    {
+        return isset($this->worker_heartbeat);
+    }
+
+    public function clearWorkerHeartbeat()
+    {
+        unset($this->worker_heartbeat);
+    }
+
+    /**
+     * Worker info to be sent to the server.
+     *
+     * Generated from protobuf field <code>.temporal.api.worker.v1.WorkerHeartbeat worker_heartbeat = 7;</code>
+     * @param \Temporal\Api\Worker\V1\WorkerHeartbeat $var
+     * @return $this
+     */
+    public function setWorkerHeartbeat($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Worker\V1\WorkerHeartbeat::class);
+        $this->worker_heartbeat = $var;
 
         return $this;
     }

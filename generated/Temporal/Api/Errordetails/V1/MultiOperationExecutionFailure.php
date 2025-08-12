@@ -6,8 +6,8 @@
 namespace Temporal\Api\Errordetails\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.errordetails.v1.MultiOperationExecutionFailure</code>
@@ -29,7 +29,7 @@ class MultiOperationExecutionFailure extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Temporal\Api\Errordetails\V1\MultiOperationExecutionFailure\OperationStatus>|\Google\Protobuf\Internal\RepeatedField $statuses
+     *     @type \Temporal\Api\Errordetails\V1\MultiOperationExecutionFailure\OperationStatus[] $statuses
      *           One status for each requested operation from the failed MultiOperation. The failed
      *           operation(s) have the same error details as if it was executed separately. All other operations have the
      *           status code `Aborted` and `MultiOperationExecutionAborted` is added to the details field.
@@ -46,7 +46,7 @@ class MultiOperationExecutionFailure extends \Google\Protobuf\Internal\Message
      * status code `Aborted` and `MultiOperationExecutionAborted` is added to the details field.
      *
      * Generated from protobuf field <code>repeated .temporal.api.errordetails.v1.MultiOperationExecutionFailure.OperationStatus statuses = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Errordetails\V1\MultiOperationExecutionFailure\OperationStatus>
      */
     public function getStatuses()
     {
@@ -59,7 +59,7 @@ class MultiOperationExecutionFailure extends \Google\Protobuf\Internal\Message
      * status code `Aborted` and `MultiOperationExecutionAborted` is added to the details field.
      *
      * Generated from protobuf field <code>repeated .temporal.api.errordetails.v1.MultiOperationExecutionFailure.OperationStatus statuses = 1;</code>
-     * @param array<\Temporal\Api\Errordetails\V1\MultiOperationExecutionFailure\OperationStatus>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Errordetails\V1\MultiOperationExecutionFailure\OperationStatus[] $var
      * @return $this
      */
     public function setStatuses($var)

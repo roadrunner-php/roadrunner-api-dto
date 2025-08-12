@@ -6,8 +6,8 @@
 namespace Temporal\Api\Rules\V1\WorkflowRuleSpec;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Activity trigger will be triggered when an activity is about to start.

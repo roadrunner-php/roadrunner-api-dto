@@ -6,8 +6,8 @@
 namespace Temporal\Api\Batch\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * BatchOperationUnpauseActivities sends unpause requests to batch workflows.
@@ -23,13 +23,13 @@ class BatchOperationUnpauseActivities extends \Google\Protobuf\Internal\Message
      */
     protected $identity = '';
     /**
-     * Providing this flag will also reset the number of attempts.
+     * Setting this flag will also reset the number of attempts.
      *
      * Generated from protobuf field <code>bool reset_attempts = 4;</code>
      */
     protected $reset_attempts = false;
     /**
-     * Providing this flag will also reset the heartbeat details.
+     * Setting this flag will also reset the heartbeat details.
      *
      * Generated from protobuf field <code>bool reset_heartbeat = 5;</code>
      */
@@ -54,9 +54,9 @@ class BatchOperationUnpauseActivities extends \Google\Protobuf\Internal\Message
      *     @type string $type
      *     @type bool $match_all
      *     @type bool $reset_attempts
-     *           Providing this flag will also reset the number of attempts.
+     *           Setting this flag will also reset the number of attempts.
      *     @type bool $reset_heartbeat
-     *           Providing this flag will also reset the heartbeat details.
+     *           Setting this flag will also reset the heartbeat details.
      *     @type \Google\Protobuf\Duration $jitter
      *           If set, the activity will start at a random time within the specified jitter
      *           duration, introducing variability to the start time.
@@ -148,7 +148,7 @@ class BatchOperationUnpauseActivities extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Providing this flag will also reset the number of attempts.
+     * Setting this flag will also reset the number of attempts.
      *
      * Generated from protobuf field <code>bool reset_attempts = 4;</code>
      * @return bool
@@ -159,7 +159,7 @@ class BatchOperationUnpauseActivities extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Providing this flag will also reset the number of attempts.
+     * Setting this flag will also reset the number of attempts.
      *
      * Generated from protobuf field <code>bool reset_attempts = 4;</code>
      * @param bool $var
@@ -174,7 +174,7 @@ class BatchOperationUnpauseActivities extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Providing this flag will also reset the heartbeat details.
+     * Setting this flag will also reset the heartbeat details.
      *
      * Generated from protobuf field <code>bool reset_heartbeat = 5;</code>
      * @return bool
@@ -185,7 +185,7 @@ class BatchOperationUnpauseActivities extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Providing this flag will also reset the heartbeat details.
+     * Setting this flag will also reset the heartbeat details.
      *
      * Generated from protobuf field <code>bool reset_heartbeat = 5;</code>
      * @param bool $var

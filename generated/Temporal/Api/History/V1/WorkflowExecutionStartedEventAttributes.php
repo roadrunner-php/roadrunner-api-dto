@@ -6,8 +6,8 @@
 namespace Temporal\Api\History\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Always the first event in workflow history
@@ -39,7 +39,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      */
     protected $parent_workflow_execution = null;
     /**
-     * EventID of the child execution initiated event in parent workflow 
+     * EventID of the child execution initiated event in parent workflow
      *
      * Generated from protobuf field <code>int64 parent_initiated_event_id = 4;</code>
      */
@@ -73,7 +73,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      */
     protected $workflow_task_timeout = null;
     /**
-     * Run id of the previous workflow which continued-as-new or retired or cron executed into this
+     * Run id of the previous workflow which continued-as-new or retried or cron executed into this
      * workflow.
      *
      * Generated from protobuf field <code>string continued_execution_run_id = 10;</code>
@@ -176,7 +176,8 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      * the queue, then we include it here.
      * Deprecated. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp source_version_stamp = 29;</code>
+     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp source_version_stamp = 29 [deprecated = true];</code>
+     * @deprecated
      */
     protected $source_version_stamp = null;
     /**
@@ -219,11 +220,14 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      * When present, this execution is assigned to the build ID of its parent or previous execution.
      * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>string inherited_build_id = 32;</code>
+     * Generated from protobuf field <code>string inherited_build_id = 32 [deprecated = true];</code>
+     * @deprecated
      */
     protected $inherited_build_id = '';
     /**
      * Versioning override applied to this workflow when it was started.
+     * Children, crons, retries, and continue-as-new will inherit source run's override if pinned
+     * and if the new workflow's Task Queue belongs to the override version.
      *
      * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 33;</code>
      */
@@ -234,8 +238,10 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      * of starting on the Current Version of its Task Queue.
      * This is set only if the child workflow is starting on a Task Queue belonging to the same
      * Worker Deployment Version.
+     * Deprecated. Use `parent_versioning_info`.
      *
-     * Generated from protobuf field <code>string parent_pinned_worker_deployment_version = 34;</code>
+     * Generated from protobuf field <code>string parent_pinned_worker_deployment_version = 34 [deprecated = true];</code>
+     * @deprecated
      */
     protected $parent_pinned_worker_deployment_version = '';
     /**
@@ -244,6 +250,29 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 35;</code>
      */
     protected $priority = null;
+    /**
+     * If present, the new workflow should start on this version with pinned base behavior.
+     * Child of pinned parent will inherit the parent's version if the Child's Task Queue belongs to that version.
+     * New run initiated by workflow ContinueAsNew of pinned run, will inherit the previous run's version if the
+     * new run's Task Queue belongs to that version.
+     * New run initiated by workflow Cron will never inherit.
+     * New run initiated by workflow Retry will only inherit if the retried run is effectively pinned at the time
+     * of retry, and the retried run inherited a pinned version when it started (ie. it is a child of a pinned
+     * parent, or a CaN of a pinned run, and is running on a Task Queue in the inherited version).
+     * Pinned override is inherited if Task Queue of new run is compatible with the override version.
+     * Override is inherited separately and takes precedence over inherited base version.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion inherited_pinned_version = 37;</code>
+     */
+    protected $inherited_pinned_version = null;
+    /**
+     * A boolean indicating whether the SDK has asked to eagerly execute the first workflow task for this workflow and
+     * eager execution was accepted by the server.
+     * Only populated by server with version >= 1.29.0.
+     *
+     * Generated from protobuf field <code>bool eager_execution_accepted = 38;</code>
+     */
+    protected $eager_execution_accepted = false;
 
     /**
      * Constructor.
@@ -260,7 +289,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      *           Contains information about parent workflow execution that initiated the child workflow these attributes belong to.
      *           If the workflow these attributes belong to is not a child workflow of any other execution, this field will not be populated.
      *     @type int|string $parent_initiated_event_id
-     *           EventID of the child execution initiated event in parent workflow 
+     *           EventID of the child execution initiated event in parent workflow
      *     @type \Temporal\Api\Taskqueue\V1\TaskQueue $task_queue
      *     @type \Temporal\Api\Common\V1\Payloads $input
      *           SDK will deserialize this and provide it as arguments to the workflow function
@@ -271,7 +300,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      *     @type \Google\Protobuf\Duration $workflow_task_timeout
      *           Timeout of a single workflow task.
      *     @type string $continued_execution_run_id
-     *           Run id of the previous workflow which continued-as-new or retired or cron executed into this
+     *           Run id of the previous workflow which continued-as-new or retried or cron executed into this
      *           workflow.
      *     @type int $initiator
      *     @type \Temporal\Api\Failure\V1\Failure $continued_failure
@@ -309,7 +338,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      *           If this workflow intends to use anything other than the current overall default version for
      *           the queue, then we include it here.
      *           Deprecated. [cleanup-experimental-wv]
-     *     @type array<\Temporal\Api\Common\V1\Callback>|\Google\Protobuf\Internal\RepeatedField $completion_callbacks
+     *     @type \Temporal\Api\Common\V1\Callback[] $completion_callbacks
      *           Completion callbacks attached when this workflow was started.
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $root_workflow_execution
      *           Contains information about the root workflow execution.
@@ -342,14 +371,32 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      *           Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *     @type \Temporal\Api\Workflow\V1\VersioningOverride $versioning_override
      *           Versioning override applied to this workflow when it was started.
+     *           Children, crons, retries, and continue-as-new will inherit source run's override if pinned
+     *           and if the new workflow's Task Queue belongs to the override version.
      *     @type string $parent_pinned_worker_deployment_version
      *           When present, it means this is a child workflow of a parent that is Pinned to this Worker
      *           Deployment Version. In this case, child workflow will start as Pinned to this Version instead
      *           of starting on the Current Version of its Task Queue.
      *           This is set only if the child workflow is starting on a Task Queue belonging to the same
      *           Worker Deployment Version.
+     *           Deprecated. Use `parent_versioning_info`.
      *     @type \Temporal\Api\Common\V1\Priority $priority
      *           Priority metadata
+     *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $inherited_pinned_version
+     *           If present, the new workflow should start on this version with pinned base behavior.
+     *           Child of pinned parent will inherit the parent's version if the Child's Task Queue belongs to that version.
+     *           New run initiated by workflow ContinueAsNew of pinned run, will inherit the previous run's version if the
+     *           new run's Task Queue belongs to that version.
+     *           New run initiated by workflow Cron will never inherit.
+     *           New run initiated by workflow Retry will only inherit if the retried run is effectively pinned at the time
+     *           of retry, and the retried run inherited a pinned version when it started (ie. it is a child of a pinned
+     *           parent, or a CaN of a pinned run, and is running on a Task Queue in the inherited version).
+     *           Pinned override is inherited if Task Queue of new run is compatible with the override version.
+     *           Override is inherited separately and takes precedence over inherited base version.
+     *     @type bool $eager_execution_accepted
+     *           A boolean indicating whether the SDK has asked to eagerly execute the first workflow task for this workflow and
+     *           eager execution was accepted by the server.
+     *           Only populated by server with version >= 1.29.0.
      * }
      */
     public function __construct($data = NULL) {
@@ -478,7 +525,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     }
 
     /**
-     * EventID of the child execution initiated event in parent workflow 
+     * EventID of the child execution initiated event in parent workflow
      *
      * Generated from protobuf field <code>int64 parent_initiated_event_id = 4;</code>
      * @return int|string
@@ -489,7 +536,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     }
 
     /**
-     * EventID of the child execution initiated event in parent workflow 
+     * EventID of the child execution initiated event in parent workflow
      *
      * Generated from protobuf field <code>int64 parent_initiated_event_id = 4;</code>
      * @param int|string $var
@@ -680,7 +727,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     }
 
     /**
-     * Run id of the previous workflow which continued-as-new or retired or cron executed into this
+     * Run id of the previous workflow which continued-as-new or retried or cron executed into this
      * workflow.
      *
      * Generated from protobuf field <code>string continued_execution_run_id = 10;</code>
@@ -692,7 +739,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     }
 
     /**
-     * Run id of the previous workflow which continued-as-new or retired or cron executed into this
+     * Run id of the previous workflow which continued-as-new or retried or cron executed into this
      * workflow.
      *
      * Generated from protobuf field <code>string continued_execution_run_id = 10;</code>
@@ -1224,21 +1271,29 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      * the queue, then we include it here.
      * Deprecated. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp source_version_stamp = 29;</code>
+     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp source_version_stamp = 29 [deprecated = true];</code>
      * @return \Temporal\Api\Common\V1\WorkerVersionStamp|null
+     * @deprecated
      */
     public function getSourceVersionStamp()
     {
+        if (isset($this->source_version_stamp)) {
+            @trigger_error('source_version_stamp is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->source_version_stamp;
     }
 
     public function hasSourceVersionStamp()
     {
+        if (isset($this->source_version_stamp)) {
+            @trigger_error('source_version_stamp is deprecated.', E_USER_DEPRECATED);
+        }
         return isset($this->source_version_stamp);
     }
 
     public function clearSourceVersionStamp()
     {
+        @trigger_error('source_version_stamp is deprecated.', E_USER_DEPRECATED);
         unset($this->source_version_stamp);
     }
 
@@ -1247,12 +1302,14 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      * the queue, then we include it here.
      * Deprecated. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp source_version_stamp = 29;</code>
+     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp source_version_stamp = 29 [deprecated = true];</code>
      * @param \Temporal\Api\Common\V1\WorkerVersionStamp $var
      * @return $this
+     * @deprecated
      */
     public function setSourceVersionStamp($var)
     {
+        @trigger_error('source_version_stamp is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerVersionStamp::class);
         $this->source_version_stamp = $var;
 
@@ -1263,7 +1320,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      * Completion callbacks attached when this workflow was started.
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.Callback completion_callbacks = 30;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Common\V1\Callback>
      */
     public function getCompletionCallbacks()
     {
@@ -1274,7 +1331,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      * Completion callbacks attached when this workflow was started.
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.Callback completion_callbacks = 30;</code>
-     * @param array<\Temporal\Api\Common\V1\Callback>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Common\V1\Callback[] $var
      * @return $this
      */
     public function setCompletionCallbacks($var)
@@ -1373,11 +1430,15 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      * When present, this execution is assigned to the build ID of its parent or previous execution.
      * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>string inherited_build_id = 32;</code>
+     * Generated from protobuf field <code>string inherited_build_id = 32 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getInheritedBuildId()
     {
+        if ($this->inherited_build_id !== '') {
+            @trigger_error('inherited_build_id is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->inherited_build_id;
     }
 
@@ -1385,12 +1446,14 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      * When present, this execution is assigned to the build ID of its parent or previous execution.
      * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>string inherited_build_id = 32;</code>
+     * Generated from protobuf field <code>string inherited_build_id = 32 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setInheritedBuildId($var)
     {
+        @trigger_error('inherited_build_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->inherited_build_id = $var;
 
@@ -1399,6 +1462,8 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
 
     /**
      * Versioning override applied to this workflow when it was started.
+     * Children, crons, retries, and continue-as-new will inherit source run's override if pinned
+     * and if the new workflow's Task Queue belongs to the override version.
      *
      * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 33;</code>
      * @return \Temporal\Api\Workflow\V1\VersioningOverride|null
@@ -1420,6 +1485,8 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
 
     /**
      * Versioning override applied to this workflow when it was started.
+     * Children, crons, retries, and continue-as-new will inherit source run's override if pinned
+     * and if the new workflow's Task Queue belongs to the override version.
      *
      * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 33;</code>
      * @param \Temporal\Api\Workflow\V1\VersioningOverride $var
@@ -1439,12 +1506,17 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      * of starting on the Current Version of its Task Queue.
      * This is set only if the child workflow is starting on a Task Queue belonging to the same
      * Worker Deployment Version.
+     * Deprecated. Use `parent_versioning_info`.
      *
-     * Generated from protobuf field <code>string parent_pinned_worker_deployment_version = 34;</code>
+     * Generated from protobuf field <code>string parent_pinned_worker_deployment_version = 34 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getParentPinnedWorkerDeploymentVersion()
     {
+        if ($this->parent_pinned_worker_deployment_version !== '') {
+            @trigger_error('parent_pinned_worker_deployment_version is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->parent_pinned_worker_deployment_version;
     }
 
@@ -1454,13 +1526,16 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      * of starting on the Current Version of its Task Queue.
      * This is set only if the child workflow is starting on a Task Queue belonging to the same
      * Worker Deployment Version.
+     * Deprecated. Use `parent_versioning_info`.
      *
-     * Generated from protobuf field <code>string parent_pinned_worker_deployment_version = 34;</code>
+     * Generated from protobuf field <code>string parent_pinned_worker_deployment_version = 34 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setParentPinnedWorkerDeploymentVersion($var)
     {
+        @trigger_error('parent_pinned_worker_deployment_version is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->parent_pinned_worker_deployment_version = $var;
 
@@ -1499,6 +1574,90 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Priority::class);
         $this->priority = $var;
+
+        return $this;
+    }
+
+    /**
+     * If present, the new workflow should start on this version with pinned base behavior.
+     * Child of pinned parent will inherit the parent's version if the Child's Task Queue belongs to that version.
+     * New run initiated by workflow ContinueAsNew of pinned run, will inherit the previous run's version if the
+     * new run's Task Queue belongs to that version.
+     * New run initiated by workflow Cron will never inherit.
+     * New run initiated by workflow Retry will only inherit if the retried run is effectively pinned at the time
+     * of retry, and the retried run inherited a pinned version when it started (ie. it is a child of a pinned
+     * parent, or a CaN of a pinned run, and is running on a Task Queue in the inherited version).
+     * Pinned override is inherited if Task Queue of new run is compatible with the override version.
+     * Override is inherited separately and takes precedence over inherited base version.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion inherited_pinned_version = 37;</code>
+     * @return \Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null
+     */
+    public function getInheritedPinnedVersion()
+    {
+        return $this->inherited_pinned_version;
+    }
+
+    public function hasInheritedPinnedVersion()
+    {
+        return isset($this->inherited_pinned_version);
+    }
+
+    public function clearInheritedPinnedVersion()
+    {
+        unset($this->inherited_pinned_version);
+    }
+
+    /**
+     * If present, the new workflow should start on this version with pinned base behavior.
+     * Child of pinned parent will inherit the parent's version if the Child's Task Queue belongs to that version.
+     * New run initiated by workflow ContinueAsNew of pinned run, will inherit the previous run's version if the
+     * new run's Task Queue belongs to that version.
+     * New run initiated by workflow Cron will never inherit.
+     * New run initiated by workflow Retry will only inherit if the retried run is effectively pinned at the time
+     * of retry, and the retried run inherited a pinned version when it started (ie. it is a child of a pinned
+     * parent, or a CaN of a pinned run, and is running on a Task Queue in the inherited version).
+     * Pinned override is inherited if Task Queue of new run is compatible with the override version.
+     * Override is inherited separately and takes precedence over inherited base version.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion inherited_pinned_version = 37;</code>
+     * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
+     * @return $this
+     */
+    public function setInheritedPinnedVersion($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
+        $this->inherited_pinned_version = $var;
+
+        return $this;
+    }
+
+    /**
+     * A boolean indicating whether the SDK has asked to eagerly execute the first workflow task for this workflow and
+     * eager execution was accepted by the server.
+     * Only populated by server with version >= 1.29.0.
+     *
+     * Generated from protobuf field <code>bool eager_execution_accepted = 38;</code>
+     * @return bool
+     */
+    public function getEagerExecutionAccepted()
+    {
+        return $this->eager_execution_accepted;
+    }
+
+    /**
+     * A boolean indicating whether the SDK has asked to eagerly execute the first workflow task for this workflow and
+     * eager execution was accepted by the server.
+     * Only populated by server with version >= 1.29.0.
+     *
+     * Generated from protobuf field <code>bool eager_execution_accepted = 38;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEagerExecutionAccepted($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->eager_execution_accepted = $var;
 
         return $this;
     }

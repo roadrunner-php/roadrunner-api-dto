@@ -6,8 +6,8 @@
 namespace Temporal\Api\Query\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * See https://docs.temporal.io/docs/concepts/queries/

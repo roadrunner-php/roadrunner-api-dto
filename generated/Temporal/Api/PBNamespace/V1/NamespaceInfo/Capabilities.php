@@ -6,8 +6,8 @@
 namespace Temporal\Api\PBNamespace\V1\NamespaceInfo;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Namespace capability details. Should contain what features are enabled in a namespace.

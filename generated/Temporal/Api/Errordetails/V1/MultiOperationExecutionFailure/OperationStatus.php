@@ -6,8 +6,8 @@
 namespace Temporal\Api\Errordetails\V1\MultiOperationExecutionFailure;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * NOTE: `OperationStatus` is modelled after
@@ -40,7 +40,7 @@ class OperationStatus extends \Google\Protobuf\Internal\Message
      *
      *     @type int $code
      *     @type string $message
-     *     @type array<\Google\Protobuf\Any>|\Google\Protobuf\Internal\RepeatedField $details
+     *     @type \Google\Protobuf\Any[] $details
      * }
      */
     public function __construct($data = NULL) {
@@ -94,7 +94,7 @@ class OperationStatus extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .google.protobuf.Any details = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Google\Protobuf\Any>
      */
     public function getDetails()
     {
@@ -103,7 +103,7 @@ class OperationStatus extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .google.protobuf.Any details = 3;</code>
-     * @param array<\Google\Protobuf\Any>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Google\Protobuf\Any[] $var
      * @return $this
      */
     public function setDetails($var)

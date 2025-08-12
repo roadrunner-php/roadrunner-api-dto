@@ -6,8 +6,8 @@
 namespace RoadRunner\Centrifugal\API\DTO\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>centrifugal.centrifugo.api.DeviceTopicFilter</code>
@@ -45,11 +45,11 @@ class DeviceTopicFilter extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $device_ids
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $device_providers
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $device_platforms
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $device_users
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $topics
+     *     @type string[] $device_ids
+     *     @type string[] $device_providers
+     *     @type string[] $device_platforms
+     *     @type string[] $device_users
+     *     @type string[] $topics
      *     @type string $topic_prefix
      * }
      */
@@ -60,7 +60,7 @@ class DeviceTopicFilter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string device_ids = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getDeviceIds()
     {
@@ -69,7 +69,7 @@ class DeviceTopicFilter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string device_ids = 1;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setDeviceIds($var)
@@ -82,7 +82,7 @@ class DeviceTopicFilter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string device_providers = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getDeviceProviders()
     {
@@ -91,7 +91,7 @@ class DeviceTopicFilter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string device_providers = 2;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setDeviceProviders($var)
@@ -104,7 +104,7 @@ class DeviceTopicFilter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string device_platforms = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getDevicePlatforms()
     {
@@ -113,7 +113,7 @@ class DeviceTopicFilter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string device_platforms = 3;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setDevicePlatforms($var)
@@ -126,7 +126,7 @@ class DeviceTopicFilter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string device_users = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getDeviceUsers()
     {
@@ -135,7 +135,7 @@ class DeviceTopicFilter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string device_users = 4;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setDeviceUsers($var)
@@ -148,7 +148,7 @@ class DeviceTopicFilter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string topics = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getTopics()
     {
@@ -157,7 +157,7 @@ class DeviceTopicFilter extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string topics = 5;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setTopics($var)

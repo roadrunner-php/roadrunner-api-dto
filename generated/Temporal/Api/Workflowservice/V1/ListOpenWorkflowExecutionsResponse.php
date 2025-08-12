@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.ListOpenWorkflowExecutionsResponse</code>
@@ -29,7 +29,7 @@ class ListOpenWorkflowExecutionsResponse extends \Google\Protobuf\Internal\Messa
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Temporal\Api\Workflow\V1\WorkflowExecutionInfo>|\Google\Protobuf\Internal\RepeatedField $executions
+     *     @type \Temporal\Api\Workflow\V1\WorkflowExecutionInfo[] $executions
      *     @type string $next_page_token
      * }
      */
@@ -40,7 +40,7 @@ class ListOpenWorkflowExecutionsResponse extends \Google\Protobuf\Internal\Messa
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.workflow.v1.WorkflowExecutionInfo executions = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Workflow\V1\WorkflowExecutionInfo>
      */
     public function getExecutions()
     {
@@ -49,7 +49,7 @@ class ListOpenWorkflowExecutionsResponse extends \Google\Protobuf\Internal\Messa
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.workflow.v1.WorkflowExecutionInfo executions = 1;</code>
-     * @param array<\Temporal\Api\Workflow\V1\WorkflowExecutionInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Workflow\V1\WorkflowExecutionInfo[] $var
      * @return $this
      */
     public function setExecutions($var)

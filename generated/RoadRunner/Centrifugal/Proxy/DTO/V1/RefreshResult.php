@@ -6,8 +6,8 @@
 namespace RoadRunner\Centrifugal\Proxy\DTO\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>centrifugal.centrifugo.proxy.RefreshResult</code>
@@ -50,7 +50,7 @@ class RefreshResult extends \Google\Protobuf\Internal\Message
      *     @type string $info
      *     @type string $b64info
      *     @type string $meta
-     *     @type array<\RoadRunner\Centrifugal\Proxy\DTO\V1\ChannelsCapability>|\Google\Protobuf\Internal\RepeatedField $caps
+     *     @type \RoadRunner\Centrifugal\Proxy\DTO\V1\ChannelsCapability[] $caps
      * }
      */
     public function __construct($data = NULL) {
@@ -170,7 +170,7 @@ class RefreshResult extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .centrifugal.centrifugo.proxy.ChannelsCapability caps = 6;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\RoadRunner\Centrifugal\Proxy\DTO\V1\ChannelsCapability>
      */
     public function getCaps()
     {
@@ -179,7 +179,7 @@ class RefreshResult extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .centrifugal.centrifugo.proxy.ChannelsCapability caps = 6;</code>
-     * @param array<\RoadRunner\Centrifugal\Proxy\DTO\V1\ChannelsCapability>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \RoadRunner\Centrifugal\Proxy\DTO\V1\ChannelsCapability[] $var
      * @return $this
      */
     public function setCaps($var)

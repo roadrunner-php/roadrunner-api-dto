@@ -6,8 +6,8 @@
 namespace Temporal\Api\Common\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Callback to attach to various events in the system, e.g. workflow run completion.
@@ -33,7 +33,7 @@ class Callback extends \Google\Protobuf\Internal\Message
      *
      *     @type \Temporal\Api\Common\V1\Callback\Nexus $nexus
      *     @type \Temporal\Api\Common\V1\Callback\Internal $internal
-     *     @type array<\Temporal\Api\Common\V1\Link>|\Google\Protobuf\Internal\RepeatedField $links
+     *     @type \Temporal\Api\Common\V1\Link[] $links
      *           Links associated with the callback. It can be used to link to underlying resources of the
      *           callback.
      * }
@@ -102,7 +102,7 @@ class Callback extends \Google\Protobuf\Internal\Message
      * callback.
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 100;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Common\V1\Link>
      */
     public function getLinks()
     {
@@ -114,7 +114,7 @@ class Callback extends \Google\Protobuf\Internal\Message
      * callback.
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 100;</code>
-     * @param array<\Temporal\Api\Common\V1\Link>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Common\V1\Link[] $var
      * @return $this
      */
     public function setLinks($var)

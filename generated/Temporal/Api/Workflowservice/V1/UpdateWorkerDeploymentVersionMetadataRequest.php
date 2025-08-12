@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Used to update the user-defined metadata of a Worker Deployment Version.
@@ -21,11 +21,18 @@ class UpdateWorkerDeploymentVersionMetadataRequest extends \Google\Protobuf\Inte
      */
     protected $namespace = '';
     /**
-     * Deployment Version identifier in the form "<deployment_name>.<build_id>".
+     * Deprecated. Use `deployment_version`.
      *
-     * Generated from protobuf field <code>string version = 2;</code>
+     * Generated from protobuf field <code>string version = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $version = '';
+    /**
+     * Required.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion deployment_version = 5;</code>
+     */
+    protected $deployment_version = null;
     /**
      * Generated from protobuf field <code>map<string, .temporal.api.common.v1.Payload> upsert_entries = 3;</code>
      */
@@ -36,6 +43,12 @@ class UpdateWorkerDeploymentVersionMetadataRequest extends \Google\Protobuf\Inte
      * Generated from protobuf field <code>repeated string remove_entries = 4;</code>
      */
     private $remove_entries;
+    /**
+     * Optional. The identity of the client who initiated this request.
+     *
+     * Generated from protobuf field <code>string identity = 6;</code>
+     */
+    protected $identity = '';
 
     /**
      * Constructor.
@@ -45,10 +58,14 @@ class UpdateWorkerDeploymentVersionMetadataRequest extends \Google\Protobuf\Inte
      *
      *     @type string $namespace
      *     @type string $version
-     *           Deployment Version identifier in the form "<deployment_name>.<build_id>".
+     *           Deprecated. Use `deployment_version`.
+     *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $deployment_version
+     *           Required.
      *     @type array|\Google\Protobuf\Internal\MapField $upsert_entries
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $remove_entries
+     *     @type string[] $remove_entries
      *           List of keys to remove from the metadata.
+     *     @type string $identity
+     *           Optional. The identity of the client who initiated this request.
      * }
      */
     public function __construct($data = NULL) {
@@ -79,27 +96,69 @@ class UpdateWorkerDeploymentVersionMetadataRequest extends \Google\Protobuf\Inte
     }
 
     /**
-     * Deployment Version identifier in the form "<deployment_name>.<build_id>".
+     * Deprecated. Use `deployment_version`.
      *
-     * Generated from protobuf field <code>string version = 2;</code>
+     * Generated from protobuf field <code>string version = 2 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getVersion()
     {
+        if ($this->version !== '') {
+            @trigger_error('version is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->version;
     }
 
     /**
-     * Deployment Version identifier in the form "<deployment_name>.<build_id>".
+     * Deprecated. Use `deployment_version`.
      *
-     * Generated from protobuf field <code>string version = 2;</code>
+     * Generated from protobuf field <code>string version = 2 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setVersion($var)
     {
+        @trigger_error('version is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Required.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion deployment_version = 5;</code>
+     * @return \Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null
+     */
+    public function getDeploymentVersion()
+    {
+        return $this->deployment_version;
+    }
+
+    public function hasDeploymentVersion()
+    {
+        return isset($this->deployment_version);
+    }
+
+    public function clearDeploymentVersion()
+    {
+        unset($this->deployment_version);
+    }
+
+    /**
+     * Required.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion deployment_version = 5;</code>
+     * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
+     * @return $this
+     */
+    public function setDeploymentVersion($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
+        $this->deployment_version = $var;
 
         return $this;
     }
@@ -130,7 +189,7 @@ class UpdateWorkerDeploymentVersionMetadataRequest extends \Google\Protobuf\Inte
      * List of keys to remove from the metadata.
      *
      * Generated from protobuf field <code>repeated string remove_entries = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getRemoveEntries()
     {
@@ -141,13 +200,39 @@ class UpdateWorkerDeploymentVersionMetadataRequest extends \Google\Protobuf\Inte
      * List of keys to remove from the metadata.
      *
      * Generated from protobuf field <code>repeated string remove_entries = 4;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setRemoveEntries($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->remove_entries = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Optional. The identity of the client who initiated this request.
+     *
+     * Generated from protobuf field <code>string identity = 6;</code>
+     * @return string
+     */
+    public function getIdentity()
+    {
+        return $this->identity;
+    }
+
+    /**
+     * Optional. The identity of the client who initiated this request.
+     *
+     * Generated from protobuf field <code>string identity = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setIdentity($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->identity = $var;
 
         return $this;
     }

@@ -6,8 +6,8 @@
 namespace Temporal\Api\Deployment\V1\WorkerDeploymentVersionInfo;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.deployment.v1.WorkerDeploymentVersionInfo.VersionTaskQueueInfo</code>

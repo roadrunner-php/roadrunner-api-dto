@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * [cleanup-wv-pre-release] Pre-release deployment APIs, clean up later
@@ -32,7 +32,7 @@ class ListDeploymentsResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $next_page_token
-     *     @type array<\Temporal\Api\Deployment\V1\DeploymentListInfo>|\Google\Protobuf\Internal\RepeatedField $deployments
+     *     @type \Temporal\Api\Deployment\V1\DeploymentListInfo[] $deployments
      * }
      */
     public function __construct($data = NULL) {
@@ -64,7 +64,7 @@ class ListDeploymentsResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.deployment.v1.DeploymentListInfo deployments = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Deployment\V1\DeploymentListInfo>
      */
     public function getDeployments()
     {
@@ -73,7 +73,7 @@ class ListDeploymentsResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.deployment.v1.DeploymentListInfo deployments = 2;</code>
-     * @param array<\Temporal\Api\Deployment\V1\DeploymentListInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Deployment\V1\DeploymentListInfo[] $var
      * @return $this
      */
     public function setDeployments($var)

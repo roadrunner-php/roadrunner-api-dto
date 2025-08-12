@@ -6,8 +6,8 @@
 namespace Temporal\Api\Nexus\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * A request to start an operation.
@@ -77,7 +77,7 @@ class StartOperationRequest extends \Google\Protobuf\Internal\Message
      *           Full request body from the incoming HTTP request.
      *     @type array|\Google\Protobuf\Internal\MapField $callback_header
      *           Header that is expected to be attached to the callback request when the operation completes.
-     *     @type array<\Temporal\Api\Nexus\V1\Link>|\Google\Protobuf\Internal\RepeatedField $links
+     *     @type \Temporal\Api\Nexus\V1\Link[] $links
      *           Links contain caller information and can be attached to the operations started by the handler.
      * }
      */
@@ -256,7 +256,7 @@ class StartOperationRequest extends \Google\Protobuf\Internal\Message
      * Links contain caller information and can be attached to the operations started by the handler.
      *
      * Generated from protobuf field <code>repeated .temporal.api.nexus.v1.Link links = 7;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Nexus\V1\Link>
      */
     public function getLinks()
     {
@@ -267,7 +267,7 @@ class StartOperationRequest extends \Google\Protobuf\Internal\Message
      * Links contain caller information and can be attached to the operations started by the handler.
      *
      * Generated from protobuf field <code>repeated .temporal.api.nexus.v1.Link links = 7;</code>
-     * @param array<\Temporal\Api\Nexus\V1\Link>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Nexus\V1\Link[] $var
      * @return $this
      */
     public function setLinks($var)

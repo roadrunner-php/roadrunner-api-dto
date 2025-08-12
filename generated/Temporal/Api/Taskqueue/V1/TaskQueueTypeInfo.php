@@ -6,8 +6,8 @@
 namespace Temporal\Api\Taskqueue\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.taskqueue.v1.TaskQueueTypeInfo</code>
@@ -31,7 +31,7 @@ class TaskQueueTypeInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Temporal\Api\Taskqueue\V1\PollerInfo>|\Google\Protobuf\Internal\RepeatedField $pollers
+     *     @type \Temporal\Api\Taskqueue\V1\PollerInfo[] $pollers
      *           Unversioned workers (with `useVersioning=false`) are reported in unversioned result even if they set a Build ID.
      *     @type \Temporal\Api\Taskqueue\V1\TaskQueueStats $stats
      * }
@@ -45,7 +45,7 @@ class TaskQueueTypeInfo extends \Google\Protobuf\Internal\Message
      * Unversioned workers (with `useVersioning=false`) are reported in unversioned result even if they set a Build ID.
      *
      * Generated from protobuf field <code>repeated .temporal.api.taskqueue.v1.PollerInfo pollers = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Taskqueue\V1\PollerInfo>
      */
     public function getPollers()
     {
@@ -56,7 +56,7 @@ class TaskQueueTypeInfo extends \Google\Protobuf\Internal\Message
      * Unversioned workers (with `useVersioning=false`) are reported in unversioned result even if they set a Build ID.
      *
      * Generated from protobuf field <code>repeated .temporal.api.taskqueue.v1.PollerInfo pollers = 1;</code>
-     * @param array<\Temporal\Api\Taskqueue\V1\PollerInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Taskqueue\V1\PollerInfo[] $var
      * @return $this
      */
     public function setPollers($var)

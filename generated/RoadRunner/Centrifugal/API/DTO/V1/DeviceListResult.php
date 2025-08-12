@@ -6,8 +6,8 @@
 namespace RoadRunner\Centrifugal\API\DTO\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>centrifugal.centrifugo.api.DeviceListResult</code>
@@ -33,7 +33,7 @@ class DeviceListResult extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\RoadRunner\Centrifugal\API\DTO\V1\Device>|\Google\Protobuf\Internal\RepeatedField $items
+     *     @type \RoadRunner\Centrifugal\API\DTO\V1\Device[] $items
      *     @type string $next_cursor
      *     @type int|string $total_count
      * }
@@ -45,7 +45,7 @@ class DeviceListResult extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.Device items = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\RoadRunner\Centrifugal\API\DTO\V1\Device>
      */
     public function getItems()
     {
@@ -54,7 +54,7 @@ class DeviceListResult extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .centrifugal.centrifugo.api.Device items = 1;</code>
-     * @param array<\RoadRunner\Centrifugal\API\DTO\V1\Device>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \RoadRunner\Centrifugal\API\DTO\V1\Device[] $var
      * @return $this
      */
     public function setItems($var)

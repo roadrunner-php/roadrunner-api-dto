@@ -6,8 +6,8 @@
 namespace RoadRunner\Websockets\DTO\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>websockets.v1.Message</code>
@@ -34,7 +34,7 @@ class Message extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $command
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $topics
+     *     @type string[] $topics
      *     @type string $payload
      * }
      */
@@ -67,7 +67,7 @@ class Message extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string topics = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getTopics()
     {
@@ -76,7 +76,7 @@ class Message extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string topics = 2;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setTopics($var)

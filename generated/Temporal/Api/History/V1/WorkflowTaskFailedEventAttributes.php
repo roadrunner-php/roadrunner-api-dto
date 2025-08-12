@@ -6,8 +6,8 @@
 namespace Temporal\Api\History\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.history.v1.WorkflowTaskFailedEventAttributes</code>
@@ -61,19 +61,21 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      */
     protected $fork_event_version = 0;
     /**
-     * DEPRECATED since 1.21 - use `worker_version` instead.
+     * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      * If a worker explicitly failed this task, its binary id
      *
-     * Generated from protobuf field <code>string binary_checksum = 9;</code>
+     * Generated from protobuf field <code>string binary_checksum = 9 [deprecated = true];</code>
+     * @deprecated
      */
     protected $binary_checksum = '';
     /**
      * Version info of the worker who processed this workflow task. If present, the `build_id` field
      * within is also used as `binary_checksum`, which may be omitted in that case (it may also be
      * populated to preserve compatibility).
-     * Deprecated. Use the info inside the corresponding WorkflowTaskStartedEvent
+     * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version = 10;</code>
+     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version = 10 [deprecated = true];</code>
+     * @deprecated
      */
     protected $worker_version = null;
 
@@ -99,13 +101,13 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      *     @type int|string $fork_event_version
      *           TODO: ?
      *     @type string $binary_checksum
-     *           DEPRECATED since 1.21 - use `worker_version` instead.
+     *           Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *           If a worker explicitly failed this task, its binary id
      *     @type \Temporal\Api\Common\V1\WorkerVersionStamp $worker_version
      *           Version info of the worker who processed this workflow task. If present, the `build_id` field
      *           within is also used as `binary_checksum`, which may be omitted in that case (it may also be
      *           populated to preserve compatibility).
-     *           Deprecated. Use the info inside the corresponding WorkflowTaskStartedEvent
+     *           Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      * }
      */
     public function __construct($data = NULL) {
@@ -328,27 +330,33 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * DEPRECATED since 1.21 - use `worker_version` instead.
+     * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      * If a worker explicitly failed this task, its binary id
      *
-     * Generated from protobuf field <code>string binary_checksum = 9;</code>
+     * Generated from protobuf field <code>string binary_checksum = 9 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getBinaryChecksum()
     {
+        if ($this->binary_checksum !== '') {
+            @trigger_error('binary_checksum is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->binary_checksum;
     }
 
     /**
-     * DEPRECATED since 1.21 - use `worker_version` instead.
+     * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      * If a worker explicitly failed this task, its binary id
      *
-     * Generated from protobuf field <code>string binary_checksum = 9;</code>
+     * Generated from protobuf field <code>string binary_checksum = 9 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setBinaryChecksum($var)
     {
+        @trigger_error('binary_checksum is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->binary_checksum = $var;
 
@@ -359,23 +367,31 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      * Version info of the worker who processed this workflow task. If present, the `build_id` field
      * within is also used as `binary_checksum`, which may be omitted in that case (it may also be
      * populated to preserve compatibility).
-     * Deprecated. Use the info inside the corresponding WorkflowTaskStartedEvent
+     * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version = 10;</code>
+     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version = 10 [deprecated = true];</code>
      * @return \Temporal\Api\Common\V1\WorkerVersionStamp|null
+     * @deprecated
      */
     public function getWorkerVersion()
     {
+        if (isset($this->worker_version)) {
+            @trigger_error('worker_version is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->worker_version;
     }
 
     public function hasWorkerVersion()
     {
+        if (isset($this->worker_version)) {
+            @trigger_error('worker_version is deprecated.', E_USER_DEPRECATED);
+        }
         return isset($this->worker_version);
     }
 
     public function clearWorkerVersion()
     {
+        @trigger_error('worker_version is deprecated.', E_USER_DEPRECATED);
         unset($this->worker_version);
     }
 
@@ -383,14 +399,16 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      * Version info of the worker who processed this workflow task. If present, the `build_id` field
      * within is also used as `binary_checksum`, which may be omitted in that case (it may also be
      * populated to preserve compatibility).
-     * Deprecated. Use the info inside the corresponding WorkflowTaskStartedEvent
+     * Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *
-     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version = 10;</code>
+     * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version = 10 [deprecated = true];</code>
      * @param \Temporal\Api\Common\V1\WorkerVersionStamp $var
      * @return $this
+     * @deprecated
      */
     public function setWorkerVersion($var)
     {
+        @trigger_error('worker_version is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerVersionStamp::class);
         $this->worker_version = $var;
 

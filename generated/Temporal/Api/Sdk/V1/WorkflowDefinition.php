@@ -6,8 +6,8 @@
 namespace Temporal\Api\Sdk\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * (-- api-linter: core::0203::optional=disabled --)
@@ -51,11 +51,11 @@ class WorkflowDefinition extends \Google\Protobuf\Internal\Message
      *     @type string $type
      *           A name scoped by the task queue that maps to this workflow definition.
      *           If missing, this workflow is a dynamic workflow.
-     *     @type array<\Temporal\Api\Sdk\V1\WorkflowInteractionDefinition>|\Google\Protobuf\Internal\RepeatedField $query_definitions
+     *     @type \Temporal\Api\Sdk\V1\WorkflowInteractionDefinition[] $query_definitions
      *           Query definitions, sorted by name.
-     *     @type array<\Temporal\Api\Sdk\V1\WorkflowInteractionDefinition>|\Google\Protobuf\Internal\RepeatedField $signal_definitions
+     *     @type \Temporal\Api\Sdk\V1\WorkflowInteractionDefinition[] $signal_definitions
      *           Signal definitions, sorted by name.
-     *     @type array<\Temporal\Api\Sdk\V1\WorkflowInteractionDefinition>|\Google\Protobuf\Internal\RepeatedField $update_definitions
+     *     @type \Temporal\Api\Sdk\V1\WorkflowInteractionDefinition[] $update_definitions
      *           Update definitions, sorted by name.
      * }
      */
@@ -96,7 +96,7 @@ class WorkflowDefinition extends \Google\Protobuf\Internal\Message
      * Query definitions, sorted by name.
      *
      * Generated from protobuf field <code>repeated .temporal.api.sdk.v1.WorkflowInteractionDefinition query_definitions = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Sdk\V1\WorkflowInteractionDefinition>
      */
     public function getQueryDefinitions()
     {
@@ -107,7 +107,7 @@ class WorkflowDefinition extends \Google\Protobuf\Internal\Message
      * Query definitions, sorted by name.
      *
      * Generated from protobuf field <code>repeated .temporal.api.sdk.v1.WorkflowInteractionDefinition query_definitions = 2;</code>
-     * @param array<\Temporal\Api\Sdk\V1\WorkflowInteractionDefinition>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Sdk\V1\WorkflowInteractionDefinition[] $var
      * @return $this
      */
     public function setQueryDefinitions($var)
@@ -122,7 +122,7 @@ class WorkflowDefinition extends \Google\Protobuf\Internal\Message
      * Signal definitions, sorted by name.
      *
      * Generated from protobuf field <code>repeated .temporal.api.sdk.v1.WorkflowInteractionDefinition signal_definitions = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Sdk\V1\WorkflowInteractionDefinition>
      */
     public function getSignalDefinitions()
     {
@@ -133,7 +133,7 @@ class WorkflowDefinition extends \Google\Protobuf\Internal\Message
      * Signal definitions, sorted by name.
      *
      * Generated from protobuf field <code>repeated .temporal.api.sdk.v1.WorkflowInteractionDefinition signal_definitions = 3;</code>
-     * @param array<\Temporal\Api\Sdk\V1\WorkflowInteractionDefinition>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Sdk\V1\WorkflowInteractionDefinition[] $var
      * @return $this
      */
     public function setSignalDefinitions($var)
@@ -148,7 +148,7 @@ class WorkflowDefinition extends \Google\Protobuf\Internal\Message
      * Update definitions, sorted by name.
      *
      * Generated from protobuf field <code>repeated .temporal.api.sdk.v1.WorkflowInteractionDefinition update_definitions = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Sdk\V1\WorkflowInteractionDefinition>
      */
     public function getUpdateDefinitions()
     {
@@ -159,7 +159,7 @@ class WorkflowDefinition extends \Google\Protobuf\Internal\Message
      * Update definitions, sorted by name.
      *
      * Generated from protobuf field <code>repeated .temporal.api.sdk.v1.WorkflowInteractionDefinition update_definitions = 4;</code>
-     * @param array<\Temporal\Api\Sdk\V1\WorkflowInteractionDefinition>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Sdk\V1\WorkflowInteractionDefinition[] $var
      * @return $this
      */
     public function setUpdateDefinitions($var)

@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflow\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Holds information about ongoing transition of a workflow execution from one worker
@@ -19,12 +19,19 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeploymentVersionTransition extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The target Version of the transition. May be `__unversioned__` which means a
-     * so-far-versioned workflow is transitioning to unversioned workers.
+     * Deprecated. Use `deployment_version`.
      *
-     * Generated from protobuf field <code>string version = 1;</code>
+     * Generated from protobuf field <code>string version = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $version = '';
+    /**
+     * The target Version of the transition.
+     * If nil, a so-far-versioned workflow is transitioning to unversioned workers.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion deployment_version = 2;</code>
+     */
+    protected $deployment_version = null;
 
     /**
      * Constructor.
@@ -33,8 +40,10 @@ class DeploymentVersionTransition extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $version
-     *           Required. The target Version of the transition. May be `__unversioned__` which means a
-     *           so-far-versioned workflow is transitioning to unversioned workers.
+     *           Deprecated. Use `deployment_version`.
+     *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $deployment_version
+     *           The target Version of the transition.
+     *           If nil, a so-far-versioned workflow is transitioning to unversioned workers.
      * }
      */
     public function __construct($data = NULL) {
@@ -43,29 +52,71 @@ class DeploymentVersionTransition extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The target Version of the transition. May be `__unversioned__` which means a
-     * so-far-versioned workflow is transitioning to unversioned workers.
+     * Deprecated. Use `deployment_version`.
      *
-     * Generated from protobuf field <code>string version = 1;</code>
+     * Generated from protobuf field <code>string version = 1 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getVersion()
     {
+        if ($this->version !== '') {
+            @trigger_error('version is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->version;
     }
 
     /**
-     * Required. The target Version of the transition. May be `__unversioned__` which means a
-     * so-far-versioned workflow is transitioning to unversioned workers.
+     * Deprecated. Use `deployment_version`.
      *
-     * Generated from protobuf field <code>string version = 1;</code>
+     * Generated from protobuf field <code>string version = 1 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setVersion($var)
     {
+        @trigger_error('version is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->version = $var;
+
+        return $this;
+    }
+
+    /**
+     * The target Version of the transition.
+     * If nil, a so-far-versioned workflow is transitioning to unversioned workers.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion deployment_version = 2;</code>
+     * @return \Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null
+     */
+    public function getDeploymentVersion()
+    {
+        return $this->deployment_version;
+    }
+
+    public function hasDeploymentVersion()
+    {
+        return isset($this->deployment_version);
+    }
+
+    public function clearDeploymentVersion()
+    {
+        unset($this->deployment_version);
+    }
+
+    /**
+     * The target Version of the transition.
+     * If nil, a so-far-versioned workflow is transitioning to unversioned workers.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion deployment_version = 2;</code>
+     * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
+     * @return $this
+     */
+    public function setDeploymentVersion($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
+        $this->deployment_version = $var;
 
         return $this;
     }

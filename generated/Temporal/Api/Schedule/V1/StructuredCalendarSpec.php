@@ -6,8 +6,8 @@
 namespace Temporal\Api\Schedule\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * StructuredCalendarSpec describes an event specification relative to the
@@ -81,21 +81,21 @@ class StructuredCalendarSpec extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\Temporal\Api\Schedule\V1\Range>|\Google\Protobuf\Internal\RepeatedField $second
+     *     @type \Temporal\Api\Schedule\V1\Range[] $second
      *           Match seconds (0-59)
-     *     @type array<\Temporal\Api\Schedule\V1\Range>|\Google\Protobuf\Internal\RepeatedField $minute
+     *     @type \Temporal\Api\Schedule\V1\Range[] $minute
      *           Match minutes (0-59)
-     *     @type array<\Temporal\Api\Schedule\V1\Range>|\Google\Protobuf\Internal\RepeatedField $hour
+     *     @type \Temporal\Api\Schedule\V1\Range[] $hour
      *           Match hours (0-23)
-     *     @type array<\Temporal\Api\Schedule\V1\Range>|\Google\Protobuf\Internal\RepeatedField $day_of_month
+     *     @type \Temporal\Api\Schedule\V1\Range[] $day_of_month
      *           Match days of the month (1-31)
      *           (-- api-linter: core::0140::prepositions=disabled
      *               aip.dev/not-precedent: standard name of field --)
-     *     @type array<\Temporal\Api\Schedule\V1\Range>|\Google\Protobuf\Internal\RepeatedField $month
+     *     @type \Temporal\Api\Schedule\V1\Range[] $month
      *           Match months (1-12)
-     *     @type array<\Temporal\Api\Schedule\V1\Range>|\Google\Protobuf\Internal\RepeatedField $year
+     *     @type \Temporal\Api\Schedule\V1\Range[] $year
      *           Match years.
-     *     @type array<\Temporal\Api\Schedule\V1\Range>|\Google\Protobuf\Internal\RepeatedField $day_of_week
+     *     @type \Temporal\Api\Schedule\V1\Range[] $day_of_week
      *           Match days of the week (0-6; 0 is Sunday).
      *     @type string $comment
      *           Free-form comment describing the intention of this spec.
@@ -110,7 +110,7 @@ class StructuredCalendarSpec extends \Google\Protobuf\Internal\Message
      * Match seconds (0-59)
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.Range second = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Schedule\V1\Range>
      */
     public function getSecond()
     {
@@ -121,7 +121,7 @@ class StructuredCalendarSpec extends \Google\Protobuf\Internal\Message
      * Match seconds (0-59)
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.Range second = 1;</code>
-     * @param array<\Temporal\Api\Schedule\V1\Range>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Schedule\V1\Range[] $var
      * @return $this
      */
     public function setSecond($var)
@@ -136,7 +136,7 @@ class StructuredCalendarSpec extends \Google\Protobuf\Internal\Message
      * Match minutes (0-59)
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.Range minute = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Schedule\V1\Range>
      */
     public function getMinute()
     {
@@ -147,7 +147,7 @@ class StructuredCalendarSpec extends \Google\Protobuf\Internal\Message
      * Match minutes (0-59)
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.Range minute = 2;</code>
-     * @param array<\Temporal\Api\Schedule\V1\Range>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Schedule\V1\Range[] $var
      * @return $this
      */
     public function setMinute($var)
@@ -162,7 +162,7 @@ class StructuredCalendarSpec extends \Google\Protobuf\Internal\Message
      * Match hours (0-23)
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.Range hour = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Schedule\V1\Range>
      */
     public function getHour()
     {
@@ -173,7 +173,7 @@ class StructuredCalendarSpec extends \Google\Protobuf\Internal\Message
      * Match hours (0-23)
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.Range hour = 3;</code>
-     * @param array<\Temporal\Api\Schedule\V1\Range>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Schedule\V1\Range[] $var
      * @return $this
      */
     public function setHour($var)
@@ -190,7 +190,7 @@ class StructuredCalendarSpec extends \Google\Protobuf\Internal\Message
      *     aip.dev/not-precedent: standard name of field --)
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.Range day_of_month = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Schedule\V1\Range>
      */
     public function getDayOfMonth()
     {
@@ -203,7 +203,7 @@ class StructuredCalendarSpec extends \Google\Protobuf\Internal\Message
      *     aip.dev/not-precedent: standard name of field --)
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.Range day_of_month = 4;</code>
-     * @param array<\Temporal\Api\Schedule\V1\Range>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Schedule\V1\Range[] $var
      * @return $this
      */
     public function setDayOfMonth($var)
@@ -218,7 +218,7 @@ class StructuredCalendarSpec extends \Google\Protobuf\Internal\Message
      * Match months (1-12)
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.Range month = 5;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Schedule\V1\Range>
      */
     public function getMonth()
     {
@@ -229,7 +229,7 @@ class StructuredCalendarSpec extends \Google\Protobuf\Internal\Message
      * Match months (1-12)
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.Range month = 5;</code>
-     * @param array<\Temporal\Api\Schedule\V1\Range>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Schedule\V1\Range[] $var
      * @return $this
      */
     public function setMonth($var)
@@ -244,7 +244,7 @@ class StructuredCalendarSpec extends \Google\Protobuf\Internal\Message
      * Match years.
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.Range year = 6;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Schedule\V1\Range>
      */
     public function getYear()
     {
@@ -255,7 +255,7 @@ class StructuredCalendarSpec extends \Google\Protobuf\Internal\Message
      * Match years.
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.Range year = 6;</code>
-     * @param array<\Temporal\Api\Schedule\V1\Range>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Schedule\V1\Range[] $var
      * @return $this
      */
     public function setYear($var)
@@ -270,7 +270,7 @@ class StructuredCalendarSpec extends \Google\Protobuf\Internal\Message
      * Match days of the week (0-6; 0 is Sunday).
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.Range day_of_week = 7;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Schedule\V1\Range>
      */
     public function getDayOfWeek()
     {
@@ -281,7 +281,7 @@ class StructuredCalendarSpec extends \Google\Protobuf\Internal\Message
      * Match days of the week (0-6; 0 is Sunday).
      *
      * Generated from protobuf field <code>repeated .temporal.api.schedule.v1.Range day_of_week = 7;</code>
-     * @param array<\Temporal\Api\Schedule\V1\Range>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Schedule\V1\Range[] $var
      * @return $this
      */
     public function setDayOfWeek($var)

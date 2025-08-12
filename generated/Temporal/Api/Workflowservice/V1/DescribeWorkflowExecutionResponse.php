@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.DescribeWorkflowExecutionResponse</code>
@@ -55,11 +55,11 @@ class DescribeWorkflowExecutionResponse extends \Google\Protobuf\Internal\Messag
      *
      *     @type \Temporal\Api\Workflow\V1\WorkflowExecutionConfig $execution_config
      *     @type \Temporal\Api\Workflow\V1\WorkflowExecutionInfo $workflow_execution_info
-     *     @type array<\Temporal\Api\Workflow\V1\PendingActivityInfo>|\Google\Protobuf\Internal\RepeatedField $pending_activities
-     *     @type array<\Temporal\Api\Workflow\V1\PendingChildExecutionInfo>|\Google\Protobuf\Internal\RepeatedField $pending_children
+     *     @type \Temporal\Api\Workflow\V1\PendingActivityInfo[] $pending_activities
+     *     @type \Temporal\Api\Workflow\V1\PendingChildExecutionInfo[] $pending_children
      *     @type \Temporal\Api\Workflow\V1\PendingWorkflowTaskInfo $pending_workflow_task
-     *     @type array<\Temporal\Api\Workflow\V1\CallbackInfo>|\Google\Protobuf\Internal\RepeatedField $callbacks
-     *     @type array<\Temporal\Api\Workflow\V1\PendingNexusOperationInfo>|\Google\Protobuf\Internal\RepeatedField $pending_nexus_operations
+     *     @type \Temporal\Api\Workflow\V1\CallbackInfo[] $callbacks
+     *     @type \Temporal\Api\Workflow\V1\PendingNexusOperationInfo[] $pending_nexus_operations
      *     @type \Temporal\Api\Workflow\V1\WorkflowExecutionExtendedInfo $workflow_extended_info
      * }
      */
@@ -134,7 +134,7 @@ class DescribeWorkflowExecutionResponse extends \Google\Protobuf\Internal\Messag
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.workflow.v1.PendingActivityInfo pending_activities = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Workflow\V1\PendingActivityInfo>
      */
     public function getPendingActivities()
     {
@@ -143,7 +143,7 @@ class DescribeWorkflowExecutionResponse extends \Google\Protobuf\Internal\Messag
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.workflow.v1.PendingActivityInfo pending_activities = 3;</code>
-     * @param array<\Temporal\Api\Workflow\V1\PendingActivityInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Workflow\V1\PendingActivityInfo[] $var
      * @return $this
      */
     public function setPendingActivities($var)
@@ -156,7 +156,7 @@ class DescribeWorkflowExecutionResponse extends \Google\Protobuf\Internal\Messag
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.workflow.v1.PendingChildExecutionInfo pending_children = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Workflow\V1\PendingChildExecutionInfo>
      */
     public function getPendingChildren()
     {
@@ -165,7 +165,7 @@ class DescribeWorkflowExecutionResponse extends \Google\Protobuf\Internal\Messag
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.workflow.v1.PendingChildExecutionInfo pending_children = 4;</code>
-     * @param array<\Temporal\Api\Workflow\V1\PendingChildExecutionInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Workflow\V1\PendingChildExecutionInfo[] $var
      * @return $this
      */
     public function setPendingChildren($var)
@@ -210,7 +210,7 @@ class DescribeWorkflowExecutionResponse extends \Google\Protobuf\Internal\Messag
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.workflow.v1.CallbackInfo callbacks = 6;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Workflow\V1\CallbackInfo>
      */
     public function getCallbacks()
     {
@@ -219,7 +219,7 @@ class DescribeWorkflowExecutionResponse extends \Google\Protobuf\Internal\Messag
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.workflow.v1.CallbackInfo callbacks = 6;</code>
-     * @param array<\Temporal\Api\Workflow\V1\CallbackInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Workflow\V1\CallbackInfo[] $var
      * @return $this
      */
     public function setCallbacks($var)
@@ -232,7 +232,7 @@ class DescribeWorkflowExecutionResponse extends \Google\Protobuf\Internal\Messag
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.workflow.v1.PendingNexusOperationInfo pending_nexus_operations = 7;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Workflow\V1\PendingNexusOperationInfo>
      */
     public function getPendingNexusOperations()
     {
@@ -241,7 +241,7 @@ class DescribeWorkflowExecutionResponse extends \Google\Protobuf\Internal\Messag
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.workflow.v1.PendingNexusOperationInfo pending_nexus_operations = 7;</code>
-     * @param array<\Temporal\Api\Workflow\V1\PendingNexusOperationInfo>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Workflow\V1\PendingNexusOperationInfo[] $var
      * @return $this
      */
     public function setPendingNexusOperations($var)

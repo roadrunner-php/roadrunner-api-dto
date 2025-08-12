@@ -6,8 +6,8 @@
 namespace Temporal\Api\History\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.history.v1.WorkflowExecutionCancelRequestedEventAttributes</code>
@@ -16,7 +16,7 @@ class WorkflowExecutionCancelRequestedEventAttributes extends \Google\Protobuf\I
 {
     /**
      * User provided reason for requesting cancellation
-     * TODO: shall we create a new field with name "reason" and deprecate this one? 
+     * TODO: shall we create a new field with name "reason" and deprecate this one?
      *
      * Generated from protobuf field <code>string cause = 1;</code>
      */
@@ -46,7 +46,7 @@ class WorkflowExecutionCancelRequestedEventAttributes extends \Google\Protobuf\I
      *
      *     @type string $cause
      *           User provided reason for requesting cancellation
-     *           TODO: shall we create a new field with name "reason" and deprecate this one? 
+     *           TODO: shall we create a new field with name "reason" and deprecate this one?
      *     @type int|string $external_initiated_event_id
      *           TODO: Is this the ID of the event in the workflow which initiated this cancel, if there was one?
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $external_workflow_execution
@@ -61,7 +61,7 @@ class WorkflowExecutionCancelRequestedEventAttributes extends \Google\Protobuf\I
 
     /**
      * User provided reason for requesting cancellation
-     * TODO: shall we create a new field with name "reason" and deprecate this one? 
+     * TODO: shall we create a new field with name "reason" and deprecate this one?
      *
      * Generated from protobuf field <code>string cause = 1;</code>
      * @return string
@@ -73,7 +73,7 @@ class WorkflowExecutionCancelRequestedEventAttributes extends \Google\Protobuf\I
 
     /**
      * User provided reason for requesting cancellation
-     * TODO: shall we create a new field with name "reason" and deprecate this one? 
+     * TODO: shall we create a new field with name "reason" and deprecate this one?
      *
      * Generated from protobuf field <code>string cause = 1;</code>
      * @param string $var

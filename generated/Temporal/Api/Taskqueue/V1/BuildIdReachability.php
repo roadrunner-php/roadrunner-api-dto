@@ -6,8 +6,8 @@
 namespace Temporal\Api\Taskqueue\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Reachability of tasks for a worker by build id, in one or more task queues.
@@ -37,7 +37,7 @@ class BuildIdReachability extends \Google\Protobuf\Internal\Message
      *
      *     @type string $build_id
      *           A build id or empty if unversioned.
-     *     @type array<\Temporal\Api\Taskqueue\V1\TaskQueueReachability>|\Google\Protobuf\Internal\RepeatedField $task_queue_reachability
+     *     @type \Temporal\Api\Taskqueue\V1\TaskQueueReachability[] $task_queue_reachability
      *           Reachability per task queue.
      * }
      */
@@ -76,7 +76,7 @@ class BuildIdReachability extends \Google\Protobuf\Internal\Message
      * Reachability per task queue.
      *
      * Generated from protobuf field <code>repeated .temporal.api.taskqueue.v1.TaskQueueReachability task_queue_reachability = 2;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Taskqueue\V1\TaskQueueReachability>
      */
     public function getTaskQueueReachability()
     {
@@ -87,7 +87,7 @@ class BuildIdReachability extends \Google\Protobuf\Internal\Message
      * Reachability per task queue.
      *
      * Generated from protobuf field <code>repeated .temporal.api.taskqueue.v1.TaskQueueReachability task_queue_reachability = 2;</code>
-     * @param array<\Temporal\Api\Taskqueue\V1\TaskQueueReachability>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Taskqueue\V1\TaskQueueReachability[] $var
      * @return $this
      */
     public function setTaskQueueReachability($var)

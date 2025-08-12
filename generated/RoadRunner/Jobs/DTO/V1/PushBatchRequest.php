@@ -6,8 +6,8 @@
 namespace RoadRunner\Jobs\DTO\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * batch jobs request (jobs.PushBatch RPC endpoint) -> PushBatch(j *jobsProto.PushBatchRequest, _ *jobsProto.Empty)
@@ -28,7 +28,7 @@ class PushBatchRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type array<\RoadRunner\Jobs\DTO\V1\Job>|\Google\Protobuf\Internal\RepeatedField $jobs
+     *     @type \RoadRunner\Jobs\DTO\V1\Job[] $jobs
      * }
      */
     public function __construct($data = NULL) {
@@ -38,7 +38,7 @@ class PushBatchRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .jobs.v1.Job jobs = 1;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\RoadRunner\Jobs\DTO\V1\Job>
      */
     public function getJobs()
     {
@@ -47,7 +47,7 @@ class PushBatchRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .jobs.v1.Job jobs = 1;</code>
-     * @param array<\RoadRunner\Jobs\DTO\V1\Job>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \RoadRunner\Jobs\DTO\V1\Job[] $var
      * @return $this
      */
     public function setJobs($var)

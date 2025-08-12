@@ -6,8 +6,8 @@
 namespace Temporal\Api\Sdk\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * The name of the query to retrieve this information is `__temporal_workflow_metadata`.

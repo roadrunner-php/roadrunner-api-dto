@@ -6,8 +6,8 @@
 namespace Temporal\Api\Command\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.command.v1.SignalExternalWorkflowExecutionCommandAttributes</code>
@@ -37,7 +37,8 @@ class SignalExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\
     /**
      * Deprecated
      *
-     * Generated from protobuf field <code>string control = 5;</code>
+     * Generated from protobuf field <code>string control = 5 [deprecated = true];</code>
+     * @deprecated
      */
     protected $control = '';
     /**
@@ -203,23 +204,29 @@ class SignalExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\
     /**
      * Deprecated
      *
-     * Generated from protobuf field <code>string control = 5;</code>
+     * Generated from protobuf field <code>string control = 5 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getControl()
     {
+        if ($this->control !== '') {
+            @trigger_error('control is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->control;
     }
 
     /**
      * Deprecated
      *
-     * Generated from protobuf field <code>string control = 5;</code>
+     * Generated from protobuf field <code>string control = 5 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setControl($var)
     {
+        @trigger_error('control is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->control = $var;
 

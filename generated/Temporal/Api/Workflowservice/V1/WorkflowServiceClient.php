@@ -1,29 +1,6 @@
 <?php
 // GENERATED CODE -- DO NOT EDIT!
 
-// Original file comments:
-// The MIT License
-//
-// Copyright (c) 2020 Temporal Technologies Inc.  All rights reserved.
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
-//
 namespace Temporal\Api\Workflowservice\V1;
 
 /**
@@ -1685,6 +1662,86 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/TriggerWorkflowRule',
         $argument,
         ['\Temporal\Api\Workflowservice\V1\TriggerWorkflowRuleResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * WorkerHeartbeat receive heartbeat request from the worker.
+     * @param \Temporal\Api\Workflowservice\V1\RecordWorkerHeartbeatRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function RecordWorkerHeartbeat(\Temporal\Api\Workflowservice\V1\RecordWorkerHeartbeatRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RecordWorkerHeartbeat',
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\RecordWorkerHeartbeatResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * ListWorkers is a visibility API to list worker status information in a specific namespace.
+     * @param \Temporal\Api\Workflowservice\V1\ListWorkersRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListWorkers(\Temporal\Api\Workflowservice\V1\ListWorkersRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ListWorkers',
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\ListWorkersResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Updates task queue configuration.
+     * For the overall queue rate limit: the rate limit set by this api overrides the worker-set rate limit,
+     * which uncouples the rate limit from the worker lifecycle.
+     * If the overall queue rate limit is unset, the worker-set rate limit takes effect.
+     * @param \Temporal\Api\Workflowservice\V1\UpdateTaskQueueConfigRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function UpdateTaskQueueConfig(\Temporal\Api\Workflowservice\V1\UpdateTaskQueueConfigRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/UpdateTaskQueueConfig',
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\UpdateTaskQueueConfigResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * FetchWorkerConfig returns the worker configuration for a specific worker.
+     * @param \Temporal\Api\Workflowservice\V1\FetchWorkerConfigRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function FetchWorkerConfig(\Temporal\Api\Workflowservice\V1\FetchWorkerConfigRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/FetchWorkerConfig',
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\FetchWorkerConfigResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * UpdateWorkerConfig updates the worker configuration of one or more workers.
+     * Can be used to partially update the worker configuration.
+     * Can be used to update the configuration of multiple workers.
+     * @param \Temporal\Api\Workflowservice\V1\UpdateWorkerConfigRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function UpdateWorkerConfig(\Temporal\Api\Workflowservice\V1\UpdateWorkerConfigRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/UpdateWorkerConfig',
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\UpdateWorkerConfigResponse', 'decode'],
         $metadata, $options);
     }
 

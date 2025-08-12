@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.RespondActivityTaskCanceledRequest</code>
@@ -40,7 +40,7 @@ class RespondActivityTaskCanceledRequest extends \Google\Protobuf\Internal\Messa
      * Version info of the worker who processed this task. This message's `build_id` field should
      * always be set by SDKs. Workers opting into versioning will also set the `use_versioning`
      * field to true. See message docstrings for more.
-     * Deprecated. Use `deployment` instead.
+     * Deprecated. Use `deployment_options` instead.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version = 5 [deprecated = true];</code>
      * @deprecated
@@ -79,7 +79,7 @@ class RespondActivityTaskCanceledRequest extends \Google\Protobuf\Internal\Messa
      *           Version info of the worker who processed this task. This message's `build_id` field should
      *           always be set by SDKs. Workers opting into versioning will also set the `use_versioning`
      *           field to true. See message docstrings for more.
-     *           Deprecated. Use `deployment` instead.
+     *           Deprecated. Use `deployment_options` instead.
      *     @type \Temporal\Api\Deployment\V1\Deployment $deployment
      *           Deployment info of the worker that completed this task. Must be present if user has set
      *           `WorkerDeploymentOptions` regardless of versioning being enabled or not.
@@ -207,7 +207,7 @@ class RespondActivityTaskCanceledRequest extends \Google\Protobuf\Internal\Messa
      * Version info of the worker who processed this task. This message's `build_id` field should
      * always be set by SDKs. Workers opting into versioning will also set the `use_versioning`
      * field to true. See message docstrings for more.
-     * Deprecated. Use `deployment` instead.
+     * Deprecated. Use `deployment_options` instead.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version = 5 [deprecated = true];</code>
      * @return \Temporal\Api\Common\V1\WorkerVersionStamp|null
@@ -239,7 +239,7 @@ class RespondActivityTaskCanceledRequest extends \Google\Protobuf\Internal\Messa
      * Version info of the worker who processed this task. This message's `build_id` field should
      * always be set by SDKs. Workers opting into versioning will also set the `use_versioning`
      * field to true. See message docstrings for more.
-     * Deprecated. Use `deployment` instead.
+     * Deprecated. Use `deployment_options` instead.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkerVersionStamp worker_version = 5 [deprecated = true];</code>
      * @param \Temporal\Api\Common\V1\WorkerVersionStamp $var

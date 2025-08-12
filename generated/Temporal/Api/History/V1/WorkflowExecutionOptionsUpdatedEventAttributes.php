@@ -6,8 +6,8 @@
 namespace Temporal\Api\History\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.history.v1.WorkflowExecutionOptionsUpdatedEventAttributes</code>
@@ -55,7 +55,7 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      *     @type string $attached_request_id
      *           Request ID attachedto the running workflow execution so that subsequent requests with same
      *           request ID will be deduped.
-     *     @type array<\Temporal\Api\Common\V1\Callback>|\Google\Protobuf\Internal\RepeatedField $attached_completion_callbacks
+     *     @type \Temporal\Api\Common\V1\Callback[] $attached_completion_callbacks
      *           Completion callbacks attached to the running workflow execution.
      * }
      */
@@ -160,7 +160,7 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      * Completion callbacks attached to the running workflow execution.
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.Callback attached_completion_callbacks = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Common\V1\Callback>
      */
     public function getAttachedCompletionCallbacks()
     {
@@ -171,7 +171,7 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      * Completion callbacks attached to the running workflow execution.
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.Callback attached_completion_callbacks = 4;</code>
-     * @param array<\Temporal\Api\Common\V1\Callback>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Common\V1\Callback[] $var
      * @return $this
      */
     public function setAttachedCompletionCallbacks($var)

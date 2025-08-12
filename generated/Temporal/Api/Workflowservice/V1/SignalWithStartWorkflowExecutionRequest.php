@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.SignalWithStartWorkflowExecutionRequest</code>
@@ -98,9 +98,10 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      */
     protected $signal_input = null;
     /**
-     * Deprecated
+     * Deprecated.
      *
-     * Generated from protobuf field <code>string control = 14;</code>
+     * Generated from protobuf field <code>string control = 14 [deprecated = true];</code>
+     * @deprecated
      */
     protected $control = '';
     /**
@@ -202,7 +203,7 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      *     @type \Temporal\Api\Common\V1\Payloads $signal_input
      *           Serialized value(s) to provide with the signal
      *     @type string $control
-     *           Deprecated
+     *           Deprecated.
      *     @type \Temporal\Api\Common\V1\RetryPolicy $retry_policy
      *           Retry policy for the workflow
      *     @type string $cron_schedule
@@ -220,7 +221,7 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      *           Metadata on the workflow if it is started. This is carried over to the WorkflowExecutionInfo
      *           for use by user interfaces to display the fixed as-of-start summary and details of the
      *           workflow.
-     *     @type array<\Temporal\Api\Common\V1\Link>|\Google\Protobuf\Internal\RepeatedField $links
+     *     @type \Temporal\Api\Common\V1\Link[] $links
      *           Links to be associated with the WorkflowExecutionStarted and WorkflowExecutionSignaled events.
      *     @type \Temporal\Api\Workflow\V1\VersioningOverride $versioning_override
      *           If set, takes precedence over the Versioning Behavior sent by the SDK on Workflow Task completion.
@@ -667,25 +668,31 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     }
 
     /**
-     * Deprecated
+     * Deprecated.
      *
-     * Generated from protobuf field <code>string control = 14;</code>
+     * Generated from protobuf field <code>string control = 14 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getControl()
     {
+        if ($this->control !== '') {
+            @trigger_error('control is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->control;
     }
 
     /**
-     * Deprecated
+     * Deprecated.
      *
-     * Generated from protobuf field <code>string control = 14;</code>
+     * Generated from protobuf field <code>string control = 14 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setControl($var)
     {
+        @trigger_error('control is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->control = $var;
 
@@ -938,7 +945,7 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * Links to be associated with the WorkflowExecutionStarted and WorkflowExecutionSignaled events.
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 24;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Common\V1\Link>
      */
     public function getLinks()
     {
@@ -949,7 +956,7 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * Links to be associated with the WorkflowExecutionStarted and WorkflowExecutionSignaled events.
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 24;</code>
-     * @param array<\Temporal\Api\Common\V1\Link>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Common\V1\Link[] $var
      * @return $this
      */
     public function setLinks($var)

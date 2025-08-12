@@ -6,8 +6,8 @@
 namespace Temporal\Api\Sdk\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Internal structure used to create worker stack traces with references to code.
@@ -45,7 +45,7 @@ class EnhancedStackTrace extends \Google\Protobuf\Internal\Message
      *           Information pertaining to the SDK that the trace has been captured from.
      *     @type array|\Google\Protobuf\Internal\MapField $sources
      *           Mapping of file path to file contents.
-     *     @type array<\Temporal\Api\Sdk\V1\StackTrace>|\Google\Protobuf\Internal\RepeatedField $stacks
+     *     @type \Temporal\Api\Sdk\V1\StackTrace[] $stacks
      *           Collection of stacks captured.
      * }
      */
@@ -120,7 +120,7 @@ class EnhancedStackTrace extends \Google\Protobuf\Internal\Message
      * Collection of stacks captured.
      *
      * Generated from protobuf field <code>repeated .temporal.api.sdk.v1.StackTrace stacks = 3;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Sdk\V1\StackTrace>
      */
     public function getStacks()
     {
@@ -131,7 +131,7 @@ class EnhancedStackTrace extends \Google\Protobuf\Internal\Message
      * Collection of stacks captured.
      *
      * Generated from protobuf field <code>repeated .temporal.api.sdk.v1.StackTrace stacks = 3;</code>
-     * @param array<\Temporal\Api\Sdk\V1\StackTrace>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Sdk\V1\StackTrace[] $var
      * @return $this
      */
     public function setStacks($var)

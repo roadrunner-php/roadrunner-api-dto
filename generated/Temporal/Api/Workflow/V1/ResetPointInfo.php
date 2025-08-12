@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflow\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * ResetPointInfo records the workflow event id that is the first one processed by a given
@@ -25,9 +25,10 @@ class ResetPointInfo extends \Google\Protobuf\Internal\Message
      */
     protected $build_id = '';
     /**
-     * A worker binary version identifier (deprecated).
+     * Deprecated. A worker binary version identifier.
      *
-     * Generated from protobuf field <code>string binary_checksum = 1;</code>
+     * Generated from protobuf field <code>string binary_checksum = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $binary_checksum = '';
     /**
@@ -70,7 +71,7 @@ class ResetPointInfo extends \Google\Protobuf\Internal\Message
      *     @type string $build_id
      *           Worker build id.
      *     @type string $binary_checksum
-     *           A worker binary version identifier (deprecated).
+     *           Deprecated. A worker binary version identifier.
      *     @type string $run_id
      *           The first run ID in the execution chain that was touched by this worker build.
      *     @type int|string $first_workflow_task_completed_id
@@ -116,25 +117,31 @@ class ResetPointInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A worker binary version identifier (deprecated).
+     * Deprecated. A worker binary version identifier.
      *
-     * Generated from protobuf field <code>string binary_checksum = 1;</code>
+     * Generated from protobuf field <code>string binary_checksum = 1 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getBinaryChecksum()
     {
+        if ($this->binary_checksum !== '') {
+            @trigger_error('binary_checksum is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->binary_checksum;
     }
 
     /**
-     * A worker binary version identifier (deprecated).
+     * Deprecated. A worker binary version identifier.
      *
-     * Generated from protobuf field <code>string binary_checksum = 1;</code>
+     * Generated from protobuf field <code>string binary_checksum = 1 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setBinaryChecksum($var)
     {
+        @trigger_error('binary_checksum is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->binary_checksum = $var;
 

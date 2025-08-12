@@ -8,9 +8,9 @@ namespace Temporal\Api\Enums\V1;
 use UnexpectedValueException;
 
 /**
- * Event types to include when reapplying events. Deprecated: applications
- * should use ResetReapplyExcludeType to specify exclusions from this set, and
- * new event types should be added to ResetReapplyExcludeType instead of here.
+ * Deprecated: applications should use ResetReapplyExcludeType to specify
+ * exclusions from this set, and new event types should be added to ResetReapplyExcludeType
+ * instead of here.
  *
  * Protobuf type <code>temporal.api.enums.v1.ResetReapplyType</code>
  */

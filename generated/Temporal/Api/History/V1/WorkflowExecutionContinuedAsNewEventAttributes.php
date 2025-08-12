@@ -6,8 +6,8 @@
 namespace Temporal\Api\History\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.history.v1.WorkflowExecutionContinuedAsNewEventAttributes</code>
@@ -66,7 +66,8 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
      * has failed, this field would be populated with that failure. Now (when supported by server
      * and sdk) the final event will be `WORKFLOW_EXECUTION_FAILED` with `new_execution_run_id` set.
      *
-     * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 10;</code>
+     * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 10 [deprecated = true];</code>
+     * @deprecated
      */
     protected $failure = null;
     /**
@@ -90,8 +91,10 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
     /**
      * If this is set, the new execution inherits the Build ID of the current execution. Otherwise,
      * the assignment rules will be used to independently assign a Build ID to the new execution.
+     * Deprecated. Only considered for versioning v0.2.
      *
-     * Generated from protobuf field <code>bool inherit_build_id = 15;</code>
+     * Generated from protobuf field <code>bool inherit_build_id = 15 [deprecated = true];</code>
+     * @deprecated
      */
     protected $inherit_build_id = false;
 
@@ -128,6 +131,7 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
      *     @type bool $inherit_build_id
      *           If this is set, the new execution inherits the Build ID of the current execution. Otherwise,
      *           the assignment rules will be used to independently assign a Build ID to the new execution.
+     *           Deprecated. Only considered for versioning v0.2.
      * }
      */
     public function __construct($data = NULL) {
@@ -419,21 +423,29 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
      * has failed, this field would be populated with that failure. Now (when supported by server
      * and sdk) the final event will be `WORKFLOW_EXECUTION_FAILED` with `new_execution_run_id` set.
      *
-     * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 10;</code>
+     * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 10 [deprecated = true];</code>
      * @return \Temporal\Api\Failure\V1\Failure|null
+     * @deprecated
      */
     public function getFailure()
     {
+        if (isset($this->failure)) {
+            @trigger_error('failure is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->failure;
     }
 
     public function hasFailure()
     {
+        if (isset($this->failure)) {
+            @trigger_error('failure is deprecated.', E_USER_DEPRECATED);
+        }
         return isset($this->failure);
     }
 
     public function clearFailure()
     {
+        @trigger_error('failure is deprecated.', E_USER_DEPRECATED);
         unset($this->failure);
     }
 
@@ -443,12 +455,14 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
      * has failed, this field would be populated with that failure. Now (when supported by server
      * and sdk) the final event will be `WORKFLOW_EXECUTION_FAILED` with `new_execution_run_id` set.
      *
-     * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 10;</code>
+     * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 10 [deprecated = true];</code>
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
+     * @deprecated
      */
     public function setFailure($var)
     {
+        @trigger_error('failure is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
         $this->failure = $var;
 
@@ -590,25 +604,33 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
     /**
      * If this is set, the new execution inherits the Build ID of the current execution. Otherwise,
      * the assignment rules will be used to independently assign a Build ID to the new execution.
+     * Deprecated. Only considered for versioning v0.2.
      *
-     * Generated from protobuf field <code>bool inherit_build_id = 15;</code>
+     * Generated from protobuf field <code>bool inherit_build_id = 15 [deprecated = true];</code>
      * @return bool
+     * @deprecated
      */
     public function getInheritBuildId()
     {
+        if ($this->inherit_build_id !== false) {
+            @trigger_error('inherit_build_id is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->inherit_build_id;
     }
 
     /**
      * If this is set, the new execution inherits the Build ID of the current execution. Otherwise,
      * the assignment rules will be used to independently assign a Build ID to the new execution.
+     * Deprecated. Only considered for versioning v0.2.
      *
-     * Generated from protobuf field <code>bool inherit_build_id = 15;</code>
+     * Generated from protobuf field <code>bool inherit_build_id = 15 [deprecated = true];</code>
      * @param bool $var
      * @return $this
+     * @deprecated
      */
     public function setInheritBuildId($var)
     {
+        @trigger_error('inherit_build_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkBool($var);
         $this->inherit_build_id = $var;
 

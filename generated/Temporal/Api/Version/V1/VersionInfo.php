@@ -6,8 +6,8 @@
 namespace Temporal\Api\Version\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * VersionInfo contains details about current and recommended release versions as well as alerts and upgrade instructions.
@@ -46,7 +46,7 @@ class VersionInfo extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Version\V1\ReleaseInfo $current
      *     @type \Temporal\Api\Version\V1\ReleaseInfo $recommended
      *     @type string $instructions
-     *     @type array<\Temporal\Api\Version\V1\Alert>|\Google\Protobuf\Internal\RepeatedField $alerts
+     *     @type \Temporal\Api\Version\V1\Alert[] $alerts
      *     @type \Google\Protobuf\Timestamp $last_update_time
      * }
      */
@@ -143,7 +143,7 @@ class VersionInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.version.v1.Alert alerts = 4;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\Temporal\Api\Version\V1\Alert>
      */
     public function getAlerts()
     {
@@ -152,7 +152,7 @@ class VersionInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.version.v1.Alert alerts = 4;</code>
-     * @param array<\Temporal\Api\Version\V1\Alert>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \Temporal\Api\Version\V1\Alert[] $var
      * @return $this
      */
     public function setAlerts($var)

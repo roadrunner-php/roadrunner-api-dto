@@ -6,8 +6,8 @@
 namespace RoadRunner\Centrifugal\Proxy\DTO\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>centrifugal.centrifugo.proxy.ConnectResult</code>
@@ -67,10 +67,10 @@ class ConnectResult extends \Google\Protobuf\Internal\Message
      *     @type string $b64info
      *     @type string $data
      *     @type string $b64data
-     *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $channels
+     *     @type string[] $channels
      *     @type array|\Google\Protobuf\Internal\MapField $subs
      *     @type string $meta
-     *     @type array<\RoadRunner\Centrifugal\Proxy\DTO\V1\ChannelsCapability>|\Google\Protobuf\Internal\RepeatedField $caps
+     *     @type \RoadRunner\Centrifugal\Proxy\DTO\V1\ChannelsCapability[] $caps
      * }
      */
     public function __construct($data = NULL) {
@@ -212,7 +212,7 @@ class ConnectResult extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string channels = 7;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<string>
      */
     public function getChannels()
     {
@@ -221,7 +221,7 @@ class ConnectResult extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated string channels = 7;</code>
-     * @param array<string>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param string[] $var
      * @return $this
      */
     public function setChannels($var)
@@ -278,7 +278,7 @@ class ConnectResult extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .centrifugal.centrifugo.proxy.ChannelsCapability caps = 10;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<\RoadRunner\Centrifugal\Proxy\DTO\V1\ChannelsCapability>
      */
     public function getCaps()
     {
@@ -287,7 +287,7 @@ class ConnectResult extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .centrifugal.centrifugo.proxy.ChannelsCapability caps = 10;</code>
-     * @param array<\RoadRunner\Centrifugal\Proxy\DTO\V1\ChannelsCapability>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param \RoadRunner\Centrifugal\Proxy\DTO\V1\ChannelsCapability[] $var
      * @return $this
      */
     public function setCaps($var)

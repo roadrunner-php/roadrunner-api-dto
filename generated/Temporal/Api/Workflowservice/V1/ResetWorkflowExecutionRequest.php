@@ -6,8 +6,8 @@
 namespace Temporal\Api\Workflowservice\V1;
 
 use Google\Protobuf\Internal\GPBType;
-use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
+use Google\Protobuf\RepeatedField;
 
 /**
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.ResetWorkflowExecutionRequest</code>
@@ -44,10 +44,11 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      */
     protected $request_id = '';
     /**
-     * Event types to be reapplied (deprecated)
+     * Deprecated. Use `options`.
      * Default: RESET_REAPPLY_TYPE_SIGNAL
      *
-     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 6;</code>
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 6 [deprecated = true];</code>
+     * @deprecated
      */
     protected $reset_reapply_type = 0;
     /**
@@ -56,6 +57,20 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .temporal.api.enums.v1.ResetReapplyExcludeType reset_reapply_exclude_types = 7;</code>
      */
     private $reset_reapply_exclude_types;
+    /**
+     * Operations to perform after the workflow has been reset. These operations will be applied
+     * to the *new* run of the workflow execution in the order they are provided.
+     * All operations are applied to the workflow before the first new workflow task is generated
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.workflow.v1.PostResetOperation post_reset_operations = 8;</code>
+     */
+    private $post_reset_operations;
+    /**
+     * The identity of the worker/client
+     *
+     * Generated from protobuf field <code>string identity = 9;</code>
+     */
+    protected $identity = '';
 
     /**
      * Constructor.
@@ -75,10 +90,16 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      *     @type string $request_id
      *           Used to de-dupe reset requests
      *     @type int $reset_reapply_type
-     *           Event types to be reapplied (deprecated)
+     *           Deprecated. Use `options`.
      *           Default: RESET_REAPPLY_TYPE_SIGNAL
-     *     @type array<int>|\Google\Protobuf\Internal\RepeatedField $reset_reapply_exclude_types
+     *     @type int[] $reset_reapply_exclude_types
      *           Event types not to be reapplied
+     *     @type \Temporal\Api\Workflow\V1\PostResetOperation[] $post_reset_operations
+     *           Operations to perform after the workflow has been reset. These operations will be applied
+     *           to the *new* run of the workflow execution in the order they are provided.
+     *           All operations are applied to the workflow before the first new workflow task is generated
+     *     @type string $identity
+     *           The identity of the worker/client
      * }
      */
     public function __construct($data = NULL) {
@@ -225,27 +246,33 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Event types to be reapplied (deprecated)
+     * Deprecated. Use `options`.
      * Default: RESET_REAPPLY_TYPE_SIGNAL
      *
-     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 6;</code>
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 6 [deprecated = true];</code>
      * @return int
+     * @deprecated
      */
     public function getResetReapplyType()
     {
+        if ($this->reset_reapply_type !== 0) {
+            @trigger_error('reset_reapply_type is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->reset_reapply_type;
     }
 
     /**
-     * Event types to be reapplied (deprecated)
+     * Deprecated. Use `options`.
      * Default: RESET_REAPPLY_TYPE_SIGNAL
      *
-     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 6;</code>
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 6 [deprecated = true];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setResetReapplyType($var)
     {
+        @trigger_error('reset_reapply_type is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ResetReapplyType::class);
         $this->reset_reapply_type = $var;
 
@@ -256,7 +283,7 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * Event types not to be reapplied
      *
      * Generated from protobuf field <code>repeated .temporal.api.enums.v1.ResetReapplyExcludeType reset_reapply_exclude_types = 7;</code>
-     * @return \Google\Protobuf\Internal\RepeatedField
+     * @return RepeatedField<int>
      */
     public function getResetReapplyExcludeTypes()
     {
@@ -267,13 +294,69 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * Event types not to be reapplied
      *
      * Generated from protobuf field <code>repeated .temporal.api.enums.v1.ResetReapplyExcludeType reset_reapply_exclude_types = 7;</code>
-     * @param array<int>|\Google\Protobuf\Internal\RepeatedField $var
+     * @param int[] $var
      * @return $this
      */
     public function setResetReapplyExcludeTypes($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Temporal\Api\Enums\V1\ResetReapplyExcludeType::class);
         $this->reset_reapply_exclude_types = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Operations to perform after the workflow has been reset. These operations will be applied
+     * to the *new* run of the workflow execution in the order they are provided.
+     * All operations are applied to the workflow before the first new workflow task is generated
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.workflow.v1.PostResetOperation post_reset_operations = 8;</code>
+     * @return RepeatedField<\Temporal\Api\Workflow\V1\PostResetOperation>
+     */
+    public function getPostResetOperations()
+    {
+        return $this->post_reset_operations;
+    }
+
+    /**
+     * Operations to perform after the workflow has been reset. These operations will be applied
+     * to the *new* run of the workflow execution in the order they are provided.
+     * All operations are applied to the workflow before the first new workflow task is generated
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.workflow.v1.PostResetOperation post_reset_operations = 8;</code>
+     * @param \Temporal\Api\Workflow\V1\PostResetOperation[] $var
+     * @return $this
+     */
+    public function setPostResetOperations($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Workflow\V1\PostResetOperation::class);
+        $this->post_reset_operations = $arr;
+
+        return $this;
+    }
+
+    /**
+     * The identity of the worker/client
+     *
+     * Generated from protobuf field <code>string identity = 9;</code>
+     * @return string
+     */
+    public function getIdentity()
+    {
+        return $this->identity;
+    }
+
+    /**
+     * The identity of the worker/client
+     *
+     * Generated from protobuf field <code>string identity = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setIdentity($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->identity = $var;
 
         return $this;
     }
