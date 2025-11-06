@@ -51,6 +51,14 @@ class GetClusterInfoResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string visibility_store = 8;</code>
      */
     protected $visibility_store = '';
+    /**
+     * Generated from protobuf field <code>int64 initial_failover_version = 9;</code>
+     */
+    protected $initial_failover_version = 0;
+    /**
+     * Generated from protobuf field <code>int64 failover_version_increment = 10;</code>
+     */
+    protected $failover_version_increment = 0;
 
     /**
      * Constructor.
@@ -68,6 +76,8 @@ class GetClusterInfoResponse extends \Google\Protobuf\Internal\Message
      *     @type int $history_shard_count
      *     @type string $persistence_store
      *     @type string $visibility_store
+     *     @type int|string $initial_failover_version
+     *     @type int|string $failover_version_increment
      * }
      */
     public function __construct($data = NULL) {
@@ -263,6 +273,50 @@ class GetClusterInfoResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->visibility_store = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 initial_failover_version = 9;</code>
+     * @return int|string
+     */
+    public function getInitialFailoverVersion()
+    {
+        return $this->initial_failover_version;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 initial_failover_version = 9;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setInitialFailoverVersion($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->initial_failover_version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 failover_version_increment = 10;</code>
+     * @return int|string
+     */
+    public function getFailoverVersionIncrement()
+    {
+        return $this->failover_version_increment;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 failover_version_increment = 10;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setFailoverVersionIncrement($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->failover_version_increment = $var;
 
         return $this;
     }

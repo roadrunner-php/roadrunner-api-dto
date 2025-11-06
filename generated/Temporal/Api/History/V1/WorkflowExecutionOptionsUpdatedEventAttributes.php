@@ -40,6 +40,12 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.Callback attached_completion_callbacks = 4;</code>
      */
     private $attached_completion_callbacks;
+    /**
+     * Optional. The identity of the client who initiated the request that created this event.
+     *
+     * Generated from protobuf field <code>string identity = 5;</code>
+     */
+    protected $identity = '';
 
     /**
      * Constructor.
@@ -57,6 +63,8 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      *           request ID will be deduped.
      *     @type \Temporal\Api\Common\V1\Callback[] $attached_completion_callbacks
      *           Completion callbacks attached to the running workflow execution.
+     *     @type string $identity
+     *           Optional. The identity of the client who initiated the request that created this event.
      * }
      */
     public function __construct($data = NULL) {
@@ -178,6 +186,32 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Callback::class);
         $this->attached_completion_callbacks = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Optional. The identity of the client who initiated the request that created this event.
+     *
+     * Generated from protobuf field <code>string identity = 5;</code>
+     * @return string
+     */
+    public function getIdentity()
+    {
+        return $this->identity;
+    }
+
+    /**
+     * Optional. The identity of the client who initiated the request that created this event.
+     *
+     * Generated from protobuf field <code>string identity = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setIdentity($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->identity = $var;
 
         return $this;
     }

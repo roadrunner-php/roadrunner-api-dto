@@ -31,6 +31,13 @@ class Request extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp scheduled_time = 2;</code>
      */
     protected $scheduled_time = null;
+    /**
+     * The endpoint this request was addressed to before forwarding to the worker.
+     * Supported from server version 1.30.0.
+     *
+     * Generated from protobuf field <code>string endpoint = 10;</code>
+     */
+    protected $endpoint = '';
     protected $variant;
 
     /**
@@ -48,6 +55,9 @@ class Request extends \Google\Protobuf\Internal\Message
      *               aip.dev/not-precedent: Not following linter rules. --)
      *     @type \Temporal\Api\Nexus\V1\StartOperationRequest $start_operation
      *     @type \Temporal\Api\Nexus\V1\CancelOperationRequest $cancel_operation
+     *     @type string $endpoint
+     *           The endpoint this request was addressed to before forwarding to the worker.
+     *           Supported from server version 1.30.0.
      * }
      */
     public function __construct($data = NULL) {
@@ -173,6 +183,34 @@ class Request extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\CancelOperationRequest::class);
         $this->writeOneof(4, $var);
+
+        return $this;
+    }
+
+    /**
+     * The endpoint this request was addressed to before forwarding to the worker.
+     * Supported from server version 1.30.0.
+     *
+     * Generated from protobuf field <code>string endpoint = 10;</code>
+     * @return string
+     */
+    public function getEndpoint()
+    {
+        return $this->endpoint;
+    }
+
+    /**
+     * The endpoint this request was addressed to before forwarding to the worker.
+     * Supported from server version 1.30.0.
+     *
+     * Generated from protobuf field <code>string endpoint = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEndpoint($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->endpoint = $var;
 
         return $this;
     }

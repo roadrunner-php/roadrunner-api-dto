@@ -48,7 +48,7 @@ class Priority extends \Google\Protobuf\Internal\Message
      * The maximum priority value (minimum priority) is determined by server
      * configuration, and defaults to 5.
      * If priority is not present (or zero), then the effective priority will be
-     * the default priority, which is is calculated by (min+max)/2. With the
+     * the default priority, which is calculated by (min+max)/2. With the
      * default max of 5, and min of 1, that comes out to 3.
      *
      * Generated from protobuf field <code>int32 priority_key = 1;</code>
@@ -105,7 +105,7 @@ class Priority extends \Google\Protobuf\Internal\Message
      *           The maximum priority value (minimum priority) is determined by server
      *           configuration, and defaults to 5.
      *           If priority is not present (or zero), then the effective priority will be
-     *           the default priority, which is is calculated by (min+max)/2. With the
+     *           the default priority, which is calculated by (min+max)/2. With the
      *           default max of 5, and min of 1, that comes out to 3.
      *     @type string $fairness_key
      *           Fairness key is a short string that's used as a key for a fairness
@@ -150,7 +150,7 @@ class Priority extends \Google\Protobuf\Internal\Message
      * The maximum priority value (minimum priority) is determined by server
      * configuration, and defaults to 5.
      * If priority is not present (or zero), then the effective priority will be
-     * the default priority, which is is calculated by (min+max)/2. With the
+     * the default priority, which is calculated by (min+max)/2. With the
      * default max of 5, and min of 1, that comes out to 3.
      *
      * Generated from protobuf field <code>int32 priority_key = 1;</code>
@@ -169,7 +169,7 @@ class Priority extends \Google\Protobuf\Internal\Message
      * The maximum priority value (minimum priority) is determined by server
      * configuration, and defaults to 5.
      * If priority is not present (or zero), then the effective priority will be
-     * the default priority, which is is calculated by (min+max)/2. With the
+     * the default priority, which is calculated by (min+max)/2. With the
      * default max of 5, and min of 1, that comes out to 3.
      *
      * Generated from protobuf field <code>int32 priority_key = 1;</code>

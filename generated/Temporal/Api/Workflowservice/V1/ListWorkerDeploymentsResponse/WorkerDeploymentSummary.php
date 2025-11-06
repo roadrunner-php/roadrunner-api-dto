@@ -36,7 +36,7 @@ class WorkerDeploymentSummary extends \Google\Protobuf\Internal\Message
      */
     protected $latest_version_summary = null;
     /**
-     * Summary of the current version of the Worker Deployment. 
+     * Summary of the current version of the Worker Deployment.
      *
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentInfo.WorkerDeploymentVersionSummary current_version_summary = 5;</code>
      */
@@ -60,7 +60,7 @@ class WorkerDeploymentSummary extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary $latest_version_summary
      *           Summary of the version that was added most recently in the Worker Deployment.
      *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary $current_version_summary
-     *           Summary of the current version of the Worker Deployment. 
+     *           Summary of the current version of the Worker Deployment.
      *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary $ramping_version_summary
      *           Summary of the ramping version of the Worker Deployment.
      * }
@@ -193,7 +193,7 @@ class WorkerDeploymentSummary extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Summary of the current version of the Worker Deployment. 
+     * Summary of the current version of the Worker Deployment.
      *
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentInfo.WorkerDeploymentVersionSummary current_version_summary = 5;</code>
      * @return \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary|null
@@ -214,7 +214,7 @@ class WorkerDeploymentSummary extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Summary of the current version of the Worker Deployment. 
+     * Summary of the current version of the Worker Deployment.
      *
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentInfo.WorkerDeploymentVersionSummary current_version_summary = 5;</code>
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary $var

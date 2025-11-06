@@ -45,6 +45,12 @@ class UpdateWorkflowExecutionOptionsRequest extends \Google\Protobuf\Internal\Me
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 4;</code>
      */
     protected $update_mask = null;
+    /**
+     * Optional. The identity of the client who initiated this request.
+     *
+     * Generated from protobuf field <code>string identity = 5;</code>
+     */
+    protected $identity = '';
 
     /**
      * Constructor.
@@ -63,6 +69,8 @@ class UpdateWorkflowExecutionOptionsRequest extends \Google\Protobuf\Internal\Me
      *     @type \Google\Protobuf\FieldMask $update_mask
      *           Controls which fields from `workflow_execution_options` will be applied.
      *           To unset a field, set it to null and use the update mask to indicate that it should be mutated.
+     *     @type string $identity
+     *           Optional. The identity of the client who initiated this request.
      * }
      */
     public function __construct($data = NULL) {
@@ -206,6 +214,32 @@ class UpdateWorkflowExecutionOptionsRequest extends \Google\Protobuf\Internal\Me
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\FieldMask::class);
         $this->update_mask = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. The identity of the client who initiated this request.
+     *
+     * Generated from protobuf field <code>string identity = 5;</code>
+     * @return string
+     */
+    public function getIdentity()
+    {
+        return $this->identity;
+    }
+
+    /**
+     * Optional. The identity of the client who initiated this request.
+     *
+     * Generated from protobuf field <code>string identity = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setIdentity($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->identity = $var;
 
         return $this;
     }

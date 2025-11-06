@@ -418,7 +418,7 @@ class DescribeTaskQueueRequest extends \Google\Protobuf\Internal\Message
      */
     public function getTaskQueueTypes()
     {
-        if ($this->task_queue_types->count() !== 0) {
+        if (count($this->task_queue_types) !== 0) {
             @trigger_error('task_queue_types is deprecated.', E_USER_DEPRECATED);
         }
         return $this->task_queue_types;
@@ -436,7 +436,7 @@ class DescribeTaskQueueRequest extends \Google\Protobuf\Internal\Message
     public function setTaskQueueTypes($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Temporal\Api\Enums\V1\TaskQueueType::class);
-        if ($arr->count() !== 0) {
+        if (count($arr) !== 0) {
             @trigger_error('task_queue_types is deprecated.', E_USER_DEPRECATED);
         }
         $this->task_queue_types = $arr;

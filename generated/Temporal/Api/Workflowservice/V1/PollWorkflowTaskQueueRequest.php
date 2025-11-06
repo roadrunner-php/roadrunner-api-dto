@@ -53,12 +53,6 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentOptions deployment_options = 6;</code>
      */
     protected $deployment_options = null;
-    /**
-     * Worker info to be sent to the server.
-     *
-     * Generated from protobuf field <code>.temporal.api.worker.v1.WorkerHeartbeat worker_heartbeat = 7;</code>
-     */
-    protected $worker_heartbeat = null;
 
     /**
      * Constructor.
@@ -81,8 +75,6 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentOptions $deployment_options
      *           Worker deployment options that user has set in the worker.
      *           Experimental. Worker Deployments are experimental and might significantly change in the future.
-     *     @type \Temporal\Api\Worker\V1\WorkerHeartbeat $worker_heartbeat
-     *           Worker info to be sent to the server.
      * }
      */
     public function __construct($data = NULL) {
@@ -290,42 +282,6 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentOptions::class);
         $this->deployment_options = $var;
-
-        return $this;
-    }
-
-    /**
-     * Worker info to be sent to the server.
-     *
-     * Generated from protobuf field <code>.temporal.api.worker.v1.WorkerHeartbeat worker_heartbeat = 7;</code>
-     * @return \Temporal\Api\Worker\V1\WorkerHeartbeat|null
-     */
-    public function getWorkerHeartbeat()
-    {
-        return $this->worker_heartbeat;
-    }
-
-    public function hasWorkerHeartbeat()
-    {
-        return isset($this->worker_heartbeat);
-    }
-
-    public function clearWorkerHeartbeat()
-    {
-        unset($this->worker_heartbeat);
-    }
-
-    /**
-     * Worker info to be sent to the server.
-     *
-     * Generated from protobuf field <code>.temporal.api.worker.v1.WorkerHeartbeat worker_heartbeat = 7;</code>
-     * @param \Temporal\Api\Worker\V1\WorkerHeartbeat $var
-     * @return $this
-     */
-    public function setWorkerHeartbeat($var)
-    {
-        GPBUtil::checkMessage($var, \Temporal\Api\Worker\V1\WorkerHeartbeat::class);
-        $this->worker_heartbeat = $var;
 
         return $this;
     }

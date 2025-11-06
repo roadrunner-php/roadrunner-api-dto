@@ -124,6 +124,18 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.workflow.v1.DeploymentVersionTransition version_transition = 6;</code>
      */
     protected $version_transition = null;
+    /**
+     * Monotonic counter reflecting the latest routing decision for this workflow execution.
+     * Used for staleness detection between history and matching when dispatching tasks to workers.
+     * Incremented when a workflow execution routes to a new deployment version, which happens 
+     * when a worker of the new deployment version completes a workflow task.
+     * Note: Pinned tasks and sticky tasks send a value of 0 for this field since these tasks do not
+     * face the problem of inconsistent dispatching that arises from eventual consistency between 
+     * task queues and their partitions.
+     *
+     * Generated from protobuf field <code>int64 revision_number = 8;</code>
+     */
+    protected $revision_number = 0;
 
     /**
      * Constructor.
@@ -207,6 +219,14 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      *           worker's task completion response.
      *           Pending activities will not start new attempts during a transition. Once the transition is
      *           completed, pending activities will start their next attempt on the new version.
+     *     @type int|string $revision_number
+     *           Monotonic counter reflecting the latest routing decision for this workflow execution.
+     *           Used for staleness detection between history and matching when dispatching tasks to workers.
+     *           Incremented when a workflow execution routes to a new deployment version, which happens 
+     *           when a worker of the new deployment version completes a workflow task.
+     *           Note: Pinned tasks and sticky tasks send a value of 0 for this field since these tasks do not
+     *           face the problem of inconsistent dispatching that arises from eventual consistency between 
+     *           task queues and their partitions.
      * }
      */
     public function __construct($data = NULL) {
@@ -592,6 +612,44 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\DeploymentVersionTransition::class);
         $this->version_transition = $var;
+
+        return $this;
+    }
+
+    /**
+     * Monotonic counter reflecting the latest routing decision for this workflow execution.
+     * Used for staleness detection between history and matching when dispatching tasks to workers.
+     * Incremented when a workflow execution routes to a new deployment version, which happens 
+     * when a worker of the new deployment version completes a workflow task.
+     * Note: Pinned tasks and sticky tasks send a value of 0 for this field since these tasks do not
+     * face the problem of inconsistent dispatching that arises from eventual consistency between 
+     * task queues and their partitions.
+     *
+     * Generated from protobuf field <code>int64 revision_number = 8;</code>
+     * @return int|string
+     */
+    public function getRevisionNumber()
+    {
+        return $this->revision_number;
+    }
+
+    /**
+     * Monotonic counter reflecting the latest routing decision for this workflow execution.
+     * Used for staleness detection between history and matching when dispatching tasks to workers.
+     * Incremented when a workflow execution routes to a new deployment version, which happens 
+     * when a worker of the new deployment version completes a workflow task.
+     * Note: Pinned tasks and sticky tasks send a value of 0 for this field since these tasks do not
+     * face the problem of inconsistent dispatching that arises from eventual consistency between 
+     * task queues and their partitions.
+     *
+     * Generated from protobuf field <code>int64 revision_number = 8;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setRevisionNumber($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->revision_number = $var;
 
         return $this;
     }

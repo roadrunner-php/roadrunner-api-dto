@@ -76,6 +76,13 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp ramping_version_percentage_changed_time = 6;</code>
      */
     protected $ramping_version_percentage_changed_time = null;
+    /**
+     * Monotonically increasing value which is incremented on every mutation 
+     * to any field of this message to achieve eventual consistency between task queues and their partitions.
+     *
+     * Generated from protobuf field <code>int64 revision_number = 10;</code>
+     */
+    protected $revision_number = 0;
 
     /**
      * Constructor.
@@ -111,6 +118,9 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $ramping_version_percentage_changed_time
      *           Last time ramping version percentage was changed.
      *           If ramping version is changed, this is also updated, even if the percentage stays the same.
+     *     @type int|string $revision_number
+     *           Monotonically increasing value which is incremented on every mutation 
+     *           to any field of this message to achieve eventual consistency between task queues and their partitions.
      * }
      */
     public function __construct($data = NULL) {
@@ -408,6 +418,34 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->ramping_version_percentage_changed_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Monotonically increasing value which is incremented on every mutation 
+     * to any field of this message to achieve eventual consistency between task queues and their partitions.
+     *
+     * Generated from protobuf field <code>int64 revision_number = 10;</code>
+     * @return int|string
+     */
+    public function getRevisionNumber()
+    {
+        return $this->revision_number;
+    }
+
+    /**
+     * Monotonically increasing value which is incremented on every mutation 
+     * to any field of this message to achieve eventual consistency between task queues and their partitions.
+     *
+     * Generated from protobuf field <code>int64 revision_number = 10;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setRevisionNumber($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->revision_number = $var;
 
         return $this;
     }

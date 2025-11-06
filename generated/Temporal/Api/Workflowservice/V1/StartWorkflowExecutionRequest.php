@@ -180,6 +180,12 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 27;</code>
      */
     protected $priority = null;
+    /**
+     * Deployment Options of the worker who will process the eager task. Passed when `request_eager_execution=true`.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentOptions eager_worker_deployment_options = 28;</code>
+     */
+    protected $eager_worker_deployment_options = null;
 
     /**
      * Constructor.
@@ -253,6 +259,8 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      *           running workflow. If set, it will add a history event to the running workflow.
      *     @type \Temporal\Api\Common\V1\Priority $priority
      *           Priority metadata
+     *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentOptions $eager_worker_deployment_options
+     *           Deployment Options of the worker who will process the eager task. Passed when `request_eager_execution=true`.
      * }
      */
     public function __construct($data = NULL) {
@@ -1136,6 +1144,42 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Priority::class);
         $this->priority = $var;
+
+        return $this;
+    }
+
+    /**
+     * Deployment Options of the worker who will process the eager task. Passed when `request_eager_execution=true`.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentOptions eager_worker_deployment_options = 28;</code>
+     * @return \Temporal\Api\Deployment\V1\WorkerDeploymentOptions|null
+     */
+    public function getEagerWorkerDeploymentOptions()
+    {
+        return $this->eager_worker_deployment_options;
+    }
+
+    public function hasEagerWorkerDeploymentOptions()
+    {
+        return isset($this->eager_worker_deployment_options);
+    }
+
+    public function clearEagerWorkerDeploymentOptions()
+    {
+        unset($this->eager_worker_deployment_options);
+    }
+
+    /**
+     * Deployment Options of the worker who will process the eager task. Passed when `request_eager_execution=true`.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentOptions eager_worker_deployment_options = 28;</code>
+     * @param \Temporal\Api\Deployment\V1\WorkerDeploymentOptions $var
+     * @return $this
+     */
+    public function setEagerWorkerDeploymentOptions($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentOptions::class);
+        $this->eager_worker_deployment_options = $var;
 
         return $this;
     }
