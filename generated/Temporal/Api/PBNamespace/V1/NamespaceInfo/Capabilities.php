@@ -34,6 +34,18 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool async_update = 3;</code>
      */
     protected $async_update = false;
+    /**
+     * True if the namespace supports worker heartbeats
+     *
+     * Generated from protobuf field <code>bool worker_heartbeats = 4;</code>
+     */
+    protected $worker_heartbeats = false;
+    /**
+     * True if the namespace supports reported problems search attribute
+     *
+     * Generated from protobuf field <code>bool reported_problems_search_attribute = 5;</code>
+     */
+    protected $reported_problems_search_attribute = false;
 
     /**
      * Constructor.
@@ -47,6 +59,10 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      *           True if the namespace supports sync update
      *     @type bool $async_update
      *           True if the namespace supports async update
+     *     @type bool $worker_heartbeats
+     *           True if the namespace supports worker heartbeats
+     *     @type bool $reported_problems_search_attribute
+     *           True if the namespace supports reported problems search attribute
      * }
      */
     public function __construct($data = NULL) {
@@ -128,6 +144,58 @@ class Capabilities extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->async_update = $var;
+
+        return $this;
+    }
+
+    /**
+     * True if the namespace supports worker heartbeats
+     *
+     * Generated from protobuf field <code>bool worker_heartbeats = 4;</code>
+     * @return bool
+     */
+    public function getWorkerHeartbeats()
+    {
+        return $this->worker_heartbeats;
+    }
+
+    /**
+     * True if the namespace supports worker heartbeats
+     *
+     * Generated from protobuf field <code>bool worker_heartbeats = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setWorkerHeartbeats($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->worker_heartbeats = $var;
+
+        return $this;
+    }
+
+    /**
+     * True if the namespace supports reported problems search attribute
+     *
+     * Generated from protobuf field <code>bool reported_problems_search_attribute = 5;</code>
+     * @return bool
+     */
+    public function getReportedProblemsSearchAttribute()
+    {
+        return $this->reported_problems_search_attribute;
+    }
+
+    /**
+     * True if the namespace supports reported problems search attribute
+     *
+     * Generated from protobuf field <code>bool reported_problems_search_attribute = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setReportedProblemsSearchAttribute($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->reported_problems_search_attribute = $var;
 
         return $this;
     }

@@ -55,6 +55,22 @@ class WorkerDeploymentInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string last_modifier_identity = 5;</code>
      */
     protected $last_modifier_identity = '';
+    /**
+     * Identity of the client that has the exclusive right to make changes to this Worker Deployment.
+     * Empty by default.
+     * If this is set, clients whose identity does not match `manager_identity` will not be able to make changes
+     * to this Worker Deployment. They can either set their own identity as the manager or unset the field to proceed.
+     *
+     * Generated from protobuf field <code>string manager_identity = 6;</code>
+     */
+    protected $manager_identity = '';
+    /**
+     * Indicates whether the routing_config has been fully propagated to all
+     * relevant task queues and their partitions.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.RoutingConfigUpdateState routing_config_update_state = 7;</code>
+     */
+    protected $routing_config_update_state = 0;
 
     /**
      * Constructor.
@@ -76,6 +92,14 @@ class WorkerDeploymentInfo extends \Google\Protobuf\Internal\Message
      *           Identity of the last client who modified the configuration of this Deployment. Set to the
      *           `identity` value sent by APIs such as `SetWorkerDeploymentCurrentVersion` and
      *           `SetWorkerDeploymentRampingVersion`.
+     *     @type string $manager_identity
+     *           Identity of the client that has the exclusive right to make changes to this Worker Deployment.
+     *           Empty by default.
+     *           If this is set, clients whose identity does not match `manager_identity` will not be able to make changes
+     *           to this Worker Deployment. They can either set their own identity as the manager or unset the field to proceed.
+     *     @type int $routing_config_update_state
+     *           Indicates whether the routing_config has been fully propagated to all
+     *           relevant task queues and their partitions.
      * }
      */
     public function __construct($data = NULL) {
@@ -233,6 +257,66 @@ class WorkerDeploymentInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->last_modifier_identity = $var;
+
+        return $this;
+    }
+
+    /**
+     * Identity of the client that has the exclusive right to make changes to this Worker Deployment.
+     * Empty by default.
+     * If this is set, clients whose identity does not match `manager_identity` will not be able to make changes
+     * to this Worker Deployment. They can either set their own identity as the manager or unset the field to proceed.
+     *
+     * Generated from protobuf field <code>string manager_identity = 6;</code>
+     * @return string
+     */
+    public function getManagerIdentity()
+    {
+        return $this->manager_identity;
+    }
+
+    /**
+     * Identity of the client that has the exclusive right to make changes to this Worker Deployment.
+     * Empty by default.
+     * If this is set, clients whose identity does not match `manager_identity` will not be able to make changes
+     * to this Worker Deployment. They can either set their own identity as the manager or unset the field to proceed.
+     *
+     * Generated from protobuf field <code>string manager_identity = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setManagerIdentity($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->manager_identity = $var;
+
+        return $this;
+    }
+
+    /**
+     * Indicates whether the routing_config has been fully propagated to all
+     * relevant task queues and their partitions.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.RoutingConfigUpdateState routing_config_update_state = 7;</code>
+     * @return int
+     */
+    public function getRoutingConfigUpdateState()
+    {
+        return $this->routing_config_update_state;
+    }
+
+    /**
+     * Indicates whether the routing_config has been fully propagated to all
+     * relevant task queues and their partitions.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.RoutingConfigUpdateState routing_config_update_state = 7;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRoutingConfigUpdateState($var)
+    {
+        GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\RoutingConfigUpdateState::class);
+        $this->routing_config_update_state = $var;
 
         return $this;
     }

@@ -174,8 +174,8 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * GetWorkflowExecutionHistoryReverse returns the history of specified workflow execution in reverse 
-     * order (starting from last event). Fails with`NotFound` if the specified workflow execution is 
+     * GetWorkflowExecutionHistoryReverse returns the history of specified workflow execution in reverse
+     * order (starting from last event). Fails with`NotFound` if the specified workflow execution is
      * unknown to the service.
      * @param \Temporal\Api\Workflowservice\V1\GetWorkflowExecutionHistoryReverseRequest $argument input argument
      * @param array $metadata metadata
@@ -632,7 +632,8 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * ScanWorkflowExecutions is a visibility API to list large amount of workflow executions in a specific namespace without order.
+     * ScanWorkflowExecutions _was_ a visibility API to list large amount of workflow executions in a specific namespace without order.
+     * It has since been deprecated in favor of `ListWorkflowExecutions` and rewritten to use `ListWorkflowExecutions` internally.
      *
      * Deprecated: Replaced with `ListWorkflowExecutions`.
      * (-- api-linter: core::0127::http-annotation=disabled
@@ -968,8 +969,8 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * members are compatible with one another.
      *
      * A single build id may be mapped to multiple task queues using this API for cases where a single process hosts
-     * multiple workers. 
-     * 
+     * multiple workers.
+     *
      * To query which workers can be retired, use the `GetWorkerTaskReachability` API.
      *
      * NOTE: The number of task queues mapped to a single build id is limited by the `limit.taskQueuesPerBuildId`
@@ -1313,6 +1314,22 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/UpdateWorkerDeploymentVersionMetadata',
         $argument,
         ['\Temporal\Api\Workflowservice\V1\UpdateWorkerDeploymentVersionMetadataResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Set/unset the ManagerIdentity of a Worker Deployment.
+     * Experimental. This API might significantly change or be removed in a future release.
+     * @param \Temporal\Api\Workflowservice\V1\SetWorkerDeploymentManagerRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\SetWorkerDeploymentManagerResponse>
+     */
+    public function SetWorkerDeploymentManager(\Temporal\Api\Workflowservice\V1\SetWorkerDeploymentManagerRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/SetWorkerDeploymentManager',
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\SetWorkerDeploymentManagerResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -1742,6 +1759,21 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/UpdateWorkerConfig',
         $argument,
         ['\Temporal\Api\Workflowservice\V1\UpdateWorkerConfigResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * DescribeWorker returns information about the specified worker.
+     * @param \Temporal\Api\Workflowservice\V1\DescribeWorkerRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall<\Temporal\Api\Workflowservice\V1\DescribeWorkerResponse>
+     */
+    public function DescribeWorker(\Temporal\Api\Workflowservice\V1\DescribeWorkerRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/DescribeWorker',
+        $argument,
+        ['\Temporal\Api\Workflowservice\V1\DescribeWorkerResponse', 'decode'],
         $metadata, $options);
     }
 

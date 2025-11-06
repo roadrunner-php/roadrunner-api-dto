@@ -389,7 +389,7 @@ class DescribeTaskQueueResponse extends \Google\Protobuf\Internal\Message
      */
     public function getVersionsInfo()
     {
-        if ($this->versions_info->count() !== 0) {
+        if (count($this->versions_info) !== 0) {
             @trigger_error('versions_info is deprecated.', E_USER_DEPRECATED);
         }
         return $this->versions_info;
@@ -408,7 +408,7 @@ class DescribeTaskQueueResponse extends \Google\Protobuf\Internal\Message
     public function setVersionsInfo($var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Taskqueue\V1\TaskQueueVersionInfo::class);
-        if ($arr->count() !== 0) {
+        if (count($arr) !== 0) {
             @trigger_error('versions_info is deprecated.', E_USER_DEPRECATED);
         }
         $this->versions_info = $arr;

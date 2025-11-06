@@ -26,6 +26,12 @@ class TaskQueueConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.RateLimitConfig fairness_keys_rate_limit_default = 2;</code>
      */
     protected $fairness_keys_rate_limit_default = null;
+    /**
+     * If set, overrides the fairness weights for the corresponding fairness keys.
+     *
+     * Generated from protobuf field <code>map<string, float> fairness_weight_overrides = 3;</code>
+     */
+    private $fairness_weight_overrides;
 
     /**
      * Constructor.
@@ -37,6 +43,8 @@ class TaskQueueConfig extends \Google\Protobuf\Internal\Message
      *           Unless modified, this is the system-defined rate limit.
      *     @type \Temporal\Api\Taskqueue\V1\RateLimitConfig $fairness_keys_rate_limit_default
      *           If set, each individual fairness key will be limited to this rate, scaled by the weight of the fairness key.
+     *     @type array|\Google\Protobuf\Internal\MapField $fairness_weight_overrides
+     *           If set, overrides the fairness weights for the corresponding fairness keys.
      * }
      */
     public function __construct($data = NULL) {
@@ -112,6 +120,32 @@ class TaskQueueConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\RateLimitConfig::class);
         $this->fairness_keys_rate_limit_default = $var;
+
+        return $this;
+    }
+
+    /**
+     * If set, overrides the fairness weights for the corresponding fairness keys.
+     *
+     * Generated from protobuf field <code>map<string, float> fairness_weight_overrides = 3;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getFairnessWeightOverrides()
+    {
+        return $this->fairness_weight_overrides;
+    }
+
+    /**
+     * If set, overrides the fairness weights for the corresponding fairness keys.
+     *
+     * Generated from protobuf field <code>map<string, float> fairness_weight_overrides = 3;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setFairnessWeightOverrides($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::FLOAT);
+        $this->fairness_weight_overrides = $arr;
 
         return $this;
     }

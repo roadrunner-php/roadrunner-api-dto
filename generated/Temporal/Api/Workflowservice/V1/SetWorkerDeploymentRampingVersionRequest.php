@@ -81,6 +81,14 @@ class SetWorkerDeploymentRampingVersionRequest extends \Google\Protobuf\Internal
      * Generated from protobuf field <code>bool ignore_missing_task_queues = 7;</code>
      */
     protected $ignore_missing_task_queues = false;
+    /**
+     * Optional. By default this request will be rejected if no pollers have been seen for the proposed
+     * Current Version, in order to protect users from routing tasks to pollers that do not exist, leading
+     * to possible timeouts. Pass `true` here to bypass this protection.
+     *
+     * Generated from protobuf field <code>bool allow_no_pollers = 10;</code>
+     */
+    protected $allow_no_pollers = false;
 
     /**
      * Constructor.
@@ -122,6 +130,10 @@ class SetWorkerDeploymentRampingVersionRequest extends \Google\Protobuf\Internal
      *           Note: this check only happens when the ramping version is about to change, not every time
      *           that the percentage changes. Also note that the check is against the deployment's Current
      *           Version, not the previous Ramping Version.
+     *     @type bool $allow_no_pollers
+     *           Optional. By default this request will be rejected if no pollers have been seen for the proposed
+     *           Current Version, in order to protect users from routing tasks to pollers that do not exist, leading
+     *           to possible timeouts. Pass `true` here to bypass this protection.
      * }
      */
     public function __construct($data = NULL) {
@@ -371,6 +383,36 @@ class SetWorkerDeploymentRampingVersionRequest extends \Google\Protobuf\Internal
     {
         GPBUtil::checkBool($var);
         $this->ignore_missing_task_queues = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. By default this request will be rejected if no pollers have been seen for the proposed
+     * Current Version, in order to protect users from routing tasks to pollers that do not exist, leading
+     * to possible timeouts. Pass `true` here to bypass this protection.
+     *
+     * Generated from protobuf field <code>bool allow_no_pollers = 10;</code>
+     * @return bool
+     */
+    public function getAllowNoPollers()
+    {
+        return $this->allow_no_pollers;
+    }
+
+    /**
+     * Optional. By default this request will be rejected if no pollers have been seen for the proposed
+     * Current Version, in order to protect users from routing tasks to pollers that do not exist, leading
+     * to possible timeouts. Pass `true` here to bypass this protection.
+     *
+     * Generated from protobuf field <code>bool allow_no_pollers = 10;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setAllowNoPollers($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->allow_no_pollers = $var;
 
         return $this;
     }

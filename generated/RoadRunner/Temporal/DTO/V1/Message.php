@@ -95,6 +95,12 @@ class Message extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int64 history_size = 13;</code>
      */
     protected $history_size = 0;
+    /**
+     * workflow worker pid
+     *
+     * Generated from protobuf field <code>uint64 wwpid = 14;</code>
+     */
+    protected $wwpid = 0;
 
     /**
      * Constructor.
@@ -129,6 +135,8 @@ class Message extends \Google\Protobuf\Internal\Message
      *     @type int|string $history_size
      *           returns the current length of history when called.
      *           This value may change throughout the life of the workflow.
+     *     @type int|string $wwpid
+     *           workflow worker pid
      * }
      */
     public function __construct($data = NULL) {
@@ -502,6 +510,32 @@ class Message extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->history_size = $var;
+
+        return $this;
+    }
+
+    /**
+     * workflow worker pid
+     *
+     * Generated from protobuf field <code>uint64 wwpid = 14;</code>
+     * @return int|string
+     */
+    public function getWwpid()
+    {
+        return $this->wwpid;
+    }
+
+    /**
+     * workflow worker pid
+     *
+     * Generated from protobuf field <code>uint64 wwpid = 14;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setWwpid($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->wwpid = $var;
 
         return $this;
     }

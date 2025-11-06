@@ -23,17 +23,15 @@ class WorkerHostInfo extends \Google\Protobuf\Internal\Message
      */
     protected $host_name = '';
     /**
-     * Worker process identifier. This id should be unique for all _processes_
-     * running workers in the namespace, and should be shared by all workers
-     * in the same process.
+     * Worker grouping identifier. A key to group workers that share the same client+namespace+process.
      * This will be used to build the worker command nexus task queue name:
-     * "temporal-sys/worker-commands/{process_key}"
+     * "temporal-sys/worker-commands/{worker_grouping_key}"
      *
-     * Generated from protobuf field <code>string process_key = 5;</code>
+     * Generated from protobuf field <code>string worker_grouping_key = 5;</code>
      */
-    protected $process_key = '';
+    protected $worker_grouping_key = '';
     /**
-     * Worker process identifier. Unlike process_key, this id only needs to be unique
+     * Worker process identifier. This id only needs to be unique
      * within one host (so using e.g. a unix pid would be appropriate).
      *
      * Generated from protobuf field <code>string process_id = 2;</code>
@@ -62,14 +60,12 @@ class WorkerHostInfo extends \Google\Protobuf\Internal\Message
      *
      *     @type string $host_name
      *           Worker host identifier.
-     *     @type string $process_key
-     *           Worker process identifier. This id should be unique for all _processes_
-     *           running workers in the namespace, and should be shared by all workers
-     *           in the same process.
+     *     @type string $worker_grouping_key
+     *           Worker grouping identifier. A key to group workers that share the same client+namespace+process.
      *           This will be used to build the worker command nexus task queue name:
-     *           "temporal-sys/worker-commands/{process_key}"
+     *           "temporal-sys/worker-commands/{worker_grouping_key}"
      *     @type string $process_id
-     *           Worker process identifier. Unlike process_key, this id only needs to be unique
+     *           Worker process identifier. This id only needs to be unique
      *           within one host (so using e.g. a unix pid would be appropriate).
      *     @type float $current_host_cpu_usage
      *           System used CPU as a float in the range [0.0, 1.0] where 1.0 is defined as all
@@ -111,41 +107,37 @@ class WorkerHostInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Worker process identifier. This id should be unique for all _processes_
-     * running workers in the namespace, and should be shared by all workers
-     * in the same process.
+     * Worker grouping identifier. A key to group workers that share the same client+namespace+process.
      * This will be used to build the worker command nexus task queue name:
-     * "temporal-sys/worker-commands/{process_key}"
+     * "temporal-sys/worker-commands/{worker_grouping_key}"
      *
-     * Generated from protobuf field <code>string process_key = 5;</code>
+     * Generated from protobuf field <code>string worker_grouping_key = 5;</code>
      * @return string
      */
-    public function getProcessKey()
+    public function getWorkerGroupingKey()
     {
-        return $this->process_key;
+        return $this->worker_grouping_key;
     }
 
     /**
-     * Worker process identifier. This id should be unique for all _processes_
-     * running workers in the namespace, and should be shared by all workers
-     * in the same process.
+     * Worker grouping identifier. A key to group workers that share the same client+namespace+process.
      * This will be used to build the worker command nexus task queue name:
-     * "temporal-sys/worker-commands/{process_key}"
+     * "temporal-sys/worker-commands/{worker_grouping_key}"
      *
-     * Generated from protobuf field <code>string process_key = 5;</code>
+     * Generated from protobuf field <code>string worker_grouping_key = 5;</code>
      * @param string $var
      * @return $this
      */
-    public function setProcessKey($var)
+    public function setWorkerGroupingKey($var)
     {
         GPBUtil::checkString($var, True);
-        $this->process_key = $var;
+        $this->worker_grouping_key = $var;
 
         return $this;
     }
 
     /**
-     * Worker process identifier. Unlike process_key, this id only needs to be unique
+     * Worker process identifier. This id only needs to be unique
      * within one host (so using e.g. a unix pid would be appropriate).
      *
      * Generated from protobuf field <code>string process_id = 2;</code>
@@ -157,7 +149,7 @@ class WorkerHostInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Worker process identifier. Unlike process_key, this id only needs to be unique
+     * Worker process identifier. This id only needs to be unique
      * within one host (so using e.g. a unix pid would be appropriate).
      *
      * Generated from protobuf field <code>string process_id = 2;</code>

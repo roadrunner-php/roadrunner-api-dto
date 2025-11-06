@@ -56,6 +56,7 @@ class PauseActivityRequest extends \Google\Protobuf\Internal\Message
      *           Only the activity with this ID will be paused.
      *     @type string $type
      *           Pause all running activities of this type.
+     *           Note: Experimental - the behavior of pause by activity type might change in a future release.
      *     @type string $reason
      *           Reason to pause the activity.
      * }
@@ -186,6 +187,7 @@ class PauseActivityRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Pause all running activities of this type.
+     * Note: Experimental - the behavior of pause by activity type might change in a future release.
      *
      * Generated from protobuf field <code>string type = 5;</code>
      * @return string
@@ -202,6 +204,7 @@ class PauseActivityRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Pause all running activities of this type.
+     * Note: Experimental - the behavior of pause by activity type might change in a future release.
      *
      * Generated from protobuf field <code>string type = 5;</code>
      * @param string $var

@@ -49,6 +49,21 @@ class UpdateTaskQueueConfigRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.workflowservice.v1.UpdateTaskQueueConfigRequest.RateLimitUpdate update_fairness_key_rate_limit_default = 6;</code>
      */
     protected $update_fairness_key_rate_limit_default = null;
+    /**
+     * If set, overrides the fairness weight for each specified fairness key.
+     * Fairness keys not listed in this map will keep their existing overrides (if any).
+     *
+     * Generated from protobuf field <code>map<string, float> set_fairness_weight_overrides = 7;</code>
+     */
+    private $set_fairness_weight_overrides;
+    /**
+     * If set, removes any existing fairness weight overrides for each specified fairness key.
+     * Fairness weights for corresponding keys fall back to the values set during task creation (if any),
+     * or to the default weight of 1.0.
+     *
+     * Generated from protobuf field <code>repeated string unset_fairness_weight_overrides = 8;</code>
+     */
+    private $unset_fairness_weight_overrides;
 
     /**
      * Constructor.
@@ -70,6 +85,13 @@ class UpdateTaskQueueConfigRequest extends \Google\Protobuf\Internal\Message
      *           Update to the default fairness key rate limit.
      *           If not set, this configuration is unchanged.
      *           If the `rate_limit` field in the `RateLimitUpdate` is missing, remove the existing rate limit.
+     *     @type array|\Google\Protobuf\Internal\MapField $set_fairness_weight_overrides
+     *           If set, overrides the fairness weight for each specified fairness key.
+     *           Fairness keys not listed in this map will keep their existing overrides (if any).
+     *     @type string[] $unset_fairness_weight_overrides
+     *           If set, removes any existing fairness weight overrides for each specified fairness key.
+     *           Fairness weights for corresponding keys fall back to the values set during task creation (if any),
+     *           or to the default weight of 1.0.
      * }
      */
     public function __construct($data = NULL) {
@@ -247,6 +269,64 @@ class UpdateTaskQueueConfigRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Workflowservice\V1\UpdateTaskQueueConfigRequest\RateLimitUpdate::class);
         $this->update_fairness_key_rate_limit_default = $var;
+
+        return $this;
+    }
+
+    /**
+     * If set, overrides the fairness weight for each specified fairness key.
+     * Fairness keys not listed in this map will keep their existing overrides (if any).
+     *
+     * Generated from protobuf field <code>map<string, float> set_fairness_weight_overrides = 7;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getSetFairnessWeightOverrides()
+    {
+        return $this->set_fairness_weight_overrides;
+    }
+
+    /**
+     * If set, overrides the fairness weight for each specified fairness key.
+     * Fairness keys not listed in this map will keep their existing overrides (if any).
+     *
+     * Generated from protobuf field <code>map<string, float> set_fairness_weight_overrides = 7;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setSetFairnessWeightOverrides($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::FLOAT);
+        $this->set_fairness_weight_overrides = $arr;
+
+        return $this;
+    }
+
+    /**
+     * If set, removes any existing fairness weight overrides for each specified fairness key.
+     * Fairness weights for corresponding keys fall back to the values set during task creation (if any),
+     * or to the default weight of 1.0.
+     *
+     * Generated from protobuf field <code>repeated string unset_fairness_weight_overrides = 8;</code>
+     * @return RepeatedField<string>
+     */
+    public function getUnsetFairnessWeightOverrides()
+    {
+        return $this->unset_fairness_weight_overrides;
+    }
+
+    /**
+     * If set, removes any existing fairness weight overrides for each specified fairness key.
+     * Fairness weights for corresponding keys fall back to the values set during task creation (if any),
+     * or to the default weight of 1.0.
+     *
+     * Generated from protobuf field <code>repeated string unset_fairness_weight_overrides = 8;</code>
+     * @param string[] $var
+     * @return $this
+     */
+    public function setUnsetFairnessWeightOverrides($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->unset_fairness_weight_overrides = $arr;
 
         return $this;
     }
