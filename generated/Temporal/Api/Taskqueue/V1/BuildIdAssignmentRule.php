@@ -83,9 +83,9 @@ class BuildIdAssignmentRule extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTargetBuildId($var)
+    public function setTargetBuildId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->target_build_id = $var;
 
         return $this;
@@ -118,9 +118,8 @@ class BuildIdAssignmentRule extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\RampByPercentage $var
      * @return $this
      */
-    public function setPercentageRamp($var)
+    public function setPercentageRamp(\Temporal\Api\Taskqueue\V1\RampByPercentage|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\RampByPercentage::class);
         $this->writeOneof(3, $var);
 
         return $this;

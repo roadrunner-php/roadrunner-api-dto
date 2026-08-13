@@ -76,9 +76,8 @@ class WorkflowMetadata extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Sdk\V1\WorkflowDefinition $var
      * @return $this
      */
-    public function setDefinition($var)
+    public function setDefinition(\Temporal\Api\Sdk\V1\WorkflowDefinition|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Sdk\V1\WorkflowDefinition::class);
         $this->definition = $var;
 
         return $this;
@@ -104,9 +103,9 @@ class WorkflowMetadata extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setCurrentDetails($var)
+    public function setCurrentDetails(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->current_details = $var;
 
         return $this;

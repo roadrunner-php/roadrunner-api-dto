@@ -29,6 +29,12 @@ class ExecuteMultiOperationRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .temporal.api.workflowservice.v1.ExecuteMultiOperationRequest.Operation operations = 2;</code>
      */
     private $operations;
+    /**
+     * Resource ID for routing. Should match operations[0].start_workflow.workflow_id
+     *
+     * Generated from protobuf field <code>string resource_id = 3;</code>
+     */
+    protected $resource_id = '';
 
     /**
      * Constructor.
@@ -44,6 +50,8 @@ class ExecuteMultiOperationRequest extends \Google\Protobuf\Internal\Message
      *           - The workflow ids must match across operations.
      *           - The only valid list of operations at this time is [StartWorkflow, UpdateWorkflow], in this order.
      *           Note that additional operation-specific restrictions have to be considered.
+     *     @type string $resource_id
+     *           Resource ID for routing. Should match operations[0].start_workflow.workflow_id
      * }
      */
     public function __construct($data = NULL) {
@@ -65,9 +73,9 @@ class ExecuteMultiOperationRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -101,10 +109,36 @@ class ExecuteMultiOperationRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflowservice\V1\ExecuteMultiOperationRequest\Operation[] $var
      * @return $this
      */
-    public function setOperations($var)
+    public function setOperations(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Workflowservice\V1\ExecuteMultiOperationRequest\Operation::class);
         $this->operations = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Resource ID for routing. Should match operations[0].start_workflow.workflow_id
+     *
+     * Generated from protobuf field <code>string resource_id = 3;</code>
+     * @return string
+     */
+    public function getResourceId()
+    {
+        return $this->resource_id;
+    }
+
+    /**
+     * Resource ID for routing. Should match operations[0].start_workflow.workflow_id
+     *
+     * Generated from protobuf field <code>string resource_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setResourceId(string $var)
+    {
+        GPBUtil::checkString($var, true);
+        $this->resource_id = $var;
 
         return $this;
     }

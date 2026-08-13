@@ -64,9 +64,8 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Update\V1\Meta $var
      * @return $this
      */
-    public function setMeta($var)
+    public function setMeta(\Temporal\Api\Update\V1\Meta|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Update\V1\Meta::class);
         $this->meta = $var;
 
         return $this;
@@ -96,9 +95,8 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Update\V1\Input $var
      * @return $this
      */
-    public function setInput($var)
+    public function setInput(\Temporal\Api\Update\V1\Input|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Update\V1\Input::class);
         $this->input = $var;
 
         return $this;

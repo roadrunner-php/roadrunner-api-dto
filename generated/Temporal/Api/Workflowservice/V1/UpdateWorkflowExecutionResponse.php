@@ -102,9 +102,8 @@ class UpdateWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Update\V1\UpdateRef $var
      * @return $this
      */
-    public function setUpdateRef($var)
+    public function setUpdateRef(\Temporal\Api\Update\V1\UpdateRef|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Update\V1\UpdateRef::class);
         $this->update_ref = $var;
 
         return $this;
@@ -142,9 +141,8 @@ class UpdateWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Update\V1\Outcome $var
      * @return $this
      */
-    public function setOutcome($var)
+    public function setOutcome(\Temporal\Api\Update\V1\Outcome|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Update\V1\Outcome::class);
         $this->outcome = $var;
 
         return $this;
@@ -163,7 +161,7 @@ class UpdateWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
      * may then retry the call as needed.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.UpdateWorkflowExecutionLifecycleStage stage = 3;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\UpdateWorkflowExecutionLifecycleStage}
      */
     public function getStage()
     {
@@ -183,10 +181,10 @@ class UpdateWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
      * may then retry the call as needed.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.UpdateWorkflowExecutionLifecycleStage stage = 3;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\UpdateWorkflowExecutionLifecycleStage}
      * @return $this
      */
-    public function setStage($var)
+    public function setStage(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\UpdateWorkflowExecutionLifecycleStage::class);
         $this->stage = $var;

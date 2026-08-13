@@ -52,7 +52,7 @@ class BatchRequest extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\Command[] $var
      * @return $this
      */
-    public function setCommands($var)
+    public function setCommands(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\Centrifugal\API\DTO\V1\Command::class);
         $this->commands = $arr;
@@ -74,9 +74,8 @@ class BatchRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setParallel($var)
+    public function setParallel(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->parallel = $var;
 
         return $this;

@@ -92,9 +92,8 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\DeviceFilter $var
      * @return $this
      */
-    public function setFilter($var)
+    public function setFilter(\RoadRunner\Centrifugal\API\DTO\V1\DeviceFilter|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\DeviceFilter::class);
         $this->filter = $var;
 
         return $this;
@@ -114,7 +113,7 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setFcmTokens($var)
+    public function setFcmTokens(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->fcm_tokens = $arr;
@@ -136,9 +135,9 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setFcmTopic($var)
+    public function setFcmTopic(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->fcm_topic = $var;
 
         return $this;
@@ -158,9 +157,9 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setFcmCondition($var)
+    public function setFcmCondition(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->fcm_condition = $var;
 
         return $this;
@@ -180,7 +179,7 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setHmsTokens($var)
+    public function setHmsTokens(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->hms_tokens = $arr;
@@ -202,9 +201,9 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setHmsTopic($var)
+    public function setHmsTopic(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->hms_topic = $var;
 
         return $this;
@@ -224,9 +223,9 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setHmsCondition($var)
+    public function setHmsCondition(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->hms_condition = $var;
 
         return $this;
@@ -246,7 +245,7 @@ class PushRecipient extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setApnsTokens($var)
+    public function setApnsTokens(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->apns_tokens = $arr;

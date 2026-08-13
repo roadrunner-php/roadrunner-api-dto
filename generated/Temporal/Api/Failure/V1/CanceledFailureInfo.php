@@ -18,6 +18,12 @@ class CanceledFailureInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads details = 1;</code>
      */
     protected $details = null;
+    /**
+     * The identity of the worker or client that requested the cancellation.
+     *
+     * Generated from protobuf field <code>string identity = 2;</code>
+     */
+    protected $identity = '';
 
     /**
      * Constructor.
@@ -26,6 +32,8 @@ class CanceledFailureInfo extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Temporal\Api\Common\V1\Payloads $details
+     *     @type string $identity
+     *           The identity of the worker or client that requested the cancellation.
      * }
      */
     public function __construct($data = NULL) {
@@ -57,10 +65,35 @@ class CanceledFailureInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setDetails($var)
+    public function setDetails(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->details = $var;
+
+        return $this;
+    }
+
+    /**
+     * The identity of the worker or client that requested the cancellation.
+     *
+     * Generated from protobuf field <code>string identity = 2;</code>
+     * @return string
+     */
+    public function getIdentity()
+    {
+        return $this->identity;
+    }
+
+    /**
+     * The identity of the worker or client that requested the cancellation.
+     *
+     * Generated from protobuf field <code>string identity = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setIdentity(string $var)
+    {
+        GPBUtil::checkString($var, true);
+        $this->identity = $var;
 
         return $this;
     }

@@ -79,9 +79,8 @@ class TaskQueueMetadata extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\DoubleValue $var
      * @return $this
      */
-    public function setMaxTasksPerSecond($var)
+    public function setMaxTasksPerSecond(\Google\Protobuf\DoubleValue|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\DoubleValue::class);
         $this->max_tasks_per_second = $var;
 
         return $this;

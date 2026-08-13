@@ -85,7 +85,7 @@ class GetWorkerTaskReachabilityResponse extends \Google\Protobuf\Internal\Messag
      * @param \Temporal\Api\Taskqueue\V1\BuildIdReachability[] $var
      * @return $this
      */
-    public function setBuildIdReachability($var)
+    public function setBuildIdReachability(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Taskqueue\V1\BuildIdReachability::class);
         $this->build_id_reachability = $arr;

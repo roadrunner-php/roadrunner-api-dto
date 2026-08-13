@@ -21,13 +21,14 @@ class RespondActivityTaskCanceledByIdRequest extends \Google\Protobuf\Internal\M
      */
     protected $namespace = '';
     /**
-     * Id of the workflow which scheduled this activity
+     * Id of the workflow which scheduled this activity, leave empty to target a standalone activity
      *
      * Generated from protobuf field <code>string workflow_id = 2;</code>
      */
     protected $workflow_id = '';
     /**
-     * Run Id of the workflow which scheduled this activity
+     * For a workflow activity - the run ID of the workflow which scheduled this activity.
+     * For a standalone activity - the run ID of the activity.
      *
      * Generated from protobuf field <code>string run_id = 3;</code>
      */
@@ -56,6 +57,12 @@ class RespondActivityTaskCanceledByIdRequest extends \Google\Protobuf\Internal\M
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentOptions deployment_options = 7;</code>
      */
     protected $deployment_options = null;
+    /**
+     * Resource ID for routing. Contains "workflow:workflow_id" or "activity:activity_id" for standalone activities.
+     *
+     * Generated from protobuf field <code>string resource_id = 8;</code>
+     */
+    protected $resource_id = '';
 
     /**
      * Constructor.
@@ -66,9 +73,10 @@ class RespondActivityTaskCanceledByIdRequest extends \Google\Protobuf\Internal\M
      *     @type string $namespace
      *           Namespace of the workflow which scheduled this activity
      *     @type string $workflow_id
-     *           Id of the workflow which scheduled this activity
+     *           Id of the workflow which scheduled this activity, leave empty to target a standalone activity
      *     @type string $run_id
-     *           Run Id of the workflow which scheduled this activity
+     *           For a workflow activity - the run ID of the workflow which scheduled this activity.
+     *           For a standalone activity - the run ID of the activity.
      *     @type string $activity_id
      *           Id of the activity to confirm is cancelled
      *     @type \Temporal\Api\Common\V1\Payloads $details
@@ -77,6 +85,8 @@ class RespondActivityTaskCanceledByIdRequest extends \Google\Protobuf\Internal\M
      *           The identity of the worker/client
      *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentOptions $deployment_options
      *           Worker deployment options that user has set in the worker.
+     *     @type string $resource_id
+     *           Resource ID for routing. Contains "workflow:workflow_id" or "activity:activity_id" for standalone activities.
      * }
      */
     public function __construct($data = NULL) {
@@ -102,16 +112,16 @@ class RespondActivityTaskCanceledByIdRequest extends \Google\Protobuf\Internal\M
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
     }
 
     /**
-     * Id of the workflow which scheduled this activity
+     * Id of the workflow which scheduled this activity, leave empty to target a standalone activity
      *
      * Generated from protobuf field <code>string workflow_id = 2;</code>
      * @return string
@@ -122,22 +132,23 @@ class RespondActivityTaskCanceledByIdRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * Id of the workflow which scheduled this activity
+     * Id of the workflow which scheduled this activity, leave empty to target a standalone activity
      *
      * Generated from protobuf field <code>string workflow_id = 2;</code>
      * @param string $var
      * @return $this
      */
-    public function setWorkflowId($var)
+    public function setWorkflowId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->workflow_id = $var;
 
         return $this;
     }
 
     /**
-     * Run Id of the workflow which scheduled this activity
+     * For a workflow activity - the run ID of the workflow which scheduled this activity.
+     * For a standalone activity - the run ID of the activity.
      *
      * Generated from protobuf field <code>string run_id = 3;</code>
      * @return string
@@ -148,15 +159,16 @@ class RespondActivityTaskCanceledByIdRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * Run Id of the workflow which scheduled this activity
+     * For a workflow activity - the run ID of the workflow which scheduled this activity.
+     * For a standalone activity - the run ID of the activity.
      *
      * Generated from protobuf field <code>string run_id = 3;</code>
      * @param string $var
      * @return $this
      */
-    public function setRunId($var)
+    public function setRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->run_id = $var;
 
         return $this;
@@ -180,9 +192,9 @@ class RespondActivityTaskCanceledByIdRequest extends \Google\Protobuf\Internal\M
      * @param string $var
      * @return $this
      */
-    public function setActivityId($var)
+    public function setActivityId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->activity_id = $var;
 
         return $this;
@@ -216,9 +228,8 @@ class RespondActivityTaskCanceledByIdRequest extends \Google\Protobuf\Internal\M
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setDetails($var)
+    public function setDetails(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->details = $var;
 
         return $this;
@@ -242,9 +253,9 @@ class RespondActivityTaskCanceledByIdRequest extends \Google\Protobuf\Internal\M
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -278,10 +289,35 @@ class RespondActivityTaskCanceledByIdRequest extends \Google\Protobuf\Internal\M
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentOptions $var
      * @return $this
      */
-    public function setDeploymentOptions($var)
+    public function setDeploymentOptions(\Temporal\Api\Deployment\V1\WorkerDeploymentOptions|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentOptions::class);
         $this->deployment_options = $var;
+
+        return $this;
+    }
+
+    /**
+     * Resource ID for routing. Contains "workflow:workflow_id" or "activity:activity_id" for standalone activities.
+     *
+     * Generated from protobuf field <code>string resource_id = 8;</code>
+     * @return string
+     */
+    public function getResourceId()
+    {
+        return $this->resource_id;
+    }
+
+    /**
+     * Resource ID for routing. Contains "workflow:workflow_id" or "activity:activity_id" for standalone activities.
+     *
+     * Generated from protobuf field <code>string resource_id = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setResourceId(string $var)
+    {
+        GPBUtil::checkString($var, true);
+        $this->resource_id = $var;
 
         return $this;
     }

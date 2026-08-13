@@ -58,7 +58,7 @@ class RequestCancelNexusOperationCommandAttributes extends \Google\Protobuf\Inte
      * @param int|string $var
      * @return $this
      */
-    public function setScheduledEventId($var)
+    public function setScheduledEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->scheduled_event_id = $var;

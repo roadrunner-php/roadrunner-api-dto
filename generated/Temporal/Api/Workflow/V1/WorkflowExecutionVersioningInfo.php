@@ -22,12 +22,13 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * upgraded. When present it means this workflow execution is versioned; UNSPECIFIED means
      * unversioned. See the comments in `VersioningBehavior` enum for more info about different
      * behaviors.
-     * This field is first set after an execution completes its first workflow task on a versioned
-     * worker, and set again on completion of every subsequent workflow task.
-     * For child workflows of Pinned parents, this will be set to Pinned (along with `deployment_version`) when
-     * the the child starts so that child's first workflow task goes to the same Version as the
-     * parent. After the first workflow task, it depends on the child workflow itself if it wants
-     * to stay pinned or become unpinned (according to Versioning Behavior set in the worker).
+     * Child workflows or CaN executions **inherit** their parent/previous run's effective Versioning 
+     * Behavior and Version (except when the new execution runs on a task queue not belonging to the 
+     * same deployment version as the parent/previous run's task queue). The first workflow task will
+     * be dispatched according to the inherited behavior (or to the current version of the task-queue's 
+     * deployment in the case of AutoUpgrade.) After completion of their first workflow task the 
+     * Deployment Version and Behavior of the execution will update according to configuration on the worker.
+     * 
      * Note that `behavior` is overridden by `versioning_override` if the latter is present.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.VersioningBehavior behavior = 1;</code>
@@ -58,10 +59,14 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * An absent value means no workflow task is completed, or the workflow is unversioned.
      * If present, and `behavior` is UNSPECIFIED, the last task of this workflow execution was completed
      * by a worker that is not using versioning but _is_ passing Deployment Name and Build ID.
-     * For child workflows of Pinned parents, this will be set to the parent's Pinned Version when
-     * the child starts, so that the child's first workflow task goes to the same Version as the parent.
+     * Child workflows or CaN executions **inherit** their parent/previous run's effective Versioning 
+     * Behavior and Version (except when the new execution runs on a task queue not belonging to the 
+     * same deployment version as the parent/previous run's task queue). The first workflow task will
+     * be dispatched according to the inherited behavior (or to the current version of the task-queue's 
+     * deployment in the case of AutoUpgrade.) After completion of their first workflow task the 
+     * Deployment Version and Behavior of the execution will update according to configuration on the worker.
      * Note that if `versioning_override.behavior` is PINNED then `versioning_override.pinned_version`
-     * will override this value.
+     * will override this value. 
      *
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion deployment_version = 7;</code>
      */
@@ -127,15 +132,29 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
     /**
      * Monotonic counter reflecting the latest routing decision for this workflow execution.
      * Used for staleness detection between history and matching when dispatching tasks to workers.
-     * Incremented when a workflow execution routes to a new deployment version, which happens 
+     * Incremented when a workflow execution routes to a new deployment version, which happens
      * when a worker of the new deployment version completes a workflow task.
      * Note: Pinned tasks and sticky tasks send a value of 0 for this field since these tasks do not
-     * face the problem of inconsistent dispatching that arises from eventual consistency between 
+     * face the problem of inconsistent dispatching that arises from eventual consistency between
      * task queues and their partitions.
      *
      * Generated from protobuf field <code>int64 revision_number = 8;</code>
      */
     protected $revision_number = 0;
+    /**
+     * Experimental.
+     * If this workflow is the result of a continue-as-new, this field is set to the initial_versioning_behavior
+     * specified in that command.
+     * Only used for the initial task of this run and the initial task of any retries of this run.
+     * Not passed to children or to future continue-as-new.
+     * Note: In the first release of Upgrade-on-CaN, when the only ContinueAsNewVersioningBehavior was AutoUpgrade,
+     * a non-empty InheritedAutoUpgradeInfo meant that the workflow should start as AutoUpgrade. So for compatibility
+     * with ContinueAsNew history commands generated during that time, know that an UNSPECIFIED value here is equivalent
+     * to ContinueAsNewVersioningBehaviorAutoUpgrade if the behavior of the workflow is AutoUpgrade.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ContinueAsNewVersioningBehavior continue_as_new_initial_versioning_behavior = 9;</code>
+     */
+    protected $continue_as_new_initial_versioning_behavior = 0;
 
     /**
      * Constructor.
@@ -148,12 +167,13 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      *           upgraded. When present it means this workflow execution is versioned; UNSPECIFIED means
      *           unversioned. See the comments in `VersioningBehavior` enum for more info about different
      *           behaviors.
-     *           This field is first set after an execution completes its first workflow task on a versioned
-     *           worker, and set again on completion of every subsequent workflow task.
-     *           For child workflows of Pinned parents, this will be set to Pinned (along with `deployment_version`) when
-     *           the the child starts so that child's first workflow task goes to the same Version as the
-     *           parent. After the first workflow task, it depends on the child workflow itself if it wants
-     *           to stay pinned or become unpinned (according to Versioning Behavior set in the worker).
+     *           Child workflows or CaN executions **inherit** their parent/previous run's effective Versioning 
+     *           Behavior and Version (except when the new execution runs on a task queue not belonging to the 
+     *           same deployment version as the parent/previous run's task queue). The first workflow task will
+     *           be dispatched according to the inherited behavior (or to the current version of the task-queue's 
+     *           deployment in the case of AutoUpgrade.) After completion of their first workflow task the 
+     *           Deployment Version and Behavior of the execution will update according to configuration on the worker.
+     *           
      *           Note that `behavior` is overridden by `versioning_override` if the latter is present.
      *     @type \Temporal\Api\Deployment\V1\Deployment $deployment
      *           The worker deployment that completed the last workflow task of this workflow execution. Must
@@ -170,10 +190,14 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      *           An absent value means no workflow task is completed, or the workflow is unversioned.
      *           If present, and `behavior` is UNSPECIFIED, the last task of this workflow execution was completed
      *           by a worker that is not using versioning but _is_ passing Deployment Name and Build ID.
-     *           For child workflows of Pinned parents, this will be set to the parent's Pinned Version when
-     *           the child starts, so that the child's first workflow task goes to the same Version as the parent.
+     *           Child workflows or CaN executions **inherit** their parent/previous run's effective Versioning 
+     *           Behavior and Version (except when the new execution runs on a task queue not belonging to the 
+     *           same deployment version as the parent/previous run's task queue). The first workflow task will
+     *           be dispatched according to the inherited behavior (or to the current version of the task-queue's 
+     *           deployment in the case of AutoUpgrade.) After completion of their first workflow task the 
+     *           Deployment Version and Behavior of the execution will update according to configuration on the worker.
      *           Note that if `versioning_override.behavior` is PINNED then `versioning_override.pinned_version`
-     *           will override this value.
+     *           will override this value. 
      *     @type \Temporal\Api\Workflow\V1\VersioningOverride $versioning_override
      *           Present if user has set an execution-specific versioning override. This override takes
      *           precedence over SDK-sent `behavior` (and `version` when override is PINNED). An
@@ -222,11 +246,21 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      *     @type int|string $revision_number
      *           Monotonic counter reflecting the latest routing decision for this workflow execution.
      *           Used for staleness detection between history and matching when dispatching tasks to workers.
-     *           Incremented when a workflow execution routes to a new deployment version, which happens 
+     *           Incremented when a workflow execution routes to a new deployment version, which happens
      *           when a worker of the new deployment version completes a workflow task.
      *           Note: Pinned tasks and sticky tasks send a value of 0 for this field since these tasks do not
-     *           face the problem of inconsistent dispatching that arises from eventual consistency between 
+     *           face the problem of inconsistent dispatching that arises from eventual consistency between
      *           task queues and their partitions.
+     *     @type int $continue_as_new_initial_versioning_behavior
+     *           Experimental.
+     *           If this workflow is the result of a continue-as-new, this field is set to the initial_versioning_behavior
+     *           specified in that command.
+     *           Only used for the initial task of this run and the initial task of any retries of this run.
+     *           Not passed to children or to future continue-as-new.
+     *           Note: In the first release of Upgrade-on-CaN, when the only ContinueAsNewVersioningBehavior was AutoUpgrade,
+     *           a non-empty InheritedAutoUpgradeInfo meant that the workflow should start as AutoUpgrade. So for compatibility
+     *           with ContinueAsNew history commands generated during that time, know that an UNSPECIFIED value here is equivalent
+     *           to ContinueAsNewVersioningBehaviorAutoUpgrade if the behavior of the workflow is AutoUpgrade.
      * }
      */
     public function __construct($data = NULL) {
@@ -239,16 +273,17 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * upgraded. When present it means this workflow execution is versioned; UNSPECIFIED means
      * unversioned. See the comments in `VersioningBehavior` enum for more info about different
      * behaviors.
-     * This field is first set after an execution completes its first workflow task on a versioned
-     * worker, and set again on completion of every subsequent workflow task.
-     * For child workflows of Pinned parents, this will be set to Pinned (along with `deployment_version`) when
-     * the the child starts so that child's first workflow task goes to the same Version as the
-     * parent. After the first workflow task, it depends on the child workflow itself if it wants
-     * to stay pinned or become unpinned (according to Versioning Behavior set in the worker).
+     * Child workflows or CaN executions **inherit** their parent/previous run's effective Versioning 
+     * Behavior and Version (except when the new execution runs on a task queue not belonging to the 
+     * same deployment version as the parent/previous run's task queue). The first workflow task will
+     * be dispatched according to the inherited behavior (or to the current version of the task-queue's 
+     * deployment in the case of AutoUpgrade.) After completion of their first workflow task the 
+     * Deployment Version and Behavior of the execution will update according to configuration on the worker.
+     * 
      * Note that `behavior` is overridden by `versioning_override` if the latter is present.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.VersioningBehavior behavior = 1;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\VersioningBehavior}
      */
     public function getBehavior()
     {
@@ -260,19 +295,20 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * upgraded. When present it means this workflow execution is versioned; UNSPECIFIED means
      * unversioned. See the comments in `VersioningBehavior` enum for more info about different
      * behaviors.
-     * This field is first set after an execution completes its first workflow task on a versioned
-     * worker, and set again on completion of every subsequent workflow task.
-     * For child workflows of Pinned parents, this will be set to Pinned (along with `deployment_version`) when
-     * the the child starts so that child's first workflow task goes to the same Version as the
-     * parent. After the first workflow task, it depends on the child workflow itself if it wants
-     * to stay pinned or become unpinned (according to Versioning Behavior set in the worker).
+     * Child workflows or CaN executions **inherit** their parent/previous run's effective Versioning 
+     * Behavior and Version (except when the new execution runs on a task queue not belonging to the 
+     * same deployment version as the parent/previous run's task queue). The first workflow task will
+     * be dispatched according to the inherited behavior (or to the current version of the task-queue's 
+     * deployment in the case of AutoUpgrade.) After completion of their first workflow task the 
+     * Deployment Version and Behavior of the execution will update according to configuration on the worker.
+     * 
      * Note that `behavior` is overridden by `versioning_override` if the latter is present.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.VersioningBehavior behavior = 1;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\VersioningBehavior}
      * @return $this
      */
-    public function setBehavior($var)
+    public function setBehavior(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\VersioningBehavior::class);
         $this->behavior = $var;
@@ -329,10 +365,9 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setDeployment($var)
+    public function setDeployment(\Temporal\Api\Deployment\V1\Deployment|null $var)
     {
         @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\Deployment::class);
         $this->deployment = $var;
 
         return $this;
@@ -361,10 +396,10 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setVersion($var)
+    public function setVersion(string $var)
     {
         @trigger_error('version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->version = $var;
 
         return $this;
@@ -375,10 +410,14 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * An absent value means no workflow task is completed, or the workflow is unversioned.
      * If present, and `behavior` is UNSPECIFIED, the last task of this workflow execution was completed
      * by a worker that is not using versioning but _is_ passing Deployment Name and Build ID.
-     * For child workflows of Pinned parents, this will be set to the parent's Pinned Version when
-     * the child starts, so that the child's first workflow task goes to the same Version as the parent.
+     * Child workflows or CaN executions **inherit** their parent/previous run's effective Versioning 
+     * Behavior and Version (except when the new execution runs on a task queue not belonging to the 
+     * same deployment version as the parent/previous run's task queue). The first workflow task will
+     * be dispatched according to the inherited behavior (or to the current version of the task-queue's 
+     * deployment in the case of AutoUpgrade.) After completion of their first workflow task the 
+     * Deployment Version and Behavior of the execution will update according to configuration on the worker.
      * Note that if `versioning_override.behavior` is PINNED then `versioning_override.pinned_version`
-     * will override this value.
+     * will override this value. 
      *
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion deployment_version = 7;</code>
      * @return \Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null
@@ -403,18 +442,21 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * An absent value means no workflow task is completed, or the workflow is unversioned.
      * If present, and `behavior` is UNSPECIFIED, the last task of this workflow execution was completed
      * by a worker that is not using versioning but _is_ passing Deployment Name and Build ID.
-     * For child workflows of Pinned parents, this will be set to the parent's Pinned Version when
-     * the child starts, so that the child's first workflow task goes to the same Version as the parent.
+     * Child workflows or CaN executions **inherit** their parent/previous run's effective Versioning 
+     * Behavior and Version (except when the new execution runs on a task queue not belonging to the 
+     * same deployment version as the parent/previous run's task queue). The first workflow task will
+     * be dispatched according to the inherited behavior (or to the current version of the task-queue's 
+     * deployment in the case of AutoUpgrade.) After completion of their first workflow task the 
+     * Deployment Version and Behavior of the execution will update according to configuration on the worker.
      * Note that if `versioning_override.behavior` is PINNED then `versioning_override.pinned_version`
-     * will override this value.
+     * will override this value. 
      *
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion deployment_version = 7;</code>
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
      * @return $this
      */
-    public function setDeploymentVersion($var)
+    public function setDeploymentVersion(\Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
         $this->deployment_version = $var;
 
         return $this;
@@ -458,9 +500,8 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflow\V1\VersioningOverride $var
      * @return $this
      */
-    public function setVersioningOverride($var)
+    public function setVersioningOverride(\Temporal\Api\Workflow\V1\VersioningOverride|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\VersioningOverride::class);
         $this->versioning_override = $var;
 
         return $this;
@@ -537,10 +578,9 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setDeploymentTransition($var)
+    public function setDeploymentTransition(\Temporal\Api\Workflow\V1\DeploymentTransition|null $var)
     {
         @trigger_error('deployment_transition is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\DeploymentTransition::class);
         $this->deployment_transition = $var;
 
         return $this;
@@ -608,9 +648,8 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflow\V1\DeploymentVersionTransition $var
      * @return $this
      */
-    public function setVersionTransition($var)
+    public function setVersionTransition(\Temporal\Api\Workflow\V1\DeploymentVersionTransition|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\DeploymentVersionTransition::class);
         $this->version_transition = $var;
 
         return $this;
@@ -619,10 +658,10 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
     /**
      * Monotonic counter reflecting the latest routing decision for this workflow execution.
      * Used for staleness detection between history and matching when dispatching tasks to workers.
-     * Incremented when a workflow execution routes to a new deployment version, which happens 
+     * Incremented when a workflow execution routes to a new deployment version, which happens
      * when a worker of the new deployment version completes a workflow task.
      * Note: Pinned tasks and sticky tasks send a value of 0 for this field since these tasks do not
-     * face the problem of inconsistent dispatching that arises from eventual consistency between 
+     * face the problem of inconsistent dispatching that arises from eventual consistency between
      * task queues and their partitions.
      *
      * Generated from protobuf field <code>int64 revision_number = 8;</code>
@@ -636,20 +675,62 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
     /**
      * Monotonic counter reflecting the latest routing decision for this workflow execution.
      * Used for staleness detection between history and matching when dispatching tasks to workers.
-     * Incremented when a workflow execution routes to a new deployment version, which happens 
+     * Incremented when a workflow execution routes to a new deployment version, which happens
      * when a worker of the new deployment version completes a workflow task.
      * Note: Pinned tasks and sticky tasks send a value of 0 for this field since these tasks do not
-     * face the problem of inconsistent dispatching that arises from eventual consistency between 
+     * face the problem of inconsistent dispatching that arises from eventual consistency between
      * task queues and their partitions.
      *
      * Generated from protobuf field <code>int64 revision_number = 8;</code>
      * @param int|string $var
      * @return $this
      */
-    public function setRevisionNumber($var)
+    public function setRevisionNumber(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->revision_number = $var;
+
+        return $this;
+    }
+
+    /**
+     * Experimental.
+     * If this workflow is the result of a continue-as-new, this field is set to the initial_versioning_behavior
+     * specified in that command.
+     * Only used for the initial task of this run and the initial task of any retries of this run.
+     * Not passed to children or to future continue-as-new.
+     * Note: In the first release of Upgrade-on-CaN, when the only ContinueAsNewVersioningBehavior was AutoUpgrade,
+     * a non-empty InheritedAutoUpgradeInfo meant that the workflow should start as AutoUpgrade. So for compatibility
+     * with ContinueAsNew history commands generated during that time, know that an UNSPECIFIED value here is equivalent
+     * to ContinueAsNewVersioningBehaviorAutoUpgrade if the behavior of the workflow is AutoUpgrade.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ContinueAsNewVersioningBehavior continue_as_new_initial_versioning_behavior = 9;</code>
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ContinueAsNewVersioningBehavior}
+     */
+    public function getContinueAsNewInitialVersioningBehavior()
+    {
+        return $this->continue_as_new_initial_versioning_behavior;
+    }
+
+    /**
+     * Experimental.
+     * If this workflow is the result of a continue-as-new, this field is set to the initial_versioning_behavior
+     * specified in that command.
+     * Only used for the initial task of this run and the initial task of any retries of this run.
+     * Not passed to children or to future continue-as-new.
+     * Note: In the first release of Upgrade-on-CaN, when the only ContinueAsNewVersioningBehavior was AutoUpgrade,
+     * a non-empty InheritedAutoUpgradeInfo meant that the workflow should start as AutoUpgrade. So for compatibility
+     * with ContinueAsNew history commands generated during that time, know that an UNSPECIFIED value here is equivalent
+     * to ContinueAsNewVersioningBehaviorAutoUpgrade if the behavior of the workflow is AutoUpgrade.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ContinueAsNewVersioningBehavior continue_as_new_initial_versioning_behavior = 9;</code>
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ContinueAsNewVersioningBehavior}
+     * @return $this
+     */
+    public function setContinueAsNewInitialVersioningBehavior(int $var)
+    {
+        GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ContinueAsNewVersioningBehavior::class);
+        $this->continue_as_new_initial_versioning_behavior = $var;
 
         return $this;
     }

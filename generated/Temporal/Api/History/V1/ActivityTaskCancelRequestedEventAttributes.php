@@ -62,7 +62,7 @@ class ActivityTaskCancelRequestedEventAttributes extends \Google\Protobuf\Intern
      * @param int|string $var
      * @return $this
      */
-    public function setScheduledEventId($var)
+    public function setScheduledEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->scheduled_event_id = $var;
@@ -88,7 +88,7 @@ class ActivityTaskCancelRequestedEventAttributes extends \Google\Protobuf\Intern
      * @param int|string $var
      * @return $this
      */
-    public function setWorkflowTaskCompletedEventId($var)
+    public function setWorkflowTaskCompletedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->workflow_task_completed_event_id = $var;

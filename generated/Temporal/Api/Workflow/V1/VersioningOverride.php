@@ -11,12 +11,12 @@ use Google\Protobuf\RepeatedField;
 
 /**
  * Used to override the versioning behavior (and pinned deployment version, if applicable) of a
- * specific workflow execution. If set, takes precedence over the worker-sent values. See
- * `WorkflowExecutionInfo.VersioningInfo` for more information. To remove the override, call
- * `UpdateWorkflowExecutionOptions` with a null `VersioningOverride`, and use the `update_mask`
- * to indicate that it should be mutated.
- * Pinned overrides are automatically inherited by child workflows, continue-as-new workflows,
- * workflow retries, and cron workflows.
+ * specific workflow execution. If set, this override takes precedence over worker-sent values.
+ * See `WorkflowExecutionInfo.VersioningInfo` for more information.
+ * To remove the override, call `UpdateWorkflowExecutionOptions` with a null
+ * `VersioningOverride`, and use the `update_mask` to indicate that it should be mutated.
+ * Pinned behavior overrides are automatically inherited by child workflows, workflow retries, continue-as-new
+ * workflows, and cron workflows.
  *
  * Generated from protobuf message <code>temporal.api.workflow.v1.VersioningOverride</code>
  */
@@ -58,10 +58,9 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Temporal\Api\Workflow\V1\VersioningOverride\PinnedOverride $pinned
-     *           Send the next workflow task to the Version specified in the override.
+     *           Override the workflow to have Pinned behavior.
      *     @type bool $auto_upgrade
-     *           Send the next workflow task to the Current Deployment Version
-     *           of its Task Queue when the next workflow task is dispatched.
+     *           Override the workflow to have AutoUpgrade behavior.
      *     @type int $behavior
      *           Required.
      *           Deprecated. Use `override`.
@@ -82,7 +81,7 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Send the next workflow task to the Version specified in the override.
+     * Override the workflow to have Pinned behavior.
      *
      * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride.PinnedOverride pinned = 3;</code>
      * @return \Temporal\Api\Workflow\V1\VersioningOverride\PinnedOverride|null
@@ -98,23 +97,21 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Send the next workflow task to the Version specified in the override.
+     * Override the workflow to have Pinned behavior.
      *
      * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride.PinnedOverride pinned = 3;</code>
      * @param \Temporal\Api\Workflow\V1\VersioningOverride\PinnedOverride $var
      * @return $this
      */
-    public function setPinned($var)
+    public function setPinned(\Temporal\Api\Workflow\V1\VersioningOverride\PinnedOverride|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\VersioningOverride\PinnedOverride::class);
         $this->writeOneof(3, $var);
 
         return $this;
     }
 
     /**
-     * Send the next workflow task to the Current Deployment Version
-     * of its Task Queue when the next workflow task is dispatched.
+     * Override the workflow to have AutoUpgrade behavior.
      *
      * Generated from protobuf field <code>bool auto_upgrade = 4;</code>
      * @return bool
@@ -130,16 +127,14 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Send the next workflow task to the Current Deployment Version
-     * of its Task Queue when the next workflow task is dispatched.
+     * Override the workflow to have AutoUpgrade behavior.
      *
      * Generated from protobuf field <code>bool auto_upgrade = 4;</code>
      * @param bool $var
      * @return $this
      */
-    public function setAutoUpgrade($var)
+    public function setAutoUpgrade(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->writeOneof(4, $var);
 
         return $this;
@@ -150,7 +145,7 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
      * Deprecated. Use `override`.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.VersioningBehavior behavior = 1 [deprecated = true];</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\VersioningBehavior}
      * @deprecated
      */
     public function getBehavior()
@@ -166,11 +161,11 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
      * Deprecated. Use `override`.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.VersioningBehavior behavior = 1 [deprecated = true];</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\VersioningBehavior}
      * @return $this
      * @deprecated
      */
-    public function setBehavior($var)
+    public function setBehavior(int $var)
     {
         @trigger_error('behavior is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\VersioningBehavior::class);
@@ -220,10 +215,9 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setDeployment($var)
+    public function setDeployment(\Temporal\Api\Deployment\V1\Deployment|null $var)
     {
         @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\Deployment::class);
         $this->deployment = $var;
 
         return $this;
@@ -258,10 +252,10 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setPinnedVersion($var)
+    public function setPinnedVersion(string $var)
     {
         @trigger_error('pinned_version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->pinned_version = $var;
 
         return $this;

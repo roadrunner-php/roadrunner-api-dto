@@ -64,9 +64,9 @@ class BuildIdReachability extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setBuildId($var)
+    public function setBuildId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->build_id = $var;
 
         return $this;
@@ -90,7 +90,7 @@ class BuildIdReachability extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\TaskQueueReachability[] $var
      * @return $this
      */
-    public function setTaskQueueReachability($var)
+    public function setTaskQueueReachability(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Taskqueue\V1\TaskQueueReachability::class);
         $this->task_queue_reachability = $arr;

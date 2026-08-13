@@ -33,6 +33,12 @@ class AddOrUpdateRemoteClusterRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string frontend_http_address = 3;</code>
      */
     protected $frontend_http_address = '';
+    /**
+     * Controls whether replication streams are active.
+     *
+     * Generated from protobuf field <code>bool enable_replication = 4;</code>
+     */
+    protected $enable_replication = false;
 
     /**
      * Constructor.
@@ -47,6 +53,8 @@ class AddOrUpdateRemoteClusterRequest extends \Google\Protobuf\Internal\Message
      *     @type string $frontend_http_address
      *           Frontend HTTP Address is a cross cluster accessible address for HTTP traffic. This field is optional. If not provided
      *            on update, the existing HTTP address will be removed.
+     *     @type bool $enable_replication
+     *           Controls whether replication streams are active.
      * }
      */
     public function __construct($data = NULL) {
@@ -72,9 +80,9 @@ class AddOrUpdateRemoteClusterRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setFrontendAddress($var)
+    public function setFrontendAddress(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->frontend_address = $var;
 
         return $this;
@@ -98,9 +106,8 @@ class AddOrUpdateRemoteClusterRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setEnableRemoteClusterConnection($var)
+    public function setEnableRemoteClusterConnection(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->enable_remote_cluster_connection = $var;
 
         return $this;
@@ -126,10 +133,35 @@ class AddOrUpdateRemoteClusterRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setFrontendHttpAddress($var)
+    public function setFrontendHttpAddress(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->frontend_http_address = $var;
+
+        return $this;
+    }
+
+    /**
+     * Controls whether replication streams are active.
+     *
+     * Generated from protobuf field <code>bool enable_replication = 4;</code>
+     * @return bool
+     */
+    public function getEnableReplication()
+    {
+        return $this->enable_replication;
+    }
+
+    /**
+     * Controls whether replication streams are active.
+     *
+     * Generated from protobuf field <code>bool enable_replication = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEnableReplication(bool $var)
+    {
+        $this->enable_replication = $var;
 
         return $this;
     }

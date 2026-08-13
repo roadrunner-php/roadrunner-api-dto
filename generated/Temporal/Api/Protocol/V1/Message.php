@@ -80,9 +80,9 @@ class Message extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->id = $var;
 
         return $this;
@@ -108,9 +108,9 @@ class Message extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setProtocolInstanceId($var)
+    public function setProtocolInstanceId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->protocol_instance_id = $var;
 
         return $this;
@@ -135,7 +135,7 @@ class Message extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setEventId($var)
+    public function setEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->writeOneof(3, $var);
@@ -162,7 +162,7 @@ class Message extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setCommandIndex($var)
+    public function setCommandIndex(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->writeOneof(4, $var);
@@ -200,9 +200,8 @@ class Message extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Any $var
      * @return $this
      */
-    public function setBody($var)
+    public function setBody(\Google\Protobuf\Any|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Any::class);
         $this->body = $var;
 
         return $this;

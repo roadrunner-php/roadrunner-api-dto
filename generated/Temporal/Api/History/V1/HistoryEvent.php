@@ -32,13 +32,15 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      */
     protected $event_type = 0;
     /**
-     * TODO: What is this? Appears unused by SDKs
+     * Failover version of the event, used by the server for multi-cluster replication and history
+     * versioning. SDKs generally ignore this field.
      *
      * Generated from protobuf field <code>int64 version = 4;</code>
      */
     protected $version = 0;
     /**
-     * TODO: What is this? Appears unused by SDKs
+     * Identifier used by the service to order replication and transfer tasks associated with this
+     * event. SDKs generally ignore this field.
      *
      * Generated from protobuf field <code>int64 task_id = 5;</code>
      */
@@ -70,6 +72,12 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 302;</code>
      */
     private $links;
+    /**
+     * Server-computed authenticated caller identity associated with this event.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Principal principal = 303;</code>
+     */
+    protected $principal = null;
     protected $attributes;
 
     /**
@@ -83,9 +91,11 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $event_time
      *     @type int $event_type
      *     @type int|string $version
-     *           TODO: What is this? Appears unused by SDKs
+     *           Failover version of the event, used by the server for multi-cluster replication and history
+     *           versioning. SDKs generally ignore this field.
      *     @type int|string $task_id
-     *           TODO: What is this? Appears unused by SDKs
+     *           Identifier used by the service to order replication and transfer tasks associated with this
+     *           event. SDKs generally ignore this field.
      *     @type bool $worker_may_ignore
      *           Set to true when the SDK may ignore the event as it does not impact workflow state or
      *           information in any way that the SDK need be concerned with. If an SDK encounters an event
@@ -101,6 +111,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      *              user interfaces.
      *     @type \Temporal\Api\Common\V1\Link[] $links
      *           Links associated with the event.
+     *     @type \Temporal\Api\Common\V1\Principal $principal
+     *           Server-computed authenticated caller identity associated with this event.
      *     @type \Temporal\Api\History\V1\WorkflowExecutionStartedEventAttributes $workflow_execution_started_event_attributes
      *     @type \Temporal\Api\History\V1\WorkflowExecutionCompletedEventAttributes $workflow_execution_completed_event_attributes
      *     @type \Temporal\Api\History\V1\WorkflowExecutionFailedEventAttributes $workflow_execution_failed_event_attributes
@@ -158,6 +170,9 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\History\V1\WorkflowExecutionOptionsUpdatedEventAttributes $workflow_execution_options_updated_event_attributes
      *     @type \Temporal\Api\History\V1\NexusOperationCancelRequestCompletedEventAttributes $nexus_operation_cancel_request_completed_event_attributes
      *     @type \Temporal\Api\History\V1\NexusOperationCancelRequestFailedEventAttributes $nexus_operation_cancel_request_failed_event_attributes
+     *     @type \Temporal\Api\History\V1\WorkflowExecutionPausedEventAttributes $workflow_execution_paused_event_attributes
+     *     @type \Temporal\Api\History\V1\WorkflowExecutionUnpausedEventAttributes $workflow_execution_unpaused_event_attributes
+     *     @type \Temporal\Api\History\V1\WorkflowExecutionTimeSkippingTransitionedEventAttributes $workflow_execution_time_skipping_transitioned_event_attributes
      * }
      */
     public function __construct($data = NULL) {
@@ -183,7 +198,7 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setEventId($var)
+    public function setEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->event_id = $var;
@@ -215,9 +230,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setEventTime($var)
+    public function setEventTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->event_time = $var;
 
         return $this;
@@ -225,7 +239,7 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.EventType event_type = 3;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\EventType}
      */
     public function getEventType()
     {
@@ -234,10 +248,10 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.EventType event_type = 3;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\EventType}
      * @return $this
      */
-    public function setEventType($var)
+    public function setEventType(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\EventType::class);
         $this->event_type = $var;
@@ -246,7 +260,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * TODO: What is this? Appears unused by SDKs
+     * Failover version of the event, used by the server for multi-cluster replication and history
+     * versioning. SDKs generally ignore this field.
      *
      * Generated from protobuf field <code>int64 version = 4;</code>
      * @return int|string
@@ -257,13 +272,14 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * TODO: What is this? Appears unused by SDKs
+     * Failover version of the event, used by the server for multi-cluster replication and history
+     * versioning. SDKs generally ignore this field.
      *
      * Generated from protobuf field <code>int64 version = 4;</code>
      * @param int|string $var
      * @return $this
      */
-    public function setVersion($var)
+    public function setVersion(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->version = $var;
@@ -272,7 +288,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * TODO: What is this? Appears unused by SDKs
+     * Identifier used by the service to order replication and transfer tasks associated with this
+     * event. SDKs generally ignore this field.
      *
      * Generated from protobuf field <code>int64 task_id = 5;</code>
      * @return int|string
@@ -283,13 +300,14 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * TODO: What is this? Appears unused by SDKs
+     * Identifier used by the service to order replication and transfer tasks associated with this
+     * event. SDKs generally ignore this field.
      *
      * Generated from protobuf field <code>int64 task_id = 5;</code>
      * @param int|string $var
      * @return $this
      */
-    public function setTaskId($var)
+    public function setTaskId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->task_id = $var;
@@ -321,9 +339,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setWorkerMayIgnore($var)
+    public function setWorkerMayIgnore(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->worker_may_ignore = $var;
 
         return $this;
@@ -369,9 +386,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Sdk\V1\UserMetadata $var
      * @return $this
      */
-    public function setUserMetadata($var)
+    public function setUserMetadata(\Temporal\Api\Sdk\V1\UserMetadata|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Sdk\V1\UserMetadata::class);
         $this->user_metadata = $var;
 
         return $this;
@@ -395,10 +411,45 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Link[] $var
      * @return $this
      */
-    public function setLinks($var)
+    public function setLinks(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Link::class);
         $this->links = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Server-computed authenticated caller identity associated with this event.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Principal principal = 303;</code>
+     * @return \Temporal\Api\Common\V1\Principal|null
+     */
+    public function getPrincipal()
+    {
+        return $this->principal;
+    }
+
+    public function hasPrincipal()
+    {
+        return isset($this->principal);
+    }
+
+    public function clearPrincipal()
+    {
+        unset($this->principal);
+    }
+
+    /**
+     * Server-computed authenticated caller identity associated with this event.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Principal principal = 303;</code>
+     * @param \Temporal\Api\Common\V1\Principal $var
+     * @return $this
+     */
+    public function setPrincipal(\Temporal\Api\Common\V1\Principal|null $var)
+    {
+        $this->principal = $var;
 
         return $this;
     }
@@ -422,9 +473,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\WorkflowExecutionStartedEventAttributes $var
      * @return $this
      */
-    public function setWorkflowExecutionStartedEventAttributes($var)
+    public function setWorkflowExecutionStartedEventAttributes(\Temporal\Api\History\V1\WorkflowExecutionStartedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\WorkflowExecutionStartedEventAttributes::class);
         $this->writeOneof(6, $var);
 
         return $this;
@@ -449,9 +499,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\WorkflowExecutionCompletedEventAttributes $var
      * @return $this
      */
-    public function setWorkflowExecutionCompletedEventAttributes($var)
+    public function setWorkflowExecutionCompletedEventAttributes(\Temporal\Api\History\V1\WorkflowExecutionCompletedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\WorkflowExecutionCompletedEventAttributes::class);
         $this->writeOneof(7, $var);
 
         return $this;
@@ -476,9 +525,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\WorkflowExecutionFailedEventAttributes $var
      * @return $this
      */
-    public function setWorkflowExecutionFailedEventAttributes($var)
+    public function setWorkflowExecutionFailedEventAttributes(\Temporal\Api\History\V1\WorkflowExecutionFailedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\WorkflowExecutionFailedEventAttributes::class);
         $this->writeOneof(8, $var);
 
         return $this;
@@ -503,9 +551,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\WorkflowExecutionTimedOutEventAttributes $var
      * @return $this
      */
-    public function setWorkflowExecutionTimedOutEventAttributes($var)
+    public function setWorkflowExecutionTimedOutEventAttributes(\Temporal\Api\History\V1\WorkflowExecutionTimedOutEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\WorkflowExecutionTimedOutEventAttributes::class);
         $this->writeOneof(9, $var);
 
         return $this;
@@ -530,9 +577,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\WorkflowTaskScheduledEventAttributes $var
      * @return $this
      */
-    public function setWorkflowTaskScheduledEventAttributes($var)
+    public function setWorkflowTaskScheduledEventAttributes(\Temporal\Api\History\V1\WorkflowTaskScheduledEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\WorkflowTaskScheduledEventAttributes::class);
         $this->writeOneof(10, $var);
 
         return $this;
@@ -557,9 +603,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\WorkflowTaskStartedEventAttributes $var
      * @return $this
      */
-    public function setWorkflowTaskStartedEventAttributes($var)
+    public function setWorkflowTaskStartedEventAttributes(\Temporal\Api\History\V1\WorkflowTaskStartedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\WorkflowTaskStartedEventAttributes::class);
         $this->writeOneof(11, $var);
 
         return $this;
@@ -584,9 +629,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\WorkflowTaskCompletedEventAttributes $var
      * @return $this
      */
-    public function setWorkflowTaskCompletedEventAttributes($var)
+    public function setWorkflowTaskCompletedEventAttributes(\Temporal\Api\History\V1\WorkflowTaskCompletedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\WorkflowTaskCompletedEventAttributes::class);
         $this->writeOneof(12, $var);
 
         return $this;
@@ -611,9 +655,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\WorkflowTaskTimedOutEventAttributes $var
      * @return $this
      */
-    public function setWorkflowTaskTimedOutEventAttributes($var)
+    public function setWorkflowTaskTimedOutEventAttributes(\Temporal\Api\History\V1\WorkflowTaskTimedOutEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\WorkflowTaskTimedOutEventAttributes::class);
         $this->writeOneof(13, $var);
 
         return $this;
@@ -638,9 +681,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\WorkflowTaskFailedEventAttributes $var
      * @return $this
      */
-    public function setWorkflowTaskFailedEventAttributes($var)
+    public function setWorkflowTaskFailedEventAttributes(\Temporal\Api\History\V1\WorkflowTaskFailedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\WorkflowTaskFailedEventAttributes::class);
         $this->writeOneof(14, $var);
 
         return $this;
@@ -665,9 +707,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\ActivityTaskScheduledEventAttributes $var
      * @return $this
      */
-    public function setActivityTaskScheduledEventAttributes($var)
+    public function setActivityTaskScheduledEventAttributes(\Temporal\Api\History\V1\ActivityTaskScheduledEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\ActivityTaskScheduledEventAttributes::class);
         $this->writeOneof(15, $var);
 
         return $this;
@@ -692,9 +733,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\ActivityTaskStartedEventAttributes $var
      * @return $this
      */
-    public function setActivityTaskStartedEventAttributes($var)
+    public function setActivityTaskStartedEventAttributes(\Temporal\Api\History\V1\ActivityTaskStartedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\ActivityTaskStartedEventAttributes::class);
         $this->writeOneof(16, $var);
 
         return $this;
@@ -719,9 +759,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\ActivityTaskCompletedEventAttributes $var
      * @return $this
      */
-    public function setActivityTaskCompletedEventAttributes($var)
+    public function setActivityTaskCompletedEventAttributes(\Temporal\Api\History\V1\ActivityTaskCompletedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\ActivityTaskCompletedEventAttributes::class);
         $this->writeOneof(17, $var);
 
         return $this;
@@ -746,9 +785,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\ActivityTaskFailedEventAttributes $var
      * @return $this
      */
-    public function setActivityTaskFailedEventAttributes($var)
+    public function setActivityTaskFailedEventAttributes(\Temporal\Api\History\V1\ActivityTaskFailedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\ActivityTaskFailedEventAttributes::class);
         $this->writeOneof(18, $var);
 
         return $this;
@@ -773,9 +811,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\ActivityTaskTimedOutEventAttributes $var
      * @return $this
      */
-    public function setActivityTaskTimedOutEventAttributes($var)
+    public function setActivityTaskTimedOutEventAttributes(\Temporal\Api\History\V1\ActivityTaskTimedOutEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\ActivityTaskTimedOutEventAttributes::class);
         $this->writeOneof(19, $var);
 
         return $this;
@@ -800,9 +837,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\TimerStartedEventAttributes $var
      * @return $this
      */
-    public function setTimerStartedEventAttributes($var)
+    public function setTimerStartedEventAttributes(\Temporal\Api\History\V1\TimerStartedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\TimerStartedEventAttributes::class);
         $this->writeOneof(20, $var);
 
         return $this;
@@ -827,9 +863,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\TimerFiredEventAttributes $var
      * @return $this
      */
-    public function setTimerFiredEventAttributes($var)
+    public function setTimerFiredEventAttributes(\Temporal\Api\History\V1\TimerFiredEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\TimerFiredEventAttributes::class);
         $this->writeOneof(21, $var);
 
         return $this;
@@ -854,9 +889,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\ActivityTaskCancelRequestedEventAttributes $var
      * @return $this
      */
-    public function setActivityTaskCancelRequestedEventAttributes($var)
+    public function setActivityTaskCancelRequestedEventAttributes(\Temporal\Api\History\V1\ActivityTaskCancelRequestedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\ActivityTaskCancelRequestedEventAttributes::class);
         $this->writeOneof(22, $var);
 
         return $this;
@@ -881,9 +915,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\ActivityTaskCanceledEventAttributes $var
      * @return $this
      */
-    public function setActivityTaskCanceledEventAttributes($var)
+    public function setActivityTaskCanceledEventAttributes(\Temporal\Api\History\V1\ActivityTaskCanceledEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\ActivityTaskCanceledEventAttributes::class);
         $this->writeOneof(23, $var);
 
         return $this;
@@ -908,9 +941,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\TimerCanceledEventAttributes $var
      * @return $this
      */
-    public function setTimerCanceledEventAttributes($var)
+    public function setTimerCanceledEventAttributes(\Temporal\Api\History\V1\TimerCanceledEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\TimerCanceledEventAttributes::class);
         $this->writeOneof(24, $var);
 
         return $this;
@@ -935,9 +967,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\MarkerRecordedEventAttributes $var
      * @return $this
      */
-    public function setMarkerRecordedEventAttributes($var)
+    public function setMarkerRecordedEventAttributes(\Temporal\Api\History\V1\MarkerRecordedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\MarkerRecordedEventAttributes::class);
         $this->writeOneof(25, $var);
 
         return $this;
@@ -962,9 +993,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\WorkflowExecutionSignaledEventAttributes $var
      * @return $this
      */
-    public function setWorkflowExecutionSignaledEventAttributes($var)
+    public function setWorkflowExecutionSignaledEventAttributes(\Temporal\Api\History\V1\WorkflowExecutionSignaledEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\WorkflowExecutionSignaledEventAttributes::class);
         $this->writeOneof(26, $var);
 
         return $this;
@@ -989,9 +1019,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\WorkflowExecutionTerminatedEventAttributes $var
      * @return $this
      */
-    public function setWorkflowExecutionTerminatedEventAttributes($var)
+    public function setWorkflowExecutionTerminatedEventAttributes(\Temporal\Api\History\V1\WorkflowExecutionTerminatedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\WorkflowExecutionTerminatedEventAttributes::class);
         $this->writeOneof(27, $var);
 
         return $this;
@@ -1016,9 +1045,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\WorkflowExecutionCancelRequestedEventAttributes $var
      * @return $this
      */
-    public function setWorkflowExecutionCancelRequestedEventAttributes($var)
+    public function setWorkflowExecutionCancelRequestedEventAttributes(\Temporal\Api\History\V1\WorkflowExecutionCancelRequestedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\WorkflowExecutionCancelRequestedEventAttributes::class);
         $this->writeOneof(28, $var);
 
         return $this;
@@ -1043,9 +1071,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\WorkflowExecutionCanceledEventAttributes $var
      * @return $this
      */
-    public function setWorkflowExecutionCanceledEventAttributes($var)
+    public function setWorkflowExecutionCanceledEventAttributes(\Temporal\Api\History\V1\WorkflowExecutionCanceledEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\WorkflowExecutionCanceledEventAttributes::class);
         $this->writeOneof(29, $var);
 
         return $this;
@@ -1070,9 +1097,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\RequestCancelExternalWorkflowExecutionInitiatedEventAttributes $var
      * @return $this
      */
-    public function setRequestCancelExternalWorkflowExecutionInitiatedEventAttributes($var)
+    public function setRequestCancelExternalWorkflowExecutionInitiatedEventAttributes(\Temporal\Api\History\V1\RequestCancelExternalWorkflowExecutionInitiatedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\RequestCancelExternalWorkflowExecutionInitiatedEventAttributes::class);
         $this->writeOneof(30, $var);
 
         return $this;
@@ -1097,9 +1123,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\RequestCancelExternalWorkflowExecutionFailedEventAttributes $var
      * @return $this
      */
-    public function setRequestCancelExternalWorkflowExecutionFailedEventAttributes($var)
+    public function setRequestCancelExternalWorkflowExecutionFailedEventAttributes(\Temporal\Api\History\V1\RequestCancelExternalWorkflowExecutionFailedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\RequestCancelExternalWorkflowExecutionFailedEventAttributes::class);
         $this->writeOneof(31, $var);
 
         return $this;
@@ -1124,9 +1149,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\ExternalWorkflowExecutionCancelRequestedEventAttributes $var
      * @return $this
      */
-    public function setExternalWorkflowExecutionCancelRequestedEventAttributes($var)
+    public function setExternalWorkflowExecutionCancelRequestedEventAttributes(\Temporal\Api\History\V1\ExternalWorkflowExecutionCancelRequestedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\ExternalWorkflowExecutionCancelRequestedEventAttributes::class);
         $this->writeOneof(32, $var);
 
         return $this;
@@ -1151,9 +1175,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\WorkflowExecutionContinuedAsNewEventAttributes $var
      * @return $this
      */
-    public function setWorkflowExecutionContinuedAsNewEventAttributes($var)
+    public function setWorkflowExecutionContinuedAsNewEventAttributes(\Temporal\Api\History\V1\WorkflowExecutionContinuedAsNewEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\WorkflowExecutionContinuedAsNewEventAttributes::class);
         $this->writeOneof(33, $var);
 
         return $this;
@@ -1178,9 +1201,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\StartChildWorkflowExecutionInitiatedEventAttributes $var
      * @return $this
      */
-    public function setStartChildWorkflowExecutionInitiatedEventAttributes($var)
+    public function setStartChildWorkflowExecutionInitiatedEventAttributes(\Temporal\Api\History\V1\StartChildWorkflowExecutionInitiatedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\StartChildWorkflowExecutionInitiatedEventAttributes::class);
         $this->writeOneof(34, $var);
 
         return $this;
@@ -1205,9 +1227,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\StartChildWorkflowExecutionFailedEventAttributes $var
      * @return $this
      */
-    public function setStartChildWorkflowExecutionFailedEventAttributes($var)
+    public function setStartChildWorkflowExecutionFailedEventAttributes(\Temporal\Api\History\V1\StartChildWorkflowExecutionFailedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\StartChildWorkflowExecutionFailedEventAttributes::class);
         $this->writeOneof(35, $var);
 
         return $this;
@@ -1232,9 +1253,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\ChildWorkflowExecutionStartedEventAttributes $var
      * @return $this
      */
-    public function setChildWorkflowExecutionStartedEventAttributes($var)
+    public function setChildWorkflowExecutionStartedEventAttributes(\Temporal\Api\History\V1\ChildWorkflowExecutionStartedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\ChildWorkflowExecutionStartedEventAttributes::class);
         $this->writeOneof(36, $var);
 
         return $this;
@@ -1259,9 +1279,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\ChildWorkflowExecutionCompletedEventAttributes $var
      * @return $this
      */
-    public function setChildWorkflowExecutionCompletedEventAttributes($var)
+    public function setChildWorkflowExecutionCompletedEventAttributes(\Temporal\Api\History\V1\ChildWorkflowExecutionCompletedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\ChildWorkflowExecutionCompletedEventAttributes::class);
         $this->writeOneof(37, $var);
 
         return $this;
@@ -1286,9 +1305,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\ChildWorkflowExecutionFailedEventAttributes $var
      * @return $this
      */
-    public function setChildWorkflowExecutionFailedEventAttributes($var)
+    public function setChildWorkflowExecutionFailedEventAttributes(\Temporal\Api\History\V1\ChildWorkflowExecutionFailedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\ChildWorkflowExecutionFailedEventAttributes::class);
         $this->writeOneof(38, $var);
 
         return $this;
@@ -1313,9 +1331,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\ChildWorkflowExecutionCanceledEventAttributes $var
      * @return $this
      */
-    public function setChildWorkflowExecutionCanceledEventAttributes($var)
+    public function setChildWorkflowExecutionCanceledEventAttributes(\Temporal\Api\History\V1\ChildWorkflowExecutionCanceledEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\ChildWorkflowExecutionCanceledEventAttributes::class);
         $this->writeOneof(39, $var);
 
         return $this;
@@ -1340,9 +1357,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\ChildWorkflowExecutionTimedOutEventAttributes $var
      * @return $this
      */
-    public function setChildWorkflowExecutionTimedOutEventAttributes($var)
+    public function setChildWorkflowExecutionTimedOutEventAttributes(\Temporal\Api\History\V1\ChildWorkflowExecutionTimedOutEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\ChildWorkflowExecutionTimedOutEventAttributes::class);
         $this->writeOneof(40, $var);
 
         return $this;
@@ -1367,9 +1383,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\ChildWorkflowExecutionTerminatedEventAttributes $var
      * @return $this
      */
-    public function setChildWorkflowExecutionTerminatedEventAttributes($var)
+    public function setChildWorkflowExecutionTerminatedEventAttributes(\Temporal\Api\History\V1\ChildWorkflowExecutionTerminatedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\ChildWorkflowExecutionTerminatedEventAttributes::class);
         $this->writeOneof(41, $var);
 
         return $this;
@@ -1394,9 +1409,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\SignalExternalWorkflowExecutionInitiatedEventAttributes $var
      * @return $this
      */
-    public function setSignalExternalWorkflowExecutionInitiatedEventAttributes($var)
+    public function setSignalExternalWorkflowExecutionInitiatedEventAttributes(\Temporal\Api\History\V1\SignalExternalWorkflowExecutionInitiatedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\SignalExternalWorkflowExecutionInitiatedEventAttributes::class);
         $this->writeOneof(42, $var);
 
         return $this;
@@ -1421,9 +1435,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\SignalExternalWorkflowExecutionFailedEventAttributes $var
      * @return $this
      */
-    public function setSignalExternalWorkflowExecutionFailedEventAttributes($var)
+    public function setSignalExternalWorkflowExecutionFailedEventAttributes(\Temporal\Api\History\V1\SignalExternalWorkflowExecutionFailedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\SignalExternalWorkflowExecutionFailedEventAttributes::class);
         $this->writeOneof(43, $var);
 
         return $this;
@@ -1448,9 +1461,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\ExternalWorkflowExecutionSignaledEventAttributes $var
      * @return $this
      */
-    public function setExternalWorkflowExecutionSignaledEventAttributes($var)
+    public function setExternalWorkflowExecutionSignaledEventAttributes(\Temporal\Api\History\V1\ExternalWorkflowExecutionSignaledEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\ExternalWorkflowExecutionSignaledEventAttributes::class);
         $this->writeOneof(44, $var);
 
         return $this;
@@ -1475,9 +1487,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\UpsertWorkflowSearchAttributesEventAttributes $var
      * @return $this
      */
-    public function setUpsertWorkflowSearchAttributesEventAttributes($var)
+    public function setUpsertWorkflowSearchAttributesEventAttributes(\Temporal\Api\History\V1\UpsertWorkflowSearchAttributesEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\UpsertWorkflowSearchAttributesEventAttributes::class);
         $this->writeOneof(45, $var);
 
         return $this;
@@ -1502,9 +1513,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\WorkflowExecutionUpdateAcceptedEventAttributes $var
      * @return $this
      */
-    public function setWorkflowExecutionUpdateAcceptedEventAttributes($var)
+    public function setWorkflowExecutionUpdateAcceptedEventAttributes(\Temporal\Api\History\V1\WorkflowExecutionUpdateAcceptedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\WorkflowExecutionUpdateAcceptedEventAttributes::class);
         $this->writeOneof(46, $var);
 
         return $this;
@@ -1529,9 +1539,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\WorkflowExecutionUpdateRejectedEventAttributes $var
      * @return $this
      */
-    public function setWorkflowExecutionUpdateRejectedEventAttributes($var)
+    public function setWorkflowExecutionUpdateRejectedEventAttributes(\Temporal\Api\History\V1\WorkflowExecutionUpdateRejectedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\WorkflowExecutionUpdateRejectedEventAttributes::class);
         $this->writeOneof(47, $var);
 
         return $this;
@@ -1556,9 +1565,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\WorkflowExecutionUpdateCompletedEventAttributes $var
      * @return $this
      */
-    public function setWorkflowExecutionUpdateCompletedEventAttributes($var)
+    public function setWorkflowExecutionUpdateCompletedEventAttributes(\Temporal\Api\History\V1\WorkflowExecutionUpdateCompletedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\WorkflowExecutionUpdateCompletedEventAttributes::class);
         $this->writeOneof(48, $var);
 
         return $this;
@@ -1583,9 +1591,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\WorkflowPropertiesModifiedExternallyEventAttributes $var
      * @return $this
      */
-    public function setWorkflowPropertiesModifiedExternallyEventAttributes($var)
+    public function setWorkflowPropertiesModifiedExternallyEventAttributes(\Temporal\Api\History\V1\WorkflowPropertiesModifiedExternallyEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\WorkflowPropertiesModifiedExternallyEventAttributes::class);
         $this->writeOneof(49, $var);
 
         return $this;
@@ -1610,9 +1617,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\ActivityPropertiesModifiedExternallyEventAttributes $var
      * @return $this
      */
-    public function setActivityPropertiesModifiedExternallyEventAttributes($var)
+    public function setActivityPropertiesModifiedExternallyEventAttributes(\Temporal\Api\History\V1\ActivityPropertiesModifiedExternallyEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\ActivityPropertiesModifiedExternallyEventAttributes::class);
         $this->writeOneof(50, $var);
 
         return $this;
@@ -1637,9 +1643,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\WorkflowPropertiesModifiedEventAttributes $var
      * @return $this
      */
-    public function setWorkflowPropertiesModifiedEventAttributes($var)
+    public function setWorkflowPropertiesModifiedEventAttributes(\Temporal\Api\History\V1\WorkflowPropertiesModifiedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\WorkflowPropertiesModifiedEventAttributes::class);
         $this->writeOneof(51, $var);
 
         return $this;
@@ -1664,9 +1669,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\WorkflowExecutionUpdateAdmittedEventAttributes $var
      * @return $this
      */
-    public function setWorkflowExecutionUpdateAdmittedEventAttributes($var)
+    public function setWorkflowExecutionUpdateAdmittedEventAttributes(\Temporal\Api\History\V1\WorkflowExecutionUpdateAdmittedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\WorkflowExecutionUpdateAdmittedEventAttributes::class);
         $this->writeOneof(52, $var);
 
         return $this;
@@ -1691,9 +1695,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\NexusOperationScheduledEventAttributes $var
      * @return $this
      */
-    public function setNexusOperationScheduledEventAttributes($var)
+    public function setNexusOperationScheduledEventAttributes(\Temporal\Api\History\V1\NexusOperationScheduledEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\NexusOperationScheduledEventAttributes::class);
         $this->writeOneof(53, $var);
 
         return $this;
@@ -1718,9 +1721,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\NexusOperationStartedEventAttributes $var
      * @return $this
      */
-    public function setNexusOperationStartedEventAttributes($var)
+    public function setNexusOperationStartedEventAttributes(\Temporal\Api\History\V1\NexusOperationStartedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\NexusOperationStartedEventAttributes::class);
         $this->writeOneof(54, $var);
 
         return $this;
@@ -1745,9 +1747,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\NexusOperationCompletedEventAttributes $var
      * @return $this
      */
-    public function setNexusOperationCompletedEventAttributes($var)
+    public function setNexusOperationCompletedEventAttributes(\Temporal\Api\History\V1\NexusOperationCompletedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\NexusOperationCompletedEventAttributes::class);
         $this->writeOneof(55, $var);
 
         return $this;
@@ -1772,9 +1773,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\NexusOperationFailedEventAttributes $var
      * @return $this
      */
-    public function setNexusOperationFailedEventAttributes($var)
+    public function setNexusOperationFailedEventAttributes(\Temporal\Api\History\V1\NexusOperationFailedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\NexusOperationFailedEventAttributes::class);
         $this->writeOneof(56, $var);
 
         return $this;
@@ -1799,9 +1799,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\NexusOperationCanceledEventAttributes $var
      * @return $this
      */
-    public function setNexusOperationCanceledEventAttributes($var)
+    public function setNexusOperationCanceledEventAttributes(\Temporal\Api\History\V1\NexusOperationCanceledEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\NexusOperationCanceledEventAttributes::class);
         $this->writeOneof(57, $var);
 
         return $this;
@@ -1826,9 +1825,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\NexusOperationTimedOutEventAttributes $var
      * @return $this
      */
-    public function setNexusOperationTimedOutEventAttributes($var)
+    public function setNexusOperationTimedOutEventAttributes(\Temporal\Api\History\V1\NexusOperationTimedOutEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\NexusOperationTimedOutEventAttributes::class);
         $this->writeOneof(58, $var);
 
         return $this;
@@ -1853,9 +1851,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\NexusOperationCancelRequestedEventAttributes $var
      * @return $this
      */
-    public function setNexusOperationCancelRequestedEventAttributes($var)
+    public function setNexusOperationCancelRequestedEventAttributes(\Temporal\Api\History\V1\NexusOperationCancelRequestedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\NexusOperationCancelRequestedEventAttributes::class);
         $this->writeOneof(59, $var);
 
         return $this;
@@ -1880,9 +1877,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\WorkflowExecutionOptionsUpdatedEventAttributes $var
      * @return $this
      */
-    public function setWorkflowExecutionOptionsUpdatedEventAttributes($var)
+    public function setWorkflowExecutionOptionsUpdatedEventAttributes(\Temporal\Api\History\V1\WorkflowExecutionOptionsUpdatedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\WorkflowExecutionOptionsUpdatedEventAttributes::class);
         $this->writeOneof(60, $var);
 
         return $this;
@@ -1907,9 +1903,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\NexusOperationCancelRequestCompletedEventAttributes $var
      * @return $this
      */
-    public function setNexusOperationCancelRequestCompletedEventAttributes($var)
+    public function setNexusOperationCancelRequestCompletedEventAttributes(\Temporal\Api\History\V1\NexusOperationCancelRequestCompletedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\NexusOperationCancelRequestCompletedEventAttributes::class);
         $this->writeOneof(61, $var);
 
         return $this;
@@ -1934,10 +1929,87 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\NexusOperationCancelRequestFailedEventAttributes $var
      * @return $this
      */
-    public function setNexusOperationCancelRequestFailedEventAttributes($var)
+    public function setNexusOperationCancelRequestFailedEventAttributes(\Temporal\Api\History\V1\NexusOperationCancelRequestFailedEventAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\NexusOperationCancelRequestFailedEventAttributes::class);
         $this->writeOneof(62, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.history.v1.WorkflowExecutionPausedEventAttributes workflow_execution_paused_event_attributes = 63;</code>
+     * @return \Temporal\Api\History\V1\WorkflowExecutionPausedEventAttributes|null
+     */
+    public function getWorkflowExecutionPausedEventAttributes()
+    {
+        return $this->readOneof(63);
+    }
+
+    public function hasWorkflowExecutionPausedEventAttributes()
+    {
+        return $this->hasOneof(63);
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.history.v1.WorkflowExecutionPausedEventAttributes workflow_execution_paused_event_attributes = 63;</code>
+     * @param \Temporal\Api\History\V1\WorkflowExecutionPausedEventAttributes $var
+     * @return $this
+     */
+    public function setWorkflowExecutionPausedEventAttributes(\Temporal\Api\History\V1\WorkflowExecutionPausedEventAttributes|null $var)
+    {
+        $this->writeOneof(63, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.history.v1.WorkflowExecutionUnpausedEventAttributes workflow_execution_unpaused_event_attributes = 64;</code>
+     * @return \Temporal\Api\History\V1\WorkflowExecutionUnpausedEventAttributes|null
+     */
+    public function getWorkflowExecutionUnpausedEventAttributes()
+    {
+        return $this->readOneof(64);
+    }
+
+    public function hasWorkflowExecutionUnpausedEventAttributes()
+    {
+        return $this->hasOneof(64);
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.history.v1.WorkflowExecutionUnpausedEventAttributes workflow_execution_unpaused_event_attributes = 64;</code>
+     * @param \Temporal\Api\History\V1\WorkflowExecutionUnpausedEventAttributes $var
+     * @return $this
+     */
+    public function setWorkflowExecutionUnpausedEventAttributes(\Temporal\Api\History\V1\WorkflowExecutionUnpausedEventAttributes|null $var)
+    {
+        $this->writeOneof(64, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.history.v1.WorkflowExecutionTimeSkippingTransitionedEventAttributes workflow_execution_time_skipping_transitioned_event_attributes = 65;</code>
+     * @return \Temporal\Api\History\V1\WorkflowExecutionTimeSkippingTransitionedEventAttributes|null
+     */
+    public function getWorkflowExecutionTimeSkippingTransitionedEventAttributes()
+    {
+        return $this->readOneof(65);
+    }
+
+    public function hasWorkflowExecutionTimeSkippingTransitionedEventAttributes()
+    {
+        return $this->hasOneof(65);
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.history.v1.WorkflowExecutionTimeSkippingTransitionedEventAttributes workflow_execution_time_skipping_transitioned_event_attributes = 65;</code>
+     * @param \Temporal\Api\History\V1\WorkflowExecutionTimeSkippingTransitionedEventAttributes $var
+     * @return $this
+     */
+    public function setWorkflowExecutionTimeSkippingTransitionedEventAttributes(\Temporal\Api\History\V1\WorkflowExecutionTimeSkippingTransitionedEventAttributes|null $var)
+    {
+        $this->writeOneof(65, $var);
 
         return $this;
     }

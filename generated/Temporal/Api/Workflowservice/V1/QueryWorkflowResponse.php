@@ -62,9 +62,8 @@ class QueryWorkflowResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setQueryResult($var)
+    public function setQueryResult(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->query_result = $var;
 
         return $this;
@@ -94,9 +93,8 @@ class QueryWorkflowResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Query\V1\QueryRejected $var
      * @return $this
      */
-    public function setQueryRejected($var)
+    public function setQueryRejected(\Temporal\Api\Query\V1\QueryRejected|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Query\V1\QueryRejected::class);
         $this->query_rejected = $var;
 
         return $this;

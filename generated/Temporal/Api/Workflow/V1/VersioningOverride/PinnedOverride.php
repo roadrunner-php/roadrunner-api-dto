@@ -22,7 +22,12 @@ class PinnedOverride extends \Google\Protobuf\Internal\Message
      */
     protected $behavior = 0;
     /**
-     * Required.
+     * Specifies the Worker Deployment Version to pin this workflow to.
+     * Required if the target workflow is not already pinned to a version.
+     * If omitted and the target workflow is already pinned, the effective
+     * pinned version will be the existing pinned version.
+     * If omitted and the target workflow is not pinned, the override request
+     * will be rejected with a PreconditionFailed error.
      *
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion version = 2;</code>
      */
@@ -38,7 +43,12 @@ class PinnedOverride extends \Google\Protobuf\Internal\Message
      *           Defaults to PINNED_OVERRIDE_BEHAVIOR_UNSPECIFIED.
      *           See `PinnedOverrideBehavior` for details.
      *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $version
-     *           Required.
+     *           Specifies the Worker Deployment Version to pin this workflow to.
+     *           Required if the target workflow is not already pinned to a version.
+     *           If omitted and the target workflow is already pinned, the effective
+     *           pinned version will be the existing pinned version.
+     *           If omitted and the target workflow is not pinned, the override request
+     *           will be rejected with a PreconditionFailed error.
      * }
      */
     public function __construct($data = NULL) {
@@ -51,7 +61,7 @@ class PinnedOverride extends \Google\Protobuf\Internal\Message
      * See `PinnedOverrideBehavior` for details.
      *
      * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride.PinnedOverrideBehavior behavior = 1;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Workflow\V1\VersioningOverride\PinnedOverrideBehavior}
      */
     public function getBehavior()
     {
@@ -63,10 +73,10 @@ class PinnedOverride extends \Google\Protobuf\Internal\Message
      * See `PinnedOverrideBehavior` for details.
      *
      * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride.PinnedOverrideBehavior behavior = 1;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Workflow\V1\VersioningOverride\PinnedOverrideBehavior}
      * @return $this
      */
-    public function setBehavior($var)
+    public function setBehavior(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Workflow\V1\VersioningOverride\PinnedOverrideBehavior::class);
         $this->behavior = $var;
@@ -75,7 +85,12 @@ class PinnedOverride extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required.
+     * Specifies the Worker Deployment Version to pin this workflow to.
+     * Required if the target workflow is not already pinned to a version.
+     * If omitted and the target workflow is already pinned, the effective
+     * pinned version will be the existing pinned version.
+     * If omitted and the target workflow is not pinned, the override request
+     * will be rejected with a PreconditionFailed error.
      *
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion version = 2;</code>
      * @return \Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null
@@ -96,15 +111,19 @@ class PinnedOverride extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required.
+     * Specifies the Worker Deployment Version to pin this workflow to.
+     * Required if the target workflow is not already pinned to a version.
+     * If omitted and the target workflow is already pinned, the effective
+     * pinned version will be the existing pinned version.
+     * If omitted and the target workflow is not pinned, the override request
+     * will be rejected with a PreconditionFailed error.
      *
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion version = 2;</code>
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
      * @return $this
      */
-    public function setVersion($var)
+    public function setVersion(\Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
         $this->version = $var;
 
         return $this;

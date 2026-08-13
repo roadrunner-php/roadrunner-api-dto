@@ -50,7 +50,7 @@ class WorkflowExecutions extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Export\V1\WorkflowExecution[] $var
      * @return $this
      */
-    public function setItems($var)
+    public function setItems(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Export\V1\WorkflowExecution::class);
         $this->items = $arr;

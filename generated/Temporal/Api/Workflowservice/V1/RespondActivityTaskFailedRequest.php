@@ -37,6 +37,12 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
      */
     protected $namespace = '';
     /**
+     * Resource ID for routing. Contains the workflow ID or activity ID for standalone activities.
+     *
+     * Generated from protobuf field <code>string resource_id = 9;</code>
+     */
+    protected $resource_id = '';
+    /**
      * Additional details to be stored as last activity heartbeat
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads last_heartbeat_details = 5;</code>
@@ -81,6 +87,8 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
      *     @type string $identity
      *           The identity of the worker/client
      *     @type string $namespace
+     *     @type string $resource_id
+     *           Resource ID for routing. Contains the workflow ID or activity ID for standalone activities.
      *     @type \Temporal\Api\Common\V1\Payloads $last_heartbeat_details
      *           Additional details to be stored as last activity heartbeat
      *     @type \Temporal\Api\Common\V1\WorkerVersionStamp $worker_version
@@ -119,9 +127,9 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTaskToken($var)
+    public function setTaskToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->task_token = $var;
 
         return $this;
@@ -155,9 +163,8 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
      */
-    public function setFailure($var)
+    public function setFailure(\Temporal\Api\Failure\V1\Failure|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
         $this->failure = $var;
 
         return $this;
@@ -181,9 +188,9 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -203,10 +210,36 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
+
+        return $this;
+    }
+
+    /**
+     * Resource ID for routing. Contains the workflow ID or activity ID for standalone activities.
+     *
+     * Generated from protobuf field <code>string resource_id = 9;</code>
+     * @return string
+     */
+    public function getResourceId()
+    {
+        return $this->resource_id;
+    }
+
+    /**
+     * Resource ID for routing. Contains the workflow ID or activity ID for standalone activities.
+     *
+     * Generated from protobuf field <code>string resource_id = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setResourceId(string $var)
+    {
+        GPBUtil::checkString($var, true);
+        $this->resource_id = $var;
 
         return $this;
     }
@@ -239,9 +272,8 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setLastHeartbeatDetails($var)
+    public function setLastHeartbeatDetails(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->last_heartbeat_details = $var;
 
         return $this;
@@ -290,10 +322,9 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setWorkerVersion($var)
+    public function setWorkerVersion(\Temporal\Api\Common\V1\WorkerVersionStamp|null $var)
     {
         @trigger_error('worker_version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerVersionStamp::class);
         $this->worker_version = $var;
 
         return $this;
@@ -340,10 +371,9 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setDeployment($var)
+    public function setDeployment(\Temporal\Api\Deployment\V1\Deployment|null $var)
     {
         @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\Deployment::class);
         $this->deployment = $var;
 
         return $this;
@@ -377,9 +407,8 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentOptions $var
      * @return $this
      */
-    public function setDeploymentOptions($var)
+    public function setDeploymentOptions(\Temporal\Api\Deployment\V1\WorkerDeploymentOptions|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentOptions::class);
         $this->deployment_options = $var;
 
         return $this;

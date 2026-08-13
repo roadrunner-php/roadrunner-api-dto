@@ -13,7 +13,6 @@ use UnexpectedValueException;
  * - Whether or not Temporal Server considers this worker's version (Build ID) when dispatching
  *   tasks to it.
  * - Whether or not the workflows processed by this worker are versioned using the worker's version.
- * Experimental. Worker Deployments are experimental and might significantly change in the future.
  *
  * Protobuf type <code>temporal.api.enums.v1.WorkerVersioningMode</code>
  */

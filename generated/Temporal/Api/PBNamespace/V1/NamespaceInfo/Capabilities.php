@@ -46,6 +46,34 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool reported_problems_search_attribute = 5;</code>
      */
     protected $reported_problems_search_attribute = false;
+    /**
+     * True if the namespace supports pausing workflows
+     *
+     * Generated from protobuf field <code>bool workflow_pause = 6;</code>
+     */
+    protected $workflow_pause = false;
+    /**
+     * True if the namespace supports standalone activities
+     *
+     * Generated from protobuf field <code>bool standalone_activities = 7;</code>
+     */
+    protected $standalone_activities = false;
+    /**
+     * True if the namespace supports server-side completion of outstanding worker polls on shutdown.
+     * When enabled, the server will complete polls for workers that send WorkerInstanceKey in their
+     * poll requests and call ShutdownWorker with the same WorkerInstanceKey. The poll will return
+     * an empty response. When this flag is true, workers should allow polls to return gracefully
+     * rather than terminating any open polls on shutdown.
+     *
+     * Generated from protobuf field <code>bool worker_poll_complete_on_shutdown = 8;</code>
+     */
+    protected $worker_poll_complete_on_shutdown = false;
+    /**
+     * True if the namespace supports poller autoscaling
+     *
+     * Generated from protobuf field <code>bool poller_autoscaling = 9;</code>
+     */
+    protected $poller_autoscaling = false;
 
     /**
      * Constructor.
@@ -63,6 +91,18 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      *           True if the namespace supports worker heartbeats
      *     @type bool $reported_problems_search_attribute
      *           True if the namespace supports reported problems search attribute
+     *     @type bool $workflow_pause
+     *           True if the namespace supports pausing workflows
+     *     @type bool $standalone_activities
+     *           True if the namespace supports standalone activities
+     *     @type bool $worker_poll_complete_on_shutdown
+     *           True if the namespace supports server-side completion of outstanding worker polls on shutdown.
+     *           When enabled, the server will complete polls for workers that send WorkerInstanceKey in their
+     *           poll requests and call ShutdownWorker with the same WorkerInstanceKey. The poll will return
+     *           an empty response. When this flag is true, workers should allow polls to return gracefully
+     *           rather than terminating any open polls on shutdown.
+     *     @type bool $poller_autoscaling
+     *           True if the namespace supports poller autoscaling
      * }
      */
     public function __construct($data = NULL) {
@@ -88,9 +128,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setEagerWorkflowStart($var)
+    public function setEagerWorkflowStart(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->eager_workflow_start = $var;
 
         return $this;
@@ -114,9 +153,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setSyncUpdate($var)
+    public function setSyncUpdate(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->sync_update = $var;
 
         return $this;
@@ -140,9 +178,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setAsyncUpdate($var)
+    public function setAsyncUpdate(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->async_update = $var;
 
         return $this;
@@ -166,9 +203,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setWorkerHeartbeats($var)
+    public function setWorkerHeartbeats(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->worker_heartbeats = $var;
 
         return $this;
@@ -192,10 +228,117 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setReportedProblemsSearchAttribute($var)
+    public function setReportedProblemsSearchAttribute(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->reported_problems_search_attribute = $var;
+
+        return $this;
+    }
+
+    /**
+     * True if the namespace supports pausing workflows
+     *
+     * Generated from protobuf field <code>bool workflow_pause = 6;</code>
+     * @return bool
+     */
+    public function getWorkflowPause()
+    {
+        return $this->workflow_pause;
+    }
+
+    /**
+     * True if the namespace supports pausing workflows
+     *
+     * Generated from protobuf field <code>bool workflow_pause = 6;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setWorkflowPause(bool $var)
+    {
+        $this->workflow_pause = $var;
+
+        return $this;
+    }
+
+    /**
+     * True if the namespace supports standalone activities
+     *
+     * Generated from protobuf field <code>bool standalone_activities = 7;</code>
+     * @return bool
+     */
+    public function getStandaloneActivities()
+    {
+        return $this->standalone_activities;
+    }
+
+    /**
+     * True if the namespace supports standalone activities
+     *
+     * Generated from protobuf field <code>bool standalone_activities = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setStandaloneActivities(bool $var)
+    {
+        $this->standalone_activities = $var;
+
+        return $this;
+    }
+
+    /**
+     * True if the namespace supports server-side completion of outstanding worker polls on shutdown.
+     * When enabled, the server will complete polls for workers that send WorkerInstanceKey in their
+     * poll requests and call ShutdownWorker with the same WorkerInstanceKey. The poll will return
+     * an empty response. When this flag is true, workers should allow polls to return gracefully
+     * rather than terminating any open polls on shutdown.
+     *
+     * Generated from protobuf field <code>bool worker_poll_complete_on_shutdown = 8;</code>
+     * @return bool
+     */
+    public function getWorkerPollCompleteOnShutdown()
+    {
+        return $this->worker_poll_complete_on_shutdown;
+    }
+
+    /**
+     * True if the namespace supports server-side completion of outstanding worker polls on shutdown.
+     * When enabled, the server will complete polls for workers that send WorkerInstanceKey in their
+     * poll requests and call ShutdownWorker with the same WorkerInstanceKey. The poll will return
+     * an empty response. When this flag is true, workers should allow polls to return gracefully
+     * rather than terminating any open polls on shutdown.
+     *
+     * Generated from protobuf field <code>bool worker_poll_complete_on_shutdown = 8;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setWorkerPollCompleteOnShutdown(bool $var)
+    {
+        $this->worker_poll_complete_on_shutdown = $var;
+
+        return $this;
+    }
+
+    /**
+     * True if the namespace supports poller autoscaling
+     *
+     * Generated from protobuf field <code>bool poller_autoscaling = 9;</code>
+     * @return bool
+     */
+    public function getPollerAutoscaling()
+    {
+        return $this->poller_autoscaling;
+    }
+
+    /**
+     * True if the namespace supports poller autoscaling
+     *
+     * Generated from protobuf field <code>bool poller_autoscaling = 9;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setPollerAutoscaling(bool $var)
+    {
+        $this->poller_autoscaling = $var;
 
         return $this;
     }

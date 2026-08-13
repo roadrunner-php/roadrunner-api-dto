@@ -97,9 +97,9 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
      * @param string $var
      * @return $this
      */
-    public function setSignalName($var)
+    public function setSignalName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->signal_name = $var;
 
         return $this;
@@ -133,9 +133,8 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setInput($var)
+    public function setInput(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->input = $var;
 
         return $this;
@@ -159,9 +158,9 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -197,9 +196,8 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
      * @param \Temporal\Api\Common\V1\Header $var
      * @return $this
      */
-    public function setHeader($var)
+    public function setHeader(\Temporal\Api\Common\V1\Header|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Header::class);
         $this->header = $var;
 
         return $this;
@@ -228,10 +226,9 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
      * @return $this
      * @deprecated
      */
-    public function setSkipGenerateWorkflowTask($var)
+    public function setSkipGenerateWorkflowTask(bool $var)
     {
         @trigger_error('skip_generate_workflow_task is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkBool($var);
         $this->skip_generate_workflow_task = $var;
 
         return $this;
@@ -265,9 +262,8 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
      * @return $this
      */
-    public function setExternalWorkflowExecution($var)
+    public function setExternalWorkflowExecution(\Temporal\Api\Common\V1\WorkflowExecution|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->external_workflow_execution = $var;
 
         return $this;

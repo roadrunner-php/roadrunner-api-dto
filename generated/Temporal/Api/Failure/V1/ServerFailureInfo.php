@@ -47,9 +47,8 @@ class ServerFailureInfo extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setNonRetryable($var)
+    public function setNonRetryable(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->non_retryable = $var;
 
         return $this;

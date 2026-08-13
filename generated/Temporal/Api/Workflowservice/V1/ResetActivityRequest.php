@@ -119,9 +119,9 @@ class ResetActivityRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -155,9 +155,8 @@ class ResetActivityRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
      * @return $this
      */
-    public function setExecution($var)
+    public function setExecution(\Temporal\Api\Common\V1\WorkflowExecution|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->execution = $var;
 
         return $this;
@@ -181,9 +180,9 @@ class ResetActivityRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -212,9 +211,9 @@ class ResetActivityRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->writeOneof(4, $var);
 
         return $this;
@@ -243,9 +242,9 @@ class ResetActivityRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setType($var)
+    public function setType(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->writeOneof(5, $var);
 
         return $this;
@@ -274,9 +273,8 @@ class ResetActivityRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setMatchAll($var)
+    public function setMatchAll(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->writeOneof(10, $var);
 
         return $this;
@@ -302,9 +300,8 @@ class ResetActivityRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setResetHeartbeat($var)
+    public function setResetHeartbeat(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->reset_heartbeat = $var;
 
         return $this;
@@ -328,9 +325,8 @@ class ResetActivityRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setKeepPaused($var)
+    public function setKeepPaused(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->keep_paused = $var;
 
         return $this;
@@ -366,9 +362,8 @@ class ResetActivityRequest extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setJitter($var)
+    public function setJitter(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->jitter = $var;
 
         return $this;
@@ -396,9 +391,8 @@ class ResetActivityRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setRestoreOriginalOptions($var)
+    public function setRestoreOriginalOptions(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->restore_original_options = $var;
 
         return $this;

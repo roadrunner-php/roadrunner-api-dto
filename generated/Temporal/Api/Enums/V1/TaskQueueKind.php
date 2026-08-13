@@ -13,6 +13,11 @@ use UnexpectedValueException;
 class TaskQueueKind
 {
     /**
+     * Tasks from any non workflow task may be unspecified.
+     * Task queue kind is used to differentiate whether a workflow task queue is sticky or 
+     * normal. If a task is not a workflow task, Task queue kind will sometimes be 
+     * unspecified.
+     *
      * Generated from protobuf enum <code>TASK_QUEUE_KIND_UNSPECIFIED = 0;</code>
      */
     const TASK_QUEUE_KIND_UNSPECIFIED = 0;

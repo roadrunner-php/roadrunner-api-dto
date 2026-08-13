@@ -78,9 +78,9 @@ class BatchOperationInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setJobId($var)
+    public function setJobId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->job_id = $var;
 
         return $this;
@@ -90,7 +90,7 @@ class BatchOperationInfo extends \Google\Protobuf\Internal\Message
      * Batch operation state
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.BatchOperationState state = 2;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\BatchOperationState}
      */
     public function getState()
     {
@@ -101,10 +101,10 @@ class BatchOperationInfo extends \Google\Protobuf\Internal\Message
      * Batch operation state
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.BatchOperationState state = 2;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\BatchOperationState}
      * @return $this
      */
-    public function setState($var)
+    public function setState(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\BatchOperationState::class);
         $this->state = $var;
@@ -140,9 +140,8 @@ class BatchOperationInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setStartTime($var)
+    public function setStartTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->start_time = $var;
 
         return $this;
@@ -176,9 +175,8 @@ class BatchOperationInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setCloseTime($var)
+    public function setCloseTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->close_time = $var;
 
         return $this;

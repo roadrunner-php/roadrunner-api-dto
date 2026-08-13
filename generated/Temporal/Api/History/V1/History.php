@@ -47,7 +47,7 @@ class History extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\HistoryEvent[] $var
      * @return $this
      */
-    public function setEvents($var)
+    public function setEvents(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\History\V1\HistoryEvent::class);
         $this->events = $arr;

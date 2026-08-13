@@ -48,6 +48,8 @@ class NexusOperationScheduledEventAttributes extends \Google\Protobuf\Internal\M
      * Calls are retried internally by the server.
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
+     * (-- api-linter: core::0142::time-field-names=disabled
+     *     aip.dev/not-precedent: "timeout" is an acceptable suffix for duration fields in this API. --)
      *
      * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_close_timeout = 5;</code>
      */
@@ -81,6 +83,24 @@ class NexusOperationScheduledEventAttributes extends \Google\Protobuf\Internal\M
      * Generated from protobuf field <code>string endpoint_id = 9;</code>
      */
     protected $endpoint_id = '';
+    /**
+     * Schedule-to-start timeout for this operation.
+     * See ScheduleNexusOperationCommandAttributes.schedule_to_start_timeout for details.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "to" is used to indicate interval. --)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_start_timeout = 10;</code>
+     */
+    protected $schedule_to_start_timeout = null;
+    /**
+     * Start-to-close timeout for this operation.
+     * See ScheduleNexusOperationCommandAttributes.start_to_close_timeout for details.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "to" is used to indicate interval. --)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration start_to_close_timeout = 11;</code>
+     */
+    protected $start_to_close_timeout = null;
 
     /**
      * Constructor.
@@ -104,6 +124,8 @@ class NexusOperationScheduledEventAttributes extends \Google\Protobuf\Internal\M
      *           Calls are retried internally by the server.
      *           (-- api-linter: core::0140::prepositions=disabled
      *               aip.dev/not-precedent: "to" is used to indicate interval. --)
+     *           (-- api-linter: core::0142::time-field-names=disabled
+     *               aip.dev/not-precedent: "timeout" is an acceptable suffix for duration fields in this API. --)
      *     @type array|\Google\Protobuf\Internal\MapField $nexus_header
      *           Header to attach to the Nexus request. Note these headers are not the same as Temporal headers on internal
      *           activities and child workflows, these are transmitted to Nexus operations that may be external and are not
@@ -117,6 +139,16 @@ class NexusOperationScheduledEventAttributes extends \Google\Protobuf\Internal\M
      *           Endpoint ID as resolved in the endpoint registry at the time this event was generated.
      *           This is stored on the event and used internally by the server in case the endpoint is renamed from the time the
      *           event was originally scheduled.
+     *     @type \Google\Protobuf\Duration $schedule_to_start_timeout
+     *           Schedule-to-start timeout for this operation.
+     *           See ScheduleNexusOperationCommandAttributes.schedule_to_start_timeout for details.
+     *           (-- api-linter: core::0140::prepositions=disabled
+     *               aip.dev/not-precedent: "to" is used to indicate interval. --)
+     *     @type \Google\Protobuf\Duration $start_to_close_timeout
+     *           Start-to-close timeout for this operation.
+     *           See ScheduleNexusOperationCommandAttributes.start_to_close_timeout for details.
+     *           (-- api-linter: core::0140::prepositions=disabled
+     *               aip.dev/not-precedent: "to" is used to indicate interval. --)
      * }
      */
     public function __construct($data = NULL) {
@@ -142,9 +174,9 @@ class NexusOperationScheduledEventAttributes extends \Google\Protobuf\Internal\M
      * @param string $var
      * @return $this
      */
-    public function setEndpoint($var)
+    public function setEndpoint(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->endpoint = $var;
 
         return $this;
@@ -168,9 +200,9 @@ class NexusOperationScheduledEventAttributes extends \Google\Protobuf\Internal\M
      * @param string $var
      * @return $this
      */
-    public function setService($var)
+    public function setService(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->service = $var;
 
         return $this;
@@ -194,9 +226,9 @@ class NexusOperationScheduledEventAttributes extends \Google\Protobuf\Internal\M
      * @param string $var
      * @return $this
      */
-    public function setOperation($var)
+    public function setOperation(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->operation = $var;
 
         return $this;
@@ -234,9 +266,8 @@ class NexusOperationScheduledEventAttributes extends \Google\Protobuf\Internal\M
      * @param \Temporal\Api\Common\V1\Payload $var
      * @return $this
      */
-    public function setInput($var)
+    public function setInput(\Temporal\Api\Common\V1\Payload|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payload::class);
         $this->input = $var;
 
         return $this;
@@ -248,6 +279,8 @@ class NexusOperationScheduledEventAttributes extends \Google\Protobuf\Internal\M
      * Calls are retried internally by the server.
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
+     * (-- api-linter: core::0142::time-field-names=disabled
+     *     aip.dev/not-precedent: "timeout" is an acceptable suffix for duration fields in this API. --)
      *
      * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_close_timeout = 5;</code>
      * @return \Google\Protobuf\Duration|null
@@ -273,14 +306,15 @@ class NexusOperationScheduledEventAttributes extends \Google\Protobuf\Internal\M
      * Calls are retried internally by the server.
      * (-- api-linter: core::0140::prepositions=disabled
      *     aip.dev/not-precedent: "to" is used to indicate interval. --)
+     * (-- api-linter: core::0142::time-field-names=disabled
+     *     aip.dev/not-precedent: "timeout" is an acceptable suffix for duration fields in this API. --)
      *
      * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_close_timeout = 5;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setScheduleToCloseTimeout($var)
+    public function setScheduleToCloseTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->schedule_to_close_timeout = $var;
 
         return $this;
@@ -308,7 +342,7 @@ class NexusOperationScheduledEventAttributes extends \Google\Protobuf\Internal\M
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setNexusHeader($var)
+    public function setNexusHeader(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->nexus_header = $arr;
@@ -334,7 +368,7 @@ class NexusOperationScheduledEventAttributes extends \Google\Protobuf\Internal\M
      * @param int|string $var
      * @return $this
      */
-    public function setWorkflowTaskCompletedEventId($var)
+    public function setWorkflowTaskCompletedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->workflow_task_completed_event_id = $var;
@@ -362,9 +396,9 @@ class NexusOperationScheduledEventAttributes extends \Google\Protobuf\Internal\M
      * @param string $var
      * @return $this
      */
-    public function setRequestId($var)
+    public function setRequestId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->request_id = $var;
 
         return $this;
@@ -392,10 +426,92 @@ class NexusOperationScheduledEventAttributes extends \Google\Protobuf\Internal\M
      * @param string $var
      * @return $this
      */
-    public function setEndpointId($var)
+    public function setEndpointId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->endpoint_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Schedule-to-start timeout for this operation.
+     * See ScheduleNexusOperationCommandAttributes.schedule_to_start_timeout for details.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "to" is used to indicate interval. --)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_start_timeout = 10;</code>
+     * @return \Google\Protobuf\Duration|null
+     */
+    public function getScheduleToStartTimeout()
+    {
+        return $this->schedule_to_start_timeout;
+    }
+
+    public function hasScheduleToStartTimeout()
+    {
+        return isset($this->schedule_to_start_timeout);
+    }
+
+    public function clearScheduleToStartTimeout()
+    {
+        unset($this->schedule_to_start_timeout);
+    }
+
+    /**
+     * Schedule-to-start timeout for this operation.
+     * See ScheduleNexusOperationCommandAttributes.schedule_to_start_timeout for details.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "to" is used to indicate interval. --)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_start_timeout = 10;</code>
+     * @param \Google\Protobuf\Duration $var
+     * @return $this
+     */
+    public function setScheduleToStartTimeout(\Google\Protobuf\Duration|null $var)
+    {
+        $this->schedule_to_start_timeout = $var;
+
+        return $this;
+    }
+
+    /**
+     * Start-to-close timeout for this operation.
+     * See ScheduleNexusOperationCommandAttributes.start_to_close_timeout for details.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "to" is used to indicate interval. --)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration start_to_close_timeout = 11;</code>
+     * @return \Google\Protobuf\Duration|null
+     */
+    public function getStartToCloseTimeout()
+    {
+        return $this->start_to_close_timeout;
+    }
+
+    public function hasStartToCloseTimeout()
+    {
+        return isset($this->start_to_close_timeout);
+    }
+
+    public function clearStartToCloseTimeout()
+    {
+        unset($this->start_to_close_timeout);
+    }
+
+    /**
+     * Start-to-close timeout for this operation.
+     * See ScheduleNexusOperationCommandAttributes.start_to_close_timeout for details.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "to" is used to indicate interval. --)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration start_to_close_timeout = 11;</code>
+     * @param \Google\Protobuf\Duration $var
+     * @return $this
+     */
+    public function setStartToCloseTimeout(\Google\Protobuf\Duration|null $var)
+    {
+        $this->start_to_close_timeout = $var;
 
         return $this;
     }

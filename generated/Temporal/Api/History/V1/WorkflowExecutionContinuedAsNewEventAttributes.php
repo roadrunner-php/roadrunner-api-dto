@@ -51,7 +51,9 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
      */
     protected $workflow_task_completed_event_id = 0;
     /**
-     * TODO: How and is this used?
+     * How long the server will wait before scheduling the first workflow task for the new run.
+     * Used for cron, retry, and other continue-as-new cases that server may enforce some minimal
+     * delay between new runs for system protection purpose.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration backoff_start_interval = 8;</code>
      */
@@ -61,7 +63,6 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
      */
     protected $initiator = 0;
     /**
-     * TODO: David are these right?
      * Deprecated. If a workflow's retry policy would cause a new run to start when the current one
      * has failed, this field would be populated with that failure. Now (when supported by server
      * and sdk) the final event will be `WORKFLOW_EXECUTION_FAILED` with `new_execution_run_id` set.
@@ -71,7 +72,8 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
      */
     protected $failure = null;
     /**
-     * TODO: Is this the result of *this* workflow as it continued-as-new?
+     * The result from the most recent completed run of this workflow. The SDK surfaces this to the
+     * new run via APIs such as `GetLastCompletionResult`.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads last_completion_result = 11;</code>
      */
@@ -97,6 +99,14 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
      * @deprecated
      */
     protected $inherit_build_id = false;
+    /**
+     * Experimental. Optionally decide the versioning behavior that the first task of the new run should use.
+     * For example, choose to AutoUpgrade on continue-as-new instead of inheriting the pinned version
+     * of the previous run.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ContinueAsNewVersioningBehavior initial_versioning_behavior = 16;</code>
+     */
+    protected $initial_versioning_behavior = 0;
 
     /**
      * Constructor.
@@ -116,15 +126,17 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
      *     @type int|string $workflow_task_completed_event_id
      *           The `WORKFLOW_TASK_COMPLETED` event which this command was reported with
      *     @type \Google\Protobuf\Duration $backoff_start_interval
-     *           TODO: How and is this used?
+     *           How long the server will wait before scheduling the first workflow task for the new run.
+     *           Used for cron, retry, and other continue-as-new cases that server may enforce some minimal
+     *           delay between new runs for system protection purpose.
      *     @type int $initiator
      *     @type \Temporal\Api\Failure\V1\Failure $failure
-     *           TODO: David are these right?
      *           Deprecated. If a workflow's retry policy would cause a new run to start when the current one
      *           has failed, this field would be populated with that failure. Now (when supported by server
      *           and sdk) the final event will be `WORKFLOW_EXECUTION_FAILED` with `new_execution_run_id` set.
      *     @type \Temporal\Api\Common\V1\Payloads $last_completion_result
-     *           TODO: Is this the result of *this* workflow as it continued-as-new?
+     *           The result from the most recent completed run of this workflow. The SDK surfaces this to the
+     *           new run via APIs such as `GetLastCompletionResult`.
      *     @type \Temporal\Api\Common\V1\Header $header
      *     @type \Temporal\Api\Common\V1\Memo $memo
      *     @type \Temporal\Api\Common\V1\SearchAttributes $search_attributes
@@ -132,6 +144,10 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
      *           If this is set, the new execution inherits the Build ID of the current execution. Otherwise,
      *           the assignment rules will be used to independently assign a Build ID to the new execution.
      *           Deprecated. Only considered for versioning v0.2.
+     *     @type int $initial_versioning_behavior
+     *           Experimental. Optionally decide the versioning behavior that the first task of the new run should use.
+     *           For example, choose to AutoUpgrade on continue-as-new instead of inheriting the pinned version
+     *           of the previous run.
      * }
      */
     public function __construct($data = NULL) {
@@ -157,9 +173,9 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
      * @param string $var
      * @return $this
      */
-    public function setNewExecutionRunId($var)
+    public function setNewExecutionRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->new_execution_run_id = $var;
 
         return $this;
@@ -189,9 +205,8 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
      * @param \Temporal\Api\Common\V1\WorkflowType $var
      * @return $this
      */
-    public function setWorkflowType($var)
+    public function setWorkflowType(\Temporal\Api\Common\V1\WorkflowType|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowType::class);
         $this->workflow_type = $var;
 
         return $this;
@@ -221,9 +236,8 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
      * @param \Temporal\Api\Taskqueue\V1\TaskQueue $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(\Temporal\Api\Taskqueue\V1\TaskQueue|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueue::class);
         $this->task_queue = $var;
 
         return $this;
@@ -253,9 +267,8 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setInput($var)
+    public function setInput(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->input = $var;
 
         return $this;
@@ -289,9 +302,8 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setWorkflowRunTimeout($var)
+    public function setWorkflowRunTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->workflow_run_timeout = $var;
 
         return $this;
@@ -325,9 +337,8 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setWorkflowTaskTimeout($var)
+    public function setWorkflowTaskTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->workflow_task_timeout = $var;
 
         return $this;
@@ -351,7 +362,7 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
      * @param int|string $var
      * @return $this
      */
-    public function setWorkflowTaskCompletedEventId($var)
+    public function setWorkflowTaskCompletedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->workflow_task_completed_event_id = $var;
@@ -360,7 +371,9 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
     }
 
     /**
-     * TODO: How and is this used?
+     * How long the server will wait before scheduling the first workflow task for the new run.
+     * Used for cron, retry, and other continue-as-new cases that server may enforce some minimal
+     * delay between new runs for system protection purpose.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration backoff_start_interval = 8;</code>
      * @return \Google\Protobuf\Duration|null
@@ -381,15 +394,16 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
     }
 
     /**
-     * TODO: How and is this used?
+     * How long the server will wait before scheduling the first workflow task for the new run.
+     * Used for cron, retry, and other continue-as-new cases that server may enforce some minimal
+     * delay between new runs for system protection purpose.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration backoff_start_interval = 8;</code>
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setBackoffStartInterval($var)
+    public function setBackoffStartInterval(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->backoff_start_interval = $var;
 
         return $this;
@@ -397,7 +411,7 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.ContinueAsNewInitiator initiator = 9;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ContinueAsNewInitiator}
      */
     public function getInitiator()
     {
@@ -406,10 +420,10 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.ContinueAsNewInitiator initiator = 9;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ContinueAsNewInitiator}
      * @return $this
      */
-    public function setInitiator($var)
+    public function setInitiator(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ContinueAsNewInitiator::class);
         $this->initiator = $var;
@@ -418,7 +432,6 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
     }
 
     /**
-     * TODO: David are these right?
      * Deprecated. If a workflow's retry policy would cause a new run to start when the current one
      * has failed, this field would be populated with that failure. Now (when supported by server
      * and sdk) the final event will be `WORKFLOW_EXECUTION_FAILED` with `new_execution_run_id` set.
@@ -450,7 +463,6 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
     }
 
     /**
-     * TODO: David are these right?
      * Deprecated. If a workflow's retry policy would cause a new run to start when the current one
      * has failed, this field would be populated with that failure. Now (when supported by server
      * and sdk) the final event will be `WORKFLOW_EXECUTION_FAILED` with `new_execution_run_id` set.
@@ -460,17 +472,17 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
      * @return $this
      * @deprecated
      */
-    public function setFailure($var)
+    public function setFailure(\Temporal\Api\Failure\V1\Failure|null $var)
     {
         @trigger_error('failure is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
         $this->failure = $var;
 
         return $this;
     }
 
     /**
-     * TODO: Is this the result of *this* workflow as it continued-as-new?
+     * The result from the most recent completed run of this workflow. The SDK surfaces this to the
+     * new run via APIs such as `GetLastCompletionResult`.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads last_completion_result = 11;</code>
      * @return \Temporal\Api\Common\V1\Payloads|null
@@ -491,15 +503,15 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
     }
 
     /**
-     * TODO: Is this the result of *this* workflow as it continued-as-new?
+     * The result from the most recent completed run of this workflow. The SDK surfaces this to the
+     * new run via APIs such as `GetLastCompletionResult`.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads last_completion_result = 11;</code>
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setLastCompletionResult($var)
+    public function setLastCompletionResult(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->last_completion_result = $var;
 
         return $this;
@@ -529,9 +541,8 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
      * @param \Temporal\Api\Common\V1\Header $var
      * @return $this
      */
-    public function setHeader($var)
+    public function setHeader(\Temporal\Api\Common\V1\Header|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Header::class);
         $this->header = $var;
 
         return $this;
@@ -561,9 +572,8 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
      * @param \Temporal\Api\Common\V1\Memo $var
      * @return $this
      */
-    public function setMemo($var)
+    public function setMemo(\Temporal\Api\Common\V1\Memo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Memo::class);
         $this->memo = $var;
 
         return $this;
@@ -593,9 +603,8 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
      * @param \Temporal\Api\Common\V1\SearchAttributes $var
      * @return $this
      */
-    public function setSearchAttributes($var)
+    public function setSearchAttributes(\Temporal\Api\Common\V1\SearchAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\SearchAttributes::class);
         $this->search_attributes = $var;
 
         return $this;
@@ -628,11 +637,40 @@ class WorkflowExecutionContinuedAsNewEventAttributes extends \Google\Protobuf\In
      * @return $this
      * @deprecated
      */
-    public function setInheritBuildId($var)
+    public function setInheritBuildId(bool $var)
     {
         @trigger_error('inherit_build_id is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkBool($var);
         $this->inherit_build_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Experimental. Optionally decide the versioning behavior that the first task of the new run should use.
+     * For example, choose to AutoUpgrade on continue-as-new instead of inheriting the pinned version
+     * of the previous run.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ContinueAsNewVersioningBehavior initial_versioning_behavior = 16;</code>
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ContinueAsNewVersioningBehavior}
+     */
+    public function getInitialVersioningBehavior()
+    {
+        return $this->initial_versioning_behavior;
+    }
+
+    /**
+     * Experimental. Optionally decide the versioning behavior that the first task of the new run should use.
+     * For example, choose to AutoUpgrade on continue-as-new instead of inheriting the pinned version
+     * of the previous run.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ContinueAsNewVersioningBehavior initial_versioning_behavior = 16;</code>
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ContinueAsNewVersioningBehavior}
+     * @return $this
+     */
+    public function setInitialVersioningBehavior(int $var)
+    {
+        GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ContinueAsNewVersioningBehavior::class);
+        $this->initial_versioning_behavior = $var;
 
         return $this;
     }

@@ -62,6 +62,12 @@ class WorkflowExecutionExtendedInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<string, .temporal.api.workflow.v1.RequestIdInfo> request_id_infos = 7;</code>
      */
     private $request_id_infos;
+    /**
+     * Information about the workflow execution pause operation.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.WorkflowExecutionPauseInfo pause_info = 8;</code>
+     */
+    protected $pause_info = null;
 
     /**
      * Constructor.
@@ -87,6 +93,8 @@ class WorkflowExecutionExtendedInfo extends \Google\Protobuf\Internal\Message
      *           Note: It only contains request IDs from StartWorkflowExecution requests, including indirect
      *           calls (eg: if SignalWithStartWorkflowExecution starts a new workflow, then the request ID is
      *           used in the StartWorkflowExecution request).
+     *     @type \Temporal\Api\Workflow\V1\WorkflowExecutionPauseInfo $pause_info
+     *           Information about the workflow execution pause operation.
      * }
      */
     public function __construct($data = NULL) {
@@ -124,9 +132,8 @@ class WorkflowExecutionExtendedInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setExecutionExpirationTime($var)
+    public function setExecutionExpirationTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->execution_expiration_time = $var;
 
         return $this;
@@ -160,9 +167,8 @@ class WorkflowExecutionExtendedInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setRunExpirationTime($var)
+    public function setRunExpirationTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->run_expiration_time = $var;
 
         return $this;
@@ -186,9 +192,8 @@ class WorkflowExecutionExtendedInfo extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setCancelRequested($var)
+    public function setCancelRequested(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->cancel_requested = $var;
 
         return $this;
@@ -222,9 +227,8 @@ class WorkflowExecutionExtendedInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setLastResetTime($var)
+    public function setLastResetTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_reset_time = $var;
 
         return $this;
@@ -258,9 +262,8 @@ class WorkflowExecutionExtendedInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setOriginalStartTime($var)
+    public function setOriginalStartTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->original_start_time = $var;
 
         return $this;
@@ -284,9 +287,9 @@ class WorkflowExecutionExtendedInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setResetRunId($var)
+    public function setResetRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->reset_run_id = $var;
 
         return $this;
@@ -316,10 +319,45 @@ class WorkflowExecutionExtendedInfo extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setRequestIdInfos($var)
+    public function setRequestIdInfos(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Workflow\V1\RequestIdInfo::class);
         $this->request_id_infos = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Information about the workflow execution pause operation.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.WorkflowExecutionPauseInfo pause_info = 8;</code>
+     * @return \Temporal\Api\Workflow\V1\WorkflowExecutionPauseInfo|null
+     */
+    public function getPauseInfo()
+    {
+        return $this->pause_info;
+    }
+
+    public function hasPauseInfo()
+    {
+        return isset($this->pause_info);
+    }
+
+    public function clearPauseInfo()
+    {
+        unset($this->pause_info);
+    }
+
+    /**
+     * Information about the workflow execution pause operation.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.WorkflowExecutionPauseInfo pause_info = 8;</code>
+     * @param \Temporal\Api\Workflow\V1\WorkflowExecutionPauseInfo $var
+     * @return $this
+     */
+    public function setPauseInfo(\Temporal\Api\Workflow\V1\WorkflowExecutionPauseInfo|null $var)
+    {
+        $this->pause_info = $var;
 
         return $this;
     }

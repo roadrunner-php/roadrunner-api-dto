@@ -73,7 +73,7 @@ class PollerScalingDecision extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setPollRequestDeltaSuggestion($var)
+    public function setPollRequestDeltaSuggestion(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->poll_request_delta_suggestion = $var;

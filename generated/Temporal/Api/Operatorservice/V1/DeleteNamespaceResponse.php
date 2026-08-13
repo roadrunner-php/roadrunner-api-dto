@@ -54,9 +54,9 @@ class DeleteNamespaceResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setDeletedNamespace($var)
+    public function setDeletedNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->deleted_namespace = $var;
 
         return $this;

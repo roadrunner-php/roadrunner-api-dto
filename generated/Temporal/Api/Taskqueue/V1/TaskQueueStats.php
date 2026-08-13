@@ -150,7 +150,7 @@ class TaskQueueStats extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setApproximateBacklogCount($var)
+    public function setApproximateBacklogCount(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->approximate_backlog_count = $var;
@@ -194,9 +194,8 @@ class TaskQueueStats extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setApproximateBacklogAge($var)
+    public function setApproximateBacklogAge(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->approximate_backlog_age = $var;
 
         return $this;
@@ -242,9 +241,8 @@ class TaskQueueStats extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setTasksAddRate($var)
+    public function setTasksAddRate(float $var)
     {
-        GPBUtil::checkFloat($var);
         $this->tasks_add_rate = $var;
 
         return $this;
@@ -290,9 +288,8 @@ class TaskQueueStats extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setTasksDispatchRate($var)
+    public function setTasksDispatchRate(float $var)
     {
-        GPBUtil::checkFloat($var);
         $this->tasks_dispatch_rate = $var;
 
         return $this;

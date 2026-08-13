@@ -20,6 +20,20 @@ class WorkflowExecutionOptions extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 1;</code>
      */
     protected $versioning_override = null;
+    /**
+     * If set, overrides the workflow's priority sent by the SDK.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 2;</code>
+     */
+    protected $priority = null;
+    /**
+     * Time-skipping configuration for this workflow execution.
+     * If not set, the time-skipping conf will not get updated upon request, 
+     * i.e. the existing time-skipping conf will be preserved.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.TimeSkippingConfig time_skipping_config = 3;</code>
+     */
+    protected $time_skipping_config = null;
 
     /**
      * Constructor.
@@ -29,6 +43,12 @@ class WorkflowExecutionOptions extends \Google\Protobuf\Internal\Message
      *
      *     @type \Temporal\Api\Workflow\V1\VersioningOverride $versioning_override
      *           If set, takes precedence over the Versioning Behavior sent by the SDK on Workflow Task completion.
+     *     @type \Temporal\Api\Common\V1\Priority $priority
+     *           If set, overrides the workflow's priority sent by the SDK.
+     *     @type \Temporal\Api\Workflow\V1\TimeSkippingConfig $time_skipping_config
+     *           Time-skipping configuration for this workflow execution.
+     *           If not set, the time-skipping conf will not get updated upon request, 
+     *           i.e. the existing time-skipping conf will be preserved.
      * }
      */
     public function __construct($data = NULL) {
@@ -64,10 +84,83 @@ class WorkflowExecutionOptions extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflow\V1\VersioningOverride $var
      * @return $this
      */
-    public function setVersioningOverride($var)
+    public function setVersioningOverride(\Temporal\Api\Workflow\V1\VersioningOverride|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\VersioningOverride::class);
         $this->versioning_override = $var;
+
+        return $this;
+    }
+
+    /**
+     * If set, overrides the workflow's priority sent by the SDK.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 2;</code>
+     * @return \Temporal\Api\Common\V1\Priority|null
+     */
+    public function getPriority()
+    {
+        return $this->priority;
+    }
+
+    public function hasPriority()
+    {
+        return isset($this->priority);
+    }
+
+    public function clearPriority()
+    {
+        unset($this->priority);
+    }
+
+    /**
+     * If set, overrides the workflow's priority sent by the SDK.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 2;</code>
+     * @param \Temporal\Api\Common\V1\Priority $var
+     * @return $this
+     */
+    public function setPriority(\Temporal\Api\Common\V1\Priority|null $var)
+    {
+        $this->priority = $var;
+
+        return $this;
+    }
+
+    /**
+     * Time-skipping configuration for this workflow execution.
+     * If not set, the time-skipping conf will not get updated upon request, 
+     * i.e. the existing time-skipping conf will be preserved.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.TimeSkippingConfig time_skipping_config = 3;</code>
+     * @return \Temporal\Api\Workflow\V1\TimeSkippingConfig|null
+     */
+    public function getTimeSkippingConfig()
+    {
+        return $this->time_skipping_config;
+    }
+
+    public function hasTimeSkippingConfig()
+    {
+        return isset($this->time_skipping_config);
+    }
+
+    public function clearTimeSkippingConfig()
+    {
+        unset($this->time_skipping_config);
+    }
+
+    /**
+     * Time-skipping configuration for this workflow execution.
+     * If not set, the time-skipping conf will not get updated upon request, 
+     * i.e. the existing time-skipping conf will be preserved.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.TimeSkippingConfig time_skipping_config = 3;</code>
+     * @param \Temporal\Api\Workflow\V1\TimeSkippingConfig $var
+     * @return $this
+     */
+    public function setTimeSkippingConfig(\Temporal\Api\Workflow\V1\TimeSkippingConfig|null $var)
+    {
+        $this->time_skipping_config = $var;
 
         return $this;
     }

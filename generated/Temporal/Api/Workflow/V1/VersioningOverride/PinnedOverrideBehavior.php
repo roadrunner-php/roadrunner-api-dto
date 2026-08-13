@@ -8,8 +8,6 @@ namespace Temporal\Api\Workflow\V1\VersioningOverride;
 use UnexpectedValueException;
 
 /**
- * Used to specify different sub-types of Pinned override that we plan to add in the future.
- *
  * Protobuf type <code>temporal.api.workflow.v1.VersioningOverride.PinnedOverrideBehavior</code>
  */
 class PinnedOverrideBehavior

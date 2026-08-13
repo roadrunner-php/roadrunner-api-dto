@@ -123,7 +123,8 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      */
     protected $last_deployment_version = null;
     /**
-     * Priority metadata
+     * Priority metadata. If this message is not present, or any fields are not
+     * present, they inherit the values from the workflow.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 22;</code>
      */
@@ -191,7 +192,8 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      *           The Worker Deployment Version this activity was dispatched to most recently.
      *           If nil, the activity has not yet been dispatched or was last dispatched to an unversioned worker.
      *     @type \Temporal\Api\Common\V1\Priority $priority
-     *           Priority metadata
+     *           Priority metadata. If this message is not present, or any fields are not
+     *           present, they inherit the values from the workflow.
      *     @type \Temporal\Api\Workflow\V1\PendingActivityInfo\PauseInfo $pause_info
      *     @type \Temporal\Api\Activity\V1\ActivityOptions $activity_options
      *           Current activity options. May be different from the one used to start the activity.
@@ -216,9 +218,9 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setActivityId($var)
+    public function setActivityId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->activity_id = $var;
 
         return $this;
@@ -248,9 +250,8 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\ActivityType $var
      * @return $this
      */
-    public function setActivityType($var)
+    public function setActivityType(\Temporal\Api\Common\V1\ActivityType|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\ActivityType::class);
         $this->activity_type = $var;
 
         return $this;
@@ -258,7 +259,7 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.PendingActivityState state = 3;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\PendingActivityState}
      */
     public function getState()
     {
@@ -267,10 +268,10 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.PendingActivityState state = 3;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\PendingActivityState}
      * @return $this
      */
-    public function setState($var)
+    public function setState(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\PendingActivityState::class);
         $this->state = $var;
@@ -302,9 +303,8 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setHeartbeatDetails($var)
+    public function setHeartbeatDetails(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->heartbeat_details = $var;
 
         return $this;
@@ -334,9 +334,8 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setLastHeartbeatTime($var)
+    public function setLastHeartbeatTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_heartbeat_time = $var;
 
         return $this;
@@ -366,9 +365,8 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setLastStartedTime($var)
+    public function setLastStartedTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_started_time = $var;
 
         return $this;
@@ -388,7 +386,7 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setAttempt($var)
+    public function setAttempt(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->attempt = $var;
@@ -410,7 +408,7 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setMaximumAttempts($var)
+    public function setMaximumAttempts(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->maximum_attempts = $var;
@@ -442,9 +440,8 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setScheduledTime($var)
+    public function setScheduledTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->scheduled_time = $var;
 
         return $this;
@@ -474,9 +471,8 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setExpirationTime($var)
+    public function setExpirationTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->expiration_time = $var;
 
         return $this;
@@ -506,9 +502,8 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
      */
-    public function setLastFailure($var)
+    public function setLastFailure(\Temporal\Api\Failure\V1\Failure|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
         $this->last_failure = $var;
 
         return $this;
@@ -528,9 +523,9 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setLastWorkerIdentity($var)
+    public function setLastWorkerIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->last_worker_identity = $var;
 
         return $this;
@@ -567,10 +562,9 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setUseWorkflowBuildId($var)
+    public function setUseWorkflowBuildId(\Google\Protobuf\GPBEmpty|null $var)
     {
         @trigger_error('use_workflow_build_id is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Google\Protobuf\GPBEmpty::class);
         $this->writeOneof(13, $var);
 
         return $this;
@@ -613,10 +607,10 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setLastIndependentlyAssignedBuildId($var)
+    public function setLastIndependentlyAssignedBuildId(string $var)
     {
         @trigger_error('last_independently_assigned_build_id is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->writeOneof(14, $var);
 
         return $this;
@@ -661,10 +655,9 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setLastWorkerVersionStamp($var)
+    public function setLastWorkerVersionStamp(\Temporal\Api\Common\V1\WorkerVersionStamp|null $var)
     {
         @trigger_error('last_worker_version_stamp is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerVersionStamp::class);
         $this->last_worker_version_stamp = $var;
 
         return $this;
@@ -704,9 +697,8 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setCurrentRetryInterval($var)
+    public function setCurrentRetryInterval(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->current_retry_interval = $var;
 
         return $this;
@@ -740,9 +732,8 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setLastAttemptCompleteTime($var)
+    public function setLastAttemptCompleteTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_attempt_complete_time = $var;
 
         return $this;
@@ -778,9 +769,8 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setNextAttemptScheduleTime($var)
+    public function setNextAttemptScheduleTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->next_attempt_schedule_time = $var;
 
         return $this;
@@ -804,9 +794,8 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setPaused($var)
+    public function setPaused(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->paused = $var;
 
         return $this;
@@ -853,10 +842,9 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setLastDeployment($var)
+    public function setLastDeployment(\Temporal\Api\Deployment\V1\Deployment|null $var)
     {
         @trigger_error('last_deployment is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\Deployment::class);
         $this->last_deployment = $var;
 
         return $this;
@@ -887,10 +875,10 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setLastWorkerDeploymentVersion($var)
+    public function setLastWorkerDeploymentVersion(string $var)
     {
         @trigger_error('last_worker_deployment_version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->last_worker_deployment_version = $var;
 
         return $this;
@@ -926,16 +914,16 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
      * @return $this
      */
-    public function setLastDeploymentVersion($var)
+    public function setLastDeploymentVersion(\Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
         $this->last_deployment_version = $var;
 
         return $this;
     }
 
     /**
-     * Priority metadata
+     * Priority metadata. If this message is not present, or any fields are not
+     * present, they inherit the values from the workflow.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 22;</code>
      * @return \Temporal\Api\Common\V1\Priority|null
@@ -956,15 +944,15 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Priority metadata
+     * Priority metadata. If this message is not present, or any fields are not
+     * present, they inherit the values from the workflow.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 22;</code>
      * @param \Temporal\Api\Common\V1\Priority $var
      * @return $this
      */
-    public function setPriority($var)
+    public function setPriority(\Temporal\Api\Common\V1\Priority|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Priority::class);
         $this->priority = $var;
 
         return $this;
@@ -994,9 +982,8 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflow\V1\PendingActivityInfo\PauseInfo $var
      * @return $this
      */
-    public function setPauseInfo($var)
+    public function setPauseInfo(\Temporal\Api\Workflow\V1\PendingActivityInfo\PauseInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\PendingActivityInfo\PauseInfo::class);
         $this->pause_info = $var;
 
         return $this;
@@ -1030,9 +1017,8 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Activity\V1\ActivityOptions $var
      * @return $this
      */
-    public function setActivityOptions($var)
+    public function setActivityOptions(\Temporal\Api\Activity\V1\ActivityOptions|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Activity\V1\ActivityOptions::class);
         $this->activity_options = $var;
 
         return $this;

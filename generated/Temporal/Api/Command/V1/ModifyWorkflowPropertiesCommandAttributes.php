@@ -72,9 +72,8 @@ class ModifyWorkflowPropertiesCommandAttributes extends \Google\Protobuf\Interna
      * @param \Temporal\Api\Common\V1\Memo $var
      * @return $this
      */
-    public function setUpsertedMemo($var)
+    public function setUpsertedMemo(\Temporal\Api\Common\V1\Memo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Memo::class);
         $this->upserted_memo = $var;
 
         return $this;

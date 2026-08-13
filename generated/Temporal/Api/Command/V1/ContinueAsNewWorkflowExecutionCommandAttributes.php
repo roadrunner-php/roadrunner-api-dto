@@ -93,6 +93,14 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
      * @deprecated
      */
     protected $inherit_build_id = false;
+    /**
+     * Experimental. Optionally decide the versioning behavior that the first task of the new run should use.
+     * For example, choose to AutoUpgrade on continue-as-new instead of inheriting the pinned version
+     * of the previous run.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ContinueAsNewVersioningBehavior initial_versioning_behavior = 16;</code>
+     */
+    protected $initial_versioning_behavior = 0;
 
     /**
      * Constructor.
@@ -125,6 +133,10 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
      *           If this is set, the new execution inherits the Build ID of the current execution. Otherwise,
      *           the assignment rules will be used to independently assign a Build ID to the new execution.
      *           Deprecated. Only considered for versioning v0.2.
+     *     @type int $initial_versioning_behavior
+     *           Experimental. Optionally decide the versioning behavior that the first task of the new run should use.
+     *           For example, choose to AutoUpgrade on continue-as-new instead of inheriting the pinned version
+     *           of the previous run.
      * }
      */
     public function __construct($data = NULL) {
@@ -156,9 +168,8 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
      * @param \Temporal\Api\Common\V1\WorkflowType $var
      * @return $this
      */
-    public function setWorkflowType($var)
+    public function setWorkflowType(\Temporal\Api\Common\V1\WorkflowType|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowType::class);
         $this->workflow_type = $var;
 
         return $this;
@@ -188,9 +199,8 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
      * @param \Temporal\Api\Taskqueue\V1\TaskQueue $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(\Temporal\Api\Taskqueue\V1\TaskQueue|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueue::class);
         $this->task_queue = $var;
 
         return $this;
@@ -220,9 +230,8 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setInput($var)
+    public function setInput(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->input = $var;
 
         return $this;
@@ -256,9 +265,8 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setWorkflowRunTimeout($var)
+    public function setWorkflowRunTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->workflow_run_timeout = $var;
 
         return $this;
@@ -292,9 +300,8 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setWorkflowTaskTimeout($var)
+    public function setWorkflowTaskTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->workflow_task_timeout = $var;
 
         return $this;
@@ -328,9 +335,8 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setBackoffStartInterval($var)
+    public function setBackoffStartInterval(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->backoff_start_interval = $var;
 
         return $this;
@@ -360,9 +366,8 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
      * @param \Temporal\Api\Common\V1\RetryPolicy $var
      * @return $this
      */
-    public function setRetryPolicy($var)
+    public function setRetryPolicy(\Temporal\Api\Common\V1\RetryPolicy|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\RetryPolicy::class);
         $this->retry_policy = $var;
 
         return $this;
@@ -372,7 +377,7 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
      * Should be removed
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ContinueAsNewInitiator initiator = 8;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ContinueAsNewInitiator}
      */
     public function getInitiator()
     {
@@ -383,10 +388,10 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
      * Should be removed
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ContinueAsNewInitiator initiator = 8;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ContinueAsNewInitiator}
      * @return $this
      */
-    public function setInitiator($var)
+    public function setInitiator(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ContinueAsNewInitiator::class);
         $this->initiator = $var;
@@ -422,9 +427,8 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
      */
-    public function setFailure($var)
+    public function setFailure(\Temporal\Api\Failure\V1\Failure|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
         $this->failure = $var;
 
         return $this;
@@ -458,9 +462,8 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setLastCompletionResult($var)
+    public function setLastCompletionResult(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->last_completion_result = $var;
 
         return $this;
@@ -484,9 +487,9 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
      * @param string $var
      * @return $this
      */
-    public function setCronSchedule($var)
+    public function setCronSchedule(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->cron_schedule = $var;
 
         return $this;
@@ -516,9 +519,8 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
      * @param \Temporal\Api\Common\V1\Header $var
      * @return $this
      */
-    public function setHeader($var)
+    public function setHeader(\Temporal\Api\Common\V1\Header|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Header::class);
         $this->header = $var;
 
         return $this;
@@ -548,9 +550,8 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
      * @param \Temporal\Api\Common\V1\Memo $var
      * @return $this
      */
-    public function setMemo($var)
+    public function setMemo(\Temporal\Api\Common\V1\Memo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Memo::class);
         $this->memo = $var;
 
         return $this;
@@ -580,9 +581,8 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
      * @param \Temporal\Api\Common\V1\SearchAttributes $var
      * @return $this
      */
-    public function setSearchAttributes($var)
+    public function setSearchAttributes(\Temporal\Api\Common\V1\SearchAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\SearchAttributes::class);
         $this->search_attributes = $var;
 
         return $this;
@@ -615,11 +615,40 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
      * @return $this
      * @deprecated
      */
-    public function setInheritBuildId($var)
+    public function setInheritBuildId(bool $var)
     {
         @trigger_error('inherit_build_id is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkBool($var);
         $this->inherit_build_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Experimental. Optionally decide the versioning behavior that the first task of the new run should use.
+     * For example, choose to AutoUpgrade on continue-as-new instead of inheriting the pinned version
+     * of the previous run.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ContinueAsNewVersioningBehavior initial_versioning_behavior = 16;</code>
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ContinueAsNewVersioningBehavior}
+     */
+    public function getInitialVersioningBehavior()
+    {
+        return $this->initial_versioning_behavior;
+    }
+
+    /**
+     * Experimental. Optionally decide the versioning behavior that the first task of the new run should use.
+     * For example, choose to AutoUpgrade on continue-as-new instead of inheriting the pinned version
+     * of the previous run.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ContinueAsNewVersioningBehavior initial_versioning_behavior = 16;</code>
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ContinueAsNewVersioningBehavior}
+     * @return $this
+     */
+    public function setInitialVersioningBehavior(int $var)
+    {
+        GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ContinueAsNewVersioningBehavior::class);
+        $this->initial_versioning_behavior = $var;
 
         return $this;
     }

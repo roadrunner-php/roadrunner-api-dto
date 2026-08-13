@@ -176,7 +176,7 @@ class Priority extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setPriorityKey($var)
+    public function setPriorityKey(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->priority_key = $var;
@@ -238,9 +238,9 @@ class Priority extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setFairnessKey($var)
+    public function setFairnessKey(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->fairness_key = $var;
 
         return $this;
@@ -276,9 +276,8 @@ class Priority extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setFairnessWeight($var)
+    public function setFairnessWeight(float $var)
     {
-        GPBUtil::checkFloat($var);
         $this->fairness_weight = $var;
 
         return $this;

@@ -62,7 +62,7 @@ class ConnectionState extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setChannels($var)
+    public function setChannels(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\Centrifugal\API\DTO\V1\ChannelContext::class);
         $this->channels = $arr;
@@ -94,9 +94,8 @@ class ConnectionState extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\ConnectionTokenInfo $var
      * @return $this
      */
-    public function setConnectionToken($var)
+    public function setConnectionToken(\RoadRunner\Centrifugal\API\DTO\V1\ConnectionTokenInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\ConnectionTokenInfo::class);
         $this->connection_token = $var;
 
         return $this;
@@ -116,7 +115,7 @@ class ConnectionState extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setSubscriptionTokens($var)
+    public function setSubscriptionTokens(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\Centrifugal\API\DTO\V1\SubscriptionTokenInfo::class);
         $this->subscription_tokens = $arr;
@@ -138,9 +137,9 @@ class ConnectionState extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setMeta($var)
+    public function setMeta(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->meta = $var;
 
         return $this;

@@ -12,7 +12,6 @@ use UnexpectedValueException;
  *     aip.dev/not-precedent: Call this status because it is . --)
  * Specify the drainage status for a Worker Deployment Version so users can decide whether they
  * can safely decommission the version.
- * Experimental. Worker Deployments are experimental and might significantly change in the future.
  *
  * Protobuf type <code>temporal.api.enums.v1.VersionDrainageStatus</code>
  */

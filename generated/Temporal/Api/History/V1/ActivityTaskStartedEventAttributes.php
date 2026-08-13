@@ -27,7 +27,12 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      */
     protected $identity = '';
     /**
-     * TODO ??
+     * This field is populated from the RecordActivityTaskStartedRequest. Matching service would
+     * set the request_id on the RecordActivityTaskStartedRequest to a new UUID. This is useful
+     * in case a RecordActivityTaskStarted call succeed but matching doesn't get that response,
+     * so matching could retry and history service would return success if the request_id matches.
+     * In that case, matching will continue to deliver the task to worker. Without this field, history
+     * service would return AlreadyStarted error, and matching would drop the task.
      *
      * Generated from protobuf field <code>string request_id = 3;</code>
      */
@@ -74,7 +79,12 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      *     @type string $identity
      *           id of the worker that picked up this task
      *     @type string $request_id
-     *           TODO ??
+     *           This field is populated from the RecordActivityTaskStartedRequest. Matching service would
+     *           set the request_id on the RecordActivityTaskStartedRequest to a new UUID. This is useful
+     *           in case a RecordActivityTaskStarted call succeed but matching doesn't get that response,
+     *           so matching could retry and history service would return success if the request_id matches.
+     *           In that case, matching will continue to deliver the task to worker. Without this field, history
+     *           service would return AlreadyStarted error, and matching would drop the task.
      *     @type int $attempt
      *           Starting at 1, the number of times this task has been attempted
      *     @type \Temporal\Api\Failure\V1\Failure $last_failure
@@ -112,7 +122,7 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * @param int|string $var
      * @return $this
      */
-    public function setScheduledEventId($var)
+    public function setScheduledEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->scheduled_event_id = $var;
@@ -138,16 +148,21 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
     }
 
     /**
-     * TODO ??
+     * This field is populated from the RecordActivityTaskStartedRequest. Matching service would
+     * set the request_id on the RecordActivityTaskStartedRequest to a new UUID. This is useful
+     * in case a RecordActivityTaskStarted call succeed but matching doesn't get that response,
+     * so matching could retry and history service would return success if the request_id matches.
+     * In that case, matching will continue to deliver the task to worker. Without this field, history
+     * service would return AlreadyStarted error, and matching would drop the task.
      *
      * Generated from protobuf field <code>string request_id = 3;</code>
      * @return string
@@ -158,15 +173,20 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * TODO ??
+     * This field is populated from the RecordActivityTaskStartedRequest. Matching service would
+     * set the request_id on the RecordActivityTaskStartedRequest to a new UUID. This is useful
+     * in case a RecordActivityTaskStarted call succeed but matching doesn't get that response,
+     * so matching could retry and history service would return success if the request_id matches.
+     * In that case, matching will continue to deliver the task to worker. Without this field, history
+     * service would return AlreadyStarted error, and matching would drop the task.
      *
      * Generated from protobuf field <code>string request_id = 3;</code>
      * @param string $var
      * @return $this
      */
-    public function setRequestId($var)
+    public function setRequestId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->request_id = $var;
 
         return $this;
@@ -190,7 +210,7 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * @param int $var
      * @return $this
      */
-    public function setAttempt($var)
+    public function setAttempt(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->attempt = $var;
@@ -228,9 +248,8 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
      */
-    public function setLastFailure($var)
+    public function setLastFailure(\Temporal\Api\Failure\V1\Failure|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
         $this->last_failure = $var;
 
         return $this;
@@ -275,10 +294,9 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * @return $this
      * @deprecated
      */
-    public function setWorkerVersion($var)
+    public function setWorkerVersion(\Temporal\Api\Common\V1\WorkerVersionStamp|null $var)
     {
         @trigger_error('worker_version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerVersionStamp::class);
         $this->worker_version = $var;
 
         return $this;
@@ -311,7 +329,7 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * @return $this
      * @deprecated
      */
-    public function setBuildIdRedirectCounter($var)
+    public function setBuildIdRedirectCounter(int|string $var)
     {
         @trigger_error('build_id_redirect_counter is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkInt64($var);

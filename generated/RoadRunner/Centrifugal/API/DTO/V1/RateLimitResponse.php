@@ -62,9 +62,8 @@ class RateLimitResponse extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\Error $var
      * @return $this
      */
-    public function setError($var)
+    public function setError(\RoadRunner\Centrifugal\API\DTO\V1\Error|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\Error::class);
         $this->error = $var;
 
         return $this;
@@ -94,9 +93,8 @@ class RateLimitResponse extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\RateLimitResult $var
      * @return $this
      */
-    public function setResult($var)
+    public function setResult(\RoadRunner\Centrifugal\API\DTO\V1\RateLimitResult|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\RateLimitResult::class);
         $this->result = $var;
 
         return $this;

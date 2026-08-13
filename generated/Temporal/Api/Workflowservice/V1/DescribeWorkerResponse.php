@@ -57,9 +57,8 @@ class DescribeWorkerResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\WorkerInfo $var
      * @return $this
      */
-    public function setWorkerInfo($var)
+    public function setWorkerInfo(\Temporal\Api\Worker\V1\WorkerInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Worker\V1\WorkerInfo::class);
         $this->worker_info = $var;
 
         return $this;

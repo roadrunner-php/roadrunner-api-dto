@@ -57,9 +57,9 @@ class PublishResult extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setData($var)
+    public function setData(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->data = $var;
 
         return $this;
@@ -79,9 +79,9 @@ class PublishResult extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setB64Data($var)
+    public function setB64Data(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->b64data = $var;
 
         return $this;
@@ -101,9 +101,8 @@ class PublishResult extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setSkipHistory($var)
+    public function setSkipHistory(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->skip_history = $var;
 
         return $this;

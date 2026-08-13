@@ -37,7 +37,8 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      */
     protected $failure = null;
     /**
-     * If a worker explicitly failed this task, it's identity. TODO: What is this set to if server fails the task?
+     * If a worker explicitly failed this task, this field contains the worker's identity.
+     * When the server generates the failure internally this field is set as 'history-service'.
      *
      * Generated from protobuf field <code>string identity = 5;</code>
      */
@@ -55,7 +56,8 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      */
     protected $new_run_id = '';
     /**
-     * TODO: ?
+     * Version of the event where the history branch was forked. Used by multi-cluster replication
+     * during resets to identify the correct history branch.
      *
      * Generated from protobuf field <code>int64 fork_event_version = 8;</code>
      */
@@ -93,13 +95,15 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      *     @type \Temporal\Api\Failure\V1\Failure $failure
      *           The failure details
      *     @type string $identity
-     *           If a worker explicitly failed this task, it's identity. TODO: What is this set to if server fails the task?
+     *           If a worker explicitly failed this task, this field contains the worker's identity.
+     *           When the server generates the failure internally this field is set as 'history-service'.
      *     @type string $base_run_id
      *           The original run id of the workflow. For reset workflow.
      *     @type string $new_run_id
      *           If the workflow is being reset, the new run id.
      *     @type int|string $fork_event_version
-     *           TODO: ?
+     *           Version of the event where the history branch was forked. Used by multi-cluster replication
+     *           during resets to identify the correct history branch.
      *     @type string $binary_checksum
      *           Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *           If a worker explicitly failed this task, its binary id
@@ -133,7 +137,7 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      * @param int|string $var
      * @return $this
      */
-    public function setScheduledEventId($var)
+    public function setScheduledEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->scheduled_event_id = $var;
@@ -159,7 +163,7 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      * @param int|string $var
      * @return $this
      */
-    public function setStartedEventId($var)
+    public function setStartedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->started_event_id = $var;
@@ -169,7 +173,7 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowTaskFailedCause cause = 3;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\WorkflowTaskFailedCause}
      */
     public function getCause()
     {
@@ -178,10 +182,10 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowTaskFailedCause cause = 3;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\WorkflowTaskFailedCause}
      * @return $this
      */
-    public function setCause($var)
+    public function setCause(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\WorkflowTaskFailedCause::class);
         $this->cause = $var;
@@ -217,16 +221,16 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
      */
-    public function setFailure($var)
+    public function setFailure(\Temporal\Api\Failure\V1\Failure|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
         $this->failure = $var;
 
         return $this;
     }
 
     /**
-     * If a worker explicitly failed this task, it's identity. TODO: What is this set to if server fails the task?
+     * If a worker explicitly failed this task, this field contains the worker's identity.
+     * When the server generates the failure internally this field is set as 'history-service'.
      *
      * Generated from protobuf field <code>string identity = 5;</code>
      * @return string
@@ -237,15 +241,16 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * If a worker explicitly failed this task, it's identity. TODO: What is this set to if server fails the task?
+     * If a worker explicitly failed this task, this field contains the worker's identity.
+     * When the server generates the failure internally this field is set as 'history-service'.
      *
      * Generated from protobuf field <code>string identity = 5;</code>
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -269,9 +274,9 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      * @param string $var
      * @return $this
      */
-    public function setBaseRunId($var)
+    public function setBaseRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->base_run_id = $var;
 
         return $this;
@@ -295,16 +300,17 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      * @param string $var
      * @return $this
      */
-    public function setNewRunId($var)
+    public function setNewRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->new_run_id = $var;
 
         return $this;
     }
 
     /**
-     * TODO: ?
+     * Version of the event where the history branch was forked. Used by multi-cluster replication
+     * during resets to identify the correct history branch.
      *
      * Generated from protobuf field <code>int64 fork_event_version = 8;</code>
      * @return int|string
@@ -315,13 +321,14 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * TODO: ?
+     * Version of the event where the history branch was forked. Used by multi-cluster replication
+     * during resets to identify the correct history branch.
      *
      * Generated from protobuf field <code>int64 fork_event_version = 8;</code>
      * @param int|string $var
      * @return $this
      */
-    public function setForkEventVersion($var)
+    public function setForkEventVersion(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->fork_event_version = $var;
@@ -354,10 +361,10 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      * @return $this
      * @deprecated
      */
-    public function setBinaryChecksum($var)
+    public function setBinaryChecksum(string $var)
     {
         @trigger_error('binary_checksum is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->binary_checksum = $var;
 
         return $this;
@@ -406,10 +413,9 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      * @return $this
      * @deprecated
      */
-    public function setWorkerVersion($var)
+    public function setWorkerVersion(\Temporal\Api\Common\V1\WorkerVersionStamp|null $var)
     {
         @trigger_error('worker_version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerVersionStamp::class);
         $this->worker_version = $var;
 
         return $this;

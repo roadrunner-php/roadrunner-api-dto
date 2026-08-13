@@ -17,7 +17,7 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
     /**
      * Specifies which Deployment Version should receive new workflow executions and tasks of
      * existing unversioned or AutoUpgrade workflows.
-     * Nil value means no Version in this Deployment (except Ramping Version, if present) receives traffic other than tasks of previously Pinned workflows. In absence of a Current Version, remaining traffic after any ramp (if set)  goes to unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.). 
+     * Nil value means no Version in this Deployment (except Ramping Version, if present) receives traffic other than tasks of previously Pinned workflows. In absence of a Current Version, remaining traffic after any ramp (if set)  goes to unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.).
      * Note: Current Version is overridden by the Ramping Version for a portion of traffic when ramp percentage
      * is non-zero (see `ramping_deployment_version` and `ramping_version_percentage`).
      *
@@ -77,7 +77,7 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
      */
     protected $ramping_version_percentage_changed_time = null;
     /**
-     * Monotonically increasing value which is incremented on every mutation 
+     * Monotonically increasing value which is incremented on every mutation
      * to any field of this message to achieve eventual consistency between task queues and their partitions.
      *
      * Generated from protobuf field <code>int64 revision_number = 10;</code>
@@ -93,7 +93,7 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $current_deployment_version
      *           Specifies which Deployment Version should receive new workflow executions and tasks of
      *           existing unversioned or AutoUpgrade workflows.
-     *           Nil value means no Version in this Deployment (except Ramping Version, if present) receives traffic other than tasks of previously Pinned workflows. In absence of a Current Version, remaining traffic after any ramp (if set)  goes to unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.). 
+     *           Nil value means no Version in this Deployment (except Ramping Version, if present) receives traffic other than tasks of previously Pinned workflows. In absence of a Current Version, remaining traffic after any ramp (if set)  goes to unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.).
      *           Note: Current Version is overridden by the Ramping Version for a portion of traffic when ramp percentage
      *           is non-zero (see `ramping_deployment_version` and `ramping_version_percentage`).
      *     @type string $current_version
@@ -119,7 +119,7 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
      *           Last time ramping version percentage was changed.
      *           If ramping version is changed, this is also updated, even if the percentage stays the same.
      *     @type int|string $revision_number
-     *           Monotonically increasing value which is incremented on every mutation 
+     *           Monotonically increasing value which is incremented on every mutation
      *           to any field of this message to achieve eventual consistency between task queues and their partitions.
      * }
      */
@@ -131,7 +131,7 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
     /**
      * Specifies which Deployment Version should receive new workflow executions and tasks of
      * existing unversioned or AutoUpgrade workflows.
-     * Nil value means no Version in this Deployment (except Ramping Version, if present) receives traffic other than tasks of previously Pinned workflows. In absence of a Current Version, remaining traffic after any ramp (if set)  goes to unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.). 
+     * Nil value means no Version in this Deployment (except Ramping Version, if present) receives traffic other than tasks of previously Pinned workflows. In absence of a Current Version, remaining traffic after any ramp (if set)  goes to unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.).
      * Note: Current Version is overridden by the Ramping Version for a portion of traffic when ramp percentage
      * is non-zero (see `ramping_deployment_version` and `ramping_version_percentage`).
      *
@@ -156,7 +156,7 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
     /**
      * Specifies which Deployment Version should receive new workflow executions and tasks of
      * existing unversioned or AutoUpgrade workflows.
-     * Nil value means no Version in this Deployment (except Ramping Version, if present) receives traffic other than tasks of previously Pinned workflows. In absence of a Current Version, remaining traffic after any ramp (if set)  goes to unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.). 
+     * Nil value means no Version in this Deployment (except Ramping Version, if present) receives traffic other than tasks of previously Pinned workflows. In absence of a Current Version, remaining traffic after any ramp (if set)  goes to unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.).
      * Note: Current Version is overridden by the Ramping Version for a portion of traffic when ramp percentage
      * is non-zero (see `ramping_deployment_version` and `ramping_version_percentage`).
      *
@@ -164,9 +164,8 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
      * @return $this
      */
-    public function setCurrentDeploymentVersion($var)
+    public function setCurrentDeploymentVersion(\Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
         $this->current_deployment_version = $var;
 
         return $this;
@@ -195,10 +194,10 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setCurrentVersion($var)
+    public function setCurrentVersion(string $var)
     {
         @trigger_error('current_version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->current_version = $var;
 
         return $this;
@@ -240,9 +239,8 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
      * @return $this
      */
-    public function setRampingDeploymentVersion($var)
+    public function setRampingDeploymentVersion(\Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
         $this->ramping_deployment_version = $var;
 
         return $this;
@@ -271,10 +269,10 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setRampingVersion($var)
+    public function setRampingVersion(string $var)
     {
         @trigger_error('ramping_version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->ramping_version = $var;
 
         return $this;
@@ -304,9 +302,8 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setRampingVersionPercentage($var)
+    public function setRampingVersionPercentage(float $var)
     {
-        GPBUtil::checkFloat($var);
         $this->ramping_version_percentage = $var;
 
         return $this;
@@ -340,9 +337,8 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setCurrentVersionChangedTime($var)
+    public function setCurrentVersionChangedTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->current_version_changed_time = $var;
 
         return $this;
@@ -376,9 +372,8 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setRampingVersionChangedTime($var)
+    public function setRampingVersionChangedTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->ramping_version_changed_time = $var;
 
         return $this;
@@ -414,16 +409,15 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setRampingVersionPercentageChangedTime($var)
+    public function setRampingVersionPercentageChangedTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->ramping_version_percentage_changed_time = $var;
 
         return $this;
     }
 
     /**
-     * Monotonically increasing value which is incremented on every mutation 
+     * Monotonically increasing value which is incremented on every mutation
      * to any field of this message to achieve eventual consistency between task queues and their partitions.
      *
      * Generated from protobuf field <code>int64 revision_number = 10;</code>
@@ -435,14 +429,14 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Monotonically increasing value which is incremented on every mutation 
+     * Monotonically increasing value which is incremented on every mutation
      * to any field of this message to achieve eventual consistency between task queues and their partitions.
      *
      * Generated from protobuf field <code>int64 revision_number = 10;</code>
      * @param int|string $var
      * @return $this
      */
-    public function setRevisionNumber($var)
+    public function setRevisionNumber(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->revision_number = $var;

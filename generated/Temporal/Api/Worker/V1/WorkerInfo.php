@@ -10,6 +10,8 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
+ * Detailed worker information.
+ *
  * Generated from protobuf message <code>temporal.api.worker.v1.WorkerInfo</code>
  */
 class WorkerInfo extends \Google\Protobuf\Internal\Message
@@ -57,9 +59,8 @@ class WorkerInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\WorkerHeartbeat $var
      * @return $this
      */
-    public function setWorkerHeartbeat($var)
+    public function setWorkerHeartbeat(\Temporal\Api\Worker\V1\WorkerHeartbeat|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Worker\V1\WorkerHeartbeat::class);
         $this->worker_heartbeat = $var;
 
         return $this;

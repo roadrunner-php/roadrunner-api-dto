@@ -30,6 +30,12 @@ class RecordWorkerHeartbeatRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .temporal.api.worker.v1.WorkerHeartbeat worker_heartbeat = 3;</code>
      */
     private $worker_heartbeat;
+    /**
+     * Resource ID for routing. Contains the worker grouping key.
+     *
+     * Generated from protobuf field <code>string resource_id = 4;</code>
+     */
+    protected $resource_id = '';
 
     /**
      * Constructor.
@@ -42,6 +48,8 @@ class RecordWorkerHeartbeatRequest extends \Google\Protobuf\Internal\Message
      *     @type string $identity
      *           The identity of the client who initiated this request.
      *     @type \Temporal\Api\Worker\V1\WorkerHeartbeat[] $worker_heartbeat
+     *     @type string $resource_id
+     *           Resource ID for routing. Contains the worker grouping key.
      * }
      */
     public function __construct($data = NULL) {
@@ -67,9 +75,9 @@ class RecordWorkerHeartbeatRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -93,9 +101,9 @@ class RecordWorkerHeartbeatRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -115,10 +123,36 @@ class RecordWorkerHeartbeatRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\WorkerHeartbeat[] $var
      * @return $this
      */
-    public function setWorkerHeartbeat($var)
+    public function setWorkerHeartbeat(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Worker\V1\WorkerHeartbeat::class);
         $this->worker_heartbeat = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Resource ID for routing. Contains the worker grouping key.
+     *
+     * Generated from protobuf field <code>string resource_id = 4;</code>
+     * @return string
+     */
+    public function getResourceId()
+    {
+        return $this->resource_id;
+    }
+
+    /**
+     * Resource ID for routing. Contains the worker grouping key.
+     *
+     * Generated from protobuf field <code>string resource_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setResourceId(string $var)
+    {
+        GPBUtil::checkString($var, true);
+        $this->resource_id = $var;
 
         return $this;
     }

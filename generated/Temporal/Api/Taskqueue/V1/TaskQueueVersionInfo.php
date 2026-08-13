@@ -76,7 +76,7 @@ class TaskQueueVersionInfo extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setTypesInfo($var)
+    public function setTypesInfo(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::INT32, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Taskqueue\V1\TaskQueueTypeInfo::class);
         $this->types_info = $arr;
@@ -95,7 +95,7 @@ class TaskQueueVersionInfo extends \Google\Protobuf\Internal\Message
      * sure to query reachability for the parent/previous workflow's Task Queue as well.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.BuildIdTaskReachability task_reachability = 2;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\BuildIdTaskReachability}
      */
     public function getTaskReachability()
     {
@@ -113,10 +113,10 @@ class TaskQueueVersionInfo extends \Google\Protobuf\Internal\Message
      * sure to query reachability for the parent/previous workflow's Task Queue as well.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.BuildIdTaskReachability task_reachability = 2;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\BuildIdTaskReachability}
      * @return $this
      */
-    public function setTaskReachability($var)
+    public function setTaskReachability(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\BuildIdTaskReachability::class);
         $this->task_reachability = $var;

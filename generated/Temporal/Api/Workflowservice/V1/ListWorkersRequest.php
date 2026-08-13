@@ -27,8 +27,8 @@ class ListWorkersRequest extends \Google\Protobuf\Internal\Message
      */
     protected $next_page_token = '';
     /**
-     * `query` in ListWorkers is used to filter workers based on worker status info.
-     * The following worker status attributes are expected are supported as part of the query:
+     * `query` in ListWorkers is used to filter workers based on worker attributes.
+     * Supported attributes:
      ** WorkerInstanceKey
      ** WorkerIdentity
      ** HostName
@@ -38,9 +38,7 @@ class ListWorkersRequest extends \Google\Protobuf\Internal\Message
      ** SdkName
      ** SdkVersion
      ** StartTime
-     ** LastHeartbeatTime
      ** Status
-     * Currently metrics are not supported as a part of ListWorkers query.
      *
      * Generated from protobuf field <code>string query = 4;</code>
      */
@@ -56,8 +54,8 @@ class ListWorkersRequest extends \Google\Protobuf\Internal\Message
      *     @type int $page_size
      *     @type string $next_page_token
      *     @type string $query
-     *           `query` in ListWorkers is used to filter workers based on worker status info.
-     *           The following worker status attributes are expected are supported as part of the query:
+     *           `query` in ListWorkers is used to filter workers based on worker attributes.
+     *           Supported attributes:
      *          * WorkerInstanceKey
      *          * WorkerIdentity
      *          * HostName
@@ -67,9 +65,7 @@ class ListWorkersRequest extends \Google\Protobuf\Internal\Message
      *          * SdkName
      *          * SdkVersion
      *          * StartTime
-     *          * LastHeartbeatTime
      *          * Status
-     *           Currently metrics are not supported as a part of ListWorkers query.
      * }
      */
     public function __construct($data = NULL) {
@@ -91,9 +87,9 @@ class ListWorkersRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -113,7 +109,7 @@ class ListWorkersRequest extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setPageSize($var)
+    public function setPageSize(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->page_size = $var;
@@ -135,17 +131,17 @@ class ListWorkersRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNextPageToken($var)
+    public function setNextPageToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->next_page_token = $var;
 
         return $this;
     }
 
     /**
-     * `query` in ListWorkers is used to filter workers based on worker status info.
-     * The following worker status attributes are expected are supported as part of the query:
+     * `query` in ListWorkers is used to filter workers based on worker attributes.
+     * Supported attributes:
      ** WorkerInstanceKey
      ** WorkerIdentity
      ** HostName
@@ -155,9 +151,7 @@ class ListWorkersRequest extends \Google\Protobuf\Internal\Message
      ** SdkName
      ** SdkVersion
      ** StartTime
-     ** LastHeartbeatTime
      ** Status
-     * Currently metrics are not supported as a part of ListWorkers query.
      *
      * Generated from protobuf field <code>string query = 4;</code>
      * @return string
@@ -168,8 +162,8 @@ class ListWorkersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * `query` in ListWorkers is used to filter workers based on worker status info.
-     * The following worker status attributes are expected are supported as part of the query:
+     * `query` in ListWorkers is used to filter workers based on worker attributes.
+     * Supported attributes:
      ** WorkerInstanceKey
      ** WorkerIdentity
      ** HostName
@@ -179,17 +173,15 @@ class ListWorkersRequest extends \Google\Protobuf\Internal\Message
      ** SdkName
      ** SdkVersion
      ** StartTime
-     ** LastHeartbeatTime
      ** Status
-     * Currently metrics are not supported as a part of ListWorkers query.
      *
      * Generated from protobuf field <code>string query = 4;</code>
      * @param string $var
      * @return $this
      */
-    public function setQuery($var)
+    public function setQuery(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->query = $var;
 
         return $this;

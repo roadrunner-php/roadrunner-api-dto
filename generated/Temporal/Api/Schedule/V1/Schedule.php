@@ -72,9 +72,8 @@ class Schedule extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Schedule\V1\ScheduleSpec $var
      * @return $this
      */
-    public function setSpec($var)
+    public function setSpec(\Temporal\Api\Schedule\V1\ScheduleSpec|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Schedule\V1\ScheduleSpec::class);
         $this->spec = $var;
 
         return $this;
@@ -104,9 +103,8 @@ class Schedule extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Schedule\V1\ScheduleAction $var
      * @return $this
      */
-    public function setAction($var)
+    public function setAction(\Temporal\Api\Schedule\V1\ScheduleAction|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Schedule\V1\ScheduleAction::class);
         $this->action = $var;
 
         return $this;
@@ -136,9 +134,8 @@ class Schedule extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Schedule\V1\SchedulePolicies $var
      * @return $this
      */
-    public function setPolicies($var)
+    public function setPolicies(\Temporal\Api\Schedule\V1\SchedulePolicies|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Schedule\V1\SchedulePolicies::class);
         $this->policies = $var;
 
         return $this;
@@ -168,9 +165,8 @@ class Schedule extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Schedule\V1\ScheduleState $var
      * @return $this
      */
-    public function setState($var)
+    public function setState(\Temporal\Api\Schedule\V1\ScheduleState|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Schedule\V1\ScheduleState::class);
         $this->state = $var;
 
         return $this;

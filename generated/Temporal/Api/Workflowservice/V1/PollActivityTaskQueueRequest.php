@@ -29,6 +29,20 @@ class PollActivityTaskQueueRequest extends \Google\Protobuf\Internal\Message
      */
     protected $identity = '';
     /**
+     * A unique key for this worker instance, used for tracking worker lifecycle.
+     * This is guaranteed to be unique, whereas identity is not guaranteed to be unique.
+     *
+     * Generated from protobuf field <code>string worker_instance_key = 8;</code>
+     */
+    protected $worker_instance_key = '';
+    /**
+     * A dedicated per-worker Nexus task queue on which the server sends control
+     * tasks (e.g. activity cancellation) to this specific worker instance.
+     *
+     * Generated from protobuf field <code>string worker_control_task_queue = 9;</code>
+     */
+    protected $worker_control_task_queue = '';
+    /**
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueueMetadata task_queue_metadata = 4;</code>
      */
     protected $task_queue_metadata = null;
@@ -58,6 +72,12 @@ class PollActivityTaskQueueRequest extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Taskqueue\V1\TaskQueue $task_queue
      *     @type string $identity
      *           The identity of the worker/client
+     *     @type string $worker_instance_key
+     *           A unique key for this worker instance, used for tracking worker lifecycle.
+     *           This is guaranteed to be unique, whereas identity is not guaranteed to be unique.
+     *     @type string $worker_control_task_queue
+     *           A dedicated per-worker Nexus task queue on which the server sends control
+     *           tasks (e.g. activity cancellation) to this specific worker instance.
      *     @type \Temporal\Api\Taskqueue\V1\TaskQueueMetadata $task_queue_metadata
      *     @type \Temporal\Api\Common\V1\WorkerVersionCapabilities $worker_version_capabilities
      *           Information about this worker's build identifier and if it is choosing to use the versioning
@@ -86,9 +106,9 @@ class PollActivityTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -118,9 +138,8 @@ class PollActivityTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\TaskQueue $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(\Temporal\Api\Taskqueue\V1\TaskQueue|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueue::class);
         $this->task_queue = $var;
 
         return $this;
@@ -144,10 +163,66 @@ class PollActivityTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
+
+        return $this;
+    }
+
+    /**
+     * A unique key for this worker instance, used for tracking worker lifecycle.
+     * This is guaranteed to be unique, whereas identity is not guaranteed to be unique.
+     *
+     * Generated from protobuf field <code>string worker_instance_key = 8;</code>
+     * @return string
+     */
+    public function getWorkerInstanceKey()
+    {
+        return $this->worker_instance_key;
+    }
+
+    /**
+     * A unique key for this worker instance, used for tracking worker lifecycle.
+     * This is guaranteed to be unique, whereas identity is not guaranteed to be unique.
+     *
+     * Generated from protobuf field <code>string worker_instance_key = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setWorkerInstanceKey(string $var)
+    {
+        GPBUtil::checkString($var, true);
+        $this->worker_instance_key = $var;
+
+        return $this;
+    }
+
+    /**
+     * A dedicated per-worker Nexus task queue on which the server sends control
+     * tasks (e.g. activity cancellation) to this specific worker instance.
+     *
+     * Generated from protobuf field <code>string worker_control_task_queue = 9;</code>
+     * @return string
+     */
+    public function getWorkerControlTaskQueue()
+    {
+        return $this->worker_control_task_queue;
+    }
+
+    /**
+     * A dedicated per-worker Nexus task queue on which the server sends control
+     * tasks (e.g. activity cancellation) to this specific worker instance.
+     *
+     * Generated from protobuf field <code>string worker_control_task_queue = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setWorkerControlTaskQueue(string $var)
+    {
+        GPBUtil::checkString($var, true);
+        $this->worker_control_task_queue = $var;
 
         return $this;
     }
@@ -176,9 +251,8 @@ class PollActivityTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\TaskQueueMetadata $var
      * @return $this
      */
-    public function setTaskQueueMetadata($var)
+    public function setTaskQueueMetadata(\Temporal\Api\Taskqueue\V1\TaskQueueMetadata|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueueMetadata::class);
         $this->task_queue_metadata = $var;
 
         return $this;
@@ -225,10 +299,9 @@ class PollActivityTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setWorkerVersionCapabilities($var)
+    public function setWorkerVersionCapabilities(\Temporal\Api\Common\V1\WorkerVersionCapabilities|null $var)
     {
         @trigger_error('worker_version_capabilities is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerVersionCapabilities::class);
         $this->worker_version_capabilities = $var;
 
         return $this;
@@ -262,9 +335,8 @@ class PollActivityTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentOptions $var
      * @return $this
      */
-    public function setDeploymentOptions($var)
+    public function setDeploymentOptions(\Temporal\Api\Deployment\V1\WorkerDeploymentOptions|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentOptions::class);
         $this->deployment_options = $var;
 
         return $this;

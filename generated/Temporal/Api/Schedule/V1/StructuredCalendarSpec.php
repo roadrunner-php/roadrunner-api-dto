@@ -17,8 +17,8 @@ use Google\Protobuf\RepeatedField;
  * corresponding fields of the timestamp, except for year: if year is missing,
  * that means all years match. For all fields besides year, at least one Range
  * must be present to match anything.
- * TODO: add relative-to-end-of-month
- * TODO: add nth day-of-week in month
+ * Relative expressions such as "last day of the month" or "third Monday" are not currently
+ * representable; callers must enumerate the concrete days they require.
  *
  * Generated from protobuf message <code>temporal.api.schedule.v1.StructuredCalendarSpec</code>
  */
@@ -124,7 +124,7 @@ class StructuredCalendarSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Schedule\V1\Range[] $var
      * @return $this
      */
-    public function setSecond($var)
+    public function setSecond(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Schedule\V1\Range::class);
         $this->second = $arr;
@@ -150,7 +150,7 @@ class StructuredCalendarSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Schedule\V1\Range[] $var
      * @return $this
      */
-    public function setMinute($var)
+    public function setMinute(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Schedule\V1\Range::class);
         $this->minute = $arr;
@@ -176,7 +176,7 @@ class StructuredCalendarSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Schedule\V1\Range[] $var
      * @return $this
      */
-    public function setHour($var)
+    public function setHour(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Schedule\V1\Range::class);
         $this->hour = $arr;
@@ -206,7 +206,7 @@ class StructuredCalendarSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Schedule\V1\Range[] $var
      * @return $this
      */
-    public function setDayOfMonth($var)
+    public function setDayOfMonth(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Schedule\V1\Range::class);
         $this->day_of_month = $arr;
@@ -232,7 +232,7 @@ class StructuredCalendarSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Schedule\V1\Range[] $var
      * @return $this
      */
-    public function setMonth($var)
+    public function setMonth(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Schedule\V1\Range::class);
         $this->month = $arr;
@@ -258,7 +258,7 @@ class StructuredCalendarSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Schedule\V1\Range[] $var
      * @return $this
      */
-    public function setYear($var)
+    public function setYear(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Schedule\V1\Range::class);
         $this->year = $arr;
@@ -284,7 +284,7 @@ class StructuredCalendarSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Schedule\V1\Range[] $var
      * @return $this
      */
-    public function setDayOfWeek($var)
+    public function setDayOfWeek(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Schedule\V1\Range::class);
         $this->day_of_week = $arr;
@@ -310,9 +310,9 @@ class StructuredCalendarSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setComment($var)
+    public function setComment(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->comment = $var;
 
         return $this;

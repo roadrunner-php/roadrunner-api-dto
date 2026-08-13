@@ -49,7 +49,7 @@ class Payloads extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Payload[] $var
      * @return $this
      */
-    public function setPayloads($var)
+    public function setPayloads(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Payload::class);
         $this->payloads = $arr;

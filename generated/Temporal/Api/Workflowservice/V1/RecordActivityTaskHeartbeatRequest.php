@@ -36,6 +36,12 @@ class RecordActivityTaskHeartbeatRequest extends \Google\Protobuf\Internal\Messa
      * Generated from protobuf field <code>string namespace = 4;</code>
      */
     protected $namespace = '';
+    /**
+     * Resource ID for routing. Contains the workflow ID or activity ID for standalone activities.
+     *
+     * Generated from protobuf field <code>string resource_id = 5;</code>
+     */
+    protected $resource_id = '';
 
     /**
      * Constructor.
@@ -50,6 +56,8 @@ class RecordActivityTaskHeartbeatRequest extends \Google\Protobuf\Internal\Messa
      *     @type string $identity
      *           The identity of the worker/client
      *     @type string $namespace
+     *     @type string $resource_id
+     *           Resource ID for routing. Contains the workflow ID or activity ID for standalone activities.
      * }
      */
     public function __construct($data = NULL) {
@@ -75,9 +83,9 @@ class RecordActivityTaskHeartbeatRequest extends \Google\Protobuf\Internal\Messa
      * @param string $var
      * @return $this
      */
-    public function setTaskToken($var)
+    public function setTaskToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->task_token = $var;
 
         return $this;
@@ -111,9 +119,8 @@ class RecordActivityTaskHeartbeatRequest extends \Google\Protobuf\Internal\Messa
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setDetails($var)
+    public function setDetails(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->details = $var;
 
         return $this;
@@ -137,9 +144,9 @@ class RecordActivityTaskHeartbeatRequest extends \Google\Protobuf\Internal\Messa
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -159,10 +166,36 @@ class RecordActivityTaskHeartbeatRequest extends \Google\Protobuf\Internal\Messa
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
+
+        return $this;
+    }
+
+    /**
+     * Resource ID for routing. Contains the workflow ID or activity ID for standalone activities.
+     *
+     * Generated from protobuf field <code>string resource_id = 5;</code>
+     * @return string
+     */
+    public function getResourceId()
+    {
+        return $this->resource_id;
+    }
+
+    /**
+     * Resource ID for routing. Contains the workflow ID or activity ID for standalone activities.
+     *
+     * Generated from protobuf field <code>string resource_id = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setResourceId(string $var)
+    {
+        GPBUtil::checkString($var, true);
+        $this->resource_id = $var;
 
         return $this;
     }

@@ -55,9 +55,8 @@ class Link extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Link\WorkflowEvent $var
      * @return $this
      */
-    public function setWorkflowEvent($var)
+    public function setWorkflowEvent(\Temporal\Api\Common\V1\Link\WorkflowEvent|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Link\WorkflowEvent::class);
         $this->writeOneof(1, $var);
 
         return $this;
@@ -82,9 +81,8 @@ class Link extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Link\BatchJob $var
      * @return $this
      */
-    public function setBatchJob($var)
+    public function setBatchJob(\Temporal\Api\Common\V1\Link\BatchJob|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Link\BatchJob::class);
         $this->writeOneof(2, $var);
 
         return $this;

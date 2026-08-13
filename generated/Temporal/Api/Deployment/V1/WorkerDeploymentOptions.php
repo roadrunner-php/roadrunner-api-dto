@@ -11,14 +11,13 @@ use Google\Protobuf\RepeatedField;
 
 /**
  * Worker Deployment options set in SDK that need to be sent to server in every poll.
- * Experimental. Worker Deployments are experimental and might significantly change in the future.
  *
  * Generated from protobuf message <code>temporal.api.deployment.v1.WorkerDeploymentOptions</code>
  */
 class WorkerDeploymentOptions extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. Worker Deployment name.
+     * Required when `worker_versioning_mode==VERSIONED`.
      *
      * Generated from protobuf field <code>string deployment_name = 1;</code>
      */
@@ -46,7 +45,7 @@ class WorkerDeploymentOptions extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $deployment_name
-     *           Required. Worker Deployment name.
+     *           Required when `worker_versioning_mode==VERSIONED`.
      *     @type string $build_id
      *           The Build ID of the worker. Required when `worker_versioning_mode==VERSIONED`, in which case,
      *           the worker will be part of a Deployment Version.
@@ -62,7 +61,7 @@ class WorkerDeploymentOptions extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Worker Deployment name.
+     * Required when `worker_versioning_mode==VERSIONED`.
      *
      * Generated from protobuf field <code>string deployment_name = 1;</code>
      * @return string
@@ -73,15 +72,15 @@ class WorkerDeploymentOptions extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Worker Deployment name.
+     * Required when `worker_versioning_mode==VERSIONED`.
      *
      * Generated from protobuf field <code>string deployment_name = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setDeploymentName($var)
+    public function setDeploymentName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->deployment_name = $var;
 
         return $this;
@@ -107,9 +106,9 @@ class WorkerDeploymentOptions extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setBuildId($var)
+    public function setBuildId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->build_id = $var;
 
         return $this;
@@ -121,7 +120,7 @@ class WorkerDeploymentOptions extends \Google\Protobuf\Internal\Message
      * When `worker_versioning_mode==VERSIONED`, the worker will be part of a Deployment Version.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkerVersioningMode worker_versioning_mode = 3;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\WorkerVersioningMode}
      */
     public function getWorkerVersioningMode()
     {
@@ -134,10 +133,10 @@ class WorkerDeploymentOptions extends \Google\Protobuf\Internal\Message
      * When `worker_versioning_mode==VERSIONED`, the worker will be part of a Deployment Version.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkerVersioningMode worker_versioning_mode = 3;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\WorkerVersioningMode}
      * @return $this
      */
-    public function setWorkerVersioningMode($var)
+    public function setWorkerVersioningMode(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\WorkerVersioningMode::class);
         $this->worker_versioning_mode = $var;

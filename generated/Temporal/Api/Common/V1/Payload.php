@@ -26,6 +26,12 @@ class Payload extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bytes data = 2;</code>
      */
     protected $data = '';
+    /**
+     * Details about externally stored payloads associated with this payload.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Payload.ExternalPayloadDetails external_payloads = 3;</code>
+     */
+    private $external_payloads;
 
     /**
      * Constructor.
@@ -35,6 +41,8 @@ class Payload extends \Google\Protobuf\Internal\Message
      *
      *     @type array|\Google\Protobuf\Internal\MapField $metadata
      *     @type string $data
+     *     @type \Temporal\Api\Common\V1\Payload\ExternalPayloadDetails[] $external_payloads
+     *           Details about externally stored payloads associated with this payload.
      * }
      */
     public function __construct($data = NULL) {
@@ -56,7 +64,7 @@ class Payload extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setMetadata($var)
+    public function setMetadata(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::BYTES);
         $this->metadata = $arr;
@@ -78,10 +86,36 @@ class Payload extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setData($var)
+    public function setData(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->data = $var;
+
+        return $this;
+    }
+
+    /**
+     * Details about externally stored payloads associated with this payload.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Payload.ExternalPayloadDetails external_payloads = 3;</code>
+     * @return RepeatedField<\Temporal\Api\Common\V1\Payload\ExternalPayloadDetails>
+     */
+    public function getExternalPayloads()
+    {
+        return $this->external_payloads;
+    }
+
+    /**
+     * Details about externally stored payloads associated with this payload.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Payload.ExternalPayloadDetails external_payloads = 3;</code>
+     * @param \Temporal\Api\Common\V1\Payload\ExternalPayloadDetails[] $var
+     * @return $this
+     */
+    public function setExternalPayloads(array|RepeatedField $var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Payload\ExternalPayloadDetails::class);
+        $this->external_payloads = $arr;
 
         return $this;
     }

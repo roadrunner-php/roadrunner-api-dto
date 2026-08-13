@@ -66,9 +66,8 @@ class ScheduleAction extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflow\V1\NewWorkflowExecutionInfo $var
      * @return $this
      */
-    public function setStartWorkflow($var)
+    public function setStartWorkflow(\Temporal\Api\Workflow\V1\NewWorkflowExecutionInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\NewWorkflowExecutionInfo::class);
         $this->writeOneof(1, $var);
 
         return $this;

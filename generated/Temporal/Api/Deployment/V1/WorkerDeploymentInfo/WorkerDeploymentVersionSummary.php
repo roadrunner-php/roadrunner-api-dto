@@ -79,11 +79,23 @@ class WorkerDeploymentVersionSummary extends \Google\Protobuf\Internal\Message
      */
     protected $first_activation_time = null;
     /**
+     * Timestamp when this version last became current.
+     * Can be used to determine whether a version has ever been Current.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_current_time = 12;</code>
+     */
+    protected $last_current_time = null;
+    /**
      * Timestamp when this version last stopped being current or ramping.
+     * Cleared if the version becomes current or ramping again.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_deactivation_time = 10;</code>
      */
     protected $last_deactivation_time = null;
+    /**
+     * Generated from protobuf field <code>.temporal.api.compute.v1.ComputeConfigSummary compute_config = 13;</code>
+     */
+    protected $compute_config = null;
 
     /**
      * Constructor.
@@ -115,8 +127,13 @@ class WorkerDeploymentVersionSummary extends \Google\Protobuf\Internal\Message
      *           Last time `current_since_time`, `ramping_since_time, or `ramp_percentage` of this version changed.
      *     @type \Google\Protobuf\Timestamp $first_activation_time
      *           Timestamp when this version first became current or ramping.
+     *     @type \Google\Protobuf\Timestamp $last_current_time
+     *           Timestamp when this version last became current.
+     *           Can be used to determine whether a version has ever been Current.
      *     @type \Google\Protobuf\Timestamp $last_deactivation_time
      *           Timestamp when this version last stopped being current or ramping.
+     *           Cleared if the version becomes current or ramping again.
+     *     @type \Temporal\Api\Compute\V1\ComputeConfigSummary $compute_config
      * }
      */
     public function __construct($data = NULL) {
@@ -147,10 +164,10 @@ class WorkerDeploymentVersionSummary extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setVersion($var)
+    public function setVersion(string $var)
     {
         @trigger_error('version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->version = $var;
 
         return $this;
@@ -160,7 +177,7 @@ class WorkerDeploymentVersionSummary extends \Google\Protobuf\Internal\Message
      * The status of the Worker Deployment Version.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkerDeploymentVersionStatus status = 11;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\WorkerDeploymentVersionStatus}
      */
     public function getStatus()
     {
@@ -171,10 +188,10 @@ class WorkerDeploymentVersionSummary extends \Google\Protobuf\Internal\Message
      * The status of the Worker Deployment Version.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkerDeploymentVersionStatus status = 11;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\WorkerDeploymentVersionStatus}
      * @return $this
      */
-    public function setStatus($var)
+    public function setStatus(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\WorkerDeploymentVersionStatus::class);
         $this->status = $var;
@@ -210,9 +227,8 @@ class WorkerDeploymentVersionSummary extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
      * @return $this
      */
-    public function setDeploymentVersion($var)
+    public function setDeploymentVersion(\Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
         $this->deployment_version = $var;
 
         return $this;
@@ -242,9 +258,8 @@ class WorkerDeploymentVersionSummary extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setCreateTime($var)
+    public function setCreateTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->create_time = $var;
 
         return $this;
@@ -254,7 +269,7 @@ class WorkerDeploymentVersionSummary extends \Google\Protobuf\Internal\Message
      * Deprecated. Use `drainage_info` instead.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.VersionDrainageStatus drainage_status = 3;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\VersionDrainageStatus}
      */
     public function getDrainageStatus()
     {
@@ -265,10 +280,10 @@ class WorkerDeploymentVersionSummary extends \Google\Protobuf\Internal\Message
      * Deprecated. Use `drainage_info` instead.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.VersionDrainageStatus drainage_status = 3;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\VersionDrainageStatus}
      * @return $this
      */
-    public function setDrainageStatus($var)
+    public function setDrainageStatus(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\VersionDrainageStatus::class);
         $this->drainage_status = $var;
@@ -306,9 +321,8 @@ class WorkerDeploymentVersionSummary extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\VersionDrainageInfo $var
      * @return $this
      */
-    public function setDrainageInfo($var)
+    public function setDrainageInfo(\Temporal\Api\Deployment\V1\VersionDrainageInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\VersionDrainageInfo::class);
         $this->drainage_info = $var;
 
         return $this;
@@ -346,9 +360,8 @@ class WorkerDeploymentVersionSummary extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setCurrentSinceTime($var)
+    public function setCurrentSinceTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->current_since_time = $var;
 
         return $this;
@@ -386,9 +399,8 @@ class WorkerDeploymentVersionSummary extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setRampingSinceTime($var)
+    public function setRampingSinceTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->ramping_since_time = $var;
 
         return $this;
@@ -422,9 +434,8 @@ class WorkerDeploymentVersionSummary extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setRoutingUpdateTime($var)
+    public function setRoutingUpdateTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->routing_update_time = $var;
 
         return $this;
@@ -458,16 +469,53 @@ class WorkerDeploymentVersionSummary extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setFirstActivationTime($var)
+    public function setFirstActivationTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->first_activation_time = $var;
 
         return $this;
     }
 
     /**
+     * Timestamp when this version last became current.
+     * Can be used to determine whether a version has ever been Current.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_current_time = 12;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getLastCurrentTime()
+    {
+        return $this->last_current_time;
+    }
+
+    public function hasLastCurrentTime()
+    {
+        return isset($this->last_current_time);
+    }
+
+    public function clearLastCurrentTime()
+    {
+        unset($this->last_current_time);
+    }
+
+    /**
+     * Timestamp when this version last became current.
+     * Can be used to determine whether a version has ever been Current.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_current_time = 12;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setLastCurrentTime(\Google\Protobuf\Timestamp|null $var)
+    {
+        $this->last_current_time = $var;
+
+        return $this;
+    }
+
+    /**
      * Timestamp when this version last stopped being current or ramping.
+     * Cleared if the version becomes current or ramping again.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_deactivation_time = 10;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -489,15 +537,46 @@ class WorkerDeploymentVersionSummary extends \Google\Protobuf\Internal\Message
 
     /**
      * Timestamp when this version last stopped being current or ramping.
+     * Cleared if the version becomes current or ramping again.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_deactivation_time = 10;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setLastDeactivationTime($var)
+    public function setLastDeactivationTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_deactivation_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.compute.v1.ComputeConfigSummary compute_config = 13;</code>
+     * @return \Temporal\Api\Compute\V1\ComputeConfigSummary|null
+     */
+    public function getComputeConfig()
+    {
+        return $this->compute_config;
+    }
+
+    public function hasComputeConfig()
+    {
+        return isset($this->compute_config);
+    }
+
+    public function clearComputeConfig()
+    {
+        unset($this->compute_config);
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.compute.v1.ComputeConfigSummary compute_config = 13;</code>
+     * @param \Temporal\Api\Compute\V1\ComputeConfigSummary $var
+     * @return $this
+     */
+    public function setComputeConfig(\Temporal\Api\Compute\V1\ComputeConfigSummary|null $var)
+    {
+        $this->compute_config = $var;
 
         return $this;
     }

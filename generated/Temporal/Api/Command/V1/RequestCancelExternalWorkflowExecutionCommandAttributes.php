@@ -15,7 +15,10 @@ use Google\Protobuf\RepeatedField;
 class RequestCancelExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string namespace = 1;</code>
+     * Deprecated. Cross-namespace operations are disabled by default as of server 1.30.1.
+     *
+     * Generated from protobuf field <code>string namespace = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $namespace = '';
     /**
@@ -55,6 +58,7 @@ class RequestCancelExternalWorkflowExecutionCommandAttributes extends \Google\Pr
      *     Optional. Data for populating the Message object.
      *
      *     @type string $namespace
+     *           Deprecated. Cross-namespace operations are disabled by default as of server 1.30.1.
      *     @type string $workflow_id
      *     @type string $run_id
      *     @type string $control
@@ -73,22 +77,32 @@ class RequestCancelExternalWorkflowExecutionCommandAttributes extends \Google\Pr
     }
 
     /**
-     * Generated from protobuf field <code>string namespace = 1;</code>
+     * Deprecated. Cross-namespace operations are disabled by default as of server 1.30.1.
+     *
+     * Generated from protobuf field <code>string namespace = 1 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getNamespace()
     {
+        if ($this->namespace !== '') {
+            @trigger_error('namespace is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->namespace;
     }
 
     /**
-     * Generated from protobuf field <code>string namespace = 1;</code>
+     * Deprecated. Cross-namespace operations are disabled by default as of server 1.30.1.
+     *
+     * Generated from protobuf field <code>string namespace = 1 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        @trigger_error('namespace is deprecated.', E_USER_DEPRECATED);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -108,9 +122,9 @@ class RequestCancelExternalWorkflowExecutionCommandAttributes extends \Google\Pr
      * @param string $var
      * @return $this
      */
-    public function setWorkflowId($var)
+    public function setWorkflowId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->workflow_id = $var;
 
         return $this;
@@ -130,9 +144,9 @@ class RequestCancelExternalWorkflowExecutionCommandAttributes extends \Google\Pr
      * @param string $var
      * @return $this
      */
-    public function setRunId($var)
+    public function setRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->run_id = $var;
 
         return $this;
@@ -161,10 +175,10 @@ class RequestCancelExternalWorkflowExecutionCommandAttributes extends \Google\Pr
      * @return $this
      * @deprecated
      */
-    public function setControl($var)
+    public function setControl(string $var)
     {
         @trigger_error('control is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->control = $var;
 
         return $this;
@@ -192,9 +206,8 @@ class RequestCancelExternalWorkflowExecutionCommandAttributes extends \Google\Pr
      * @param bool $var
      * @return $this
      */
-    public function setChildWorkflowOnly($var)
+    public function setChildWorkflowOnly(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->child_workflow_only = $var;
 
         return $this;
@@ -218,9 +231,9 @@ class RequestCancelExternalWorkflowExecutionCommandAttributes extends \Google\Pr
      * @param string $var
      * @return $this
      */
-    public function setReason($var)
+    public function setReason(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->reason = $var;
 
         return $this;

@@ -70,9 +70,9 @@ class PollNexusTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTaskToken($var)
+    public function setTaskToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->task_token = $var;
 
         return $this;
@@ -106,9 +106,8 @@ class PollNexusTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Nexus\V1\Request $var
      * @return $this
      */
-    public function setRequest($var)
+    public function setRequest(\Temporal\Api\Nexus\V1\Request|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\Request::class);
         $this->request = $var;
 
         return $this;
@@ -142,9 +141,8 @@ class PollNexusTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\PollerScalingDecision $var
      * @return $this
      */
-    public function setPollerScalingDecision($var)
+    public function setPollerScalingDecision(\Temporal\Api\Taskqueue\V1\PollerScalingDecision|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\PollerScalingDecision::class);
         $this->poller_scaling_decision = $var;
 
         return $this;

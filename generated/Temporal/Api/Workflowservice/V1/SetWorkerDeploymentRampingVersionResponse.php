@@ -31,14 +31,24 @@ class SetWorkerDeploymentRampingVersionResponse extends \Google\Protobuf\Interna
     protected $previous_version = '';
     /**
      * The version that was ramping before executing this operation.
+     * Deprecated in favor of idempotency of the API. Use `DescribeWorkerDeployment` to get the
+     * Ramping version info before calling this API. By passing the `conflict_token` got from the
+     * `DescribeWorkerDeployment` call to this API you can ensure there is no interfering changes
+     * between the two calls.
      *
-     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion previous_deployment_version = 4;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion previous_deployment_version = 4 [deprecated = true];</code>
+     * @deprecated
      */
     protected $previous_deployment_version = null;
     /**
      * The ramping version percentage before executing this operation.
+     * Deprecated in favor of idempotency of the API. Use `DescribeWorkerDeployment` to get the
+     * Ramping version info before calling this API. By passing the `conflict_token` got from the
+     * `DescribeWorkerDeployment` call to this API you can ensure there is no interfering changes
+     * between the two calls.
      *
-     * Generated from protobuf field <code>float previous_percentage = 3;</code>
+     * Generated from protobuf field <code>float previous_percentage = 3 [deprecated = true];</code>
+     * @deprecated
      */
     protected $previous_percentage = 0.0;
 
@@ -56,8 +66,16 @@ class SetWorkerDeploymentRampingVersionResponse extends \Google\Protobuf\Interna
      *           Deprecated. Use `previous_deployment_version`.
      *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $previous_deployment_version
      *           The version that was ramping before executing this operation.
+     *           Deprecated in favor of idempotency of the API. Use `DescribeWorkerDeployment` to get the
+     *           Ramping version info before calling this API. By passing the `conflict_token` got from the
+     *           `DescribeWorkerDeployment` call to this API you can ensure there is no interfering changes
+     *           between the two calls.
      *     @type float $previous_percentage
      *           The ramping version percentage before executing this operation.
+     *           Deprecated in favor of idempotency of the API. Use `DescribeWorkerDeployment` to get the
+     *           Ramping version info before calling this API. By passing the `conflict_token` got from the
+     *           `DescribeWorkerDeployment` call to this API you can ensure there is no interfering changes
+     *           between the two calls.
      * }
      */
     public function __construct($data = NULL) {
@@ -87,9 +105,9 @@ class SetWorkerDeploymentRampingVersionResponse extends \Google\Protobuf\Interna
      * @param string $var
      * @return $this
      */
-    public function setConflictToken($var)
+    public function setConflictToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->conflict_token = $var;
 
         return $this;
@@ -118,10 +136,10 @@ class SetWorkerDeploymentRampingVersionResponse extends \Google\Protobuf\Interna
      * @return $this
      * @deprecated
      */
-    public function setPreviousVersion($var)
+    public function setPreviousVersion(string $var)
     {
         @trigger_error('previous_version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->previous_version = $var;
 
         return $this;
@@ -129,35 +147,52 @@ class SetWorkerDeploymentRampingVersionResponse extends \Google\Protobuf\Interna
 
     /**
      * The version that was ramping before executing this operation.
+     * Deprecated in favor of idempotency of the API. Use `DescribeWorkerDeployment` to get the
+     * Ramping version info before calling this API. By passing the `conflict_token` got from the
+     * `DescribeWorkerDeployment` call to this API you can ensure there is no interfering changes
+     * between the two calls.
      *
-     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion previous_deployment_version = 4;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion previous_deployment_version = 4 [deprecated = true];</code>
      * @return \Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null
+     * @deprecated
      */
     public function getPreviousDeploymentVersion()
     {
+        if (isset($this->previous_deployment_version)) {
+            @trigger_error('previous_deployment_version is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->previous_deployment_version;
     }
 
     public function hasPreviousDeploymentVersion()
     {
+        if (isset($this->previous_deployment_version)) {
+            @trigger_error('previous_deployment_version is deprecated.', E_USER_DEPRECATED);
+        }
         return isset($this->previous_deployment_version);
     }
 
     public function clearPreviousDeploymentVersion()
     {
+        @trigger_error('previous_deployment_version is deprecated.', E_USER_DEPRECATED);
         unset($this->previous_deployment_version);
     }
 
     /**
      * The version that was ramping before executing this operation.
+     * Deprecated in favor of idempotency of the API. Use `DescribeWorkerDeployment` to get the
+     * Ramping version info before calling this API. By passing the `conflict_token` got from the
+     * `DescribeWorkerDeployment` call to this API you can ensure there is no interfering changes
+     * between the two calls.
      *
-     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion previous_deployment_version = 4;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion previous_deployment_version = 4 [deprecated = true];</code>
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
      * @return $this
+     * @deprecated
      */
-    public function setPreviousDeploymentVersion($var)
+    public function setPreviousDeploymentVersion(\Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
+        @trigger_error('previous_deployment_version is deprecated.', E_USER_DEPRECATED);
         $this->previous_deployment_version = $var;
 
         return $this;
@@ -165,25 +200,38 @@ class SetWorkerDeploymentRampingVersionResponse extends \Google\Protobuf\Interna
 
     /**
      * The ramping version percentage before executing this operation.
+     * Deprecated in favor of idempotency of the API. Use `DescribeWorkerDeployment` to get the
+     * Ramping version info before calling this API. By passing the `conflict_token` got from the
+     * `DescribeWorkerDeployment` call to this API you can ensure there is no interfering changes
+     * between the two calls.
      *
-     * Generated from protobuf field <code>float previous_percentage = 3;</code>
+     * Generated from protobuf field <code>float previous_percentage = 3 [deprecated = true];</code>
      * @return float
+     * @deprecated
      */
     public function getPreviousPercentage()
     {
+        if ($this->previous_percentage !== 0.0) {
+            @trigger_error('previous_percentage is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->previous_percentage;
     }
 
     /**
      * The ramping version percentage before executing this operation.
+     * Deprecated in favor of idempotency of the API. Use `DescribeWorkerDeployment` to get the
+     * Ramping version info before calling this API. By passing the `conflict_token` got from the
+     * `DescribeWorkerDeployment` call to this API you can ensure there is no interfering changes
+     * between the two calls.
      *
-     * Generated from protobuf field <code>float previous_percentage = 3;</code>
+     * Generated from protobuf field <code>float previous_percentage = 3 [deprecated = true];</code>
      * @param float $var
      * @return $this
+     * @deprecated
      */
-    public function setPreviousPercentage($var)
+    public function setPreviousPercentage(float $var)
     {
-        GPBUtil::checkFloat($var);
+        @trigger_error('previous_percentage is deprecated.', E_USER_DEPRECATED);
         $this->previous_percentage = $var;
 
         return $this;

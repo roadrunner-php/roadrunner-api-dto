@@ -62,9 +62,8 @@ class ChannelsResponse extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\Error $var
      * @return $this
      */
-    public function setError($var)
+    public function setError(\RoadRunner\Centrifugal\API\DTO\V1\Error|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\Error::class);
         $this->error = $var;
 
         return $this;
@@ -94,9 +93,8 @@ class ChannelsResponse extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\ChannelsResult $var
      * @return $this
      */
-    public function setResult($var)
+    public function setResult(\RoadRunner\Centrifugal\API\DTO\V1\ChannelsResult|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\ChannelsResult::class);
         $this->result = $var;
 
         return $this;

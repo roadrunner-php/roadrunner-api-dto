@@ -111,9 +111,9 @@ class RespondQueryTaskCompletedRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTaskToken($var)
+    public function setTaskToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->task_token = $var;
 
         return $this;
@@ -121,7 +121,7 @@ class RespondQueryTaskCompletedRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.QueryResultType completed_type = 2;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\QueryResultType}
      */
     public function getCompletedType()
     {
@@ -130,10 +130,10 @@ class RespondQueryTaskCompletedRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.QueryResultType completed_type = 2;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\QueryResultType}
      * @return $this
      */
-    public function setCompletedType($var)
+    public function setCompletedType(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\QueryResultType::class);
         $this->completed_type = $var;
@@ -171,9 +171,8 @@ class RespondQueryTaskCompletedRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setQueryResult($var)
+    public function setQueryResult(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->query_result = $var;
 
         return $this;
@@ -209,9 +208,9 @@ class RespondQueryTaskCompletedRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setErrorMessage($var)
+    public function setErrorMessage(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->error_message = $var;
 
         return $this;
@@ -231,9 +230,9 @@ class RespondQueryTaskCompletedRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -273,9 +272,8 @@ class RespondQueryTaskCompletedRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
      */
-    public function setFailure($var)
+    public function setFailure(\Temporal\Api\Failure\V1\Failure|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
         $this->failure = $var;
 
         return $this;
@@ -286,7 +284,7 @@ class RespondQueryTaskCompletedRequest extends \Google\Protobuf\Internal\Message
      * apply to worker responses. See the type's doc for more.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowTaskFailedCause cause = 8;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\WorkflowTaskFailedCause}
      */
     public function getCause()
     {
@@ -298,10 +296,10 @@ class RespondQueryTaskCompletedRequest extends \Google\Protobuf\Internal\Message
      * apply to worker responses. See the type's doc for more.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowTaskFailedCause cause = 8;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\WorkflowTaskFailedCause}
      * @return $this
      */
-    public function setCause($var)
+    public function setCause(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\WorkflowTaskFailedCause::class);
         $this->cause = $var;

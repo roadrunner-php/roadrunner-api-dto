@@ -57,9 +57,8 @@ class WorkflowExecution extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\History $var
      * @return $this
      */
-    public function setHistory($var)
+    public function setHistory(\Temporal\Api\History\V1\History|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\History::class);
         $this->history = $var;
 
         return $this;

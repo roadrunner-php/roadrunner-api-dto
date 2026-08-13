@@ -55,9 +55,18 @@ class ActivityOptions extends \Google\Protobuf\Internal\Message
      */
     protected $heartbeat_timeout = null;
     /**
+     * The retry policy for the activity. Will never exceed `schedule_to_close_timeout`.
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.RetryPolicy retry_policy = 6;</code>
      */
     protected $retry_policy = null;
+    /**
+     * Priority metadata. If this message is not present, or any fields are not
+     * present, they inherit the values from the workflow.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 7;</code>
+     */
+    protected $priority = null;
 
     /**
      * Constructor.
@@ -87,6 +96,10 @@ class ActivityOptions extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Duration $heartbeat_timeout
      *           Maximum permitted time between successful worker heartbeats.
      *     @type \Temporal\Api\Common\V1\RetryPolicy $retry_policy
+     *           The retry policy for the activity. Will never exceed `schedule_to_close_timeout`.
+     *     @type \Temporal\Api\Common\V1\Priority $priority
+     *           Priority metadata. If this message is not present, or any fields are not
+     *           present, they inherit the values from the workflow.
      * }
      */
     public function __construct($data = NULL) {
@@ -118,9 +131,8 @@ class ActivityOptions extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\TaskQueue $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(\Temporal\Api\Taskqueue\V1\TaskQueue|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueue::class);
         $this->task_queue = $var;
 
         return $this;
@@ -160,9 +172,8 @@ class ActivityOptions extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setScheduleToCloseTimeout($var)
+    public function setScheduleToCloseTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->schedule_to_close_timeout = $var;
 
         return $this;
@@ -206,9 +217,8 @@ class ActivityOptions extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setScheduleToStartTimeout($var)
+    public function setScheduleToStartTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->schedule_to_start_timeout = $var;
 
         return $this;
@@ -250,9 +260,8 @@ class ActivityOptions extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setStartToCloseTimeout($var)
+    public function setStartToCloseTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->start_to_close_timeout = $var;
 
         return $this;
@@ -286,15 +295,16 @@ class ActivityOptions extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setHeartbeatTimeout($var)
+    public function setHeartbeatTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->heartbeat_timeout = $var;
 
         return $this;
     }
 
     /**
+     * The retry policy for the activity. Will never exceed `schedule_to_close_timeout`.
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.RetryPolicy retry_policy = 6;</code>
      * @return \Temporal\Api\Common\V1\RetryPolicy|null
      */
@@ -314,14 +324,52 @@ class ActivityOptions extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The retry policy for the activity. Will never exceed `schedule_to_close_timeout`.
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.RetryPolicy retry_policy = 6;</code>
      * @param \Temporal\Api\Common\V1\RetryPolicy $var
      * @return $this
      */
-    public function setRetryPolicy($var)
+    public function setRetryPolicy(\Temporal\Api\Common\V1\RetryPolicy|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\RetryPolicy::class);
         $this->retry_policy = $var;
+
+        return $this;
+    }
+
+    /**
+     * Priority metadata. If this message is not present, or any fields are not
+     * present, they inherit the values from the workflow.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 7;</code>
+     * @return \Temporal\Api\Common\V1\Priority|null
+     */
+    public function getPriority()
+    {
+        return $this->priority;
+    }
+
+    public function hasPriority()
+    {
+        return isset($this->priority);
+    }
+
+    public function clearPriority()
+    {
+        unset($this->priority);
+    }
+
+    /**
+     * Priority metadata. If this message is not present, or any fields are not
+     * present, they inherit the values from the workflow.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 7;</code>
+     * @param \Temporal\Api\Common\V1\Priority $var
+     * @return $this
+     */
+    public function setPriority(\Temporal\Api\Common\V1\Priority|null $var)
+    {
+        $this->priority = $var;
 
         return $this;
     }

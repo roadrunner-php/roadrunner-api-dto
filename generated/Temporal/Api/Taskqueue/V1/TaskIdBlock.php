@@ -52,7 +52,7 @@ class TaskIdBlock extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setStartId($var)
+    public function setStartId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->start_id = $var;
@@ -74,7 +74,7 @@ class TaskIdBlock extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setEndId($var)
+    public function setEndId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->end_id = $var;

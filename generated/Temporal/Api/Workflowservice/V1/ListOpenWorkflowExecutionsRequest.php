@@ -65,9 +65,9 @@ class ListOpenWorkflowExecutionsRequest extends \Google\Protobuf\Internal\Messag
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -87,7 +87,7 @@ class ListOpenWorkflowExecutionsRequest extends \Google\Protobuf\Internal\Messag
      * @param int $var
      * @return $this
      */
-    public function setMaximumPageSize($var)
+    public function setMaximumPageSize(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->maximum_page_size = $var;
@@ -109,9 +109,9 @@ class ListOpenWorkflowExecutionsRequest extends \Google\Protobuf\Internal\Messag
      * @param string $var
      * @return $this
      */
-    public function setNextPageToken($var)
+    public function setNextPageToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->next_page_token = $var;
 
         return $this;
@@ -141,9 +141,8 @@ class ListOpenWorkflowExecutionsRequest extends \Google\Protobuf\Internal\Messag
      * @param \Temporal\Api\Filter\V1\StartTimeFilter $var
      * @return $this
      */
-    public function setStartTimeFilter($var)
+    public function setStartTimeFilter(\Temporal\Api\Filter\V1\StartTimeFilter|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Filter\V1\StartTimeFilter::class);
         $this->start_time_filter = $var;
 
         return $this;
@@ -168,9 +167,8 @@ class ListOpenWorkflowExecutionsRequest extends \Google\Protobuf\Internal\Messag
      * @param \Temporal\Api\Filter\V1\WorkflowExecutionFilter $var
      * @return $this
      */
-    public function setExecutionFilter($var)
+    public function setExecutionFilter(\Temporal\Api\Filter\V1\WorkflowExecutionFilter|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Filter\V1\WorkflowExecutionFilter::class);
         $this->writeOneof(5, $var);
 
         return $this;
@@ -195,9 +193,8 @@ class ListOpenWorkflowExecutionsRequest extends \Google\Protobuf\Internal\Messag
      * @param \Temporal\Api\Filter\V1\WorkflowTypeFilter $var
      * @return $this
      */
-    public function setTypeFilter($var)
+    public function setTypeFilter(\Temporal\Api\Filter\V1\WorkflowTypeFilter|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Filter\V1\WorkflowTypeFilter::class);
         $this->writeOneof(6, $var);
 
         return $this;

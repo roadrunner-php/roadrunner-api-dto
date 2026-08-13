@@ -67,9 +67,9 @@ class DescribeWorkerDeploymentResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setConflictToken($var)
+    public function setConflictToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->conflict_token = $var;
 
         return $this;
@@ -99,9 +99,8 @@ class DescribeWorkerDeploymentResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentInfo $var
      * @return $this
      */
-    public function setWorkerDeploymentInfo($var)
+    public function setWorkerDeploymentInfo(\Temporal\Api\Deployment\V1\WorkerDeploymentInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentInfo::class);
         $this->worker_deployment_info = $var;
 
         return $this;

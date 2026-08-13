@@ -51,6 +51,12 @@ class UpdateWorkerConfigRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkerSelector selector = 6;</code>
      */
     protected $selector = null;
+    /**
+     * Resource ID for routing. Contains the worker grouping key.
+     *
+     * Generated from protobuf field <code>string resource_id = 7;</code>
+     */
+    protected $resource_id = '';
 
     /**
      * Constructor.
@@ -71,6 +77,8 @@ class UpdateWorkerConfigRequest extends \Google\Protobuf\Internal\Message
      *           Controls which fields from `worker_config` will be applied
      *     @type \Temporal\Api\Common\V1\WorkerSelector $selector
      *           Defines which workers should receive this command.
+     *     @type string $resource_id
+     *           Resource ID for routing. Contains the worker grouping key.
      * }
      */
     public function __construct($data = NULL) {
@@ -96,9 +104,9 @@ class UpdateWorkerConfigRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -122,9 +130,9 @@ class UpdateWorkerConfigRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -148,9 +156,9 @@ class UpdateWorkerConfigRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setReason($var)
+    public function setReason(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->reason = $var;
 
         return $this;
@@ -186,9 +194,8 @@ class UpdateWorkerConfigRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Sdk\V1\WorkerConfig $var
      * @return $this
      */
-    public function setWorkerConfig($var)
+    public function setWorkerConfig(\Temporal\Api\Sdk\V1\WorkerConfig|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Sdk\V1\WorkerConfig::class);
         $this->worker_config = $var;
 
         return $this;
@@ -222,9 +229,8 @@ class UpdateWorkerConfigRequest extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\FieldMask $var
      * @return $this
      */
-    public function setUpdateMask($var)
+    public function setUpdateMask(\Google\Protobuf\FieldMask|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\FieldMask::class);
         $this->update_mask = $var;
 
         return $this;
@@ -258,10 +264,35 @@ class UpdateWorkerConfigRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\WorkerSelector $var
      * @return $this
      */
-    public function setSelector($var)
+    public function setSelector(\Temporal\Api\Common\V1\WorkerSelector|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerSelector::class);
         $this->selector = $var;
+
+        return $this;
+    }
+
+    /**
+     * Resource ID for routing. Contains the worker grouping key.
+     *
+     * Generated from protobuf field <code>string resource_id = 7;</code>
+     * @return string
+     */
+    public function getResourceId()
+    {
+        return $this->resource_id;
+    }
+
+    /**
+     * Resource ID for routing. Contains the worker grouping key.
+     *
+     * Generated from protobuf field <code>string resource_id = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setResourceId(string $var)
+    {
+        GPBUtil::checkString($var, true);
+        $this->resource_id = $var;
 
         return $this;
     }

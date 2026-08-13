@@ -70,7 +70,7 @@ class ReplaceBuildIdAssignmentRule extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setRuleIndex($var)
+    public function setRuleIndex(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->rule_index = $var;
@@ -102,9 +102,8 @@ class ReplaceBuildIdAssignmentRule extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\BuildIdAssignmentRule $var
      * @return $this
      */
-    public function setRule($var)
+    public function setRule(\Temporal\Api\Taskqueue\V1\BuildIdAssignmentRule|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\BuildIdAssignmentRule::class);
         $this->rule = $var;
 
         return $this;
@@ -136,9 +135,8 @@ class ReplaceBuildIdAssignmentRule extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setForce($var)
+    public function setForce(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->force = $var;
 
         return $this;

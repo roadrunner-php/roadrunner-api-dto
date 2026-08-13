@@ -15,7 +15,10 @@ use Google\Protobuf\RepeatedField;
 class SignalExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string namespace = 1;</code>
+     * Deprecated. Cross-namespace operations are disabled by default as of server 1.30.1.
+     *
+     * Generated from protobuf field <code>string namespace = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $namespace = '';
     /**
@@ -64,6 +67,7 @@ class SignalExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\
      *     Optional. Data for populating the Message object.
      *
      *     @type string $namespace
+     *           Deprecated. Cross-namespace operations are disabled by default as of server 1.30.1.
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $execution
      *     @type string $signal_name
      *           The workflow author-defined name of the signal to send to the workflow.
@@ -86,22 +90,32 @@ class SignalExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\
     }
 
     /**
-     * Generated from protobuf field <code>string namespace = 1;</code>
+     * Deprecated. Cross-namespace operations are disabled by default as of server 1.30.1.
+     *
+     * Generated from protobuf field <code>string namespace = 1 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getNamespace()
     {
+        if ($this->namespace !== '') {
+            @trigger_error('namespace is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->namespace;
     }
 
     /**
-     * Generated from protobuf field <code>string namespace = 1;</code>
+     * Deprecated. Cross-namespace operations are disabled by default as of server 1.30.1.
+     *
+     * Generated from protobuf field <code>string namespace = 1 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        @trigger_error('namespace is deprecated.', E_USER_DEPRECATED);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -131,9 +145,8 @@ class SignalExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
      * @return $this
      */
-    public function setExecution($var)
+    public function setExecution(\Temporal\Api\Common\V1\WorkflowExecution|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->execution = $var;
 
         return $this;
@@ -157,9 +170,9 @@ class SignalExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\
      * @param string $var
      * @return $this
      */
-    public function setSignalName($var)
+    public function setSignalName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->signal_name = $var;
 
         return $this;
@@ -193,9 +206,8 @@ class SignalExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setInput($var)
+    public function setInput(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->input = $var;
 
         return $this;
@@ -224,10 +236,10 @@ class SignalExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\
      * @return $this
      * @deprecated
      */
-    public function setControl($var)
+    public function setControl(string $var)
     {
         @trigger_error('control is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->control = $var;
 
         return $this;
@@ -255,9 +267,8 @@ class SignalExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\
      * @param bool $var
      * @return $this
      */
-    public function setChildWorkflowOnly($var)
+    public function setChildWorkflowOnly(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->child_workflow_only = $var;
 
         return $this;
@@ -293,9 +304,8 @@ class SignalExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\
      * @param \Temporal\Api\Common\V1\Header $var
      * @return $this
      */
-    public function setHeader($var)
+    public function setHeader(\Temporal\Api\Common\V1\Header|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Header::class);
         $this->header = $var;
 
         return $this;

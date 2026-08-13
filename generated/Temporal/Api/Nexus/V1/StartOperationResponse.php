@@ -28,6 +28,10 @@ class StartOperationResponse extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Nexus\V1\StartOperationResponse\Async $async_success
      *     @type \Temporal\Api\Nexus\V1\UnsuccessfulOperationError $operation_error
      *           The operation completed unsuccessfully (failed or canceled).
+     *           Deprecated. Use the failure variant instead.
+     *     @type \Temporal\Api\Failure\V1\Failure $failure
+     *           The operation completed unsuccessfully (failed or canceled).
+     *           Failure object must contain an ApplicationFailureInfo or CanceledFailureInfo object.
      * }
      */
     public function __construct($data = NULL) {
@@ -54,9 +58,8 @@ class StartOperationResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Nexus\V1\StartOperationResponse\Sync $var
      * @return $this
      */
-    public function setSyncSuccess($var)
+    public function setSyncSuccess(\Temporal\Api\Nexus\V1\StartOperationResponse\Sync|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\StartOperationResponse\Sync::class);
         $this->writeOneof(1, $var);
 
         return $this;
@@ -81,9 +84,8 @@ class StartOperationResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Nexus\V1\StartOperationResponse\Async $var
      * @return $this
      */
-    public function setAsyncSuccess($var)
+    public function setAsyncSuccess(\Temporal\Api\Nexus\V1\StartOperationResponse\Async|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\StartOperationResponse\Async::class);
         $this->writeOneof(2, $var);
 
         return $this;
@@ -91,31 +93,73 @@ class StartOperationResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * The operation completed unsuccessfully (failed or canceled).
+     * Deprecated. Use the failure variant instead.
      *
-     * Generated from protobuf field <code>.temporal.api.nexus.v1.UnsuccessfulOperationError operation_error = 3;</code>
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.UnsuccessfulOperationError operation_error = 3 [deprecated = true];</code>
      * @return \Temporal\Api\Nexus\V1\UnsuccessfulOperationError|null
+     * @deprecated
      */
     public function getOperationError()
     {
+        if ($this->hasOneof(3)) {
+            @trigger_error('operation_error is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->readOneof(3);
     }
 
     public function hasOperationError()
     {
+        if ($this->hasOneof(3)) {
+            @trigger_error('operation_error is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->hasOneof(3);
     }
 
     /**
      * The operation completed unsuccessfully (failed or canceled).
+     * Deprecated. Use the failure variant instead.
      *
-     * Generated from protobuf field <code>.temporal.api.nexus.v1.UnsuccessfulOperationError operation_error = 3;</code>
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.UnsuccessfulOperationError operation_error = 3 [deprecated = true];</code>
      * @param \Temporal\Api\Nexus\V1\UnsuccessfulOperationError $var
      * @return $this
+     * @deprecated
      */
-    public function setOperationError($var)
+    public function setOperationError(\Temporal\Api\Nexus\V1\UnsuccessfulOperationError|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\UnsuccessfulOperationError::class);
+        @trigger_error('operation_error is deprecated.', E_USER_DEPRECATED);
         $this->writeOneof(3, $var);
+
+        return $this;
+    }
+
+    /**
+     * The operation completed unsuccessfully (failed or canceled).
+     * Failure object must contain an ApplicationFailureInfo or CanceledFailureInfo object.
+     *
+     * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 4;</code>
+     * @return \Temporal\Api\Failure\V1\Failure|null
+     */
+    public function getFailure()
+    {
+        return $this->readOneof(4);
+    }
+
+    public function hasFailure()
+    {
+        return $this->hasOneof(4);
+    }
+
+    /**
+     * The operation completed unsuccessfully (failed or canceled).
+     * Failure object must contain an ApplicationFailureInfo or CanceledFailureInfo object.
+     *
+     * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 4;</code>
+     * @param \Temporal\Api\Failure\V1\Failure $var
+     * @return $this
+     */
+    public function setFailure(\Temporal\Api\Failure\V1\Failure|null $var)
+    {
+        $this->writeOneof(4, $var);
 
         return $this;
     }

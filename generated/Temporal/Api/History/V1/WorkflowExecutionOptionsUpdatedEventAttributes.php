@@ -28,7 +28,7 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      */
     protected $unset_versioning_override = false;
     /**
-     * Request ID attachedto the running workflow execution so that subsequent requests with same
+     * Request ID attached to the running workflow execution so that subsequent requests with same
      * request ID will be deduped.
      *
      * Generated from protobuf field <code>string attached_request_id = 3;</code>
@@ -46,6 +46,19 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      * Generated from protobuf field <code>string identity = 5;</code>
      */
     protected $identity = '';
+    /**
+     * Priority override upserted in this event. Represents the full priority; not just partial fields.
+     * Ignored if nil.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 6;</code>
+     */
+    protected $priority = null;
+    /**
+     * If set, the time-skipping configuration was changed. Contains the full updated configuration.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.TimeSkippingConfig time_skipping_config = 7;</code>
+     */
+    protected $time_skipping_config = null;
 
     /**
      * Constructor.
@@ -59,12 +72,17 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      *     @type bool $unset_versioning_override
      *           Versioning override removed in this event.
      *     @type string $attached_request_id
-     *           Request ID attachedto the running workflow execution so that subsequent requests with same
+     *           Request ID attached to the running workflow execution so that subsequent requests with same
      *           request ID will be deduped.
      *     @type \Temporal\Api\Common\V1\Callback[] $attached_completion_callbacks
      *           Completion callbacks attached to the running workflow execution.
      *     @type string $identity
      *           Optional. The identity of the client who initiated the request that created this event.
+     *     @type \Temporal\Api\Common\V1\Priority $priority
+     *           Priority override upserted in this event. Represents the full priority; not just partial fields.
+     *           Ignored if nil.
+     *     @type \Temporal\Api\Workflow\V1\TimeSkippingConfig $time_skipping_config
+     *           If set, the time-skipping configuration was changed. Contains the full updated configuration.
      * }
      */
     public function __construct($data = NULL) {
@@ -102,9 +120,8 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      * @param \Temporal\Api\Workflow\V1\VersioningOverride $var
      * @return $this
      */
-    public function setVersioningOverride($var)
+    public function setVersioningOverride(\Temporal\Api\Workflow\V1\VersioningOverride|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\VersioningOverride::class);
         $this->versioning_override = $var;
 
         return $this;
@@ -128,16 +145,15 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      * @param bool $var
      * @return $this
      */
-    public function setUnsetVersioningOverride($var)
+    public function setUnsetVersioningOverride(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->unset_versioning_override = $var;
 
         return $this;
     }
 
     /**
-     * Request ID attachedto the running workflow execution so that subsequent requests with same
+     * Request ID attached to the running workflow execution so that subsequent requests with same
      * request ID will be deduped.
      *
      * Generated from protobuf field <code>string attached_request_id = 3;</code>
@@ -149,16 +165,16 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
     }
 
     /**
-     * Request ID attachedto the running workflow execution so that subsequent requests with same
+     * Request ID attached to the running workflow execution so that subsequent requests with same
      * request ID will be deduped.
      *
      * Generated from protobuf field <code>string attached_request_id = 3;</code>
      * @param string $var
      * @return $this
      */
-    public function setAttachedRequestId($var)
+    public function setAttachedRequestId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->attached_request_id = $var;
 
         return $this;
@@ -182,7 +198,7 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      * @param \Temporal\Api\Common\V1\Callback[] $var
      * @return $this
      */
-    public function setAttachedCompletionCallbacks($var)
+    public function setAttachedCompletionCallbacks(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Callback::class);
         $this->attached_completion_callbacks = $arr;
@@ -208,10 +224,82 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
+
+        return $this;
+    }
+
+    /**
+     * Priority override upserted in this event. Represents the full priority; not just partial fields.
+     * Ignored if nil.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 6;</code>
+     * @return \Temporal\Api\Common\V1\Priority|null
+     */
+    public function getPriority()
+    {
+        return $this->priority;
+    }
+
+    public function hasPriority()
+    {
+        return isset($this->priority);
+    }
+
+    public function clearPriority()
+    {
+        unset($this->priority);
+    }
+
+    /**
+     * Priority override upserted in this event. Represents the full priority; not just partial fields.
+     * Ignored if nil.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 6;</code>
+     * @param \Temporal\Api\Common\V1\Priority $var
+     * @return $this
+     */
+    public function setPriority(\Temporal\Api\Common\V1\Priority|null $var)
+    {
+        $this->priority = $var;
+
+        return $this;
+    }
+
+    /**
+     * If set, the time-skipping configuration was changed. Contains the full updated configuration.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.TimeSkippingConfig time_skipping_config = 7;</code>
+     * @return \Temporal\Api\Workflow\V1\TimeSkippingConfig|null
+     */
+    public function getTimeSkippingConfig()
+    {
+        return $this->time_skipping_config;
+    }
+
+    public function hasTimeSkippingConfig()
+    {
+        return isset($this->time_skipping_config);
+    }
+
+    public function clearTimeSkippingConfig()
+    {
+        unset($this->time_skipping_config);
+    }
+
+    /**
+     * If set, the time-skipping configuration was changed. Contains the full updated configuration.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.TimeSkippingConfig time_skipping_config = 7;</code>
+     * @param \Temporal\Api\Workflow\V1\TimeSkippingConfig $var
+     * @return $this
+     */
+    public function setTimeSkippingConfig(\Temporal\Api\Workflow\V1\TimeSkippingConfig|null $var)
+    {
+        $this->time_skipping_config = $var;
 
         return $this;
     }

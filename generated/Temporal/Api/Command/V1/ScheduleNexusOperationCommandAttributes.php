@@ -61,6 +61,33 @@ class ScheduleNexusOperationCommandAttributes extends \Google\Protobuf\Internal\
      * Generated from protobuf field <code>map<string, string> nexus_header = 6;</code>
      */
     private $nexus_header;
+    /**
+     * Schedule-to-start timeout for this operation.
+     * Indicates how long the caller is willing to wait for the operation to be started (or completed if synchronous)
+     * by the handler. If the operation is not started within this timeout, it will fail with
+     * TIMEOUT_TYPE_SCHEDULE_TO_START.
+     * If not set or zero, no schedule-to-start timeout is enforced.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "to" is used to indicate interval. --)
+     * Requires server version 1.31.0 or later.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_start_timeout = 7;</code>
+     */
+    protected $schedule_to_start_timeout = null;
+    /**
+     * Start-to-close timeout for this operation.
+     * Indicates how long the caller is willing to wait for an asynchronous operation to complete after it has been
+     * started. If the operation does not complete within this timeout after starting, it will fail with
+     * TIMEOUT_TYPE_START_TO_CLOSE.
+     * Only applies to asynchronous operations. Synchronous operations ignore this timeout.
+     * If not set or zero, no start-to-close timeout is enforced.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "to" is used to indicate interval. --)
+     * Requires server version 1.31.0 or later.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration start_to_close_timeout = 8;</code>
+     */
+    protected $start_to_close_timeout = null;
 
     /**
      * Constructor.
@@ -91,6 +118,25 @@ class ScheduleNexusOperationCommandAttributes extends \Google\Protobuf\Internal\
      *           This is useful for propagating tracing information.
      *           Note these headers are not the same as Temporal headers on internal activities and child workflows, these are
      *           transmitted to Nexus operations that may be external and are not traditional payloads.
+     *     @type \Google\Protobuf\Duration $schedule_to_start_timeout
+     *           Schedule-to-start timeout for this operation.
+     *           Indicates how long the caller is willing to wait for the operation to be started (or completed if synchronous)
+     *           by the handler. If the operation is not started within this timeout, it will fail with
+     *           TIMEOUT_TYPE_SCHEDULE_TO_START.
+     *           If not set or zero, no schedule-to-start timeout is enforced.
+     *           (-- api-linter: core::0140::prepositions=disabled
+     *               aip.dev/not-precedent: "to" is used to indicate interval. --)
+     *           Requires server version 1.31.0 or later.
+     *     @type \Google\Protobuf\Duration $start_to_close_timeout
+     *           Start-to-close timeout for this operation.
+     *           Indicates how long the caller is willing to wait for an asynchronous operation to complete after it has been
+     *           started. If the operation does not complete within this timeout after starting, it will fail with
+     *           TIMEOUT_TYPE_START_TO_CLOSE.
+     *           Only applies to asynchronous operations. Synchronous operations ignore this timeout.
+     *           If not set or zero, no start-to-close timeout is enforced.
+     *           (-- api-linter: core::0140::prepositions=disabled
+     *               aip.dev/not-precedent: "to" is used to indicate interval. --)
+     *           Requires server version 1.31.0 or later.
      * }
      */
     public function __construct($data = NULL) {
@@ -116,9 +162,9 @@ class ScheduleNexusOperationCommandAttributes extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setEndpoint($var)
+    public function setEndpoint(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->endpoint = $var;
 
         return $this;
@@ -142,9 +188,9 @@ class ScheduleNexusOperationCommandAttributes extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setService($var)
+    public function setService(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->service = $var;
 
         return $this;
@@ -168,9 +214,9 @@ class ScheduleNexusOperationCommandAttributes extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setOperation($var)
+    public function setOperation(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->operation = $var;
 
         return $this;
@@ -208,9 +254,8 @@ class ScheduleNexusOperationCommandAttributes extends \Google\Protobuf\Internal\
      * @param \Temporal\Api\Common\V1\Payload $var
      * @return $this
      */
-    public function setInput($var)
+    public function setInput(\Temporal\Api\Common\V1\Payload|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payload::class);
         $this->input = $var;
 
         return $this;
@@ -252,9 +297,8 @@ class ScheduleNexusOperationCommandAttributes extends \Google\Protobuf\Internal\
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setScheduleToCloseTimeout($var)
+    public function setScheduleToCloseTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->schedule_to_close_timeout = $var;
 
         return $this;
@@ -288,10 +332,110 @@ class ScheduleNexusOperationCommandAttributes extends \Google\Protobuf\Internal\
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setNexusHeader($var)
+    public function setNexusHeader(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->nexus_header = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Schedule-to-start timeout for this operation.
+     * Indicates how long the caller is willing to wait for the operation to be started (or completed if synchronous)
+     * by the handler. If the operation is not started within this timeout, it will fail with
+     * TIMEOUT_TYPE_SCHEDULE_TO_START.
+     * If not set or zero, no schedule-to-start timeout is enforced.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "to" is used to indicate interval. --)
+     * Requires server version 1.31.0 or later.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_start_timeout = 7;</code>
+     * @return \Google\Protobuf\Duration|null
+     */
+    public function getScheduleToStartTimeout()
+    {
+        return $this->schedule_to_start_timeout;
+    }
+
+    public function hasScheduleToStartTimeout()
+    {
+        return isset($this->schedule_to_start_timeout);
+    }
+
+    public function clearScheduleToStartTimeout()
+    {
+        unset($this->schedule_to_start_timeout);
+    }
+
+    /**
+     * Schedule-to-start timeout for this operation.
+     * Indicates how long the caller is willing to wait for the operation to be started (or completed if synchronous)
+     * by the handler. If the operation is not started within this timeout, it will fail with
+     * TIMEOUT_TYPE_SCHEDULE_TO_START.
+     * If not set or zero, no schedule-to-start timeout is enforced.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "to" is used to indicate interval. --)
+     * Requires server version 1.31.0 or later.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_start_timeout = 7;</code>
+     * @param \Google\Protobuf\Duration $var
+     * @return $this
+     */
+    public function setScheduleToStartTimeout(\Google\Protobuf\Duration|null $var)
+    {
+        $this->schedule_to_start_timeout = $var;
+
+        return $this;
+    }
+
+    /**
+     * Start-to-close timeout for this operation.
+     * Indicates how long the caller is willing to wait for an asynchronous operation to complete after it has been
+     * started. If the operation does not complete within this timeout after starting, it will fail with
+     * TIMEOUT_TYPE_START_TO_CLOSE.
+     * Only applies to asynchronous operations. Synchronous operations ignore this timeout.
+     * If not set or zero, no start-to-close timeout is enforced.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "to" is used to indicate interval. --)
+     * Requires server version 1.31.0 or later.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration start_to_close_timeout = 8;</code>
+     * @return \Google\Protobuf\Duration|null
+     */
+    public function getStartToCloseTimeout()
+    {
+        return $this->start_to_close_timeout;
+    }
+
+    public function hasStartToCloseTimeout()
+    {
+        return isset($this->start_to_close_timeout);
+    }
+
+    public function clearStartToCloseTimeout()
+    {
+        unset($this->start_to_close_timeout);
+    }
+
+    /**
+     * Start-to-close timeout for this operation.
+     * Indicates how long the caller is willing to wait for an asynchronous operation to complete after it has been
+     * started. If the operation does not complete within this timeout after starting, it will fail with
+     * TIMEOUT_TYPE_START_TO_CLOSE.
+     * Only applies to asynchronous operations. Synchronous operations ignore this timeout.
+     * If not set or zero, no start-to-close timeout is enforced.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "to" is used to indicate interval. --)
+     * Requires server version 1.31.0 or later.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration start_to_close_timeout = 8;</code>
+     * @param \Google\Protobuf\Duration $var
+     * @return $this
+     */
+    public function setStartToCloseTimeout(\Google\Protobuf\Duration|null $var)
+    {
+        $this->start_to_close_timeout = $var;
 
         return $this;
     }

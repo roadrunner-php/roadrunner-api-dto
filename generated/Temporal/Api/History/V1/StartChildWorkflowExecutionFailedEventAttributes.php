@@ -103,9 +103,9 @@ class StartChildWorkflowExecutionFailedEventAttributes extends \Google\Protobuf\
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -125,9 +125,9 @@ class StartChildWorkflowExecutionFailedEventAttributes extends \Google\Protobuf\
      * @param string $var
      * @return $this
      */
-    public function setNamespaceId($var)
+    public function setNamespaceId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace_id = $var;
 
         return $this;
@@ -147,9 +147,9 @@ class StartChildWorkflowExecutionFailedEventAttributes extends \Google\Protobuf\
      * @param string $var
      * @return $this
      */
-    public function setWorkflowId($var)
+    public function setWorkflowId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->workflow_id = $var;
 
         return $this;
@@ -179,9 +179,8 @@ class StartChildWorkflowExecutionFailedEventAttributes extends \Google\Protobuf\
      * @param \Temporal\Api\Common\V1\WorkflowType $var
      * @return $this
      */
-    public function setWorkflowType($var)
+    public function setWorkflowType(\Temporal\Api\Common\V1\WorkflowType|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowType::class);
         $this->workflow_type = $var;
 
         return $this;
@@ -189,7 +188,7 @@ class StartChildWorkflowExecutionFailedEventAttributes extends \Google\Protobuf\
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.StartChildWorkflowExecutionFailedCause cause = 4;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\StartChildWorkflowExecutionFailedCause}
      */
     public function getCause()
     {
@@ -198,10 +197,10 @@ class StartChildWorkflowExecutionFailedEventAttributes extends \Google\Protobuf\
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.StartChildWorkflowExecutionFailedCause cause = 4;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\StartChildWorkflowExecutionFailedCause}
      * @return $this
      */
-    public function setCause($var)
+    public function setCause(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\StartChildWorkflowExecutionFailedCause::class);
         $this->cause = $var;
@@ -232,10 +231,10 @@ class StartChildWorkflowExecutionFailedEventAttributes extends \Google\Protobuf\
      * @return $this
      * @deprecated
      */
-    public function setControl($var)
+    public function setControl(string $var)
     {
         @trigger_error('control is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->control = $var;
 
         return $this;
@@ -259,7 +258,7 @@ class StartChildWorkflowExecutionFailedEventAttributes extends \Google\Protobuf\
      * @param int|string $var
      * @return $this
      */
-    public function setInitiatedEventId($var)
+    public function setInitiatedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->initiated_event_id = $var;
@@ -285,7 +284,7 @@ class StartChildWorkflowExecutionFailedEventAttributes extends \Google\Protobuf\
      * @param int|string $var
      * @return $this
      */
-    public function setWorkflowTaskCompletedEventId($var)
+    public function setWorkflowTaskCompletedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->workflow_task_completed_event_id = $var;

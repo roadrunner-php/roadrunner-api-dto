@@ -52,9 +52,8 @@ class PostResetOperation extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflow\V1\PostResetOperation\SignalWorkflow $var
      * @return $this
      */
-    public function setSignalWorkflow($var)
+    public function setSignalWorkflow(\Temporal\Api\Workflow\V1\PostResetOperation\SignalWorkflow|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\PostResetOperation\SignalWorkflow::class);
         $this->writeOneof(1, $var);
 
         return $this;
@@ -79,9 +78,8 @@ class PostResetOperation extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflow\V1\PostResetOperation\UpdateWorkflowOptions $var
      * @return $this
      */
-    public function setUpdateWorkflowOptions($var)
+    public function setUpdateWorkflowOptions(\Temporal\Api\Workflow\V1\PostResetOperation\UpdateWorkflowOptions|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\PostResetOperation\UpdateWorkflowOptions::class);
         $this->writeOneof(2, $var);
 
         return $this;

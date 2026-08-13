@@ -75,9 +75,8 @@ class PushNotification extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\FcmPushNotification $var
      * @return $this
      */
-    public function setFcm($var)
+    public function setFcm(\RoadRunner\Centrifugal\API\DTO\V1\FcmPushNotification|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\FcmPushNotification::class);
         $this->fcm = $var;
 
         return $this;
@@ -107,9 +106,8 @@ class PushNotification extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\HmsPushNotification $var
      * @return $this
      */
-    public function setHms($var)
+    public function setHms(\RoadRunner\Centrifugal\API\DTO\V1\HmsPushNotification|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\HmsPushNotification::class);
         $this->hms = $var;
 
         return $this;
@@ -139,9 +137,8 @@ class PushNotification extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\ApnsPushNotification $var
      * @return $this
      */
-    public function setApns($var)
+    public function setApns(\RoadRunner\Centrifugal\API\DTO\V1\ApnsPushNotification|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\ApnsPushNotification::class);
         $this->apns = $var;
 
         return $this;
@@ -165,7 +162,7 @@ class PushNotification extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setExpireAt($var)
+    public function setExpireAt(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->expire_at = $var;

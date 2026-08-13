@@ -74,7 +74,7 @@ class WorkflowQueryResult extends \Google\Protobuf\Internal\Message
      * Did the query succeed or fail?
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.QueryResultType result_type = 1;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\QueryResultType}
      */
     public function getResultType()
     {
@@ -85,10 +85,10 @@ class WorkflowQueryResult extends \Google\Protobuf\Internal\Message
      * Did the query succeed or fail?
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.QueryResultType result_type = 1;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\QueryResultType}
      * @return $this
      */
-    public function setResultType($var)
+    public function setResultType(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\QueryResultType::class);
         $this->result_type = $var;
@@ -126,9 +126,8 @@ class WorkflowQueryResult extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setAnswer($var)
+    public function setAnswer(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->answer = $var;
 
         return $this;
@@ -154,9 +153,9 @@ class WorkflowQueryResult extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setErrorMessage($var)
+    public function setErrorMessage(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->error_message = $var;
 
         return $this;
@@ -194,9 +193,8 @@ class WorkflowQueryResult extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
      */
-    public function setFailure($var)
+    public function setFailure(\Temporal\Api\Failure\V1\Failure|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
         $this->failure = $var;
 
         return $this;

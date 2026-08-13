@@ -80,9 +80,8 @@ class GetWorkflowExecutionHistoryResponse extends \Google\Protobuf\Internal\Mess
      * @param \Temporal\Api\History\V1\History $var
      * @return $this
      */
-    public function setHistory($var)
+    public function setHistory(\Temporal\Api\History\V1\History|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\History::class);
         $this->history = $var;
 
         return $this;
@@ -108,7 +107,7 @@ class GetWorkflowExecutionHistoryResponse extends \Google\Protobuf\Internal\Mess
      * @param \Temporal\Api\Common\V1\DataBlob[] $var
      * @return $this
      */
-    public function setRawHistory($var)
+    public function setRawHistory(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\DataBlob::class);
         $this->raw_history = $arr;
@@ -134,9 +133,9 @@ class GetWorkflowExecutionHistoryResponse extends \Google\Protobuf\Internal\Mess
      * @param string $var
      * @return $this
      */
-    public function setNextPageToken($var)
+    public function setNextPageToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->next_page_token = $var;
 
         return $this;
@@ -156,9 +155,8 @@ class GetWorkflowExecutionHistoryResponse extends \Google\Protobuf\Internal\Mess
      * @param bool $var
      * @return $this
      */
-    public function setArchived($var)
+    public function setArchived(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->archived = $var;
 
         return $this;

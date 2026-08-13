@@ -101,7 +101,7 @@ class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes extends \Go
      * @param int|string $var
      * @return $this
      */
-    public function setWorkflowTaskCompletedEventId($var)
+    public function setWorkflowTaskCompletedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->workflow_task_completed_event_id = $var;
@@ -129,9 +129,9 @@ class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes extends \Go
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -151,9 +151,9 @@ class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes extends \Go
      * @param string $var
      * @return $this
      */
-    public function setNamespaceId($var)
+    public function setNamespaceId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace_id = $var;
 
         return $this;
@@ -183,9 +183,8 @@ class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes extends \Go
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
      * @return $this
      */
-    public function setWorkflowExecution($var)
+    public function setWorkflowExecution(\Temporal\Api\Common\V1\WorkflowExecution|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->workflow_execution = $var;
 
         return $this;
@@ -214,10 +213,10 @@ class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes extends \Go
      * @return $this
      * @deprecated
      */
-    public function setControl($var)
+    public function setControl(string $var)
     {
         @trigger_error('control is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->control = $var;
 
         return $this;
@@ -243,9 +242,8 @@ class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes extends \Go
      * @param bool $var
      * @return $this
      */
-    public function setChildWorkflowOnly($var)
+    public function setChildWorkflowOnly(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->child_workflow_only = $var;
 
         return $this;
@@ -269,9 +267,9 @@ class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes extends \Go
      * @param string $var
      * @return $this
      */
-    public function setReason($var)
+    public function setReason(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->reason = $var;
 
         return $this;

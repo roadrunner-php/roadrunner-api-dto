@@ -90,9 +90,8 @@ class ScheduleActionResult extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setScheduleTime($var)
+    public function setScheduleTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->schedule_time = $var;
 
         return $this;
@@ -126,9 +125,8 @@ class ScheduleActionResult extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setActualTime($var)
+    public function setActualTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->actual_time = $var;
 
         return $this;
@@ -162,9 +160,8 @@ class ScheduleActionResult extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
      * @return $this
      */
-    public function setStartWorkflowResult($var)
+    public function setStartWorkflowResult(\Temporal\Api\Common\V1\WorkflowExecution|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->start_workflow_result = $var;
 
         return $this;
@@ -175,7 +172,7 @@ class ScheduleActionResult extends \Google\Protobuf\Internal\Message
      * eventually-consistent view of the started workflow's status.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowExecutionStatus start_workflow_status = 12;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\WorkflowExecutionStatus}
      */
     public function getStartWorkflowStatus()
     {
@@ -187,10 +184,10 @@ class ScheduleActionResult extends \Google\Protobuf\Internal\Message
      * eventually-consistent view of the started workflow's status.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowExecutionStatus start_workflow_status = 12;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\WorkflowExecutionStatus}
      * @return $this
      */
-    public function setStartWorkflowStatus($var)
+    public function setStartWorkflowStatus(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\WorkflowExecutionStatus::class);
         $this->start_workflow_status = $var;

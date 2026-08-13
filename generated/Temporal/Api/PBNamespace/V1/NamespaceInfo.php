@@ -47,6 +47,12 @@ class NamespaceInfo extends \Google\Protobuf\Internal\Message
      */
     protected $capabilities = null;
     /**
+     * Namespace configured limits
+     *
+     * Generated from protobuf field <code>.temporal.api.namespace.v1.NamespaceInfo.Limits limits = 8;</code>
+     */
+    protected $limits = null;
+    /**
      * Whether scheduled workflows are supported on this namespace. This is only needed
      * temporarily while the feature is experimental, so we can give it a high tag.
      *
@@ -69,6 +75,8 @@ class NamespaceInfo extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type \Temporal\Api\PBNamespace\V1\NamespaceInfo\Capabilities $capabilities
      *           All capabilities the namespace supports.
+     *     @type \Temporal\Api\PBNamespace\V1\NamespaceInfo\Limits $limits
+     *           Namespace configured limits
      *     @type bool $supports_schedules
      *           Whether scheduled workflows are supported on this namespace. This is only needed
      *           temporarily while the feature is experimental, so we can give it a high tag.
@@ -93,9 +101,9 @@ class NamespaceInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setName($var)
+    public function setName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->name = $var;
 
         return $this;
@@ -103,7 +111,7 @@ class NamespaceInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.NamespaceState state = 2;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\NamespaceState}
      */
     public function getState()
     {
@@ -112,10 +120,10 @@ class NamespaceInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.NamespaceState state = 2;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\NamespaceState}
      * @return $this
      */
-    public function setState($var)
+    public function setState(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\NamespaceState::class);
         $this->state = $var;
@@ -137,9 +145,9 @@ class NamespaceInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setDescription($var)
+    public function setDescription(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->description = $var;
 
         return $this;
@@ -159,9 +167,9 @@ class NamespaceInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setOwnerEmail($var)
+    public function setOwnerEmail(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->owner_email = $var;
 
         return $this;
@@ -185,7 +193,7 @@ class NamespaceInfo extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setData($var)
+    public function setData(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->data = $arr;
@@ -207,9 +215,9 @@ class NamespaceInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->id = $var;
 
         return $this;
@@ -243,10 +251,44 @@ class NamespaceInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\PBNamespace\V1\NamespaceInfo\Capabilities $var
      * @return $this
      */
-    public function setCapabilities($var)
+    public function setCapabilities(\Temporal\Api\PBNamespace\V1\NamespaceInfo\Capabilities|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\PBNamespace\V1\NamespaceInfo\Capabilities::class);
         $this->capabilities = $var;
+
+        return $this;
+    }
+
+    /**
+     * Namespace configured limits
+     *
+     * Generated from protobuf field <code>.temporal.api.namespace.v1.NamespaceInfo.Limits limits = 8;</code>
+     * @return \Temporal\Api\PBNamespace\V1\NamespaceInfo\Limits|null
+     */
+    public function getLimits()
+    {
+        return $this->limits;
+    }
+
+    public function hasLimits()
+    {
+        return isset($this->limits);
+    }
+
+    public function clearLimits()
+    {
+        unset($this->limits);
+    }
+
+    /**
+     * Namespace configured limits
+     *
+     * Generated from protobuf field <code>.temporal.api.namespace.v1.NamespaceInfo.Limits limits = 8;</code>
+     * @param \Temporal\Api\PBNamespace\V1\NamespaceInfo\Limits $var
+     * @return $this
+     */
+    public function setLimits(\Temporal\Api\PBNamespace\V1\NamespaceInfo\Limits|null $var)
+    {
+        $this->limits = $var;
 
         return $this;
     }
@@ -271,9 +313,8 @@ class NamespaceInfo extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setSupportsSchedules($var)
+    public function setSupportsSchedules(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->supports_schedules = $var;
 
         return $this;

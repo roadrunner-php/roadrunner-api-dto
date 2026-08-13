@@ -62,9 +62,9 @@ class TimerFiredEventAttributes extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTimerId($var)
+    public function setTimerId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->timer_id = $var;
 
         return $this;
@@ -88,7 +88,7 @@ class TimerFiredEventAttributes extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setStartedEventId($var)
+    public function setStartedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->started_event_id = $var;

@@ -69,7 +69,7 @@ class TaskQueueStatus extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setBacklogCountHint($var)
+    public function setBacklogCountHint(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->backlog_count_hint = $var;
@@ -91,7 +91,7 @@ class TaskQueueStatus extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setReadLevel($var)
+    public function setReadLevel(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->read_level = $var;
@@ -113,7 +113,7 @@ class TaskQueueStatus extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setAckLevel($var)
+    public function setAckLevel(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->ack_level = $var;
@@ -135,9 +135,8 @@ class TaskQueueStatus extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setRatePerSecond($var)
+    public function setRatePerSecond(float $var)
     {
-        GPBUtil::checkDouble($var);
         $this->rate_per_second = $var;
 
         return $this;
@@ -167,9 +166,8 @@ class TaskQueueStatus extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\TaskIdBlock $var
      * @return $this
      */
-    public function setTaskIdBlock($var)
+    public function setTaskIdBlock(\Temporal\Api\Taskqueue\V1\TaskIdBlock|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskIdBlock::class);
         $this->task_id_block = $var;
 
         return $this;

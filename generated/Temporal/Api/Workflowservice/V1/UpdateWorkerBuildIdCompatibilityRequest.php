@@ -85,9 +85,9 @@ class UpdateWorkerBuildIdCompatibilityRequest extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -115,9 +115,9 @@ class UpdateWorkerBuildIdCompatibilityRequest extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->task_queue = $var;
 
         return $this;
@@ -154,9 +154,9 @@ class UpdateWorkerBuildIdCompatibilityRequest extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setAddNewBuildIdInNewDefaultSet($var)
+    public function setAddNewBuildIdInNewDefaultSet(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->writeOneof(3, $var);
 
         return $this;
@@ -185,9 +185,8 @@ class UpdateWorkerBuildIdCompatibilityRequest extends \Google\Protobuf\Internal\
      * @param \Temporal\Api\Workflowservice\V1\UpdateWorkerBuildIdCompatibilityRequest\AddNewCompatibleVersion $var
      * @return $this
      */
-    public function setAddNewCompatibleBuildId($var)
+    public function setAddNewCompatibleBuildId(\Temporal\Api\Workflowservice\V1\UpdateWorkerBuildIdCompatibilityRequest\AddNewCompatibleVersion|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflowservice\V1\UpdateWorkerBuildIdCompatibilityRequest\AddNewCompatibleVersion::class);
         $this->writeOneof(4, $var);
 
         return $this;
@@ -222,9 +221,9 @@ class UpdateWorkerBuildIdCompatibilityRequest extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setPromoteSetByBuildId($var)
+    public function setPromoteSetByBuildId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->writeOneof(5, $var);
 
         return $this;
@@ -257,9 +256,9 @@ class UpdateWorkerBuildIdCompatibilityRequest extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setPromoteBuildIdWithinSet($var)
+    public function setPromoteBuildIdWithinSet(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->writeOneof(6, $var);
 
         return $this;
@@ -296,9 +295,8 @@ class UpdateWorkerBuildIdCompatibilityRequest extends \Google\Protobuf\Internal\
      * @param \Temporal\Api\Workflowservice\V1\UpdateWorkerBuildIdCompatibilityRequest\MergeSets $var
      * @return $this
      */
-    public function setMergeSets($var)
+    public function setMergeSets(\Temporal\Api\Workflowservice\V1\UpdateWorkerBuildIdCompatibilityRequest\MergeSets|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflowservice\V1\UpdateWorkerBuildIdCompatibilityRequest\MergeSets::class);
         $this->writeOneof(7, $var);
 
         return $this;

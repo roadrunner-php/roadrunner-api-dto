@@ -87,9 +87,8 @@ class DescribeNamespaceResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\PBNamespace\V1\NamespaceInfo $var
      * @return $this
      */
-    public function setNamespaceInfo($var)
+    public function setNamespaceInfo(\Temporal\Api\PBNamespace\V1\NamespaceInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\PBNamespace\V1\NamespaceInfo::class);
         $this->namespace_info = $var;
 
         return $this;
@@ -119,9 +118,8 @@ class DescribeNamespaceResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\PBNamespace\V1\NamespaceConfig $var
      * @return $this
      */
-    public function setConfig($var)
+    public function setConfig(\Temporal\Api\PBNamespace\V1\NamespaceConfig|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\PBNamespace\V1\NamespaceConfig::class);
         $this->config = $var;
 
         return $this;
@@ -151,9 +149,8 @@ class DescribeNamespaceResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Replication\V1\NamespaceReplicationConfig $var
      * @return $this
      */
-    public function setReplicationConfig($var)
+    public function setReplicationConfig(\Temporal\Api\Replication\V1\NamespaceReplicationConfig|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Replication\V1\NamespaceReplicationConfig::class);
         $this->replication_config = $var;
 
         return $this;
@@ -173,7 +170,7 @@ class DescribeNamespaceResponse extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setFailoverVersion($var)
+    public function setFailoverVersion(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->failover_version = $var;
@@ -195,9 +192,8 @@ class DescribeNamespaceResponse extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setIsGlobalNamespace($var)
+    public function setIsGlobalNamespace(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->is_global_namespace = $var;
 
         return $this;
@@ -223,7 +219,7 @@ class DescribeNamespaceResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Replication\V1\FailoverStatus[] $var
      * @return $this
      */
-    public function setFailoverHistory($var)
+    public function setFailoverHistory(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Replication\V1\FailoverStatus::class);
         $this->failover_history = $arr;

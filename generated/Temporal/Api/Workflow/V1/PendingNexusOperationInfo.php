@@ -110,6 +110,22 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string operation_token = 15;</code>
      */
     protected $operation_token = '';
+    /**
+     * Schedule-to-start timeout for this operation.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "to" is used to indicate interval. --)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_start_timeout = 16;</code>
+     */
+    protected $schedule_to_start_timeout = null;
+    /**
+     * Start-to-close timeout for this operation.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "to" is used to indicate interval. --)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration start_to_close_timeout = 17;</code>
+     */
+    protected $start_to_close_timeout = null;
 
     /**
      * Constructor.
@@ -152,6 +168,14 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
      *           If the state is BLOCKED, blocked reason provides additional information.
      *     @type string $operation_token
      *           Operation token. Only set for asynchronous operations after a successful StartOperation call.
+     *     @type \Google\Protobuf\Duration $schedule_to_start_timeout
+     *           Schedule-to-start timeout for this operation.
+     *           (-- api-linter: core::0140::prepositions=disabled
+     *               aip.dev/not-precedent: "to" is used to indicate interval. --)
+     *     @type \Google\Protobuf\Duration $start_to_close_timeout
+     *           Start-to-close timeout for this operation.
+     *           (-- api-linter: core::0140::prepositions=disabled
+     *               aip.dev/not-precedent: "to" is used to indicate interval. --)
      * }
      */
     public function __construct($data = NULL) {
@@ -179,9 +203,9 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setEndpoint($var)
+    public function setEndpoint(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->endpoint = $var;
 
         return $this;
@@ -205,9 +229,9 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setService($var)
+    public function setService(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->service = $var;
 
         return $this;
@@ -231,9 +255,9 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setOperation($var)
+    public function setOperation(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->operation = $var;
 
         return $this;
@@ -264,10 +288,10 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setOperationId($var)
+    public function setOperationId(string $var)
     {
         @trigger_error('operation_id is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->operation_id = $var;
 
         return $this;
@@ -307,9 +331,8 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setScheduleToCloseTimeout($var)
+    public function setScheduleToCloseTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->schedule_to_close_timeout = $var;
 
         return $this;
@@ -343,9 +366,8 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setScheduledTime($var)
+    public function setScheduledTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->scheduled_time = $var;
 
         return $this;
@@ -353,7 +375,7 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.PendingNexusOperationState state = 7;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\PendingNexusOperationState}
      */
     public function getState()
     {
@@ -362,10 +384,10 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.PendingNexusOperationState state = 7;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\PendingNexusOperationState}
      * @return $this
      */
-    public function setState($var)
+    public function setState(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\PendingNexusOperationState::class);
         $this->state = $var;
@@ -393,7 +415,7 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setAttempt($var)
+    public function setAttempt(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->attempt = $var;
@@ -429,9 +451,8 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setLastAttemptCompleteTime($var)
+    public function setLastAttemptCompleteTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_attempt_complete_time = $var;
 
         return $this;
@@ -465,9 +486,8 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
      */
-    public function setLastAttemptFailure($var)
+    public function setLastAttemptFailure(\Temporal\Api\Failure\V1\Failure|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
         $this->last_attempt_failure = $var;
 
         return $this;
@@ -501,9 +521,8 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setNextAttemptScheduleTime($var)
+    public function setNextAttemptScheduleTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->next_attempt_schedule_time = $var;
 
         return $this;
@@ -533,9 +552,8 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflow\V1\NexusOperationCancellationInfo $var
      * @return $this
      */
-    public function setCancellationInfo($var)
+    public function setCancellationInfo(\Temporal\Api\Workflow\V1\NexusOperationCancellationInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\NexusOperationCancellationInfo::class);
         $this->cancellation_info = $var;
 
         return $this;
@@ -561,7 +579,7 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setScheduledEventId($var)
+    public function setScheduledEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->scheduled_event_id = $var;
@@ -587,9 +605,9 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setBlockedReason($var)
+    public function setBlockedReason(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->blocked_reason = $var;
 
         return $this;
@@ -613,10 +631,88 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setOperationToken($var)
+    public function setOperationToken(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->operation_token = $var;
+
+        return $this;
+    }
+
+    /**
+     * Schedule-to-start timeout for this operation.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "to" is used to indicate interval. --)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_start_timeout = 16;</code>
+     * @return \Google\Protobuf\Duration|null
+     */
+    public function getScheduleToStartTimeout()
+    {
+        return $this->schedule_to_start_timeout;
+    }
+
+    public function hasScheduleToStartTimeout()
+    {
+        return isset($this->schedule_to_start_timeout);
+    }
+
+    public function clearScheduleToStartTimeout()
+    {
+        unset($this->schedule_to_start_timeout);
+    }
+
+    /**
+     * Schedule-to-start timeout for this operation.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "to" is used to indicate interval. --)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_start_timeout = 16;</code>
+     * @param \Google\Protobuf\Duration $var
+     * @return $this
+     */
+    public function setScheduleToStartTimeout(\Google\Protobuf\Duration|null $var)
+    {
+        $this->schedule_to_start_timeout = $var;
+
+        return $this;
+    }
+
+    /**
+     * Start-to-close timeout for this operation.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "to" is used to indicate interval. --)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration start_to_close_timeout = 17;</code>
+     * @return \Google\Protobuf\Duration|null
+     */
+    public function getStartToCloseTimeout()
+    {
+        return $this->start_to_close_timeout;
+    }
+
+    public function hasStartToCloseTimeout()
+    {
+        return isset($this->start_to_close_timeout);
+    }
+
+    public function clearStartToCloseTimeout()
+    {
+        unset($this->start_to_close_timeout);
+    }
+
+    /**
+     * Start-to-close timeout for this operation.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "to" is used to indicate interval. --)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration start_to_close_timeout = 17;</code>
+     * @param \Google\Protobuf\Duration $var
+     * @return $this
+     */
+    public function setStartToCloseTimeout(\Google\Protobuf\Duration|null $var)
+    {
+        $this->start_to_close_timeout = $var;
 
         return $this;
     }

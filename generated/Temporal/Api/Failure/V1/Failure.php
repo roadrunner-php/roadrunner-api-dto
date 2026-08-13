@@ -110,9 +110,9 @@ class Failure extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setMessage($var)
+    public function setMessage(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->message = $var;
 
         return $this;
@@ -138,9 +138,9 @@ class Failure extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSource($var)
+    public function setSource(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->source = $var;
 
         return $this;
@@ -160,9 +160,9 @@ class Failure extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setStackTrace($var)
+    public function setStackTrace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->stack_trace = $var;
 
         return $this;
@@ -220,9 +220,8 @@ class Failure extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Payload $var
      * @return $this
      */
-    public function setEncodedAttributes($var)
+    public function setEncodedAttributes(\Temporal\Api\Common\V1\Payload|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payload::class);
         $this->encoded_attributes = $var;
 
         return $this;
@@ -252,9 +251,8 @@ class Failure extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
      */
-    public function setCause($var)
+    public function setCause(\Temporal\Api\Failure\V1\Failure|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
         $this->cause = $var;
 
         return $this;
@@ -279,9 +277,8 @@ class Failure extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Failure\V1\ApplicationFailureInfo $var
      * @return $this
      */
-    public function setApplicationFailureInfo($var)
+    public function setApplicationFailureInfo(\Temporal\Api\Failure\V1\ApplicationFailureInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\ApplicationFailureInfo::class);
         $this->writeOneof(5, $var);
 
         return $this;
@@ -306,9 +303,8 @@ class Failure extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Failure\V1\TimeoutFailureInfo $var
      * @return $this
      */
-    public function setTimeoutFailureInfo($var)
+    public function setTimeoutFailureInfo(\Temporal\Api\Failure\V1\TimeoutFailureInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\TimeoutFailureInfo::class);
         $this->writeOneof(6, $var);
 
         return $this;
@@ -333,9 +329,8 @@ class Failure extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Failure\V1\CanceledFailureInfo $var
      * @return $this
      */
-    public function setCanceledFailureInfo($var)
+    public function setCanceledFailureInfo(\Temporal\Api\Failure\V1\CanceledFailureInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\CanceledFailureInfo::class);
         $this->writeOneof(7, $var);
 
         return $this;
@@ -360,9 +355,8 @@ class Failure extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Failure\V1\TerminatedFailureInfo $var
      * @return $this
      */
-    public function setTerminatedFailureInfo($var)
+    public function setTerminatedFailureInfo(\Temporal\Api\Failure\V1\TerminatedFailureInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\TerminatedFailureInfo::class);
         $this->writeOneof(8, $var);
 
         return $this;
@@ -387,9 +381,8 @@ class Failure extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Failure\V1\ServerFailureInfo $var
      * @return $this
      */
-    public function setServerFailureInfo($var)
+    public function setServerFailureInfo(\Temporal\Api\Failure\V1\ServerFailureInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\ServerFailureInfo::class);
         $this->writeOneof(9, $var);
 
         return $this;
@@ -414,9 +407,8 @@ class Failure extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Failure\V1\ResetWorkflowFailureInfo $var
      * @return $this
      */
-    public function setResetWorkflowFailureInfo($var)
+    public function setResetWorkflowFailureInfo(\Temporal\Api\Failure\V1\ResetWorkflowFailureInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\ResetWorkflowFailureInfo::class);
         $this->writeOneof(10, $var);
 
         return $this;
@@ -441,9 +433,8 @@ class Failure extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Failure\V1\ActivityFailureInfo $var
      * @return $this
      */
-    public function setActivityFailureInfo($var)
+    public function setActivityFailureInfo(\Temporal\Api\Failure\V1\ActivityFailureInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\ActivityFailureInfo::class);
         $this->writeOneof(11, $var);
 
         return $this;
@@ -468,9 +459,8 @@ class Failure extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Failure\V1\ChildWorkflowExecutionFailureInfo $var
      * @return $this
      */
-    public function setChildWorkflowExecutionFailureInfo($var)
+    public function setChildWorkflowExecutionFailureInfo(\Temporal\Api\Failure\V1\ChildWorkflowExecutionFailureInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\ChildWorkflowExecutionFailureInfo::class);
         $this->writeOneof(12, $var);
 
         return $this;
@@ -495,9 +485,8 @@ class Failure extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Failure\V1\NexusOperationFailureInfo $var
      * @return $this
      */
-    public function setNexusOperationExecutionFailureInfo($var)
+    public function setNexusOperationExecutionFailureInfo(\Temporal\Api\Failure\V1\NexusOperationFailureInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\NexusOperationFailureInfo::class);
         $this->writeOneof(13, $var);
 
         return $this;
@@ -522,9 +511,8 @@ class Failure extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Failure\V1\NexusHandlerFailureInfo $var
      * @return $this
      */
-    public function setNexusHandlerFailureInfo($var)
+    public function setNexusHandlerFailureInfo(\Temporal\Api\Failure\V1\NexusHandlerFailureInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\NexusHandlerFailureInfo::class);
         $this->writeOneof(14, $var);
 
         return $this;

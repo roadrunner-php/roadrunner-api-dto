@@ -25,6 +25,13 @@ class PollNexusTaskQueueRequest extends \Google\Protobuf\Internal\Message
      */
     protected $identity = '';
     /**
+     * A unique key for this worker instance, used for tracking worker lifecycle.
+     * This is guaranteed to be unique, whereas identity is not guaranteed to be unique.
+     *
+     * Generated from protobuf field <code>string worker_instance_key = 8;</code>
+     */
+    protected $worker_instance_key = '';
+    /**
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueue task_queue = 3;</code>
      */
     protected $task_queue = null;
@@ -59,6 +66,9 @@ class PollNexusTaskQueueRequest extends \Google\Protobuf\Internal\Message
      *     @type string $namespace
      *     @type string $identity
      *           The identity of the client who initiated this request.
+     *     @type string $worker_instance_key
+     *           A unique key for this worker instance, used for tracking worker lifecycle.
+     *           This is guaranteed to be unique, whereas identity is not guaranteed to be unique.
      *     @type \Temporal\Api\Taskqueue\V1\TaskQueue $task_queue
      *     @type \Temporal\Api\Common\V1\WorkerVersionCapabilities $worker_version_capabilities
      *           Information about this worker's build identifier and if it is choosing to use the versioning
@@ -89,9 +99,9 @@ class PollNexusTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -115,10 +125,38 @@ class PollNexusTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
+
+        return $this;
+    }
+
+    /**
+     * A unique key for this worker instance, used for tracking worker lifecycle.
+     * This is guaranteed to be unique, whereas identity is not guaranteed to be unique.
+     *
+     * Generated from protobuf field <code>string worker_instance_key = 8;</code>
+     * @return string
+     */
+    public function getWorkerInstanceKey()
+    {
+        return $this->worker_instance_key;
+    }
+
+    /**
+     * A unique key for this worker instance, used for tracking worker lifecycle.
+     * This is guaranteed to be unique, whereas identity is not guaranteed to be unique.
+     *
+     * Generated from protobuf field <code>string worker_instance_key = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setWorkerInstanceKey(string $var)
+    {
+        GPBUtil::checkString($var, true);
+        $this->worker_instance_key = $var;
 
         return $this;
     }
@@ -147,9 +185,8 @@ class PollNexusTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\TaskQueue $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(\Temporal\Api\Taskqueue\V1\TaskQueue|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueue::class);
         $this->task_queue = $var;
 
         return $this;
@@ -196,10 +233,9 @@ class PollNexusTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setWorkerVersionCapabilities($var)
+    public function setWorkerVersionCapabilities(\Temporal\Api\Common\V1\WorkerVersionCapabilities|null $var)
     {
         @trigger_error('worker_version_capabilities is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerVersionCapabilities::class);
         $this->worker_version_capabilities = $var;
 
         return $this;
@@ -233,9 +269,8 @@ class PollNexusTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentOptions $var
      * @return $this
      */
-    public function setDeploymentOptions($var)
+    public function setDeploymentOptions(\Temporal\Api\Deployment\V1\WorkerDeploymentOptions|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentOptions::class);
         $this->deployment_options = $var;
 
         return $this;
@@ -259,7 +294,7 @@ class PollNexusTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\WorkerHeartbeat[] $var
      * @return $this
      */
-    public function setWorkerHeartbeat($var)
+    public function setWorkerHeartbeat(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Worker\V1\WorkerHeartbeat::class);
         $this->worker_heartbeat = $arr;

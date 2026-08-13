@@ -118,9 +118,9 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -146,9 +146,9 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setVisibilityQuery($var)
+    public function setVisibilityQuery(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->visibility_query = $var;
 
         return $this;
@@ -172,9 +172,9 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setJobId($var)
+    public function setJobId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->job_id = $var;
 
         return $this;
@@ -198,9 +198,9 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setReason($var)
+    public function setReason(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->reason = $var;
 
         return $this;
@@ -226,7 +226,7 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\WorkflowExecution[] $var
      * @return $this
      */
-    public function setExecutions($var)
+    public function setExecutions(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->executions = $arr;
@@ -262,9 +262,8 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setMaxOperationsPerSecond($var)
+    public function setMaxOperationsPerSecond(float $var)
     {
-        GPBUtil::checkFloat($var);
         $this->max_operations_per_second = $var;
 
         return $this;
@@ -289,9 +288,8 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Batch\V1\BatchOperationTermination $var
      * @return $this
      */
-    public function setTerminationOperation($var)
+    public function setTerminationOperation(\Temporal\Api\Batch\V1\BatchOperationTermination|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Batch\V1\BatchOperationTermination::class);
         $this->writeOneof(10, $var);
 
         return $this;
@@ -316,9 +314,8 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Batch\V1\BatchOperationSignal $var
      * @return $this
      */
-    public function setSignalOperation($var)
+    public function setSignalOperation(\Temporal\Api\Batch\V1\BatchOperationSignal|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Batch\V1\BatchOperationSignal::class);
         $this->writeOneof(11, $var);
 
         return $this;
@@ -343,9 +340,8 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Batch\V1\BatchOperationCancellation $var
      * @return $this
      */
-    public function setCancellationOperation($var)
+    public function setCancellationOperation(\Temporal\Api\Batch\V1\BatchOperationCancellation|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Batch\V1\BatchOperationCancellation::class);
         $this->writeOneof(12, $var);
 
         return $this;
@@ -370,9 +366,8 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Batch\V1\BatchOperationDeletion $var
      * @return $this
      */
-    public function setDeletionOperation($var)
+    public function setDeletionOperation(\Temporal\Api\Batch\V1\BatchOperationDeletion|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Batch\V1\BatchOperationDeletion::class);
         $this->writeOneof(13, $var);
 
         return $this;
@@ -397,9 +392,8 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Batch\V1\BatchOperationReset $var
      * @return $this
      */
-    public function setResetOperation($var)
+    public function setResetOperation(\Temporal\Api\Batch\V1\BatchOperationReset|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Batch\V1\BatchOperationReset::class);
         $this->writeOneof(14, $var);
 
         return $this;
@@ -424,9 +418,8 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Batch\V1\BatchOperationUpdateWorkflowExecutionOptions $var
      * @return $this
      */
-    public function setUpdateWorkflowOptionsOperation($var)
+    public function setUpdateWorkflowOptionsOperation(\Temporal\Api\Batch\V1\BatchOperationUpdateWorkflowExecutionOptions|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Batch\V1\BatchOperationUpdateWorkflowExecutionOptions::class);
         $this->writeOneof(15, $var);
 
         return $this;
@@ -451,9 +444,8 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Batch\V1\BatchOperationUnpauseActivities $var
      * @return $this
      */
-    public function setUnpauseActivitiesOperation($var)
+    public function setUnpauseActivitiesOperation(\Temporal\Api\Batch\V1\BatchOperationUnpauseActivities|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Batch\V1\BatchOperationUnpauseActivities::class);
         $this->writeOneof(16, $var);
 
         return $this;
@@ -478,9 +470,8 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Batch\V1\BatchOperationResetActivities $var
      * @return $this
      */
-    public function setResetActivitiesOperation($var)
+    public function setResetActivitiesOperation(\Temporal\Api\Batch\V1\BatchOperationResetActivities|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Batch\V1\BatchOperationResetActivities::class);
         $this->writeOneof(17, $var);
 
         return $this;
@@ -505,9 +496,8 @@ class StartBatchOperationRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Batch\V1\BatchOperationUpdateActivityOptions $var
      * @return $this
      */
-    public function setUpdateActivityOptionsOperation($var)
+    public function setUpdateActivityOptionsOperation(\Temporal\Api\Batch\V1\BatchOperationUpdateActivityOptions|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Batch\V1\BatchOperationUpdateActivityOptions::class);
         $this->writeOneof(18, $var);
 
         return $this;

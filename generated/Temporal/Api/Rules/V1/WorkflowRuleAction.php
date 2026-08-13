@@ -49,9 +49,8 @@ class WorkflowRuleAction extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Rules\V1\WorkflowRuleAction\ActionActivityPause $var
      * @return $this
      */
-    public function setActivityPause($var)
+    public function setActivityPause(\Temporal\Api\Rules\V1\WorkflowRuleAction\ActionActivityPause|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Rules\V1\WorkflowRuleAction\ActionActivityPause::class);
         $this->writeOneof(1, $var);
 
         return $this;

@@ -132,7 +132,7 @@ class DescribeTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\PollerInfo[] $var
      * @return $this
      */
-    public function setPollers($var)
+    public function setPollers(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Taskqueue\V1\PollerInfo::class);
         $this->pollers = $arr;
@@ -170,9 +170,8 @@ class DescribeTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\TaskQueueStats $var
      * @return $this
      */
-    public function setStats($var)
+    public function setStats(\Temporal\Api\Taskqueue\V1\TaskQueueStats|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueueStats::class);
         $this->stats = $var;
 
         return $this;
@@ -202,7 +201,7 @@ class DescribeTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setStatsByPriorityKey($var)
+    public function setStatsByPriorityKey(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::INT32, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Taskqueue\V1\TaskQueueStats::class);
         $this->stats_by_priority_key = $arr;
@@ -254,9 +253,8 @@ class DescribeTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\TaskQueueVersioningInfo $var
      * @return $this
      */
-    public function setVersioningInfo($var)
+    public function setVersioningInfo(\Temporal\Api\Taskqueue\V1\TaskQueueVersioningInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueueVersioningInfo::class);
         $this->versioning_info = $var;
 
         return $this;
@@ -290,9 +288,8 @@ class DescribeTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\TaskQueueConfig $var
      * @return $this
      */
-    public function setConfig($var)
+    public function setConfig(\Temporal\Api\Taskqueue\V1\TaskQueueConfig|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueueConfig::class);
         $this->config = $var;
 
         return $this;
@@ -322,9 +319,8 @@ class DescribeTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflowservice\V1\DescribeTaskQueueResponse\EffectiveRateLimit $var
      * @return $this
      */
-    public function setEffectiveRateLimit($var)
+    public function setEffectiveRateLimit(\Temporal\Api\Workflowservice\V1\DescribeTaskQueueResponse\EffectiveRateLimit|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflowservice\V1\DescribeTaskQueueResponse\EffectiveRateLimit::class);
         $this->effective_rate_limit = $var;
 
         return $this;
@@ -369,10 +365,9 @@ class DescribeTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setTaskQueueStatus($var)
+    public function setTaskQueueStatus(\Temporal\Api\Taskqueue\V1\TaskQueueStatus|null $var)
     {
         @trigger_error('task_queue_status is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueueStatus::class);
         $this->task_queue_status = $var;
 
         return $this;
@@ -405,7 +400,7 @@ class DescribeTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setVersionsInfo($var)
+    public function setVersionsInfo(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Taskqueue\V1\TaskQueueVersionInfo::class);
         if (count($arr) !== 0) {
