@@ -29,6 +29,19 @@ for i in `find ./api/third_party/api -name "*.proto" -type f`; do
   --experimental_allow_proto3_optional
 done
 
+echo "Generating Temporal Cloud API"
+
+for i in `find ./api-cloud/temporal -name "*.proto" -type f`; do
+  protoc \
+  --proto_path=api-cloud \
+  --proto_path=api/third_party/api \
+  --proto_path=third_party \
+  --php_out=generated $i \
+  --plugin=protoc-gen-grpc=$GRPC_PLUGIN \
+  --grpc_out=generated \
+  --experimental_allow_proto3_optional
+done
+
 echo "Generating Gogo proto"
 
 for i in `find ./proto -name "*.proto" -type f`; do
