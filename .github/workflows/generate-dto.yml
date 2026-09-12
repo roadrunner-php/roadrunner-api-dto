@@ -63,13 +63,12 @@ jobs:
 
       - name: 🛠️ Install protoc and the gRPC PHP plugin
         env:
-          # Pinned to match the protoc that produced the committed DTOs
-          # (untyped setters, google/protobuf ^4.31 in composer.json). apt
-          # ships libprotoc 3.21, whose legacy output would rewrite every
-          # file; a newer protoc adds typed setters and does the same. Only
-          # the grpc plugin is taken from apt, its stub output being
-          # independent of this version.
-          PROTOC_VERSION: "31.1"
+          # Pinned to match the google/protobuf runtime upper bound in
+          # composer.json (^5.34), which emits typed setters. apt ships
+          # libprotoc 3.21, whose legacy output would rewrite every file with
+          # an even older style; only the grpc plugin is taken from apt, its
+          # stub output being independent of this version.
+          PROTOC_VERSION: "34.2"
         run: |
           curl -fsSL -o /tmp/protoc.zip \
             "https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOC_VERSION}/protoc-${PROTOC_VERSION}-linux-x86_64.zip"
