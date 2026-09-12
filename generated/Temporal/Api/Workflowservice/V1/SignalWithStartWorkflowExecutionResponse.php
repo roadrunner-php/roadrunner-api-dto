@@ -82,9 +82,9 @@ class SignalWithStartWorkflowExecutionResponse extends \Google\Protobuf\Internal
      * @param string $var
      * @return $this
      */
-    public function setRunId($var)
+    public function setRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->run_id = $var;
 
         return $this;
@@ -108,9 +108,9 @@ class SignalWithStartWorkflowExecutionResponse extends \Google\Protobuf\Internal
      * @param string $var
      * @return $this
      */
-    public function setFirstExecutionRunId($var)
+    public function setFirstExecutionRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->first_execution_run_id = $var;
 
         return $this;
@@ -134,9 +134,8 @@ class SignalWithStartWorkflowExecutionResponse extends \Google\Protobuf\Internal
      * @param bool $var
      * @return $this
      */
-    public function setStarted($var)
+    public function setStarted(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->started = $var;
 
         return $this;
@@ -174,9 +173,8 @@ class SignalWithStartWorkflowExecutionResponse extends \Google\Protobuf\Internal
      * @param \Temporal\Api\Common\V1\Link $var
      * @return $this
      */
-    public function setSignalLink($var)
+    public function setSignalLink(\Temporal\Api\Common\V1\Link|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Link::class);
         $this->signal_link = $var;
 
         return $this;

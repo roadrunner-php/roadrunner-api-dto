@@ -76,7 +76,7 @@ class AutoscalingPollerBehavior extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setMinPollers($var)
+    public function setMinPollers(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->min_pollers = $var;
@@ -102,7 +102,7 @@ class AutoscalingPollerBehavior extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setMaxPollers($var)
+    public function setMaxPollers(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->max_pollers = $var;
@@ -130,7 +130,7 @@ class AutoscalingPollerBehavior extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setInitialPollers($var)
+    public function setInitialPollers(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->initial_pollers = $var;

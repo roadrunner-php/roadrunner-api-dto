@@ -96,9 +96,8 @@ class NamespaceConfig extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setWorkflowExecutionRetentionTtl($var)
+    public function setWorkflowExecutionRetentionTtl(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->workflow_execution_retention_ttl = $var;
 
         return $this;
@@ -128,9 +127,8 @@ class NamespaceConfig extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\PBNamespace\V1\BadBinaries $var
      * @return $this
      */
-    public function setBadBinaries($var)
+    public function setBadBinaries(\Temporal\Api\PBNamespace\V1\BadBinaries|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\PBNamespace\V1\BadBinaries::class);
         $this->bad_binaries = $var;
 
         return $this;
@@ -140,7 +138,7 @@ class NamespaceConfig extends \Google\Protobuf\Internal\Message
      * If unspecified (ARCHIVAL_STATE_UNSPECIFIED) then default server configuration is used.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ArchivalState history_archival_state = 3;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ArchivalState}
      */
     public function getHistoryArchivalState()
     {
@@ -151,10 +149,10 @@ class NamespaceConfig extends \Google\Protobuf\Internal\Message
      * If unspecified (ARCHIVAL_STATE_UNSPECIFIED) then default server configuration is used.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ArchivalState history_archival_state = 3;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ArchivalState}
      * @return $this
      */
-    public function setHistoryArchivalState($var)
+    public function setHistoryArchivalState(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ArchivalState::class);
         $this->history_archival_state = $var;
@@ -176,9 +174,9 @@ class NamespaceConfig extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setHistoryArchivalUri($var)
+    public function setHistoryArchivalUri(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->history_archival_uri = $var;
 
         return $this;
@@ -188,7 +186,7 @@ class NamespaceConfig extends \Google\Protobuf\Internal\Message
      * If unspecified (ARCHIVAL_STATE_UNSPECIFIED) then default server configuration is used.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ArchivalState visibility_archival_state = 5;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ArchivalState}
      */
     public function getVisibilityArchivalState()
     {
@@ -199,10 +197,10 @@ class NamespaceConfig extends \Google\Protobuf\Internal\Message
      * If unspecified (ARCHIVAL_STATE_UNSPECIFIED) then default server configuration is used.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ArchivalState visibility_archival_state = 5;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ArchivalState}
      * @return $this
      */
-    public function setVisibilityArchivalState($var)
+    public function setVisibilityArchivalState(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ArchivalState::class);
         $this->visibility_archival_state = $var;
@@ -224,9 +222,9 @@ class NamespaceConfig extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setVisibilityArchivalUri($var)
+    public function setVisibilityArchivalUri(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->visibility_archival_uri = $var;
 
         return $this;
@@ -250,7 +248,7 @@ class NamespaceConfig extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setCustomSearchAttributeAliases($var)
+    public function setCustomSearchAttributeAliases(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->custom_search_attribute_aliases = $arr;

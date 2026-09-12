@@ -242,10 +242,10 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setVersion($var)
+    public function setVersion(string $var)
     {
         @trigger_error('version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->version = $var;
 
         return $this;
@@ -255,7 +255,7 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
      * The status of the Worker Deployment Version.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkerDeploymentVersionStatus status = 14;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\WorkerDeploymentVersionStatus}
      */
     public function getStatus()
     {
@@ -266,10 +266,10 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
      * The status of the Worker Deployment Version.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkerDeploymentVersionStatus status = 14;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\WorkerDeploymentVersionStatus}
      * @return $this
      */
-    public function setStatus($var)
+    public function setStatus(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\WorkerDeploymentVersionStatus::class);
         $this->status = $var;
@@ -305,9 +305,8 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
      * @return $this
      */
-    public function setDeploymentVersion($var)
+    public function setDeploymentVersion(\Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
         $this->deployment_version = $var;
 
         return $this;
@@ -331,9 +330,9 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setDeploymentName($var)
+    public function setDeploymentName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->deployment_name = $var;
 
         return $this;
@@ -363,9 +362,8 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setCreateTime($var)
+    public function setCreateTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->create_time = $var;
 
         return $this;
@@ -399,9 +397,8 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setRoutingChangedTime($var)
+    public function setRoutingChangedTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->routing_changed_time = $var;
 
         return $this;
@@ -439,9 +436,8 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setCurrentSinceTime($var)
+    public function setCurrentSinceTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->current_since_time = $var;
 
         return $this;
@@ -479,9 +475,8 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setRampingSinceTime($var)
+    public function setRampingSinceTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->ramping_since_time = $var;
 
         return $this;
@@ -515,9 +510,8 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setFirstActivationTime($var)
+    public function setFirstActivationTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->first_activation_time = $var;
 
         return $this;
@@ -553,9 +547,8 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setLastCurrentTime($var)
+    public function setLastCurrentTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_current_time = $var;
 
         return $this;
@@ -591,9 +584,8 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setLastDeactivationTime($var)
+    public function setLastDeactivationTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_deactivation_time = $var;
 
         return $this;
@@ -619,9 +611,8 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setRampPercentage($var)
+    public function setRampPercentage(float $var)
     {
-        GPBUtil::checkFloat($var);
         $this->ramp_percentage = $var;
 
         return $this;
@@ -647,7 +638,7 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersionInfo\VersionTaskQueueInfo[] $var
      * @return $this
      */
-    public function setTaskQueueInfos($var)
+    public function setTaskQueueInfos(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Deployment\V1\WorkerDeploymentVersionInfo\VersionTaskQueueInfo::class);
         $this->task_queue_infos = $arr;
@@ -707,9 +698,8 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\VersionDrainageInfo $var
      * @return $this
      */
-    public function setDrainageInfo($var)
+    public function setDrainageInfo(\Temporal\Api\Deployment\V1\VersionDrainageInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\VersionDrainageInfo::class);
         $this->drainage_info = $var;
 
         return $this;
@@ -743,9 +733,8 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\VersionMetadata $var
      * @return $this
      */
-    public function setMetadata($var)
+    public function setMetadata(\Temporal\Api\Deployment\V1\VersionMetadata|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\VersionMetadata::class);
         $this->metadata = $var;
 
         return $this;
@@ -781,9 +770,8 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Compute\V1\ComputeConfig $var
      * @return $this
      */
-    public function setComputeConfig($var)
+    public function setComputeConfig(\Temporal\Api\Compute\V1\ComputeConfig|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Compute\V1\ComputeConfig::class);
         $this->compute_config = $var;
 
         return $this;
@@ -815,9 +803,9 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setLastModifierIdentity($var)
+    public function setLastModifierIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->last_modifier_identity = $var;
 
         return $this;

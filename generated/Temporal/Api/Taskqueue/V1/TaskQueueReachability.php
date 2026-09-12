@@ -61,9 +61,9 @@ class TaskQueueReachability extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->task_queue = $var;
 
         return $this;
@@ -75,7 +75,7 @@ class TaskQueueReachability extends \Google\Protobuf\Internal\Message
      * If reachability is empty, this worker is considered unreachable in this task queue.
      *
      * Generated from protobuf field <code>repeated .temporal.api.enums.v1.TaskReachability reachability = 2;</code>
-     * @return RepeatedField<int>
+     * @return RepeatedField<int> one of the values in {@see \Temporal\Api\Enums\V1\TaskReachability}
      */
     public function getReachability()
     {
@@ -88,10 +88,10 @@ class TaskQueueReachability extends \Google\Protobuf\Internal\Message
      * If reachability is empty, this worker is considered unreachable in this task queue.
      *
      * Generated from protobuf field <code>repeated .temporal.api.enums.v1.TaskReachability reachability = 2;</code>
-     * @param int[] $var
+     * @param int[] $var one of the values in {@see \Temporal\Api\Enums\V1\TaskReachability}
      * @return $this
      */
-    public function setReachability($var)
+    public function setReachability(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Temporal\Api\Enums\V1\TaskReachability::class);
         $this->reachability = $arr;

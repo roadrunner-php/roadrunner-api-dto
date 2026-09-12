@@ -65,7 +65,7 @@ class ListWorkersResponse extends \Google\Protobuf\Internal\Message
      */
     public function getWorkersInfo()
     {
-        if ($this->workers_info->count() !== 0) {
+        if (count($this->workers_info) !== 0) {
             @trigger_error('workers_info is deprecated.', E_USER_DEPRECATED);
         }
         return $this->workers_info;
@@ -80,10 +80,10 @@ class ListWorkersResponse extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setWorkersInfo($var)
+    public function setWorkersInfo(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Worker\V1\WorkerInfo::class);
-        if ($arr->count() !== 0) {
+        if (count($arr) !== 0) {
             @trigger_error('workers_info is deprecated.', E_USER_DEPRECATED);
         }
         $this->workers_info = $arr;
@@ -109,7 +109,7 @@ class ListWorkersResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\WorkerListInfo[] $var
      * @return $this
      */
-    public function setWorkers($var)
+    public function setWorkers(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Worker\V1\WorkerListInfo::class);
         $this->workers = $arr;
@@ -135,9 +135,9 @@ class ListWorkersResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNextPageToken($var)
+    public function setNextPageToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->next_page_token = $var;
 
         return $this;

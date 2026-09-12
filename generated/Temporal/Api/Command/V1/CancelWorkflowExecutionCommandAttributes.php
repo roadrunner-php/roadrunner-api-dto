@@ -57,9 +57,8 @@ class CancelWorkflowExecutionCommandAttributes extends \Google\Protobuf\Internal
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setDetails($var)
+    public function setDetails(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->details = $var;
 
         return $this;

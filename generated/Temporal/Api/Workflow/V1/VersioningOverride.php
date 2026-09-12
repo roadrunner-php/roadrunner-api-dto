@@ -116,9 +116,8 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflow\V1\VersioningOverride\PinnedOverride $var
      * @return $this
      */
-    public function setPinned($var)
+    public function setPinned(\Temporal\Api\Workflow\V1\VersioningOverride\PinnedOverride|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\VersioningOverride\PinnedOverride::class);
         $this->writeOneof(3, $var);
 
         return $this;
@@ -147,9 +146,8 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setAutoUpgrade($var)
+    public function setAutoUpgrade(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->writeOneof(4, $var);
 
         return $this;
@@ -188,9 +186,8 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflow\V1\VersioningOverride\OneTimeOverride $var
      * @return $this
      */
-    public function setOneTime($var)
+    public function setOneTime(\Temporal\Api\Workflow\V1\VersioningOverride\OneTimeOverride|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\VersioningOverride\OneTimeOverride::class);
         $this->writeOneof(5, $var);
 
         return $this;
@@ -201,7 +198,7 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
      * Deprecated. Use `override`.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.VersioningBehavior behavior = 1 [deprecated = true];</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\VersioningBehavior}
      * @deprecated
      */
     public function getBehavior()
@@ -217,11 +214,11 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
      * Deprecated. Use `override`.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.VersioningBehavior behavior = 1 [deprecated = true];</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\VersioningBehavior}
      * @return $this
      * @deprecated
      */
-    public function setBehavior($var)
+    public function setBehavior(int $var)
     {
         @trigger_error('behavior is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\VersioningBehavior::class);
@@ -271,10 +268,9 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setDeployment($var)
+    public function setDeployment(\Temporal\Api\Deployment\V1\Deployment|null $var)
     {
         @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\Deployment::class);
         $this->deployment = $var;
 
         return $this;
@@ -309,10 +305,10 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setPinnedVersion($var)
+    public function setPinnedVersion(string $var)
     {
         @trigger_error('pinned_version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->pinned_version = $var;
 
         return $this;

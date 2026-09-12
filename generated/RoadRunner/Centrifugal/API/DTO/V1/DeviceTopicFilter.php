@@ -72,7 +72,7 @@ class DeviceTopicFilter extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setDeviceIds($var)
+    public function setDeviceIds(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->device_ids = $arr;
@@ -94,7 +94,7 @@ class DeviceTopicFilter extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setDeviceProviders($var)
+    public function setDeviceProviders(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->device_providers = $arr;
@@ -116,7 +116,7 @@ class DeviceTopicFilter extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setDevicePlatforms($var)
+    public function setDevicePlatforms(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->device_platforms = $arr;
@@ -138,7 +138,7 @@ class DeviceTopicFilter extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setDeviceUsers($var)
+    public function setDeviceUsers(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->device_users = $arr;
@@ -160,7 +160,7 @@ class DeviceTopicFilter extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setTopics($var)
+    public function setTopics(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->topics = $arr;
@@ -182,9 +182,9 @@ class DeviceTopicFilter extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTopicPrefix($var)
+    public function setTopicPrefix(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->topic_prefix = $var;
 
         return $this;

@@ -78,7 +78,7 @@ class ExternalWorkflowExecutionCancelRequestedEventAttributes extends \Google\Pr
      * @param int|string $var
      * @return $this
      */
-    public function setInitiatedEventId($var)
+    public function setInitiatedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->initiated_event_id = $var;
@@ -106,9 +106,9 @@ class ExternalWorkflowExecutionCancelRequestedEventAttributes extends \Google\Pr
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -128,9 +128,9 @@ class ExternalWorkflowExecutionCancelRequestedEventAttributes extends \Google\Pr
      * @param string $var
      * @return $this
      */
-    public function setNamespaceId($var)
+    public function setNamespaceId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace_id = $var;
 
         return $this;
@@ -160,9 +160,8 @@ class ExternalWorkflowExecutionCancelRequestedEventAttributes extends \Google\Pr
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
      * @return $this
      */
-    public function setWorkflowExecution($var)
+    public function setWorkflowExecution(\Temporal\Api\Common\V1\WorkflowExecution|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->workflow_execution = $var;
 
         return $this;

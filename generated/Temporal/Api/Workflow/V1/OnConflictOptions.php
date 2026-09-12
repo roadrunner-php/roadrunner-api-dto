@@ -75,9 +75,8 @@ class OnConflictOptions extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setAttachRequestId($var)
+    public function setAttachRequestId(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->attach_request_id = $var;
 
         return $this;
@@ -101,9 +100,8 @@ class OnConflictOptions extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setAttachCompletionCallbacks($var)
+    public function setAttachCompletionCallbacks(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->attach_completion_callbacks = $var;
 
         return $this;
@@ -127,9 +125,8 @@ class OnConflictOptions extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setAttachLinks($var)
+    public function setAttachLinks(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->attach_links = $var;
 
         return $this;

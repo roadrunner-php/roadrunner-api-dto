@@ -67,9 +67,9 @@ class GetWorkerBuildIdCompatibilityRequest extends \Google\Protobuf\Internal\Mes
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -93,9 +93,9 @@ class GetWorkerBuildIdCompatibilityRequest extends \Google\Protobuf\Internal\Mes
      * @param string $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->task_queue = $var;
 
         return $this;
@@ -121,7 +121,7 @@ class GetWorkerBuildIdCompatibilityRequest extends \Google\Protobuf\Internal\Mes
      * @param int $var
      * @return $this
      */
-    public function setMaxSets($var)
+    public function setMaxSets(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->max_sets = $var;

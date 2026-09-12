@@ -66,7 +66,7 @@ class UpdateWorkerVersioningRulesResponse extends \Google\Protobuf\Internal\Mess
      * @param \Temporal\Api\Taskqueue\V1\TimestampedBuildIdAssignmentRule[] $var
      * @return $this
      */
-    public function setAssignmentRules($var)
+    public function setAssignmentRules(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Taskqueue\V1\TimestampedBuildIdAssignmentRule::class);
         $this->assignment_rules = $arr;
@@ -88,7 +88,7 @@ class UpdateWorkerVersioningRulesResponse extends \Google\Protobuf\Internal\Mess
      * @param \Temporal\Api\Taskqueue\V1\TimestampedCompatibleBuildIdRedirectRule[] $var
      * @return $this
      */
-    public function setCompatibleRedirectRules($var)
+    public function setCompatibleRedirectRules(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Taskqueue\V1\TimestampedCompatibleBuildIdRedirectRule::class);
         $this->compatible_redirect_rules = $arr;
@@ -118,9 +118,9 @@ class UpdateWorkerVersioningRulesResponse extends \Google\Protobuf\Internal\Mess
      * @param string $var
      * @return $this
      */
-    public function setConflictToken($var)
+    public function setConflictToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->conflict_token = $var;
 
         return $this;

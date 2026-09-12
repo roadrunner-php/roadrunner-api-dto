@@ -78,9 +78,9 @@ class ListSchedulesRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -104,7 +104,7 @@ class ListSchedulesRequest extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setMaximumPageSize($var)
+    public function setMaximumPageSize(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->maximum_page_size = $var;
@@ -130,9 +130,9 @@ class ListSchedulesRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNextPageToken($var)
+    public function setNextPageToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->next_page_token = $var;
 
         return $this;
@@ -156,9 +156,9 @@ class ListSchedulesRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setQuery($var)
+    public function setQuery(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->query = $var;
 
         return $this;

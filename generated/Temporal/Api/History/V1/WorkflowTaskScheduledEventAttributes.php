@@ -84,9 +84,8 @@ class WorkflowTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      * @param \Temporal\Api\Taskqueue\V1\TaskQueue $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(\Temporal\Api\Taskqueue\V1\TaskQueue|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueue::class);
         $this->task_queue = $var;
 
         return $this;
@@ -124,9 +123,8 @@ class WorkflowTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setStartToCloseTimeout($var)
+    public function setStartToCloseTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->start_to_close_timeout = $var;
 
         return $this;
@@ -150,7 +148,7 @@ class WorkflowTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      * @param int $var
      * @return $this
      */
-    public function setAttempt($var)
+    public function setAttempt(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->attempt = $var;

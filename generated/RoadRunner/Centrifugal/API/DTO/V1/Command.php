@@ -222,7 +222,7 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setId($var)
+    public function setId(int $var)
     {
         GPBUtil::checkUint32($var);
         $this->id = $var;
@@ -232,7 +232,7 @@ class Command extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.Command.MethodType method = 2;</code>
-     * @return int
+     * @return int one of the values in {@see \RoadRunner\Centrifugal\API\DTO\V1\Command\MethodType}
      */
     public function getMethod()
     {
@@ -241,10 +241,10 @@ class Command extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.Command.MethodType method = 2;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \RoadRunner\Centrifugal\API\DTO\V1\Command\MethodType}
      * @return $this
      */
-    public function setMethod($var)
+    public function setMethod(int $var)
     {
         GPBUtil::checkEnum($var, \RoadRunner\Centrifugal\API\DTO\V1\Command\MethodType::class);
         $this->method = $var;
@@ -266,9 +266,9 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setParams($var)
+    public function setParams(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->params = $var;
 
         return $this;
@@ -298,9 +298,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\PublishRequest $var
      * @return $this
      */
-    public function setPublish($var)
+    public function setPublish(\RoadRunner\Centrifugal\API\DTO\V1\PublishRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\PublishRequest::class);
         $this->publish = $var;
 
         return $this;
@@ -330,9 +329,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\BroadcastRequest $var
      * @return $this
      */
-    public function setBroadcast($var)
+    public function setBroadcast(\RoadRunner\Centrifugal\API\DTO\V1\BroadcastRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\BroadcastRequest::class);
         $this->broadcast = $var;
 
         return $this;
@@ -362,9 +360,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\SubscribeRequest $var
      * @return $this
      */
-    public function setSubscribe($var)
+    public function setSubscribe(\RoadRunner\Centrifugal\API\DTO\V1\SubscribeRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\SubscribeRequest::class);
         $this->subscribe = $var;
 
         return $this;
@@ -394,9 +391,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\UnsubscribeRequest $var
      * @return $this
      */
-    public function setUnsubscribe($var)
+    public function setUnsubscribe(\RoadRunner\Centrifugal\API\DTO\V1\UnsubscribeRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\UnsubscribeRequest::class);
         $this->unsubscribe = $var;
 
         return $this;
@@ -426,9 +422,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\DisconnectRequest $var
      * @return $this
      */
-    public function setDisconnect($var)
+    public function setDisconnect(\RoadRunner\Centrifugal\API\DTO\V1\DisconnectRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\DisconnectRequest::class);
         $this->disconnect = $var;
 
         return $this;
@@ -458,9 +453,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\PresenceRequest $var
      * @return $this
      */
-    public function setPresence($var)
+    public function setPresence(\RoadRunner\Centrifugal\API\DTO\V1\PresenceRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\PresenceRequest::class);
         $this->presence = $var;
 
         return $this;
@@ -490,9 +484,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\PresenceStatsRequest $var
      * @return $this
      */
-    public function setPresenceStats($var)
+    public function setPresenceStats(\RoadRunner\Centrifugal\API\DTO\V1\PresenceStatsRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\PresenceStatsRequest::class);
         $this->presence_stats = $var;
 
         return $this;
@@ -522,9 +515,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\HistoryRequest $var
      * @return $this
      */
-    public function setHistory($var)
+    public function setHistory(\RoadRunner\Centrifugal\API\DTO\V1\HistoryRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\HistoryRequest::class);
         $this->history = $var;
 
         return $this;
@@ -554,9 +546,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\HistoryRemoveRequest $var
      * @return $this
      */
-    public function setHistoryRemove($var)
+    public function setHistoryRemove(\RoadRunner\Centrifugal\API\DTO\V1\HistoryRemoveRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\HistoryRemoveRequest::class);
         $this->history_remove = $var;
 
         return $this;
@@ -586,9 +577,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\InfoRequest $var
      * @return $this
      */
-    public function setInfo($var)
+    public function setInfo(\RoadRunner\Centrifugal\API\DTO\V1\InfoRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\InfoRequest::class);
         $this->info = $var;
 
         return $this;
@@ -618,9 +608,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\RPCRequest $var
      * @return $this
      */
-    public function setRpc($var)
+    public function setRpc(\RoadRunner\Centrifugal\API\DTO\V1\RPCRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\RPCRequest::class);
         $this->rpc = $var;
 
         return $this;
@@ -650,9 +639,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\RefreshRequest $var
      * @return $this
      */
-    public function setRefresh($var)
+    public function setRefresh(\RoadRunner\Centrifugal\API\DTO\V1\RefreshRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\RefreshRequest::class);
         $this->refresh = $var;
 
         return $this;
@@ -682,9 +670,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\ChannelsRequest $var
      * @return $this
      */
-    public function setChannels($var)
+    public function setChannels(\RoadRunner\Centrifugal\API\DTO\V1\ChannelsRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\ChannelsRequest::class);
         $this->channels = $var;
 
         return $this;
@@ -714,9 +701,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\ConnectionsRequest $var
      * @return $this
      */
-    public function setConnections($var)
+    public function setConnections(\RoadRunner\Centrifugal\API\DTO\V1\ConnectionsRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\ConnectionsRequest::class);
         $this->connections = $var;
 
         return $this;
@@ -746,9 +732,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\UpdateUserStatusRequest $var
      * @return $this
      */
-    public function setUpdateUserStatus($var)
+    public function setUpdateUserStatus(\RoadRunner\Centrifugal\API\DTO\V1\UpdateUserStatusRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\UpdateUserStatusRequest::class);
         $this->update_user_status = $var;
 
         return $this;
@@ -778,9 +763,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\GetUserStatusRequest $var
      * @return $this
      */
-    public function setGetUserStatus($var)
+    public function setGetUserStatus(\RoadRunner\Centrifugal\API\DTO\V1\GetUserStatusRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\GetUserStatusRequest::class);
         $this->get_user_status = $var;
 
         return $this;
@@ -810,9 +794,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\DeleteUserStatusRequest $var
      * @return $this
      */
-    public function setDeleteUserStatus($var)
+    public function setDeleteUserStatus(\RoadRunner\Centrifugal\API\DTO\V1\DeleteUserStatusRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\DeleteUserStatusRequest::class);
         $this->delete_user_status = $var;
 
         return $this;
@@ -842,9 +825,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\BlockUserRequest $var
      * @return $this
      */
-    public function setBlockUser($var)
+    public function setBlockUser(\RoadRunner\Centrifugal\API\DTO\V1\BlockUserRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\BlockUserRequest::class);
         $this->block_user = $var;
 
         return $this;
@@ -874,9 +856,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\UnblockUserRequest $var
      * @return $this
      */
-    public function setUnblockUser($var)
+    public function setUnblockUser(\RoadRunner\Centrifugal\API\DTO\V1\UnblockUserRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\UnblockUserRequest::class);
         $this->unblock_user = $var;
 
         return $this;
@@ -906,9 +887,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\RevokeTokenRequest $var
      * @return $this
      */
-    public function setRevokeToken($var)
+    public function setRevokeToken(\RoadRunner\Centrifugal\API\DTO\V1\RevokeTokenRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\RevokeTokenRequest::class);
         $this->revoke_token = $var;
 
         return $this;
@@ -938,9 +918,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\InvalidateUserTokensRequest $var
      * @return $this
      */
-    public function setInvalidateUserTokens($var)
+    public function setInvalidateUserTokens(\RoadRunner\Centrifugal\API\DTO\V1\InvalidateUserTokensRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\InvalidateUserTokensRequest::class);
         $this->invalidate_user_tokens = $var;
 
         return $this;
@@ -970,9 +949,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\DeviceRegisterRequest $var
      * @return $this
      */
-    public function setDeviceRegister($var)
+    public function setDeviceRegister(\RoadRunner\Centrifugal\API\DTO\V1\DeviceRegisterRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\DeviceRegisterRequest::class);
         $this->device_register = $var;
 
         return $this;
@@ -1002,9 +980,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\DeviceUpdateRequest $var
      * @return $this
      */
-    public function setDeviceUpdate($var)
+    public function setDeviceUpdate(\RoadRunner\Centrifugal\API\DTO\V1\DeviceUpdateRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\DeviceUpdateRequest::class);
         $this->device_update = $var;
 
         return $this;
@@ -1034,9 +1011,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\DeviceRemoveRequest $var
      * @return $this
      */
-    public function setDeviceRemove($var)
+    public function setDeviceRemove(\RoadRunner\Centrifugal\API\DTO\V1\DeviceRemoveRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\DeviceRemoveRequest::class);
         $this->device_remove = $var;
 
         return $this;
@@ -1066,9 +1042,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\DeviceListRequest $var
      * @return $this
      */
-    public function setDeviceList($var)
+    public function setDeviceList(\RoadRunner\Centrifugal\API\DTO\V1\DeviceListRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\DeviceListRequest::class);
         $this->device_list = $var;
 
         return $this;
@@ -1098,9 +1073,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicListRequest $var
      * @return $this
      */
-    public function setDeviceTopicList($var)
+    public function setDeviceTopicList(\RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicListRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicListRequest::class);
         $this->device_topic_list = $var;
 
         return $this;
@@ -1130,9 +1104,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicUpdateRequest $var
      * @return $this
      */
-    public function setDeviceTopicUpdate($var)
+    public function setDeviceTopicUpdate(\RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicUpdateRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicUpdateRequest::class);
         $this->device_topic_update = $var;
 
         return $this;
@@ -1162,9 +1135,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\UserTopicListRequest $var
      * @return $this
      */
-    public function setUserTopicList($var)
+    public function setUserTopicList(\RoadRunner\Centrifugal\API\DTO\V1\UserTopicListRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\UserTopicListRequest::class);
         $this->user_topic_list = $var;
 
         return $this;
@@ -1194,9 +1166,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\UserTopicUpdateRequest $var
      * @return $this
      */
-    public function setUserTopicUpdate($var)
+    public function setUserTopicUpdate(\RoadRunner\Centrifugal\API\DTO\V1\UserTopicUpdateRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\UserTopicUpdateRequest::class);
         $this->user_topic_update = $var;
 
         return $this;
@@ -1226,9 +1197,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\SendPushNotificationRequest $var
      * @return $this
      */
-    public function setSendPushNotification($var)
+    public function setSendPushNotification(\RoadRunner\Centrifugal\API\DTO\V1\SendPushNotificationRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\SendPushNotificationRequest::class);
         $this->send_push_notification = $var;
 
         return $this;
@@ -1258,9 +1228,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\UpdatePushStatusRequest $var
      * @return $this
      */
-    public function setUpdatePushStatus($var)
+    public function setUpdatePushStatus(\RoadRunner\Centrifugal\API\DTO\V1\UpdatePushStatusRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\UpdatePushStatusRequest::class);
         $this->update_push_status = $var;
 
         return $this;
@@ -1290,9 +1259,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\CancelPushRequest $var
      * @return $this
      */
-    public function setCancelPush($var)
+    public function setCancelPush(\RoadRunner\Centrifugal\API\DTO\V1\CancelPushRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\CancelPushRequest::class);
         $this->cancel_push = $var;
 
         return $this;
@@ -1322,9 +1290,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\RateLimitRequest $var
      * @return $this
      */
-    public function setRateLimit($var)
+    public function setRateLimit(\RoadRunner\Centrifugal\API\DTO\V1\RateLimitRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\RateLimitRequest::class);
         $this->rate_limit = $var;
 
         return $this;

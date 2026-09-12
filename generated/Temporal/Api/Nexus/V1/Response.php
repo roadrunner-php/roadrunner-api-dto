@@ -52,9 +52,8 @@ class Response extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Nexus\V1\StartOperationResponse $var
      * @return $this
      */
-    public function setStartOperation($var)
+    public function setStartOperation(\Temporal\Api\Nexus\V1\StartOperationResponse|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\StartOperationResponse::class);
         $this->writeOneof(1, $var);
 
         return $this;
@@ -79,9 +78,8 @@ class Response extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Nexus\V1\CancelOperationResponse $var
      * @return $this
      */
-    public function setCancelOperation($var)
+    public function setCancelOperation(\Temporal\Api\Nexus\V1\CancelOperationResponse|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\CancelOperationResponse::class);
         $this->writeOneof(2, $var);
 
         return $this;

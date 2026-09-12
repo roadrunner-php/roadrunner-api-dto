@@ -70,9 +70,9 @@ class PendingChildExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setWorkflowId($var)
+    public function setWorkflowId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->workflow_id = $var;
 
         return $this;
@@ -92,9 +92,9 @@ class PendingChildExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRunId($var)
+    public function setRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->run_id = $var;
 
         return $this;
@@ -114,9 +114,9 @@ class PendingChildExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setWorkflowTypeName($var)
+    public function setWorkflowTypeName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->workflow_type_name = $var;
 
         return $this;
@@ -136,7 +136,7 @@ class PendingChildExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setInitiatedId($var)
+    public function setInitiatedId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->initiated_id = $var;
@@ -148,7 +148,7 @@ class PendingChildExecutionInfo extends \Google\Protobuf\Internal\Message
      * Default: PARENT_CLOSE_POLICY_TERMINATE.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ParentClosePolicy parent_close_policy = 5;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ParentClosePolicy}
      */
     public function getParentClosePolicy()
     {
@@ -159,10 +159,10 @@ class PendingChildExecutionInfo extends \Google\Protobuf\Internal\Message
      * Default: PARENT_CLOSE_POLICY_TERMINATE.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ParentClosePolicy parent_close_policy = 5;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ParentClosePolicy}
      * @return $this
      */
-    public function setParentClosePolicy($var)
+    public function setParentClosePolicy(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ParentClosePolicy::class);
         $this->parent_close_policy = $var;

@@ -62,9 +62,8 @@ class StartTimeFilter extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setEarliestTime($var)
+    public function setEarliestTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->earliest_time = $var;
 
         return $this;
@@ -94,9 +93,8 @@ class StartTimeFilter extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setLatestTime($var)
+    public function setLatestTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->latest_time = $var;
 
         return $this;

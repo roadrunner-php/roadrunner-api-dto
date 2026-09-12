@@ -92,7 +92,7 @@ class Options extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setPriority($var)
+    public function setPriority(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->priority = $var;
@@ -114,9 +114,9 @@ class Options extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setPipeline($var)
+    public function setPipeline(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->pipeline = $var;
 
         return $this;
@@ -136,7 +136,7 @@ class Options extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setDelay($var)
+    public function setDelay(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->delay = $var;
@@ -162,9 +162,8 @@ class Options extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setAutoAck($var)
+    public function setAutoAck(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->auto_ack = $var;
 
         return $this;
@@ -190,9 +189,9 @@ class Options extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTopic($var)
+    public function setTopic(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->topic = $var;
 
         return $this;
@@ -212,9 +211,9 @@ class Options extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setMetadata($var)
+    public function setMetadata(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->metadata = $var;
 
         return $this;
@@ -234,7 +233,7 @@ class Options extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setOffset($var)
+    public function setOffset(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->offset = $var;
@@ -256,7 +255,7 @@ class Options extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setPartition($var)
+    public function setPartition(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->partition = $var;

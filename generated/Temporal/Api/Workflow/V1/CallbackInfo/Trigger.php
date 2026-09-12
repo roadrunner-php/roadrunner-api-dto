@@ -50,9 +50,8 @@ class Trigger extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflow\V1\CallbackInfo\WorkflowClosed $var
      * @return $this
      */
-    public function setWorkflowClosed($var)
+    public function setWorkflowClosed(\Temporal\Api\Workflow\V1\CallbackInfo\WorkflowClosed|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\CallbackInfo\WorkflowClosed::class);
         $this->writeOneof(1, $var);
 
         return $this;
@@ -77,9 +76,8 @@ class Trigger extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflow\V1\CallbackInfo\UpdateWorkflowExecutionCompleted $var
      * @return $this
      */
-    public function setUpdateWorkflowExecutionCompleted($var)
+    public function setUpdateWorkflowExecutionCompleted(\Temporal\Api\Workflow\V1\CallbackInfo\UpdateWorkflowExecutionCompleted|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\CallbackInfo\UpdateWorkflowExecutionCompleted::class);
         $this->writeOneof(2, $var);
 
         return $this;

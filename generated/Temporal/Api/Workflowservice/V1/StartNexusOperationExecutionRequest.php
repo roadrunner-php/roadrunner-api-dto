@@ -215,9 +215,9 @@ class StartNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Mess
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -241,9 +241,9 @@ class StartNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Mess
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -269,9 +269,9 @@ class StartNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Mess
      * @param string $var
      * @return $this
      */
-    public function setRequestId($var)
+    public function setRequestId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->request_id = $var;
 
         return $this;
@@ -299,9 +299,9 @@ class StartNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Mess
      * @param string $var
      * @return $this
      */
-    public function setOperationId($var)
+    public function setOperationId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->operation_id = $var;
 
         return $this;
@@ -325,9 +325,9 @@ class StartNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Mess
      * @param string $var
      * @return $this
      */
-    public function setEndpoint($var)
+    public function setEndpoint(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->endpoint = $var;
 
         return $this;
@@ -351,9 +351,9 @@ class StartNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Mess
      * @param string $var
      * @return $this
      */
-    public function setService($var)
+    public function setService(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->service = $var;
 
         return $this;
@@ -377,9 +377,9 @@ class StartNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Mess
      * @param string $var
      * @return $this
      */
-    public function setOperation($var)
+    public function setOperation(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->operation = $var;
 
         return $this;
@@ -421,9 +421,8 @@ class StartNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Mess
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setScheduleToCloseTimeout($var)
+    public function setScheduleToCloseTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->schedule_to_close_timeout = $var;
 
         return $this;
@@ -467,9 +466,8 @@ class StartNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Mess
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setScheduleToStartTimeout($var)
+    public function setScheduleToStartTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->schedule_to_start_timeout = $var;
 
         return $this;
@@ -513,9 +511,8 @@ class StartNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Mess
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setStartToCloseTimeout($var)
+    public function setStartToCloseTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->start_to_close_timeout = $var;
 
         return $this;
@@ -549,9 +546,8 @@ class StartNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Mess
      * @param \Temporal\Api\Common\V1\Payload $var
      * @return $this
      */
-    public function setInput($var)
+    public function setInput(\Temporal\Api\Common\V1\Payload|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payload::class);
         $this->input = $var;
 
         return $this;
@@ -562,7 +558,7 @@ class StartNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Mess
      * The default policy is NEXUS_OPERATION_ID_REUSE_POLICY_ALLOW_DUPLICATE.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.NexusOperationIdReusePolicy id_reuse_policy = 12;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\NexusOperationIdReusePolicy}
      */
     public function getIdReusePolicy()
     {
@@ -574,10 +570,10 @@ class StartNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Mess
      * The default policy is NEXUS_OPERATION_ID_REUSE_POLICY_ALLOW_DUPLICATE.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.NexusOperationIdReusePolicy id_reuse_policy = 12;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\NexusOperationIdReusePolicy}
      * @return $this
      */
-    public function setIdReusePolicy($var)
+    public function setIdReusePolicy(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\NexusOperationIdReusePolicy::class);
         $this->id_reuse_policy = $var;
@@ -590,7 +586,7 @@ class StartNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Mess
      * The default policy is NEXUS_OPERATION_ID_CONFLICT_POLICY_FAIL.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.NexusOperationIdConflictPolicy id_conflict_policy = 13;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\NexusOperationIdConflictPolicy}
      */
     public function getIdConflictPolicy()
     {
@@ -602,10 +598,10 @@ class StartNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Mess
      * The default policy is NEXUS_OPERATION_ID_CONFLICT_POLICY_FAIL.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.NexusOperationIdConflictPolicy id_conflict_policy = 13;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\NexusOperationIdConflictPolicy}
      * @return $this
      */
-    public function setIdConflictPolicy($var)
+    public function setIdConflictPolicy(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\NexusOperationIdConflictPolicy::class);
         $this->id_conflict_policy = $var;
@@ -641,9 +637,8 @@ class StartNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Mess
      * @param \Temporal\Api\Common\V1\SearchAttributes $var
      * @return $this
      */
-    public function setSearchAttributes($var)
+    public function setSearchAttributes(\Temporal\Api\Common\V1\SearchAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\SearchAttributes::class);
         $this->search_attributes = $var;
 
         return $this;
@@ -677,7 +672,7 @@ class StartNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Mess
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setNexusHeader($var)
+    public function setNexusHeader(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->nexus_header = $arr;
@@ -713,9 +708,8 @@ class StartNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Mess
      * @param \Temporal\Api\Sdk\V1\UserMetadata $var
      * @return $this
      */
-    public function setUserMetadata($var)
+    public function setUserMetadata(\Temporal\Api\Sdk\V1\UserMetadata|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Sdk\V1\UserMetadata::class);
         $this->user_metadata = $var;
 
         return $this;

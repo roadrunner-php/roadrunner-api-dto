@@ -97,9 +97,9 @@ class SubscribeRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setChannel($var)
+    public function setChannel(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->channel = $var;
 
         return $this;
@@ -119,9 +119,9 @@ class SubscribeRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setUser($var)
+    public function setUser(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->user = $var;
 
         return $this;
@@ -141,7 +141,7 @@ class SubscribeRequest extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setExpireAt($var)
+    public function setExpireAt(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->expire_at = $var;
@@ -163,9 +163,9 @@ class SubscribeRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setInfo($var)
+    public function setInfo(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->info = $var;
 
         return $this;
@@ -185,9 +185,9 @@ class SubscribeRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setB64Info($var)
+    public function setB64Info(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->b64info = $var;
 
         return $this;
@@ -207,9 +207,9 @@ class SubscribeRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setClient($var)
+    public function setClient(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->client = $var;
 
         return $this;
@@ -229,9 +229,9 @@ class SubscribeRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setData($var)
+    public function setData(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->data = $var;
 
         return $this;
@@ -251,9 +251,9 @@ class SubscribeRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setB64Data($var)
+    public function setB64Data(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->b64data = $var;
 
         return $this;
@@ -283,9 +283,8 @@ class SubscribeRequest extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\StreamPosition $var
      * @return $this
      */
-    public function setRecoverSince($var)
+    public function setRecoverSince(\RoadRunner\Centrifugal\API\DTO\V1\StreamPosition|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\StreamPosition::class);
         $this->recover_since = $var;
 
         return $this;
@@ -315,9 +314,8 @@ class SubscribeRequest extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\SubscribeOptionOverride $var
      * @return $this
      */
-    public function setOverride($var)
+    public function setOverride(\RoadRunner\Centrifugal\API\DTO\V1\SubscribeOptionOverride|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\SubscribeOptionOverride::class);
         $this->override = $var;
 
         return $this;
@@ -337,9 +335,9 @@ class SubscribeRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSession($var)
+    public function setSession(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->session = $var;
 
         return $this;

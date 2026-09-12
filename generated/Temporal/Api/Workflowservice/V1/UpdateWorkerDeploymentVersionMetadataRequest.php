@@ -87,9 +87,9 @@ class UpdateWorkerDeploymentVersionMetadataRequest extends \Google\Protobuf\Inte
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -118,10 +118,10 @@ class UpdateWorkerDeploymentVersionMetadataRequest extends \Google\Protobuf\Inte
      * @return $this
      * @deprecated
      */
-    public function setVersion($var)
+    public function setVersion(string $var)
     {
         @trigger_error('version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->version = $var;
 
         return $this;
@@ -155,9 +155,8 @@ class UpdateWorkerDeploymentVersionMetadataRequest extends \Google\Protobuf\Inte
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
      * @return $this
      */
-    public function setDeploymentVersion($var)
+    public function setDeploymentVersion(\Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
         $this->deployment_version = $var;
 
         return $this;
@@ -177,7 +176,7 @@ class UpdateWorkerDeploymentVersionMetadataRequest extends \Google\Protobuf\Inte
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setUpsertEntries($var)
+    public function setUpsertEntries(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Payload::class);
         $this->upsert_entries = $arr;
@@ -203,7 +202,7 @@ class UpdateWorkerDeploymentVersionMetadataRequest extends \Google\Protobuf\Inte
      * @param string[] $var
      * @return $this
      */
-    public function setRemoveEntries($var)
+    public function setRemoveEntries(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->remove_entries = $arr;
@@ -229,9 +228,9 @@ class UpdateWorkerDeploymentVersionMetadataRequest extends \Google\Protobuf\Inte
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;

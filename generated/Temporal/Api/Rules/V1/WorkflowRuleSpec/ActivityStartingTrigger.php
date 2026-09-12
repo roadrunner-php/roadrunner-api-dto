@@ -108,9 +108,9 @@ class ActivityStartingTrigger extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setPredicate($var)
+    public function setPredicate(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->predicate = $var;
 
         return $this;

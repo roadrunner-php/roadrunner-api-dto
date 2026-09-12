@@ -84,9 +84,9 @@ class TerminateNexusOperationExecutionRequest extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -106,9 +106,9 @@ class TerminateNexusOperationExecutionRequest extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setOperationId($var)
+    public function setOperationId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->operation_id = $var;
 
         return $this;
@@ -132,9 +132,9 @@ class TerminateNexusOperationExecutionRequest extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setRunId($var)
+    public function setRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->run_id = $var;
 
         return $this;
@@ -158,9 +158,9 @@ class TerminateNexusOperationExecutionRequest extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -184,9 +184,9 @@ class TerminateNexusOperationExecutionRequest extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setRequestId($var)
+    public function setRequestId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->request_id = $var;
 
         return $this;
@@ -210,9 +210,9 @@ class TerminateNexusOperationExecutionRequest extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setReason($var)
+    public function setReason(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->reason = $var;
 
         return $this;

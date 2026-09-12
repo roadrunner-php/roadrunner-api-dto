@@ -261,9 +261,9 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTaskToken($var)
+    public function setTaskToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->task_token = $var;
 
         return $this;
@@ -293,9 +293,8 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
      * @return $this
      */
-    public function setWorkflowExecution($var)
+    public function setWorkflowExecution(\Temporal\Api\Common\V1\WorkflowExecution|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->workflow_execution = $var;
 
         return $this;
@@ -325,9 +324,8 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\WorkflowType $var
      * @return $this
      */
-    public function setWorkflowType($var)
+    public function setWorkflowType(\Temporal\Api\Common\V1\WorkflowType|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowType::class);
         $this->workflow_type = $var;
 
         return $this;
@@ -353,7 +351,7 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setPreviousStartedEventId($var)
+    public function setPreviousStartedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->previous_started_event_id = $var;
@@ -385,7 +383,7 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setStartedEventId($var)
+    public function setStartedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->started_event_id = $var;
@@ -411,7 +409,7 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setAttempt($var)
+    public function setAttempt(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->attempt = $var;
@@ -453,7 +451,7 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setBacklogCountHint($var)
+    public function setBacklogCountHint(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->backlog_count_hint = $var;
@@ -493,9 +491,8 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\History\V1\History $var
      * @return $this
      */
-    public function setHistory($var)
+    public function setHistory(\Temporal\Api\History\V1\History|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\History::class);
         $this->history = $var;
 
         return $this;
@@ -521,9 +518,9 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNextPageToken($var)
+    public function setNextPageToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->next_page_token = $var;
 
         return $this;
@@ -563,9 +560,8 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Query\V1\WorkflowQuery $var
      * @return $this
      */
-    public function setQuery($var)
+    public function setQuery(\Temporal\Api\Query\V1\WorkflowQuery|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Query\V1\WorkflowQuery::class);
         $this->query = $var;
 
         return $this;
@@ -601,9 +597,8 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\TaskQueue $var
      * @return $this
      */
-    public function setWorkflowExecutionTaskQueue($var)
+    public function setWorkflowExecutionTaskQueue(\Temporal\Api\Taskqueue\V1\TaskQueue|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueue::class);
         $this->workflow_execution_task_queue = $var;
 
         return $this;
@@ -637,9 +632,8 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setScheduledTime($var)
+    public function setScheduledTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->scheduled_time = $var;
 
         return $this;
@@ -673,9 +667,8 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setStartedTime($var)
+    public function setStartedTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->started_time = $var;
 
         return $this;
@@ -701,7 +694,7 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setQueries($var)
+    public function setQueries(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Query\V1\WorkflowQuery::class);
         $this->queries = $arr;
@@ -727,7 +720,7 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Protocol\V1\Message[] $var
      * @return $this
      */
-    public function setMessages($var)
+    public function setMessages(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Protocol\V1\Message::class);
         $this->messages = $arr;
@@ -763,9 +756,8 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\PollerScalingDecision $var
      * @return $this
      */
-    public function setPollerScalingDecision($var)
+    public function setPollerScalingDecision(\Temporal\Api\Taskqueue\V1\PollerScalingDecision|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\PollerScalingDecision::class);
         $this->poller_scaling_decision = $var;
 
         return $this;
@@ -791,9 +783,9 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setPollerGroupId($var)
+    public function setPollerGroupId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->poller_group_id = $var;
 
         return $this;
@@ -815,7 +807,7 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      */
     public function getPollerGroupInfos()
     {
-        if ($this->poller_group_infos->count() !== 0) {
+        if (count($this->poller_group_infos) !== 0) {
             @trigger_error('poller_group_infos is deprecated.', E_USER_DEPRECATED);
         }
         return $this->poller_group_infos;
@@ -836,10 +828,10 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setPollerGroupInfos($var)
+    public function setPollerGroupInfos(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Taskqueue\V1\PollerGroupInfo::class);
-        if ($arr->count() !== 0) {
+        if (count($arr) !== 0) {
             @trigger_error('poller_group_infos is deprecated.', E_USER_DEPRECATED);
         }
         $this->poller_group_infos = $arr;
@@ -887,9 +879,8 @@ class PollWorkflowTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\PollerGroupsInfo $var
      * @return $this
      */
-    public function setPollerGroupsInfo($var)
+    public function setPollerGroupsInfo(\Temporal\Api\Taskqueue\V1\PollerGroupsInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\PollerGroupsInfo::class);
         $this->poller_groups_info = $var;
 
         return $this;

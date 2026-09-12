@@ -57,9 +57,9 @@ class ClientVersionNotSupportedFailure extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setClientVersion($var)
+    public function setClientVersion(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->client_version = $var;
 
         return $this;
@@ -79,9 +79,9 @@ class ClientVersionNotSupportedFailure extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setClientName($var)
+    public function setClientName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->client_name = $var;
 
         return $this;
@@ -101,9 +101,9 @@ class ClientVersionNotSupportedFailure extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSupportedVersions($var)
+    public function setSupportedVersions(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->supported_versions = $var;
 
         return $this;

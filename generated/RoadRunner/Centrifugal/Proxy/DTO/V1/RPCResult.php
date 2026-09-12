@@ -52,9 +52,9 @@ class RPCResult extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setData($var)
+    public function setData(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->data = $var;
 
         return $this;
@@ -74,9 +74,9 @@ class RPCResult extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setB64Data($var)
+    public function setB64Data(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->b64data = $var;
 
         return $this;

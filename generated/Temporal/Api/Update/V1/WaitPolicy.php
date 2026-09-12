@@ -54,7 +54,7 @@ class WaitPolicy extends \Google\Protobuf\Internal\Message
      * user specified timeout, API call returns even if specified stage is not reached.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.UpdateWorkflowExecutionLifecycleStage lifecycle_stage = 1;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\UpdateWorkflowExecutionLifecycleStage}
      */
     public function getLifecycleStage()
     {
@@ -69,10 +69,10 @@ class WaitPolicy extends \Google\Protobuf\Internal\Message
      * user specified timeout, API call returns even if specified stage is not reached.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.UpdateWorkflowExecutionLifecycleStage lifecycle_stage = 1;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\UpdateWorkflowExecutionLifecycleStage}
      * @return $this
      */
-    public function setLifecycleStage($var)
+    public function setLifecycleStage(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\UpdateWorkflowExecutionLifecycleStage::class);
         $this->lifecycle_stage = $var;

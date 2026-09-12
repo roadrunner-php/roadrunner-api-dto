@@ -112,9 +112,9 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -138,9 +138,9 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
      * @param string $var
      * @return $this
      */
-    public function setWorkflowId($var)
+    public function setWorkflowId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->workflow_id = $var;
 
         return $this;
@@ -166,9 +166,9 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
      * @param string $var
      * @return $this
      */
-    public function setRunId($var)
+    public function setRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->run_id = $var;
 
         return $this;
@@ -192,9 +192,9 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
      * @param string $var
      * @return $this
      */
-    public function setActivityId($var)
+    public function setActivityId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->activity_id = $var;
 
         return $this;
@@ -228,9 +228,8 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
      */
-    public function setFailure($var)
+    public function setFailure(\Temporal\Api\Failure\V1\Failure|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
         $this->failure = $var;
 
         return $this;
@@ -254,9 +253,9 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -290,9 +289,8 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setLastHeartbeatDetails($var)
+    public function setLastHeartbeatDetails(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->last_heartbeat_details = $var;
 
         return $this;
@@ -316,9 +314,9 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
      * @param string $var
      * @return $this
      */
-    public function setResourceId($var)
+    public function setResourceId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->resource_id = $var;
 
         return $this;

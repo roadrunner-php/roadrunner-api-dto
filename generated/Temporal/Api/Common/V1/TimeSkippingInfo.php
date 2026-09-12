@@ -102,9 +102,8 @@ class TimeSkippingInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setCurrentTime($var)
+    public function setCurrentTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->current_time = $var;
 
         return $this;
@@ -144,9 +143,8 @@ class TimeSkippingInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\TimeSkippingConfig $var
      * @return $this
      */
-    public function setEffectiveConfig($var)
+    public function setEffectiveConfig(\Temporal\Api\Common\V1\TimeSkippingConfig|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\TimeSkippingConfig::class);
         $this->effective_config = $var;
 
         return $this;
@@ -180,9 +178,8 @@ class TimeSkippingInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\TimeSkippingFastForwardInfo $var
      * @return $this
      */
-    public function setFastForwardInfo($var)
+    public function setFastForwardInfo(\Temporal\Api\Common\V1\TimeSkippingFastForwardInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\TimeSkippingFastForwardInfo::class);
         $this->fast_forward_info = $var;
 
         return $this;
@@ -208,7 +205,7 @@ class TimeSkippingInfo extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setCurrentSessionSkipCount($var)
+    public function setCurrentSessionSkipCount(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->current_session_skip_count = $var;

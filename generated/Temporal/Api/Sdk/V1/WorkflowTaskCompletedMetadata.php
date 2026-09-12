@@ -154,7 +154,7 @@ class WorkflowTaskCompletedMetadata extends \Google\Protobuf\Internal\Message
      * @param int[] $var
      * @return $this
      */
-    public function setCoreUsedFlags($var)
+    public function setCoreUsedFlags(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::UINT32);
         $this->core_used_flags = $arr;
@@ -188,7 +188,7 @@ class WorkflowTaskCompletedMetadata extends \Google\Protobuf\Internal\Message
      * @param int[] $var
      * @return $this
      */
-    public function setLangUsedFlags($var)
+    public function setLangUsedFlags(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::UINT32);
         $this->lang_used_flags = $arr;
@@ -222,9 +222,9 @@ class WorkflowTaskCompletedMetadata extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSdkName($var)
+    public function setSdkName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->sdk_name = $var;
 
         return $this;
@@ -252,9 +252,9 @@ class WorkflowTaskCompletedMetadata extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSdkVersion($var)
+    public function setSdkVersion(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->sdk_version = $var;
 
         return $this;

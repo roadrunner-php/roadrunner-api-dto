@@ -128,9 +128,9 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -160,9 +160,8 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\TaskQueue $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(\Temporal\Api\Taskqueue\V1\TaskQueue|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueue::class);
         $this->task_queue = $var;
 
         return $this;
@@ -192,9 +191,9 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setPollerGroupId($var)
+    public function setPollerGroupId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->poller_group_id = $var;
 
         return $this;
@@ -218,9 +217,9 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -246,9 +245,9 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setWorkerInstanceKey($var)
+    public function setWorkerInstanceKey(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->worker_instance_key = $var;
 
         return $this;
@@ -274,9 +273,9 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setWorkerControlTaskQueue($var)
+    public function setWorkerControlTaskQueue(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->worker_control_task_queue = $var;
 
         return $this;
@@ -309,10 +308,10 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setBinaryChecksum($var)
+    public function setBinaryChecksum(string $var)
     {
         @trigger_error('binary_checksum is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->binary_checksum = $var;
 
         return $this;
@@ -359,10 +358,9 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setWorkerVersionCapabilities($var)
+    public function setWorkerVersionCapabilities(\Temporal\Api\Common\V1\WorkerVersionCapabilities|null $var)
     {
         @trigger_error('worker_version_capabilities is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerVersionCapabilities::class);
         $this->worker_version_capabilities = $var;
 
         return $this;
@@ -396,9 +394,8 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentOptions $var
      * @return $this
      */
-    public function setDeploymentOptions($var)
+    public function setDeploymentOptions(\Temporal\Api\Deployment\V1\WorkerDeploymentOptions|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentOptions::class);
         $this->deployment_options = $var;
 
         return $this;

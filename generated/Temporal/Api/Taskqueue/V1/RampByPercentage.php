@@ -54,9 +54,8 @@ class RampByPercentage extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setRampPercentage($var)
+    public function setRampPercentage(float $var)
     {
-        GPBUtil::checkFloat($var);
         $this->ramp_percentage = $var;
 
         return $this;

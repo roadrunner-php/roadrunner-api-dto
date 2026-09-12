@@ -112,9 +112,9 @@ class UpdateActivityOptionsRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -148,9 +148,8 @@ class UpdateActivityOptionsRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
      * @return $this
      */
-    public function setExecution($var)
+    public function setExecution(\Temporal\Api\Common\V1\WorkflowExecution|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->execution = $var;
 
         return $this;
@@ -174,9 +173,9 @@ class UpdateActivityOptionsRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -210,9 +209,8 @@ class UpdateActivityOptionsRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Activity\V1\ActivityOptions $var
      * @return $this
      */
-    public function setActivityOptions($var)
+    public function setActivityOptions(\Temporal\Api\Activity\V1\ActivityOptions|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Activity\V1\ActivityOptions::class);
         $this->activity_options = $var;
 
         return $this;
@@ -246,9 +244,8 @@ class UpdateActivityOptionsRequest extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\FieldMask $var
      * @return $this
      */
-    public function setUpdateMask($var)
+    public function setUpdateMask(\Google\Protobuf\FieldMask|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\FieldMask::class);
         $this->update_mask = $var;
 
         return $this;
@@ -277,9 +274,9 @@ class UpdateActivityOptionsRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->writeOneof(6, $var);
 
         return $this;
@@ -308,9 +305,9 @@ class UpdateActivityOptionsRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setType($var)
+    public function setType(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->writeOneof(7, $var);
 
         return $this;
@@ -339,9 +336,8 @@ class UpdateActivityOptionsRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setMatchAll($var)
+    public function setMatchAll(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->writeOneof(9, $var);
 
         return $this;
@@ -373,9 +369,8 @@ class UpdateActivityOptionsRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setRestoreOriginal($var)
+    public function setRestoreOriginal(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->restore_original = $var;
 
         return $this;

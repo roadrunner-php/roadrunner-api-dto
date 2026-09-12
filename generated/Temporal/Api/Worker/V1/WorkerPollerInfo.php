@@ -67,7 +67,7 @@ class WorkerPollerInfo extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setCurrentPollers($var)
+    public function setCurrentPollers(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->current_pollers = $var;
@@ -99,9 +99,8 @@ class WorkerPollerInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setLastSuccessfulPollTime($var)
+    public function setLastSuccessfulPollTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_successful_poll_time = $var;
 
         return $this;
@@ -125,9 +124,8 @@ class WorkerPollerInfo extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setIsAutoscaling($var)
+    public function setIsAutoscaling(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->is_autoscaling = $var;
 
         return $this;

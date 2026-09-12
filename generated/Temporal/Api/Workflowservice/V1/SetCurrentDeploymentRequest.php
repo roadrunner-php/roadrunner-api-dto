@@ -74,9 +74,9 @@ class SetCurrentDeploymentRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -106,9 +106,8 @@ class SetCurrentDeploymentRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\Deployment $var
      * @return $this
      */
-    public function setDeployment($var)
+    public function setDeployment(\Temporal\Api\Deployment\V1\Deployment|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\Deployment::class);
         $this->deployment = $var;
 
         return $this;
@@ -132,9 +131,9 @@ class SetCurrentDeploymentRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -172,9 +171,8 @@ class SetCurrentDeploymentRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\UpdateDeploymentMetadata $var
      * @return $this
      */
-    public function setUpdateMetadata($var)
+    public function setUpdateMetadata(\Temporal\Api\Deployment\V1\UpdateDeploymentMetadata|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\UpdateDeploymentMetadata::class);
         $this->update_metadata = $var;
 
         return $this;

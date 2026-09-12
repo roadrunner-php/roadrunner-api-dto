@@ -77,9 +77,8 @@ class SubscribeOptionOverride extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\Proxy\DTO\V1\BoolValue $var
      * @return $this
      */
-    public function setPresence($var)
+    public function setPresence(\RoadRunner\Centrifugal\Proxy\DTO\V1\BoolValue|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\Proxy\DTO\V1\BoolValue::class);
         $this->presence = $var;
 
         return $this;
@@ -109,9 +108,8 @@ class SubscribeOptionOverride extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\Proxy\DTO\V1\BoolValue $var
      * @return $this
      */
-    public function setJoinLeave($var)
+    public function setJoinLeave(\RoadRunner\Centrifugal\Proxy\DTO\V1\BoolValue|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\Proxy\DTO\V1\BoolValue::class);
         $this->join_leave = $var;
 
         return $this;
@@ -141,9 +139,8 @@ class SubscribeOptionOverride extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\Proxy\DTO\V1\BoolValue $var
      * @return $this
      */
-    public function setForceRecovery($var)
+    public function setForceRecovery(\RoadRunner\Centrifugal\Proxy\DTO\V1\BoolValue|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\Proxy\DTO\V1\BoolValue::class);
         $this->force_recovery = $var;
 
         return $this;
@@ -173,9 +170,8 @@ class SubscribeOptionOverride extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\Proxy\DTO\V1\BoolValue $var
      * @return $this
      */
-    public function setForcePositioning($var)
+    public function setForcePositioning(\RoadRunner\Centrifugal\Proxy\DTO\V1\BoolValue|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\Proxy\DTO\V1\BoolValue::class);
         $this->force_positioning = $var;
 
         return $this;
@@ -205,9 +201,8 @@ class SubscribeOptionOverride extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\Proxy\DTO\V1\BoolValue $var
      * @return $this
      */
-    public function setForcePushJoinLeave($var)
+    public function setForcePushJoinLeave(\RoadRunner\Centrifugal\Proxy\DTO\V1\BoolValue|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\Proxy\DTO\V1\BoolValue::class);
         $this->force_push_join_leave = $var;
 
         return $this;

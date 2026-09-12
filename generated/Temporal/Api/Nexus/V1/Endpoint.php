@@ -110,7 +110,7 @@ class Endpoint extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setVersion($var)
+    public function setVersion(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->version = $var;
@@ -136,9 +136,9 @@ class Endpoint extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->id = $var;
 
         return $this;
@@ -172,9 +172,8 @@ class Endpoint extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Nexus\V1\EndpointSpec $var
      * @return $this
      */
-    public function setSpec($var)
+    public function setSpec(\Temporal\Api\Nexus\V1\EndpointSpec|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\EndpointSpec::class);
         $this->spec = $var;
 
         return $this;
@@ -212,9 +211,8 @@ class Endpoint extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setCreatedTime($var)
+    public function setCreatedTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->created_time = $var;
 
         return $this;
@@ -254,9 +252,8 @@ class Endpoint extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setLastModifiedTime($var)
+    public function setLastModifiedTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_modified_time = $var;
 
         return $this;
@@ -284,9 +281,9 @@ class Endpoint extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setUrlPrefix($var)
+    public function setUrlPrefix(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->url_prefix = $var;
 
         return $this;

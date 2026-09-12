@@ -84,9 +84,9 @@ class PollWorkflowExecutionUpdateRequest extends \Google\Protobuf\Internal\Messa
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -120,9 +120,8 @@ class PollWorkflowExecutionUpdateRequest extends \Google\Protobuf\Internal\Messa
      * @param \Temporal\Api\Update\V1\UpdateRef $var
      * @return $this
      */
-    public function setUpdateRef($var)
+    public function setUpdateRef(\Temporal\Api\Update\V1\UpdateRef|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Update\V1\UpdateRef::class);
         $this->update_ref = $var;
 
         return $this;
@@ -146,9 +145,9 @@ class PollWorkflowExecutionUpdateRequest extends \Google\Protobuf\Internal\Messa
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -184,9 +183,8 @@ class PollWorkflowExecutionUpdateRequest extends \Google\Protobuf\Internal\Messa
      * @param \Temporal\Api\Update\V1\WaitPolicy $var
      * @return $this
      */
-    public function setWaitPolicy($var)
+    public function setWaitPolicy(\Temporal\Api\Update\V1\WaitPolicy|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Update\V1\WaitPolicy::class);
         $this->wait_policy = $var;
 
         return $this;

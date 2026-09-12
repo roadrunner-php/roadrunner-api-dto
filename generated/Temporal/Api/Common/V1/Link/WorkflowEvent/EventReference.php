@@ -54,7 +54,7 @@ class EventReference extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setEventId($var)
+    public function setEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->event_id = $var;
@@ -64,7 +64,7 @@ class EventReference extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.EventType event_type = 2;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\EventType}
      */
     public function getEventType()
     {
@@ -73,10 +73,10 @@ class EventReference extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.EventType event_type = 2;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\EventType}
      * @return $this
      */
-    public function setEventType($var)
+    public function setEventType(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\EventType::class);
         $this->event_type = $var;

@@ -85,9 +85,9 @@ class DescribeNexusOperationExecutionResponse extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setRunId($var)
+    public function setRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->run_id = $var;
 
         return $this;
@@ -121,9 +121,8 @@ class DescribeNexusOperationExecutionResponse extends \Google\Protobuf\Internal\
      * @param \Temporal\Api\Nexus\V1\NexusOperationExecutionInfo $var
      * @return $this
      */
-    public function setInfo($var)
+    public function setInfo(\Temporal\Api\Nexus\V1\NexusOperationExecutionInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\NexusOperationExecutionInfo::class);
         $this->info = $var;
 
         return $this;
@@ -159,9 +158,8 @@ class DescribeNexusOperationExecutionResponse extends \Google\Protobuf\Internal\
      * @param \Temporal\Api\Common\V1\Payload $var
      * @return $this
      */
-    public function setInput($var)
+    public function setInput(\Temporal\Api\Common\V1\Payload|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payload::class);
         $this->input = $var;
 
         return $this;
@@ -190,9 +188,8 @@ class DescribeNexusOperationExecutionResponse extends \Google\Protobuf\Internal\
      * @param \Temporal\Api\Common\V1\Payload $var
      * @return $this
      */
-    public function setResult($var)
+    public function setResult(\Temporal\Api\Common\V1\Payload|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payload::class);
         $this->writeOneof(4, $var);
 
         return $this;
@@ -221,9 +218,8 @@ class DescribeNexusOperationExecutionResponse extends \Google\Protobuf\Internal\
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
      */
-    public function setFailure($var)
+    public function setFailure(\Temporal\Api\Failure\V1\Failure|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
         $this->writeOneof(5, $var);
 
         return $this;
@@ -247,9 +243,9 @@ class DescribeNexusOperationExecutionResponse extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setLongPollToken($var)
+    public function setLongPollToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->long_poll_token = $var;
 
         return $this;

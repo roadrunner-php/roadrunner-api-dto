@@ -64,9 +64,9 @@ class ScheduleListEntry extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setScheduleId($var)
+    public function setScheduleId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->schedule_id = $var;
 
         return $this;
@@ -96,9 +96,8 @@ class ScheduleListEntry extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Memo $var
      * @return $this
      */
-    public function setMemo($var)
+    public function setMemo(\Temporal\Api\Common\V1\Memo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Memo::class);
         $this->memo = $var;
 
         return $this;
@@ -128,9 +127,8 @@ class ScheduleListEntry extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\SearchAttributes $var
      * @return $this
      */
-    public function setSearchAttributes($var)
+    public function setSearchAttributes(\Temporal\Api\Common\V1\SearchAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\SearchAttributes::class);
         $this->search_attributes = $var;
 
         return $this;
@@ -160,9 +158,8 @@ class ScheduleListEntry extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Schedule\V1\ScheduleListInfo $var
      * @return $this
      */
-    public function setInfo($var)
+    public function setInfo(\Temporal\Api\Schedule\V1\ScheduleListInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Schedule\V1\ScheduleListInfo::class);
         $this->info = $var;
 
         return $this;

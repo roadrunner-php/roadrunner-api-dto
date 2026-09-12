@@ -75,9 +75,9 @@ class RecordWorkerHeartbeatRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -101,9 +101,9 @@ class RecordWorkerHeartbeatRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -123,7 +123,7 @@ class RecordWorkerHeartbeatRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\WorkerHeartbeat[] $var
      * @return $this
      */
-    public function setWorkerHeartbeat($var)
+    public function setWorkerHeartbeat(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Worker\V1\WorkerHeartbeat::class);
         $this->worker_heartbeat = $arr;
@@ -149,9 +149,9 @@ class RecordWorkerHeartbeatRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setResourceId($var)
+    public function setResourceId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->resource_id = $var;
 
         return $this;

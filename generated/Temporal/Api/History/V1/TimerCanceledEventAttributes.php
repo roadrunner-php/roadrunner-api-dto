@@ -78,9 +78,9 @@ class TimerCanceledEventAttributes extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTimerId($var)
+    public function setTimerId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->timer_id = $var;
 
         return $this;
@@ -104,7 +104,7 @@ class TimerCanceledEventAttributes extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setStartedEventId($var)
+    public function setStartedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->started_event_id = $var;
@@ -130,7 +130,7 @@ class TimerCanceledEventAttributes extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setWorkflowTaskCompletedEventId($var)
+    public function setWorkflowTaskCompletedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->workflow_task_completed_event_id = $var;
@@ -156,9 +156,9 @@ class TimerCanceledEventAttributes extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;

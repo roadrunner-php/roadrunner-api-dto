@@ -100,9 +100,9 @@ class StartWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRunId($var)
+    public function setRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->run_id = $var;
 
         return $this;
@@ -126,9 +126,9 @@ class StartWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setFirstExecutionRunId($var)
+    public function setFirstExecutionRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->first_execution_run_id = $var;
 
         return $this;
@@ -152,9 +152,8 @@ class StartWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setStarted($var)
+    public function setStarted(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->started = $var;
 
         return $this;
@@ -165,7 +164,7 @@ class StartWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
      * unless a de-dupe occurs or in specific scenarios handled within the ExecuteMultiOperation (refer to its docs).
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowExecutionStatus status = 5;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\WorkflowExecutionStatus}
      */
     public function getStatus()
     {
@@ -177,10 +176,10 @@ class StartWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
      * unless a de-dupe occurs or in specific scenarios handled within the ExecuteMultiOperation (refer to its docs).
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowExecutionStatus status = 5;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\WorkflowExecutionStatus}
      * @return $this
      */
-    public function setStatus($var)
+    public function setStatus(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\WorkflowExecutionStatus::class);
         $this->status = $var;
@@ -220,9 +219,8 @@ class StartWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflowservice\V1\PollWorkflowTaskQueueResponse $var
      * @return $this
      */
-    public function setEagerWorkflowTask($var)
+    public function setEagerWorkflowTask(\Temporal\Api\Workflowservice\V1\PollWorkflowTaskQueueResponse|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflowservice\V1\PollWorkflowTaskQueueResponse::class);
         $this->eager_workflow_task = $var;
 
         return $this;
@@ -256,9 +254,8 @@ class StartWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Link $var
      * @return $this
      */
-    public function setLink($var)
+    public function setLink(\Temporal\Api\Common\V1\Link|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Link::class);
         $this->link = $var;
 
         return $this;

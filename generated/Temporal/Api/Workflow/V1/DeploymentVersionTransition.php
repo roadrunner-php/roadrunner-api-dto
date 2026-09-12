@@ -74,10 +74,10 @@ class DeploymentVersionTransition extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setVersion($var)
+    public function setVersion(string $var)
     {
         @trigger_error('version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->version = $var;
 
         return $this;
@@ -113,9 +113,8 @@ class DeploymentVersionTransition extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
      * @return $this
      */
-    public function setDeploymentVersion($var)
+    public function setDeploymentVersion(\Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
         $this->deployment_version = $var;
 
         return $this;

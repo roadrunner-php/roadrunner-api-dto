@@ -62,9 +62,9 @@ class StartNexusOperationExecutionResponse extends \Google\Protobuf\Internal\Mes
      * @param string $var
      * @return $this
      */
-    public function setRunId($var)
+    public function setRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->run_id = $var;
 
         return $this;
@@ -88,9 +88,8 @@ class StartNexusOperationExecutionResponse extends \Google\Protobuf\Internal\Mes
      * @param bool $var
      * @return $this
      */
-    public function setStarted($var)
+    public function setStarted(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->started = $var;
 
         return $this;

@@ -52,9 +52,9 @@ class TaskQueuePartitionMetadata extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setKey($var)
+    public function setKey(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->key = $var;
 
         return $this;
@@ -74,9 +74,9 @@ class TaskQueuePartitionMetadata extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setOwnerHostName($var)
+    public function setOwnerHostName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->owner_host_name = $var;
 
         return $this;

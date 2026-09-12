@@ -53,9 +53,9 @@ class InboundUpdate extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setInboundUpdateId($var)
+    public function setInboundUpdateId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->inbound_update_id = $var;
 
         return $this;

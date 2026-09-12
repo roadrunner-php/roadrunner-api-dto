@@ -80,9 +80,8 @@ class TaskQueueConfig extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\RateLimitConfig $var
      * @return $this
      */
-    public function setQueueRateLimit($var)
+    public function setQueueRateLimit(\Temporal\Api\Taskqueue\V1\RateLimitConfig|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\RateLimitConfig::class);
         $this->queue_rate_limit = $var;
 
         return $this;
@@ -116,9 +115,8 @@ class TaskQueueConfig extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\RateLimitConfig $var
      * @return $this
      */
-    public function setFairnessKeysRateLimitDefault($var)
+    public function setFairnessKeysRateLimitDefault(\Temporal\Api\Taskqueue\V1\RateLimitConfig|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\RateLimitConfig::class);
         $this->fairness_keys_rate_limit_default = $var;
 
         return $this;
@@ -142,7 +140,7 @@ class TaskQueueConfig extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setFairnessWeightOverrides($var)
+    public function setFairnessWeightOverrides(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::FLOAT);
         $this->fairness_weight_overrides = $arr;

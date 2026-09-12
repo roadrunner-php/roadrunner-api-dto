@@ -81,9 +81,9 @@ class RespondNexusTaskCompletedRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -107,9 +107,9 @@ class RespondNexusTaskCompletedRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -133,9 +133,9 @@ class RespondNexusTaskCompletedRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTaskToken($var)
+    public function setTaskToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->task_token = $var;
 
         return $this;
@@ -169,9 +169,8 @@ class RespondNexusTaskCompletedRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Nexus\V1\Response $var
      * @return $this
      */
-    public function setResponse($var)
+    public function setResponse(\Temporal\Api\Nexus\V1\Response|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\Response::class);
         $this->response = $var;
 
         return $this;
@@ -197,9 +196,9 @@ class RespondNexusTaskCompletedRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setPollerGroupId($var)
+    public function setPollerGroupId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->poller_group_id = $var;
 
         return $this;

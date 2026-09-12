@@ -90,9 +90,8 @@ class UserMetadata extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Payload $var
      * @return $this
      */
-    public function setSummary($var)
+    public function setSummary(\Temporal\Api\Common\V1\Payload|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payload::class);
         $this->summary = $var;
 
         return $this;
@@ -130,9 +129,8 @@ class UserMetadata extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Payload $var
      * @return $this
      */
-    public function setDetails($var)
+    public function setDetails(\Temporal\Api\Common\V1\Payload|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payload::class);
         $this->details = $var;
 
         return $this;

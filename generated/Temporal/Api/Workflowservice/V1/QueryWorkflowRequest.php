@@ -67,9 +67,9 @@ class QueryWorkflowRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -99,9 +99,8 @@ class QueryWorkflowRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
      * @return $this
      */
-    public function setExecution($var)
+    public function setExecution(\Temporal\Api\Common\V1\WorkflowExecution|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->execution = $var;
 
         return $this;
@@ -131,9 +130,8 @@ class QueryWorkflowRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Query\V1\WorkflowQuery $var
      * @return $this
      */
-    public function setQuery($var)
+    public function setQuery(\Temporal\Api\Query\V1\WorkflowQuery|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Query\V1\WorkflowQuery::class);
         $this->query = $var;
 
         return $this;
@@ -144,7 +142,7 @@ class QueryWorkflowRequest extends \Google\Protobuf\Internal\Message
      * Default: QUERY_REJECT_CONDITION_NONE.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.QueryRejectCondition query_reject_condition = 4;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\QueryRejectCondition}
      */
     public function getQueryRejectCondition()
     {
@@ -156,10 +154,10 @@ class QueryWorkflowRequest extends \Google\Protobuf\Internal\Message
      * Default: QUERY_REJECT_CONDITION_NONE.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.QueryRejectCondition query_reject_condition = 4;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\QueryRejectCondition}
      * @return $this
      */
-    public function setQueryRejectCondition($var)
+    public function setQueryRejectCondition(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\QueryRejectCondition::class);
         $this->query_reject_condition = $var;

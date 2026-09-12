@@ -47,7 +47,7 @@ class BadBinaries extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setBinaries($var)
+    public function setBinaries(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\PBNamespace\V1\BadBinaryInfo::class);
         $this->binaries = $arr;

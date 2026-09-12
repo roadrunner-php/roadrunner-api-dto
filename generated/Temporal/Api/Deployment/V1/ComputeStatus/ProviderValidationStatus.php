@@ -69,9 +69,9 @@ class ProviderValidationStatus extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setErrorMessage($var)
+    public function setErrorMessage(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->error_message = $var;
 
         return $this;
@@ -105,9 +105,8 @@ class ProviderValidationStatus extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setLastCheckTime($var)
+    public function setLastCheckTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_check_time = $var;
 
         return $this;

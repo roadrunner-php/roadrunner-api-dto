@@ -54,9 +54,8 @@ class RateLimit extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setRequestsPerSecond($var)
+    public function setRequestsPerSecond(float $var)
     {
-        GPBUtil::checkFloat($var);
         $this->requests_per_second = $var;
 
         return $this;

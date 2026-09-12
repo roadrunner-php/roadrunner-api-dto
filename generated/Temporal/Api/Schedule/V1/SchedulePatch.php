@@ -91,9 +91,8 @@ class SchedulePatch extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Schedule\V1\TriggerImmediatelyRequest $var
      * @return $this
      */
-    public function setTriggerImmediately($var)
+    public function setTriggerImmediately(\Temporal\Api\Schedule\V1\TriggerImmediatelyRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Schedule\V1\TriggerImmediatelyRequest::class);
         $this->trigger_immediately = $var;
 
         return $this;
@@ -121,7 +120,7 @@ class SchedulePatch extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Schedule\V1\BackfillRequest[] $var
      * @return $this
      */
-    public function setBackfillRequest($var)
+    public function setBackfillRequest(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Schedule\V1\BackfillRequest::class);
         $this->backfill_request = $arr;
@@ -149,9 +148,9 @@ class SchedulePatch extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setPause($var)
+    public function setPause(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->pause = $var;
 
         return $this;
@@ -171,9 +170,9 @@ class SchedulePatch extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setUnpause($var)
+    public function setUnpause(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->unpause = $var;
 
         return $this;

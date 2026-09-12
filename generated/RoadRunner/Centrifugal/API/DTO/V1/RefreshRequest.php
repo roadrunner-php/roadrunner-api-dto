@@ -72,9 +72,9 @@ class RefreshRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setUser($var)
+    public function setUser(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->user = $var;
 
         return $this;
@@ -94,9 +94,9 @@ class RefreshRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setClient($var)
+    public function setClient(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->client = $var;
 
         return $this;
@@ -116,9 +116,8 @@ class RefreshRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setExpired($var)
+    public function setExpired(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->expired = $var;
 
         return $this;
@@ -138,7 +137,7 @@ class RefreshRequest extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setExpireAt($var)
+    public function setExpireAt(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->expire_at = $var;
@@ -160,9 +159,9 @@ class RefreshRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setInfo($var)
+    public function setInfo(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->info = $var;
 
         return $this;
@@ -182,9 +181,9 @@ class RefreshRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSession($var)
+    public function setSession(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->session = $var;
 
         return $this;

@@ -110,9 +110,9 @@ class DescribeActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -132,9 +132,9 @@ class DescribeActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setActivityId($var)
+    public function setActivityId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->activity_id = $var;
 
         return $this;
@@ -158,9 +158,9 @@ class DescribeActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRunId($var)
+    public function setRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->run_id = $var;
 
         return $this;
@@ -184,9 +184,8 @@ class DescribeActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setIncludeInput($var)
+    public function setIncludeInput(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->include_input = $var;
 
         return $this;
@@ -210,9 +209,8 @@ class DescribeActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setIncludeOutcome($var)
+    public function setIncludeOutcome(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->include_outcome = $var;
 
         return $this;
@@ -246,9 +244,9 @@ class DescribeActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setLongPollToken($var)
+    public function setLongPollToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->long_poll_token = $var;
 
         return $this;
@@ -272,9 +270,8 @@ class DescribeActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setIncludeHeartbeatDetails($var)
+    public function setIncludeHeartbeatDetails(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->include_heartbeat_details = $var;
 
         return $this;
@@ -298,9 +295,8 @@ class DescribeActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setIncludeLastFailure($var)
+    public function setIncludeLastFailure(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->include_last_failure = $var;
 
         return $this;

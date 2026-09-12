@@ -87,9 +87,8 @@ class TimeSkippingStatePropagation extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setInitialSkippedDuration($var)
+    public function setInitialSkippedDuration(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->initial_skipped_duration = $var;
 
         return $this;
@@ -123,9 +122,8 @@ class TimeSkippingStatePropagation extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setFastForwardTargetTime($var)
+    public function setFastForwardTargetTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->fast_forward_target_time = $var;
 
         return $this;
@@ -149,7 +147,7 @@ class TimeSkippingStatePropagation extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setInitialSkipCount($var)
+    public function setInitialSkipCount(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->initial_skip_count = $var;

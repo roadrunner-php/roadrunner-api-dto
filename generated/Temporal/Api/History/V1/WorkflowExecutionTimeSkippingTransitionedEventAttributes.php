@@ -88,9 +88,8 @@ class WorkflowExecutionTimeSkippingTransitionedEventAttributes extends \Google\P
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setTargetTime($var)
+    public function setTargetTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->target_time = $var;
 
         return $this;
@@ -118,9 +117,8 @@ class WorkflowExecutionTimeSkippingTransitionedEventAttributes extends \Google\P
      * @param bool $var
      * @return $this
      */
-    public function setDisabledAfterFastForward($var)
+    public function setDisabledAfterFastForward(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->disabled_after_fast_forward = $var;
 
         return $this;
@@ -154,9 +152,8 @@ class WorkflowExecutionTimeSkippingTransitionedEventAttributes extends \Google\P
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setWallClockTime($var)
+    public function setWallClockTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->wall_clock_time = $var;
 
         return $this;

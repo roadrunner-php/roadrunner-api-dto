@@ -66,9 +66,8 @@ class ComputeStatus extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\ComputeStatus\ProviderValidationStatus $var
      * @return $this
      */
-    public function setProviderValidation($var)
+    public function setProviderValidation(\Temporal\Api\Deployment\V1\ComputeStatus\ProviderValidationStatus|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\ComputeStatus\ProviderValidationStatus::class);
         $this->provider_validation = $var;
 
         return $this;

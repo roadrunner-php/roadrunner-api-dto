@@ -52,7 +52,7 @@ class ListOpenWorkflowExecutionsResponse extends \Google\Protobuf\Internal\Messa
      * @param \Temporal\Api\Workflow\V1\WorkflowExecutionInfo[] $var
      * @return $this
      */
-    public function setExecutions($var)
+    public function setExecutions(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Workflow\V1\WorkflowExecutionInfo::class);
         $this->executions = $arr;
@@ -74,9 +74,9 @@ class ListOpenWorkflowExecutionsResponse extends \Google\Protobuf\Internal\Messa
      * @param string $var
      * @return $this
      */
-    public function setNextPageToken($var)
+    public function setNextPageToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->next_page_token = $var;
 
         return $this;

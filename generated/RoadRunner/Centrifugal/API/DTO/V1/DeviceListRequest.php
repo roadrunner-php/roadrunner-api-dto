@@ -87,9 +87,8 @@ class DeviceListRequest extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\DeviceFilter $var
      * @return $this
      */
-    public function setFilter($var)
+    public function setFilter(\RoadRunner\Centrifugal\API\DTO\V1\DeviceFilter|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\DeviceFilter::class);
         $this->filter = $var;
 
         return $this;
@@ -109,9 +108,8 @@ class DeviceListRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setIncludeTotalCount($var)
+    public function setIncludeTotalCount(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->include_total_count = $var;
 
         return $this;
@@ -131,9 +129,8 @@ class DeviceListRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setIncludeMeta($var)
+    public function setIncludeMeta(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->include_meta = $var;
 
         return $this;
@@ -159,9 +156,8 @@ class DeviceListRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setIncludeTopics($var)
+    public function setIncludeTopics(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->include_topics = $var;
 
         return $this;
@@ -181,9 +177,9 @@ class DeviceListRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setCursor($var)
+    public function setCursor(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->cursor = $var;
 
         return $this;
@@ -203,7 +199,7 @@ class DeviceListRequest extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setLimit($var)
+    public function setLimit(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->limit = $var;

@@ -109,9 +109,8 @@ class ActivityTaskCanceledEventAttributes extends \Google\Protobuf\Internal\Mess
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setDetails($var)
+    public function setDetails(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->details = $var;
 
         return $this;
@@ -137,7 +136,7 @@ class ActivityTaskCanceledEventAttributes extends \Google\Protobuf\Internal\Mess
      * @param int|string $var
      * @return $this
      */
-    public function setLatestCancelRequestedEventId($var)
+    public function setLatestCancelRequestedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->latest_cancel_requested_event_id = $var;
@@ -163,7 +162,7 @@ class ActivityTaskCanceledEventAttributes extends \Google\Protobuf\Internal\Mess
      * @param int|string $var
      * @return $this
      */
-    public function setScheduledEventId($var)
+    public function setScheduledEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->scheduled_event_id = $var;
@@ -189,7 +188,7 @@ class ActivityTaskCanceledEventAttributes extends \Google\Protobuf\Internal\Mess
      * @param int|string $var
      * @return $this
      */
-    public function setStartedEventId($var)
+    public function setStartedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->started_event_id = $var;
@@ -215,9 +214,9 @@ class ActivityTaskCanceledEventAttributes extends \Google\Protobuf\Internal\Mess
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -262,10 +261,9 @@ class ActivityTaskCanceledEventAttributes extends \Google\Protobuf\Internal\Mess
      * @return $this
      * @deprecated
      */
-    public function setWorkerVersion($var)
+    public function setWorkerVersion(\Temporal\Api\Common\V1\WorkerVersionStamp|null $var)
     {
         @trigger_error('worker_version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerVersionStamp::class);
         $this->worker_version = $var;
 
         return $this;

@@ -47,9 +47,9 @@ class ChannelsRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setPattern($var)
+    public function setPattern(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->pattern = $var;
 
         return $this;

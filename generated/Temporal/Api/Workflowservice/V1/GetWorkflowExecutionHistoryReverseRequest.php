@@ -62,9 +62,9 @@ class GetWorkflowExecutionHistoryReverseRequest extends \Google\Protobuf\Interna
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -94,9 +94,8 @@ class GetWorkflowExecutionHistoryReverseRequest extends \Google\Protobuf\Interna
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
      * @return $this
      */
-    public function setExecution($var)
+    public function setExecution(\Temporal\Api\Common\V1\WorkflowExecution|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->execution = $var;
 
         return $this;
@@ -116,7 +115,7 @@ class GetWorkflowExecutionHistoryReverseRequest extends \Google\Protobuf\Interna
      * @param int $var
      * @return $this
      */
-    public function setMaximumPageSize($var)
+    public function setMaximumPageSize(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->maximum_page_size = $var;
@@ -138,9 +137,9 @@ class GetWorkflowExecutionHistoryReverseRequest extends \Google\Protobuf\Interna
      * @param string $var
      * @return $this
      */
-    public function setNextPageToken($var)
+    public function setNextPageToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->next_page_token = $var;
 
         return $this;

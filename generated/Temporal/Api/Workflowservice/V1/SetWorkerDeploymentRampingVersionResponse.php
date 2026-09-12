@@ -105,9 +105,9 @@ class SetWorkerDeploymentRampingVersionResponse extends \Google\Protobuf\Interna
      * @param string $var
      * @return $this
      */
-    public function setConflictToken($var)
+    public function setConflictToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->conflict_token = $var;
 
         return $this;
@@ -136,10 +136,10 @@ class SetWorkerDeploymentRampingVersionResponse extends \Google\Protobuf\Interna
      * @return $this
      * @deprecated
      */
-    public function setPreviousVersion($var)
+    public function setPreviousVersion(string $var)
     {
         @trigger_error('previous_version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->previous_version = $var;
 
         return $this;
@@ -190,10 +190,9 @@ class SetWorkerDeploymentRampingVersionResponse extends \Google\Protobuf\Interna
      * @return $this
      * @deprecated
      */
-    public function setPreviousDeploymentVersion($var)
+    public function setPreviousDeploymentVersion(\Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null $var)
     {
         @trigger_error('previous_deployment_version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
         $this->previous_deployment_version = $var;
 
         return $this;
@@ -230,10 +229,9 @@ class SetWorkerDeploymentRampingVersionResponse extends \Google\Protobuf\Interna
      * @return $this
      * @deprecated
      */
-    public function setPreviousPercentage($var)
+    public function setPreviousPercentage(float $var)
     {
         @trigger_error('previous_percentage is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkFloat($var);
         $this->previous_percentage = $var;
 
         return $this;

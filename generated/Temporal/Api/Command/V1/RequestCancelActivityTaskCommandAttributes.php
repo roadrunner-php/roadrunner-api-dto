@@ -54,7 +54,7 @@ class RequestCancelActivityTaskCommandAttributes extends \Google\Protobuf\Intern
      * @param int|string $var
      * @return $this
      */
-    public function setScheduledEventId($var)
+    public function setScheduledEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->scheduled_event_id = $var;

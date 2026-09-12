@@ -52,7 +52,7 @@ class Response extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setStatus($var)
+    public function setStatus(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->status = $var;
@@ -74,7 +74,7 @@ class Response extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setHeaders($var)
+    public function setHeaders(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\HTTP\DTO\V1\HeaderValue::class);
         $this->headers = $arr;

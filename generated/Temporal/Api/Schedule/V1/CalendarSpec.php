@@ -133,9 +133,9 @@ class CalendarSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSecond($var)
+    public function setSecond(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->second = $var;
 
         return $this;
@@ -159,9 +159,9 @@ class CalendarSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setMinute($var)
+    public function setMinute(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->minute = $var;
 
         return $this;
@@ -185,9 +185,9 @@ class CalendarSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setHour($var)
+    public function setHour(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->hour = $var;
 
         return $this;
@@ -215,9 +215,9 @@ class CalendarSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setDayOfMonth($var)
+    public function setDayOfMonth(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->day_of_month = $var;
 
         return $this;
@@ -241,9 +241,9 @@ class CalendarSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setMonth($var)
+    public function setMonth(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->month = $var;
 
         return $this;
@@ -267,9 +267,9 @@ class CalendarSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setYear($var)
+    public function setYear(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->year = $var;
 
         return $this;
@@ -293,9 +293,9 @@ class CalendarSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setDayOfWeek($var)
+    public function setDayOfWeek(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->day_of_week = $var;
 
         return $this;
@@ -319,9 +319,9 @@ class CalendarSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setComment($var)
+    public function setComment(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->comment = $var;
 
         return $this;

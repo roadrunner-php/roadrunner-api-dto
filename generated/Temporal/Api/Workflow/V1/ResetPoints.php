@@ -47,7 +47,7 @@ class ResetPoints extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflow\V1\ResetPointInfo[] $var
      * @return $this
      */
-    public function setPoints($var)
+    public function setPoints(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Workflow\V1\ResetPointInfo::class);
         $this->points = $arr;

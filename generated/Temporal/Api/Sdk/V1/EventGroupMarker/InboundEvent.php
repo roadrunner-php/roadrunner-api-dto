@@ -53,7 +53,7 @@ class InboundEvent extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setInboundEventId($var)
+    public function setInboundEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->inbound_event_id = $var;

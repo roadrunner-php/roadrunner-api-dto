@@ -228,9 +228,9 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setWorkerInstanceKey($var)
+    public function setWorkerInstanceKey(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->worker_instance_key = $var;
 
         return $this;
@@ -256,9 +256,9 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setWorkerIdentity($var)
+    public function setWorkerIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->worker_identity = $var;
 
         return $this;
@@ -292,9 +292,8 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\WorkerHostInfo $var
      * @return $this
      */
-    public function setHostInfo($var)
+    public function setHostInfo(\Temporal\Api\Worker\V1\WorkerHostInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Worker\V1\WorkerHostInfo::class);
         $this->host_info = $var;
 
         return $this;
@@ -318,9 +317,9 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->task_queue = $var;
 
         return $this;
@@ -350,9 +349,8 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
      * @return $this
      */
-    public function setDeploymentVersion($var)
+    public function setDeploymentVersion(\Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
         $this->deployment_version = $var;
 
         return $this;
@@ -372,9 +370,9 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSdkName($var)
+    public function setSdkName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->sdk_name = $var;
 
         return $this;
@@ -394,9 +392,9 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSdkVersion($var)
+    public function setSdkVersion(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->sdk_version = $var;
 
         return $this;
@@ -406,7 +404,7 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      * Worker status. Defined by SDK.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkerStatus status = 8;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\WorkerStatus}
      */
     public function getStatus()
     {
@@ -417,10 +415,10 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      * Worker status. Defined by SDK.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkerStatus status = 8;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\WorkerStatus}
      * @return $this
      */
-    public function setStatus($var)
+    public function setStatus(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\WorkerStatus::class);
         $this->status = $var;
@@ -458,9 +456,8 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setStartTime($var)
+    public function setStartTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->start_time = $var;
 
         return $this;
@@ -496,9 +493,8 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setHeartbeatTime($var)
+    public function setHeartbeatTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->heartbeat_time = $var;
 
         return $this;
@@ -532,9 +528,8 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setElapsedSinceLastHeartbeat($var)
+    public function setElapsedSinceLastHeartbeat(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->elapsed_since_last_heartbeat = $var;
 
         return $this;
@@ -564,9 +559,8 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\WorkerSlotsInfo $var
      * @return $this
      */
-    public function setWorkflowTaskSlotsInfo($var)
+    public function setWorkflowTaskSlotsInfo(\Temporal\Api\Worker\V1\WorkerSlotsInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Worker\V1\WorkerSlotsInfo::class);
         $this->workflow_task_slots_info = $var;
 
         return $this;
@@ -596,9 +590,8 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\WorkerSlotsInfo $var
      * @return $this
      */
-    public function setActivityTaskSlotsInfo($var)
+    public function setActivityTaskSlotsInfo(\Temporal\Api\Worker\V1\WorkerSlotsInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Worker\V1\WorkerSlotsInfo::class);
         $this->activity_task_slots_info = $var;
 
         return $this;
@@ -628,9 +621,8 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\WorkerSlotsInfo $var
      * @return $this
      */
-    public function setNexusTaskSlotsInfo($var)
+    public function setNexusTaskSlotsInfo(\Temporal\Api\Worker\V1\WorkerSlotsInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Worker\V1\WorkerSlotsInfo::class);
         $this->nexus_task_slots_info = $var;
 
         return $this;
@@ -660,9 +652,8 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\WorkerSlotsInfo $var
      * @return $this
      */
-    public function setLocalActivitySlotsInfo($var)
+    public function setLocalActivitySlotsInfo(\Temporal\Api\Worker\V1\WorkerSlotsInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Worker\V1\WorkerSlotsInfo::class);
         $this->local_activity_slots_info = $var;
 
         return $this;
@@ -692,9 +683,8 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\WorkerPollerInfo $var
      * @return $this
      */
-    public function setWorkflowPollerInfo($var)
+    public function setWorkflowPollerInfo(\Temporal\Api\Worker\V1\WorkerPollerInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Worker\V1\WorkerPollerInfo::class);
         $this->workflow_poller_info = $var;
 
         return $this;
@@ -724,9 +714,8 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\WorkerPollerInfo $var
      * @return $this
      */
-    public function setWorkflowStickyPollerInfo($var)
+    public function setWorkflowStickyPollerInfo(\Temporal\Api\Worker\V1\WorkerPollerInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Worker\V1\WorkerPollerInfo::class);
         $this->workflow_sticky_poller_info = $var;
 
         return $this;
@@ -756,9 +745,8 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\WorkerPollerInfo $var
      * @return $this
      */
-    public function setActivityPollerInfo($var)
+    public function setActivityPollerInfo(\Temporal\Api\Worker\V1\WorkerPollerInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Worker\V1\WorkerPollerInfo::class);
         $this->activity_poller_info = $var;
 
         return $this;
@@ -788,9 +776,8 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\WorkerPollerInfo $var
      * @return $this
      */
-    public function setNexusPollerInfo($var)
+    public function setNexusPollerInfo(\Temporal\Api\Worker\V1\WorkerPollerInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Worker\V1\WorkerPollerInfo::class);
         $this->nexus_poller_info = $var;
 
         return $this;
@@ -814,7 +801,7 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setTotalStickyCacheHit($var)
+    public function setTotalStickyCacheHit(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->total_sticky_cache_hit = $var;
@@ -840,7 +827,7 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setTotalStickyCacheMiss($var)
+    public function setTotalStickyCacheMiss(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->total_sticky_cache_miss = $var;
@@ -866,7 +853,7 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setCurrentStickyCacheSize($var)
+    public function setCurrentStickyCacheSize(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->current_sticky_cache_size = $var;
@@ -892,7 +879,7 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\PluginInfo[] $var
      * @return $this
      */
-    public function setPlugins($var)
+    public function setPlugins(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Worker\V1\PluginInfo::class);
         $this->plugins = $arr;
@@ -918,7 +905,7 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\StorageDriverInfo[] $var
      * @return $this
      */
-    public function setDrivers($var)
+    public function setDrivers(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Worker\V1\StorageDriverInfo::class);
         $this->drivers = $arr;
@@ -954,9 +941,8 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\EnvironmentInfo $var
      * @return $this
      */
-    public function setEnvironment($var)
+    public function setEnvironment(\Temporal\Api\Worker\V1\EnvironmentInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Worker\V1\EnvironmentInfo::class);
         $this->environment = $var;
 
         return $this;

@@ -68,7 +68,7 @@ class GetWorkerBuildIdCompatibilityResponse extends \Google\Protobuf\Internal\Me
      * @param \Temporal\Api\Taskqueue\V1\CompatibleVersionSet[] $var
      * @return $this
      */
-    public function setMajorVersionSets($var)
+    public function setMajorVersionSets(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Taskqueue\V1\CompatibleVersionSet::class);
         $this->major_version_sets = $arr;

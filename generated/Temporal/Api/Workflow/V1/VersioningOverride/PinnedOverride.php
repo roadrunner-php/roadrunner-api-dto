@@ -61,7 +61,7 @@ class PinnedOverride extends \Google\Protobuf\Internal\Message
      * See `PinnedOverrideBehavior` for details.
      *
      * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride.PinnedOverrideBehavior behavior = 1;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Workflow\V1\VersioningOverride\PinnedOverrideBehavior}
      */
     public function getBehavior()
     {
@@ -73,10 +73,10 @@ class PinnedOverride extends \Google\Protobuf\Internal\Message
      * See `PinnedOverrideBehavior` for details.
      *
      * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride.PinnedOverrideBehavior behavior = 1;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Workflow\V1\VersioningOverride\PinnedOverrideBehavior}
      * @return $this
      */
-    public function setBehavior($var)
+    public function setBehavior(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Workflow\V1\VersioningOverride\PinnedOverrideBehavior::class);
         $this->behavior = $var;
@@ -122,9 +122,8 @@ class PinnedOverride extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
      * @return $this
      */
-    public function setVersion($var)
+    public function setVersion(\Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
         $this->version = $var;
 
         return $this;

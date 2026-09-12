@@ -70,7 +70,7 @@ class EnvironmentInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\EnvironmentInfo\Runtime[] $var
      * @return $this
      */
-    public function setRuntimes($var)
+    public function setRuntimes(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Worker\V1\EnvironmentInfo\Runtime::class);
         $this->runtimes = $arr;
@@ -96,7 +96,7 @@ class EnvironmentInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\EnvironmentInfo\HostingEnvironment[] $var
      * @return $this
      */
-    public function setHostingEnvironments($var)
+    public function setHostingEnvironments(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Worker\V1\EnvironmentInfo\HostingEnvironment::class);
         $this->hosting_environments = $arr;
@@ -132,9 +132,8 @@ class EnvironmentInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\EnvironmentInfo\Platform $var
      * @return $this
      */
-    public function setPlatform($var)
+    public function setPlatform(\Temporal\Api\Worker\V1\EnvironmentInfo\Platform|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Worker\V1\EnvironmentInfo\Platform::class);
         $this->platform = $var;
 
         return $this;

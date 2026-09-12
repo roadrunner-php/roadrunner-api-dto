@@ -77,9 +77,8 @@ class ComputeConfigScalingGroupUpdate extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Compute\V1\ComputeConfigScalingGroup $var
      * @return $this
      */
-    public function setScalingGroup($var)
+    public function setScalingGroup(\Temporal\Api\Compute\V1\ComputeConfigScalingGroup|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Compute\V1\ComputeConfigScalingGroup::class);
         $this->scaling_group = $var;
 
         return $this;
@@ -125,9 +124,8 @@ class ComputeConfigScalingGroupUpdate extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\FieldMask $var
      * @return $this
      */
-    public function setUpdateMask($var)
+    public function setUpdateMask(\Google\Protobuf\FieldMask|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\FieldMask::class);
         $this->update_mask = $var;
 
         return $this;

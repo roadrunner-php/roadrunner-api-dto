@@ -67,9 +67,9 @@ class DisconnectRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setUser($var)
+    public function setUser(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->user = $var;
 
         return $this;
@@ -99,9 +99,8 @@ class DisconnectRequest extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\Disconnect $var
      * @return $this
      */
-    public function setDisconnect($var)
+    public function setDisconnect(\RoadRunner\Centrifugal\API\DTO\V1\Disconnect|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\Disconnect::class);
         $this->disconnect = $var;
 
         return $this;
@@ -121,9 +120,9 @@ class DisconnectRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setClient($var)
+    public function setClient(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->client = $var;
 
         return $this;
@@ -143,7 +142,7 @@ class DisconnectRequest extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setWhitelist($var)
+    public function setWhitelist(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->whitelist = $arr;
@@ -165,9 +164,9 @@ class DisconnectRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSession($var)
+    public function setSession(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->session = $var;
 
         return $this;
