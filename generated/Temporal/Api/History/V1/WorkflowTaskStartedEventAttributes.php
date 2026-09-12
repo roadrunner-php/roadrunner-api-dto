@@ -27,18 +27,37 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      */
     protected $identity = '';
     /**
-     * TODO: ? Appears unused?
+     * This field is populated from the RecordWorkflowTaskStartedRequest. Matching service would
+     * set the request_id on the RecordWorkflowTaskStartedRequest to a new UUID. This is useful
+     * in case a RecordWorkflowTaskStarted call succeed but matching doesn't get that response,
+     * so matching could retry and history service would return success if the request_id matches.
+     * In that case, matching will continue to deliver the task to worker. Without this field, history
+     * service would return AlreadyStarted error, and matching would drop the task.
      *
      * Generated from protobuf field <code>string request_id = 3;</code>
      */
     protected $request_id = '';
     /**
-     * True if this workflow should continue-as-new soon because its history size (in
-     * either event count or bytes) is getting large.
+     * True if this workflow should continue-as-new soon. See `suggest_continue_as_new_reasons` for why.
      *
      * Generated from protobuf field <code>bool suggest_continue_as_new = 4;</code>
      */
     protected $suggest_continue_as_new = false;
+    /**
+     * The reason(s) that suggest_continue_as_new is true, if it is.
+     * Unset if suggest_continue_as_new is false.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.enums.v1.SuggestContinueAsNewReason suggest_continue_as_new_reasons = 8;</code>
+     */
+    private $suggest_continue_as_new_reasons;
+    /**
+     * True if Workflow's Target Worker Deployment Version is different from its Pinned Version and
+     * the workflow is Pinned.
+     * Experimental.
+     *
+     * Generated from protobuf field <code>bool target_worker_deployment_version_changed = 9;</code>
+     */
+    protected $target_worker_deployment_version_changed = false;
     /**
      * Total history size in bytes, which the workflow might use to decide when to
      * continue-as-new regardless of the suggestion. Note that history event count is
@@ -76,10 +95,21 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      *     @type string $identity
      *           Identity of the worker who picked up this task
      *     @type string $request_id
-     *           TODO: ? Appears unused?
+     *           This field is populated from the RecordWorkflowTaskStartedRequest. Matching service would
+     *           set the request_id on the RecordWorkflowTaskStartedRequest to a new UUID. This is useful
+     *           in case a RecordWorkflowTaskStarted call succeed but matching doesn't get that response,
+     *           so matching could retry and history service would return success if the request_id matches.
+     *           In that case, matching will continue to deliver the task to worker. Without this field, history
+     *           service would return AlreadyStarted error, and matching would drop the task.
      *     @type bool $suggest_continue_as_new
-     *           True if this workflow should continue-as-new soon because its history size (in
-     *           either event count or bytes) is getting large.
+     *           True if this workflow should continue-as-new soon. See `suggest_continue_as_new_reasons` for why.
+     *     @type int[] $suggest_continue_as_new_reasons
+     *           The reason(s) that suggest_continue_as_new is true, if it is.
+     *           Unset if suggest_continue_as_new is false.
+     *     @type bool $target_worker_deployment_version_changed
+     *           True if Workflow's Target Worker Deployment Version is different from its Pinned Version and
+     *           the workflow is Pinned.
+     *           Experimental.
      *     @type int|string $history_size_bytes
      *           Total history size in bytes, which the workflow might use to decide when to
      *           continue-as-new regardless of the suggestion. Note that history event count is
@@ -151,7 +181,12 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * TODO: ? Appears unused?
+     * This field is populated from the RecordWorkflowTaskStartedRequest. Matching service would
+     * set the request_id on the RecordWorkflowTaskStartedRequest to a new UUID. This is useful
+     * in case a RecordWorkflowTaskStarted call succeed but matching doesn't get that response,
+     * so matching could retry and history service would return success if the request_id matches.
+     * In that case, matching will continue to deliver the task to worker. Without this field, history
+     * service would return AlreadyStarted error, and matching would drop the task.
      *
      * Generated from protobuf field <code>string request_id = 3;</code>
      * @return string
@@ -162,7 +197,12 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * TODO: ? Appears unused?
+     * This field is populated from the RecordWorkflowTaskStartedRequest. Matching service would
+     * set the request_id on the RecordWorkflowTaskStartedRequest to a new UUID. This is useful
+     * in case a RecordWorkflowTaskStarted call succeed but matching doesn't get that response,
+     * so matching could retry and history service would return success if the request_id matches.
+     * In that case, matching will continue to deliver the task to worker. Without this field, history
+     * service would return AlreadyStarted error, and matching would drop the task.
      *
      * Generated from protobuf field <code>string request_id = 3;</code>
      * @param string $var
@@ -177,8 +217,7 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * True if this workflow should continue-as-new soon because its history size (in
-     * either event count or bytes) is getting large.
+     * True if this workflow should continue-as-new soon. See `suggest_continue_as_new_reasons` for why.
      *
      * Generated from protobuf field <code>bool suggest_continue_as_new = 4;</code>
      * @return bool
@@ -189,8 +228,7 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * True if this workflow should continue-as-new soon because its history size (in
-     * either event count or bytes) is getting large.
+     * True if this workflow should continue-as-new soon. See `suggest_continue_as_new_reasons` for why.
      *
      * Generated from protobuf field <code>bool suggest_continue_as_new = 4;</code>
      * @param bool $var
@@ -200,6 +238,64 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
     {
         GPBUtil::checkBool($var);
         $this->suggest_continue_as_new = $var;
+
+        return $this;
+    }
+
+    /**
+     * The reason(s) that suggest_continue_as_new is true, if it is.
+     * Unset if suggest_continue_as_new is false.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.enums.v1.SuggestContinueAsNewReason suggest_continue_as_new_reasons = 8;</code>
+     * @return RepeatedField<int>
+     */
+    public function getSuggestContinueAsNewReasons()
+    {
+        return $this->suggest_continue_as_new_reasons;
+    }
+
+    /**
+     * The reason(s) that suggest_continue_as_new is true, if it is.
+     * Unset if suggest_continue_as_new is false.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.enums.v1.SuggestContinueAsNewReason suggest_continue_as_new_reasons = 8;</code>
+     * @param int[] $var
+     * @return $this
+     */
+    public function setSuggestContinueAsNewReasons($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Temporal\Api\Enums\V1\SuggestContinueAsNewReason::class);
+        $this->suggest_continue_as_new_reasons = $arr;
+
+        return $this;
+    }
+
+    /**
+     * True if Workflow's Target Worker Deployment Version is different from its Pinned Version and
+     * the workflow is Pinned.
+     * Experimental.
+     *
+     * Generated from protobuf field <code>bool target_worker_deployment_version_changed = 9;</code>
+     * @return bool
+     */
+    public function getTargetWorkerDeploymentVersionChanged()
+    {
+        return $this->target_worker_deployment_version_changed;
+    }
+
+    /**
+     * True if Workflow's Target Worker Deployment Version is different from its Pinned Version and
+     * the workflow is Pinned.
+     * Experimental.
+     *
+     * Generated from protobuf field <code>bool target_worker_deployment_version_changed = 9;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setTargetWorkerDeploymentVersionChanged($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->target_worker_deployment_version_changed = $var;
 
         return $this;
     }

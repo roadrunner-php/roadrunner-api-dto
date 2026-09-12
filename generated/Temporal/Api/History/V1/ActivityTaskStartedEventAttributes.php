@@ -27,7 +27,12 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      */
     protected $identity = '';
     /**
-     * TODO ??
+     * This field is populated from the RecordActivityTaskStartedRequest. Matching service would
+     * set the request_id on the RecordActivityTaskStartedRequest to a new UUID. This is useful
+     * in case a RecordActivityTaskStarted call succeed but matching doesn't get that response,
+     * so matching could retry and history service would return success if the request_id matches.
+     * In that case, matching will continue to deliver the task to worker. Without this field, history
+     * service would return AlreadyStarted error, and matching would drop the task.
      *
      * Generated from protobuf field <code>string request_id = 3;</code>
      */
@@ -74,7 +79,12 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      *     @type string $identity
      *           id of the worker that picked up this task
      *     @type string $request_id
-     *           TODO ??
+     *           This field is populated from the RecordActivityTaskStartedRequest. Matching service would
+     *           set the request_id on the RecordActivityTaskStartedRequest to a new UUID. This is useful
+     *           in case a RecordActivityTaskStarted call succeed but matching doesn't get that response,
+     *           so matching could retry and history service would return success if the request_id matches.
+     *           In that case, matching will continue to deliver the task to worker. Without this field, history
+     *           service would return AlreadyStarted error, and matching would drop the task.
      *     @type int $attempt
      *           Starting at 1, the number of times this task has been attempted
      *     @type \Temporal\Api\Failure\V1\Failure $last_failure
@@ -147,7 +157,12 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * TODO ??
+     * This field is populated from the RecordActivityTaskStartedRequest. Matching service would
+     * set the request_id on the RecordActivityTaskStartedRequest to a new UUID. This is useful
+     * in case a RecordActivityTaskStarted call succeed but matching doesn't get that response,
+     * so matching could retry and history service would return success if the request_id matches.
+     * In that case, matching will continue to deliver the task to worker. Without this field, history
+     * service would return AlreadyStarted error, and matching would drop the task.
      *
      * Generated from protobuf field <code>string request_id = 3;</code>
      * @return string
@@ -158,7 +173,12 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
     }
 
     /**
-     * TODO ??
+     * This field is populated from the RecordActivityTaskStartedRequest. Matching service would
+     * set the request_id on the RecordActivityTaskStartedRequest to a new UUID. This is useful
+     * in case a RecordActivityTaskStarted call succeed but matching doesn't get that response,
+     * so matching could retry and history service would return success if the request_id matches.
+     * In that case, matching will continue to deliver the task to worker. Without this field, history
+     * service would return AlreadyStarted error, and matching would drop the task.
      *
      * Generated from protobuf field <code>string request_id = 3;</code>
      * @param string $var

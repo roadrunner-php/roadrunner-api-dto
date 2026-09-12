@@ -49,6 +49,10 @@ class WorkflowExecutionStatus
      * Generated from protobuf enum <code>WORKFLOW_EXECUTION_STATUS_TIMED_OUT = 7;</code>
      */
     const WORKFLOW_EXECUTION_STATUS_TIMED_OUT = 7;
+    /**
+     * Generated from protobuf enum <code>WORKFLOW_EXECUTION_STATUS_PAUSED = 8;</code>
+     */
+    const WORKFLOW_EXECUTION_STATUS_PAUSED = 8;
 
     private static $valueToName = [
         self::WORKFLOW_EXECUTION_STATUS_UNSPECIFIED => 'WORKFLOW_EXECUTION_STATUS_UNSPECIFIED',
@@ -59,6 +63,7 @@ class WorkflowExecutionStatus
         self::WORKFLOW_EXECUTION_STATUS_TERMINATED => 'WORKFLOW_EXECUTION_STATUS_TERMINATED',
         self::WORKFLOW_EXECUTION_STATUS_CONTINUED_AS_NEW => 'WORKFLOW_EXECUTION_STATUS_CONTINUED_AS_NEW',
         self::WORKFLOW_EXECUTION_STATUS_TIMED_OUT => 'WORKFLOW_EXECUTION_STATUS_TIMED_OUT',
+        self::WORKFLOW_EXECUTION_STATUS_PAUSED => 'WORKFLOW_EXECUTION_STATUS_PAUSED',
     ];
 
     public static function name($value)

@@ -62,6 +62,19 @@ class WorkflowExecutionExtendedInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<string, .temporal.api.workflow.v1.RequestIdInfo> request_id_infos = 7;</code>
      */
     private $request_id_infos;
+    /**
+     * Information about the workflow execution pause operation.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.WorkflowExecutionPauseInfo pause_info = 8;</code>
+     */
+    protected $pause_info = null;
+    /**
+     * Information about time skipping of the workflow execution.
+     * If the execution has never enabled time skipping, it will be nil.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingInfo time_skipping_info = 9;</code>
+     */
+    protected $time_skipping_info = null;
 
     /**
      * Constructor.
@@ -87,6 +100,11 @@ class WorkflowExecutionExtendedInfo extends \Google\Protobuf\Internal\Message
      *           Note: It only contains request IDs from StartWorkflowExecution requests, including indirect
      *           calls (eg: if SignalWithStartWorkflowExecution starts a new workflow, then the request ID is
      *           used in the StartWorkflowExecution request).
+     *     @type \Temporal\Api\Workflow\V1\WorkflowExecutionPauseInfo $pause_info
+     *           Information about the workflow execution pause operation.
+     *     @type \Temporal\Api\Common\V1\TimeSkippingInfo $time_skipping_info
+     *           Information about time skipping of the workflow execution.
+     *           If the execution has never enabled time skipping, it will be nil.
      * }
      */
     public function __construct($data = NULL) {
@@ -320,6 +338,80 @@ class WorkflowExecutionExtendedInfo extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Workflow\V1\RequestIdInfo::class);
         $this->request_id_infos = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Information about the workflow execution pause operation.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.WorkflowExecutionPauseInfo pause_info = 8;</code>
+     * @return \Temporal\Api\Workflow\V1\WorkflowExecutionPauseInfo|null
+     */
+    public function getPauseInfo()
+    {
+        return $this->pause_info;
+    }
+
+    public function hasPauseInfo()
+    {
+        return isset($this->pause_info);
+    }
+
+    public function clearPauseInfo()
+    {
+        unset($this->pause_info);
+    }
+
+    /**
+     * Information about the workflow execution pause operation.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.WorkflowExecutionPauseInfo pause_info = 8;</code>
+     * @param \Temporal\Api\Workflow\V1\WorkflowExecutionPauseInfo $var
+     * @return $this
+     */
+    public function setPauseInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\WorkflowExecutionPauseInfo::class);
+        $this->pause_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Information about time skipping of the workflow execution.
+     * If the execution has never enabled time skipping, it will be nil.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingInfo time_skipping_info = 9;</code>
+     * @return \Temporal\Api\Common\V1\TimeSkippingInfo|null
+     */
+    public function getTimeSkippingInfo()
+    {
+        return $this->time_skipping_info;
+    }
+
+    public function hasTimeSkippingInfo()
+    {
+        return isset($this->time_skipping_info);
+    }
+
+    public function clearTimeSkippingInfo()
+    {
+        unset($this->time_skipping_info);
+    }
+
+    /**
+     * Information about time skipping of the workflow execution.
+     * If the execution has never enabled time skipping, it will be nil.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingInfo time_skipping_info = 9;</code>
+     * @param \Temporal\Api\Common\V1\TimeSkippingInfo $var
+     * @return $this
+     */
+    public function setTimeSkippingInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\TimeSkippingInfo::class);
+        $this->time_skipping_info = $var;
 
         return $this;
     }

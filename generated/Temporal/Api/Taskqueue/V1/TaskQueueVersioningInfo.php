@@ -10,8 +10,6 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
- * Experimental. Worker Deployments are experimental and might significantly change in the future.
- *
  * Generated from protobuf message <code>temporal.api.taskqueue.v1.TaskQueueVersioningInfo</code>
  */
 class TaskQueueVersioningInfo extends \Google\Protobuf\Internal\Message

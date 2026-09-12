@@ -52,6 +52,12 @@ class ScheduleListInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.protobuf.Timestamp future_action_times = 6;</code>
      */
     private $future_action_times;
+    /**
+     * Size of the schedule's internal state (including payloads) in bytes.
+     *
+     * Generated from protobuf field <code>int64 state_size_bytes = 7;</code>
+     */
+    protected $state_size_bytes = 0;
 
     /**
      * Constructor.
@@ -72,6 +78,8 @@ class ScheduleListInfo extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Schedule\V1\ScheduleActionResult[] $recent_actions
      *           From info (maybe fewer entries):
      *     @type \Google\Protobuf\Timestamp[] $future_action_times
+     *     @type int|string $state_size_bytes
+     *           Size of the schedule's internal state (including payloads) in bytes.
      * }
      */
     public function __construct($data = NULL) {
@@ -249,6 +257,32 @@ class ScheduleListInfo extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Protobuf\Timestamp::class);
         $this->future_action_times = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Size of the schedule's internal state (including payloads) in bytes.
+     *
+     * Generated from protobuf field <code>int64 state_size_bytes = 7;</code>
+     * @return int|string
+     */
+    public function getStateSizeBytes()
+    {
+        return $this->state_size_bytes;
+    }
+
+    /**
+     * Size of the schedule's internal state (including payloads) in bytes.
+     *
+     * Generated from protobuf field <code>int64 state_size_bytes = 7;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setStateSizeBytes($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->state_size_bytes = $var;
 
         return $this;
     }

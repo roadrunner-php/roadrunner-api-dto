@@ -14,6 +14,12 @@ use Google\Protobuf\RepeatedField;
  */
 class TerminatedFailureInfo extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * The identity of the worker or client that requested the termination.
+     *
+     * Generated from protobuf field <code>string identity = 1;</code>
+     */
+    protected $identity = '';
 
     /**
      * Constructor.
@@ -21,11 +27,39 @@ class TerminatedFailureInfo extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $identity
+     *           The identity of the worker or client that requested the termination.
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Temporal\Api\Failure\V1\Message::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * The identity of the worker or client that requested the termination.
+     *
+     * Generated from protobuf field <code>string identity = 1;</code>
+     * @return string
+     */
+    public function getIdentity()
+    {
+        return $this->identity;
+    }
+
+    /**
+     * The identity of the worker or client that requested the termination.
+     *
+     * Generated from protobuf field <code>string identity = 1;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setIdentity($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->identity = $var;
+
+        return $this;
     }
 
 }

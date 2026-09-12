@@ -79,11 +79,29 @@ class WorkerDeploymentVersionSummary extends \Google\Protobuf\Internal\Message
      */
     protected $first_activation_time = null;
     /**
+     * Timestamp when this version last became current.
+     * Can be used to determine whether a version has ever been Current.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_current_time = 12;</code>
+     */
+    protected $last_current_time = null;
+    /**
      * Timestamp when this version last stopped being current or ramping.
+     * Cleared if the version becomes current or ramping again.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_deactivation_time = 10;</code>
      */
     protected $last_deactivation_time = null;
+    /**
+     * Generated from protobuf field <code>.temporal.api.compute.v1.ComputeConfigSummary compute_config = 13;</code>
+     */
+    protected $compute_config = null;
+    /**
+     * ComputeStatus represents compute-related configuration and healthchecks.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.ComputeStatus compute_status = 14;</code>
+     */
+    protected $compute_status = null;
 
     /**
      * Constructor.
@@ -115,8 +133,15 @@ class WorkerDeploymentVersionSummary extends \Google\Protobuf\Internal\Message
      *           Last time `current_since_time`, `ramping_since_time, or `ramp_percentage` of this version changed.
      *     @type \Google\Protobuf\Timestamp $first_activation_time
      *           Timestamp when this version first became current or ramping.
+     *     @type \Google\Protobuf\Timestamp $last_current_time
+     *           Timestamp when this version last became current.
+     *           Can be used to determine whether a version has ever been Current.
      *     @type \Google\Protobuf\Timestamp $last_deactivation_time
      *           Timestamp when this version last stopped being current or ramping.
+     *           Cleared if the version becomes current or ramping again.
+     *     @type \Temporal\Api\Compute\V1\ComputeConfigSummary $compute_config
+     *     @type \Temporal\Api\Deployment\V1\ComputeStatus $compute_status
+     *           ComputeStatus represents compute-related configuration and healthchecks.
      * }
      */
     public function __construct($data = NULL) {
@@ -467,7 +492,46 @@ class WorkerDeploymentVersionSummary extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Timestamp when this version last became current.
+     * Can be used to determine whether a version has ever been Current.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_current_time = 12;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getLastCurrentTime()
+    {
+        return $this->last_current_time;
+    }
+
+    public function hasLastCurrentTime()
+    {
+        return isset($this->last_current_time);
+    }
+
+    public function clearLastCurrentTime()
+    {
+        unset($this->last_current_time);
+    }
+
+    /**
+     * Timestamp when this version last became current.
+     * Can be used to determine whether a version has ever been Current.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_current_time = 12;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setLastCurrentTime($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->last_current_time = $var;
+
+        return $this;
+    }
+
+    /**
      * Timestamp when this version last stopped being current or ramping.
+     * Cleared if the version becomes current or ramping again.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_deactivation_time = 10;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -489,6 +553,7 @@ class WorkerDeploymentVersionSummary extends \Google\Protobuf\Internal\Message
 
     /**
      * Timestamp when this version last stopped being current or ramping.
+     * Cleared if the version becomes current or ramping again.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_deactivation_time = 10;</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -498,6 +563,74 @@ class WorkerDeploymentVersionSummary extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_deactivation_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.compute.v1.ComputeConfigSummary compute_config = 13;</code>
+     * @return \Temporal\Api\Compute\V1\ComputeConfigSummary|null
+     */
+    public function getComputeConfig()
+    {
+        return $this->compute_config;
+    }
+
+    public function hasComputeConfig()
+    {
+        return isset($this->compute_config);
+    }
+
+    public function clearComputeConfig()
+    {
+        unset($this->compute_config);
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.compute.v1.ComputeConfigSummary compute_config = 13;</code>
+     * @param \Temporal\Api\Compute\V1\ComputeConfigSummary $var
+     * @return $this
+     */
+    public function setComputeConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Compute\V1\ComputeConfigSummary::class);
+        $this->compute_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * ComputeStatus represents compute-related configuration and healthchecks.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.ComputeStatus compute_status = 14;</code>
+     * @return \Temporal\Api\Deployment\V1\ComputeStatus|null
+     */
+    public function getComputeStatus()
+    {
+        return $this->compute_status;
+    }
+
+    public function hasComputeStatus()
+    {
+        return isset($this->compute_status);
+    }
+
+    public function clearComputeStatus()
+    {
+        unset($this->compute_status);
+    }
+
+    /**
+     * ComputeStatus represents compute-related configuration and healthchecks.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.ComputeStatus compute_status = 14;</code>
+     * @param \Temporal\Api\Deployment\V1\ComputeStatus $var
+     * @return $this
+     */
+    public function setComputeStatus($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\ComputeStatus::class);
+        $this->compute_status = $var;
 
         return $this;
     }

@@ -156,7 +156,6 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
     protected $versioning_info = null;
     /**
      * The name of Worker Deployment that completed the most recent workflow task.
-     * Experimental. Worker Deployments are experimental and might change in the future.
      *
      * Generated from protobuf field <code>string worker_deployment_name = 23;</code>
      */
@@ -167,6 +166,18 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 24;</code>
      */
     protected $priority = null;
+    /**
+     * Total size in bytes of all external payloads referenced in workflow history.
+     *
+     * Generated from protobuf field <code>int64 external_payload_size_bytes = 25;</code>
+     */
+    protected $external_payload_size_bytes = 0;
+    /**
+     * Count of external payloads referenced in workflow history.
+     *
+     * Generated from protobuf field <code>int64 external_payload_count = 26;</code>
+     */
+    protected $external_payload_count = 0;
 
     /**
      * Constructor.
@@ -237,9 +248,12 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      *           Experimental. Versioning info is experimental and might change in the future.
      *     @type string $worker_deployment_name
      *           The name of Worker Deployment that completed the most recent workflow task.
-     *           Experimental. Worker Deployments are experimental and might change in the future.
      *     @type \Temporal\Api\Common\V1\Priority $priority
      *           Priority metadata
+     *     @type int|string $external_payload_size_bytes
+     *           Total size in bytes of all external payloads referenced in workflow history.
+     *     @type int|string $external_payload_count
+     *           Count of external payloads referenced in workflow history.
      * }
      */
     public function __construct($data = NULL) {
@@ -977,7 +991,6 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * The name of Worker Deployment that completed the most recent workflow task.
-     * Experimental. Worker Deployments are experimental and might change in the future.
      *
      * Generated from protobuf field <code>string worker_deployment_name = 23;</code>
      * @return string
@@ -989,7 +1002,6 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * The name of Worker Deployment that completed the most recent workflow task.
-     * Experimental. Worker Deployments are experimental and might change in the future.
      *
      * Generated from protobuf field <code>string worker_deployment_name = 23;</code>
      * @param string $var
@@ -1035,6 +1047,58 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Priority::class);
         $this->priority = $var;
+
+        return $this;
+    }
+
+    /**
+     * Total size in bytes of all external payloads referenced in workflow history.
+     *
+     * Generated from protobuf field <code>int64 external_payload_size_bytes = 25;</code>
+     * @return int|string
+     */
+    public function getExternalPayloadSizeBytes()
+    {
+        return $this->external_payload_size_bytes;
+    }
+
+    /**
+     * Total size in bytes of all external payloads referenced in workflow history.
+     *
+     * Generated from protobuf field <code>int64 external_payload_size_bytes = 25;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setExternalPayloadSizeBytes($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->external_payload_size_bytes = $var;
+
+        return $this;
+    }
+
+    /**
+     * Count of external payloads referenced in workflow history.
+     *
+     * Generated from protobuf field <code>int64 external_payload_count = 26;</code>
+     * @return int|string
+     */
+    public function getExternalPayloadCount()
+    {
+        return $this->external_payload_count;
+    }
+
+    /**
+     * Count of external payloads referenced in workflow history.
+     *
+     * Generated from protobuf field <code>int64 external_payload_count = 26;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setExternalPayloadCount($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->external_payload_count = $var;
 
         return $this;
     }

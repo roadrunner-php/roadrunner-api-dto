@@ -27,8 +27,8 @@ class ListWorkersRequest extends \Google\Protobuf\Internal\Message
      */
     protected $next_page_token = '';
     /**
-     * `query` in ListWorkers is used to filter workers based on worker status info.
-     * The following worker status attributes are expected are supported as part of the query:
+     * `query` in ListWorkers is used to filter workers based on worker attributes.
+     * Supported attributes:
      ** WorkerInstanceKey
      ** WorkerIdentity
      ** HostName
@@ -38,13 +38,18 @@ class ListWorkersRequest extends \Google\Protobuf\Internal\Message
      ** SdkName
      ** SdkVersion
      ** StartTime
-     ** LastHeartbeatTime
      ** Status
-     * Currently metrics are not supported as a part of ListWorkers query.
      *
      * Generated from protobuf field <code>string query = 4;</code>
      */
     protected $query = '';
+    /**
+     * When true, the response will include system workers that are created implicitly
+     * by the server and not by the user. By default, system workers are excluded.
+     *
+     * Generated from protobuf field <code>bool include_system_workers = 5;</code>
+     */
+    protected $include_system_workers = false;
 
     /**
      * Constructor.
@@ -56,8 +61,8 @@ class ListWorkersRequest extends \Google\Protobuf\Internal\Message
      *     @type int $page_size
      *     @type string $next_page_token
      *     @type string $query
-     *           `query` in ListWorkers is used to filter workers based on worker status info.
-     *           The following worker status attributes are expected are supported as part of the query:
+     *           `query` in ListWorkers is used to filter workers based on worker attributes.
+     *           Supported attributes:
      *          * WorkerInstanceKey
      *          * WorkerIdentity
      *          * HostName
@@ -67,9 +72,10 @@ class ListWorkersRequest extends \Google\Protobuf\Internal\Message
      *          * SdkName
      *          * SdkVersion
      *          * StartTime
-     *          * LastHeartbeatTime
      *          * Status
-     *           Currently metrics are not supported as a part of ListWorkers query.
+     *     @type bool $include_system_workers
+     *           When true, the response will include system workers that are created implicitly
+     *           by the server and not by the user. By default, system workers are excluded.
      * }
      */
     public function __construct($data = NULL) {
@@ -144,8 +150,8 @@ class ListWorkersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * `query` in ListWorkers is used to filter workers based on worker status info.
-     * The following worker status attributes are expected are supported as part of the query:
+     * `query` in ListWorkers is used to filter workers based on worker attributes.
+     * Supported attributes:
      ** WorkerInstanceKey
      ** WorkerIdentity
      ** HostName
@@ -155,9 +161,7 @@ class ListWorkersRequest extends \Google\Protobuf\Internal\Message
      ** SdkName
      ** SdkVersion
      ** StartTime
-     ** LastHeartbeatTime
      ** Status
-     * Currently metrics are not supported as a part of ListWorkers query.
      *
      * Generated from protobuf field <code>string query = 4;</code>
      * @return string
@@ -168,8 +172,8 @@ class ListWorkersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * `query` in ListWorkers is used to filter workers based on worker status info.
-     * The following worker status attributes are expected are supported as part of the query:
+     * `query` in ListWorkers is used to filter workers based on worker attributes.
+     * Supported attributes:
      ** WorkerInstanceKey
      ** WorkerIdentity
      ** HostName
@@ -179,9 +183,7 @@ class ListWorkersRequest extends \Google\Protobuf\Internal\Message
      ** SdkName
      ** SdkVersion
      ** StartTime
-     ** LastHeartbeatTime
      ** Status
-     * Currently metrics are not supported as a part of ListWorkers query.
      *
      * Generated from protobuf field <code>string query = 4;</code>
      * @param string $var
@@ -191,6 +193,34 @@ class ListWorkersRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->query = $var;
+
+        return $this;
+    }
+
+    /**
+     * When true, the response will include system workers that are created implicitly
+     * by the server and not by the user. By default, system workers are excluded.
+     *
+     * Generated from protobuf field <code>bool include_system_workers = 5;</code>
+     * @return bool
+     */
+    public function getIncludeSystemWorkers()
+    {
+        return $this->include_system_workers;
+    }
+
+    /**
+     * When true, the response will include system workers that are created implicitly
+     * by the server and not by the user. By default, system workers are excluded.
+     *
+     * Generated from protobuf field <code>bool include_system_workers = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIncludeSystemWorkers($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->include_system_workers = $var;
 
         return $this;
     }

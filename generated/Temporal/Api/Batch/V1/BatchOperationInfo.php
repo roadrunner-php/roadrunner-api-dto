@@ -38,6 +38,12 @@ class BatchOperationInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp close_time = 4;</code>
      */
     protected $close_time = null;
+    /**
+     * Operation type
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.BatchOperationType operation_type = 5;</code>
+     */
+    protected $operation_type = 0;
 
     /**
      * Constructor.
@@ -53,6 +59,8 @@ class BatchOperationInfo extends \Google\Protobuf\Internal\Message
      *           Batch operation start time
      *     @type \Google\Protobuf\Timestamp $close_time
      *           Batch operation close time
+     *     @type int $operation_type
+     *           Operation type
      * }
      */
     public function __construct($data = NULL) {
@@ -180,6 +188,32 @@ class BatchOperationInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->close_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Operation type
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.BatchOperationType operation_type = 5;</code>
+     * @return int
+     */
+    public function getOperationType()
+    {
+        return $this->operation_type;
+    }
+
+    /**
+     * Operation type
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.BatchOperationType operation_type = 5;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setOperationType($var)
+    {
+        GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\BatchOperationType::class);
+        $this->operation_type = $var;
 
         return $this;
     }

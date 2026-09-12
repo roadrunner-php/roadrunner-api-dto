@@ -10,6 +10,8 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
+ * Deprecated. Use `UpdateActivityExecutionOptionsResponse`.
+ *
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.UpdateActivityOptionsResponse</code>
  */
 class UpdateActivityOptionsResponse extends \Google\Protobuf\Internal\Message

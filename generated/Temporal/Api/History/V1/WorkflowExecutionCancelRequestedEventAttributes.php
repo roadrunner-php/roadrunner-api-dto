@@ -16,13 +16,13 @@ class WorkflowExecutionCancelRequestedEventAttributes extends \Google\Protobuf\I
 {
     /**
      * User provided reason for requesting cancellation
-     * TODO: shall we create a new field with name "reason" and deprecate this one?
      *
      * Generated from protobuf field <code>string cause = 1;</code>
      */
     protected $cause = '';
     /**
-     * TODO: Is this the ID of the event in the workflow which initiated this cancel, if there was one?
+     * The ID of the `REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_INITIATED` event in the external
+     * workflow history when the cancellation was requested by another workflow.
      *
      * Generated from protobuf field <code>int64 external_initiated_event_id = 2;</code>
      */
@@ -46,9 +46,9 @@ class WorkflowExecutionCancelRequestedEventAttributes extends \Google\Protobuf\I
      *
      *     @type string $cause
      *           User provided reason for requesting cancellation
-     *           TODO: shall we create a new field with name "reason" and deprecate this one?
      *     @type int|string $external_initiated_event_id
-     *           TODO: Is this the ID of the event in the workflow which initiated this cancel, if there was one?
+     *           The ID of the `REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_INITIATED` event in the external
+     *           workflow history when the cancellation was requested by another workflow.
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $external_workflow_execution
      *     @type string $identity
      *           id of the worker or client who requested this cancel
@@ -61,7 +61,6 @@ class WorkflowExecutionCancelRequestedEventAttributes extends \Google\Protobuf\I
 
     /**
      * User provided reason for requesting cancellation
-     * TODO: shall we create a new field with name "reason" and deprecate this one?
      *
      * Generated from protobuf field <code>string cause = 1;</code>
      * @return string
@@ -73,7 +72,6 @@ class WorkflowExecutionCancelRequestedEventAttributes extends \Google\Protobuf\I
 
     /**
      * User provided reason for requesting cancellation
-     * TODO: shall we create a new field with name "reason" and deprecate this one?
      *
      * Generated from protobuf field <code>string cause = 1;</code>
      * @param string $var
@@ -88,7 +86,8 @@ class WorkflowExecutionCancelRequestedEventAttributes extends \Google\Protobuf\I
     }
 
     /**
-     * TODO: Is this the ID of the event in the workflow which initiated this cancel, if there was one?
+     * The ID of the `REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_INITIATED` event in the external
+     * workflow history when the cancellation was requested by another workflow.
      *
      * Generated from protobuf field <code>int64 external_initiated_event_id = 2;</code>
      * @return int|string
@@ -99,7 +98,8 @@ class WorkflowExecutionCancelRequestedEventAttributes extends \Google\Protobuf\I
     }
 
     /**
-     * TODO: Is this the ID of the event in the workflow which initiated this cancel, if there was one?
+     * The ID of the `REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_INITIATED` event in the external
+     * workflow history when the cancellation was requested by another workflow.
      *
      * Generated from protobuf field <code>int64 external_initiated_event_id = 2;</code>
      * @param int|string $var

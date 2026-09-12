@@ -10,6 +10,8 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
+ * Deprecated. Use `UnpauseActivityExecutionRequest`.
+ *
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.UnpauseActivityRequest</code>
  */
 class UnpauseActivityRequest extends \Google\Protobuf\Internal\Message

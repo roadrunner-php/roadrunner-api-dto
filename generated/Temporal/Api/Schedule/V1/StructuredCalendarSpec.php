@@ -17,8 +17,8 @@ use Google\Protobuf\RepeatedField;
  * corresponding fields of the timestamp, except for year: if year is missing,
  * that means all years match. For all fields besides year, at least one Range
  * must be present to match anything.
- * TODO: add relative-to-end-of-month
- * TODO: add nth day-of-week in month
+ * Relative expressions such as "last day of the month" or "third Monday" are not currently
+ * representable; callers must enumerate the concrete days they require.
  *
  * Generated from protobuf message <code>temporal.api.schedule.v1.StructuredCalendarSpec</code>
  */

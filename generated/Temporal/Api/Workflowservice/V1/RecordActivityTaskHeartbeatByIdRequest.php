@@ -21,13 +21,14 @@ class RecordActivityTaskHeartbeatByIdRequest extends \Google\Protobuf\Internal\M
      */
     protected $namespace = '';
     /**
-     * Id of the workflow which scheduled this activity
+     * Id of the workflow which scheduled this activity, leave empty to target a standalone activity
      *
      * Generated from protobuf field <code>string workflow_id = 2;</code>
      */
     protected $workflow_id = '';
     /**
-     * Run Id of the workflow which scheduled this activity
+     * For a workflow activity - the run ID of the workflow which scheduled this activity.
+     * For a standalone activity - the run ID of the activity.
      *
      * Generated from protobuf field <code>string run_id = 3;</code>
      */
@@ -50,6 +51,12 @@ class RecordActivityTaskHeartbeatByIdRequest extends \Google\Protobuf\Internal\M
      * Generated from protobuf field <code>string identity = 6;</code>
      */
     protected $identity = '';
+    /**
+     * Resource ID for routing. Contains "workflow:workflow_id" or "activity:activity_id" for standalone activities.
+     *
+     * Generated from protobuf field <code>string resource_id = 7;</code>
+     */
+    protected $resource_id = '';
 
     /**
      * Constructor.
@@ -60,15 +67,18 @@ class RecordActivityTaskHeartbeatByIdRequest extends \Google\Protobuf\Internal\M
      *     @type string $namespace
      *           Namespace of the workflow which scheduled this activity
      *     @type string $workflow_id
-     *           Id of the workflow which scheduled this activity
+     *           Id of the workflow which scheduled this activity, leave empty to target a standalone activity
      *     @type string $run_id
-     *           Run Id of the workflow which scheduled this activity
+     *           For a workflow activity - the run ID of the workflow which scheduled this activity.
+     *           For a standalone activity - the run ID of the activity.
      *     @type string $activity_id
      *           Id of the activity we're heartbeating
      *     @type \Temporal\Api\Common\V1\Payloads $details
      *           Arbitrary data, of which the most recent call is kept, to store for this activity
      *     @type string $identity
      *           The identity of the worker/client
+     *     @type string $resource_id
+     *           Resource ID for routing. Contains "workflow:workflow_id" or "activity:activity_id" for standalone activities.
      * }
      */
     public function __construct($data = NULL) {
@@ -103,7 +113,7 @@ class RecordActivityTaskHeartbeatByIdRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * Id of the workflow which scheduled this activity
+     * Id of the workflow which scheduled this activity, leave empty to target a standalone activity
      *
      * Generated from protobuf field <code>string workflow_id = 2;</code>
      * @return string
@@ -114,7 +124,7 @@ class RecordActivityTaskHeartbeatByIdRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * Id of the workflow which scheduled this activity
+     * Id of the workflow which scheduled this activity, leave empty to target a standalone activity
      *
      * Generated from protobuf field <code>string workflow_id = 2;</code>
      * @param string $var
@@ -129,7 +139,8 @@ class RecordActivityTaskHeartbeatByIdRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * Run Id of the workflow which scheduled this activity
+     * For a workflow activity - the run ID of the workflow which scheduled this activity.
+     * For a standalone activity - the run ID of the activity.
      *
      * Generated from protobuf field <code>string run_id = 3;</code>
      * @return string
@@ -140,7 +151,8 @@ class RecordActivityTaskHeartbeatByIdRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * Run Id of the workflow which scheduled this activity
+     * For a workflow activity - the run ID of the workflow which scheduled this activity.
+     * For a standalone activity - the run ID of the activity.
      *
      * Generated from protobuf field <code>string run_id = 3;</code>
      * @param string $var
@@ -238,6 +250,32 @@ class RecordActivityTaskHeartbeatByIdRequest extends \Google\Protobuf\Internal\M
     {
         GPBUtil::checkString($var, True);
         $this->identity = $var;
+
+        return $this;
+    }
+
+    /**
+     * Resource ID for routing. Contains "workflow:workflow_id" or "activity:activity_id" for standalone activities.
+     *
+     * Generated from protobuf field <code>string resource_id = 7;</code>
+     * @return string
+     */
+    public function getResourceId()
+    {
+        return $this->resource_id;
+    }
+
+    /**
+     * Resource ID for routing. Contains "workflow:workflow_id" or "activity:activity_id" for standalone activities.
+     *
+     * Generated from protobuf field <code>string resource_id = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setResourceId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->resource_id = $var;
 
         return $this;
     }

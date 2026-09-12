@@ -253,18 +253,44 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     /**
      * If present, the new workflow should start on this version with pinned base behavior.
      * Child of pinned parent will inherit the parent's version if the Child's Task Queue belongs to that version.
-     * New run initiated by workflow ContinueAsNew of pinned run, will inherit the previous run's version if the
+     * A new run initiated by workflow ContinueAsNew of pinned run, will inherit the previous run's version if the
      * new run's Task Queue belongs to that version.
-     * New run initiated by workflow Cron will never inherit.
-     * New run initiated by workflow Retry will only inherit if the retried run is effectively pinned at the time
+     * A new run initiated by workflow Cron will never inherit.
+     * A new run initiated by workflow Retry will only inherit if the retried run is effectively pinned at the time
      * of retry, and the retried run inherited a pinned version when it started (ie. it is a child of a pinned
      * parent, or a CaN of a pinned run, and is running on a Task Queue in the inherited version).
      * Pinned override is inherited if Task Queue of new run is compatible with the override version.
      * Override is inherited separately and takes precedence over inherited base version.
+     * Note: This field is mutually exclusive with inherited_auto_upgrade_info.
+     * Additionaly, versioning_override, if present, overrides this field during routing decisions.
      *
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion inherited_pinned_version = 37;</code>
      */
     protected $inherited_pinned_version = null;
+    /**
+     * If present, the new workflow begins with AutoUpgrade behavior. Before dispatching the
+     * first workflow task, this field is set to the deployment version on which the parent/
+     * previous run was operating. This inheritance only happens when the task queues belong to
+     * the same deployment version. The first workflow task will then be dispatched to either
+     * this inherited deployment version, or the current deployment version of the task queue's
+     * Deployment. After the first workflow task, the effective behavior depends on worker-sent
+     * values in subsequent workflow tasks.
+     * Inheritance rules:
+     *   - ContinueAsNew and child workflows: inherit AutoUpgrade behavior and deployment version
+     *   - Cron: never inherits
+     *   - Retry: inherits only if the retried run is effectively AutoUpgrade at the time of
+     *     retry, and inherited AutoUpgrade behavior when it started (i.e. it is a child of an
+     *     AutoUpgrade parent or ContinueAsNew of an AutoUpgrade run, running on the same
+     *     deployment as the parent/previous run)
+     * Additional notes:
+     * - This field is mutually exclusive with `inherited_pinned_version`.
+     * - `versioning_override`, if present, overrides this field during routing decisions.
+     * - SDK implementations do not interact with this field and is only used internally by
+     *   the server to ensure task routing correctness.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.InheritedAutoUpgradeInfo inherited_auto_upgrade_info = 39;</code>
+     */
+    protected $inherited_auto_upgrade_info = null;
     /**
      * A boolean indicating whether the SDK has asked to eagerly execute the first workflow task for this workflow and
      * eager execution was accepted by the server.
@@ -273,6 +299,36 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      * Generated from protobuf field <code>bool eager_execution_accepted = 38;</code>
      */
     protected $eager_execution_accepted = false;
+    /**
+     * During a previous run of this workflow, the server may have notified the SDK
+     * that the Target Worker Deployment Version changed, but the SDK declined to
+     * upgrade (e.g., by continuing-as-new with PINNED behavior). This field records
+     * the target version that was declined.
+     * This is a wrapper message to distinguish "never declined" (nil wrapper) from
+     * "declined an unversioned target" (non-nil wrapper with nil deployment_version).
+     * Used internally by the server during continue-as-new and retry.
+     * Should not be read or interpreted by SDKs.
+     *
+     * Generated from protobuf field <code>.temporal.api.history.v1.DeclinedTargetVersionUpgrade declined_target_version_upgrade = 40;</code>
+     */
+    protected $declined_target_version_upgrade = null;
+    /**
+     * Initial time-skipping configuration for this workflow execution, recorded at start time.
+     * This may have been set explicitly via the start workflow request, or propagated from a
+     * parent/previous execution.
+     * The configuration may be updated after start via UpdateWorkflowExecutionOptions, which
+     * will be reflected in the WorkflowExecutionOptionsUpdatedEvent.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 41;</code>
+     */
+    protected $time_skipping_config = null;
+    /**
+     * The time-skipping state propagated from a previous run of this workflow. This can be nil
+     * if no time skipping has occurred or there is no previous run.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingStatePropagation time_skipping_state_propagation = 43;</code>
+     */
+    protected $time_skipping_state_propagation = null;
 
     /**
      * Constructor.
@@ -385,18 +441,58 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $inherited_pinned_version
      *           If present, the new workflow should start on this version with pinned base behavior.
      *           Child of pinned parent will inherit the parent's version if the Child's Task Queue belongs to that version.
-     *           New run initiated by workflow ContinueAsNew of pinned run, will inherit the previous run's version if the
+     *           A new run initiated by workflow ContinueAsNew of pinned run, will inherit the previous run's version if the
      *           new run's Task Queue belongs to that version.
-     *           New run initiated by workflow Cron will never inherit.
-     *           New run initiated by workflow Retry will only inherit if the retried run is effectively pinned at the time
+     *           A new run initiated by workflow Cron will never inherit.
+     *           A new run initiated by workflow Retry will only inherit if the retried run is effectively pinned at the time
      *           of retry, and the retried run inherited a pinned version when it started (ie. it is a child of a pinned
      *           parent, or a CaN of a pinned run, and is running on a Task Queue in the inherited version).
      *           Pinned override is inherited if Task Queue of new run is compatible with the override version.
      *           Override is inherited separately and takes precedence over inherited base version.
+     *           Note: This field is mutually exclusive with inherited_auto_upgrade_info.
+     *           Additionaly, versioning_override, if present, overrides this field during routing decisions.
+     *     @type \Temporal\Api\Deployment\V1\InheritedAutoUpgradeInfo $inherited_auto_upgrade_info
+     *           If present, the new workflow begins with AutoUpgrade behavior. Before dispatching the
+     *           first workflow task, this field is set to the deployment version on which the parent/
+     *           previous run was operating. This inheritance only happens when the task queues belong to
+     *           the same deployment version. The first workflow task will then be dispatched to either
+     *           this inherited deployment version, or the current deployment version of the task queue's
+     *           Deployment. After the first workflow task, the effective behavior depends on worker-sent
+     *           values in subsequent workflow tasks.
+     *           Inheritance rules:
+     *             - ContinueAsNew and child workflows: inherit AutoUpgrade behavior and deployment version
+     *             - Cron: never inherits
+     *             - Retry: inherits only if the retried run is effectively AutoUpgrade at the time of
+     *               retry, and inherited AutoUpgrade behavior when it started (i.e. it is a child of an
+     *               AutoUpgrade parent or ContinueAsNew of an AutoUpgrade run, running on the same
+     *               deployment as the parent/previous run)
+     *           Additional notes:
+     *           - This field is mutually exclusive with `inherited_pinned_version`.
+     *           - `versioning_override`, if present, overrides this field during routing decisions.
+     *           - SDK implementations do not interact with this field and is only used internally by
+     *             the server to ensure task routing correctness.
      *     @type bool $eager_execution_accepted
      *           A boolean indicating whether the SDK has asked to eagerly execute the first workflow task for this workflow and
      *           eager execution was accepted by the server.
      *           Only populated by server with version >= 1.29.0.
+     *     @type \Temporal\Api\History\V1\DeclinedTargetVersionUpgrade $declined_target_version_upgrade
+     *           During a previous run of this workflow, the server may have notified the SDK
+     *           that the Target Worker Deployment Version changed, but the SDK declined to
+     *           upgrade (e.g., by continuing-as-new with PINNED behavior). This field records
+     *           the target version that was declined.
+     *           This is a wrapper message to distinguish "never declined" (nil wrapper) from
+     *           "declined an unversioned target" (non-nil wrapper with nil deployment_version).
+     *           Used internally by the server during continue-as-new and retry.
+     *           Should not be read or interpreted by SDKs.
+     *     @type \Temporal\Api\Common\V1\TimeSkippingConfig $time_skipping_config
+     *           Initial time-skipping configuration for this workflow execution, recorded at start time.
+     *           This may have been set explicitly via the start workflow request, or propagated from a
+     *           parent/previous execution.
+     *           The configuration may be updated after start via UpdateWorkflowExecutionOptions, which
+     *           will be reflected in the WorkflowExecutionOptionsUpdatedEvent.
+     *     @type \Temporal\Api\Common\V1\TimeSkippingStatePropagation $time_skipping_state_propagation
+     *           The time-skipping state propagated from a previous run of this workflow. This can be nil
+     *           if no time skipping has occurred or there is no previous run.
      * }
      */
     public function __construct($data = NULL) {
@@ -1581,14 +1677,16 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     /**
      * If present, the new workflow should start on this version with pinned base behavior.
      * Child of pinned parent will inherit the parent's version if the Child's Task Queue belongs to that version.
-     * New run initiated by workflow ContinueAsNew of pinned run, will inherit the previous run's version if the
+     * A new run initiated by workflow ContinueAsNew of pinned run, will inherit the previous run's version if the
      * new run's Task Queue belongs to that version.
-     * New run initiated by workflow Cron will never inherit.
-     * New run initiated by workflow Retry will only inherit if the retried run is effectively pinned at the time
+     * A new run initiated by workflow Cron will never inherit.
+     * A new run initiated by workflow Retry will only inherit if the retried run is effectively pinned at the time
      * of retry, and the retried run inherited a pinned version when it started (ie. it is a child of a pinned
      * parent, or a CaN of a pinned run, and is running on a Task Queue in the inherited version).
      * Pinned override is inherited if Task Queue of new run is compatible with the override version.
      * Override is inherited separately and takes precedence over inherited base version.
+     * Note: This field is mutually exclusive with inherited_auto_upgrade_info.
+     * Additionaly, versioning_override, if present, overrides this field during routing decisions.
      *
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion inherited_pinned_version = 37;</code>
      * @return \Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null
@@ -1611,14 +1709,16 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     /**
      * If present, the new workflow should start on this version with pinned base behavior.
      * Child of pinned parent will inherit the parent's version if the Child's Task Queue belongs to that version.
-     * New run initiated by workflow ContinueAsNew of pinned run, will inherit the previous run's version if the
+     * A new run initiated by workflow ContinueAsNew of pinned run, will inherit the previous run's version if the
      * new run's Task Queue belongs to that version.
-     * New run initiated by workflow Cron will never inherit.
-     * New run initiated by workflow Retry will only inherit if the retried run is effectively pinned at the time
+     * A new run initiated by workflow Cron will never inherit.
+     * A new run initiated by workflow Retry will only inherit if the retried run is effectively pinned at the time
      * of retry, and the retried run inherited a pinned version when it started (ie. it is a child of a pinned
      * parent, or a CaN of a pinned run, and is running on a Task Queue in the inherited version).
      * Pinned override is inherited if Task Queue of new run is compatible with the override version.
      * Override is inherited separately and takes precedence over inherited base version.
+     * Note: This field is mutually exclusive with inherited_auto_upgrade_info.
+     * Additionaly, versioning_override, if present, overrides this field during routing decisions.
      *
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion inherited_pinned_version = 37;</code>
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
@@ -1628,6 +1728,78 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
         $this->inherited_pinned_version = $var;
+
+        return $this;
+    }
+
+    /**
+     * If present, the new workflow begins with AutoUpgrade behavior. Before dispatching the
+     * first workflow task, this field is set to the deployment version on which the parent/
+     * previous run was operating. This inheritance only happens when the task queues belong to
+     * the same deployment version. The first workflow task will then be dispatched to either
+     * this inherited deployment version, or the current deployment version of the task queue's
+     * Deployment. After the first workflow task, the effective behavior depends on worker-sent
+     * values in subsequent workflow tasks.
+     * Inheritance rules:
+     *   - ContinueAsNew and child workflows: inherit AutoUpgrade behavior and deployment version
+     *   - Cron: never inherits
+     *   - Retry: inherits only if the retried run is effectively AutoUpgrade at the time of
+     *     retry, and inherited AutoUpgrade behavior when it started (i.e. it is a child of an
+     *     AutoUpgrade parent or ContinueAsNew of an AutoUpgrade run, running on the same
+     *     deployment as the parent/previous run)
+     * Additional notes:
+     * - This field is mutually exclusive with `inherited_pinned_version`.
+     * - `versioning_override`, if present, overrides this field during routing decisions.
+     * - SDK implementations do not interact with this field and is only used internally by
+     *   the server to ensure task routing correctness.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.InheritedAutoUpgradeInfo inherited_auto_upgrade_info = 39;</code>
+     * @return \Temporal\Api\Deployment\V1\InheritedAutoUpgradeInfo|null
+     */
+    public function getInheritedAutoUpgradeInfo()
+    {
+        return $this->inherited_auto_upgrade_info;
+    }
+
+    public function hasInheritedAutoUpgradeInfo()
+    {
+        return isset($this->inherited_auto_upgrade_info);
+    }
+
+    public function clearInheritedAutoUpgradeInfo()
+    {
+        unset($this->inherited_auto_upgrade_info);
+    }
+
+    /**
+     * If present, the new workflow begins with AutoUpgrade behavior. Before dispatching the
+     * first workflow task, this field is set to the deployment version on which the parent/
+     * previous run was operating. This inheritance only happens when the task queues belong to
+     * the same deployment version. The first workflow task will then be dispatched to either
+     * this inherited deployment version, or the current deployment version of the task queue's
+     * Deployment. After the first workflow task, the effective behavior depends on worker-sent
+     * values in subsequent workflow tasks.
+     * Inheritance rules:
+     *   - ContinueAsNew and child workflows: inherit AutoUpgrade behavior and deployment version
+     *   - Cron: never inherits
+     *   - Retry: inherits only if the retried run is effectively AutoUpgrade at the time of
+     *     retry, and inherited AutoUpgrade behavior when it started (i.e. it is a child of an
+     *     AutoUpgrade parent or ContinueAsNew of an AutoUpgrade run, running on the same
+     *     deployment as the parent/previous run)
+     * Additional notes:
+     * - This field is mutually exclusive with `inherited_pinned_version`.
+     * - `versioning_override`, if present, overrides this field during routing decisions.
+     * - SDK implementations do not interact with this field and is only used internally by
+     *   the server to ensure task routing correctness.
+     *
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.InheritedAutoUpgradeInfo inherited_auto_upgrade_info = 39;</code>
+     * @param \Temporal\Api\Deployment\V1\InheritedAutoUpgradeInfo $var
+     * @return $this
+     */
+    public function setInheritedAutoUpgradeInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\InheritedAutoUpgradeInfo::class);
+        $this->inherited_auto_upgrade_info = $var;
 
         return $this;
     }
@@ -1658,6 +1830,138 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     {
         GPBUtil::checkBool($var);
         $this->eager_execution_accepted = $var;
+
+        return $this;
+    }
+
+    /**
+     * During a previous run of this workflow, the server may have notified the SDK
+     * that the Target Worker Deployment Version changed, but the SDK declined to
+     * upgrade (e.g., by continuing-as-new with PINNED behavior). This field records
+     * the target version that was declined.
+     * This is a wrapper message to distinguish "never declined" (nil wrapper) from
+     * "declined an unversioned target" (non-nil wrapper with nil deployment_version).
+     * Used internally by the server during continue-as-new and retry.
+     * Should not be read or interpreted by SDKs.
+     *
+     * Generated from protobuf field <code>.temporal.api.history.v1.DeclinedTargetVersionUpgrade declined_target_version_upgrade = 40;</code>
+     * @return \Temporal\Api\History\V1\DeclinedTargetVersionUpgrade|null
+     */
+    public function getDeclinedTargetVersionUpgrade()
+    {
+        return $this->declined_target_version_upgrade;
+    }
+
+    public function hasDeclinedTargetVersionUpgrade()
+    {
+        return isset($this->declined_target_version_upgrade);
+    }
+
+    public function clearDeclinedTargetVersionUpgrade()
+    {
+        unset($this->declined_target_version_upgrade);
+    }
+
+    /**
+     * During a previous run of this workflow, the server may have notified the SDK
+     * that the Target Worker Deployment Version changed, but the SDK declined to
+     * upgrade (e.g., by continuing-as-new with PINNED behavior). This field records
+     * the target version that was declined.
+     * This is a wrapper message to distinguish "never declined" (nil wrapper) from
+     * "declined an unversioned target" (non-nil wrapper with nil deployment_version).
+     * Used internally by the server during continue-as-new and retry.
+     * Should not be read or interpreted by SDKs.
+     *
+     * Generated from protobuf field <code>.temporal.api.history.v1.DeclinedTargetVersionUpgrade declined_target_version_upgrade = 40;</code>
+     * @param \Temporal\Api\History\V1\DeclinedTargetVersionUpgrade $var
+     * @return $this
+     */
+    public function setDeclinedTargetVersionUpgrade($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\DeclinedTargetVersionUpgrade::class);
+        $this->declined_target_version_upgrade = $var;
+
+        return $this;
+    }
+
+    /**
+     * Initial time-skipping configuration for this workflow execution, recorded at start time.
+     * This may have been set explicitly via the start workflow request, or propagated from a
+     * parent/previous execution.
+     * The configuration may be updated after start via UpdateWorkflowExecutionOptions, which
+     * will be reflected in the WorkflowExecutionOptionsUpdatedEvent.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 41;</code>
+     * @return \Temporal\Api\Common\V1\TimeSkippingConfig|null
+     */
+    public function getTimeSkippingConfig()
+    {
+        return $this->time_skipping_config;
+    }
+
+    public function hasTimeSkippingConfig()
+    {
+        return isset($this->time_skipping_config);
+    }
+
+    public function clearTimeSkippingConfig()
+    {
+        unset($this->time_skipping_config);
+    }
+
+    /**
+     * Initial time-skipping configuration for this workflow execution, recorded at start time.
+     * This may have been set explicitly via the start workflow request, or propagated from a
+     * parent/previous execution.
+     * The configuration may be updated after start via UpdateWorkflowExecutionOptions, which
+     * will be reflected in the WorkflowExecutionOptionsUpdatedEvent.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 41;</code>
+     * @param \Temporal\Api\Common\V1\TimeSkippingConfig $var
+     * @return $this
+     */
+    public function setTimeSkippingConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\TimeSkippingConfig::class);
+        $this->time_skipping_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * The time-skipping state propagated from a previous run of this workflow. This can be nil
+     * if no time skipping has occurred or there is no previous run.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingStatePropagation time_skipping_state_propagation = 43;</code>
+     * @return \Temporal\Api\Common\V1\TimeSkippingStatePropagation|null
+     */
+    public function getTimeSkippingStatePropagation()
+    {
+        return $this->time_skipping_state_propagation;
+    }
+
+    public function hasTimeSkippingStatePropagation()
+    {
+        return isset($this->time_skipping_state_propagation);
+    }
+
+    public function clearTimeSkippingStatePropagation()
+    {
+        unset($this->time_skipping_state_propagation);
+    }
+
+    /**
+     * The time-skipping state propagated from a previous run of this workflow. This can be nil
+     * if no time skipping has occurred or there is no previous run.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingStatePropagation time_skipping_state_propagation = 43;</code>
+     * @param \Temporal\Api\Common\V1\TimeSkippingStatePropagation $var
+     * @return $this
+     */
+    public function setTimeSkippingStatePropagation($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\TimeSkippingStatePropagation::class);
+        $this->time_skipping_state_propagation = $var;
 
         return $this;
     }

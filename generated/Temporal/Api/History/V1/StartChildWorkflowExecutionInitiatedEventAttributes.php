@@ -121,6 +121,26 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 20;</code>
      */
     protected $priority = null;
+    /**
+     * The propagated time-skipping configuration for the child workflow.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 21;</code>
+     */
+    protected $time_skipping_config = null;
+    /**
+     * The time-skipping state propagated from the parent workflow. This can be nil if no time skipping
+     * has occurred or there is no previous run.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingStatePropagation time_skipping_state_propagation = 23;</code>
+     */
+    protected $time_skipping_state_propagation = null;
+    /**
+     * Versioning override requested for the child workflow. If present, this explicit override
+     * takes precedence over versioning behavior inherited from the parent workflow.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 24;</code>
+     */
+    protected $versioning_override = null;
 
     /**
      * Constructor.
@@ -162,6 +182,14 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      *           Deprecated. Only considered for versioning v0.2.
      *     @type \Temporal\Api\Common\V1\Priority $priority
      *           Priority metadata
+     *     @type \Temporal\Api\Common\V1\TimeSkippingConfig $time_skipping_config
+     *           The propagated time-skipping configuration for the child workflow.
+     *     @type \Temporal\Api\Common\V1\TimeSkippingStatePropagation $time_skipping_state_propagation
+     *           The time-skipping state propagated from the parent workflow. This can be nil if no time skipping
+     *           has occurred or there is no previous run.
+     *     @type \Temporal\Api\Workflow\V1\VersioningOverride $versioning_override
+     *           Versioning override requested for the child workflow. If present, this explicit override
+     *           takes precedence over versioning behavior inherited from the parent workflow.
      * }
      */
     public function __construct($data = NULL) {
@@ -777,6 +805,118 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Priority::class);
         $this->priority = $var;
+
+        return $this;
+    }
+
+    /**
+     * The propagated time-skipping configuration for the child workflow.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 21;</code>
+     * @return \Temporal\Api\Common\V1\TimeSkippingConfig|null
+     */
+    public function getTimeSkippingConfig()
+    {
+        return $this->time_skipping_config;
+    }
+
+    public function hasTimeSkippingConfig()
+    {
+        return isset($this->time_skipping_config);
+    }
+
+    public function clearTimeSkippingConfig()
+    {
+        unset($this->time_skipping_config);
+    }
+
+    /**
+     * The propagated time-skipping configuration for the child workflow.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 21;</code>
+     * @param \Temporal\Api\Common\V1\TimeSkippingConfig $var
+     * @return $this
+     */
+    public function setTimeSkippingConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\TimeSkippingConfig::class);
+        $this->time_skipping_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * The time-skipping state propagated from the parent workflow. This can be nil if no time skipping
+     * has occurred or there is no previous run.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingStatePropagation time_skipping_state_propagation = 23;</code>
+     * @return \Temporal\Api\Common\V1\TimeSkippingStatePropagation|null
+     */
+    public function getTimeSkippingStatePropagation()
+    {
+        return $this->time_skipping_state_propagation;
+    }
+
+    public function hasTimeSkippingStatePropagation()
+    {
+        return isset($this->time_skipping_state_propagation);
+    }
+
+    public function clearTimeSkippingStatePropagation()
+    {
+        unset($this->time_skipping_state_propagation);
+    }
+
+    /**
+     * The time-skipping state propagated from the parent workflow. This can be nil if no time skipping
+     * has occurred or there is no previous run.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingStatePropagation time_skipping_state_propagation = 23;</code>
+     * @param \Temporal\Api\Common\V1\TimeSkippingStatePropagation $var
+     * @return $this
+     */
+    public function setTimeSkippingStatePropagation($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\TimeSkippingStatePropagation::class);
+        $this->time_skipping_state_propagation = $var;
+
+        return $this;
+    }
+
+    /**
+     * Versioning override requested for the child workflow. If present, this explicit override
+     * takes precedence over versioning behavior inherited from the parent workflow.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 24;</code>
+     * @return \Temporal\Api\Workflow\V1\VersioningOverride|null
+     */
+    public function getVersioningOverride()
+    {
+        return $this->versioning_override;
+    }
+
+    public function hasVersioningOverride()
+    {
+        return isset($this->versioning_override);
+    }
+
+    public function clearVersioningOverride()
+    {
+        unset($this->versioning_override);
+    }
+
+    /**
+     * Versioning override requested for the child workflow. If present, this explicit override
+     * takes precedence over versioning behavior inherited from the parent workflow.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 24;</code>
+     * @param \Temporal\Api\Workflow\V1\VersioningOverride $var
+     * @return $this
+     */
+    public function setVersioningOverride($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\VersioningOverride::class);
+        $this->versioning_override = $var;
 
         return $this;
     }

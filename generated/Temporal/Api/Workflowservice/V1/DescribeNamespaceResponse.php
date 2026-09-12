@@ -41,6 +41,25 @@ class DescribeNamespaceResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .temporal.api.replication.v1.FailoverStatus failover_history = 6;</code>
      */
     private $failover_history;
+    /**
+     * Deprecated. Use `poller_groups_info` instead, which carries a version so the client can
+     * ignore stale updates.
+     * The initial info that client should use for poller group assignment. This information is
+     * updated through poll response. Client is supposed to use the info received in the latest
+     * poll response.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.taskqueue.v1.PollerGroupInfo poller_group_infos = 7 [deprecated = true];</code>
+     * @deprecated
+     */
+    private $poller_group_infos;
+    /**
+     * The initial, versioned info that client should use for poller group assignment. This
+     * information is updated through poll responses. Client is supposed to use the info with the
+     * highest version it has received.
+     *
+     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.PollerGroupsInfo poller_groups_info = 8;</code>
+     */
+    protected $poller_groups_info = null;
 
     /**
      * Constructor.
@@ -56,6 +75,16 @@ class DescribeNamespaceResponse extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Replication\V1\FailoverStatus[] $failover_history
      *           Contains the historical state of failover_versions for the cluster, truncated to contain only the last N
      *           states to ensure that the list does not grow unbounded.
+     *     @type \Temporal\Api\Taskqueue\V1\PollerGroupInfo[] $poller_group_infos
+     *           Deprecated. Use `poller_groups_info` instead, which carries a version so the client can
+     *           ignore stale updates.
+     *           The initial info that client should use for poller group assignment. This information is
+     *           updated through poll response. Client is supposed to use the info received in the latest
+     *           poll response.
+     *     @type \Temporal\Api\Taskqueue\V1\PollerGroupsInfo $poller_groups_info
+     *           The initial, versioned info that client should use for poller group assignment. This
+     *           information is updated through poll responses. Client is supposed to use the info with the
+     *           highest version it has received.
      * }
      */
     public function __construct($data = NULL) {
@@ -227,6 +256,88 @@ class DescribeNamespaceResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Replication\V1\FailoverStatus::class);
         $this->failover_history = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Deprecated. Use `poller_groups_info` instead, which carries a version so the client can
+     * ignore stale updates.
+     * The initial info that client should use for poller group assignment. This information is
+     * updated through poll response. Client is supposed to use the info received in the latest
+     * poll response.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.taskqueue.v1.PollerGroupInfo poller_group_infos = 7 [deprecated = true];</code>
+     * @return RepeatedField<\Temporal\Api\Taskqueue\V1\PollerGroupInfo>
+     * @deprecated
+     */
+    public function getPollerGroupInfos()
+    {
+        if ($this->poller_group_infos->count() !== 0) {
+            @trigger_error('poller_group_infos is deprecated.', E_USER_DEPRECATED);
+        }
+        return $this->poller_group_infos;
+    }
+
+    /**
+     * Deprecated. Use `poller_groups_info` instead, which carries a version so the client can
+     * ignore stale updates.
+     * The initial info that client should use for poller group assignment. This information is
+     * updated through poll response. Client is supposed to use the info received in the latest
+     * poll response.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.taskqueue.v1.PollerGroupInfo poller_group_infos = 7 [deprecated = true];</code>
+     * @param \Temporal\Api\Taskqueue\V1\PollerGroupInfo[] $var
+     * @return $this
+     * @deprecated
+     */
+    public function setPollerGroupInfos($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Taskqueue\V1\PollerGroupInfo::class);
+        if ($arr->count() !== 0) {
+            @trigger_error('poller_group_infos is deprecated.', E_USER_DEPRECATED);
+        }
+        $this->poller_group_infos = $arr;
+
+        return $this;
+    }
+
+    /**
+     * The initial, versioned info that client should use for poller group assignment. This
+     * information is updated through poll responses. Client is supposed to use the info with the
+     * highest version it has received.
+     *
+     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.PollerGroupsInfo poller_groups_info = 8;</code>
+     * @return \Temporal\Api\Taskqueue\V1\PollerGroupsInfo|null
+     */
+    public function getPollerGroupsInfo()
+    {
+        return $this->poller_groups_info;
+    }
+
+    public function hasPollerGroupsInfo()
+    {
+        return isset($this->poller_groups_info);
+    }
+
+    public function clearPollerGroupsInfo()
+    {
+        unset($this->poller_groups_info);
+    }
+
+    /**
+     * The initial, versioned info that client should use for poller group assignment. This
+     * information is updated through poll responses. Client is supposed to use the info with the
+     * highest version it has received.
+     *
+     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.PollerGroupsInfo poller_groups_info = 8;</code>
+     * @param \Temporal\Api\Taskqueue\V1\PollerGroupsInfo $var
+     * @return $this
+     */
+    public function setPollerGroupsInfo($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\PollerGroupsInfo::class);
+        $this->poller_groups_info = $var;
 
         return $this;
     }

@@ -123,7 +123,8 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      */
     protected $last_deployment_version = null;
     /**
-     * Priority metadata
+     * Priority metadata. If this message is not present, or any fields are not
+     * present, they inherit the values from the workflow.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 22;</code>
      */
@@ -191,7 +192,8 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
      *           The Worker Deployment Version this activity was dispatched to most recently.
      *           If nil, the activity has not yet been dispatched or was last dispatched to an unversioned worker.
      *     @type \Temporal\Api\Common\V1\Priority $priority
-     *           Priority metadata
+     *           Priority metadata. If this message is not present, or any fields are not
+     *           present, they inherit the values from the workflow.
      *     @type \Temporal\Api\Workflow\V1\PendingActivityInfo\PauseInfo $pause_info
      *     @type \Temporal\Api\Activity\V1\ActivityOptions $activity_options
      *           Current activity options. May be different from the one used to start the activity.
@@ -935,7 +937,8 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Priority metadata
+     * Priority metadata. If this message is not present, or any fields are not
+     * present, they inherit the values from the workflow.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 22;</code>
      * @return \Temporal\Api\Common\V1\Priority|null
@@ -956,7 +959,8 @@ class PendingActivityInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Priority metadata
+     * Priority metadata. If this message is not present, or any fields are not
+     * present, they inherit the values from the workflow.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 22;</code>
      * @param \Temporal\Api\Common\V1\Priority $var

@@ -31,11 +31,25 @@ class RespondNexusTaskFailedRequest extends \Google\Protobuf\Internal\Message
      */
     protected $task_token = '';
     /**
-     * The error the handler failed with.
+     * Deprecated. Use the failure field instead.
      *
-     * Generated from protobuf field <code>.temporal.api.nexus.v1.HandlerError error = 4;</code>
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.HandlerError error = 4 [deprecated = true];</code>
+     * @deprecated
      */
     protected $error = null;
+    /**
+     * The error the handler failed with. Must contain a NexusHandlerFailureInfo object.
+     *
+     * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 5;</code>
+     */
+    protected $failure = null;
+    /**
+     * Client must forward the poller_group_id received in PollNexusTaskQueueResponse for proper
+     * routing of the response.
+     *
+     * Generated from protobuf field <code>string poller_group_id = 6;</code>
+     */
+    protected $poller_group_id = '';
 
     /**
      * Constructor.
@@ -49,7 +63,12 @@ class RespondNexusTaskFailedRequest extends \Google\Protobuf\Internal\Message
      *     @type string $task_token
      *           A unique identifier for this task.
      *     @type \Temporal\Api\Nexus\V1\HandlerError $error
-     *           The error the handler failed with.
+     *           Deprecated. Use the failure field instead.
+     *     @type \Temporal\Api\Failure\V1\Failure $failure
+     *           The error the handler failed with. Must contain a NexusHandlerFailureInfo object.
+     *     @type string $poller_group_id
+     *           Client must forward the poller_group_id received in PollNexusTaskQueueResponse for proper
+     *           routing of the response.
      * }
      */
     public function __construct($data = NULL) {
@@ -132,37 +151,111 @@ class RespondNexusTaskFailedRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The error the handler failed with.
+     * Deprecated. Use the failure field instead.
      *
-     * Generated from protobuf field <code>.temporal.api.nexus.v1.HandlerError error = 4;</code>
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.HandlerError error = 4 [deprecated = true];</code>
      * @return \Temporal\Api\Nexus\V1\HandlerError|null
+     * @deprecated
      */
     public function getError()
     {
+        if (isset($this->error)) {
+            @trigger_error('error is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->error;
     }
 
     public function hasError()
     {
+        if (isset($this->error)) {
+            @trigger_error('error is deprecated.', E_USER_DEPRECATED);
+        }
         return isset($this->error);
     }
 
     public function clearError()
     {
+        @trigger_error('error is deprecated.', E_USER_DEPRECATED);
         unset($this->error);
     }
 
     /**
-     * The error the handler failed with.
+     * Deprecated. Use the failure field instead.
      *
-     * Generated from protobuf field <code>.temporal.api.nexus.v1.HandlerError error = 4;</code>
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.HandlerError error = 4 [deprecated = true];</code>
      * @param \Temporal\Api\Nexus\V1\HandlerError $var
      * @return $this
+     * @deprecated
      */
     public function setError($var)
     {
+        @trigger_error('error is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\HandlerError::class);
         $this->error = $var;
+
+        return $this;
+    }
+
+    /**
+     * The error the handler failed with. Must contain a NexusHandlerFailureInfo object.
+     *
+     * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 5;</code>
+     * @return \Temporal\Api\Failure\V1\Failure|null
+     */
+    public function getFailure()
+    {
+        return $this->failure;
+    }
+
+    public function hasFailure()
+    {
+        return isset($this->failure);
+    }
+
+    public function clearFailure()
+    {
+        unset($this->failure);
+    }
+
+    /**
+     * The error the handler failed with. Must contain a NexusHandlerFailureInfo object.
+     *
+     * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 5;</code>
+     * @param \Temporal\Api\Failure\V1\Failure $var
+     * @return $this
+     */
+    public function setFailure($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
+        $this->failure = $var;
+
+        return $this;
+    }
+
+    /**
+     * Client must forward the poller_group_id received in PollNexusTaskQueueResponse for proper
+     * routing of the response.
+     *
+     * Generated from protobuf field <code>string poller_group_id = 6;</code>
+     * @return string
+     */
+    public function getPollerGroupId()
+    {
+        return $this->poller_group_id;
+    }
+
+    /**
+     * Client must forward the poller_group_id received in PollNexusTaskQueueResponse for proper
+     * routing of the response.
+     *
+     * Generated from protobuf field <code>string poller_group_id = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPollerGroupId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->poller_group_id = $var;
 
         return $this;
     }

@@ -24,8 +24,13 @@ class SetWorkerDeploymentManagerResponse extends \Google\Protobuf\Internal\Messa
     protected $conflict_token = '';
     /**
      * What the `manager_identity` field was before this change.
+     * Deprecated in favor of idempotency of the API. Use `DescribeWorkerDeployment` to get the
+     * manager identity before calling this API. By passing the `conflict_token` got from the
+     * `DescribeWorkerDeployment` call to this API you can ensure there is no interfering changes
+     * between the two calls.
      *
-     * Generated from protobuf field <code>string previous_manager_identity = 2;</code>
+     * Generated from protobuf field <code>string previous_manager_identity = 2 [deprecated = true];</code>
+     * @deprecated
      */
     protected $previous_manager_identity = '';
 
@@ -41,6 +46,10 @@ class SetWorkerDeploymentManagerResponse extends \Google\Protobuf\Internal\Messa
      *           did not change between this API call and a future write.
      *     @type string $previous_manager_identity
      *           What the `manager_identity` field was before this change.
+     *           Deprecated in favor of idempotency of the API. Use `DescribeWorkerDeployment` to get the
+     *           manager identity before calling this API. By passing the `conflict_token` got from the
+     *           `DescribeWorkerDeployment` call to this API you can ensure there is no interfering changes
+     *           between the two calls.
      * }
      */
     public function __construct($data = NULL) {
@@ -80,24 +89,38 @@ class SetWorkerDeploymentManagerResponse extends \Google\Protobuf\Internal\Messa
 
     /**
      * What the `manager_identity` field was before this change.
+     * Deprecated in favor of idempotency of the API. Use `DescribeWorkerDeployment` to get the
+     * manager identity before calling this API. By passing the `conflict_token` got from the
+     * `DescribeWorkerDeployment` call to this API you can ensure there is no interfering changes
+     * between the two calls.
      *
-     * Generated from protobuf field <code>string previous_manager_identity = 2;</code>
+     * Generated from protobuf field <code>string previous_manager_identity = 2 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getPreviousManagerIdentity()
     {
+        if ($this->previous_manager_identity !== '') {
+            @trigger_error('previous_manager_identity is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->previous_manager_identity;
     }
 
     /**
      * What the `manager_identity` field was before this change.
+     * Deprecated in favor of idempotency of the API. Use `DescribeWorkerDeployment` to get the
+     * manager identity before calling this API. By passing the `conflict_token` got from the
+     * `DescribeWorkerDeployment` call to this API you can ensure there is no interfering changes
+     * between the two calls.
      *
-     * Generated from protobuf field <code>string previous_manager_identity = 2;</code>
+     * Generated from protobuf field <code>string previous_manager_identity = 2 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setPreviousManagerIdentity($var)
     {
+        @trigger_error('previous_manager_identity is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->previous_manager_identity = $var;
 

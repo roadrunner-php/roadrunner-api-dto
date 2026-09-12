@@ -32,13 +32,15 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      */
     protected $event_type = 0;
     /**
-     * TODO: What is this? Appears unused by SDKs
+     * Failover version of the event, used by the server for multi-cluster replication and history
+     * versioning. SDKs generally ignore this field.
      *
      * Generated from protobuf field <code>int64 version = 4;</code>
      */
     protected $version = 0;
     /**
-     * TODO: What is this? Appears unused by SDKs
+     * Identifier used by the service to order replication and transfer tasks associated with this
+     * event. SDKs generally ignore this field.
      *
      * Generated from protobuf field <code>int64 task_id = 5;</code>
      */
@@ -65,11 +67,23 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      */
     protected $user_metadata = null;
     /**
-     * Links associated with the event.
+     * Links to related entities, such as the entity that started this event's workflow.
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 302;</code>
      */
     private $links;
+    /**
+     * Server-computed authenticated caller identity associated with this event.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Principal principal = 303;</code>
+     */
+    protected $principal = null;
+    /**
+     * Event group markers attached to this event.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.sdk.v1.EventGroupMarker event_group_markers = 304;</code>
+     */
+    private $event_group_markers;
     protected $attributes;
 
     /**
@@ -83,9 +97,11 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $event_time
      *     @type int $event_type
      *     @type int|string $version
-     *           TODO: What is this? Appears unused by SDKs
+     *           Failover version of the event, used by the server for multi-cluster replication and history
+     *           versioning. SDKs generally ignore this field.
      *     @type int|string $task_id
-     *           TODO: What is this? Appears unused by SDKs
+     *           Identifier used by the service to order replication and transfer tasks associated with this
+     *           event. SDKs generally ignore this field.
      *     @type bool $worker_may_ignore
      *           Set to true when the SDK may ignore the event as it does not impact workflow state or
      *           information in any way that the SDK need be concerned with. If an SDK encounters an event
@@ -100,7 +116,11 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      *            * timer_started_event_attributes - summary represents an identifier for the timer for use by
      *              user interfaces.
      *     @type \Temporal\Api\Common\V1\Link[] $links
-     *           Links associated with the event.
+     *           Links to related entities, such as the entity that started this event's workflow.
+     *     @type \Temporal\Api\Common\V1\Principal $principal
+     *           Server-computed authenticated caller identity associated with this event.
+     *     @type \Temporal\Api\Sdk\V1\EventGroupMarker[] $event_group_markers
+     *           Event group markers attached to this event.
      *     @type \Temporal\Api\History\V1\WorkflowExecutionStartedEventAttributes $workflow_execution_started_event_attributes
      *     @type \Temporal\Api\History\V1\WorkflowExecutionCompletedEventAttributes $workflow_execution_completed_event_attributes
      *     @type \Temporal\Api\History\V1\WorkflowExecutionFailedEventAttributes $workflow_execution_failed_event_attributes
@@ -158,6 +178,9 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\History\V1\WorkflowExecutionOptionsUpdatedEventAttributes $workflow_execution_options_updated_event_attributes
      *     @type \Temporal\Api\History\V1\NexusOperationCancelRequestCompletedEventAttributes $nexus_operation_cancel_request_completed_event_attributes
      *     @type \Temporal\Api\History\V1\NexusOperationCancelRequestFailedEventAttributes $nexus_operation_cancel_request_failed_event_attributes
+     *     @type \Temporal\Api\History\V1\WorkflowExecutionPausedEventAttributes $workflow_execution_paused_event_attributes
+     *     @type \Temporal\Api\History\V1\WorkflowExecutionUnpausedEventAttributes $workflow_execution_unpaused_event_attributes
+     *     @type \Temporal\Api\History\V1\WorkflowExecutionTimeSkippingTransitionedEventAttributes $workflow_execution_time_skipping_transitioned_event_attributes
      * }
      */
     public function __construct($data = NULL) {
@@ -246,7 +269,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * TODO: What is this? Appears unused by SDKs
+     * Failover version of the event, used by the server for multi-cluster replication and history
+     * versioning. SDKs generally ignore this field.
      *
      * Generated from protobuf field <code>int64 version = 4;</code>
      * @return int|string
@@ -257,7 +281,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * TODO: What is this? Appears unused by SDKs
+     * Failover version of the event, used by the server for multi-cluster replication and history
+     * versioning. SDKs generally ignore this field.
      *
      * Generated from protobuf field <code>int64 version = 4;</code>
      * @param int|string $var
@@ -272,7 +297,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * TODO: What is this? Appears unused by SDKs
+     * Identifier used by the service to order replication and transfer tasks associated with this
+     * event. SDKs generally ignore this field.
      *
      * Generated from protobuf field <code>int64 task_id = 5;</code>
      * @return int|string
@@ -283,7 +309,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * TODO: What is this? Appears unused by SDKs
+     * Identifier used by the service to order replication and transfer tasks associated with this
+     * event. SDKs generally ignore this field.
      *
      * Generated from protobuf field <code>int64 task_id = 5;</code>
      * @param int|string $var
@@ -378,7 +405,7 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Links associated with the event.
+     * Links to related entities, such as the entity that started this event's workflow.
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 302;</code>
      * @return RepeatedField<\Temporal\Api\Common\V1\Link>
@@ -389,7 +416,7 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Links associated with the event.
+     * Links to related entities, such as the entity that started this event's workflow.
      *
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 302;</code>
      * @param \Temporal\Api\Common\V1\Link[] $var
@@ -399,6 +426,68 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Link::class);
         $this->links = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Server-computed authenticated caller identity associated with this event.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Principal principal = 303;</code>
+     * @return \Temporal\Api\Common\V1\Principal|null
+     */
+    public function getPrincipal()
+    {
+        return $this->principal;
+    }
+
+    public function hasPrincipal()
+    {
+        return isset($this->principal);
+    }
+
+    public function clearPrincipal()
+    {
+        unset($this->principal);
+    }
+
+    /**
+     * Server-computed authenticated caller identity associated with this event.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Principal principal = 303;</code>
+     * @param \Temporal\Api\Common\V1\Principal $var
+     * @return $this
+     */
+    public function setPrincipal($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Principal::class);
+        $this->principal = $var;
+
+        return $this;
+    }
+
+    /**
+     * Event group markers attached to this event.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.sdk.v1.EventGroupMarker event_group_markers = 304;</code>
+     * @return RepeatedField<\Temporal\Api\Sdk\V1\EventGroupMarker>
+     */
+    public function getEventGroupMarkers()
+    {
+        return $this->event_group_markers;
+    }
+
+    /**
+     * Event group markers attached to this event.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.sdk.v1.EventGroupMarker event_group_markers = 304;</code>
+     * @param \Temporal\Api\Sdk\V1\EventGroupMarker[] $var
+     * @return $this
+     */
+    public function setEventGroupMarkers($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Sdk\V1\EventGroupMarker::class);
+        $this->event_group_markers = $arr;
 
         return $this;
     }
@@ -1938,6 +2027,87 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\History\V1\NexusOperationCancelRequestFailedEventAttributes::class);
         $this->writeOneof(62, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.history.v1.WorkflowExecutionPausedEventAttributes workflow_execution_paused_event_attributes = 63;</code>
+     * @return \Temporal\Api\History\V1\WorkflowExecutionPausedEventAttributes|null
+     */
+    public function getWorkflowExecutionPausedEventAttributes()
+    {
+        return $this->readOneof(63);
+    }
+
+    public function hasWorkflowExecutionPausedEventAttributes()
+    {
+        return $this->hasOneof(63);
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.history.v1.WorkflowExecutionPausedEventAttributes workflow_execution_paused_event_attributes = 63;</code>
+     * @param \Temporal\Api\History\V1\WorkflowExecutionPausedEventAttributes $var
+     * @return $this
+     */
+    public function setWorkflowExecutionPausedEventAttributes($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\WorkflowExecutionPausedEventAttributes::class);
+        $this->writeOneof(63, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.history.v1.WorkflowExecutionUnpausedEventAttributes workflow_execution_unpaused_event_attributes = 64;</code>
+     * @return \Temporal\Api\History\V1\WorkflowExecutionUnpausedEventAttributes|null
+     */
+    public function getWorkflowExecutionUnpausedEventAttributes()
+    {
+        return $this->readOneof(64);
+    }
+
+    public function hasWorkflowExecutionUnpausedEventAttributes()
+    {
+        return $this->hasOneof(64);
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.history.v1.WorkflowExecutionUnpausedEventAttributes workflow_execution_unpaused_event_attributes = 64;</code>
+     * @param \Temporal\Api\History\V1\WorkflowExecutionUnpausedEventAttributes $var
+     * @return $this
+     */
+    public function setWorkflowExecutionUnpausedEventAttributes($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\WorkflowExecutionUnpausedEventAttributes::class);
+        $this->writeOneof(64, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.history.v1.WorkflowExecutionTimeSkippingTransitionedEventAttributes workflow_execution_time_skipping_transitioned_event_attributes = 65;</code>
+     * @return \Temporal\Api\History\V1\WorkflowExecutionTimeSkippingTransitionedEventAttributes|null
+     */
+    public function getWorkflowExecutionTimeSkippingTransitionedEventAttributes()
+    {
+        return $this->readOneof(65);
+    }
+
+    public function hasWorkflowExecutionTimeSkippingTransitionedEventAttributes()
+    {
+        return $this->hasOneof(65);
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.history.v1.WorkflowExecutionTimeSkippingTransitionedEventAttributes workflow_execution_time_skipping_transitioned_event_attributes = 65;</code>
+     * @param \Temporal\Api\History\V1\WorkflowExecutionTimeSkippingTransitionedEventAttributes $var
+     * @return $this
+     */
+    public function setWorkflowExecutionTimeSkippingTransitionedEventAttributes($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\History\V1\WorkflowExecutionTimeSkippingTransitionedEventAttributes::class);
+        $this->writeOneof(65, $var);
 
         return $this;
     }

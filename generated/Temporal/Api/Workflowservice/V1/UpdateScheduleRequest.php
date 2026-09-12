@@ -64,6 +64,14 @@ class UpdateScheduleRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.common.v1.SearchAttributes search_attributes = 7;</code>
      */
     protected $search_attributes = null;
+    /**
+     * Schedule memo to replace. If set, replaces the entire memo.
+     * Do not set this field if you do not want to update the memo.
+     * A non-null empty object will clear the memo.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Memo memo = 8;</code>
+     */
+    protected $memo = null;
 
     /**
      * Constructor.
@@ -93,6 +101,10 @@ class UpdateScheduleRequest extends \Google\Protobuf\Internal\Message
      *           A non-null empty object will set the search attributes to an empty map.
      *           Note: you cannot only update the search attributes with `UpdateScheduleRequest`,
      *           you must also set the `schedule` field; otherwise, it will unset the schedule.
+     *     @type \Temporal\Api\Common\V1\Memo $memo
+     *           Schedule memo to replace. If set, replaces the entire memo.
+     *           Do not set this field if you do not want to update the memo.
+     *           A non-null empty object will clear the memo.
      * }
      */
     public function __construct($data = NULL) {
@@ -314,6 +326,46 @@ class UpdateScheduleRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\SearchAttributes::class);
         $this->search_attributes = $var;
+
+        return $this;
+    }
+
+    /**
+     * Schedule memo to replace. If set, replaces the entire memo.
+     * Do not set this field if you do not want to update the memo.
+     * A non-null empty object will clear the memo.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Memo memo = 8;</code>
+     * @return \Temporal\Api\Common\V1\Memo|null
+     */
+    public function getMemo()
+    {
+        return $this->memo;
+    }
+
+    public function hasMemo()
+    {
+        return isset($this->memo);
+    }
+
+    public function clearMemo()
+    {
+        unset($this->memo);
+    }
+
+    /**
+     * Schedule memo to replace. If set, replaces the entire memo.
+     * Do not set this field if you do not want to update the memo.
+     * A non-null empty object will clear the memo.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Memo memo = 8;</code>
+     * @param \Temporal\Api\Common\V1\Memo $var
+     * @return $this
+     */
+    public function setMemo($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Memo::class);
+        $this->memo = $var;
 
         return $this;
     }

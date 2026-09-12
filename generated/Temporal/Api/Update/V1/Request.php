@@ -24,6 +24,24 @@ class Request extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.update.v1.Input input = 2;</code>
      */
     protected $input = null;
+    /**
+     * The request ID of the request.
+     *
+     * Generated from protobuf field <code>string request_id = 3;</code>
+     */
+    protected $request_id = '';
+    /**
+     * Callbacks to be called by the server when this update reaches a terminal state.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Callback completion_callbacks = 4;</code>
+     */
+    private $completion_callbacks;
+    /**
+     * Links to be associated with this update.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 5;</code>
+     */
+    private $links;
 
     /**
      * Constructor.
@@ -33,6 +51,12 @@ class Request extends \Google\Protobuf\Internal\Message
      *
      *     @type \Temporal\Api\Update\V1\Meta $meta
      *     @type \Temporal\Api\Update\V1\Input $input
+     *     @type string $request_id
+     *           The request ID of the request.
+     *     @type \Temporal\Api\Common\V1\Callback[] $completion_callbacks
+     *           Callbacks to be called by the server when this update reaches a terminal state.
+     *     @type \Temporal\Api\Common\V1\Link[] $links
+     *           Links to be associated with this update.
      * }
      */
     public function __construct($data = NULL) {
@@ -100,6 +124,84 @@ class Request extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Update\V1\Input::class);
         $this->input = $var;
+
+        return $this;
+    }
+
+    /**
+     * The request ID of the request.
+     *
+     * Generated from protobuf field <code>string request_id = 3;</code>
+     * @return string
+     */
+    public function getRequestId()
+    {
+        return $this->request_id;
+    }
+
+    /**
+     * The request ID of the request.
+     *
+     * Generated from protobuf field <code>string request_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRequestId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->request_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Callbacks to be called by the server when this update reaches a terminal state.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Callback completion_callbacks = 4;</code>
+     * @return RepeatedField<\Temporal\Api\Common\V1\Callback>
+     */
+    public function getCompletionCallbacks()
+    {
+        return $this->completion_callbacks;
+    }
+
+    /**
+     * Callbacks to be called by the server when this update reaches a terminal state.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Callback completion_callbacks = 4;</code>
+     * @param \Temporal\Api\Common\V1\Callback[] $var
+     * @return $this
+     */
+    public function setCompletionCallbacks($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Callback::class);
+        $this->completion_callbacks = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Links to be associated with this update.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 5;</code>
+     * @return RepeatedField<\Temporal\Api\Common\V1\Link>
+     */
+    public function getLinks()
+    {
+        return $this->links;
+    }
+
+    /**
+     * Links to be associated with this update.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 5;</code>
+     * @param \Temporal\Api\Common\V1\Link[] $var
+     * @return $this
+     */
+    public function setLinks($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Link::class);
+        $this->links = $arr;
 
         return $this;
     }

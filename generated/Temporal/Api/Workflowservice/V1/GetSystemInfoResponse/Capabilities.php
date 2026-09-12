@@ -90,6 +90,22 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool nexus = 11;</code>
      */
     protected $nexus = false;
+    /**
+     * True if the server supports server-scaled deployments.
+     * This flag is dependent both on server version and for server-scaled deployments
+     * to be enabled via server configuration.
+     *
+     * Generated from protobuf field <code>bool server_scaled_deployments = 12;</code>
+     */
+    protected $server_scaled_deployments = false;
+    /**
+     * True if the server supports the Cloud Run compute provider for
+     * server-scaled deployments. Dependent on server version and the
+     * provider being enabled via server configuration.
+     *
+     * Generated from protobuf field <code>bool server_scaled_provider_cloud_run = 13;</code>
+     */
+    protected $server_scaled_provider_cloud_run = false;
 
     /**
      * Constructor.
@@ -127,6 +143,14 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      *     @type bool $nexus
      *           True if the server supports Nexus operations.
      *           This flag is dependent both on server version and for Nexus to be enabled via server configuration.
+     *     @type bool $server_scaled_deployments
+     *           True if the server supports server-scaled deployments.
+     *           This flag is dependent both on server version and for server-scaled deployments
+     *           to be enabled via server configuration.
+     *     @type bool $server_scaled_provider_cloud_run
+     *           True if the server supports the Cloud Run compute provider for
+     *           server-scaled deployments. Dependent on server version and the
+     *           provider being enabled via server configuration.
      * }
      */
     public function __construct($data = NULL) {
@@ -432,6 +456,66 @@ class Capabilities extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->nexus = $var;
+
+        return $this;
+    }
+
+    /**
+     * True if the server supports server-scaled deployments.
+     * This flag is dependent both on server version and for server-scaled deployments
+     * to be enabled via server configuration.
+     *
+     * Generated from protobuf field <code>bool server_scaled_deployments = 12;</code>
+     * @return bool
+     */
+    public function getServerScaledDeployments()
+    {
+        return $this->server_scaled_deployments;
+    }
+
+    /**
+     * True if the server supports server-scaled deployments.
+     * This flag is dependent both on server version and for server-scaled deployments
+     * to be enabled via server configuration.
+     *
+     * Generated from protobuf field <code>bool server_scaled_deployments = 12;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setServerScaledDeployments($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->server_scaled_deployments = $var;
+
+        return $this;
+    }
+
+    /**
+     * True if the server supports the Cloud Run compute provider for
+     * server-scaled deployments. Dependent on server version and the
+     * provider being enabled via server configuration.
+     *
+     * Generated from protobuf field <code>bool server_scaled_provider_cloud_run = 13;</code>
+     * @return bool
+     */
+    public function getServerScaledProviderCloudRun()
+    {
+        return $this->server_scaled_provider_cloud_run;
+    }
+
+    /**
+     * True if the server supports the Cloud Run compute provider for
+     * server-scaled deployments. Dependent on server version and the
+     * provider being enabled via server configuration.
+     *
+     * Generated from protobuf field <code>bool server_scaled_provider_cloud_run = 13;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setServerScaledProviderCloudRun($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->server_scaled_provider_cloud_run = $var;
 
         return $this;
     }

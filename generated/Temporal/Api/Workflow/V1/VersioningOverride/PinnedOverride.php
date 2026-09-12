@@ -22,7 +22,12 @@ class PinnedOverride extends \Google\Protobuf\Internal\Message
      */
     protected $behavior = 0;
     /**
-     * Required.
+     * Specifies the Worker Deployment Version to pin this workflow to.
+     * Required if the target workflow is not already pinned to a version.
+     * If omitted and the target workflow is already pinned, the effective
+     * pinned version will be the existing pinned version.
+     * If omitted and the target workflow is not pinned, the override request
+     * will be rejected with a PreconditionFailed error.
      *
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion version = 2;</code>
      */
@@ -38,7 +43,12 @@ class PinnedOverride extends \Google\Protobuf\Internal\Message
      *           Defaults to PINNED_OVERRIDE_BEHAVIOR_UNSPECIFIED.
      *           See `PinnedOverrideBehavior` for details.
      *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $version
-     *           Required.
+     *           Specifies the Worker Deployment Version to pin this workflow to.
+     *           Required if the target workflow is not already pinned to a version.
+     *           If omitted and the target workflow is already pinned, the effective
+     *           pinned version will be the existing pinned version.
+     *           If omitted and the target workflow is not pinned, the override request
+     *           will be rejected with a PreconditionFailed error.
      * }
      */
     public function __construct($data = NULL) {
@@ -75,7 +85,12 @@ class PinnedOverride extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required.
+     * Specifies the Worker Deployment Version to pin this workflow to.
+     * Required if the target workflow is not already pinned to a version.
+     * If omitted and the target workflow is already pinned, the effective
+     * pinned version will be the existing pinned version.
+     * If omitted and the target workflow is not pinned, the override request
+     * will be rejected with a PreconditionFailed error.
      *
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion version = 2;</code>
      * @return \Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null
@@ -96,7 +111,12 @@ class PinnedOverride extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required.
+     * Specifies the Worker Deployment Version to pin this workflow to.
+     * Required if the target workflow is not already pinned to a version.
+     * If omitted and the target workflow is already pinned, the effective
+     * pinned version will be the existing pinned version.
+     * If omitted and the target workflow is not pinned, the override request
+     * will be rejected with a PreconditionFailed error.
      *
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion version = 2;</code>
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var

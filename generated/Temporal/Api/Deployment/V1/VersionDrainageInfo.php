@@ -12,7 +12,6 @@ use Google\Protobuf\RepeatedField;
 /**
  * Information about workflow drainage to help the user determine when it is safe
  * to decommission a Version. Not present while version is current or ramping.
- * Experimental. Worker Deployments are experimental and might significantly change in the future.
  *
  * Generated from protobuf message <code>temporal.api.deployment.v1.VersionDrainageInfo</code>
  */

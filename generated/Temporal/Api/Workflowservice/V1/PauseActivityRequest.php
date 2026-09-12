@@ -10,6 +10,8 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
+ * Deprecated. Use `PauseActivityExecutionRequest`.
+ *
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.PauseActivityRequest</code>
  */
 class PauseActivityRequest extends \Google\Protobuf\Internal\Message
@@ -38,6 +40,12 @@ class PauseActivityRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string reason = 6;</code>
      */
     protected $reason = '';
+    /**
+     * Used to de-dupe pause requests.
+     *
+     * Generated from protobuf field <code>string request_id = 7;</code>
+     */
+    protected $request_id = '';
     protected $activity;
 
     /**
@@ -59,6 +67,8 @@ class PauseActivityRequest extends \Google\Protobuf\Internal\Message
      *           Note: Experimental - the behavior of pause by activity type might change in a future release.
      *     @type string $reason
      *           Reason to pause the activity.
+     *     @type string $request_id
+     *           Used to de-dupe pause requests.
      * }
      */
     public function __construct($data = NULL) {
@@ -240,6 +250,32 @@ class PauseActivityRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->reason = $var;
+
+        return $this;
+    }
+
+    /**
+     * Used to de-dupe pause requests.
+     *
+     * Generated from protobuf field <code>string request_id = 7;</code>
+     * @return string
+     */
+    public function getRequestId()
+    {
+        return $this->request_id;
+    }
+
+    /**
+     * Used to de-dupe pause requests.
+     *
+     * Generated from protobuf field <code>string request_id = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRequestId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->request_id = $var;
 
         return $this;
     }

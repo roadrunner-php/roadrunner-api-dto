@@ -11,12 +11,12 @@ use Google\Protobuf\RepeatedField;
 
 /**
  * Used to override the versioning behavior (and pinned deployment version, if applicable) of a
- * specific workflow execution. If set, takes precedence over the worker-sent values. See
- * `WorkflowExecutionInfo.VersioningInfo` for more information. To remove the override, call
- * `UpdateWorkflowExecutionOptions` with a null `VersioningOverride`, and use the `update_mask`
- * to indicate that it should be mutated.
- * Pinned overrides are automatically inherited by child workflows, continue-as-new workflows,
- * workflow retries, and cron workflows.
+ * specific workflow execution. If set, this override takes precedence over worker-sent values.
+ * See `WorkflowExecutionInfo.VersioningInfo` for more information.
+ * To remove the override, call `UpdateWorkflowExecutionOptions` with a null
+ * `VersioningOverride`, and use the `update_mask` to indicate that it should be mutated.
+ * Pinned behavior overrides are automatically inherited by child workflows, workflow retries, continue-as-new
+ * workflows, and cron workflows.
  *
  * Generated from protobuf message <code>temporal.api.workflow.v1.VersioningOverride</code>
  */
@@ -58,10 +58,18 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Temporal\Api\Workflow\V1\VersioningOverride\PinnedOverride $pinned
-     *           Send the next workflow task to the Version specified in the override.
+     *           Override the workflow to have Pinned behavior. This is a sticky override:
+     *           Workflow Tasks continue to route according to this override until it is
+     *           explicitly removed.
      *     @type bool $auto_upgrade
-     *           Send the next workflow task to the Current Deployment Version
-     *           of its Task Queue when the next workflow task is dispatched.
+     *           Override the workflow to have AutoUpgrade behavior.
+     *     @type \Temporal\Api\Workflow\V1\VersioningOverride\OneTimeOverride $one_time
+     *           Override Workflow Task routing to a specific Worker Deployment Version until
+     *           one Workflow Task completes there. After completion, the workflow execution's
+     *           Versioning Behavior and Deployment Version come from the worker's completion
+     *           response.
+     *           (-- api-linter: core::0142::time-field-type=disabled
+     *               aip.dev/not-precedent: one_time describes one-time routing semantics, not a timestamp or duration. --)
      *     @type int $behavior
      *           Required.
      *           Deprecated. Use `override`.
@@ -82,7 +90,9 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Send the next workflow task to the Version specified in the override.
+     * Override the workflow to have Pinned behavior. This is a sticky override:
+     * Workflow Tasks continue to route according to this override until it is
+     * explicitly removed.
      *
      * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride.PinnedOverride pinned = 3;</code>
      * @return \Temporal\Api\Workflow\V1\VersioningOverride\PinnedOverride|null
@@ -98,7 +108,9 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Send the next workflow task to the Version specified in the override.
+     * Override the workflow to have Pinned behavior. This is a sticky override:
+     * Workflow Tasks continue to route according to this override until it is
+     * explicitly removed.
      *
      * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride.PinnedOverride pinned = 3;</code>
      * @param \Temporal\Api\Workflow\V1\VersioningOverride\PinnedOverride $var
@@ -113,8 +125,7 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Send the next workflow task to the Current Deployment Version
-     * of its Task Queue when the next workflow task is dispatched.
+     * Override the workflow to have AutoUpgrade behavior.
      *
      * Generated from protobuf field <code>bool auto_upgrade = 4;</code>
      * @return bool
@@ -130,8 +141,7 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Send the next workflow task to the Current Deployment Version
-     * of its Task Queue when the next workflow task is dispatched.
+     * Override the workflow to have AutoUpgrade behavior.
      *
      * Generated from protobuf field <code>bool auto_upgrade = 4;</code>
      * @param bool $var
@@ -141,6 +151,47 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->writeOneof(4, $var);
+
+        return $this;
+    }
+
+    /**
+     * Override Workflow Task routing to a specific Worker Deployment Version until
+     * one Workflow Task completes there. After completion, the workflow execution's
+     * Versioning Behavior and Deployment Version come from the worker's completion
+     * response.
+     * (-- api-linter: core::0142::time-field-type=disabled
+     *     aip.dev/not-precedent: one_time describes one-time routing semantics, not a timestamp or duration. --)
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride.OneTimeOverride one_time = 5;</code>
+     * @return \Temporal\Api\Workflow\V1\VersioningOverride\OneTimeOverride|null
+     */
+    public function getOneTime()
+    {
+        return $this->readOneof(5);
+    }
+
+    public function hasOneTime()
+    {
+        return $this->hasOneof(5);
+    }
+
+    /**
+     * Override Workflow Task routing to a specific Worker Deployment Version until
+     * one Workflow Task completes there. After completion, the workflow execution's
+     * Versioning Behavior and Deployment Version come from the worker's completion
+     * response.
+     * (-- api-linter: core::0142::time-field-type=disabled
+     *     aip.dev/not-precedent: one_time describes one-time routing semantics, not a timestamp or duration. --)
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride.OneTimeOverride one_time = 5;</code>
+     * @param \Temporal\Api\Workflow\V1\VersioningOverride\OneTimeOverride $var
+     * @return $this
+     */
+    public function setOneTime($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\VersioningOverride\OneTimeOverride::class);
+        $this->writeOneof(5, $var);
 
         return $this;
     }

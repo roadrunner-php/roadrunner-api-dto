@@ -10,6 +10,8 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
+ * Representation of the Temporal SDK NexusOperationError object that is returned to workflow callers.
+ *
  * Generated from protobuf message <code>temporal.api.failure.v1.NexusOperationFailureInfo</code>
  */
 class NexusOperationFailureInfo extends \Google\Protobuf\Internal\Message

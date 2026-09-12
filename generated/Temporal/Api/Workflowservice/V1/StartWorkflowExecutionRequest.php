@@ -129,8 +129,8 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      */
     protected $last_completion_result = null;
     /**
-     * Time to wait before dispatching the first workflow task. Cannot be used with `cron_schedule`.
-     * If the workflow gets a signal before the delay, a workflow task will be dispatched and the rest
+     * Time to wait before making the first workflow task available for dispatch. Cannot be used with `cron_schedule`.
+     * If the workflow gets a signal before the delay, a workflow task will be made available for dispatch and the rest
      * of the delay will be ignored.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration workflow_start_delay = 20;</code>
@@ -186,6 +186,12 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentOptions eager_worker_deployment_options = 28;</code>
      */
     protected $eager_worker_deployment_options = null;
+    /**
+     * Time-skipping configuration. If not set, time skipping is disabled.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 29;</code>
+     */
+    protected $time_skipping_config = null;
 
     /**
      * Constructor.
@@ -236,8 +242,8 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      *           StartWorkflowExecution.
      *     @type \Temporal\Api\Common\V1\Payloads $last_completion_result
      *     @type \Google\Protobuf\Duration $workflow_start_delay
-     *           Time to wait before dispatching the first workflow task. Cannot be used with `cron_schedule`.
-     *           If the workflow gets a signal before the delay, a workflow task will be dispatched and the rest
+     *           Time to wait before making the first workflow task available for dispatch. Cannot be used with `cron_schedule`.
+     *           If the workflow gets a signal before the delay, a workflow task will be made available for dispatch and the rest
      *           of the delay will be ignored.
      *     @type \Temporal\Api\Common\V1\Callback[] $completion_callbacks
      *           Callbacks to be called by the server when this workflow reaches a terminal state.
@@ -261,6 +267,8 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      *           Priority metadata
      *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentOptions $eager_worker_deployment_options
      *           Deployment Options of the worker who will process the eager task. Passed when `request_eager_execution=true`.
+     *     @type \Temporal\Api\Common\V1\TimeSkippingConfig $time_skipping_config
+     *           Time-skipping configuration. If not set, time skipping is disabled.
      * }
      */
     public function __construct($data = NULL) {
@@ -897,8 +905,8 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Time to wait before dispatching the first workflow task. Cannot be used with `cron_schedule`.
-     * If the workflow gets a signal before the delay, a workflow task will be dispatched and the rest
+     * Time to wait before making the first workflow task available for dispatch. Cannot be used with `cron_schedule`.
+     * If the workflow gets a signal before the delay, a workflow task will be made available for dispatch and the rest
      * of the delay will be ignored.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration workflow_start_delay = 20;</code>
@@ -920,8 +928,8 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Time to wait before dispatching the first workflow task. Cannot be used with `cron_schedule`.
-     * If the workflow gets a signal before the delay, a workflow task will be dispatched and the rest
+     * Time to wait before making the first workflow task available for dispatch. Cannot be used with `cron_schedule`.
+     * If the workflow gets a signal before the delay, a workflow task will be made available for dispatch and the rest
      * of the delay will be ignored.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration workflow_start_delay = 20;</code>
@@ -1180,6 +1188,42 @@ class StartWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentOptions::class);
         $this->eager_worker_deployment_options = $var;
+
+        return $this;
+    }
+
+    /**
+     * Time-skipping configuration. If not set, time skipping is disabled.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 29;</code>
+     * @return \Temporal\Api\Common\V1\TimeSkippingConfig|null
+     */
+    public function getTimeSkippingConfig()
+    {
+        return $this->time_skipping_config;
+    }
+
+    public function hasTimeSkippingConfig()
+    {
+        return isset($this->time_skipping_config);
+    }
+
+    public function clearTimeSkippingConfig()
+    {
+        unset($this->time_skipping_config);
+    }
+
+    /**
+     * Time-skipping configuration. If not set, time skipping is disabled.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 29;</code>
+     * @param \Temporal\Api\Common\V1\TimeSkippingConfig $var
+     * @return $this
+     */
+    public function setTimeSkippingConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\TimeSkippingConfig::class);
+        $this->time_skipping_config = $var;
 
         return $this;
     }

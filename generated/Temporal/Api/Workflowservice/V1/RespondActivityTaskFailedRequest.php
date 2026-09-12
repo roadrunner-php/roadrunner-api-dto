@@ -37,6 +37,12 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
      */
     protected $namespace = '';
     /**
+     * Resource ID for routing. Contains the workflow ID or activity ID for standalone activities.
+     *
+     * Generated from protobuf field <code>string resource_id = 9;</code>
+     */
+    protected $resource_id = '';
+    /**
      * Additional details to be stored as last activity heartbeat
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads last_heartbeat_details = 5;</code>
@@ -81,6 +87,8 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
      *     @type string $identity
      *           The identity of the worker/client
      *     @type string $namespace
+     *     @type string $resource_id
+     *           Resource ID for routing. Contains the workflow ID or activity ID for standalone activities.
      *     @type \Temporal\Api\Common\V1\Payloads $last_heartbeat_details
      *           Additional details to be stored as last activity heartbeat
      *     @type \Temporal\Api\Common\V1\WorkerVersionStamp $worker_version
@@ -207,6 +215,32 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->namespace = $var;
+
+        return $this;
+    }
+
+    /**
+     * Resource ID for routing. Contains the workflow ID or activity ID for standalone activities.
+     *
+     * Generated from protobuf field <code>string resource_id = 9;</code>
+     * @return string
+     */
+    public function getResourceId()
+    {
+        return $this->resource_id;
+    }
+
+    /**
+     * Resource ID for routing. Contains the workflow ID or activity ID for standalone activities.
+     *
+     * Generated from protobuf field <code>string resource_id = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setResourceId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->resource_id = $var;
 
         return $this;
     }

@@ -32,6 +32,12 @@ class Command extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.sdk.v1.UserMetadata user_metadata = 301;</code>
      */
     protected $user_metadata = null;
+    /**
+     * Event Group Markers attached to the command by the workflow author.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.sdk.v1.EventGroupMarker event_group_markers = 302;</code>
+     */
+    private $event_group_markers;
     protected $attributes;
 
     /**
@@ -51,6 +57,8 @@ class Command extends \Google\Protobuf\Internal\Message
      *              are used by user interfaces to show fixed as-of-start workflow summary and details.
      *            * start_timer_command_attributes - populates temporal.api.history.v1.HistoryEvent for timer
      *              started where the summary is used to identify the timer.
+     *     @type \Temporal\Api\Sdk\V1\EventGroupMarker[] $event_group_markers
+     *           Event Group Markers attached to the command by the workflow author.
      *     @type \Temporal\Api\Command\V1\ScheduleActivityTaskCommandAttributes $schedule_activity_task_command_attributes
      *     @type \Temporal\Api\Command\V1\StartTimerCommandAttributes $start_timer_command_attributes
      *     @type \Temporal\Api\Command\V1\CompleteWorkflowExecutionCommandAttributes $complete_workflow_execution_command_attributes
@@ -146,6 +154,32 @@ class Command extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Sdk\V1\UserMetadata::class);
         $this->user_metadata = $var;
+
+        return $this;
+    }
+
+    /**
+     * Event Group Markers attached to the command by the workflow author.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.sdk.v1.EventGroupMarker event_group_markers = 302;</code>
+     * @return RepeatedField<\Temporal\Api\Sdk\V1\EventGroupMarker>
+     */
+    public function getEventGroupMarkers()
+    {
+        return $this->event_group_markers;
+    }
+
+    /**
+     * Event Group Markers attached to the command by the workflow author.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.sdk.v1.EventGroupMarker event_group_markers = 302;</code>
+     * @param \Temporal\Api\Sdk\V1\EventGroupMarker[] $var
+     * @return $this
+     */
+    public function setEventGroupMarkers($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Sdk\V1\EventGroupMarker::class);
+        $this->event_group_markers = $arr;
 
         return $this;
     }

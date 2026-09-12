@@ -61,6 +61,13 @@ class RespondQueryTaskCompletedRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowTaskFailedCause cause = 8;</code>
      */
     protected $cause = 0;
+    /**
+     * Client must forward the poller_group_id received in PollWorkflowTaskQueueResponse for proper
+     * routing of the response.
+     *
+     * Generated from protobuf field <code>string poller_group_id = 9;</code>
+     */
+    protected $poller_group_id = '';
 
     /**
      * Constructor.
@@ -90,6 +97,9 @@ class RespondQueryTaskCompletedRequest extends \Google\Protobuf\Internal\Message
      *     @type int $cause
      *           Why did the task fail? It's important to note that many of the variants in this enum cannot
      *           apply to worker responses. See the type's doc for more.
+     *     @type string $poller_group_id
+     *           Client must forward the poller_group_id received in PollWorkflowTaskQueueResponse for proper
+     *           routing of the response.
      * }
      */
     public function __construct($data = NULL) {
@@ -305,6 +315,34 @@ class RespondQueryTaskCompletedRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\WorkflowTaskFailedCause::class);
         $this->cause = $var;
+
+        return $this;
+    }
+
+    /**
+     * Client must forward the poller_group_id received in PollWorkflowTaskQueueResponse for proper
+     * routing of the response.
+     *
+     * Generated from protobuf field <code>string poller_group_id = 9;</code>
+     * @return string
+     */
+    public function getPollerGroupId()
+    {
+        return $this->poller_group_id;
+    }
+
+    /**
+     * Client must forward the poller_group_id received in PollWorkflowTaskQueueResponse for proper
+     * routing of the response.
+     *
+     * Generated from protobuf field <code>string poller_group_id = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPollerGroupId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->poller_group_id = $var;
 
         return $this;
     }

@@ -19,15 +19,31 @@ class PollNexusTaskQueueRequest extends \Google\Protobuf\Internal\Message
      */
     protected $namespace = '';
     /**
+     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueue task_queue = 3;</code>
+     */
+    protected $task_queue = null;
+    /**
+     * Unless this is the first poll, the client must pass one of the poller group IDs received in
+     * `poller_group_infos` of the last the PollNexusTaskQueueResponse according to the
+     * instructions. If not set, the poll is routed randomly which can cause it to be blocked
+     * without receiving a task while the queue actually has tasks in another server location.
+     *
+     * Generated from protobuf field <code>string poller_group_id = 9;</code>
+     */
+    protected $poller_group_id = '';
+    /**
      * The identity of the client who initiated this request.
      *
      * Generated from protobuf field <code>string identity = 2;</code>
      */
     protected $identity = '';
     /**
-     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueue task_queue = 3;</code>
+     * A unique key for this worker instance, used for tracking worker lifecycle.
+     * This is guaranteed to be unique, whereas identity is not guaranteed to be unique.
+     *
+     * Generated from protobuf field <code>string worker_instance_key = 8;</code>
      */
-    protected $task_queue = null;
+    protected $worker_instance_key = '';
     /**
      * Information about this worker's build identifier and if it is choosing to use the versioning
      * feature. See the `WorkerVersionCapabilities` docstring for more.
@@ -57,9 +73,17 @@ class PollNexusTaskQueueRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $namespace
+     *     @type \Temporal\Api\Taskqueue\V1\TaskQueue $task_queue
+     *     @type string $poller_group_id
+     *           Unless this is the first poll, the client must pass one of the poller group IDs received in
+     *           `poller_group_infos` of the last the PollNexusTaskQueueResponse according to the
+     *           instructions. If not set, the poll is routed randomly which can cause it to be blocked
+     *           without receiving a task while the queue actually has tasks in another server location.
      *     @type string $identity
      *           The identity of the client who initiated this request.
-     *     @type \Temporal\Api\Taskqueue\V1\TaskQueue $task_queue
+     *     @type string $worker_instance_key
+     *           A unique key for this worker instance, used for tracking worker lifecycle.
+     *           This is guaranteed to be unique, whereas identity is not guaranteed to be unique.
      *     @type \Temporal\Api\Common\V1\WorkerVersionCapabilities $worker_version_capabilities
      *           Information about this worker's build identifier and if it is choosing to use the versioning
      *           feature. See the `WorkerVersionCapabilities` docstring for more.
@@ -98,32 +122,6 @@ class PollNexusTaskQueueRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The identity of the client who initiated this request.
-     *
-     * Generated from protobuf field <code>string identity = 2;</code>
-     * @return string
-     */
-    public function getIdentity()
-    {
-        return $this->identity;
-    }
-
-    /**
-     * The identity of the client who initiated this request.
-     *
-     * Generated from protobuf field <code>string identity = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setIdentity($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->identity = $var;
-
-        return $this;
-    }
-
-    /**
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueue task_queue = 3;</code>
      * @return \Temporal\Api\Taskqueue\V1\TaskQueue|null
      */
@@ -151,6 +149,92 @@ class PollNexusTaskQueueRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueue::class);
         $this->task_queue = $var;
+
+        return $this;
+    }
+
+    /**
+     * Unless this is the first poll, the client must pass one of the poller group IDs received in
+     * `poller_group_infos` of the last the PollNexusTaskQueueResponse according to the
+     * instructions. If not set, the poll is routed randomly which can cause it to be blocked
+     * without receiving a task while the queue actually has tasks in another server location.
+     *
+     * Generated from protobuf field <code>string poller_group_id = 9;</code>
+     * @return string
+     */
+    public function getPollerGroupId()
+    {
+        return $this->poller_group_id;
+    }
+
+    /**
+     * Unless this is the first poll, the client must pass one of the poller group IDs received in
+     * `poller_group_infos` of the last the PollNexusTaskQueueResponse according to the
+     * instructions. If not set, the poll is routed randomly which can cause it to be blocked
+     * without receiving a task while the queue actually has tasks in another server location.
+     *
+     * Generated from protobuf field <code>string poller_group_id = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPollerGroupId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->poller_group_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * The identity of the client who initiated this request.
+     *
+     * Generated from protobuf field <code>string identity = 2;</code>
+     * @return string
+     */
+    public function getIdentity()
+    {
+        return $this->identity;
+    }
+
+    /**
+     * The identity of the client who initiated this request.
+     *
+     * Generated from protobuf field <code>string identity = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setIdentity($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->identity = $var;
+
+        return $this;
+    }
+
+    /**
+     * A unique key for this worker instance, used for tracking worker lifecycle.
+     * This is guaranteed to be unique, whereas identity is not guaranteed to be unique.
+     *
+     * Generated from protobuf field <code>string worker_instance_key = 8;</code>
+     * @return string
+     */
+    public function getWorkerInstanceKey()
+    {
+        return $this->worker_instance_key;
+    }
+
+    /**
+     * A unique key for this worker instance, used for tracking worker lifecycle.
+     * This is guaranteed to be unique, whereas identity is not guaranteed to be unique.
+     *
+     * Generated from protobuf field <code>string worker_instance_key = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setWorkerInstanceKey($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->worker_instance_key = $var;
 
         return $this;
     }

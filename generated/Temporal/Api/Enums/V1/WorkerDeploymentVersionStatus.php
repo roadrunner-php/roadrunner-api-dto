@@ -11,7 +11,6 @@ use UnexpectedValueException;
  * (-- api-linter: core::0216::synonyms=disabled
  *     aip.dev/not-precedent: Call this status because it is . --)
  * Specify the status of a Worker Deployment Version.
- * Experimental. Worker Deployments are experimental and might significantly change in the future.
  *
  * Protobuf type <code>temporal.api.enums.v1.WorkerDeploymentVersionStatus</code>
  */
@@ -59,6 +58,13 @@ class WorkerDeploymentVersionStatus
      * Generated from protobuf enum <code>WORKER_DEPLOYMENT_VERSION_STATUS_DRAINED = 5;</code>
      */
     const WORKER_DEPLOYMENT_VERSION_STATUS_DRAINED = 5;
+    /**
+     * The Worker Deployment Version is created by user (via `CreateWorkerDeploymentVersion` API)
+     * but server has not seen any poller for it yet.
+     *
+     * Generated from protobuf enum <code>WORKER_DEPLOYMENT_VERSION_STATUS_CREATED = 6;</code>
+     */
+    const WORKER_DEPLOYMENT_VERSION_STATUS_CREATED = 6;
 
     private static $valueToName = [
         self::WORKER_DEPLOYMENT_VERSION_STATUS_UNSPECIFIED => 'WORKER_DEPLOYMENT_VERSION_STATUS_UNSPECIFIED',
@@ -67,6 +73,7 @@ class WorkerDeploymentVersionStatus
         self::WORKER_DEPLOYMENT_VERSION_STATUS_RAMPING => 'WORKER_DEPLOYMENT_VERSION_STATUS_RAMPING',
         self::WORKER_DEPLOYMENT_VERSION_STATUS_DRAINING => 'WORKER_DEPLOYMENT_VERSION_STATUS_DRAINING',
         self::WORKER_DEPLOYMENT_VERSION_STATUS_DRAINED => 'WORKER_DEPLOYMENT_VERSION_STATUS_DRAINED',
+        self::WORKER_DEPLOYMENT_VERSION_STATUS_CREATED => 'WORKER_DEPLOYMENT_VERSION_STATUS_CREATED',
     ];
 
     public static function name($value)

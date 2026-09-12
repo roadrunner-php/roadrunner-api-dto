@@ -10,6 +10,8 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
+ * Deprecated. Use `ResetActivityExecutionRequest`.
+ *
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.ResetActivityResponse</code>
  */
 class ResetActivityResponse extends \Google\Protobuf\Internal\Message

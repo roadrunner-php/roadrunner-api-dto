@@ -23,11 +23,34 @@ class PollActivityTaskQueueRequest extends \Google\Protobuf\Internal\Message
      */
     protected $task_queue = null;
     /**
+     * Unless this is the first poll, the client must pass one of the poller group IDs received in
+     * `poller_group_infos` of the last the PollActivityTaskQueueResponse according to the
+     * instructions. If not set, the poll is routed randomly which can cause it to be blocked
+     * without receiving a task while the queue actually has tasks in another server location.
+     *
+     * Generated from protobuf field <code>string poller_group_id = 10;</code>
+     */
+    protected $poller_group_id = '';
+    /**
      * The identity of the worker/client
      *
      * Generated from protobuf field <code>string identity = 3;</code>
      */
     protected $identity = '';
+    /**
+     * A unique key for this worker instance, used for tracking worker lifecycle.
+     * This is guaranteed to be unique, whereas identity is not guaranteed to be unique.
+     *
+     * Generated from protobuf field <code>string worker_instance_key = 8;</code>
+     */
+    protected $worker_instance_key = '';
+    /**
+     * A dedicated per-worker Nexus task queue on which the server sends control
+     * tasks (e.g. activity cancellation) to this specific worker instance.
+     *
+     * Generated from protobuf field <code>string worker_control_task_queue = 9;</code>
+     */
+    protected $worker_control_task_queue = '';
     /**
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.TaskQueueMetadata task_queue_metadata = 4;</code>
      */
@@ -56,8 +79,19 @@ class PollActivityTaskQueueRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $namespace
      *     @type \Temporal\Api\Taskqueue\V1\TaskQueue $task_queue
+     *     @type string $poller_group_id
+     *           Unless this is the first poll, the client must pass one of the poller group IDs received in
+     *           `poller_group_infos` of the last the PollActivityTaskQueueResponse according to the
+     *           instructions. If not set, the poll is routed randomly which can cause it to be blocked
+     *           without receiving a task while the queue actually has tasks in another server location.
      *     @type string $identity
      *           The identity of the worker/client
+     *     @type string $worker_instance_key
+     *           A unique key for this worker instance, used for tracking worker lifecycle.
+     *           This is guaranteed to be unique, whereas identity is not guaranteed to be unique.
+     *     @type string $worker_control_task_queue
+     *           A dedicated per-worker Nexus task queue on which the server sends control
+     *           tasks (e.g. activity cancellation) to this specific worker instance.
      *     @type \Temporal\Api\Taskqueue\V1\TaskQueueMetadata $task_queue_metadata
      *     @type \Temporal\Api\Common\V1\WorkerVersionCapabilities $worker_version_capabilities
      *           Information about this worker's build identifier and if it is choosing to use the versioning
@@ -127,6 +161,38 @@ class PollActivityTaskQueueRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Unless this is the first poll, the client must pass one of the poller group IDs received in
+     * `poller_group_infos` of the last the PollActivityTaskQueueResponse according to the
+     * instructions. If not set, the poll is routed randomly which can cause it to be blocked
+     * without receiving a task while the queue actually has tasks in another server location.
+     *
+     * Generated from protobuf field <code>string poller_group_id = 10;</code>
+     * @return string
+     */
+    public function getPollerGroupId()
+    {
+        return $this->poller_group_id;
+    }
+
+    /**
+     * Unless this is the first poll, the client must pass one of the poller group IDs received in
+     * `poller_group_infos` of the last the PollActivityTaskQueueResponse according to the
+     * instructions. If not set, the poll is routed randomly which can cause it to be blocked
+     * without receiving a task while the queue actually has tasks in another server location.
+     *
+     * Generated from protobuf field <code>string poller_group_id = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setPollerGroupId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->poller_group_id = $var;
+
+        return $this;
+    }
+
+    /**
      * The identity of the worker/client
      *
      * Generated from protobuf field <code>string identity = 3;</code>
@@ -148,6 +214,62 @@ class PollActivityTaskQueueRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->identity = $var;
+
+        return $this;
+    }
+
+    /**
+     * A unique key for this worker instance, used for tracking worker lifecycle.
+     * This is guaranteed to be unique, whereas identity is not guaranteed to be unique.
+     *
+     * Generated from protobuf field <code>string worker_instance_key = 8;</code>
+     * @return string
+     */
+    public function getWorkerInstanceKey()
+    {
+        return $this->worker_instance_key;
+    }
+
+    /**
+     * A unique key for this worker instance, used for tracking worker lifecycle.
+     * This is guaranteed to be unique, whereas identity is not guaranteed to be unique.
+     *
+     * Generated from protobuf field <code>string worker_instance_key = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setWorkerInstanceKey($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->worker_instance_key = $var;
+
+        return $this;
+    }
+
+    /**
+     * A dedicated per-worker Nexus task queue on which the server sends control
+     * tasks (e.g. activity cancellation) to this specific worker instance.
+     *
+     * Generated from protobuf field <code>string worker_control_task_queue = 9;</code>
+     * @return string
+     */
+    public function getWorkerControlTaskQueue()
+    {
+        return $this->worker_control_task_queue;
+    }
+
+    /**
+     * A dedicated per-worker Nexus task queue on which the server sends control
+     * tasks (e.g. activity cancellation) to this specific worker instance.
+     *
+     * Generated from protobuf field <code>string worker_control_task_queue = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setWorkerControlTaskQueue($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->worker_control_task_queue = $var;
 
         return $this;
     }

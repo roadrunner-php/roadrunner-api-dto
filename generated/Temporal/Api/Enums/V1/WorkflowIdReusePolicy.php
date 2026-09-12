@@ -41,12 +41,13 @@ class WorkflowIdReusePolicy
      */
     const WORKFLOW_ID_REUSE_POLICY_REJECT_DUPLICATE = 3;
     /**
-     * This option belongs in WorkflowIdConflictPolicy but is here for backwards compatibility.
-     * If specified, it acts like ALLOW_DUPLICATE, but also the WorkflowId*Conflict*Policy on
-     * the request is treated as WORKFLOW_ID_CONFLICT_POLICY_TERMINATE_EXISTING.
-     * If no running workflow, then the behavior is the same as ALLOW_DUPLICATE.
+     * Terminate the current Workflow if one is already running; otherwise allow reusing the
+     * Workflow ID. When using this option, `WorkflowIdConflictPolicy` must be left unspecified.
+     * Deprecated. Instead, set `WorkflowIdReusePolicy` to `ALLOW_DUPLICATE` and
+     * `WorkflowIdConflictPolicy` to `TERMINATE_EXISTING`. Note that `WorkflowIdConflictPolicy`
+     * requires Temporal Server v1.24.0 or later.
      *
-     * Generated from protobuf enum <code>WORKFLOW_ID_REUSE_POLICY_TERMINATE_IF_RUNNING = 4;</code>
+     * Generated from protobuf enum <code>WORKFLOW_ID_REUSE_POLICY_TERMINATE_IF_RUNNING = 4 [deprecated = true];</code>
      */
     const WORKFLOW_ID_REUSE_POLICY_TERMINATE_IF_RUNNING = 4;
 

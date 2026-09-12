@@ -10,14 +10,13 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
- * A Worker Deployment (Deployment, for short) represents all workers serving 
- * a shared set of Task Queues. Typically, a Deployment represents one service or 
+ * A Worker Deployment (Deployment, for short) represents all workers serving
+ * a shared set of Task Queues. Typically, a Deployment represents one service or
  * application.
- * A Deployment contains multiple Deployment Versions, each representing a different 
+ * A Deployment contains multiple Deployment Versions, each representing a different
  * version of workers. (see documentation of WorkerDeploymentVersionInfo)
  * Deployment records are created in Temporal server automatically when their
  * first poller arrives to the server.
- * Experimental. Worker Deployments are experimental and might significantly change in the future.
  *
  * Generated from protobuf message <code>temporal.api.deployment.v1.WorkerDeploymentInfo</code>
  */
@@ -33,8 +32,8 @@ class WorkerDeploymentInfo extends \Google\Protobuf\Internal\Message
      * Deployment Versions that are currently tracked in this Deployment. A DeploymentVersion will be
      * cleaned up automatically if all the following conditions meet:
      * - It does not receive new executions (is not current or ramping)
-     * - It has no active pollers (see WorkerDeploymentVersionInfo.pollers_status) 
-     * - It is drained (see WorkerDeploymentVersionInfo.drainage_status) 
+     * - It has no active pollers (see WorkerDeploymentVersionInfo.pollers_status)
+     * - It is drained (see WorkerDeploymentVersionInfo.drainage_status)
      *
      * Generated from protobuf field <code>repeated .temporal.api.deployment.v1.WorkerDeploymentInfo.WorkerDeploymentVersionSummary version_summaries = 2;</code>
      */
@@ -84,8 +83,8 @@ class WorkerDeploymentInfo extends \Google\Protobuf\Internal\Message
      *           Deployment Versions that are currently tracked in this Deployment. A DeploymentVersion will be
      *           cleaned up automatically if all the following conditions meet:
      *           - It does not receive new executions (is not current or ramping)
-     *           - It has no active pollers (see WorkerDeploymentVersionInfo.pollers_status) 
-     *           - It is drained (see WorkerDeploymentVersionInfo.drainage_status) 
+     *           - It has no active pollers (see WorkerDeploymentVersionInfo.pollers_status)
+     *           - It is drained (see WorkerDeploymentVersionInfo.drainage_status)
      *     @type \Google\Protobuf\Timestamp $create_time
      *     @type \Temporal\Api\Deployment\V1\RoutingConfig $routing_config
      *     @type string $last_modifier_identity
@@ -137,8 +136,8 @@ class WorkerDeploymentInfo extends \Google\Protobuf\Internal\Message
      * Deployment Versions that are currently tracked in this Deployment. A DeploymentVersion will be
      * cleaned up automatically if all the following conditions meet:
      * - It does not receive new executions (is not current or ramping)
-     * - It has no active pollers (see WorkerDeploymentVersionInfo.pollers_status) 
-     * - It is drained (see WorkerDeploymentVersionInfo.drainage_status) 
+     * - It has no active pollers (see WorkerDeploymentVersionInfo.pollers_status)
+     * - It is drained (see WorkerDeploymentVersionInfo.drainage_status)
      *
      * Generated from protobuf field <code>repeated .temporal.api.deployment.v1.WorkerDeploymentInfo.WorkerDeploymentVersionSummary version_summaries = 2;</code>
      * @return RepeatedField<\Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary>
@@ -152,8 +151,8 @@ class WorkerDeploymentInfo extends \Google\Protobuf\Internal\Message
      * Deployment Versions that are currently tracked in this Deployment. A DeploymentVersion will be
      * cleaned up automatically if all the following conditions meet:
      * - It does not receive new executions (is not current or ramping)
-     * - It has no active pollers (see WorkerDeploymentVersionInfo.pollers_status) 
-     * - It is drained (see WorkerDeploymentVersionInfo.drainage_status) 
+     * - It has no active pollers (see WorkerDeploymentVersionInfo.pollers_status)
+     * - It is drained (see WorkerDeploymentVersionInfo.drainage_status)
      *
      * Generated from protobuf field <code>repeated .temporal.api.deployment.v1.WorkerDeploymentInfo.WorkerDeploymentVersionSummary version_summaries = 2;</code>
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary[] $var

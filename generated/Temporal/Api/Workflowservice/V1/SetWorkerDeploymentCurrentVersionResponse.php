@@ -31,8 +31,13 @@ class SetWorkerDeploymentCurrentVersionResponse extends \Google\Protobuf\Interna
     protected $previous_version = '';
     /**
      * The version that was current before executing this operation.
+     * Deprecated in favor of idempotency of the API. Use `DescribeWorkerDeployment` to get the
+     * Current version info before calling this API. By passing the `conflict_token` got from the
+     * `DescribeWorkerDeployment` call to this API you can ensure there is no interfering changes
+     * between the two calls.
      *
-     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion previous_deployment_version = 3;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion previous_deployment_version = 3 [deprecated = true];</code>
+     * @deprecated
      */
     protected $previous_deployment_version = null;
 
@@ -50,6 +55,10 @@ class SetWorkerDeploymentCurrentVersionResponse extends \Google\Protobuf\Interna
      *           Deprecated. Use `previous_deployment_version`.
      *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $previous_deployment_version
      *           The version that was current before executing this operation.
+     *           Deprecated in favor of idempotency of the API. Use `DescribeWorkerDeployment` to get the
+     *           Current version info before calling this API. By passing the `conflict_token` got from the
+     *           `DescribeWorkerDeployment` call to this API you can ensure there is no interfering changes
+     *           between the two calls.
      * }
      */
     public function __construct($data = NULL) {
@@ -121,34 +130,52 @@ class SetWorkerDeploymentCurrentVersionResponse extends \Google\Protobuf\Interna
 
     /**
      * The version that was current before executing this operation.
+     * Deprecated in favor of idempotency of the API. Use `DescribeWorkerDeployment` to get the
+     * Current version info before calling this API. By passing the `conflict_token` got from the
+     * `DescribeWorkerDeployment` call to this API you can ensure there is no interfering changes
+     * between the two calls.
      *
-     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion previous_deployment_version = 3;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion previous_deployment_version = 3 [deprecated = true];</code>
      * @return \Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null
+     * @deprecated
      */
     public function getPreviousDeploymentVersion()
     {
+        if (isset($this->previous_deployment_version)) {
+            @trigger_error('previous_deployment_version is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->previous_deployment_version;
     }
 
     public function hasPreviousDeploymentVersion()
     {
+        if (isset($this->previous_deployment_version)) {
+            @trigger_error('previous_deployment_version is deprecated.', E_USER_DEPRECATED);
+        }
         return isset($this->previous_deployment_version);
     }
 
     public function clearPreviousDeploymentVersion()
     {
+        @trigger_error('previous_deployment_version is deprecated.', E_USER_DEPRECATED);
         unset($this->previous_deployment_version);
     }
 
     /**
      * The version that was current before executing this operation.
+     * Deprecated in favor of idempotency of the API. Use `DescribeWorkerDeployment` to get the
+     * Current version info before calling this API. By passing the `conflict_token` got from the
+     * `DescribeWorkerDeployment` call to this API you can ensure there is no interfering changes
+     * between the two calls.
      *
-     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion previous_deployment_version = 3;</code>
+     * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion previous_deployment_version = 3 [deprecated = true];</code>
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
      * @return $this
+     * @deprecated
      */
     public function setPreviousDeploymentVersion($var)
     {
+        @trigger_error('previous_deployment_version is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
         $this->previous_deployment_version = $var;
 
