@@ -1,6 +1,7 @@
-# Bumps the RoadRunner API submodule to its latest stable tag, regenerates the
-# PHP DTOs and, when anything changed, opens a pull request authored by the
-# github-actions bot (via the built-in GITHUB_TOKEN, no personal access token).
+# Moves the RoadRunner API submodule and its nested Temporal API submodule to
+# their latest stable tags, regenerates the PHP DTOs and opens a pull request
+# authored by the github-actions bot (via the built-in GITHUB_TOKEN, no personal
+# access token) whenever the generated output changes.
 
 on:  # yamllint disable-line rule:truthy
   schedule:
@@ -12,6 +13,10 @@ name: 🔄 Generate DTO
 permissions:
   contents: write
   pull-requests: write
+
+env:
+  API_URL: https://github.com/roadrunner-server/api.git
+  TEMPORAL_URL: https://github.com/temporalio/api.git
 
 jobs:
   generate:
@@ -26,48 +31,37 @@ jobs:
       - name: 🔗 Rewrite SSH submodule URLs to HTTPS
         run: git config --global url."https://github.com/".insteadOf "git@github.com:"
 
-      - name: 🏷️ Resolve the latest API tag
-        id: api
-        env:
-          API_URL: https://github.com/roadrunner-server/api.git
+      - name: 🏷️ Resolve the latest stable tags
+        id: tags
         run: |
-          # The commit currently pinned by the submodule gitlink. It is compared
-          # by SHA, not resolved to a tag: an old pin may reference a commit that
-          # no longer exists on the remote, which is exactly what a bump fixes.
-          recorded="$(git ls-tree HEAD api | awk '{print $3}')"
-          latest="$(git ls-remote --tags --refs "$API_URL" 'v*' \
-            | awk '{print $2}' | sed 's@refs/tags/@@' \
-            | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' \
-            | sort -V | tail -n 1)"
-          latest_sha="$(git ls-remote "$API_URL" "refs/tags/${latest}" | awk '{print $1}')"
-          echo "recorded=${recorded}" >> "$GITHUB_OUTPUT"
-          echo "latest=${latest}" >> "$GITHUB_OUTPUT"
-          echo "version=${latest#v}" >> "$GITHUB_OUTPUT"
-          if [ "${recorded}" = "${latest_sha}" ]; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "API already at ${latest}, nothing to do."
-          else
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-            echo "API update available: ${recorded} -> ${latest} (${latest_sha})"
-          fi
+          latest_tag() {
+            git ls-remote --tags --refs "$1" 'v*' \
+              | awk '{print $2}' | sed 's@refs/tags/@@' \
+              | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' \
+              | sort -V | tail -n 1
+          }
+          api="$(latest_tag "$API_URL")"
+          temporal="$(latest_tag "$TEMPORAL_URL")"
+          echo "api=${api}" >> "$GITHUB_OUTPUT"
+          echo "version=${api#v}" >> "$GITHUB_OUTPUT"
+          echo "temporal=${temporal}" >> "$GITHUB_OUTPUT"
+          echo "Latest API: ${api}, latest Temporal API: ${temporal}"
 
       - name: 📦 Initialise the api-cloud submodule
-        if: steps.api.outputs.changed == 'true'
         run: git submodule update --init --recursive api-cloud
 
-      - name: ⬆️ Check out the API submodule at the latest tag
-        if: steps.api.outputs.changed == 'true'
-        env:
-          API_URL: https://github.com/roadrunner-server/api.git
+      - name: ⬆️ Check out the API submodules at their latest tags
         run: |
-          # Re-clone rather than fetch: the recorded gitlink can point at a
-          # commit the remote no longer serves, which breaks a plain update.
+          # Re-clone rather than fetch: a recorded gitlink can point at a commit
+          # the remote no longer serves, which breaks a plain submodule update.
+          # The nested Temporal API is pinned by the API tag to an older commit,
+          # so it is moved to its own latest tag to keep the DTOs current.
           rm -rf api
-          git clone --branch "${{ steps.api.outputs.latest }}" "$API_URL" api
-          git -C api submodule update --init --recursive
+          git clone --branch "${{ steps.tags.outputs.api }}" "$API_URL" api
+          rm -rf api/third_party/api
+          git clone --branch "${{ steps.tags.outputs.temporal }}" "$TEMPORAL_URL" api/third_party/api
 
       - name: 🛠️ Install protoc and the gRPC PHP plugin
-        if: steps.api.outputs.changed == 'true'
         env:
           # Pinned to match the google/protobuf runtime in composer.json
           # (^5.34). apt ships libprotoc 3.21, whose legacy PHP output would
@@ -83,22 +77,21 @@ jobs:
           protoc --version
 
       - name: ⚙️ Generate the DTOs
-        if: steps.api.outputs.changed == 'true'
         run: bash generate.sh
 
       - name: 📤 Open a pull request
-        if: steps.api.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           base: 1.x
           branch: deps/update-api
-          commit-message: "feat: update API to ${{ steps.api.outputs.version }}"
-          title: "feat: update API to ${{ steps.api.outputs.version }}"
+          commit-message: "feat: update API to ${{ steps.tags.outputs.version }}"
+          title: "feat: update API to ${{ steps.tags.outputs.version }}"
           body: |
-            Automated update of the RoadRunner API submodule and the generated DTOs.
+            Automated update of the RoadRunner API submodules and the generated DTOs.
 
-            - `api`: bumped to `${{ steps.api.outputs.latest }}`
+            - `api`: `${{ steps.tags.outputs.api }}`
+            - Temporal API: `${{ steps.tags.outputs.temporal }}`
 
             Generated by the `Generate DTO` workflow.
           labels: dependencies
