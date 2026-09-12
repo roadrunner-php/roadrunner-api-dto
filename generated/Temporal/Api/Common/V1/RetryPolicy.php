@@ -108,9 +108,8 @@ class RetryPolicy extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setInitialInterval($var)
+    public function setInitialInterval(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->initial_interval = $var;
 
         return $this;
@@ -138,9 +137,8 @@ class RetryPolicy extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setBackoffCoefficient($var)
+    public function setBackoffCoefficient(float $var)
     {
-        GPBUtil::checkDouble($var);
         $this->backoff_coefficient = $var;
 
         return $this;
@@ -176,9 +174,8 @@ class RetryPolicy extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setMaximumInterval($var)
+    public function setMaximumInterval(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->maximum_interval = $var;
 
         return $this;
@@ -204,7 +201,7 @@ class RetryPolicy extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setMaximumAttempts($var)
+    public function setMaximumAttempts(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->maximum_attempts = $var;
@@ -232,7 +229,7 @@ class RetryPolicy extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setNonRetryableErrorTypes($var)
+    public function setNonRetryableErrorTypes(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->non_retryable_error_types = $arr;

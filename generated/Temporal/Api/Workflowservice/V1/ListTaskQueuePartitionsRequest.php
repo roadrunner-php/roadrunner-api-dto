@@ -52,9 +52,9 @@ class ListTaskQueuePartitionsRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -84,9 +84,8 @@ class ListTaskQueuePartitionsRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\TaskQueue $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(\Temporal\Api\Taskqueue\V1\TaskQueue|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueue::class);
         $this->task_queue = $var;
 
         return $this;

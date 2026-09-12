@@ -90,9 +90,8 @@ class TimeSkippingFastForwardInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setFastForwardDuration($var)
+    public function setFastForwardDuration(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->fast_forward_duration = $var;
 
         return $this;
@@ -116,9 +115,9 @@ class TimeSkippingFastForwardInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setFastForwardId($var)
+    public function setFastForwardId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->fast_forward_id = $var;
 
         return $this;
@@ -152,9 +151,8 @@ class TimeSkippingFastForwardInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setTargetTime($var)
+    public function setTargetTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->target_time = $var;
 
         return $this;
@@ -178,9 +176,8 @@ class TimeSkippingFastForwardInfo extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setHasCompleted($var)
+    public function setHasCompleted(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->has_completed = $var;
 
         return $this;

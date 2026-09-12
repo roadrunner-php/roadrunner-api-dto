@@ -49,9 +49,8 @@ class Trigger extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Activity\V1\CallbackInfo\ActivityClosed $var
      * @return $this
      */
-    public function setActivityClosed($var)
+    public function setActivityClosed(\Temporal\Api\Activity\V1\CallbackInfo\ActivityClosed|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Activity\V1\CallbackInfo\ActivityClosed::class);
         $this->writeOneof(1, $var);
 
         return $this;

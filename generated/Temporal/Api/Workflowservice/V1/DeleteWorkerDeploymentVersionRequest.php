@@ -89,9 +89,9 @@ class DeleteWorkerDeploymentVersionRequest extends \Google\Protobuf\Internal\Mes
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -120,10 +120,10 @@ class DeleteWorkerDeploymentVersionRequest extends \Google\Protobuf\Internal\Mes
      * @return $this
      * @deprecated
      */
-    public function setVersion($var)
+    public function setVersion(string $var)
     {
         @trigger_error('version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->version = $var;
 
         return $this;
@@ -157,9 +157,8 @@ class DeleteWorkerDeploymentVersionRequest extends \Google\Protobuf\Internal\Mes
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
      * @return $this
      */
-    public function setDeploymentVersion($var)
+    public function setDeploymentVersion(\Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
         $this->deployment_version = $var;
 
         return $this;
@@ -185,9 +184,8 @@ class DeleteWorkerDeploymentVersionRequest extends \Google\Protobuf\Internal\Mes
      * @param bool $var
      * @return $this
      */
-    public function setSkipDrainage($var)
+    public function setSkipDrainage(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->skip_drainage = $var;
 
         return $this;
@@ -211,9 +209,9 @@ class DeleteWorkerDeploymentVersionRequest extends \Google\Protobuf\Internal\Mes
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;

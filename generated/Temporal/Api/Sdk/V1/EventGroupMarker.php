@@ -51,9 +51,8 @@ class EventGroupMarker extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Sdk\V1\EventGroupMarker\Label $var
      * @return $this
      */
-    public function setLabel($var)
+    public function setLabel(\Temporal\Api\Sdk\V1\EventGroupMarker\Label|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Sdk\V1\EventGroupMarker\Label::class);
         $this->writeOneof(1, $var);
 
         return $this;
@@ -78,9 +77,8 @@ class EventGroupMarker extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Sdk\V1\EventGroupMarker\InboundEvent $var
      * @return $this
      */
-    public function setInboundEvent($var)
+    public function setInboundEvent(\Temporal\Api\Sdk\V1\EventGroupMarker\InboundEvent|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Sdk\V1\EventGroupMarker\InboundEvent::class);
         $this->writeOneof(2, $var);
 
         return $this;
@@ -105,9 +103,8 @@ class EventGroupMarker extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Sdk\V1\EventGroupMarker\InboundUpdate $var
      * @return $this
      */
-    public function setInboundUpdate($var)
+    public function setInboundUpdate(\Temporal\Api\Sdk\V1\EventGroupMarker\InboundUpdate|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Sdk\V1\EventGroupMarker\InboundUpdate::class);
         $this->writeOneof(3, $var);
 
         return $this;

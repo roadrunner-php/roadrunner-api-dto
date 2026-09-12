@@ -49,7 +49,7 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Websockets\DTO\V1\Message[] $var
      * @return $this
      */
-    public function setMessages($var)
+    public function setMessages(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\Websockets\DTO\V1\Message::class);
         $this->messages = $arr;

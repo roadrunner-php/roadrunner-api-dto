@@ -67,9 +67,9 @@ class TriggerWorkflowRuleRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -103,9 +103,8 @@ class TriggerWorkflowRuleRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
      * @return $this
      */
-    public function setExecution($var)
+    public function setExecution(\Temporal\Api\Common\V1\WorkflowExecution|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->execution = $var;
 
         return $this;
@@ -130,9 +129,9 @@ class TriggerWorkflowRuleRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->writeOneof(4, $var);
 
         return $this;
@@ -161,9 +160,8 @@ class TriggerWorkflowRuleRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Rules\V1\WorkflowRuleSpec $var
      * @return $this
      */
-    public function setSpec($var)
+    public function setSpec(\Temporal\Api\Rules\V1\WorkflowRuleSpec|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Rules\V1\WorkflowRuleSpec::class);
         $this->writeOneof(5, $var);
 
         return $this;
@@ -187,9 +185,9 @@ class TriggerWorkflowRuleRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;

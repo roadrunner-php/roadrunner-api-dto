@@ -62,9 +62,9 @@ class PluginInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setName($var)
+    public function setName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->name = $var;
 
         return $this;
@@ -88,9 +88,9 @@ class PluginInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setVersion($var)
+    public function setVersion(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->version = $var;
 
         return $this;

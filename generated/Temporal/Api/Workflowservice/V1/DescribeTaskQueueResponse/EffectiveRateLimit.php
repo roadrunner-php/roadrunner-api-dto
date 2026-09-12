@@ -68,9 +68,8 @@ class EffectiveRateLimit extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setRequestsPerSecond($var)
+    public function setRequestsPerSecond(float $var)
     {
-        GPBUtil::checkFloat($var);
         $this->requests_per_second = $var;
 
         return $this;
@@ -83,7 +82,7 @@ class EffectiveRateLimit extends \Google\Protobuf\Internal\Message
      * - SOURCE_SYSTEM: The rate limit is the default value set by the system
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.RateLimitSource rate_limit_source = 2;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\RateLimitSource}
      */
     public function getRateLimitSource()
     {
@@ -97,10 +96,10 @@ class EffectiveRateLimit extends \Google\Protobuf\Internal\Message
      * - SOURCE_SYSTEM: The rate limit is the default value set by the system
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.RateLimitSource rate_limit_source = 2;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\RateLimitSource}
      * @return $this
      */
-    public function setRateLimitSource($var)
+    public function setRateLimitSource(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\RateLimitSource::class);
         $this->rate_limit_source = $var;

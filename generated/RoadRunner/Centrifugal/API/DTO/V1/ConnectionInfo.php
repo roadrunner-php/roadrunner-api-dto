@@ -75,9 +75,9 @@ class ConnectionInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAppName($var)
+    public function setAppName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->app_name = $var;
 
         return $this;
@@ -97,9 +97,9 @@ class ConnectionInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAppVersion($var)
+    public function setAppVersion(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->app_version = $var;
 
         return $this;
@@ -119,9 +119,9 @@ class ConnectionInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTransport($var)
+    public function setTransport(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->transport = $var;
 
         return $this;
@@ -141,9 +141,9 @@ class ConnectionInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setProtocol($var)
+    public function setProtocol(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->protocol = $var;
 
         return $this;
@@ -167,9 +167,9 @@ class ConnectionInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setUser($var)
+    public function setUser(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->user = $var;
 
         return $this;
@@ -199,9 +199,8 @@ class ConnectionInfo extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\ConnectionState $var
      * @return $this
      */
-    public function setState($var)
+    public function setState(\RoadRunner\Centrifugal\API\DTO\V1\ConnectionState|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\ConnectionState::class);
         $this->state = $var;
 
         return $this;

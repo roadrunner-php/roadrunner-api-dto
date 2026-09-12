@@ -58,7 +58,7 @@ class PollWorkflowExecutionTimeSkippingResponse extends \Google\Protobuf\Interna
      * The outcome of the poll for the fast-forward identified by the request's `fast_forward_id`.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.FastForwardPollingResult fast_forward_polling_result = 1;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\FastForwardPollingResult}
      */
     public function getFastForwardPollingResult()
     {
@@ -69,10 +69,10 @@ class PollWorkflowExecutionTimeSkippingResponse extends \Google\Protobuf\Interna
      * The outcome of the poll for the fast-forward identified by the request's `fast_forward_id`.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.FastForwardPollingResult fast_forward_polling_result = 1;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\FastForwardPollingResult}
      * @return $this
      */
-    public function setFastForwardPollingResult($var)
+    public function setFastForwardPollingResult(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\FastForwardPollingResult::class);
         $this->fast_forward_polling_result = $var;
@@ -100,9 +100,9 @@ class PollWorkflowExecutionTimeSkippingResponse extends \Google\Protobuf\Interna
      * @param string $var
      * @return $this
      */
-    public function setFailedReason($var)
+    public function setFailedReason(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->failed_reason = $var;
 
         return $this;
@@ -136,9 +136,8 @@ class PollWorkflowExecutionTimeSkippingResponse extends \Google\Protobuf\Interna
      * @param \Temporal\Api\Common\V1\TimeSkippingFastForwardInfo $var
      * @return $this
      */
-    public function setFastForwardInfo($var)
+    public function setFastForwardInfo(\Temporal\Api\Common\V1\TimeSkippingFastForwardInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\TimeSkippingFastForwardInfo::class);
         $this->fast_forward_info = $var;
 
         return $this;

@@ -100,9 +100,8 @@ class InheritedAutoUpgradeInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
      * @return $this
      */
-    public function setSourceDeploymentVersion($var)
+    public function setSourceDeploymentVersion(\Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
         $this->source_deployment_version = $var;
 
         return $this;
@@ -126,7 +125,7 @@ class InheritedAutoUpgradeInfo extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setSourceDeploymentRevisionNumber($var)
+    public function setSourceDeploymentRevisionNumber(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->source_deployment_revision_number = $var;
@@ -146,7 +145,7 @@ class InheritedAutoUpgradeInfo extends \Google\Protobuf\Internal\Message
      * value if the InheritedAutoUpgradeInfo is non-empty.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ContinueAsNewVersioningBehavior continue_as_new_initial_versioning_behavior = 3;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ContinueAsNewVersioningBehavior}
      */
     public function getContinueAsNewInitialVersioningBehavior()
     {
@@ -165,10 +164,10 @@ class InheritedAutoUpgradeInfo extends \Google\Protobuf\Internal\Message
      * value if the InheritedAutoUpgradeInfo is non-empty.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ContinueAsNewVersioningBehavior continue_as_new_initial_versioning_behavior = 3;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ContinueAsNewVersioningBehavior}
      * @return $this
      */
-    public function setContinueAsNewInitialVersioningBehavior($var)
+    public function setContinueAsNewInitialVersioningBehavior(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ContinueAsNewVersioningBehavior::class);
         $this->continue_as_new_initial_versioning_behavior = $var;

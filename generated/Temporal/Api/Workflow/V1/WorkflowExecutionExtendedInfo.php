@@ -142,9 +142,8 @@ class WorkflowExecutionExtendedInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setExecutionExpirationTime($var)
+    public function setExecutionExpirationTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->execution_expiration_time = $var;
 
         return $this;
@@ -178,9 +177,8 @@ class WorkflowExecutionExtendedInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setRunExpirationTime($var)
+    public function setRunExpirationTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->run_expiration_time = $var;
 
         return $this;
@@ -204,9 +202,8 @@ class WorkflowExecutionExtendedInfo extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setCancelRequested($var)
+    public function setCancelRequested(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->cancel_requested = $var;
 
         return $this;
@@ -240,9 +237,8 @@ class WorkflowExecutionExtendedInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setLastResetTime($var)
+    public function setLastResetTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_reset_time = $var;
 
         return $this;
@@ -276,9 +272,8 @@ class WorkflowExecutionExtendedInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setOriginalStartTime($var)
+    public function setOriginalStartTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->original_start_time = $var;
 
         return $this;
@@ -302,9 +297,9 @@ class WorkflowExecutionExtendedInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setResetRunId($var)
+    public function setResetRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->reset_run_id = $var;
 
         return $this;
@@ -334,7 +329,7 @@ class WorkflowExecutionExtendedInfo extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setRequestIdInfos($var)
+    public function setRequestIdInfos(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Workflow\V1\RequestIdInfo::class);
         $this->request_id_infos = $arr;
@@ -370,9 +365,8 @@ class WorkflowExecutionExtendedInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflow\V1\WorkflowExecutionPauseInfo $var
      * @return $this
      */
-    public function setPauseInfo($var)
+    public function setPauseInfo(\Temporal\Api\Workflow\V1\WorkflowExecutionPauseInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\WorkflowExecutionPauseInfo::class);
         $this->pause_info = $var;
 
         return $this;
@@ -408,9 +402,8 @@ class WorkflowExecutionExtendedInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\TimeSkippingInfo $var
      * @return $this
      */
-    public function setTimeSkippingInfo($var)
+    public function setTimeSkippingInfo(\Temporal\Api\Common\V1\TimeSkippingInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\TimeSkippingInfo::class);
         $this->time_skipping_info = $var;
 
         return $this;

@@ -60,9 +60,8 @@ class PushRequest extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Jobs\DTO\V1\Job $var
      * @return $this
      */
-    public function setJob($var)
+    public function setJob(\RoadRunner\Jobs\DTO\V1\Job|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Jobs\DTO\V1\Job::class);
         $this->job = $var;
 
         return $this;

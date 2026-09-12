@@ -98,9 +98,9 @@ class WorkerHostInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setHostName($var)
+    public function setHostName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->host_name = $var;
 
         return $this;
@@ -128,9 +128,9 @@ class WorkerHostInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setWorkerGroupingKey($var)
+    public function setWorkerGroupingKey(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->worker_grouping_key = $var;
 
         return $this;
@@ -156,9 +156,9 @@ class WorkerHostInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setProcessId($var)
+    public function setProcessId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->process_id = $var;
 
         return $this;
@@ -184,9 +184,8 @@ class WorkerHostInfo extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setCurrentHostCpuUsage($var)
+    public function setCurrentHostCpuUsage(float $var)
     {
-        GPBUtil::checkFloat($var);
         $this->current_host_cpu_usage = $var;
 
         return $this;
@@ -212,9 +211,8 @@ class WorkerHostInfo extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setCurrentHostMemUsage($var)
+    public function setCurrentHostMemUsage(float $var)
     {
-        GPBUtil::checkFloat($var);
         $this->current_host_mem_usage = $var;
 
         return $this;

@@ -95,9 +95,9 @@ class ScheduleState extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNotes($var)
+    public function setNotes(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->notes = $var;
 
         return $this;
@@ -121,9 +121,8 @@ class ScheduleState extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setPaused($var)
+    public function setPaused(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->paused = $var;
 
         return $this;
@@ -159,9 +158,8 @@ class ScheduleState extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setLimitedActions($var)
+    public function setLimitedActions(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->limited_actions = $var;
 
         return $this;
@@ -181,7 +179,7 @@ class ScheduleState extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setRemainingActions($var)
+    public function setRemainingActions(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->remaining_actions = $var;

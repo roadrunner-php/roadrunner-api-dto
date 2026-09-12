@@ -72,9 +72,8 @@ class SignalWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Link $var
      * @return $this
      */
-    public function setLink($var)
+    public function setLink(\Temporal\Api\Common\V1\Link|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Link::class);
         $this->link = $var;
 
         return $this;

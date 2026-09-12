@@ -78,9 +78,8 @@ class StreamSubscribeRequest extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\Proxy\DTO\V1\SubscribeRequest $var
      * @return $this
      */
-    public function setSubscribeRequest($var)
+    public function setSubscribeRequest(\RoadRunner\Centrifugal\Proxy\DTO\V1\SubscribeRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\Proxy\DTO\V1\SubscribeRequest::class);
         $this->subscribe_request = $var;
 
         return $this;
@@ -116,9 +115,8 @@ class StreamSubscribeRequest extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\Proxy\DTO\V1\Publication $var
      * @return $this
      */
-    public function setPublication($var)
+    public function setPublication(\RoadRunner\Centrifugal\Proxy\DTO\V1\Publication|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\Proxy\DTO\V1\Publication::class);
         $this->publication = $var;
 
         return $this;

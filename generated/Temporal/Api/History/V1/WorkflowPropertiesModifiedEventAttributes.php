@@ -66,7 +66,7 @@ class WorkflowPropertiesModifiedEventAttributes extends \Google\Protobuf\Interna
      * @param int|string $var
      * @return $this
      */
-    public function setWorkflowTaskCompletedEventId($var)
+    public function setWorkflowTaskCompletedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->workflow_task_completed_event_id = $var;
@@ -106,9 +106,8 @@ class WorkflowPropertiesModifiedEventAttributes extends \Google\Protobuf\Interna
      * @param \Temporal\Api\Common\V1\Memo $var
      * @return $this
      */
-    public function setUpsertedMemo($var)
+    public function setUpsertedMemo(\Temporal\Api\Common\V1\Memo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Memo::class);
         $this->upserted_memo = $var;
 
         return $this;

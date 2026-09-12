@@ -90,7 +90,7 @@ class NexusOperationStartedEventAttributes extends \Google\Protobuf\Internal\Mes
      * @param int|string $var
      * @return $this
      */
-    public function setScheduledEventId($var)
+    public function setScheduledEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->scheduled_event_id = $var;
@@ -125,10 +125,10 @@ class NexusOperationStartedEventAttributes extends \Google\Protobuf\Internal\Mes
      * @return $this
      * @deprecated
      */
-    public function setOperationId($var)
+    public function setOperationId(string $var)
     {
         @trigger_error('operation_id is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->operation_id = $var;
 
         return $this;
@@ -152,9 +152,9 @@ class NexusOperationStartedEventAttributes extends \Google\Protobuf\Internal\Mes
      * @param string $var
      * @return $this
      */
-    public function setRequestId($var)
+    public function setRequestId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->request_id = $var;
 
         return $this;
@@ -180,9 +180,9 @@ class NexusOperationStartedEventAttributes extends \Google\Protobuf\Internal\Mes
      * @param string $var
      * @return $this
      */
-    public function setOperationToken($var)
+    public function setOperationToken(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->operation_token = $var;
 
         return $this;

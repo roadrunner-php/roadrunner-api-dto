@@ -82,9 +82,9 @@ class Label extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->id = $var;
 
         return $this;
@@ -136,9 +136,8 @@ class Label extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Payload $var
      * @return $this
      */
-    public function setLabel($var)
+    public function setLabel(\Temporal\Api\Common\V1\Payload|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payload::class);
         $this->label = $var;
 
         return $this;

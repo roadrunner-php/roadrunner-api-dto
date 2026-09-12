@@ -50,7 +50,7 @@ class WorkerConfig extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setWorkflowCacheSize($var)
+    public function setWorkflowCacheSize(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->workflow_cache_size = $var;
@@ -77,9 +77,8 @@ class WorkerConfig extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Sdk\V1\WorkerConfig\SimplePollerBehavior $var
      * @return $this
      */
-    public function setSimplePollerBehavior($var)
+    public function setSimplePollerBehavior(\Temporal\Api\Sdk\V1\WorkerConfig\SimplePollerBehavior|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Sdk\V1\WorkerConfig\SimplePollerBehavior::class);
         $this->writeOneof(2, $var);
 
         return $this;
@@ -104,9 +103,8 @@ class WorkerConfig extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Sdk\V1\WorkerConfig\AutoscalingPollerBehavior $var
      * @return $this
      */
-    public function setAutoscalingPollerBehavior($var)
+    public function setAutoscalingPollerBehavior(\Temporal\Api\Sdk\V1\WorkerConfig\AutoscalingPollerBehavior|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Sdk\V1\WorkerConfig\AutoscalingPollerBehavior::class);
         $this->writeOneof(3, $var);
 
         return $this;

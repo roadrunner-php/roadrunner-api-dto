@@ -49,9 +49,9 @@ class CancelActivityCommand extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTaskToken($var)
+    public function setTaskToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->task_token = $var;
 
         return $this;

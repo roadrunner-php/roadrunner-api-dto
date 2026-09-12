@@ -67,9 +67,9 @@ class BatchOperationCancelActivities extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -95,9 +95,9 @@ class BatchOperationCancelActivities extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setReason($var)
+    public function setReason(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->reason = $var;
 
         return $this;

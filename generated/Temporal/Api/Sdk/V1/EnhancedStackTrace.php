@@ -82,9 +82,8 @@ class EnhancedStackTrace extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Sdk\V1\StackTraceSDKInfo $var
      * @return $this
      */
-    public function setSdk($var)
+    public function setSdk(\Temporal\Api\Sdk\V1\StackTraceSDKInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Sdk\V1\StackTraceSDKInfo::class);
         $this->sdk = $var;
 
         return $this;
@@ -108,7 +107,7 @@ class EnhancedStackTrace extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setSources($var)
+    public function setSources(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Sdk\V1\StackTraceFileSlice::class);
         $this->sources = $arr;
@@ -134,7 +133,7 @@ class EnhancedStackTrace extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Sdk\V1\StackTrace[] $var
      * @return $this
      */
-    public function setStacks($var)
+    public function setStacks(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Sdk\V1\StackTrace::class);
         $this->stacks = $arr;

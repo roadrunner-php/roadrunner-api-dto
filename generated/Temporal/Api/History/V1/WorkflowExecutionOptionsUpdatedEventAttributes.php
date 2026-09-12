@@ -138,9 +138,8 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      * @param \Temporal\Api\Workflow\V1\VersioningOverride $var
      * @return $this
      */
-    public function setVersioningOverride($var)
+    public function setVersioningOverride(\Temporal\Api\Workflow\V1\VersioningOverride|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\VersioningOverride::class);
         $this->versioning_override = $var;
 
         return $this;
@@ -164,9 +163,8 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      * @param bool $var
      * @return $this
      */
-    public function setUnsetVersioningOverride($var)
+    public function setUnsetVersioningOverride(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->unset_versioning_override = $var;
 
         return $this;
@@ -192,9 +190,9 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      * @param string $var
      * @return $this
      */
-    public function setAttachedRequestId($var)
+    public function setAttachedRequestId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->attached_request_id = $var;
 
         return $this;
@@ -218,7 +216,7 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      * @param \Temporal\Api\Common\V1\Callback[] $var
      * @return $this
      */
-    public function setAttachedCompletionCallbacks($var)
+    public function setAttachedCompletionCallbacks(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Callback::class);
         $this->attached_completion_callbacks = $arr;
@@ -244,9 +242,9 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -282,9 +280,8 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      * @param \Temporal\Api\Common\V1\Priority $var
      * @return $this
      */
-    public function setPriority($var)
+    public function setPriority(\Temporal\Api\Common\V1\Priority|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Priority::class);
         $this->priority = $var;
 
         return $this;
@@ -318,9 +315,8 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      * @param \Temporal\Api\Common\V1\TimeSkippingConfig $var
      * @return $this
      */
-    public function setTimeSkippingConfig($var)
+    public function setTimeSkippingConfig(\Temporal\Api\Common\V1\TimeSkippingConfig|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\TimeSkippingConfig::class);
         $this->time_skipping_config = $var;
 
         return $this;
@@ -346,9 +342,8 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      * @param bool $var
      * @return $this
      */
-    public function setTimeSkippingConfigUpdated($var)
+    public function setTimeSkippingConfigUpdated(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->time_skipping_config_updated = $var;
 
         return $this;
@@ -372,7 +367,7 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      * @param \Temporal\Api\History\V1\WorkflowExecutionOptionsUpdatedEventAttributes\WorkflowUpdateOptionsUpdate[] $var
      * @return $this
      */
-    public function setWorkflowUpdateOptions($var)
+    public function setWorkflowUpdateOptions(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\History\V1\WorkflowExecutionOptionsUpdatedEventAttributes\WorkflowUpdateOptionsUpdate::class);
         $this->workflow_update_options = $arr;

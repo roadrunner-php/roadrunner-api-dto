@@ -95,9 +95,9 @@ class BatchOperationReset extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -131,9 +131,8 @@ class BatchOperationReset extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\ResetOptions $var
      * @return $this
      */
-    public function setOptions($var)
+    public function setOptions(\Temporal\Api\Common\V1\ResetOptions|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\ResetOptions::class);
         $this->options = $var;
 
         return $this;
@@ -143,7 +142,7 @@ class BatchOperationReset extends \Google\Protobuf\Internal\Message
      * Deprecated. Use `options`.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ResetType reset_type = 1 [deprecated = true];</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ResetType}
      * @deprecated
      */
     public function getResetType()
@@ -158,11 +157,11 @@ class BatchOperationReset extends \Google\Protobuf\Internal\Message
      * Deprecated. Use `options`.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ResetType reset_type = 1 [deprecated = true];</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ResetType}
      * @return $this
      * @deprecated
      */
-    public function setResetType($var)
+    public function setResetType(int $var)
     {
         @trigger_error('reset_type is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ResetType::class);
@@ -175,7 +174,7 @@ class BatchOperationReset extends \Google\Protobuf\Internal\Message
      * Deprecated. Use `options`.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 2 [deprecated = true];</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ResetReapplyType}
      * @deprecated
      */
     public function getResetReapplyType()
@@ -190,11 +189,11 @@ class BatchOperationReset extends \Google\Protobuf\Internal\Message
      * Deprecated. Use `options`.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 2 [deprecated = true];</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ResetReapplyType}
      * @return $this
      * @deprecated
      */
-    public function setResetReapplyType($var)
+    public function setResetReapplyType(int $var)
     {
         @trigger_error('reset_reapply_type is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ResetReapplyType::class);
@@ -225,7 +224,7 @@ class BatchOperationReset extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflow\V1\PostResetOperation[] $var
      * @return $this
      */
-    public function setPostResetOperations($var)
+    public function setPostResetOperations(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Workflow\V1\PostResetOperation::class);
         $this->post_reset_operations = $arr;

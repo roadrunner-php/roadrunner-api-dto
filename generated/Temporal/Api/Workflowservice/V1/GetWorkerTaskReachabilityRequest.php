@@ -98,9 +98,9 @@ class GetWorkerTaskReachabilityRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -130,7 +130,7 @@ class GetWorkerTaskReachabilityRequest extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setBuildIds($var)
+    public function setBuildIds(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->build_ids = $arr;
@@ -164,7 +164,7 @@ class GetWorkerTaskReachabilityRequest extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setTaskQueues($var)
+    public function setTaskQueues(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->task_queues = $arr;
@@ -181,7 +181,7 @@ class GetWorkerTaskReachabilityRequest extends \Google\Protobuf\Internal\Message
      * See the TaskReachability docstring for information about each enum variant.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.TaskReachability reachability = 4;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\TaskReachability}
      */
     public function getReachability()
     {
@@ -197,10 +197,10 @@ class GetWorkerTaskReachabilityRequest extends \Google\Protobuf\Internal\Message
      * See the TaskReachability docstring for information about each enum variant.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.TaskReachability reachability = 4;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\TaskReachability}
      * @return $this
      */
-    public function setReachability($var)
+    public function setReachability(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\TaskReachability::class);
         $this->reachability = $var;

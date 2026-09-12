@@ -99,9 +99,8 @@ class ActivityTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setResult($var)
+    public function setResult(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->result = $var;
 
         return $this;
@@ -125,7 +124,7 @@ class ActivityTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
      * @param int|string $var
      * @return $this
      */
-    public function setScheduledEventId($var)
+    public function setScheduledEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->scheduled_event_id = $var;
@@ -151,7 +150,7 @@ class ActivityTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
      * @param int|string $var
      * @return $this
      */
-    public function setStartedEventId($var)
+    public function setStartedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->started_event_id = $var;
@@ -177,9 +176,9 @@ class ActivityTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -224,10 +223,9 @@ class ActivityTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
      * @return $this
      * @deprecated
      */
-    public function setWorkerVersion($var)
+    public function setWorkerVersion(\Temporal\Api\Common\V1\WorkerVersionStamp|null $var)
     {
         @trigger_error('worker_version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerVersionStamp::class);
         $this->worker_version = $var;
 
         return $this;

@@ -76,9 +76,8 @@ class RecordActivityTaskHeartbeatByIdResponse extends \Google\Protobuf\Internal\
      * @param bool $var
      * @return $this
      */
-    public function setCancelRequested($var)
+    public function setCancelRequested(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->cancel_requested = $var;
 
         return $this;
@@ -102,9 +101,8 @@ class RecordActivityTaskHeartbeatByIdResponse extends \Google\Protobuf\Internal\
      * @param bool $var
      * @return $this
      */
-    public function setActivityPaused($var)
+    public function setActivityPaused(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->activity_paused = $var;
 
         return $this;
@@ -130,9 +128,8 @@ class RecordActivityTaskHeartbeatByIdResponse extends \Google\Protobuf\Internal\
      * @param bool $var
      * @return $this
      */
-    public function setActivityReset($var)
+    public function setActivityReset(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->activity_reset = $var;
 
         return $this;

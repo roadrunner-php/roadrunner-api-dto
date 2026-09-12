@@ -55,7 +55,7 @@ class ListNexusOperationExecutionsResponse extends \Google\Protobuf\Internal\Mes
      * @param \Temporal\Api\Nexus\V1\NexusOperationExecutionListInfo[] $var
      * @return $this
      */
-    public function setOperations($var)
+    public function setOperations(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Nexus\V1\NexusOperationExecutionListInfo::class);
         $this->operations = $arr;
@@ -81,9 +81,9 @@ class ListNexusOperationExecutionsResponse extends \Google\Protobuf\Internal\Mes
      * @param string $var
      * @return $this
      */
-    public function setNextPageToken($var)
+    public function setNextPageToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->next_page_token = $var;
 
         return $this;

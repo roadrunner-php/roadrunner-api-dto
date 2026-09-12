@@ -62,9 +62,9 @@ class MacOSPlatform extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setVersion($var)
+    public function setVersion(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->version = $var;
 
         return $this;
@@ -74,7 +74,7 @@ class MacOSPlatform extends \Google\Protobuf\Internal\Message
      * The architecture of the worker process.
      *
      * Generated from protobuf field <code>.temporal.api.worker.v1.EnvironmentInfo.Architecture architecture = 2;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Worker\V1\EnvironmentInfo\Architecture}
      */
     public function getArchitecture()
     {
@@ -85,10 +85,10 @@ class MacOSPlatform extends \Google\Protobuf\Internal\Message
      * The architecture of the worker process.
      *
      * Generated from protobuf field <code>.temporal.api.worker.v1.EnvironmentInfo.Architecture architecture = 2;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Worker\V1\EnvironmentInfo\Architecture}
      * @return $this
      */
-    public function setArchitecture($var)
+    public function setArchitecture(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Worker\V1\EnvironmentInfo\Architecture::class);
         $this->architecture = $var;

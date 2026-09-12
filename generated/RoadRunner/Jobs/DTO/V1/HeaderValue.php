@@ -49,7 +49,7 @@ class HeaderValue extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setValue($var)
+    public function setValue(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->value = $arr;

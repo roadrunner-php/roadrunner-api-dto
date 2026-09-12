@@ -47,7 +47,7 @@ class ListScheduleMatchingTimesResponse extends \Google\Protobuf\Internal\Messag
      * @param \Google\Protobuf\Timestamp[] $var
      * @return $this
      */
-    public function setStartTime($var)
+    public function setStartTime(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Protobuf\Timestamp::class);
         $this->start_time = $arr;

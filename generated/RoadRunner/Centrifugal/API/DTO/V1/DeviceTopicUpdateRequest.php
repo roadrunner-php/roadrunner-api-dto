@@ -60,9 +60,9 @@ class DeviceTopicUpdateRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setDeviceId($var)
+    public function setDeviceId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->device_id = $var;
 
         return $this;
@@ -86,9 +86,9 @@ class DeviceTopicUpdateRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setOp($var)
+    public function setOp(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->op = $var;
 
         return $this;
@@ -108,7 +108,7 @@ class DeviceTopicUpdateRequest extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setTopics($var)
+    public function setTopics(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->topics = $arr;

@@ -52,9 +52,9 @@ class RPCRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setMethod($var)
+    public function setMethod(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->method = $var;
 
         return $this;
@@ -74,9 +74,9 @@ class RPCRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setParams($var)
+    public function setParams(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->params = $var;
 
         return $this;

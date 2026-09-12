@@ -87,9 +87,9 @@ class CreateWorkerDeploymentVersionRequest extends \Google\Protobuf\Internal\Mes
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -123,9 +123,8 @@ class CreateWorkerDeploymentVersionRequest extends \Google\Protobuf\Internal\Mes
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
      * @return $this
      */
-    public function setDeploymentVersion($var)
+    public function setDeploymentVersion(\Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
         $this->deployment_version = $var;
 
         return $this;
@@ -161,9 +160,8 @@ class CreateWorkerDeploymentVersionRequest extends \Google\Protobuf\Internal\Mes
      * @param \Temporal\Api\Compute\V1\ComputeConfig $var
      * @return $this
      */
-    public function setComputeConfig($var)
+    public function setComputeConfig(\Temporal\Api\Compute\V1\ComputeConfig|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Compute\V1\ComputeConfig::class);
         $this->compute_config = $var;
 
         return $this;
@@ -187,9 +185,9 @@ class CreateWorkerDeploymentVersionRequest extends \Google\Protobuf\Internal\Mes
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -217,9 +215,9 @@ class CreateWorkerDeploymentVersionRequest extends \Google\Protobuf\Internal\Mes
      * @param string $var
      * @return $this
      */
-    public function setRequestId($var)
+    public function setRequestId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->request_id = $var;
 
         return $this;

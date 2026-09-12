@@ -117,9 +117,8 @@ class ScheduleListInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Schedule\V1\ScheduleSpec $var
      * @return $this
      */
-    public function setSpec($var)
+    public function setSpec(\Temporal\Api\Schedule\V1\ScheduleSpec|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Schedule\V1\ScheduleSpec::class);
         $this->spec = $var;
 
         return $this;
@@ -157,9 +156,8 @@ class ScheduleListInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\WorkflowType $var
      * @return $this
      */
-    public function setWorkflowType($var)
+    public function setWorkflowType(\Temporal\Api\Common\V1\WorkflowType|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowType::class);
         $this->workflow_type = $var;
 
         return $this;
@@ -183,9 +181,9 @@ class ScheduleListInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNotes($var)
+    public function setNotes(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->notes = $var;
 
         return $this;
@@ -205,9 +203,8 @@ class ScheduleListInfo extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setPaused($var)
+    public function setPaused(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->paused = $var;
 
         return $this;
@@ -231,7 +228,7 @@ class ScheduleListInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Schedule\V1\ScheduleActionResult[] $var
      * @return $this
      */
-    public function setRecentActions($var)
+    public function setRecentActions(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Schedule\V1\ScheduleActionResult::class);
         $this->recent_actions = $arr;
@@ -253,7 +250,7 @@ class ScheduleListInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp[] $var
      * @return $this
      */
-    public function setFutureActionTimes($var)
+    public function setFutureActionTimes(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Protobuf\Timestamp::class);
         $this->future_action_times = $arr;
@@ -279,7 +276,7 @@ class ScheduleListInfo extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setStateSizeBytes($var)
+    public function setStateSizeBytes(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->state_size_bytes = $var;

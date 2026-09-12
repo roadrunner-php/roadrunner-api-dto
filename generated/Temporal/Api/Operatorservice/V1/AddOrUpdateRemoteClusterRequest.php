@@ -80,9 +80,9 @@ class AddOrUpdateRemoteClusterRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setFrontendAddress($var)
+    public function setFrontendAddress(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->frontend_address = $var;
 
         return $this;
@@ -106,9 +106,8 @@ class AddOrUpdateRemoteClusterRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setEnableRemoteClusterConnection($var)
+    public function setEnableRemoteClusterConnection(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->enable_remote_cluster_connection = $var;
 
         return $this;
@@ -134,9 +133,9 @@ class AddOrUpdateRemoteClusterRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setFrontendHttpAddress($var)
+    public function setFrontendHttpAddress(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->frontend_http_address = $var;
 
         return $this;
@@ -160,9 +159,8 @@ class AddOrUpdateRemoteClusterRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setEnableReplication($var)
+    public function setEnableReplication(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->enable_replication = $var;
 
         return $this;

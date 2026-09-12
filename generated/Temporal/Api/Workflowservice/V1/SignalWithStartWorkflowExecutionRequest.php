@@ -257,9 +257,9 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -279,9 +279,9 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setWorkflowId($var)
+    public function setWorkflowId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->workflow_id = $var;
 
         return $this;
@@ -311,9 +311,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * @param \Temporal\Api\Common\V1\WorkflowType $var
      * @return $this
      */
-    public function setWorkflowType($var)
+    public function setWorkflowType(\Temporal\Api\Common\V1\WorkflowType|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowType::class);
         $this->workflow_type = $var;
 
         return $this;
@@ -347,9 +346,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * @param \Temporal\Api\Taskqueue\V1\TaskQueue $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(\Temporal\Api\Taskqueue\V1\TaskQueue|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueue::class);
         $this->task_queue = $var;
 
         return $this;
@@ -383,9 +381,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setInput($var)
+    public function setInput(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->input = $var;
 
         return $this;
@@ -419,9 +416,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setWorkflowExecutionTimeout($var)
+    public function setWorkflowExecutionTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->workflow_execution_timeout = $var;
 
         return $this;
@@ -455,9 +451,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setWorkflowRunTimeout($var)
+    public function setWorkflowRunTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->workflow_run_timeout = $var;
 
         return $this;
@@ -491,9 +486,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setWorkflowTaskTimeout($var)
+    public function setWorkflowTaskTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->workflow_task_timeout = $var;
 
         return $this;
@@ -517,9 +511,9 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -543,9 +537,9 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setRequestId($var)
+    public function setRequestId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->request_id = $var;
 
         return $this;
@@ -557,7 +551,7 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * See `workflow_id_reuse_policy` for handling a workflow id duplication with a *running* workflow.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowIdReusePolicy workflow_id_reuse_policy = 11;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\WorkflowIdReusePolicy}
      */
     public function getWorkflowIdReusePolicy()
     {
@@ -570,10 +564,10 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * See `workflow_id_reuse_policy` for handling a workflow id duplication with a *running* workflow.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowIdReusePolicy workflow_id_reuse_policy = 11;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\WorkflowIdReusePolicy}
      * @return $this
      */
-    public function setWorkflowIdReusePolicy($var)
+    public function setWorkflowIdReusePolicy(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\WorkflowIdReusePolicy::class);
         $this->workflow_id_reuse_policy = $var;
@@ -588,7 +582,7 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * See `workflow_id_reuse_policy` for handling a workflow id duplication with a *closed* workflow.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowIdConflictPolicy workflow_id_conflict_policy = 22;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\WorkflowIdConflictPolicy}
      */
     public function getWorkflowIdConflictPolicy()
     {
@@ -602,10 +596,10 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * See `workflow_id_reuse_policy` for handling a workflow id duplication with a *closed* workflow.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowIdConflictPolicy workflow_id_conflict_policy = 22;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\WorkflowIdConflictPolicy}
      * @return $this
      */
-    public function setWorkflowIdConflictPolicy($var)
+    public function setWorkflowIdConflictPolicy(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\WorkflowIdConflictPolicy::class);
         $this->workflow_id_conflict_policy = $var;
@@ -631,9 +625,9 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setSignalName($var)
+    public function setSignalName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->signal_name = $var;
 
         return $this;
@@ -667,9 +661,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setSignalInput($var)
+    public function setSignalInput(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->signal_input = $var;
 
         return $this;
@@ -698,10 +691,10 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * @return $this
      * @deprecated
      */
-    public function setControl($var)
+    public function setControl(string $var)
     {
         @trigger_error('control is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->control = $var;
 
         return $this;
@@ -735,9 +728,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * @param \Temporal\Api\Common\V1\RetryPolicy $var
      * @return $this
      */
-    public function setRetryPolicy($var)
+    public function setRetryPolicy(\Temporal\Api\Common\V1\RetryPolicy|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\RetryPolicy::class);
         $this->retry_policy = $var;
 
         return $this;
@@ -761,9 +753,9 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setCronSchedule($var)
+    public function setCronSchedule(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->cron_schedule = $var;
 
         return $this;
@@ -793,9 +785,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * @param \Temporal\Api\Common\V1\Memo $var
      * @return $this
      */
-    public function setMemo($var)
+    public function setMemo(\Temporal\Api\Common\V1\Memo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Memo::class);
         $this->memo = $var;
 
         return $this;
@@ -825,9 +816,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * @param \Temporal\Api\Common\V1\SearchAttributes $var
      * @return $this
      */
-    public function setSearchAttributes($var)
+    public function setSearchAttributes(\Temporal\Api\Common\V1\SearchAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\SearchAttributes::class);
         $this->search_attributes = $var;
 
         return $this;
@@ -857,9 +847,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * @param \Temporal\Api\Common\V1\Header $var
      * @return $this
      */
-    public function setHeader($var)
+    public function setHeader(\Temporal\Api\Common\V1\Header|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Header::class);
         $this->header = $var;
 
         return $this;
@@ -901,9 +890,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setWorkflowStartDelay($var)
+    public function setWorkflowStartDelay(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->workflow_start_delay = $var;
 
         return $this;
@@ -941,9 +929,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * @param \Temporal\Api\Sdk\V1\UserMetadata $var
      * @return $this
      */
-    public function setUserMetadata($var)
+    public function setUserMetadata(\Temporal\Api\Sdk\V1\UserMetadata|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Sdk\V1\UserMetadata::class);
         $this->user_metadata = $var;
 
         return $this;
@@ -967,7 +954,7 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * @param \Temporal\Api\Common\V1\Link[] $var
      * @return $this
      */
-    public function setLinks($var)
+    public function setLinks(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Link::class);
         $this->links = $arr;
@@ -1005,9 +992,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * @param \Temporal\Api\Workflow\V1\VersioningOverride $var
      * @return $this
      */
-    public function setVersioningOverride($var)
+    public function setVersioningOverride(\Temporal\Api\Workflow\V1\VersioningOverride|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\VersioningOverride::class);
         $this->versioning_override = $var;
 
         return $this;
@@ -1041,9 +1027,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * @param \Temporal\Api\Common\V1\Priority $var
      * @return $this
      */
-    public function setPriority($var)
+    public function setPriority(\Temporal\Api\Common\V1\Priority|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Priority::class);
         $this->priority = $var;
 
         return $this;
@@ -1077,9 +1062,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * @param \Temporal\Api\Common\V1\TimeSkippingConfig $var
      * @return $this
      */
-    public function setTimeSkippingConfig($var)
+    public function setTimeSkippingConfig(\Temporal\Api\Common\V1\TimeSkippingConfig|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\TimeSkippingConfig::class);
         $this->time_skipping_config = $var;
 
         return $this;

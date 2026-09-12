@@ -57,9 +57,8 @@ class CompleteWorkflowExecutionCommandAttributes extends \Google\Protobuf\Intern
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setResult($var)
+    public function setResult(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->result = $var;
 
         return $this;

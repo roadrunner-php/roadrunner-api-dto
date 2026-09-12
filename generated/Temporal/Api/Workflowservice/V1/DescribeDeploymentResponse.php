@@ -59,9 +59,8 @@ class DescribeDeploymentResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\DeploymentInfo $var
      * @return $this
      */
-    public function setDeploymentInfo($var)
+    public function setDeploymentInfo(\Temporal\Api\Deployment\V1\DeploymentInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\DeploymentInfo::class);
         $this->deployment_info = $var;
 
         return $this;

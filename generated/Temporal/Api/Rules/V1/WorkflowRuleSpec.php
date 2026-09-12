@@ -100,9 +100,9 @@ class WorkflowRuleSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->id = $var;
 
         return $this;
@@ -127,9 +127,8 @@ class WorkflowRuleSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Rules\V1\WorkflowRuleSpec\ActivityStartingTrigger $var
      * @return $this
      */
-    public function setActivityStart($var)
+    public function setActivityStart(\Temporal\Api\Rules\V1\WorkflowRuleSpec\ActivityStartingTrigger|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Rules\V1\WorkflowRuleSpec\ActivityStartingTrigger::class);
         $this->writeOneof(2, $var);
 
         return $this;
@@ -167,9 +166,9 @@ class WorkflowRuleSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setVisibilityQuery($var)
+    public function setVisibilityQuery(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->visibility_query = $var;
 
         return $this;
@@ -193,7 +192,7 @@ class WorkflowRuleSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Rules\V1\WorkflowRuleAction[] $var
      * @return $this
      */
-    public function setActions($var)
+    public function setActions(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Rules\V1\WorkflowRuleAction::class);
         $this->actions = $arr;
@@ -231,9 +230,8 @@ class WorkflowRuleSpec extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setExpirationTime($var)
+    public function setExpirationTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->expiration_time = $var;
 
         return $this;

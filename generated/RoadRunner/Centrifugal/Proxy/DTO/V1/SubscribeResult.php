@@ -77,7 +77,7 @@ class SubscribeResult extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setExpireAt($var)
+    public function setExpireAt(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->expire_at = $var;
@@ -99,9 +99,9 @@ class SubscribeResult extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setInfo($var)
+    public function setInfo(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->info = $var;
 
         return $this;
@@ -121,9 +121,9 @@ class SubscribeResult extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setB64Info($var)
+    public function setB64Info(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->b64info = $var;
 
         return $this;
@@ -143,9 +143,9 @@ class SubscribeResult extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setData($var)
+    public function setData(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->data = $var;
 
         return $this;
@@ -165,9 +165,9 @@ class SubscribeResult extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setB64Data($var)
+    public function setB64Data(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->b64data = $var;
 
         return $this;
@@ -197,9 +197,8 @@ class SubscribeResult extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\Proxy\DTO\V1\SubscribeOptionOverride $var
      * @return $this
      */
-    public function setOverride($var)
+    public function setOverride(\RoadRunner\Centrifugal\Proxy\DTO\V1\SubscribeOptionOverride|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\Proxy\DTO\V1\SubscribeOptionOverride::class);
         $this->override = $var;
 
         return $this;
@@ -219,7 +218,7 @@ class SubscribeResult extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setAllow($var)
+    public function setAllow(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->allow = $arr;

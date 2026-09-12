@@ -57,9 +57,9 @@ class DeviceTopic extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->id = $var;
 
         return $this;
@@ -79,9 +79,9 @@ class DeviceTopic extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTopic($var)
+    public function setTopic(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->topic = $var;
 
         return $this;
@@ -111,9 +111,8 @@ class DeviceTopic extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\Device $var
      * @return $this
      */
-    public function setDevice($var)
+    public function setDevice(\RoadRunner\Centrifugal\API\DTO\V1\Device|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\Device::class);
         $this->device = $var;
 
         return $this;

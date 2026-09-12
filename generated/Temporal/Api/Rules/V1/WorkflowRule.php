@@ -98,9 +98,8 @@ class WorkflowRule extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setCreateTime($var)
+    public function setCreateTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->create_time = $var;
 
         return $this;
@@ -134,9 +133,8 @@ class WorkflowRule extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Rules\V1\WorkflowRuleSpec $var
      * @return $this
      */
-    public function setSpec($var)
+    public function setSpec(\Temporal\Api\Rules\V1\WorkflowRuleSpec|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Rules\V1\WorkflowRuleSpec::class);
         $this->spec = $var;
 
         return $this;
@@ -168,9 +166,9 @@ class WorkflowRule extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setCreatedByIdentity($var)
+    public function setCreatedByIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->created_by_identity = $var;
 
         return $this;
@@ -194,9 +192,9 @@ class WorkflowRule extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setDescription($var)
+    public function setDescription(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->description = $var;
 
         return $this;

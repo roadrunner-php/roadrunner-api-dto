@@ -74,9 +74,8 @@ class DeclinedTargetVersionUpgrade extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
      * @return $this
      */
-    public function setDeploymentVersion($var)
+    public function setDeploymentVersion(\Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
         $this->deployment_version = $var;
 
         return $this;
@@ -106,7 +105,7 @@ class DeclinedTargetVersionUpgrade extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setRevisionNumber($var)
+    public function setRevisionNumber(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->revision_number = $var;

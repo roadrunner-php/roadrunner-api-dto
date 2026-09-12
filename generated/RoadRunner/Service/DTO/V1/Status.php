@@ -70,9 +70,8 @@ class Status extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setCpuPercent($var)
+    public function setCpuPercent(float $var)
     {
-        GPBUtil::checkFloat($var);
         $this->cpu_percent = $var;
 
         return $this;
@@ -92,7 +91,7 @@ class Status extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setPid($var)
+    public function setPid(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->pid = $var;
@@ -114,7 +113,7 @@ class Status extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setMemoryUsage($var)
+    public function setMemoryUsage(int|string $var)
     {
         GPBUtil::checkUint64($var);
         $this->memory_usage = $var;
@@ -136,9 +135,9 @@ class Status extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setCommand($var)
+    public function setCommand(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->command = $var;
 
         return $this;
@@ -172,9 +171,8 @@ class Status extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Common\DTO\V1\Status $var
      * @return $this
      */
-    public function setStatus($var)
+    public function setStatus(\RoadRunner\Common\DTO\V1\Status|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Common\DTO\V1\Status::class);
         $this->status = $var;
 
         return $this;

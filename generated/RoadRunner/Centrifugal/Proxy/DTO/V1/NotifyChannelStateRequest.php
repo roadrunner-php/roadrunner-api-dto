@@ -47,7 +47,7 @@ class NotifyChannelStateRequest extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\Proxy\DTO\V1\ChannelEvent[] $var
      * @return $this
      */
-    public function setEvents($var)
+    public function setEvents(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\Centrifugal\Proxy\DTO\V1\ChannelEvent::class);
         $this->events = $arr;

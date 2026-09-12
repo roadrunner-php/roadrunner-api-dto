@@ -58,9 +58,9 @@ class WorkerSelector extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setWorkerInstanceKey($var)
+    public function setWorkerInstanceKey(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->writeOneof(1, $var);
 
         return $this;

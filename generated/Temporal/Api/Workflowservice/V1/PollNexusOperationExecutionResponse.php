@@ -75,9 +75,9 @@ class PollNexusOperationExecutionResponse extends \Google\Protobuf\Internal\Mess
      * @param string $var
      * @return $this
      */
-    public function setRunId($var)
+    public function setRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->run_id = $var;
 
         return $this;
@@ -87,7 +87,7 @@ class PollNexusOperationExecutionResponse extends \Google\Protobuf\Internal\Mess
      * The current stage of the operation. May be more advanced than the stage requested in the poll.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.NexusOperationWaitStage wait_stage = 2;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\NexusOperationWaitStage}
      */
     public function getWaitStage()
     {
@@ -98,10 +98,10 @@ class PollNexusOperationExecutionResponse extends \Google\Protobuf\Internal\Mess
      * The current stage of the operation. May be more advanced than the stage requested in the poll.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.NexusOperationWaitStage wait_stage = 2;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\NexusOperationWaitStage}
      * @return $this
      */
-    public function setWaitStage($var)
+    public function setWaitStage(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\NexusOperationWaitStage::class);
         $this->wait_stage = $var;
@@ -127,9 +127,9 @@ class PollNexusOperationExecutionResponse extends \Google\Protobuf\Internal\Mess
      * @param string $var
      * @return $this
      */
-    public function setOperationToken($var)
+    public function setOperationToken(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->operation_token = $var;
 
         return $this;
@@ -158,9 +158,8 @@ class PollNexusOperationExecutionResponse extends \Google\Protobuf\Internal\Mess
      * @param \Temporal\Api\Common\V1\Payload $var
      * @return $this
      */
-    public function setResult($var)
+    public function setResult(\Temporal\Api\Common\V1\Payload|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payload::class);
         $this->writeOneof(4, $var);
 
         return $this;
@@ -189,9 +188,8 @@ class PollNexusOperationExecutionResponse extends \Google\Protobuf\Internal\Mess
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
      */
-    public function setFailure($var)
+    public function setFailure(\Temporal\Api\Failure\V1\Failure|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
         $this->writeOneof(5, $var);
 
         return $this;

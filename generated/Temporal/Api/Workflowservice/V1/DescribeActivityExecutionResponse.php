@@ -98,9 +98,9 @@ class DescribeActivityExecutionResponse extends \Google\Protobuf\Internal\Messag
      * @param string $var
      * @return $this
      */
-    public function setRunId($var)
+    public function setRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->run_id = $var;
 
         return $this;
@@ -136,9 +136,8 @@ class DescribeActivityExecutionResponse extends \Google\Protobuf\Internal\Messag
      * @param \Temporal\Api\Activity\V1\ActivityExecutionInfo $var
      * @return $this
      */
-    public function setInfo($var)
+    public function setInfo(\Temporal\Api\Activity\V1\ActivityExecutionInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Activity\V1\ActivityExecutionInfo::class);
         $this->info = $var;
 
         return $this;
@@ -174,9 +173,8 @@ class DescribeActivityExecutionResponse extends \Google\Protobuf\Internal\Messag
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setInput($var)
+    public function setInput(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->input = $var;
 
         return $this;
@@ -210,9 +208,8 @@ class DescribeActivityExecutionResponse extends \Google\Protobuf\Internal\Messag
      * @param \Temporal\Api\Activity\V1\ActivityExecutionOutcome $var
      * @return $this
      */
-    public function setOutcome($var)
+    public function setOutcome(\Temporal\Api\Activity\V1\ActivityExecutionOutcome|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Activity\V1\ActivityExecutionOutcome::class);
         $this->outcome = $var;
 
         return $this;
@@ -236,9 +233,9 @@ class DescribeActivityExecutionResponse extends \Google\Protobuf\Internal\Messag
      * @param string $var
      * @return $this
      */
-    public function setLongPollToken($var)
+    public function setLongPollToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->long_poll_token = $var;
 
         return $this;
@@ -262,7 +259,7 @@ class DescribeActivityExecutionResponse extends \Google\Protobuf\Internal\Messag
      * @param \Temporal\Api\Activity\V1\CallbackInfo[] $var
      * @return $this
      */
-    public function setCallbacks($var)
+    public function setCallbacks(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Activity\V1\CallbackInfo::class);
         $this->callbacks = $arr;

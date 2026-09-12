@@ -146,9 +146,9 @@ class ResetActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -174,9 +174,9 @@ class ResetActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setWorkflowId($var)
+    public function setWorkflowId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->workflow_id = $var;
 
         return $this;
@@ -200,9 +200,9 @@ class ResetActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setActivityId($var)
+    public function setActivityId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->activity_id = $var;
 
         return $this;
@@ -226,9 +226,9 @@ class ResetActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRunId($var)
+    public function setRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->run_id = $var;
 
         return $this;
@@ -252,9 +252,9 @@ class ResetActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -278,9 +278,8 @@ class ResetActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setKeepPaused($var)
+    public function setKeepPaused(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->keep_paused = $var;
 
         return $this;
@@ -316,9 +315,8 @@ class ResetActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setJitter($var)
+    public function setJitter(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->jitter = $var;
 
         return $this;
@@ -346,9 +344,8 @@ class ResetActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setRestoreOriginalOptions($var)
+    public function setRestoreOriginalOptions(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->restore_original_options = $var;
 
         return $this;
@@ -372,9 +369,9 @@ class ResetActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setResourceId($var)
+    public function setResourceId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->resource_id = $var;
 
         return $this;
@@ -398,9 +395,9 @@ class ResetActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRequestId($var)
+    public function setRequestId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->request_id = $var;
 
         return $this;
@@ -428,9 +425,8 @@ class ResetActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setResetHeartbeat($var)
+    public function setResetHeartbeat(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->reset_heartbeat = $var;
 
         return $this;

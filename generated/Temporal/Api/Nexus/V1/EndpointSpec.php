@@ -80,9 +80,9 @@ class EndpointSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setName($var)
+    public function setName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->name = $var;
 
         return $this;
@@ -120,9 +120,8 @@ class EndpointSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Payload $var
      * @return $this
      */
-    public function setDescription($var)
+    public function setDescription(\Temporal\Api\Common\V1\Payload|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payload::class);
         $this->description = $var;
 
         return $this;
@@ -156,9 +155,8 @@ class EndpointSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Nexus\V1\EndpointTarget $var
      * @return $this
      */
-    public function setTarget($var)
+    public function setTarget(\Temporal\Api\Nexus\V1\EndpointTarget|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\EndpointTarget::class);
         $this->target = $var;
 
         return $this;

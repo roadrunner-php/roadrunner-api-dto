@@ -58,9 +58,8 @@ class StartOperationResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Nexus\V1\StartOperationResponse\Sync $var
      * @return $this
      */
-    public function setSyncSuccess($var)
+    public function setSyncSuccess(\Temporal\Api\Nexus\V1\StartOperationResponse\Sync|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\StartOperationResponse\Sync::class);
         $this->writeOneof(1, $var);
 
         return $this;
@@ -85,9 +84,8 @@ class StartOperationResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Nexus\V1\StartOperationResponse\Async $var
      * @return $this
      */
-    public function setAsyncSuccess($var)
+    public function setAsyncSuccess(\Temporal\Api\Nexus\V1\StartOperationResponse\Async|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\StartOperationResponse\Async::class);
         $this->writeOneof(2, $var);
 
         return $this;
@@ -126,10 +124,9 @@ class StartOperationResponse extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setOperationError($var)
+    public function setOperationError(\Temporal\Api\Nexus\V1\UnsuccessfulOperationError|null $var)
     {
         @trigger_error('operation_error is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\UnsuccessfulOperationError::class);
         $this->writeOneof(3, $var);
 
         return $this;
@@ -160,9 +157,8 @@ class StartOperationResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
      */
-    public function setFailure($var)
+    public function setFailure(\Temporal\Api\Failure\V1\Failure|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
         $this->writeOneof(4, $var);
 
         return $this;

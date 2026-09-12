@@ -72,7 +72,7 @@ class NexusOperationCancelRequestCompletedEventAttributes extends \Google\Protob
      * @param int|string $var
      * @return $this
      */
-    public function setRequestedEventId($var)
+    public function setRequestedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->requested_event_id = $var;
@@ -100,7 +100,7 @@ class NexusOperationCancelRequestCompletedEventAttributes extends \Google\Protob
      * @param int|string $var
      * @return $this
      */
-    public function setWorkflowTaskCompletedEventId($var)
+    public function setWorkflowTaskCompletedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->workflow_task_completed_event_id = $var;
@@ -126,7 +126,7 @@ class NexusOperationCancelRequestCompletedEventAttributes extends \Google\Protob
      * @param int|string $var
      * @return $this
      */
-    public function setScheduledEventId($var)
+    public function setScheduledEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->scheduled_event_id = $var;

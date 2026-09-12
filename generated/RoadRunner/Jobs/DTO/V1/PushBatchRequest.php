@@ -50,7 +50,7 @@ class PushBatchRequest extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Jobs\DTO\V1\Job[] $var
      * @return $this
      */
-    public function setJobs($var)
+    public function setJobs(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\Jobs\DTO\V1\Job::class);
         $this->jobs = $arr;

@@ -88,9 +88,9 @@ class FetchWorkerConfigRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -114,9 +114,9 @@ class FetchWorkerConfigRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -140,9 +140,9 @@ class FetchWorkerConfigRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setReason($var)
+    public function setReason(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->reason = $var;
 
         return $this;
@@ -178,9 +178,8 @@ class FetchWorkerConfigRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\WorkerSelector $var
      * @return $this
      */
-    public function setSelector($var)
+    public function setSelector(\Temporal\Api\Common\V1\WorkerSelector|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerSelector::class);
         $this->selector = $var;
 
         return $this;
@@ -204,9 +203,9 @@ class FetchWorkerConfigRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setResourceId($var)
+    public function setResourceId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->resource_id = $var;
 
         return $this;

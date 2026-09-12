@@ -47,7 +47,7 @@ class DeviceMetaUpdate extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setMeta($var)
+    public function setMeta(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->meta = $arr;

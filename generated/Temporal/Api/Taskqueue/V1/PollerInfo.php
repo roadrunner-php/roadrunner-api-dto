@@ -88,9 +88,8 @@ class PollerInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setLastAccessTime($var)
+    public function setLastAccessTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_access_time = $var;
 
         return $this;
@@ -110,9 +109,9 @@ class PollerInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -132,9 +131,8 @@ class PollerInfo extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setRatePerSecond($var)
+    public function setRatePerSecond(float $var)
     {
-        GPBUtil::checkDouble($var);
         $this->rate_per_second = $var;
 
         return $this;
@@ -181,10 +179,9 @@ class PollerInfo extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setWorkerVersionCapabilities($var)
+    public function setWorkerVersionCapabilities(\Temporal\Api\Common\V1\WorkerVersionCapabilities|null $var)
     {
         @trigger_error('worker_version_capabilities is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerVersionCapabilities::class);
         $this->worker_version_capabilities = $var;
 
         return $this;
@@ -218,9 +215,8 @@ class PollerInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentOptions $var
      * @return $this
      */
-    public function setDeploymentOptions($var)
+    public function setDeploymentOptions(\Temporal\Api\Deployment\V1\WorkerDeploymentOptions|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentOptions::class);
         $this->deployment_options = $var;
 
         return $this;

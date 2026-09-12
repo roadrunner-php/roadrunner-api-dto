@@ -99,9 +99,9 @@ class StackTraceFileLocation extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setFilePath($var)
+    public function setFilePath(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->file_path = $var;
 
         return $this;
@@ -127,7 +127,7 @@ class StackTraceFileLocation extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setLine($var)
+    public function setLine(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->line = $var;
@@ -155,7 +155,7 @@ class StackTraceFileLocation extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setColumn($var)
+    public function setColumn(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->column = $var;
@@ -183,9 +183,9 @@ class StackTraceFileLocation extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setFunctionName($var)
+    public function setFunctionName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->function_name = $var;
 
         return $this;
@@ -209,9 +209,8 @@ class StackTraceFileLocation extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setInternalCode($var)
+    public function setInternalCode(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->internal_code = $var;
 
         return $this;

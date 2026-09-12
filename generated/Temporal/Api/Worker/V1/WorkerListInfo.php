@@ -158,9 +158,9 @@ class WorkerListInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setWorkerInstanceKey($var)
+    public function setWorkerInstanceKey(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->worker_instance_key = $var;
 
         return $this;
@@ -186,9 +186,9 @@ class WorkerListInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setWorkerIdentity($var)
+    public function setWorkerIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->worker_identity = $var;
 
         return $this;
@@ -212,9 +212,9 @@ class WorkerListInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->task_queue = $var;
 
         return $this;
@@ -244,9 +244,8 @@ class WorkerListInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
      * @return $this
      */
-    public function setDeploymentVersion($var)
+    public function setDeploymentVersion(\Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
         $this->deployment_version = $var;
 
         return $this;
@@ -266,9 +265,9 @@ class WorkerListInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSdkName($var)
+    public function setSdkName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->sdk_name = $var;
 
         return $this;
@@ -288,9 +287,9 @@ class WorkerListInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSdkVersion($var)
+    public function setSdkVersion(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->sdk_version = $var;
 
         return $this;
@@ -300,7 +299,7 @@ class WorkerListInfo extends \Google\Protobuf\Internal\Message
      * Worker status. Defined by SDK.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkerStatus status = 7;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\WorkerStatus}
      */
     public function getStatus()
     {
@@ -311,10 +310,10 @@ class WorkerListInfo extends \Google\Protobuf\Internal\Message
      * Worker status. Defined by SDK.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkerStatus status = 7;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\WorkerStatus}
      * @return $this
      */
-    public function setStatus($var)
+    public function setStatus(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\WorkerStatus::class);
         $this->status = $var;
@@ -352,9 +351,8 @@ class WorkerListInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setStartTime($var)
+    public function setStartTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->start_time = $var;
 
         return $this;
@@ -378,9 +376,9 @@ class WorkerListInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setHostName($var)
+    public function setHostName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->host_name = $var;
 
         return $this;
@@ -408,9 +406,9 @@ class WorkerListInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setWorkerGroupingKey($var)
+    public function setWorkerGroupingKey(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->worker_grouping_key = $var;
 
         return $this;
@@ -436,9 +434,9 @@ class WorkerListInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setProcessId($var)
+    public function setProcessId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->process_id = $var;
 
         return $this;
@@ -462,7 +460,7 @@ class WorkerListInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\PluginInfo[] $var
      * @return $this
      */
-    public function setPlugins($var)
+    public function setPlugins(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Worker\V1\PluginInfo::class);
         $this->plugins = $arr;
@@ -488,7 +486,7 @@ class WorkerListInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\StorageDriverInfo[] $var
      * @return $this
      */
-    public function setDrivers($var)
+    public function setDrivers(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Worker\V1\StorageDriverInfo::class);
         $this->drivers = $arr;

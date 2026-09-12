@@ -65,9 +65,8 @@ class Response extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Update\V1\Meta $var
      * @return $this
      */
-    public function setMeta($var)
+    public function setMeta(\Temporal\Api\Update\V1\Meta|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Update\V1\Meta::class);
         $this->meta = $var;
 
         return $this;
@@ -97,9 +96,8 @@ class Response extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Update\V1\Outcome $var
      * @return $this
      */
-    public function setOutcome($var)
+    public function setOutcome(\Temporal\Api\Update\V1\Outcome|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Update\V1\Outcome::class);
         $this->outcome = $var;
 
         return $this;

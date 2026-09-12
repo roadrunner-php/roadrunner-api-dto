@@ -62,9 +62,9 @@ class Nexus extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setUrl($var)
+    public function setUrl(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->url = $var;
 
         return $this;
@@ -88,7 +88,7 @@ class Nexus extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setHeader($var)
+    public function setHeader(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->header = $arr;

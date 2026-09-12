@@ -54,9 +54,9 @@ class NewerBuildExistsFailure extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setDefaultBuildId($var)
+    public function setDefaultBuildId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->default_build_id = $var;
 
         return $this;

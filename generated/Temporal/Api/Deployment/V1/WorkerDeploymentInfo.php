@@ -124,9 +124,9 @@ class WorkerDeploymentInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setName($var)
+    public function setName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->name = $var;
 
         return $this;
@@ -158,7 +158,7 @@ class WorkerDeploymentInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary[] $var
      * @return $this
      */
-    public function setVersionSummaries($var)
+    public function setVersionSummaries(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary::class);
         $this->version_summaries = $arr;
@@ -190,9 +190,8 @@ class WorkerDeploymentInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setCreateTime($var)
+    public function setCreateTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->create_time = $var;
 
         return $this;
@@ -222,9 +221,8 @@ class WorkerDeploymentInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\RoutingConfig $var
      * @return $this
      */
-    public function setRoutingConfig($var)
+    public function setRoutingConfig(\Temporal\Api\Deployment\V1\RoutingConfig|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\RoutingConfig::class);
         $this->routing_config = $var;
 
         return $this;
@@ -252,9 +250,9 @@ class WorkerDeploymentInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setLastModifierIdentity($var)
+    public function setLastModifierIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->last_modifier_identity = $var;
 
         return $this;
@@ -284,9 +282,9 @@ class WorkerDeploymentInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setManagerIdentity($var)
+    public function setManagerIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->manager_identity = $var;
 
         return $this;
@@ -297,7 +295,7 @@ class WorkerDeploymentInfo extends \Google\Protobuf\Internal\Message
      * relevant task queues and their partitions.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.RoutingConfigUpdateState routing_config_update_state = 7;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\RoutingConfigUpdateState}
      */
     public function getRoutingConfigUpdateState()
     {
@@ -309,10 +307,10 @@ class WorkerDeploymentInfo extends \Google\Protobuf\Internal\Message
      * relevant task queues and their partitions.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.RoutingConfigUpdateState routing_config_update_state = 7;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\RoutingConfigUpdateState}
      * @return $this
      */
-    public function setRoutingConfigUpdateState($var)
+    public function setRoutingConfigUpdateState(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\RoutingConfigUpdateState::class);
         $this->routing_config_update_state = $var;

@@ -84,9 +84,8 @@ class Input extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Header $var
      * @return $this
      */
-    public function setHeader($var)
+    public function setHeader(\Temporal\Api\Common\V1\Header|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Header::class);
         $this->header = $var;
 
         return $this;
@@ -110,9 +109,9 @@ class Input extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setName($var)
+    public function setName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->name = $var;
 
         return $this;
@@ -146,9 +145,8 @@ class Input extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setArgs($var)
+    public function setArgs(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->args = $var;
 
         return $this;

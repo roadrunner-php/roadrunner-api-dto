@@ -62,9 +62,8 @@ class RateLimitConfig extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\RateLimit $var
      * @return $this
      */
-    public function setRateLimit($var)
+    public function setRateLimit(\Temporal\Api\Taskqueue\V1\RateLimit|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\RateLimit::class);
         $this->rate_limit = $var;
 
         return $this;
@@ -94,9 +93,8 @@ class RateLimitConfig extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\ConfigMetadata $var
      * @return $this
      */
-    public function setMetadata($var)
+    public function setMetadata(\Temporal\Api\Taskqueue\V1\ConfigMetadata|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\ConfigMetadata::class);
         $this->metadata = $var;
 
         return $this;

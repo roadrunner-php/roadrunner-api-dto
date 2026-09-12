@@ -47,9 +47,9 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setPlugin($var)
+    public function setPlugin(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->plugin = $var;
 
         return $this;

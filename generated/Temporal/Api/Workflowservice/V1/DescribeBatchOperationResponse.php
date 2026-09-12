@@ -128,7 +128,7 @@ class DescribeBatchOperationResponse extends \Google\Protobuf\Internal\Message
      * Batch operation type
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.BatchOperationType operation_type = 1;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\BatchOperationType}
      */
     public function getOperationType()
     {
@@ -139,10 +139,10 @@ class DescribeBatchOperationResponse extends \Google\Protobuf\Internal\Message
      * Batch operation type
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.BatchOperationType operation_type = 1;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\BatchOperationType}
      * @return $this
      */
-    public function setOperationType($var)
+    public function setOperationType(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\BatchOperationType::class);
         $this->operation_type = $var;
@@ -168,9 +168,9 @@ class DescribeBatchOperationResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setJobId($var)
+    public function setJobId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->job_id = $var;
 
         return $this;
@@ -180,7 +180,7 @@ class DescribeBatchOperationResponse extends \Google\Protobuf\Internal\Message
      * Batch operation state
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.BatchOperationState state = 3;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\BatchOperationState}
      */
     public function getState()
     {
@@ -191,10 +191,10 @@ class DescribeBatchOperationResponse extends \Google\Protobuf\Internal\Message
      * Batch operation state
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.BatchOperationState state = 3;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\BatchOperationState}
      * @return $this
      */
-    public function setState($var)
+    public function setState(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\BatchOperationState::class);
         $this->state = $var;
@@ -230,9 +230,8 @@ class DescribeBatchOperationResponse extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setStartTime($var)
+    public function setStartTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->start_time = $var;
 
         return $this;
@@ -266,9 +265,8 @@ class DescribeBatchOperationResponse extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setCloseTime($var)
+    public function setCloseTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->close_time = $var;
 
         return $this;
@@ -292,7 +290,7 @@ class DescribeBatchOperationResponse extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setTotalOperationCount($var)
+    public function setTotalOperationCount(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->total_operation_count = $var;
@@ -318,7 +316,7 @@ class DescribeBatchOperationResponse extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setCompleteOperationCount($var)
+    public function setCompleteOperationCount(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->complete_operation_count = $var;
@@ -344,7 +342,7 @@ class DescribeBatchOperationResponse extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setFailureOperationCount($var)
+    public function setFailureOperationCount(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->failure_operation_count = $var;
@@ -370,9 +368,9 @@ class DescribeBatchOperationResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -396,9 +394,9 @@ class DescribeBatchOperationResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setReason($var)
+    public function setReason(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->reason = $var;
 
         return $this;
@@ -422,9 +420,9 @@ class DescribeBatchOperationResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setQuery($var)
+    public function setQuery(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->query = $var;
 
         return $this;
@@ -448,7 +446,7 @@ class DescribeBatchOperationResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Execution[] $var
      * @return $this
      */
-    public function setExecutions($var)
+    public function setExecutions(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Execution::class);
         $this->executions = $arr;

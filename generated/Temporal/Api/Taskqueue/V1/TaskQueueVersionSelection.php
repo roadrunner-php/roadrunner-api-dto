@@ -74,7 +74,7 @@ class TaskQueueVersionSelection extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setBuildIds($var)
+    public function setBuildIds(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->build_ids = $arr;
@@ -100,9 +100,8 @@ class TaskQueueVersionSelection extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setUnversioned($var)
+    public function setUnversioned(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->unversioned = $var;
 
         return $this;
@@ -128,9 +127,8 @@ class TaskQueueVersionSelection extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setAllActive($var)
+    public function setAllActive(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->all_active = $var;
 
         return $this;

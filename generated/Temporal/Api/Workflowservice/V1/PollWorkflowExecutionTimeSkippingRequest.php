@@ -67,9 +67,9 @@ class PollWorkflowExecutionTimeSkippingRequest extends \Google\Protobuf\Internal
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -99,9 +99,8 @@ class PollWorkflowExecutionTimeSkippingRequest extends \Google\Protobuf\Internal
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
      * @return $this
      */
-    public function setWorkflowExecution($var)
+    public function setWorkflowExecution(\Temporal\Api\Common\V1\WorkflowExecution|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->workflow_execution = $var;
 
         return $this;
@@ -127,9 +126,9 @@ class PollWorkflowExecutionTimeSkippingRequest extends \Google\Protobuf\Internal
      * @param string $var
      * @return $this
      */
-    public function setFastForwardId($var)
+    public function setFastForwardId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->fast_forward_id = $var;
 
         return $this;

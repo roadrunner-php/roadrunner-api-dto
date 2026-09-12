@@ -76,9 +76,9 @@ class VersionTaskQueue extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setName($var)
+    public function setName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->name = $var;
 
         return $this;
@@ -86,7 +86,7 @@ class VersionTaskQueue extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.TaskQueueType type = 2;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\TaskQueueType}
      */
     public function getType()
     {
@@ -95,10 +95,10 @@ class VersionTaskQueue extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.TaskQueueType type = 2;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\TaskQueueType}
      * @return $this
      */
-    public function setType($var)
+    public function setType(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\TaskQueueType::class);
         $this->type = $var;
@@ -134,9 +134,8 @@ class VersionTaskQueue extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\TaskQueueStats $var
      * @return $this
      */
-    public function setStats($var)
+    public function setStats(\Temporal\Api\Taskqueue\V1\TaskQueueStats|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueueStats::class);
         $this->stats = $var;
 
         return $this;
@@ -166,7 +165,7 @@ class VersionTaskQueue extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setStatsByPriorityKey($var)
+    public function setStatsByPriorityKey(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::INT32, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Taskqueue\V1\TaskQueueStats::class);
         $this->stats_by_priority_key = $arr;

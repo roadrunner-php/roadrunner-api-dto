@@ -148,9 +148,9 @@ class NexusOperationExecutionListInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setOperationId($var)
+    public function setOperationId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->operation_id = $var;
 
         return $this;
@@ -174,9 +174,9 @@ class NexusOperationExecutionListInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRunId($var)
+    public function setRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->run_id = $var;
 
         return $this;
@@ -200,9 +200,9 @@ class NexusOperationExecutionListInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setEndpoint($var)
+    public function setEndpoint(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->endpoint = $var;
 
         return $this;
@@ -226,9 +226,9 @@ class NexusOperationExecutionListInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setService($var)
+    public function setService(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->service = $var;
 
         return $this;
@@ -252,9 +252,9 @@ class NexusOperationExecutionListInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setOperation($var)
+    public function setOperation(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->operation = $var;
 
         return $this;
@@ -288,9 +288,8 @@ class NexusOperationExecutionListInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setScheduleTime($var)
+    public function setScheduleTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->schedule_time = $var;
 
         return $this;
@@ -324,9 +323,8 @@ class NexusOperationExecutionListInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setCloseTime($var)
+    public function setCloseTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->close_time = $var;
 
         return $this;
@@ -336,7 +334,7 @@ class NexusOperationExecutionListInfo extends \Google\Protobuf\Internal\Message
      * The status is updated once, when the operation is originally scheduled, and again when the operation reaches a terminal status.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.NexusOperationExecutionStatus status = 8;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\NexusOperationExecutionStatus}
      */
     public function getStatus()
     {
@@ -347,10 +345,10 @@ class NexusOperationExecutionListInfo extends \Google\Protobuf\Internal\Message
      * The status is updated once, when the operation is originally scheduled, and again when the operation reaches a terminal status.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.NexusOperationExecutionStatus status = 8;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\NexusOperationExecutionStatus}
      * @return $this
      */
-    public function setStatus($var)
+    public function setStatus(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\NexusOperationExecutionStatus::class);
         $this->status = $var;
@@ -386,9 +384,8 @@ class NexusOperationExecutionListInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\SearchAttributes $var
      * @return $this
      */
-    public function setSearchAttributes($var)
+    public function setSearchAttributes(\Temporal\Api\Common\V1\SearchAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\SearchAttributes::class);
         $this->search_attributes = $var;
 
         return $this;
@@ -412,7 +409,7 @@ class NexusOperationExecutionListInfo extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setStateTransitionCount($var)
+    public function setStateTransitionCount(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->state_transition_count = $var;
@@ -450,9 +447,8 @@ class NexusOperationExecutionListInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setExecutionDuration($var)
+    public function setExecutionDuration(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->execution_duration = $var;
 
         return $this;
@@ -476,7 +472,7 @@ class NexusOperationExecutionListInfo extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setStateSizeBytes($var)
+    public function setStateSizeBytes(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->state_size_bytes = $var;

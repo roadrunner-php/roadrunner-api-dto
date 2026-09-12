@@ -79,9 +79,9 @@ class SetWorkerDeploymentManagerResponse extends \Google\Protobuf\Internal\Messa
      * @param string $var
      * @return $this
      */
-    public function setConflictToken($var)
+    public function setConflictToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->conflict_token = $var;
 
         return $this;
@@ -118,10 +118,10 @@ class SetWorkerDeploymentManagerResponse extends \Google\Protobuf\Internal\Messa
      * @return $this
      * @deprecated
      */
-    public function setPreviousManagerIdentity($var)
+    public function setPreviousManagerIdentity(string $var)
     {
         @trigger_error('previous_manager_identity is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->previous_manager_identity = $var;
 
         return $this;

@@ -57,7 +57,7 @@ class ListNamespacesRequest extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setPageSize($var)
+    public function setPageSize(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->page_size = $var;
@@ -79,9 +79,9 @@ class ListNamespacesRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNextPageToken($var)
+    public function setNextPageToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->next_page_token = $var;
 
         return $this;
@@ -111,9 +111,8 @@ class ListNamespacesRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\PBNamespace\V1\NamespaceFilter $var
      * @return $this
      */
-    public function setNamespaceFilter($var)
+    public function setNamespaceFilter(\Temporal\Api\PBNamespace\V1\NamespaceFilter|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\PBNamespace\V1\NamespaceFilter::class);
         $this->namespace_filter = $var;
 
         return $this;

@@ -54,9 +54,9 @@ class ListDeploymentsResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNextPageToken($var)
+    public function setNextPageToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->next_page_token = $var;
 
         return $this;
@@ -76,7 +76,7 @@ class ListDeploymentsResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\DeploymentListInfo[] $var
      * @return $this
      */
-    public function setDeployments($var)
+    public function setDeployments(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Deployment\V1\DeploymentListInfo::class);
         $this->deployments = $arr;

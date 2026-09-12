@@ -74,9 +74,8 @@ class CallbackInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Activity\V1\CallbackInfo\Trigger $var
      * @return $this
      */
-    public function setTrigger($var)
+    public function setTrigger(\Temporal\Api\Activity\V1\CallbackInfo\Trigger|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Activity\V1\CallbackInfo\Trigger::class);
         $this->trigger = $var;
 
         return $this;
@@ -110,9 +109,8 @@ class CallbackInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Callback\V1\CallbackInfo $var
      * @return $this
      */
-    public function setInfo($var)
+    public function setInfo(\Temporal\Api\Callback\V1\CallbackInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Callback\V1\CallbackInfo::class);
         $this->info = $var;
 
         return $this;

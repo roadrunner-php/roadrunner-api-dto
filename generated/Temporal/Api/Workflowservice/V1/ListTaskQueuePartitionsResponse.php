@@ -52,7 +52,7 @@ class ListTaskQueuePartitionsResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\TaskQueuePartitionMetadata[] $var
      * @return $this
      */
-    public function setActivityTaskQueuePartitions($var)
+    public function setActivityTaskQueuePartitions(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Taskqueue\V1\TaskQueuePartitionMetadata::class);
         $this->activity_task_queue_partitions = $arr;
@@ -74,7 +74,7 @@ class ListTaskQueuePartitionsResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\TaskQueuePartitionMetadata[] $var
      * @return $this
      */
-    public function setWorkflowTaskQueuePartitions($var)
+    public function setWorkflowTaskQueuePartitions(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Taskqueue\V1\TaskQueuePartitionMetadata::class);
         $this->workflow_task_queue_partitions = $arr;

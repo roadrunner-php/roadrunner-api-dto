@@ -80,9 +80,8 @@ class WorkflowExecutionConfig extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\TaskQueue $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(\Temporal\Api\Taskqueue\V1\TaskQueue|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueue::class);
         $this->task_queue = $var;
 
         return $this;
@@ -112,9 +111,8 @@ class WorkflowExecutionConfig extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setWorkflowExecutionTimeout($var)
+    public function setWorkflowExecutionTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->workflow_execution_timeout = $var;
 
         return $this;
@@ -144,9 +142,8 @@ class WorkflowExecutionConfig extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setWorkflowRunTimeout($var)
+    public function setWorkflowRunTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->workflow_run_timeout = $var;
 
         return $this;
@@ -176,9 +173,8 @@ class WorkflowExecutionConfig extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setDefaultWorkflowTaskTimeout($var)
+    public function setDefaultWorkflowTaskTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->default_workflow_task_timeout = $var;
 
         return $this;
@@ -212,9 +208,8 @@ class WorkflowExecutionConfig extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Sdk\V1\UserMetadata $var
      * @return $this
      */
-    public function setUserMetadata($var)
+    public function setUserMetadata(\Temporal\Api\Sdk\V1\UserMetadata|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Sdk\V1\UserMetadata::class);
         $this->user_metadata = $var;
 
         return $this;

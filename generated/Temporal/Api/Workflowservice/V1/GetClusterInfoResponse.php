@@ -105,7 +105,7 @@ class GetClusterInfoResponse extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setSupportedClients($var)
+    public function setSupportedClients(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->supported_clients = $arr;
@@ -127,9 +127,9 @@ class GetClusterInfoResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setServerVersion($var)
+    public function setServerVersion(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->server_version = $var;
 
         return $this;
@@ -149,9 +149,9 @@ class GetClusterInfoResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setClusterId($var)
+    public function setClusterId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->cluster_id = $var;
 
         return $this;
@@ -181,9 +181,8 @@ class GetClusterInfoResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Version\V1\VersionInfo $var
      * @return $this
      */
-    public function setVersionInfo($var)
+    public function setVersionInfo(\Temporal\Api\Version\V1\VersionInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Version\V1\VersionInfo::class);
         $this->version_info = $var;
 
         return $this;
@@ -203,9 +202,9 @@ class GetClusterInfoResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setClusterName($var)
+    public function setClusterName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->cluster_name = $var;
 
         return $this;
@@ -225,7 +224,7 @@ class GetClusterInfoResponse extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setHistoryShardCount($var)
+    public function setHistoryShardCount(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->history_shard_count = $var;
@@ -247,9 +246,9 @@ class GetClusterInfoResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setPersistenceStore($var)
+    public function setPersistenceStore(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->persistence_store = $var;
 
         return $this;
@@ -269,9 +268,9 @@ class GetClusterInfoResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setVisibilityStore($var)
+    public function setVisibilityStore(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->visibility_store = $var;
 
         return $this;
@@ -291,7 +290,7 @@ class GetClusterInfoResponse extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setInitialFailoverVersion($var)
+    public function setInitialFailoverVersion(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->initial_failover_version = $var;
@@ -313,7 +312,7 @@ class GetClusterInfoResponse extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setFailoverVersionIncrement($var)
+    public function setFailoverVersionIncrement(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->failover_version_increment = $var;

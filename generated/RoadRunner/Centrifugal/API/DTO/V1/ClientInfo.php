@@ -62,9 +62,9 @@ class ClientInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setUser($var)
+    public function setUser(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->user = $var;
 
         return $this;
@@ -84,9 +84,9 @@ class ClientInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setClient($var)
+    public function setClient(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->client = $var;
 
         return $this;
@@ -106,9 +106,9 @@ class ClientInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setConnInfo($var)
+    public function setConnInfo(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->conn_info = $var;
 
         return $this;
@@ -128,9 +128,9 @@ class ClientInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setChanInfo($var)
+    public function setChanInfo(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->chan_info = $var;
 
         return $this;

@@ -80,9 +80,9 @@ class UpdateNamespaceInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setDescription($var)
+    public function setDescription(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->description = $var;
 
         return $this;
@@ -102,9 +102,9 @@ class UpdateNamespaceInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setOwnerEmail($var)
+    public function setOwnerEmail(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->owner_email = $var;
 
         return $this;
@@ -132,7 +132,7 @@ class UpdateNamespaceInfo extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setData($var)
+    public function setData(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->data = $arr;
@@ -148,7 +148,7 @@ class UpdateNamespaceInfo extends \Google\Protobuf\Internal\Message
      * Default is NAMESPACE_STATE_UNSPECIFIED which is do not change state.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.NamespaceState state = 4;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\NamespaceState}
      */
     public function getState()
     {
@@ -163,10 +163,10 @@ class UpdateNamespaceInfo extends \Google\Protobuf\Internal\Message
      * Default is NAMESPACE_STATE_UNSPECIFIED which is do not change state.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.NamespaceState state = 4;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\NamespaceState}
      * @return $this
      */
-    public function setState($var)
+    public function setState(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\NamespaceState::class);
         $this->state = $var;

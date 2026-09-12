@@ -48,7 +48,7 @@ class Execution extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.ExecutionType type = 1;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ExecutionType}
      */
     public function getType()
     {
@@ -57,10 +57,10 @@ class Execution extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.ExecutionType type = 1;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ExecutionType}
      * @return $this
      */
-    public function setType($var)
+    public function setType(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ExecutionType::class);
         $this->type = $var;
@@ -82,9 +82,9 @@ class Execution extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setBusinessId($var)
+    public function setBusinessId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->business_id = $var;
 
         return $this;
@@ -104,9 +104,9 @@ class Execution extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRunId($var)
+    public function setRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->run_id = $var;
 
         return $this;

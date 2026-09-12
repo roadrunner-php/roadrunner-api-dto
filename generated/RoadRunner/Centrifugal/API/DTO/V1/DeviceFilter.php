@@ -67,7 +67,7 @@ class DeviceFilter extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setIds($var)
+    public function setIds(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->ids = $arr;
@@ -89,7 +89,7 @@ class DeviceFilter extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setUsers($var)
+    public function setUsers(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->users = $arr;
@@ -111,7 +111,7 @@ class DeviceFilter extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setTopics($var)
+    public function setTopics(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->topics = $arr;
@@ -133,7 +133,7 @@ class DeviceFilter extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setProviders($var)
+    public function setProviders(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->providers = $arr;
@@ -155,7 +155,7 @@ class DeviceFilter extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setPlatforms($var)
+    public function setPlatforms(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->platforms = $arr;

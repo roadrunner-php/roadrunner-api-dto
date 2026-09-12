@@ -67,9 +67,9 @@ class UpdateNexusEndpointRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->id = $var;
 
         return $this;
@@ -93,7 +93,7 @@ class UpdateNexusEndpointRequest extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setVersion($var)
+    public function setVersion(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->version = $var;
@@ -125,9 +125,8 @@ class UpdateNexusEndpointRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Nexus\V1\EndpointSpec $var
      * @return $this
      */
-    public function setSpec($var)
+    public function setSpec(\Temporal\Api\Nexus\V1\EndpointSpec|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\EndpointSpec::class);
         $this->spec = $var;
 
         return $this;

@@ -72,9 +72,9 @@ class WorkflowUpdateOptionsUpdate extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setUpdateId($var)
+    public function setUpdateId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->update_id = $var;
 
         return $this;
@@ -100,9 +100,9 @@ class WorkflowUpdateOptionsUpdate extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAttachedRequestId($var)
+    public function setAttachedRequestId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->attached_request_id = $var;
 
         return $this;
@@ -126,7 +126,7 @@ class WorkflowUpdateOptionsUpdate extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Callback[] $var
      * @return $this
      */
-    public function setAttachedCompletionCallbacks($var)
+    public function setAttachedCompletionCallbacks(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Callback::class);
         $this->attached_completion_callbacks = $arr;

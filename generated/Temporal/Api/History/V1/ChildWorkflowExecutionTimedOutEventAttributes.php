@@ -94,9 +94,9 @@ class ChildWorkflowExecutionTimedOutEventAttributes extends \Google\Protobuf\Int
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -116,9 +116,9 @@ class ChildWorkflowExecutionTimedOutEventAttributes extends \Google\Protobuf\Int
      * @param string $var
      * @return $this
      */
-    public function setNamespaceId($var)
+    public function setNamespaceId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace_id = $var;
 
         return $this;
@@ -148,9 +148,8 @@ class ChildWorkflowExecutionTimedOutEventAttributes extends \Google\Protobuf\Int
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
      * @return $this
      */
-    public function setWorkflowExecution($var)
+    public function setWorkflowExecution(\Temporal\Api\Common\V1\WorkflowExecution|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->workflow_execution = $var;
 
         return $this;
@@ -180,9 +179,8 @@ class ChildWorkflowExecutionTimedOutEventAttributes extends \Google\Protobuf\Int
      * @param \Temporal\Api\Common\V1\WorkflowType $var
      * @return $this
      */
-    public function setWorkflowType($var)
+    public function setWorkflowType(\Temporal\Api\Common\V1\WorkflowType|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowType::class);
         $this->workflow_type = $var;
 
         return $this;
@@ -206,7 +204,7 @@ class ChildWorkflowExecutionTimedOutEventAttributes extends \Google\Protobuf\Int
      * @param int|string $var
      * @return $this
      */
-    public function setInitiatedEventId($var)
+    public function setInitiatedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->initiated_event_id = $var;
@@ -232,7 +230,7 @@ class ChildWorkflowExecutionTimedOutEventAttributes extends \Google\Protobuf\Int
      * @param int|string $var
      * @return $this
      */
-    public function setStartedEventId($var)
+    public function setStartedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->started_event_id = $var;
@@ -242,7 +240,7 @@ class ChildWorkflowExecutionTimedOutEventAttributes extends \Google\Protobuf\Int
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.RetryState retry_state = 6;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\RetryState}
      */
     public function getRetryState()
     {
@@ -251,10 +249,10 @@ class ChildWorkflowExecutionTimedOutEventAttributes extends \Google\Protobuf\Int
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.RetryState retry_state = 6;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\RetryState}
      * @return $this
      */
-    public function setRetryState($var)
+    public function setRetryState(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\RetryState::class);
         $this->retry_state = $var;

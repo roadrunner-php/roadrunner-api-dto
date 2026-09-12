@@ -73,9 +73,9 @@ class Failure extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setMessage($var)
+    public function setMessage(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->message = $var;
 
         return $this;
@@ -95,9 +95,9 @@ class Failure extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setStackTrace($var)
+    public function setStackTrace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->stack_trace = $var;
 
         return $this;
@@ -117,7 +117,7 @@ class Failure extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setMetadata($var)
+    public function setMetadata(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->metadata = $arr;
@@ -143,9 +143,9 @@ class Failure extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setDetails($var)
+    public function setDetails(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->details = $var;
 
         return $this;
@@ -175,9 +175,8 @@ class Failure extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Nexus\V1\Failure $var
      * @return $this
      */
-    public function setCause($var)
+    public function setCause(\Temporal\Api\Nexus\V1\Failure|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\Failure::class);
         $this->cause = $var;
 
         return $this;

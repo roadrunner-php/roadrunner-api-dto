@@ -164,9 +164,8 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
      * @return $this
      */
-    public function setCurrentDeploymentVersion($var)
+    public function setCurrentDeploymentVersion(\Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
         $this->current_deployment_version = $var;
 
         return $this;
@@ -195,10 +194,10 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setCurrentVersion($var)
+    public function setCurrentVersion(string $var)
     {
         @trigger_error('current_version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->current_version = $var;
 
         return $this;
@@ -240,9 +239,8 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
      * @return $this
      */
-    public function setRampingDeploymentVersion($var)
+    public function setRampingDeploymentVersion(\Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
         $this->ramping_deployment_version = $var;
 
         return $this;
@@ -271,10 +269,10 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setRampingVersion($var)
+    public function setRampingVersion(string $var)
     {
         @trigger_error('ramping_version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->ramping_version = $var;
 
         return $this;
@@ -304,9 +302,8 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setRampingVersionPercentage($var)
+    public function setRampingVersionPercentage(float $var)
     {
-        GPBUtil::checkFloat($var);
         $this->ramping_version_percentage = $var;
 
         return $this;
@@ -340,9 +337,8 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setCurrentVersionChangedTime($var)
+    public function setCurrentVersionChangedTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->current_version_changed_time = $var;
 
         return $this;
@@ -376,9 +372,8 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setRampingVersionChangedTime($var)
+    public function setRampingVersionChangedTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->ramping_version_changed_time = $var;
 
         return $this;
@@ -414,9 +409,8 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setRampingVersionPercentageChangedTime($var)
+    public function setRampingVersionPercentageChangedTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->ramping_version_percentage_changed_time = $var;
 
         return $this;
@@ -442,7 +436,7 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setRevisionNumber($var)
+    public function setRevisionNumber(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->revision_number = $var;

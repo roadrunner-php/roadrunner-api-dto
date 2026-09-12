@@ -43,7 +43,7 @@ class WorkflowExecutionTimedOutEventAttributes extends \Google\Protobuf\Internal
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.RetryState retry_state = 1;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\RetryState}
      */
     public function getRetryState()
     {
@@ -52,10 +52,10 @@ class WorkflowExecutionTimedOutEventAttributes extends \Google\Protobuf\Internal
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.RetryState retry_state = 1;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\RetryState}
      * @return $this
      */
-    public function setRetryState($var)
+    public function setRetryState(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\RetryState::class);
         $this->retry_state = $var;
@@ -81,9 +81,9 @@ class WorkflowExecutionTimedOutEventAttributes extends \Google\Protobuf\Internal
      * @param string $var
      * @return $this
      */
-    public function setNewExecutionRunId($var)
+    public function setNewExecutionRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->new_execution_run_id = $var;
 
         return $this;

@@ -76,7 +76,7 @@ class StackTraceFileSlice extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setLineOffset($var)
+    public function setLineOffset(int $var)
     {
         GPBUtil::checkUint32($var);
         $this->line_offset = $var;
@@ -102,9 +102,9 @@ class StackTraceFileSlice extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setContent($var)
+    public function setContent(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->content = $var;
 
         return $this;

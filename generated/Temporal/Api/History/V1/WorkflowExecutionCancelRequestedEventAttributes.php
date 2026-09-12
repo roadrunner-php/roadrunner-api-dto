@@ -77,9 +77,9 @@ class WorkflowExecutionCancelRequestedEventAttributes extends \Google\Protobuf\I
      * @param string $var
      * @return $this
      */
-    public function setCause($var)
+    public function setCause(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->cause = $var;
 
         return $this;
@@ -105,7 +105,7 @@ class WorkflowExecutionCancelRequestedEventAttributes extends \Google\Protobuf\I
      * @param int|string $var
      * @return $this
      */
-    public function setExternalInitiatedEventId($var)
+    public function setExternalInitiatedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->external_initiated_event_id = $var;
@@ -137,9 +137,8 @@ class WorkflowExecutionCancelRequestedEventAttributes extends \Google\Protobuf\I
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
      * @return $this
      */
-    public function setExternalWorkflowExecution($var)
+    public function setExternalWorkflowExecution(\Temporal\Api\Common\V1\WorkflowExecution|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->external_workflow_execution = $var;
 
         return $this;
@@ -163,9 +162,9 @@ class WorkflowExecutionCancelRequestedEventAttributes extends \Google\Protobuf\I
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;

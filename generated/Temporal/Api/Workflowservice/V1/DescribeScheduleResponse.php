@@ -121,9 +121,8 @@ class DescribeScheduleResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Schedule\V1\Schedule $var
      * @return $this
      */
-    public function setSchedule($var)
+    public function setSchedule(\Temporal\Api\Schedule\V1\Schedule|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Schedule\V1\Schedule::class);
         $this->schedule = $var;
 
         return $this;
@@ -157,9 +156,8 @@ class DescribeScheduleResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Schedule\V1\ScheduleInfo $var
      * @return $this
      */
-    public function setInfo($var)
+    public function setInfo(\Temporal\Api\Schedule\V1\ScheduleInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Schedule\V1\ScheduleInfo::class);
         $this->info = $var;
 
         return $this;
@@ -193,9 +191,8 @@ class DescribeScheduleResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Memo $var
      * @return $this
      */
-    public function setMemo($var)
+    public function setMemo(\Temporal\Api\Common\V1\Memo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Memo::class);
         $this->memo = $var;
 
         return $this;
@@ -225,9 +222,8 @@ class DescribeScheduleResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\SearchAttributes $var
      * @return $this
      */
-    public function setSearchAttributes($var)
+    public function setSearchAttributes(\Temporal\Api\Common\V1\SearchAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\SearchAttributes::class);
         $this->search_attributes = $var;
 
         return $this;
@@ -255,9 +251,9 @@ class DescribeScheduleResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setConflictToken($var)
+    public function setConflictToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->conflict_token = $var;
 
         return $this;

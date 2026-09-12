@@ -58,9 +58,8 @@ class Link extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Link\WorkflowEvent $var
      * @return $this
      */
-    public function setWorkflowEvent($var)
+    public function setWorkflowEvent(\Temporal\Api\Common\V1\Link\WorkflowEvent|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Link\WorkflowEvent::class);
         $this->writeOneof(1, $var);
 
         return $this;
@@ -85,9 +84,8 @@ class Link extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Link\BatchJob $var
      * @return $this
      */
-    public function setBatchJob($var)
+    public function setBatchJob(\Temporal\Api\Common\V1\Link\BatchJob|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Link\BatchJob::class);
         $this->writeOneof(2, $var);
 
         return $this;
@@ -112,9 +110,8 @@ class Link extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Link\Activity $var
      * @return $this
      */
-    public function setActivity($var)
+    public function setActivity(\Temporal\Api\Common\V1\Link\Activity|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Link\Activity::class);
         $this->writeOneof(3, $var);
 
         return $this;
@@ -139,9 +136,8 @@ class Link extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Link\NexusOperation $var
      * @return $this
      */
-    public function setNexusOperation($var)
+    public function setNexusOperation(\Temporal\Api\Common\V1\Link\NexusOperation|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Link\NexusOperation::class);
         $this->writeOneof(4, $var);
 
         return $this;
@@ -166,9 +162,8 @@ class Link extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Link\Workflow $var
      * @return $this
      */
-    public function setWorkflow($var)
+    public function setWorkflow(\Temporal\Api\Common\V1\Link\Workflow|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Link\Workflow::class);
         $this->writeOneof(5, $var);
 
         return $this;
