@@ -62,9 +62,9 @@ class DeleteNexusEndpointRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->id = $var;
 
         return $this;
@@ -88,7 +88,7 @@ class DeleteNexusEndpointRequest extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setVersion($var)
+    public function setVersion(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->version = $var;

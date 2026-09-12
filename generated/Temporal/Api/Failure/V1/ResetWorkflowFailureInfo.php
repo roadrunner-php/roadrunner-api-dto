@@ -57,9 +57,8 @@ class ResetWorkflowFailureInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setLastHeartbeatDetails($var)
+    public function setLastHeartbeatDetails(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->last_heartbeat_details = $var;
 
         return $this;

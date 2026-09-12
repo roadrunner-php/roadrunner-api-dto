@@ -59,9 +59,8 @@ class GetCurrentDeploymentResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\DeploymentInfo $var
      * @return $this
      */
-    public function setCurrentDeploymentInfo($var)
+    public function setCurrentDeploymentInfo(\Temporal\Api\Deployment\V1\DeploymentInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\DeploymentInfo::class);
         $this->current_deployment_info = $var;
 
         return $this;

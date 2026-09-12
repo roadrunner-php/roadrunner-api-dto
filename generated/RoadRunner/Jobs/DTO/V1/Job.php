@@ -88,9 +88,9 @@ class Job extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setJob($var)
+    public function setJob(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->job = $var;
 
         return $this;
@@ -114,9 +114,9 @@ class Job extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->id = $var;
 
         return $this;
@@ -140,9 +140,9 @@ class Job extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setPayload($var)
+    public function setPayload(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->payload = $var;
 
         return $this;
@@ -166,7 +166,7 @@ class Job extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setHeaders($var)
+    public function setHeaders(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\Jobs\DTO\V1\HeaderValue::class);
         $this->headers = $arr;
@@ -202,9 +202,8 @@ class Job extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Jobs\DTO\V1\Options $var
      * @return $this
      */
-    public function setOptions($var)
+    public function setOptions(\RoadRunner\Jobs\DTO\V1\Options|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Jobs\DTO\V1\Options::class);
         $this->options = $var;
 
         return $this;

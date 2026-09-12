@@ -136,9 +136,8 @@ class TaskQueueVersioningInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
      * @return $this
      */
-    public function setCurrentDeploymentVersion($var)
+    public function setCurrentDeploymentVersion(\Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
         $this->current_deployment_version = $var;
 
         return $this;
@@ -167,10 +166,10 @@ class TaskQueueVersioningInfo extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setCurrentVersion($var)
+    public function setCurrentVersion(string $var)
     {
         @trigger_error('current_version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->current_version = $var;
 
         return $this;
@@ -212,9 +211,8 @@ class TaskQueueVersioningInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
      * @return $this
      */
-    public function setRampingDeploymentVersion($var)
+    public function setRampingDeploymentVersion(\Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
         $this->ramping_deployment_version = $var;
 
         return $this;
@@ -243,10 +241,10 @@ class TaskQueueVersioningInfo extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setRampingVersion($var)
+    public function setRampingVersion(string $var)
     {
         @trigger_error('ramping_version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->ramping_version = $var;
 
         return $this;
@@ -276,9 +274,8 @@ class TaskQueueVersioningInfo extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setRampingVersionPercentage($var)
+    public function setRampingVersionPercentage(float $var)
     {
-        GPBUtil::checkFloat($var);
         $this->ramping_version_percentage = $var;
 
         return $this;
@@ -312,9 +309,8 @@ class TaskQueueVersioningInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setUpdateTime($var)
+    public function setUpdateTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->update_time = $var;
 
         return $this;

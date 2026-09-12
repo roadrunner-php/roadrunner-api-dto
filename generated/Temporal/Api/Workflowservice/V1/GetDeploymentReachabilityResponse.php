@@ -74,9 +74,8 @@ class GetDeploymentReachabilityResponse extends \Google\Protobuf\Internal\Messag
      * @param \Temporal\Api\Deployment\V1\DeploymentInfo $var
      * @return $this
      */
-    public function setDeploymentInfo($var)
+    public function setDeploymentInfo(\Temporal\Api\Deployment\V1\DeploymentInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\DeploymentInfo::class);
         $this->deployment_info = $var;
 
         return $this;
@@ -84,7 +83,7 @@ class GetDeploymentReachabilityResponse extends \Google\Protobuf\Internal\Messag
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.DeploymentReachability reachability = 2;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\DeploymentReachability}
      */
     public function getReachability()
     {
@@ -93,10 +92,10 @@ class GetDeploymentReachabilityResponse extends \Google\Protobuf\Internal\Messag
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.DeploymentReachability reachability = 2;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\DeploymentReachability}
      * @return $this
      */
-    public function setReachability($var)
+    public function setReachability(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\DeploymentReachability::class);
         $this->reachability = $var;
@@ -134,9 +133,8 @@ class GetDeploymentReachabilityResponse extends \Google\Protobuf\Internal\Messag
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setLastUpdateTime($var)
+    public function setLastUpdateTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_update_time = $var;
 
         return $this;

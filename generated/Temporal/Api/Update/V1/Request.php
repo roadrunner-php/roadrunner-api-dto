@@ -88,9 +88,8 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Update\V1\Meta $var
      * @return $this
      */
-    public function setMeta($var)
+    public function setMeta(\Temporal\Api\Update\V1\Meta|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Update\V1\Meta::class);
         $this->meta = $var;
 
         return $this;
@@ -120,9 +119,8 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Update\V1\Input $var
      * @return $this
      */
-    public function setInput($var)
+    public function setInput(\Temporal\Api\Update\V1\Input|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Update\V1\Input::class);
         $this->input = $var;
 
         return $this;
@@ -146,9 +144,9 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRequestId($var)
+    public function setRequestId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->request_id = $var;
 
         return $this;
@@ -172,7 +170,7 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Callback[] $var
      * @return $this
      */
-    public function setCompletionCallbacks($var)
+    public function setCompletionCallbacks(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Callback::class);
         $this->completion_callbacks = $arr;
@@ -198,7 +196,7 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Link[] $var
      * @return $this
      */
-    public function setLinks($var)
+    public function setLinks(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Link::class);
         $this->links = $arr;

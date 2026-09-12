@@ -192,9 +192,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setEagerWorkflowStart($var)
+    public function setEagerWorkflowStart(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->eager_workflow_start = $var;
 
         return $this;
@@ -218,9 +217,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setSyncUpdate($var)
+    public function setSyncUpdate(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->sync_update = $var;
 
         return $this;
@@ -244,9 +242,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setAsyncUpdate($var)
+    public function setAsyncUpdate(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->async_update = $var;
 
         return $this;
@@ -270,9 +267,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setWorkerHeartbeats($var)
+    public function setWorkerHeartbeats(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->worker_heartbeats = $var;
 
         return $this;
@@ -296,9 +292,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setReportedProblemsSearchAttribute($var)
+    public function setReportedProblemsSearchAttribute(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->reported_problems_search_attribute = $var;
 
         return $this;
@@ -322,9 +317,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setWorkflowPause($var)
+    public function setWorkflowPause(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->workflow_pause = $var;
 
         return $this;
@@ -348,9 +342,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setStandaloneActivities($var)
+    public function setStandaloneActivities(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->standalone_activities = $var;
 
         return $this;
@@ -382,9 +375,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setWorkerPollCompleteOnShutdown($var)
+    public function setWorkerPollCompleteOnShutdown(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->worker_poll_complete_on_shutdown = $var;
 
         return $this;
@@ -408,9 +400,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setPollerAutoscaling($var)
+    public function setPollerAutoscaling(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->poller_autoscaling = $var;
 
         return $this;
@@ -434,9 +425,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setWorkerCommands($var)
+    public function setWorkerCommands(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->worker_commands = $var;
 
         return $this;
@@ -460,9 +450,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setStandaloneNexusOperation($var)
+    public function setStandaloneNexusOperation(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->standalone_nexus_operation = $var;
 
         return $this;
@@ -486,9 +475,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setWorkflowUpdateCallbacks($var)
+    public function setWorkflowUpdateCallbacks(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->workflow_update_callbacks = $var;
 
         return $this;
@@ -512,9 +500,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setPollerAutoscalingAutoEnroll($var)
+    public function setPollerAutoscalingAutoEnroll(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->poller_autoscaling_auto_enroll = $var;
 
         return $this;
@@ -538,9 +525,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setWorkflowTaskCompletionPagination($var)
+    public function setWorkflowTaskCompletionPagination(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->workflow_task_completion_pagination = $var;
 
         return $this;
@@ -564,9 +550,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setStandaloneActivityStartDelay($var)
+    public function setStandaloneActivityStartDelay(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->standalone_activity_start_delay = $var;
 
         return $this;
@@ -590,9 +575,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setStandaloneActivityBatchOperations($var)
+    public function setStandaloneActivityBatchOperations(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->standalone_activity_batch_operations = $var;
 
         return $this;
@@ -616,9 +600,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setStandaloneActivityOperatorCommands($var)
+    public function setStandaloneActivityOperatorCommands(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->standalone_activity_operator_commands = $var;
 
         return $this;

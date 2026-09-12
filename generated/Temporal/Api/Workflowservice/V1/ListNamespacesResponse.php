@@ -52,7 +52,7 @@ class ListNamespacesResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflowservice\V1\DescribeNamespaceResponse[] $var
      * @return $this
      */
-    public function setNamespaces($var)
+    public function setNamespaces(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Workflowservice\V1\DescribeNamespaceResponse::class);
         $this->namespaces = $arr;
@@ -74,9 +74,9 @@ class ListNamespacesResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNextPageToken($var)
+    public function setNextPageToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->next_page_token = $var;
 
         return $this;

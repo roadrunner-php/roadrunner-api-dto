@@ -87,7 +87,7 @@ class SchedulePolicies extends \Google\Protobuf\Internal\Message
      * policy overrides the earlier policy.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ScheduleOverlapPolicy overlap_policy = 1;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ScheduleOverlapPolicy}
      */
     public function getOverlapPolicy()
     {
@@ -101,10 +101,10 @@ class SchedulePolicies extends \Google\Protobuf\Internal\Message
      * policy overrides the earlier policy.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ScheduleOverlapPolicy overlap_policy = 1;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ScheduleOverlapPolicy}
      * @return $this
      */
-    public function setOverlapPolicy($var)
+    public function setOverlapPolicy(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ScheduleOverlapPolicy::class);
         $this->overlap_policy = $var;
@@ -148,9 +148,8 @@ class SchedulePolicies extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setCatchupWindow($var)
+    public function setCatchupWindow(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->catchup_window = $var;
 
         return $this;
@@ -178,9 +177,8 @@ class SchedulePolicies extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setPauseOnFailure($var)
+    public function setPauseOnFailure(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->pause_on_failure = $var;
 
         return $this;
@@ -206,9 +204,8 @@ class SchedulePolicies extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setKeepOriginalWorkflowId($var)
+    public function setKeepOriginalWorkflowId(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->keep_original_workflow_id = $var;
 
         return $this;

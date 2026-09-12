@@ -59,9 +59,8 @@ class WorkerInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\WorkerHeartbeat $var
      * @return $this
      */
-    public function setWorkerHeartbeat($var)
+    public function setWorkerHeartbeat(\Temporal\Api\Worker\V1\WorkerHeartbeat|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Worker\V1\WorkerHeartbeat::class);
         $this->worker_heartbeat = $var;
 
         return $this;

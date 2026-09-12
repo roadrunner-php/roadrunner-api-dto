@@ -146,7 +146,7 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * @param int|string $var
      * @return $this
      */
-    public function setScheduledEventId($var)
+    public function setScheduledEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->scheduled_event_id = $var;
@@ -172,9 +172,9 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -208,9 +208,9 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * @param string $var
      * @return $this
      */
-    public function setRequestId($var)
+    public function setRequestId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->request_id = $var;
 
         return $this;
@@ -234,9 +234,8 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * @param bool $var
      * @return $this
      */
-    public function setSuggestContinueAsNew($var)
+    public function setSuggestContinueAsNew(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->suggest_continue_as_new = $var;
 
         return $this;
@@ -247,7 +246,7 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * Unset if suggest_continue_as_new is false.
      *
      * Generated from protobuf field <code>repeated .temporal.api.enums.v1.SuggestContinueAsNewReason suggest_continue_as_new_reasons = 8;</code>
-     * @return RepeatedField<int>
+     * @return RepeatedField<int> one of the values in {@see \Temporal\Api\Enums\V1\SuggestContinueAsNewReason}
      */
     public function getSuggestContinueAsNewReasons()
     {
@@ -259,10 +258,10 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * Unset if suggest_continue_as_new is false.
      *
      * Generated from protobuf field <code>repeated .temporal.api.enums.v1.SuggestContinueAsNewReason suggest_continue_as_new_reasons = 8;</code>
-     * @param int[] $var
+     * @param int[] $var one of the values in {@see \Temporal\Api\Enums\V1\SuggestContinueAsNewReason}
      * @return $this
      */
-    public function setSuggestContinueAsNewReasons($var)
+    public function setSuggestContinueAsNewReasons(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Temporal\Api\Enums\V1\SuggestContinueAsNewReason::class);
         $this->suggest_continue_as_new_reasons = $arr;
@@ -292,9 +291,8 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * @param bool $var
      * @return $this
      */
-    public function setTargetWorkerDeploymentVersionChanged($var)
+    public function setTargetWorkerDeploymentVersionChanged(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->target_worker_deployment_version_changed = $var;
 
         return $this;
@@ -322,7 +320,7 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * @param int|string $var
      * @return $this
      */
-    public function setHistorySizeBytes($var)
+    public function setHistorySizeBytes(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->history_size_bytes = $var;
@@ -369,10 +367,9 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * @return $this
      * @deprecated
      */
-    public function setWorkerVersion($var)
+    public function setWorkerVersion(\Temporal\Api\Common\V1\WorkerVersionStamp|null $var)
     {
         @trigger_error('worker_version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerVersionStamp::class);
         $this->worker_version = $var;
 
         return $this;
@@ -405,7 +402,7 @@ class WorkflowTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * @return $this
      * @deprecated
      */
-    public function setBuildIdRedirectCounter($var)
+    public function setBuildIdRedirectCounter(int|string $var)
     {
         @trigger_error('build_id_redirect_counter is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkInt64($var);

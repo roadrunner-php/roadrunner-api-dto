@@ -72,9 +72,8 @@ class ReplayRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
      * @return $this
      */
-    public function setWorkflowExecution($var)
+    public function setWorkflowExecution(\Temporal\Api\Common\V1\WorkflowExecution|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->workflow_execution = $var;
 
         return $this;
@@ -104,9 +103,8 @@ class ReplayRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\WorkflowType $var
      * @return $this
      */
-    public function setWorkflowType($var)
+    public function setWorkflowType(\Temporal\Api\Common\V1\WorkflowType|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowType::class);
         $this->workflow_type = $var;
 
         return $this;
@@ -126,9 +124,9 @@ class ReplayRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSavePath($var)
+    public function setSavePath(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->save_path = $var;
 
         return $this;
@@ -148,7 +146,7 @@ class ReplayRequest extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setLastEventId($var)
+    public function setLastEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->last_event_id = $var;

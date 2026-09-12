@@ -69,9 +69,8 @@ class PauseInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setPauseTime($var)
+    public function setPauseTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->pause_time = $var;
 
         return $this;
@@ -100,9 +99,8 @@ class PauseInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflow\V1\PendingActivityInfo\PauseInfo\Manual $var
      * @return $this
      */
-    public function setManual($var)
+    public function setManual(\Temporal\Api\Workflow\V1\PendingActivityInfo\PauseInfo\Manual|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\PendingActivityInfo\PauseInfo\Manual::class);
         $this->writeOneof(2, $var);
 
         return $this;
@@ -131,9 +129,8 @@ class PauseInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflow\V1\PendingActivityInfo\PauseInfo\Rule $var
      * @return $this
      */
-    public function setRule($var)
+    public function setRule(\Temporal\Api\Workflow\V1\PendingActivityInfo\PauseInfo\Rule|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\PendingActivityInfo\PauseInfo\Rule::class);
         $this->writeOneof(4, $var);
 
         return $this;

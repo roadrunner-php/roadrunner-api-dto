@@ -136,9 +136,9 @@ class UpdateActivityExecutionOptionsRequest extends \Google\Protobuf\Internal\Me
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -164,9 +164,9 @@ class UpdateActivityExecutionOptionsRequest extends \Google\Protobuf\Internal\Me
      * @param string $var
      * @return $this
      */
-    public function setWorkflowId($var)
+    public function setWorkflowId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->workflow_id = $var;
 
         return $this;
@@ -190,9 +190,9 @@ class UpdateActivityExecutionOptionsRequest extends \Google\Protobuf\Internal\Me
      * @param string $var
      * @return $this
      */
-    public function setActivityId($var)
+    public function setActivityId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->activity_id = $var;
 
         return $this;
@@ -216,9 +216,9 @@ class UpdateActivityExecutionOptionsRequest extends \Google\Protobuf\Internal\Me
      * @param string $var
      * @return $this
      */
-    public function setRunId($var)
+    public function setRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->run_id = $var;
 
         return $this;
@@ -242,9 +242,9 @@ class UpdateActivityExecutionOptionsRequest extends \Google\Protobuf\Internal\Me
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -278,9 +278,8 @@ class UpdateActivityExecutionOptionsRequest extends \Google\Protobuf\Internal\Me
      * @param \Temporal\Api\Activity\V1\ActivityOptions $var
      * @return $this
      */
-    public function setActivityOptions($var)
+    public function setActivityOptions(\Temporal\Api\Activity\V1\ActivityOptions|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Activity\V1\ActivityOptions::class);
         $this->activity_options = $var;
 
         return $this;
@@ -314,9 +313,8 @@ class UpdateActivityExecutionOptionsRequest extends \Google\Protobuf\Internal\Me
      * @param \Google\Protobuf\FieldMask $var
      * @return $this
      */
-    public function setUpdateMask($var)
+    public function setUpdateMask(\Google\Protobuf\FieldMask|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\FieldMask::class);
         $this->update_mask = $var;
 
         return $this;
@@ -348,9 +346,8 @@ class UpdateActivityExecutionOptionsRequest extends \Google\Protobuf\Internal\Me
      * @param bool $var
      * @return $this
      */
-    public function setRestoreOriginal($var)
+    public function setRestoreOriginal(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->restore_original = $var;
 
         return $this;
@@ -374,9 +371,9 @@ class UpdateActivityExecutionOptionsRequest extends \Google\Protobuf\Internal\Me
      * @param string $var
      * @return $this
      */
-    public function setResourceId($var)
+    public function setResourceId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->resource_id = $var;
 
         return $this;
@@ -400,9 +397,9 @@ class UpdateActivityExecutionOptionsRequest extends \Google\Protobuf\Internal\Me
      * @param string $var
      * @return $this
      */
-    public function setRequestId($var)
+    public function setRequestId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->request_id = $var;
 
         return $this;

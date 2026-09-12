@@ -83,9 +83,9 @@ class BatchOperationSignal extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSignal($var)
+    public function setSignal(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->signal = $var;
 
         return $this;
@@ -119,9 +119,8 @@ class BatchOperationSignal extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setInput($var)
+    public function setInput(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->input = $var;
 
         return $this;
@@ -157,9 +156,8 @@ class BatchOperationSignal extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Header $var
      * @return $this
      */
-    public function setHeader($var)
+    public function setHeader(\Temporal\Api\Common\V1\Header|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Header::class);
         $this->header = $var;
 
         return $this;
@@ -183,9 +181,9 @@ class BatchOperationSignal extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;

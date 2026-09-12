@@ -123,9 +123,9 @@ class PollNexusTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTaskToken($var)
+    public function setTaskToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->task_token = $var;
 
         return $this;
@@ -159,9 +159,8 @@ class PollNexusTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Nexus\V1\Request $var
      * @return $this
      */
-    public function setRequest($var)
+    public function setRequest(\Temporal\Api\Nexus\V1\Request|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\Request::class);
         $this->request = $var;
 
         return $this;
@@ -195,9 +194,8 @@ class PollNexusTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\PollerScalingDecision $var
      * @return $this
      */
-    public function setPollerScalingDecision($var)
+    public function setPollerScalingDecision(\Temporal\Api\Taskqueue\V1\PollerScalingDecision|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\PollerScalingDecision::class);
         $this->poller_scaling_decision = $var;
 
         return $this;
@@ -227,9 +225,9 @@ class PollNexusTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setPollerGroupId($var)
+    public function setPollerGroupId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->poller_group_id = $var;
 
         return $this;
@@ -249,7 +247,7 @@ class PollNexusTaskQueueResponse extends \Google\Protobuf\Internal\Message
      */
     public function getPollerGroupInfos()
     {
-        if ($this->poller_group_infos->count() !== 0) {
+        if (count($this->poller_group_infos) !== 0) {
             @trigger_error('poller_group_infos is deprecated.', E_USER_DEPRECATED);
         }
         return $this->poller_group_infos;
@@ -268,10 +266,10 @@ class PollNexusTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setPollerGroupInfos($var)
+    public function setPollerGroupInfos(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Taskqueue\V1\PollerGroupInfo::class);
-        if ($arr->count() !== 0) {
+        if (count($arr) !== 0) {
             @trigger_error('poller_group_infos is deprecated.', E_USER_DEPRECATED);
         }
         $this->poller_group_infos = $arr;
@@ -319,9 +317,8 @@ class PollNexusTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\PollerGroupsInfo $var
      * @return $this
      */
-    public function setPollerGroupsInfo($var)
+    public function setPollerGroupsInfo(\Temporal\Api\Taskqueue\V1\PollerGroupsInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\PollerGroupsInfo::class);
         $this->poller_groups_info = $var;
 
         return $this;

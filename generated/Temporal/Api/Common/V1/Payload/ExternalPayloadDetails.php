@@ -56,7 +56,7 @@ class ExternalPayloadDetails extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setSizeBytes($var)
+    public function setSizeBytes(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->size_bytes = $var;

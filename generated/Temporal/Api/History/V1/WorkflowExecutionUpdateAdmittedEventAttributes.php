@@ -72,9 +72,8 @@ class WorkflowExecutionUpdateAdmittedEventAttributes extends \Google\Protobuf\In
      * @param \Temporal\Api\Update\V1\Request $var
      * @return $this
      */
-    public function setRequest($var)
+    public function setRequest(\Temporal\Api\Update\V1\Request|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Update\V1\Request::class);
         $this->request = $var;
 
         return $this;
@@ -84,7 +83,7 @@ class WorkflowExecutionUpdateAdmittedEventAttributes extends \Google\Protobuf\In
      * An explanation of why this event was written to history.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.UpdateAdmittedEventOrigin origin = 2;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\UpdateAdmittedEventOrigin}
      */
     public function getOrigin()
     {
@@ -95,10 +94,10 @@ class WorkflowExecutionUpdateAdmittedEventAttributes extends \Google\Protobuf\In
      * An explanation of why this event was written to history.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.UpdateAdmittedEventOrigin origin = 2;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\UpdateAdmittedEventOrigin}
      * @return $this
      */
-    public function setOrigin($var)
+    public function setOrigin(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\UpdateAdmittedEventOrigin::class);
         $this->origin = $var;

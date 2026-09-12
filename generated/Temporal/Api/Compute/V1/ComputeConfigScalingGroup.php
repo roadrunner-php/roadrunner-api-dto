@@ -66,7 +66,7 @@ class ComputeConfigScalingGroup extends \Google\Protobuf\Internal\Message
      * task types.
      *
      * Generated from protobuf field <code>repeated .temporal.api.enums.v1.TaskQueueType task_queue_types = 1;</code>
-     * @return RepeatedField<int>
+     * @return RepeatedField<int> one of the values in {@see \Temporal\Api\Enums\V1\TaskQueueType}
      */
     public function getTaskQueueTypes()
     {
@@ -79,10 +79,10 @@ class ComputeConfigScalingGroup extends \Google\Protobuf\Internal\Message
      * task types.
      *
      * Generated from protobuf field <code>repeated .temporal.api.enums.v1.TaskQueueType task_queue_types = 1;</code>
-     * @param int[] $var
+     * @param int[] $var one of the values in {@see \Temporal\Api\Enums\V1\TaskQueueType}
      * @return $this
      */
-    public function setTaskQueueTypes($var)
+    public function setTaskQueueTypes(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Temporal\Api\Enums\V1\TaskQueueType::class);
         $this->task_queue_types = $arr;
@@ -120,9 +120,8 @@ class ComputeConfigScalingGroup extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Compute\V1\ComputeProvider $var
      * @return $this
      */
-    public function setProvider($var)
+    public function setProvider(\Temporal\Api\Compute\V1\ComputeProvider|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Compute\V1\ComputeProvider::class);
         $this->provider = $var;
 
         return $this;
@@ -158,9 +157,8 @@ class ComputeConfigScalingGroup extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Compute\V1\ComputeScaler $var
      * @return $this
      */
-    public function setScaler($var)
+    public function setScaler(\Temporal\Api\Compute\V1\ComputeScaler|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Compute\V1\ComputeScaler::class);
         $this->scaler = $var;
 
         return $this;

@@ -66,9 +66,9 @@ class DescribeNamespaceRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -88,9 +88,9 @@ class DescribeNamespaceRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->id = $var;
 
         return $this;
@@ -120,9 +120,8 @@ class DescribeNamespaceRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setWeakConsistency($var)
+    public function setWeakConsistency(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->weak_consistency = $var;
 
         return $this;

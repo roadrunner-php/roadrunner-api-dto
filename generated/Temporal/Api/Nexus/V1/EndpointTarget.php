@@ -52,9 +52,8 @@ class EndpointTarget extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Nexus\V1\EndpointTarget\Worker $var
      * @return $this
      */
-    public function setWorker($var)
+    public function setWorker(\Temporal\Api\Nexus\V1\EndpointTarget\Worker|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\EndpointTarget\Worker::class);
         $this->writeOneof(1, $var);
 
         return $this;
@@ -79,9 +78,8 @@ class EndpointTarget extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Nexus\V1\EndpointTarget\External $var
      * @return $this
      */
-    public function setExternal($var)
+    public function setExternal(\Temporal\Api\Nexus\V1\EndpointTarget\External|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\EndpointTarget\External::class);
         $this->writeOneof(2, $var);
 
         return $this;

@@ -88,9 +88,9 @@ class WorkflowPropertiesModifiedExternallyEventAttributes extends \Google\Protob
      * @param string $var
      * @return $this
      */
-    public function setNewTaskQueue($var)
+    public function setNewTaskQueue(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->new_task_queue = $var;
 
         return $this;
@@ -124,9 +124,8 @@ class WorkflowPropertiesModifiedExternallyEventAttributes extends \Google\Protob
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setNewWorkflowTaskTimeout($var)
+    public function setNewWorkflowTaskTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->new_workflow_task_timeout = $var;
 
         return $this;
@@ -160,9 +159,8 @@ class WorkflowPropertiesModifiedExternallyEventAttributes extends \Google\Protob
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setNewWorkflowRunTimeout($var)
+    public function setNewWorkflowRunTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->new_workflow_run_timeout = $var;
 
         return $this;
@@ -196,9 +194,8 @@ class WorkflowPropertiesModifiedExternallyEventAttributes extends \Google\Protob
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setNewWorkflowExecutionTimeout($var)
+    public function setNewWorkflowExecutionTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->new_workflow_execution_timeout = $var;
 
         return $this;
@@ -232,9 +229,8 @@ class WorkflowPropertiesModifiedExternallyEventAttributes extends \Google\Protob
      * @param \Temporal\Api\Common\V1\Memo $var
      * @return $this
      */
-    public function setUpsertedMemo($var)
+    public function setUpsertedMemo(\Temporal\Api\Common\V1\Memo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Memo::class);
         $this->upserted_memo = $var;
 
         return $this;

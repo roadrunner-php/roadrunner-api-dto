@@ -57,9 +57,8 @@ class FailWorkflowExecutionCommandAttributes extends \Google\Protobuf\Internal\M
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
      */
-    public function setFailure($var)
+    public function setFailure(\Temporal\Api\Failure\V1\Failure|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
         $this->failure = $var;
 
         return $this;

@@ -72,9 +72,8 @@ class RateLimitUpdate extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\RateLimit $var
      * @return $this
      */
-    public function setRateLimit($var)
+    public function setRateLimit(\Temporal\Api\Taskqueue\V1\RateLimit|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\RateLimit::class);
         $this->rate_limit = $var;
 
         return $this;
@@ -98,9 +97,9 @@ class RateLimitUpdate extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setReason($var)
+    public function setReason(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->reason = $var;
 
         return $this;

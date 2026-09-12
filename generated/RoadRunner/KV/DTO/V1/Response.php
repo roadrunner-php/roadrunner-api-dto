@@ -49,7 +49,7 @@ class Response extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\KV\DTO\V1\Item[] $var
      * @return $this
      */
-    public function setItems($var)
+    public function setItems(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\KV\DTO\V1\Item::class);
         $this->items = $arr;

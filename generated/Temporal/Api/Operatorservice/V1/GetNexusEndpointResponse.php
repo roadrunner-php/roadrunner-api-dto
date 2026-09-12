@@ -57,9 +57,8 @@ class GetNexusEndpointResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Nexus\V1\Endpoint $var
      * @return $this
      */
-    public function setEndpoint($var)
+    public function setEndpoint(\Temporal\Api\Nexus\V1\Endpoint|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\Endpoint::class);
         $this->endpoint = $var;
 
         return $this;

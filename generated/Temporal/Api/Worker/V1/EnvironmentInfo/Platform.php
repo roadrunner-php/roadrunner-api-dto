@@ -51,9 +51,8 @@ class Platform extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\EnvironmentInfo\LinuxPlatform $var
      * @return $this
      */
-    public function setLinux($var)
+    public function setLinux(\Temporal\Api\Worker\V1\EnvironmentInfo\LinuxPlatform|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Worker\V1\EnvironmentInfo\LinuxPlatform::class);
         $this->writeOneof(1, $var);
 
         return $this;
@@ -78,9 +77,8 @@ class Platform extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\EnvironmentInfo\MacOSPlatform $var
      * @return $this
      */
-    public function setMacos($var)
+    public function setMacos(\Temporal\Api\Worker\V1\EnvironmentInfo\MacOSPlatform|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Worker\V1\EnvironmentInfo\MacOSPlatform::class);
         $this->writeOneof(2, $var);
 
         return $this;
@@ -105,9 +103,8 @@ class Platform extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\EnvironmentInfo\WindowsPlatform $var
      * @return $this
      */
-    public function setWindows($var)
+    public function setWindows(\Temporal\Api\Worker\V1\EnvironmentInfo\WindowsPlatform|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Worker\V1\EnvironmentInfo\WindowsPlatform::class);
         $this->writeOneof(3, $var);
 
         return $this;

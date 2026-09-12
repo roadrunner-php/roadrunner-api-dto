@@ -52,7 +52,7 @@ class AggregationGroup extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Payload[] $var
      * @return $this
      */
-    public function setGroupValues($var)
+    public function setGroupValues(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Payload::class);
         $this->group_values = $arr;
@@ -74,7 +74,7 @@ class AggregationGroup extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setCount($var)
+    public function setCount(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->count = $var;

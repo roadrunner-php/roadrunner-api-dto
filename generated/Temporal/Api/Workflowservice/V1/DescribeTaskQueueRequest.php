@@ -160,9 +160,9 @@ class DescribeTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -196,9 +196,8 @@ class DescribeTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\TaskQueue $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(\Temporal\Api\Taskqueue\V1\TaskQueue|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueue::class);
         $this->task_queue = $var;
 
         return $this;
@@ -209,7 +208,7 @@ class DescribeTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * Only supported in default mode (use `task_queue_types` in ENHANCED mode instead).
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.TaskQueueType task_queue_type = 3;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\TaskQueueType}
      */
     public function getTaskQueueType()
     {
@@ -221,10 +220,10 @@ class DescribeTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * Only supported in default mode (use `task_queue_types` in ENHANCED mode instead).
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.TaskQueueType task_queue_type = 3;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\TaskQueueType}
      * @return $this
      */
-    public function setTaskQueueType($var)
+    public function setTaskQueueType(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\TaskQueueType::class);
         $this->task_queue_type = $var;
@@ -250,9 +249,8 @@ class DescribeTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setReportStats($var)
+    public function setReportStats(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->report_stats = $var;
 
         return $this;
@@ -276,9 +274,8 @@ class DescribeTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setReportConfig($var)
+    public function setReportConfig(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->report_config = $var;
 
         return $this;
@@ -309,10 +306,9 @@ class DescribeTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setIncludeTaskQueueStatus($var)
+    public function setIncludeTaskQueueStatus(bool $var)
     {
         @trigger_error('include_task_queue_status is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkBool($var);
         $this->include_task_queue_status = $var;
 
         return $this;
@@ -324,7 +320,7 @@ class DescribeTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * Consult the documentation for each field to understand which mode it is supported in.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.DescribeTaskQueueMode api_mode = 5 [deprecated = true];</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\DescribeTaskQueueMode}
      * @deprecated
      */
     public function getApiMode()
@@ -341,11 +337,11 @@ class DescribeTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * Consult the documentation for each field to understand which mode it is supported in.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.DescribeTaskQueueMode api_mode = 5 [deprecated = true];</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\DescribeTaskQueueMode}
      * @return $this
      * @deprecated
      */
-    public function setApiMode($var)
+    public function setApiMode(int $var)
     {
         @trigger_error('api_mode is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\DescribeTaskQueueMode::class);
@@ -399,10 +395,9 @@ class DescribeTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setVersions($var)
+    public function setVersions(\Temporal\Api\Taskqueue\V1\TaskQueueVersionSelection|null $var)
     {
         @trigger_error('versions is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueueVersionSelection::class);
         $this->versions = $var;
 
         return $this;
@@ -413,12 +408,12 @@ class DescribeTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * Task queue types to report info about. If not specified, all types are considered.
      *
      * Generated from protobuf field <code>repeated .temporal.api.enums.v1.TaskQueueType task_queue_types = 7 [deprecated = true];</code>
-     * @return RepeatedField<int>
+     * @return RepeatedField<int> one of the values in {@see \Temporal\Api\Enums\V1\TaskQueueType}
      * @deprecated
      */
     public function getTaskQueueTypes()
     {
-        if ($this->task_queue_types->count() !== 0) {
+        if (count($this->task_queue_types) !== 0) {
             @trigger_error('task_queue_types is deprecated.', E_USER_DEPRECATED);
         }
         return $this->task_queue_types;
@@ -429,14 +424,14 @@ class DescribeTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * Task queue types to report info about. If not specified, all types are considered.
      *
      * Generated from protobuf field <code>repeated .temporal.api.enums.v1.TaskQueueType task_queue_types = 7 [deprecated = true];</code>
-     * @param int[] $var
+     * @param int[] $var one of the values in {@see \Temporal\Api\Enums\V1\TaskQueueType}
      * @return $this
      * @deprecated
      */
-    public function setTaskQueueTypes($var)
+    public function setTaskQueueTypes(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Temporal\Api\Enums\V1\TaskQueueType::class);
-        if ($arr->count() !== 0) {
+        if (count($arr) !== 0) {
             @trigger_error('task_queue_types is deprecated.', E_USER_DEPRECATED);
         }
         $this->task_queue_types = $arr;
@@ -469,10 +464,9 @@ class DescribeTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setReportPollers($var)
+    public function setReportPollers(bool $var)
     {
         @trigger_error('report_pollers is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkBool($var);
         $this->report_pollers = $var;
 
         return $this;
@@ -505,10 +499,9 @@ class DescribeTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setReportTaskReachability($var)
+    public function setReportTaskReachability(bool $var)
     {
         @trigger_error('report_task_reachability is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkBool($var);
         $this->report_task_reachability = $var;
 
         return $this;

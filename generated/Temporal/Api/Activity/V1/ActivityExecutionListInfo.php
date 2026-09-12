@@ -152,9 +152,9 @@ class ActivityExecutionListInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setActivityId($var)
+    public function setActivityId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->activity_id = $var;
 
         return $this;
@@ -178,9 +178,9 @@ class ActivityExecutionListInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRunId($var)
+    public function setRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->run_id = $var;
 
         return $this;
@@ -214,9 +214,8 @@ class ActivityExecutionListInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\ActivityType $var
      * @return $this
      */
-    public function setActivityType($var)
+    public function setActivityType(\Temporal\Api\Common\V1\ActivityType|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\ActivityType::class);
         $this->activity_type = $var;
 
         return $this;
@@ -250,9 +249,8 @@ class ActivityExecutionListInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setScheduleTime($var)
+    public function setScheduleTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->schedule_time = $var;
 
         return $this;
@@ -286,9 +284,8 @@ class ActivityExecutionListInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setCloseTime($var)
+    public function setCloseTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->close_time = $var;
 
         return $this;
@@ -299,7 +296,7 @@ class ActivityExecutionListInfo extends \Google\Protobuf\Internal\Message
      * available in the list response.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ActivityExecutionStatus status = 6;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ActivityExecutionStatus}
      */
     public function getStatus()
     {
@@ -311,10 +308,10 @@ class ActivityExecutionListInfo extends \Google\Protobuf\Internal\Message
      * available in the list response.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ActivityExecutionStatus status = 6;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ActivityExecutionStatus}
      * @return $this
      */
-    public function setStatus($var)
+    public function setStatus(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ActivityExecutionStatus::class);
         $this->status = $var;
@@ -350,9 +347,8 @@ class ActivityExecutionListInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\SearchAttributes $var
      * @return $this
      */
-    public function setSearchAttributes($var)
+    public function setSearchAttributes(\Temporal\Api\Common\V1\SearchAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\SearchAttributes::class);
         $this->search_attributes = $var;
 
         return $this;
@@ -376,9 +372,9 @@ class ActivityExecutionListInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->task_queue = $var;
 
         return $this;
@@ -402,7 +398,7 @@ class ActivityExecutionListInfo extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setStateTransitionCount($var)
+    public function setStateTransitionCount(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->state_transition_count = $var;
@@ -428,7 +424,7 @@ class ActivityExecutionListInfo extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setStateSizeBytes($var)
+    public function setStateSizeBytes(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->state_size_bytes = $var;
@@ -466,9 +462,8 @@ class ActivityExecutionListInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setExecutionDuration($var)
+    public function setExecutionDuration(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->execution_duration = $var;
 
         return $this;
@@ -504,9 +499,8 @@ class ActivityExecutionListInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setExecutionTime($var)
+    public function setExecutionTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->execution_time = $var;
 
         return $this;

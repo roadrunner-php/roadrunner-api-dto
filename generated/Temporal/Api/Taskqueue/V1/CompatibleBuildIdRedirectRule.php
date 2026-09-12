@@ -78,9 +78,9 @@ class CompatibleBuildIdRedirectRule extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSourceBuildId($var)
+    public function setSourceBuildId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->source_build_id = $var;
 
         return $this;
@@ -110,9 +110,9 @@ class CompatibleBuildIdRedirectRule extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTargetBuildId($var)
+    public function setTargetBuildId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->target_build_id = $var;
 
         return $this;

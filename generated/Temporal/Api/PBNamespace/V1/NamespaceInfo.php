@@ -101,9 +101,9 @@ class NamespaceInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setName($var)
+    public function setName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->name = $var;
 
         return $this;
@@ -111,7 +111,7 @@ class NamespaceInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.NamespaceState state = 2;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\NamespaceState}
      */
     public function getState()
     {
@@ -120,10 +120,10 @@ class NamespaceInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.NamespaceState state = 2;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\NamespaceState}
      * @return $this
      */
-    public function setState($var)
+    public function setState(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\NamespaceState::class);
         $this->state = $var;
@@ -145,9 +145,9 @@ class NamespaceInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setDescription($var)
+    public function setDescription(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->description = $var;
 
         return $this;
@@ -167,9 +167,9 @@ class NamespaceInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setOwnerEmail($var)
+    public function setOwnerEmail(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->owner_email = $var;
 
         return $this;
@@ -193,7 +193,7 @@ class NamespaceInfo extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setData($var)
+    public function setData(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->data = $arr;
@@ -215,9 +215,9 @@ class NamespaceInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->id = $var;
 
         return $this;
@@ -251,9 +251,8 @@ class NamespaceInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\PBNamespace\V1\NamespaceInfo\Capabilities $var
      * @return $this
      */
-    public function setCapabilities($var)
+    public function setCapabilities(\Temporal\Api\PBNamespace\V1\NamespaceInfo\Capabilities|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\PBNamespace\V1\NamespaceInfo\Capabilities::class);
         $this->capabilities = $var;
 
         return $this;
@@ -287,9 +286,8 @@ class NamespaceInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\PBNamespace\V1\NamespaceInfo\Limits $var
      * @return $this
      */
-    public function setLimits($var)
+    public function setLimits(\Temporal\Api\PBNamespace\V1\NamespaceInfo\Limits|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\PBNamespace\V1\NamespaceInfo\Limits::class);
         $this->limits = $var;
 
         return $this;
@@ -315,9 +313,8 @@ class NamespaceInfo extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setSupportsSchedules($var)
+    public function setSupportsSchedules(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->supports_schedules = $var;
 
         return $this;

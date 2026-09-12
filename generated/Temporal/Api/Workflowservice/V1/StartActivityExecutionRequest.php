@@ -249,9 +249,9 @@ class StartActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -275,9 +275,9 @@ class StartActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -301,9 +301,9 @@ class StartActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRequestId($var)
+    public function setRequestId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->request_id = $var;
 
         return $this;
@@ -331,9 +331,9 @@ class StartActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setActivityId($var)
+    public function setActivityId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->activity_id = $var;
 
         return $this;
@@ -367,9 +367,8 @@ class StartActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\ActivityType $var
      * @return $this
      */
-    public function setActivityType($var)
+    public function setActivityType(\Temporal\Api\Common\V1\ActivityType|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\ActivityType::class);
         $this->activity_type = $var;
 
         return $this;
@@ -403,9 +402,8 @@ class StartActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\TaskQueue $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(\Temporal\Api\Taskqueue\V1\TaskQueue|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueue::class);
         $this->task_queue = $var;
 
         return $this;
@@ -445,9 +443,8 @@ class StartActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setScheduleToCloseTimeout($var)
+    public function setScheduleToCloseTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->schedule_to_close_timeout = $var;
 
         return $this;
@@ -489,9 +486,8 @@ class StartActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setScheduleToStartTimeout($var)
+    public function setScheduleToStartTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->schedule_to_start_timeout = $var;
 
         return $this;
@@ -533,9 +529,8 @@ class StartActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setStartToCloseTimeout($var)
+    public function setStartToCloseTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->start_to_close_timeout = $var;
 
         return $this;
@@ -569,9 +564,8 @@ class StartActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setHeartbeatTimeout($var)
+    public function setHeartbeatTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->heartbeat_timeout = $var;
 
         return $this;
@@ -605,9 +599,8 @@ class StartActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\RetryPolicy $var
      * @return $this
      */
-    public function setRetryPolicy($var)
+    public function setRetryPolicy(\Temporal\Api\Common\V1\RetryPolicy|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\RetryPolicy::class);
         $this->retry_policy = $var;
 
         return $this;
@@ -641,9 +634,8 @@ class StartActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setInput($var)
+    public function setInput(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->input = $var;
 
         return $this;
@@ -654,7 +646,7 @@ class StartActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * The default policy is ACTIVITY_ID_REUSE_POLICY_ALLOW_DUPLICATE.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ActivityIdReusePolicy id_reuse_policy = 13;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ActivityIdReusePolicy}
      */
     public function getIdReusePolicy()
     {
@@ -666,10 +658,10 @@ class StartActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * The default policy is ACTIVITY_ID_REUSE_POLICY_ALLOW_DUPLICATE.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ActivityIdReusePolicy id_reuse_policy = 13;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ActivityIdReusePolicy}
      * @return $this
      */
-    public function setIdReusePolicy($var)
+    public function setIdReusePolicy(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ActivityIdReusePolicy::class);
         $this->id_reuse_policy = $var;
@@ -682,7 +674,7 @@ class StartActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * The default policy is ACTIVITY_ID_CONFLICT_POLICY_FAIL.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ActivityIdConflictPolicy id_conflict_policy = 14;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ActivityIdConflictPolicy}
      */
     public function getIdConflictPolicy()
     {
@@ -694,10 +686,10 @@ class StartActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * The default policy is ACTIVITY_ID_CONFLICT_POLICY_FAIL.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ActivityIdConflictPolicy id_conflict_policy = 14;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ActivityIdConflictPolicy}
      * @return $this
      */
-    public function setIdConflictPolicy($var)
+    public function setIdConflictPolicy(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ActivityIdConflictPolicy::class);
         $this->id_conflict_policy = $var;
@@ -733,9 +725,8 @@ class StartActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\SearchAttributes $var
      * @return $this
      */
-    public function setSearchAttributes($var)
+    public function setSearchAttributes(\Temporal\Api\Common\V1\SearchAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\SearchAttributes::class);
         $this->search_attributes = $var;
 
         return $this;
@@ -769,9 +760,8 @@ class StartActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Header $var
      * @return $this
      */
-    public function setHeader($var)
+    public function setHeader(\Temporal\Api\Common\V1\Header|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Header::class);
         $this->header = $var;
 
         return $this;
@@ -805,9 +795,8 @@ class StartActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Sdk\V1\UserMetadata $var
      * @return $this
      */
-    public function setUserMetadata($var)
+    public function setUserMetadata(\Temporal\Api\Sdk\V1\UserMetadata|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Sdk\V1\UserMetadata::class);
         $this->user_metadata = $var;
 
         return $this;
@@ -841,9 +830,8 @@ class StartActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Priority $var
      * @return $this
      */
-    public function setPriority($var)
+    public function setPriority(\Temporal\Api\Common\V1\Priority|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Priority::class);
         $this->priority = $var;
 
         return $this;
@@ -869,7 +857,7 @@ class StartActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Callback[] $var
      * @return $this
      */
-    public function setCompletionCallbacks($var)
+    public function setCompletionCallbacks(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Callback::class);
         $this->completion_callbacks = $arr;
@@ -897,7 +885,7 @@ class StartActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Link[] $var
      * @return $this
      */
-    public function setLinks($var)
+    public function setLinks(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Link::class);
         $this->links = $arr;
@@ -933,9 +921,8 @@ class StartActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\OnConflictOptions $var
      * @return $this
      */
-    public function setOnConflictOptions($var)
+    public function setOnConflictOptions(\Temporal\Api\Common\V1\OnConflictOptions|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\OnConflictOptions::class);
         $this->on_conflict_options = $var;
 
         return $this;
@@ -969,9 +956,8 @@ class StartActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setStartDelay($var)
+    public function setStartDelay(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->start_delay = $var;
 
         return $this;

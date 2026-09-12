@@ -62,9 +62,9 @@ class MergeSets extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setPrimarySetBuildId($var)
+    public function setPrimarySetBuildId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->primary_set_build_id = $var;
 
         return $this;
@@ -88,9 +88,9 @@ class MergeSets extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSecondarySetBuildId($var)
+    public function setSecondarySetBuildId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->secondary_set_build_id = $var;
 
         return $this;

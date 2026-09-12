@@ -110,9 +110,9 @@ class CreateScheduleRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -136,9 +136,9 @@ class CreateScheduleRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setScheduleId($var)
+    public function setScheduleId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->schedule_id = $var;
 
         return $this;
@@ -172,9 +172,8 @@ class CreateScheduleRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Schedule\V1\Schedule $var
      * @return $this
      */
-    public function setSchedule($var)
+    public function setSchedule(\Temporal\Api\Schedule\V1\Schedule|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Schedule\V1\Schedule::class);
         $this->schedule = $var;
 
         return $this;
@@ -208,9 +207,8 @@ class CreateScheduleRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Schedule\V1\SchedulePatch $var
      * @return $this
      */
-    public function setInitialPatch($var)
+    public function setInitialPatch(\Temporal\Api\Schedule\V1\SchedulePatch|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Schedule\V1\SchedulePatch::class);
         $this->initial_patch = $var;
 
         return $this;
@@ -234,9 +232,9 @@ class CreateScheduleRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -260,9 +258,9 @@ class CreateScheduleRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRequestId($var)
+    public function setRequestId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->request_id = $var;
 
         return $this;
@@ -296,9 +294,8 @@ class CreateScheduleRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Memo $var
      * @return $this
      */
-    public function setMemo($var)
+    public function setMemo(\Temporal\Api\Common\V1\Memo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Memo::class);
         $this->memo = $var;
 
         return $this;
@@ -328,9 +325,8 @@ class CreateScheduleRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\SearchAttributes $var
      * @return $this
      */
-    public function setSearchAttributes($var)
+    public function setSearchAttributes(\Temporal\Api\Common\V1\SearchAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\SearchAttributes::class);
         $this->search_attributes = $var;
 
         return $this;

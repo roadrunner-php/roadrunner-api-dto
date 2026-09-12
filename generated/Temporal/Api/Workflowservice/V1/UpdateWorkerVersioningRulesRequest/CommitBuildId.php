@@ -69,9 +69,9 @@ class CommitBuildId extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTargetBuildId($var)
+    public function setTargetBuildId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->target_build_id = $var;
 
         return $this;
@@ -99,9 +99,8 @@ class CommitBuildId extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setForce($var)
+    public function setForce(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->force = $var;
 
         return $this;

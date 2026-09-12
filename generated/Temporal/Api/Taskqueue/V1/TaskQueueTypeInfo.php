@@ -59,7 +59,7 @@ class TaskQueueTypeInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\PollerInfo[] $var
      * @return $this
      */
-    public function setPollers($var)
+    public function setPollers(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Taskqueue\V1\PollerInfo::class);
         $this->pollers = $arr;
@@ -91,9 +91,8 @@ class TaskQueueTypeInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\TaskQueueStats $var
      * @return $this
      */
-    public function setStats($var)
+    public function setStats(\Temporal\Api\Taskqueue\V1\TaskQueueStats|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueueStats::class);
         $this->stats = $var;
 
         return $this;

@@ -64,9 +64,8 @@ class FetchWorkerConfigResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Sdk\V1\WorkerConfig $var
      * @return $this
      */
-    public function setWorkerConfig($var)
+    public function setWorkerConfig(\Temporal\Api\Sdk\V1\WorkerConfig|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Sdk\V1\WorkerConfig::class);
         $this->worker_config = $var;
 
         return $this;

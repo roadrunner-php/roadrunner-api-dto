@@ -48,7 +48,7 @@ class Runtime extends \Google\Protobuf\Internal\Message
      * The type of the runtime.
      *
      * Generated from protobuf field <code>.temporal.api.worker.v1.EnvironmentInfo.Runtime.RuntimeType type = 1;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Worker\V1\EnvironmentInfo\Runtime\RuntimeType}
      */
     public function getType()
     {
@@ -59,10 +59,10 @@ class Runtime extends \Google\Protobuf\Internal\Message
      * The type of the runtime.
      *
      * Generated from protobuf field <code>.temporal.api.worker.v1.EnvironmentInfo.Runtime.RuntimeType type = 1;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Worker\V1\EnvironmentInfo\Runtime\RuntimeType}
      * @return $this
      */
-    public function setType($var)
+    public function setType(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Worker\V1\EnvironmentInfo\Runtime\RuntimeType::class);
         $this->type = $var;
@@ -88,9 +88,9 @@ class Runtime extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setVersion($var)
+    public function setVersion(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->version = $var;
 
         return $this;

@@ -80,7 +80,7 @@ class CountNexusOperationExecutionsResponse extends \Google\Protobuf\Internal\Me
      * @param int|string $var
      * @return $this
      */
-    public function setCount($var)
+    public function setCount(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->count = $var;
@@ -108,7 +108,7 @@ class CountNexusOperationExecutionsResponse extends \Google\Protobuf\Internal\Me
      * @param \Temporal\Api\Workflowservice\V1\CountNexusOperationExecutionsResponse\AggregationGroup[] $var
      * @return $this
      */
-    public function setGroups($var)
+    public function setGroups(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Workflowservice\V1\CountNexusOperationExecutionsResponse\AggregationGroup::class);
         $this->groups = $arr;

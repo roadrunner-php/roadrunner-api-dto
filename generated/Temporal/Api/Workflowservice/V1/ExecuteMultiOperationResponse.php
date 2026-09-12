@@ -54,7 +54,7 @@ class ExecuteMultiOperationResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflowservice\V1\ExecuteMultiOperationResponse\Response[] $var
      * @return $this
      */
-    public function setResponses($var)
+    public function setResponses(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Workflowservice\V1\ExecuteMultiOperationResponse\Response::class);
         $this->responses = $arr;

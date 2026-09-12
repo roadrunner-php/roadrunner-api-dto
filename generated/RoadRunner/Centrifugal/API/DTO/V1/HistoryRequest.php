@@ -62,9 +62,9 @@ class HistoryRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setChannel($var)
+    public function setChannel(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->channel = $var;
 
         return $this;
@@ -84,7 +84,7 @@ class HistoryRequest extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setLimit($var)
+    public function setLimit(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->limit = $var;
@@ -116,9 +116,8 @@ class HistoryRequest extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\StreamPosition $var
      * @return $this
      */
-    public function setSince($var)
+    public function setSince(\RoadRunner\Centrifugal\API\DTO\V1\StreamPosition|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\StreamPosition::class);
         $this->since = $var;
 
         return $this;
@@ -138,9 +137,8 @@ class HistoryRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setReverse($var)
+    public function setReverse(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->reverse = $var;
 
         return $this;

@@ -113,9 +113,8 @@ class TimeSkippingConfig extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setEnabled($var)
+    public function setEnabled(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->enabled = $var;
 
         return $this;
@@ -149,9 +148,8 @@ class TimeSkippingConfig extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\FastForwardConfig $var
      * @return $this
      */
-    public function setFastForwardConfig($var)
+    public function setFastForwardConfig(\Temporal\Api\Common\V1\FastForwardConfig|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\FastForwardConfig::class);
         $this->fast_forward_config = $var;
 
         return $this;
@@ -179,9 +177,8 @@ class TimeSkippingConfig extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setDisablePropagation($var)
+    public function setDisablePropagation(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->disable_propagation = $var;
 
         return $this;
@@ -221,7 +218,7 @@ class TimeSkippingConfig extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setMaxSessionSkipCount($var)
+    public function setMaxSessionSkipCount(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->max_session_skip_count = $var;

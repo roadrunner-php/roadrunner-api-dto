@@ -57,7 +57,7 @@ class HistoryResult extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\Publication[] $var
      * @return $this
      */
-    public function setPublications($var)
+    public function setPublications(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\Centrifugal\API\DTO\V1\Publication::class);
         $this->publications = $arr;
@@ -79,9 +79,9 @@ class HistoryResult extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setEpoch($var)
+    public function setEpoch(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->epoch = $var;
 
         return $this;
@@ -101,7 +101,7 @@ class HistoryResult extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setOffset($var)
+    public function setOffset(int|string $var)
     {
         GPBUtil::checkUint64($var);
         $this->offset = $var;

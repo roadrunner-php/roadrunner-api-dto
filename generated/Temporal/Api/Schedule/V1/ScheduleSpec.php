@@ -221,7 +221,7 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Schedule\V1\StructuredCalendarSpec[] $var
      * @return $this
      */
-    public function setStructuredCalendar($var)
+    public function setStructuredCalendar(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Schedule\V1\StructuredCalendarSpec::class);
         $this->structured_calendar = $arr;
@@ -285,7 +285,7 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setCronString($var)
+    public function setCronString(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->cron_string = $arr;
@@ -311,7 +311,7 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Schedule\V1\CalendarSpec[] $var
      * @return $this
      */
-    public function setCalendar($var)
+    public function setCalendar(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Schedule\V1\CalendarSpec::class);
         $this->calendar = $arr;
@@ -337,7 +337,7 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Schedule\V1\IntervalSpec[] $var
      * @return $this
      */
-    public function setInterval($var)
+    public function setInterval(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Schedule\V1\IntervalSpec::class);
         $this->interval = $arr;
@@ -355,7 +355,7 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
      */
     public function getExcludeCalendar()
     {
-        if ($this->exclude_calendar->count() !== 0) {
+        if (count($this->exclude_calendar) !== 0) {
             @trigger_error('exclude_calendar is deprecated.', E_USER_DEPRECATED);
         }
         return $this->exclude_calendar;
@@ -370,10 +370,10 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setExcludeCalendar($var)
+    public function setExcludeCalendar(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Schedule\V1\CalendarSpec::class);
-        if ($arr->count() !== 0) {
+        if (count($arr) !== 0) {
             @trigger_error('exclude_calendar is deprecated.', E_USER_DEPRECATED);
         }
         $this->exclude_calendar = $arr;
@@ -395,7 +395,7 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Schedule\V1\StructuredCalendarSpec[] $var
      * @return $this
      */
-    public function setExcludeStructuredCalendar($var)
+    public function setExcludeStructuredCalendar(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Schedule\V1\StructuredCalendarSpec::class);
         $this->exclude_structured_calendar = $arr;
@@ -433,9 +433,8 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setStartTime($var)
+    public function setStartTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->start_time = $var;
 
         return $this;
@@ -469,9 +468,8 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setEndTime($var)
+    public function setEndTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->end_time = $var;
 
         return $this;
@@ -507,9 +505,8 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setJitter($var)
+    public function setJitter(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->jitter = $var;
 
         return $this;
@@ -565,9 +562,9 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTimezoneName($var)
+    public function setTimezoneName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->timezone_name = $var;
 
         return $this;
@@ -587,9 +584,9 @@ class ScheduleSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTimezoneData($var)
+    public function setTimezoneData(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->timezone_data = $var;
 
         return $this;

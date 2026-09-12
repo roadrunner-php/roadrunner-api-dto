@@ -40,7 +40,7 @@ class DataBlob extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.EncodingType encoding_type = 1;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\EncodingType}
      */
     public function getEncodingType()
     {
@@ -49,10 +49,10 @@ class DataBlob extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.EncodingType encoding_type = 1;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\EncodingType}
      * @return $this
      */
-    public function setEncodingType($var)
+    public function setEncodingType(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\EncodingType::class);
         $this->encoding_type = $var;
@@ -74,9 +74,9 @@ class DataBlob extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setData($var)
+    public function setData(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->data = $var;
 
         return $this;

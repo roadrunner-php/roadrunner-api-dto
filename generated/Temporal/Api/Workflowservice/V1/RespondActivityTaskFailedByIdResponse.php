@@ -58,7 +58,7 @@ class RespondActivityTaskFailedByIdResponse extends \Google\Protobuf\Internal\Me
      * @param \Temporal\Api\Failure\V1\Failure[] $var
      * @return $this
      */
-    public function setFailures($var)
+    public function setFailures(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Failure\V1\Failure::class);
         $this->failures = $arr;

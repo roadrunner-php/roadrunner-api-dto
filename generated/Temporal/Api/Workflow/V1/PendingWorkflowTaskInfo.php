@@ -64,7 +64,7 @@ class PendingWorkflowTaskInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.PendingWorkflowTaskState state = 1;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\PendingWorkflowTaskState}
      */
     public function getState()
     {
@@ -73,10 +73,10 @@ class PendingWorkflowTaskInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.PendingWorkflowTaskState state = 1;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\PendingWorkflowTaskState}
      * @return $this
      */
-    public function setState($var)
+    public function setState(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\PendingWorkflowTaskState::class);
         $this->state = $var;
@@ -108,9 +108,8 @@ class PendingWorkflowTaskInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setScheduledTime($var)
+    public function setScheduledTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->scheduled_time = $var;
 
         return $this;
@@ -150,9 +149,8 @@ class PendingWorkflowTaskInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setOriginalScheduledTime($var)
+    public function setOriginalScheduledTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->original_scheduled_time = $var;
 
         return $this;
@@ -182,9 +180,8 @@ class PendingWorkflowTaskInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setStartedTime($var)
+    public function setStartedTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->started_time = $var;
 
         return $this;
@@ -204,7 +201,7 @@ class PendingWorkflowTaskInfo extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setAttempt($var)
+    public function setAttempt(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->attempt = $var;

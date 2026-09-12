@@ -94,9 +94,8 @@ class WorkflowExecutionOptions extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflow\V1\VersioningOverride $var
      * @return $this
      */
-    public function setVersioningOverride($var)
+    public function setVersioningOverride(\Temporal\Api\Workflow\V1\VersioningOverride|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\VersioningOverride::class);
         $this->versioning_override = $var;
 
         return $this;
@@ -130,9 +129,8 @@ class WorkflowExecutionOptions extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Priority $var
      * @return $this
      */
-    public function setPriority($var)
+    public function setPriority(\Temporal\Api\Common\V1\Priority|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Priority::class);
         $this->priority = $var;
 
         return $this;
@@ -180,9 +178,8 @@ class WorkflowExecutionOptions extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\TimeSkippingConfig $var
      * @return $this
      */
-    public function setTimeSkippingConfig($var)
+    public function setTimeSkippingConfig(\Temporal\Api\Common\V1\TimeSkippingConfig|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\TimeSkippingConfig::class);
         $this->time_skipping_config = $var;
 
         return $this;

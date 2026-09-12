@@ -50,7 +50,7 @@ class TriggerImmediatelyRequest extends \Google\Protobuf\Internal\Message
      * If set, override overlap policy for this one request.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ScheduleOverlapPolicy overlap_policy = 1;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ScheduleOverlapPolicy}
      */
     public function getOverlapPolicy()
     {
@@ -61,10 +61,10 @@ class TriggerImmediatelyRequest extends \Google\Protobuf\Internal\Message
      * If set, override overlap policy for this one request.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ScheduleOverlapPolicy overlap_policy = 1;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ScheduleOverlapPolicy}
      * @return $this
      */
-    public function setOverlapPolicy($var)
+    public function setOverlapPolicy(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ScheduleOverlapPolicy::class);
         $this->overlap_policy = $var;
@@ -102,9 +102,8 @@ class TriggerImmediatelyRequest extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setScheduledTime($var)
+    public function setScheduledTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->scheduled_time = $var;
 
         return $this;

@@ -54,9 +54,8 @@ class TriggerWorkflowRuleResponse extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setApplied($var)
+    public function setApplied(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->applied = $var;
 
         return $this;

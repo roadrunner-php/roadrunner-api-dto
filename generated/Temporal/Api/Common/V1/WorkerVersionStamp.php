@@ -71,9 +71,9 @@ class WorkerVersionStamp extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setBuildId($var)
+    public function setBuildId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->build_id = $var;
 
         return $this;
@@ -99,9 +99,8 @@ class WorkerVersionStamp extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setUseVersioning($var)
+    public function setUseVersioning(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->use_versioning = $var;
 
         return $this;

@@ -74,7 +74,7 @@ class NexusOperationCompletedEventAttributes extends \Google\Protobuf\Internal\M
      * @param int|string $var
      * @return $this
      */
-    public function setScheduledEventId($var)
+    public function setScheduledEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->scheduled_event_id = $var;
@@ -112,9 +112,8 @@ class NexusOperationCompletedEventAttributes extends \Google\Protobuf\Internal\M
      * @param \Temporal\Api\Common\V1\Payload $var
      * @return $this
      */
-    public function setResult($var)
+    public function setResult(\Temporal\Api\Common\V1\Payload|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payload::class);
         $this->result = $var;
 
         return $this;
@@ -138,9 +137,9 @@ class NexusOperationCompletedEventAttributes extends \Google\Protobuf\Internal\M
      * @param string $var
      * @return $this
      */
-    public function setRequestId($var)
+    public function setRequestId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->request_id = $var;
 
         return $this;

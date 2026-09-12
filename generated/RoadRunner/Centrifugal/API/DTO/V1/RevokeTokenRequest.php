@@ -52,7 +52,7 @@ class RevokeTokenRequest extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setExpireAt($var)
+    public function setExpireAt(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->expire_at = $var;
@@ -74,9 +74,9 @@ class RevokeTokenRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setUid($var)
+    public function setUid(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->uid = $var;
 
         return $this;

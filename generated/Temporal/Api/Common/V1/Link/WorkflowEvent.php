@@ -60,9 +60,9 @@ class WorkflowEvent extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -82,9 +82,9 @@ class WorkflowEvent extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setWorkflowId($var)
+    public function setWorkflowId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->workflow_id = $var;
 
         return $this;
@@ -104,9 +104,9 @@ class WorkflowEvent extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRunId($var)
+    public function setRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->run_id = $var;
 
         return $this;
@@ -131,9 +131,8 @@ class WorkflowEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Link\WorkflowEvent\EventReference $var
      * @return $this
      */
-    public function setEventRef($var)
+    public function setEventRef(\Temporal\Api\Common\V1\Link\WorkflowEvent\EventReference|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Link\WorkflowEvent\EventReference::class);
         $this->writeOneof(100, $var);
 
         return $this;
@@ -158,9 +157,8 @@ class WorkflowEvent extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Link\WorkflowEvent\RequestIdReference $var
      * @return $this
      */
-    public function setRequestIdRef($var)
+    public function setRequestIdRef(\Temporal\Api\Common\V1\Link\WorkflowEvent\RequestIdReference|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Link\WorkflowEvent\RequestIdReference::class);
         $this->writeOneof(101, $var);
 
         return $this;

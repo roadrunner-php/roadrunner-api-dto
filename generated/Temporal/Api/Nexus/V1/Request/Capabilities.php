@@ -58,9 +58,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setTemporalFailureResponses($var)
+    public function setTemporalFailureResponses(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->temporal_failure_responses = $var;
 
         return $this;

@@ -50,7 +50,7 @@ class ExecuteCommandsResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\WorkerCommandResult[] $var
      * @return $this
      */
-    public function setResults($var)
+    public function setResults(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Worker\V1\WorkerCommandResult::class);
         $this->results = $arr;

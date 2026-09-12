@@ -108,9 +108,9 @@ class ResetPointInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setBuildId($var)
+    public function setBuildId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->build_id = $var;
 
         return $this;
@@ -139,10 +139,10 @@ class ResetPointInfo extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setBinaryChecksum($var)
+    public function setBinaryChecksum(string $var)
     {
         @trigger_error('binary_checksum is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->binary_checksum = $var;
 
         return $this;
@@ -166,9 +166,9 @@ class ResetPointInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRunId($var)
+    public function setRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->run_id = $var;
 
         return $this;
@@ -192,7 +192,7 @@ class ResetPointInfo extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setFirstWorkflowTaskCompletedId($var)
+    public function setFirstWorkflowTaskCompletedId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->first_workflow_task_completed_id = $var;
@@ -224,9 +224,8 @@ class ResetPointInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setCreateTime($var)
+    public function setCreateTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->create_time = $var;
 
         return $this;
@@ -264,9 +263,8 @@ class ResetPointInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setExpireTime($var)
+    public function setExpireTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->expire_time = $var;
 
         return $this;
@@ -290,9 +288,8 @@ class ResetPointInfo extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setResettable($var)
+    public function setResettable(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->resettable = $var;
 
         return $this;

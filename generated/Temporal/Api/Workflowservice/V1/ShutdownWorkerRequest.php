@@ -108,9 +108,9 @@ class ShutdownWorkerRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -138,9 +138,9 @@ class ShutdownWorkerRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setStickyTaskQueue($var)
+    public function setStickyTaskQueue(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->sticky_task_queue = $var;
 
         return $this;
@@ -160,9 +160,9 @@ class ShutdownWorkerRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -182,9 +182,9 @@ class ShutdownWorkerRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setReason($var)
+    public function setReason(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->reason = $var;
 
         return $this;
@@ -214,9 +214,8 @@ class ShutdownWorkerRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\WorkerHeartbeat $var
      * @return $this
      */
-    public function setWorkerHeartbeat($var)
+    public function setWorkerHeartbeat(\Temporal\Api\Worker\V1\WorkerHeartbeat|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Worker\V1\WorkerHeartbeat::class);
         $this->worker_heartbeat = $var;
 
         return $this;
@@ -244,9 +243,9 @@ class ShutdownWorkerRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setWorkerInstanceKey($var)
+    public function setWorkerInstanceKey(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->worker_instance_key = $var;
 
         return $this;
@@ -274,9 +273,9 @@ class ShutdownWorkerRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->task_queue = $var;
 
         return $this;
@@ -287,7 +286,7 @@ class ShutdownWorkerRequest extends \Google\Protobuf\Internal\Message
      * calls from SDK. This avoids a race condition that can lead to tasks being lost.
      *
      * Generated from protobuf field <code>repeated .temporal.api.enums.v1.TaskQueueType task_queue_types = 8;</code>
-     * @return RepeatedField<int>
+     * @return RepeatedField<int> one of the values in {@see \Temporal\Api\Enums\V1\TaskQueueType}
      */
     public function getTaskQueueTypes()
     {
@@ -299,10 +298,10 @@ class ShutdownWorkerRequest extends \Google\Protobuf\Internal\Message
      * calls from SDK. This avoids a race condition that can lead to tasks being lost.
      *
      * Generated from protobuf field <code>repeated .temporal.api.enums.v1.TaskQueueType task_queue_types = 8;</code>
-     * @param int[] $var
+     * @param int[] $var one of the values in {@see \Temporal\Api\Enums\V1\TaskQueueType}
      * @return $this
      */
-    public function setTaskQueueTypes($var)
+    public function setTaskQueueTypes(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Temporal\Api\Enums\V1\TaskQueueType::class);
         $this->task_queue_types = $arr;

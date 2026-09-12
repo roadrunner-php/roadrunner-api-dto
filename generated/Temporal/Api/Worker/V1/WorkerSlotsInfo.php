@@ -114,7 +114,7 @@ class WorkerSlotsInfo extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setCurrentAvailableSlots($var)
+    public function setCurrentAvailableSlots(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->current_available_slots = $var;
@@ -140,7 +140,7 @@ class WorkerSlotsInfo extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setCurrentUsedSlots($var)
+    public function setCurrentUsedSlots(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->current_used_slots = $var;
@@ -168,9 +168,9 @@ class WorkerSlotsInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSlotSupplierKind($var)
+    public function setSlotSupplierKind(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->slot_supplier_kind = $var;
 
         return $this;
@@ -196,7 +196,7 @@ class WorkerSlotsInfo extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setTotalProcessedTasks($var)
+    public function setTotalProcessedTasks(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->total_processed_tasks = $var;
@@ -222,7 +222,7 @@ class WorkerSlotsInfo extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setTotalFailedTasks($var)
+    public function setTotalFailedTasks(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->total_failed_tasks = $var;
@@ -252,7 +252,7 @@ class WorkerSlotsInfo extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setLastIntervalProcessedTasks($var)
+    public function setLastIntervalProcessedTasks(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->last_interval_processed_tasks = $var;
@@ -278,7 +278,7 @@ class WorkerSlotsInfo extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setLastIntervalFailureTasks($var)
+    public function setLastIntervalFailureTasks(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->last_interval_failure_tasks = $var;

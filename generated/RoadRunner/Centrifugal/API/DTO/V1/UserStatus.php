@@ -62,9 +62,9 @@ class UserStatus extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setUser($var)
+    public function setUser(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->user = $var;
 
         return $this;
@@ -84,7 +84,7 @@ class UserStatus extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setActive($var)
+    public function setActive(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->active = $var;
@@ -106,7 +106,7 @@ class UserStatus extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setOnline($var)
+    public function setOnline(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->online = $var;
@@ -128,9 +128,9 @@ class UserStatus extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setState($var)
+    public function setState(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->state = $var;
 
         return $this;

@@ -383,9 +383,9 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setActivityId($var)
+    public function setActivityId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->activity_id = $var;
 
         return $this;
@@ -405,9 +405,9 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRunId($var)
+    public function setRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->run_id = $var;
 
         return $this;
@@ -441,9 +441,8 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\ActivityType $var
      * @return $this
      */
-    public function setActivityType($var)
+    public function setActivityType(\Temporal\Api\Common\V1\ActivityType|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\ActivityType::class);
         $this->activity_type = $var;
 
         return $this;
@@ -453,7 +452,7 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * A general status for this activity, indicates whether it is currently running or in one of the terminal statuses.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ActivityExecutionStatus status = 4;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ActivityExecutionStatus}
      */
     public function getStatus()
     {
@@ -464,10 +463,10 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * A general status for this activity, indicates whether it is currently running or in one of the terminal statuses.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ActivityExecutionStatus status = 4;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ActivityExecutionStatus}
      * @return $this
      */
-    public function setStatus($var)
+    public function setStatus(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ActivityExecutionStatus::class);
         $this->status = $var;
@@ -479,7 +478,7 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * More detailed breakdown of ACTIVITY_EXECUTION_STATUS_RUNNING.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.PendingActivityState run_state = 5;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\PendingActivityState}
      */
     public function getRunState()
     {
@@ -490,10 +489,10 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * More detailed breakdown of ACTIVITY_EXECUTION_STATUS_RUNNING.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.PendingActivityState run_state = 5;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\PendingActivityState}
      * @return $this
      */
-    public function setRunState($var)
+    public function setRunState(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\PendingActivityState::class);
         $this->run_state = $var;
@@ -515,9 +514,9 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->task_queue = $var;
 
         return $this;
@@ -557,9 +556,8 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setScheduleToCloseTimeout($var)
+    public function setScheduleToCloseTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->schedule_to_close_timeout = $var;
 
         return $this;
@@ -601,9 +599,8 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setScheduleToStartTimeout($var)
+    public function setScheduleToStartTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->schedule_to_start_timeout = $var;
 
         return $this;
@@ -643,9 +640,8 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setStartToCloseTimeout($var)
+    public function setStartToCloseTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->start_to_close_timeout = $var;
 
         return $this;
@@ -679,9 +675,8 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setHeartbeatTimeout($var)
+    public function setHeartbeatTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->heartbeat_timeout = $var;
 
         return $this;
@@ -715,9 +710,8 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\RetryPolicy $var
      * @return $this
      */
-    public function setRetryPolicy($var)
+    public function setRetryPolicy(\Temporal\Api\Common\V1\RetryPolicy|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\RetryPolicy::class);
         $this->retry_policy = $var;
 
         return $this;
@@ -753,9 +747,8 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setHeartbeatDetails($var)
+    public function setHeartbeatDetails(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->heartbeat_details = $var;
 
         return $this;
@@ -789,9 +782,8 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setLastHeartbeatTime($var)
+    public function setLastHeartbeatTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_heartbeat_time = $var;
 
         return $this;
@@ -825,9 +817,8 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setLastStartedTime($var)
+    public function setLastStartedTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_started_time = $var;
 
         return $this;
@@ -851,7 +842,7 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setAttempt($var)
+    public function setAttempt(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->attempt = $var;
@@ -887,9 +878,8 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setExecutionDuration($var)
+    public function setExecutionDuration(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->execution_duration = $var;
 
         return $this;
@@ -923,9 +913,8 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setScheduleTime($var)
+    public function setScheduleTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->schedule_time = $var;
 
         return $this;
@@ -961,9 +950,8 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setExpirationTime($var)
+    public function setExpirationTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->expiration_time = $var;
 
         return $this;
@@ -997,9 +985,8 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setCloseTime($var)
+    public function setCloseTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->close_time = $var;
 
         return $this;
@@ -1035,9 +1022,8 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
      */
-    public function setLastFailure($var)
+    public function setLastFailure(\Temporal\Api\Failure\V1\Failure|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
         $this->last_failure = $var;
 
         return $this;
@@ -1057,9 +1043,9 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setLastWorkerIdentity($var)
+    public function setLastWorkerIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->last_worker_identity = $var;
 
         return $this;
@@ -1103,9 +1089,8 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setCurrentRetryInterval($var)
+    public function setCurrentRetryInterval(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->current_retry_interval = $var;
 
         return $this;
@@ -1139,9 +1124,8 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setLastAttemptCompleteTime($var)
+    public function setLastAttemptCompleteTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_attempt_complete_time = $var;
 
         return $this;
@@ -1177,9 +1161,8 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setNextAttemptScheduleTime($var)
+    public function setNextAttemptScheduleTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->next_attempt_schedule_time = $var;
 
         return $this;
@@ -1215,9 +1198,8 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
      * @return $this
      */
-    public function setLastDeploymentVersion($var)
+    public function setLastDeploymentVersion(\Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
         $this->last_deployment_version = $var;
 
         return $this;
@@ -1251,9 +1233,8 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Priority $var
      * @return $this
      */
-    public function setPriority($var)
+    public function setPriority(\Temporal\Api\Common\V1\Priority|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Priority::class);
         $this->priority = $var;
 
         return $this;
@@ -1277,7 +1258,7 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setStateTransitionCount($var)
+    public function setStateTransitionCount(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->state_transition_count = $var;
@@ -1303,7 +1284,7 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setStateSizeBytes($var)
+    public function setStateSizeBytes(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->state_size_bytes = $var;
@@ -1335,9 +1316,8 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\SearchAttributes $var
      * @return $this
      */
-    public function setSearchAttributes($var)
+    public function setSearchAttributes(\Temporal\Api\Common\V1\SearchAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\SearchAttributes::class);
         $this->search_attributes = $var;
 
         return $this;
@@ -1367,9 +1347,8 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Header $var
      * @return $this
      */
-    public function setHeader($var)
+    public function setHeader(\Temporal\Api\Common\V1\Header|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Header::class);
         $this->header = $var;
 
         return $this;
@@ -1403,9 +1382,8 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Sdk\V1\UserMetadata $var
      * @return $this
      */
-    public function setUserMetadata($var)
+    public function setUserMetadata(\Temporal\Api\Sdk\V1\UserMetadata|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Sdk\V1\UserMetadata::class);
         $this->user_metadata = $var;
 
         return $this;
@@ -1429,9 +1407,9 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setCanceledReason($var)
+    public function setCanceledReason(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->canceled_reason = $var;
 
         return $this;
@@ -1455,7 +1433,7 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Link[] $var
      * @return $this
      */
-    public function setLinks($var)
+    public function setLinks(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Link::class);
         $this->links = $arr;
@@ -1481,7 +1459,7 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setTotalHeartbeatCount($var)
+    public function setTotalHeartbeatCount(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->total_heartbeat_count = $var;
@@ -1509,9 +1487,9 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSdkName($var)
+    public function setSdkName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->sdk_name = $var;
 
         return $this;
@@ -1537,9 +1515,9 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSdkVersion($var)
+    public function setSdkVersion(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->sdk_version = $var;
 
         return $this;
@@ -1573,9 +1551,8 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setStartDelay($var)
+    public function setStartDelay(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->start_delay = $var;
 
         return $this;
@@ -1611,9 +1588,8 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setExecutionTime($var)
+    public function setExecutionTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->execution_time = $var;
 
         return $this;

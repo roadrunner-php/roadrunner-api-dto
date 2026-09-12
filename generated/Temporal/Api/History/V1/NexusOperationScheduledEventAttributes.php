@@ -174,9 +174,9 @@ class NexusOperationScheduledEventAttributes extends \Google\Protobuf\Internal\M
      * @param string $var
      * @return $this
      */
-    public function setEndpoint($var)
+    public function setEndpoint(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->endpoint = $var;
 
         return $this;
@@ -200,9 +200,9 @@ class NexusOperationScheduledEventAttributes extends \Google\Protobuf\Internal\M
      * @param string $var
      * @return $this
      */
-    public function setService($var)
+    public function setService(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->service = $var;
 
         return $this;
@@ -226,9 +226,9 @@ class NexusOperationScheduledEventAttributes extends \Google\Protobuf\Internal\M
      * @param string $var
      * @return $this
      */
-    public function setOperation($var)
+    public function setOperation(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->operation = $var;
 
         return $this;
@@ -266,9 +266,8 @@ class NexusOperationScheduledEventAttributes extends \Google\Protobuf\Internal\M
      * @param \Temporal\Api\Common\V1\Payload $var
      * @return $this
      */
-    public function setInput($var)
+    public function setInput(\Temporal\Api\Common\V1\Payload|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payload::class);
         $this->input = $var;
 
         return $this;
@@ -314,9 +313,8 @@ class NexusOperationScheduledEventAttributes extends \Google\Protobuf\Internal\M
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setScheduleToCloseTimeout($var)
+    public function setScheduleToCloseTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->schedule_to_close_timeout = $var;
 
         return $this;
@@ -344,7 +342,7 @@ class NexusOperationScheduledEventAttributes extends \Google\Protobuf\Internal\M
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setNexusHeader($var)
+    public function setNexusHeader(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->nexus_header = $arr;
@@ -370,7 +368,7 @@ class NexusOperationScheduledEventAttributes extends \Google\Protobuf\Internal\M
      * @param int|string $var
      * @return $this
      */
-    public function setWorkflowTaskCompletedEventId($var)
+    public function setWorkflowTaskCompletedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->workflow_task_completed_event_id = $var;
@@ -398,9 +396,9 @@ class NexusOperationScheduledEventAttributes extends \Google\Protobuf\Internal\M
      * @param string $var
      * @return $this
      */
-    public function setRequestId($var)
+    public function setRequestId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->request_id = $var;
 
         return $this;
@@ -428,9 +426,9 @@ class NexusOperationScheduledEventAttributes extends \Google\Protobuf\Internal\M
      * @param string $var
      * @return $this
      */
-    public function setEndpointId($var)
+    public function setEndpointId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->endpoint_id = $var;
 
         return $this;
@@ -470,9 +468,8 @@ class NexusOperationScheduledEventAttributes extends \Google\Protobuf\Internal\M
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setScheduleToStartTimeout($var)
+    public function setScheduleToStartTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->schedule_to_start_timeout = $var;
 
         return $this;
@@ -512,9 +509,8 @@ class NexusOperationScheduledEventAttributes extends \Google\Protobuf\Internal\M
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setStartToCloseTimeout($var)
+    public function setStartToCloseTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->start_to_close_timeout = $var;
 
         return $this;

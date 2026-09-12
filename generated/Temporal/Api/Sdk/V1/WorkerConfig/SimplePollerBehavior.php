@@ -47,7 +47,7 @@ class SimplePollerBehavior extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setMaxPollers($var)
+    public function setMaxPollers(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->max_pollers = $var;

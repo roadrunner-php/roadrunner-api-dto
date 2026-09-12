@@ -47,9 +47,9 @@ class CreateScheduleResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setConflictToken($var)
+    public function setConflictToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->conflict_token = $var;
 
         return $this;

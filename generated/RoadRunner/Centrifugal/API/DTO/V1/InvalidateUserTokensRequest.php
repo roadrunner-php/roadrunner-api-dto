@@ -62,7 +62,7 @@ class InvalidateUserTokensRequest extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setExpireAt($var)
+    public function setExpireAt(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->expire_at = $var;
@@ -84,9 +84,9 @@ class InvalidateUserTokensRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setUser($var)
+    public function setUser(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->user = $var;
 
         return $this;
@@ -106,7 +106,7 @@ class InvalidateUserTokensRequest extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setIssuedBefore($var)
+    public function setIssuedBefore(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->issued_before = $var;
@@ -128,9 +128,9 @@ class InvalidateUserTokensRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setChannel($var)
+    public function setChannel(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->channel = $var;
 
         return $this;

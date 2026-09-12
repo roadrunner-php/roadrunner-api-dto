@@ -70,7 +70,7 @@ class PollerGroupsInfo extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setVersion($var)
+    public function setVersion(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->version = $var;
@@ -96,7 +96,7 @@ class PollerGroupsInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\PollerGroupInfo[] $var
      * @return $this
      */
-    public function setPollerGroups($var)
+    public function setPollerGroups(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Taskqueue\V1\PollerGroupInfo::class);
         $this->poller_groups = $arr;

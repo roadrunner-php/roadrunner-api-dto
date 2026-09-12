@@ -93,9 +93,9 @@ class TerminateWorkflowExecutionRequest extends \Google\Protobuf\Internal\Messag
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -125,9 +125,8 @@ class TerminateWorkflowExecutionRequest extends \Google\Protobuf\Internal\Messag
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
      * @return $this
      */
-    public function setWorkflowExecution($var)
+    public function setWorkflowExecution(\Temporal\Api\Common\V1\WorkflowExecution|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->workflow_execution = $var;
 
         return $this;
@@ -147,9 +146,9 @@ class TerminateWorkflowExecutionRequest extends \Google\Protobuf\Internal\Messag
      * @param string $var
      * @return $this
      */
-    public function setReason($var)
+    public function setReason(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->reason = $var;
 
         return $this;
@@ -183,9 +182,8 @@ class TerminateWorkflowExecutionRequest extends \Google\Protobuf\Internal\Messag
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setDetails($var)
+    public function setDetails(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->details = $var;
 
         return $this;
@@ -209,9 +207,9 @@ class TerminateWorkflowExecutionRequest extends \Google\Protobuf\Internal\Messag
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -239,9 +237,9 @@ class TerminateWorkflowExecutionRequest extends \Google\Protobuf\Internal\Messag
      * @param string $var
      * @return $this
      */
-    public function setFirstExecutionRunId($var)
+    public function setFirstExecutionRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->first_execution_run_id = $var;
 
         return $this;
@@ -265,7 +263,7 @@ class TerminateWorkflowExecutionRequest extends \Google\Protobuf\Internal\Messag
      * @param \Temporal\Api\Common\V1\Link[] $var
      * @return $this
      */
-    public function setLinks($var)
+    public function setLinks(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Link::class);
         $this->links = $arr;

@@ -82,7 +82,7 @@ class Limits extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setBlobSizeLimitError($var)
+    public function setBlobSizeLimitError(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->blob_size_limit_error = $var;
@@ -108,7 +108,7 @@ class Limits extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setMemoSizeLimitError($var)
+    public function setMemoSizeLimitError(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->memo_size_limit_error = $var;
@@ -138,7 +138,7 @@ class Limits extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setWorkflowTaskCompletionSizeLimitError($var)
+    public function setWorkflowTaskCompletionSizeLimitError(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->workflow_task_completion_size_limit_error = $var;

@@ -70,7 +70,7 @@ class ListSearchAttributesResponse extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setCustomAttributes($var)
+    public function setCustomAttributes(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::ENUM, \Temporal\Api\Enums\V1\IndexedValueType::class);
         $this->custom_attributes = $arr;
@@ -96,7 +96,7 @@ class ListSearchAttributesResponse extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setSystemAttributes($var)
+    public function setSystemAttributes(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::ENUM, \Temporal\Api\Enums\V1\IndexedValueType::class);
         $this->system_attributes = $arr;
@@ -122,7 +122,7 @@ class ListSearchAttributesResponse extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setStorageSchema($var)
+    public function setStorageSchema(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->storage_schema = $arr;

@@ -66,9 +66,9 @@ class ExternalStorageReference extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setDriverName($var)
+    public function setDriverName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->driver_name = $var;
 
         return $this;
@@ -92,7 +92,7 @@ class ExternalStorageReference extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setClaimData($var)
+    public function setClaimData(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->claim_data = $arr;

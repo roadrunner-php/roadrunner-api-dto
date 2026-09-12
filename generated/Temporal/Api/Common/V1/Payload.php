@@ -64,7 +64,7 @@ class Payload extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setMetadata($var)
+    public function setMetadata(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::BYTES);
         $this->metadata = $arr;
@@ -86,9 +86,9 @@ class Payload extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setData($var)
+    public function setData(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->data = $var;
 
         return $this;
@@ -112,7 +112,7 @@ class Payload extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Payload\ExternalPayloadDetails[] $var
      * @return $this
      */
-    public function setExternalPayloads($var)
+    public function setExternalPayloads(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Payload\ExternalPayloadDetails::class);
         $this->external_payloads = $arr;

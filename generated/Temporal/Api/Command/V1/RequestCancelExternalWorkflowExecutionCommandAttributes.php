@@ -99,10 +99,10 @@ class RequestCancelExternalWorkflowExecutionCommandAttributes extends \Google\Pr
      * @return $this
      * @deprecated
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
         @trigger_error('namespace is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -122,9 +122,9 @@ class RequestCancelExternalWorkflowExecutionCommandAttributes extends \Google\Pr
      * @param string $var
      * @return $this
      */
-    public function setWorkflowId($var)
+    public function setWorkflowId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->workflow_id = $var;
 
         return $this;
@@ -144,9 +144,9 @@ class RequestCancelExternalWorkflowExecutionCommandAttributes extends \Google\Pr
      * @param string $var
      * @return $this
      */
-    public function setRunId($var)
+    public function setRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->run_id = $var;
 
         return $this;
@@ -175,10 +175,10 @@ class RequestCancelExternalWorkflowExecutionCommandAttributes extends \Google\Pr
      * @return $this
      * @deprecated
      */
-    public function setControl($var)
+    public function setControl(string $var)
     {
         @trigger_error('control is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->control = $var;
 
         return $this;
@@ -206,9 +206,8 @@ class RequestCancelExternalWorkflowExecutionCommandAttributes extends \Google\Pr
      * @param bool $var
      * @return $this
      */
-    public function setChildWorkflowOnly($var)
+    public function setChildWorkflowOnly(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->child_workflow_only = $var;
 
         return $this;
@@ -232,9 +231,9 @@ class RequestCancelExternalWorkflowExecutionCommandAttributes extends \Google\Pr
      * @param string $var
      * @return $this
      */
-    public function setReason($var)
+    public function setReason(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->reason = $var;
 
         return $this;

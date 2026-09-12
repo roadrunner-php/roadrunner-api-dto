@@ -176,9 +176,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setSignalAndQueryHeader($var)
+    public function setSignalAndQueryHeader(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->signal_and_query_header = $var;
 
         return $this;
@@ -208,9 +207,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setInternalErrorDifferentiation($var)
+    public function setInternalErrorDifferentiation(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->internal_error_differentiation = $var;
 
         return $this;
@@ -234,9 +232,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setActivityFailureIncludeHeartbeat($var)
+    public function setActivityFailureIncludeHeartbeat(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->activity_failure_include_heartbeat = $var;
 
         return $this;
@@ -260,9 +257,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setSupportsSchedules($var)
+    public function setSupportsSchedules(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->supports_schedules = $var;
 
         return $this;
@@ -286,9 +282,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setEncodedFailureAttributes($var)
+    public function setEncodedFailureAttributes(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->encoded_failure_attributes = $var;
 
         return $this;
@@ -316,9 +311,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setBuildIdBasedVersioning($var)
+    public function setBuildIdBasedVersioning(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->build_id_based_versioning = $var;
 
         return $this;
@@ -342,9 +336,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setUpsertMemo($var)
+    public function setUpsertMemo(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->upsert_memo = $var;
 
         return $this;
@@ -368,9 +361,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setEagerWorkflowStart($var)
+    public function setEagerWorkflowStart(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->eager_workflow_start = $var;
 
         return $this;
@@ -396,9 +388,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setSdkMetadata($var)
+    public function setSdkMetadata(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->sdk_metadata = $var;
 
         return $this;
@@ -424,9 +415,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setCountGroupByExecutionStatus($var)
+    public function setCountGroupByExecutionStatus(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->count_group_by_execution_status = $var;
 
         return $this;
@@ -452,9 +442,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setNexus($var)
+    public function setNexus(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->nexus = $var;
 
         return $this;
@@ -482,9 +471,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setServerScaledDeployments($var)
+    public function setServerScaledDeployments(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->server_scaled_deployments = $var;
 
         return $this;
@@ -512,9 +500,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setServerScaledProviderCloudRun($var)
+    public function setServerScaledProviderCloudRun(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->server_scaled_provider_cloud_run = $var;
 
         return $this;

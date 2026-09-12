@@ -116,9 +116,9 @@ class RegisterNamespaceRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -138,9 +138,9 @@ class RegisterNamespaceRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setDescription($var)
+    public function setDescription(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->description = $var;
 
         return $this;
@@ -160,9 +160,9 @@ class RegisterNamespaceRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setOwnerEmail($var)
+    public function setOwnerEmail(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->owner_email = $var;
 
         return $this;
@@ -192,9 +192,8 @@ class RegisterNamespaceRequest extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setWorkflowExecutionRetentionPeriod($var)
+    public function setWorkflowExecutionRetentionPeriod(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->workflow_execution_retention_period = $var;
 
         return $this;
@@ -214,7 +213,7 @@ class RegisterNamespaceRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Replication\V1\ClusterReplicationConfig[] $var
      * @return $this
      */
-    public function setClusters($var)
+    public function setClusters(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Replication\V1\ClusterReplicationConfig::class);
         $this->clusters = $arr;
@@ -236,9 +235,9 @@ class RegisterNamespaceRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setActiveClusterName($var)
+    public function setActiveClusterName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->active_cluster_name = $var;
 
         return $this;
@@ -262,7 +261,7 @@ class RegisterNamespaceRequest extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setData($var)
+    public function setData(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->data = $arr;
@@ -284,9 +283,9 @@ class RegisterNamespaceRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSecurityToken($var)
+    public function setSecurityToken(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->security_token = $var;
 
         return $this;
@@ -306,9 +305,8 @@ class RegisterNamespaceRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setIsGlobalNamespace($var)
+    public function setIsGlobalNamespace(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->is_global_namespace = $var;
 
         return $this;
@@ -318,7 +316,7 @@ class RegisterNamespaceRequest extends \Google\Protobuf\Internal\Message
      * If unspecified (ARCHIVAL_STATE_UNSPECIFIED) then default server configuration is used.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ArchivalState history_archival_state = 10;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ArchivalState}
      */
     public function getHistoryArchivalState()
     {
@@ -329,10 +327,10 @@ class RegisterNamespaceRequest extends \Google\Protobuf\Internal\Message
      * If unspecified (ARCHIVAL_STATE_UNSPECIFIED) then default server configuration is used.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ArchivalState history_archival_state = 10;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ArchivalState}
      * @return $this
      */
-    public function setHistoryArchivalState($var)
+    public function setHistoryArchivalState(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ArchivalState::class);
         $this->history_archival_state = $var;
@@ -354,9 +352,9 @@ class RegisterNamespaceRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setHistoryArchivalUri($var)
+    public function setHistoryArchivalUri(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->history_archival_uri = $var;
 
         return $this;
@@ -366,7 +364,7 @@ class RegisterNamespaceRequest extends \Google\Protobuf\Internal\Message
      * If unspecified (ARCHIVAL_STATE_UNSPECIFIED) then default server configuration is used.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ArchivalState visibility_archival_state = 12;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ArchivalState}
      */
     public function getVisibilityArchivalState()
     {
@@ -377,10 +375,10 @@ class RegisterNamespaceRequest extends \Google\Protobuf\Internal\Message
      * If unspecified (ARCHIVAL_STATE_UNSPECIFIED) then default server configuration is used.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ArchivalState visibility_archival_state = 12;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ArchivalState}
      * @return $this
      */
-    public function setVisibilityArchivalState($var)
+    public function setVisibilityArchivalState(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ArchivalState::class);
         $this->visibility_archival_state = $var;
@@ -402,9 +400,9 @@ class RegisterNamespaceRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setVisibilityArchivalUri($var)
+    public function setVisibilityArchivalUri(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->visibility_archival_uri = $var;
 
         return $this;

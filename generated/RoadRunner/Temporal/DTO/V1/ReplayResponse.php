@@ -59,9 +59,8 @@ class ReplayResponse extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Common\DTO\V1\Status $var
      * @return $this
      */
-    public function setStatus($var)
+    public function setStatus(\RoadRunner\Common\DTO\V1\Status|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Common\DTO\V1\Status::class);
         $this->status = $var;
 
         return $this;

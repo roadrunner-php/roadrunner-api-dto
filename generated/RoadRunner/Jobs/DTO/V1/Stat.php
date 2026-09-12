@@ -87,9 +87,9 @@ class Stat extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setPipeline($var)
+    public function setPipeline(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->pipeline = $var;
 
         return $this;
@@ -109,9 +109,9 @@ class Stat extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setDriver($var)
+    public function setDriver(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->driver = $var;
 
         return $this;
@@ -131,9 +131,9 @@ class Stat extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setQueue($var)
+    public function setQueue(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->queue = $var;
 
         return $this;
@@ -153,7 +153,7 @@ class Stat extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setActive($var)
+    public function setActive(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->active = $var;
@@ -175,7 +175,7 @@ class Stat extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setDelayed($var)
+    public function setDelayed(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->delayed = $var;
@@ -197,7 +197,7 @@ class Stat extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setReserved($var)
+    public function setReserved(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->reserved = $var;
@@ -219,9 +219,8 @@ class Stat extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setReady($var)
+    public function setReady(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->ready = $var;
 
         return $this;
@@ -245,7 +244,7 @@ class Stat extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setPriority($var)
+    public function setPriority(int|string $var)
     {
         GPBUtil::checkUint64($var);
         $this->priority = $var;

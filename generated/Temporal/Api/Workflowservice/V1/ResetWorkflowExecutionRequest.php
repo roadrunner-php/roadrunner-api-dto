@@ -121,9 +121,9 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -161,9 +161,8 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
      * @return $this
      */
-    public function setWorkflowExecution($var)
+    public function setWorkflowExecution(\Temporal\Api\Common\V1\WorkflowExecution|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->workflow_execution = $var;
 
         return $this;
@@ -183,9 +182,9 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setReason($var)
+    public function setReason(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->reason = $var;
 
         return $this;
@@ -211,7 +210,7 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setWorkflowTaskFinishEventId($var)
+    public function setWorkflowTaskFinishEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->workflow_task_finish_event_id = $var;
@@ -237,9 +236,9 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRequestId($var)
+    public function setRequestId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->request_id = $var;
 
         return $this;
@@ -250,7 +249,7 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * Default: RESET_REAPPLY_TYPE_SIGNAL
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 6 [deprecated = true];</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ResetReapplyType}
      * @deprecated
      */
     public function getResetReapplyType()
@@ -266,11 +265,11 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * Default: RESET_REAPPLY_TYPE_SIGNAL
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 6 [deprecated = true];</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ResetReapplyType}
      * @return $this
      * @deprecated
      */
-    public function setResetReapplyType($var)
+    public function setResetReapplyType(int $var)
     {
         @trigger_error('reset_reapply_type is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ResetReapplyType::class);
@@ -283,7 +282,7 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * Event types not to be reapplied
      *
      * Generated from protobuf field <code>repeated .temporal.api.enums.v1.ResetReapplyExcludeType reset_reapply_exclude_types = 7;</code>
-     * @return RepeatedField<int>
+     * @return RepeatedField<int> one of the values in {@see \Temporal\Api\Enums\V1\ResetReapplyExcludeType}
      */
     public function getResetReapplyExcludeTypes()
     {
@@ -294,10 +293,10 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * Event types not to be reapplied
      *
      * Generated from protobuf field <code>repeated .temporal.api.enums.v1.ResetReapplyExcludeType reset_reapply_exclude_types = 7;</code>
-     * @param int[] $var
+     * @param int[] $var one of the values in {@see \Temporal\Api\Enums\V1\ResetReapplyExcludeType}
      * @return $this
      */
-    public function setResetReapplyExcludeTypes($var)
+    public function setResetReapplyExcludeTypes(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Temporal\Api\Enums\V1\ResetReapplyExcludeType::class);
         $this->reset_reapply_exclude_types = $arr;
@@ -327,7 +326,7 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflow\V1\PostResetOperation[] $var
      * @return $this
      */
-    public function setPostResetOperations($var)
+    public function setPostResetOperations(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Workflow\V1\PostResetOperation::class);
         $this->post_reset_operations = $arr;
@@ -353,9 +352,9 @@ class ResetWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;

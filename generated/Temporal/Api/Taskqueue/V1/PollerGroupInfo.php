@@ -52,9 +52,9 @@ class PollerGroupInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->id = $var;
 
         return $this;
@@ -74,9 +74,8 @@ class PollerGroupInfo extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setWeight($var)
+    public function setWeight(float $var)
     {
-        GPBUtil::checkFloat($var);
         $this->weight = $var;
 
         return $this;

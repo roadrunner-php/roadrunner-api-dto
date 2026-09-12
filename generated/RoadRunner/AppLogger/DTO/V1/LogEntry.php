@@ -52,9 +52,9 @@ class LogEntry extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setMessage($var)
+    public function setMessage(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->message = $var;
 
         return $this;
@@ -74,7 +74,7 @@ class LogEntry extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\AppLogger\DTO\V1\LogAttrs[] $var
      * @return $this
      */
-    public function setLogAttrs($var)
+    public function setLogAttrs(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\AppLogger\DTO\V1\LogAttrs::class);
         $this->log_attrs = $arr;

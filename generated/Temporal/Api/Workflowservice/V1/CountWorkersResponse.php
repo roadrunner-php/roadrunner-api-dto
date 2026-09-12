@@ -54,7 +54,7 @@ class CountWorkersResponse extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setCount($var)
+    public function setCount(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->count = $var;

@@ -155,9 +155,9 @@ class SetWorkerDeploymentRampingVersionRequest extends \Google\Protobuf\Internal
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -177,9 +177,9 @@ class SetWorkerDeploymentRampingVersionRequest extends \Google\Protobuf\Internal
      * @param string $var
      * @return $this
      */
-    public function setDeploymentName($var)
+    public function setDeploymentName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->deployment_name = $var;
 
         return $this;
@@ -208,10 +208,10 @@ class SetWorkerDeploymentRampingVersionRequest extends \Google\Protobuf\Internal
      * @return $this
      * @deprecated
      */
-    public function setVersion($var)
+    public function setVersion(string $var)
     {
         @trigger_error('version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->version = $var;
 
         return $this;
@@ -239,9 +239,9 @@ class SetWorkerDeploymentRampingVersionRequest extends \Google\Protobuf\Internal
      * @param string $var
      * @return $this
      */
-    public function setBuildId($var)
+    public function setBuildId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->build_id = $var;
 
         return $this;
@@ -265,9 +265,8 @@ class SetWorkerDeploymentRampingVersionRequest extends \Google\Protobuf\Internal
      * @param float $var
      * @return $this
      */
-    public function setPercentage($var)
+    public function setPercentage(float $var)
     {
-        GPBUtil::checkFloat($var);
         $this->percentage = $var;
 
         return $this;
@@ -297,9 +296,9 @@ class SetWorkerDeploymentRampingVersionRequest extends \Google\Protobuf\Internal
      * @param string $var
      * @return $this
      */
-    public function setConflictToken($var)
+    public function setConflictToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->conflict_token = $var;
 
         return $this;
@@ -323,9 +322,9 @@ class SetWorkerDeploymentRampingVersionRequest extends \Google\Protobuf\Internal
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -379,9 +378,8 @@ class SetWorkerDeploymentRampingVersionRequest extends \Google\Protobuf\Internal
      * @param bool $var
      * @return $this
      */
-    public function setIgnoreMissingTaskQueues($var)
+    public function setIgnoreMissingTaskQueues(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->ignore_missing_task_queues = $var;
 
         return $this;
@@ -409,9 +407,8 @@ class SetWorkerDeploymentRampingVersionRequest extends \Google\Protobuf\Internal
      * @param bool $var
      * @return $this
      */
-    public function setAllowNoPollers($var)
+    public function setAllowNoPollers(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->allow_no_pollers = $var;
 
         return $this;

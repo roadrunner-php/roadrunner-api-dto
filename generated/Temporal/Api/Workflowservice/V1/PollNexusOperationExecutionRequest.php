@@ -68,9 +68,9 @@ class PollNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Messa
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -90,9 +90,9 @@ class PollNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Messa
      * @param string $var
      * @return $this
      */
-    public function setOperationId($var)
+    public function setOperationId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->operation_id = $var;
 
         return $this;
@@ -116,9 +116,9 @@ class PollNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Messa
      * @param string $var
      * @return $this
      */
-    public function setRunId($var)
+    public function setRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->run_id = $var;
 
         return $this;
@@ -128,7 +128,7 @@ class PollNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Messa
      * Stage to wait for. The operation may be in a more advanced stage when the poll is unblocked.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.NexusOperationWaitStage wait_stage = 4;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\NexusOperationWaitStage}
      */
     public function getWaitStage()
     {
@@ -139,10 +139,10 @@ class PollNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Messa
      * Stage to wait for. The operation may be in a more advanced stage when the poll is unblocked.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.NexusOperationWaitStage wait_stage = 4;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\NexusOperationWaitStage}
      * @return $this
      */
-    public function setWaitStage($var)
+    public function setWaitStage(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\NexusOperationWaitStage::class);
         $this->wait_stage = $var;

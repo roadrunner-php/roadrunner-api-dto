@@ -73,9 +73,9 @@ class ExecuteMultiOperationRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -109,7 +109,7 @@ class ExecuteMultiOperationRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflowservice\V1\ExecuteMultiOperationRequest\Operation[] $var
      * @return $this
      */
-    public function setOperations($var)
+    public function setOperations(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Workflowservice\V1\ExecuteMultiOperationRequest\Operation::class);
         $this->operations = $arr;
@@ -135,9 +135,9 @@ class ExecuteMultiOperationRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setResourceId($var)
+    public function setResourceId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->resource_id = $var;
 
         return $this;

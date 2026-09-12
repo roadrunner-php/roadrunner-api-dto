@@ -47,9 +47,9 @@ class PresenceRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setChannel($var)
+    public function setChannel(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->channel = $var;
 
         return $this;

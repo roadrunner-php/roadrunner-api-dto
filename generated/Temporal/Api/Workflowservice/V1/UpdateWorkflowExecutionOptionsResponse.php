@@ -78,9 +78,8 @@ class UpdateWorkflowExecutionOptionsResponse extends \Google\Protobuf\Internal\M
      * @param \Temporal\Api\Workflow\V1\WorkflowExecutionOptions $var
      * @return $this
      */
-    public function setWorkflowExecutionOptions($var)
+    public function setWorkflowExecutionOptions(\Temporal\Api\Workflow\V1\WorkflowExecutionOptions|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\WorkflowExecutionOptions::class);
         $this->workflow_execution_options = $var;
 
         return $this;
@@ -120,9 +119,8 @@ class UpdateWorkflowExecutionOptionsResponse extends \Google\Protobuf\Internal\M
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setUpdateTime($var)
+    public function setUpdateTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->update_time = $var;
 
         return $this;

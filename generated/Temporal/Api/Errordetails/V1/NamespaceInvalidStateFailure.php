@@ -65,9 +65,9 @@ class NamespaceInvalidStateFailure extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -77,7 +77,7 @@ class NamespaceInvalidStateFailure extends \Google\Protobuf\Internal\Message
      * Current state of the requested namespace.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.NamespaceState state = 2;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\NamespaceState}
      */
     public function getState()
     {
@@ -88,10 +88,10 @@ class NamespaceInvalidStateFailure extends \Google\Protobuf\Internal\Message
      * Current state of the requested namespace.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.NamespaceState state = 2;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\NamespaceState}
      * @return $this
      */
-    public function setState($var)
+    public function setState(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\NamespaceState::class);
         $this->state = $var;
@@ -104,7 +104,7 @@ class NamespaceInvalidStateFailure extends \Google\Protobuf\Internal\Message
      * For example NAMESPACE_STATE_DELETED is forbidden for most operations but allowed for DescribeNamespace.
      *
      * Generated from protobuf field <code>repeated .temporal.api.enums.v1.NamespaceState allowed_states = 3;</code>
-     * @return RepeatedField<int>
+     * @return RepeatedField<int> one of the values in {@see \Temporal\Api\Enums\V1\NamespaceState}
      */
     public function getAllowedStates()
     {
@@ -116,10 +116,10 @@ class NamespaceInvalidStateFailure extends \Google\Protobuf\Internal\Message
      * For example NAMESPACE_STATE_DELETED is forbidden for most operations but allowed for DescribeNamespace.
      *
      * Generated from protobuf field <code>repeated .temporal.api.enums.v1.NamespaceState allowed_states = 3;</code>
-     * @param int[] $var
+     * @param int[] $var one of the values in {@see \Temporal\Api\Enums\V1\NamespaceState}
      * @return $this
      */
-    public function setAllowedStates($var)
+    public function setAllowedStates(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Temporal\Api\Enums\V1\NamespaceState::class);
         $this->allowed_states = $arr;

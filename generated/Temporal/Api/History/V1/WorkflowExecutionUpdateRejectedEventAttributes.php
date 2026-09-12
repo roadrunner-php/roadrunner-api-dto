@@ -92,9 +92,9 @@ class WorkflowExecutionUpdateRejectedEventAttributes extends \Google\Protobuf\In
      * @param string $var
      * @return $this
      */
-    public function setProtocolInstanceId($var)
+    public function setProtocolInstanceId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->protocol_instance_id = $var;
 
         return $this;
@@ -122,9 +122,9 @@ class WorkflowExecutionUpdateRejectedEventAttributes extends \Google\Protobuf\In
      * @param string $var
      * @return $this
      */
-    public function setRejectedRequestMessageId($var)
+    public function setRejectedRequestMessageId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->rejected_request_message_id = $var;
 
         return $this;
@@ -148,7 +148,7 @@ class WorkflowExecutionUpdateRejectedEventAttributes extends \Google\Protobuf\In
      * @param int|string $var
      * @return $this
      */
-    public function setRejectedRequestSequencingEventId($var)
+    public function setRejectedRequestSequencingEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->rejected_request_sequencing_event_id = $var;
@@ -186,9 +186,8 @@ class WorkflowExecutionUpdateRejectedEventAttributes extends \Google\Protobuf\In
      * @param \Temporal\Api\Update\V1\Request $var
      * @return $this
      */
-    public function setRejectedRequest($var)
+    public function setRejectedRequest(\Temporal\Api\Update\V1\Request|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Update\V1\Request::class);
         $this->rejected_request = $var;
 
         return $this;
@@ -222,9 +221,8 @@ class WorkflowExecutionUpdateRejectedEventAttributes extends \Google\Protobuf\In
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
      */
-    public function setFailure($var)
+    public function setFailure(\Temporal\Api\Failure\V1\Failure|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
         $this->failure = $var;
 
         return $this;
