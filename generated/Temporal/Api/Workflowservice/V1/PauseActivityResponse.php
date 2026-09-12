@@ -10,6 +10,8 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
+ * Deprecated. Use `PauseActivityExecutionResponse`.
+ *
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.PauseActivityResponse</code>
  */
 class PauseActivityResponse extends \Google\Protobuf\Internal\Message

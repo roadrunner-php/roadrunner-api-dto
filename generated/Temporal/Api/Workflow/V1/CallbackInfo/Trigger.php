@@ -23,6 +23,7 @@ class Trigger extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Temporal\Api\Workflow\V1\CallbackInfo\WorkflowClosed $workflow_closed
+     *     @type \Temporal\Api\Workflow\V1\CallbackInfo\UpdateWorkflowExecutionCompleted $update_workflow_execution_completed
      * }
      */
     public function __construct($data = NULL) {
@@ -53,6 +54,33 @@ class Trigger extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\CallbackInfo\WorkflowClosed::class);
         $this->writeOneof(1, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.CallbackInfo.UpdateWorkflowExecutionCompleted update_workflow_execution_completed = 2;</code>
+     * @return \Temporal\Api\Workflow\V1\CallbackInfo\UpdateWorkflowExecutionCompleted|null
+     */
+    public function getUpdateWorkflowExecutionCompleted()
+    {
+        return $this->readOneof(2);
+    }
+
+    public function hasUpdateWorkflowExecutionCompleted()
+    {
+        return $this->hasOneof(2);
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.CallbackInfo.UpdateWorkflowExecutionCompleted update_workflow_execution_completed = 2;</code>
+     * @param \Temporal\Api\Workflow\V1\CallbackInfo\UpdateWorkflowExecutionCompleted $var
+     * @return $this
+     */
+    public function setUpdateWorkflowExecutionCompleted($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\CallbackInfo\UpdateWorkflowExecutionCompleted::class);
+        $this->writeOneof(2, $var);
 
         return $this;
     }

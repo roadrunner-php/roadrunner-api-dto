@@ -10,13 +10,12 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
- * A Worker Deployment Version (Version, for short) represents all workers of the same 
- * code and config within a Deployment. Workers of the same Version are expected to 
- * behave exactly the same so when executions move between them there are no 
+ * A Worker Deployment Version (Version, for short) represents all workers of the same
+ * code and config within a Deployment. Workers of the same Version are expected to
+ * behave exactly the same so when executions move between them there are no
  * non-determinism issues.
- * Worker Deployment Versions are created in Temporal server automatically when 
+ * Worker Deployment Versions are created in Temporal server automatically when
  * their first poller arrives to the server.
- * Experimental. Worker Deployments are experimental and might significantly change in the future.
  *
  * Generated from protobuf message <code>temporal.api.deployment.v1.WorkerDeploymentVersionInfo</code>
  */
@@ -42,6 +41,8 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
      */
     protected $deployment_version = null;
     /**
+     * Deprecated. User deployment_version.deployment_name.
+     *
      * Generated from protobuf field <code>string deployment_name = 2;</code>
      */
     protected $deployment_name = '';
@@ -78,7 +79,15 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
      */
     protected $first_activation_time = null;
     /**
+     * Timestamp when this version last became current.
+     * Can be used to determine whether a version has ever been Current.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_current_time = 15;</code>
+     */
+    protected $last_current_time = null;
+    /**
      * Timestamp when this version last stopped being current or ramping.
+     * Cleared if the version becomes current or ramping again.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_deactivation_time = 13;</code>
      */
@@ -121,6 +130,23 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.deployment.v1.VersionMetadata metadata = 10;</code>
      */
     protected $metadata = null;
+    /**
+     * Optional. Contains the new worker compute configuration for the Worker
+     * Deployment. Used for worker scale management.
+     *
+     * Generated from protobuf field <code>.temporal.api.compute.v1.ComputeConfig compute_config = 16;</code>
+     */
+    protected $compute_config = null;
+    /**
+     * Identity of the last client who modified the configuration of this Version.
+     * As of now, this field only covers changes through the following APIs:
+     * - `CreateWorkerDeploymentVersion`
+     * - `UpdateWorkerDeploymentVersionComputeConfig`
+     * - `UpdateWorkerDeploymentVersionMetadata`
+     *
+     * Generated from protobuf field <code>string last_modifier_identity = 17;</code>
+     */
+    protected $last_modifier_identity = '';
 
     /**
      * Constructor.
@@ -135,6 +161,7 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $deployment_version
      *           Required.
      *     @type string $deployment_name
+     *           Deprecated. User deployment_version.deployment_name.
      *     @type \Google\Protobuf\Timestamp $create_time
      *     @type \Google\Protobuf\Timestamp $routing_changed_time
      *           Last time `current_since_time`, `ramping_since_time, or `ramp_percentage` of this version changed.
@@ -148,8 +175,12 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
      *           Unset if not ramping. Updated when the version first starts ramping, not on each ramp change.
      *     @type \Google\Protobuf\Timestamp $first_activation_time
      *           Timestamp when this version first became current or ramping.
+     *     @type \Google\Protobuf\Timestamp $last_current_time
+     *           Timestamp when this version last became current.
+     *           Can be used to determine whether a version has ever been Current.
      *     @type \Google\Protobuf\Timestamp $last_deactivation_time
      *           Timestamp when this version last stopped being current or ramping.
+     *           Cleared if the version becomes current or ramping again.
      *     @type float $ramp_percentage
      *           Range: [0, 100]. Must be zero if the version is not ramping (i.e. `ramping_since_time` is nil).
      *           Can be in the range [0, 100] if the version is ramping.
@@ -172,6 +203,15 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
      *             executions and remains "drained".
      *     @type \Temporal\Api\Deployment\V1\VersionMetadata $metadata
      *           Arbitrary user-provided metadata attached to this version.
+     *     @type \Temporal\Api\Compute\V1\ComputeConfig $compute_config
+     *           Optional. Contains the new worker compute configuration for the Worker
+     *           Deployment. Used for worker scale management.
+     *     @type string $last_modifier_identity
+     *           Identity of the last client who modified the configuration of this Version.
+     *           As of now, this field only covers changes through the following APIs:
+     *           - `CreateWorkerDeploymentVersion`
+     *           - `UpdateWorkerDeploymentVersionComputeConfig`
+     *           - `UpdateWorkerDeploymentVersionMetadata`
      * }
      */
     public function __construct($data = NULL) {
@@ -274,6 +314,8 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Deprecated. User deployment_version.deployment_name.
+     *
      * Generated from protobuf field <code>string deployment_name = 2;</code>
      * @return string
      */
@@ -283,6 +325,8 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Deprecated. User deployment_version.deployment_name.
+     *
      * Generated from protobuf field <code>string deployment_name = 2;</code>
      * @param string $var
      * @return $this
@@ -480,7 +524,46 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Timestamp when this version last became current.
+     * Can be used to determine whether a version has ever been Current.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_current_time = 15;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getLastCurrentTime()
+    {
+        return $this->last_current_time;
+    }
+
+    public function hasLastCurrentTime()
+    {
+        return isset($this->last_current_time);
+    }
+
+    public function clearLastCurrentTime()
+    {
+        unset($this->last_current_time);
+    }
+
+    /**
+     * Timestamp when this version last became current.
+     * Can be used to determine whether a version has ever been Current.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp last_current_time = 15;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setLastCurrentTime($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->last_current_time = $var;
+
+        return $this;
+    }
+
+    /**
      * Timestamp when this version last stopped being current or ramping.
+     * Cleared if the version becomes current or ramping again.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_deactivation_time = 13;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -502,6 +585,7 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Timestamp when this version last stopped being current or ramping.
+     * Cleared if the version becomes current or ramping again.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp last_deactivation_time = 13;</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -663,6 +747,78 @@ class WorkerDeploymentVersionInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\VersionMetadata::class);
         $this->metadata = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. Contains the new worker compute configuration for the Worker
+     * Deployment. Used for worker scale management.
+     *
+     * Generated from protobuf field <code>.temporal.api.compute.v1.ComputeConfig compute_config = 16;</code>
+     * @return \Temporal\Api\Compute\V1\ComputeConfig|null
+     */
+    public function getComputeConfig()
+    {
+        return $this->compute_config;
+    }
+
+    public function hasComputeConfig()
+    {
+        return isset($this->compute_config);
+    }
+
+    public function clearComputeConfig()
+    {
+        unset($this->compute_config);
+    }
+
+    /**
+     * Optional. Contains the new worker compute configuration for the Worker
+     * Deployment. Used for worker scale management.
+     *
+     * Generated from protobuf field <code>.temporal.api.compute.v1.ComputeConfig compute_config = 16;</code>
+     * @param \Temporal\Api\Compute\V1\ComputeConfig $var
+     * @return $this
+     */
+    public function setComputeConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Compute\V1\ComputeConfig::class);
+        $this->compute_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * Identity of the last client who modified the configuration of this Version.
+     * As of now, this field only covers changes through the following APIs:
+     * - `CreateWorkerDeploymentVersion`
+     * - `UpdateWorkerDeploymentVersionComputeConfig`
+     * - `UpdateWorkerDeploymentVersionMetadata`
+     *
+     * Generated from protobuf field <code>string last_modifier_identity = 17;</code>
+     * @return string
+     */
+    public function getLastModifierIdentity()
+    {
+        return $this->last_modifier_identity;
+    }
+
+    /**
+     * Identity of the last client who modified the configuration of this Version.
+     * As of now, this field only covers changes through the following APIs:
+     * - `CreateWorkerDeploymentVersion`
+     * - `UpdateWorkerDeploymentVersionComputeConfig`
+     * - `UpdateWorkerDeploymentVersionMetadata`
+     *
+     * Generated from protobuf field <code>string last_modifier_identity = 17;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLastModifierIdentity($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->last_modifier_identity = $var;
 
         return $this;
     }

@@ -10,6 +10,8 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
+ * Detailed worker information.
+ *
  * Generated from protobuf message <code>temporal.api.worker.v1.WorkerInfo</code>
  */
 class WorkerInfo extends \Google\Protobuf\Internal\Message

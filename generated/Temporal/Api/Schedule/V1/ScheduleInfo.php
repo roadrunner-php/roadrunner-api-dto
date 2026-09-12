@@ -85,6 +85,12 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
      * @deprecated
      */
     protected $invalid_schedule_error = '';
+    /**
+     * Size of the schedule's internal state (including payloads) in bytes.
+     *
+     * Generated from protobuf field <code>int64 state_size_bytes = 12;</code>
+     */
+    protected $state_size_bytes = 0;
 
     /**
      * Constructor.
@@ -119,6 +125,8 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $update_time
      *     @type string $invalid_schedule_error
      *           Deprecated.
+     *     @type int|string $state_size_bytes
+     *           Size of the schedule's internal state (including payloads) in bytes.
      * }
      */
     public function __construct($data = NULL) {
@@ -442,6 +450,32 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
         @trigger_error('invalid_schedule_error is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->invalid_schedule_error = $var;
+
+        return $this;
+    }
+
+    /**
+     * Size of the schedule's internal state (including payloads) in bytes.
+     *
+     * Generated from protobuf field <code>int64 state_size_bytes = 12;</code>
+     * @return int|string
+     */
+    public function getStateSizeBytes()
+    {
+        return $this->state_size_bytes;
+    }
+
+    /**
+     * Size of the schedule's internal state (including payloads) in bytes.
+     *
+     * Generated from protobuf field <code>int64 state_size_bytes = 12;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setStateSizeBytes($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->state_size_bytes = $var;
 
         return $this;
     }

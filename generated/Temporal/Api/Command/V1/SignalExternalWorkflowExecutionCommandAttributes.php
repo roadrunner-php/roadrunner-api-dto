@@ -15,7 +15,10 @@ use Google\Protobuf\RepeatedField;
 class SignalExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string namespace = 1;</code>
+     * Deprecated. Cross-namespace operations are disabled by default as of server 1.30.1.
+     *
+     * Generated from protobuf field <code>string namespace = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $namespace = '';
     /**
@@ -64,6 +67,7 @@ class SignalExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\
      *     Optional. Data for populating the Message object.
      *
      *     @type string $namespace
+     *           Deprecated. Cross-namespace operations are disabled by default as of server 1.30.1.
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $execution
      *     @type string $signal_name
      *           The workflow author-defined name of the signal to send to the workflow.
@@ -86,21 +90,31 @@ class SignalExternalWorkflowExecutionCommandAttributes extends \Google\Protobuf\
     }
 
     /**
-     * Generated from protobuf field <code>string namespace = 1;</code>
+     * Deprecated. Cross-namespace operations are disabled by default as of server 1.30.1.
+     *
+     * Generated from protobuf field <code>string namespace = 1 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getNamespace()
     {
+        if ($this->namespace !== '') {
+            @trigger_error('namespace is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->namespace;
     }
 
     /**
-     * Generated from protobuf field <code>string namespace = 1;</code>
+     * Deprecated. Cross-namespace operations are disabled by default as of server 1.30.1.
+     *
+     * Generated from protobuf field <code>string namespace = 1 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setNamespace($var)
     {
+        @trigger_error('namespace is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->namespace = $var;
 

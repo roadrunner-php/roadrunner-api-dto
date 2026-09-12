@@ -206,6 +206,31 @@ class WorkflowTaskFailedCause
      * Generated from protobuf enum <code>WORKFLOW_TASK_FAILED_CAUSE_GRPC_MESSAGE_TOO_LARGE = 36;</code>
      */
     const WORKFLOW_TASK_FAILED_CAUSE_GRPC_MESSAGE_TOO_LARGE = 36;
+    /**
+     * A workflow task failed because payloads were too large.
+     *
+     * Generated from protobuf enum <code>WORKFLOW_TASK_FAILED_CAUSE_PAYLOADS_TOO_LARGE = 37;</code>
+     */
+    const WORKFLOW_TASK_FAILED_CAUSE_PAYLOADS_TOO_LARGE = 37;
+    /**
+     * A workflow task failed because an external storage operation failed.
+     * Check the workflow task failure message for more information.
+     *
+     * Generated from protobuf enum <code>WORKFLOW_TASK_FAILED_CAUSE_EXTERNAL_STORAGE_FAILURE = 38;</code>
+     */
+    const WORKFLOW_TASK_FAILED_CAUSE_EXTERNAL_STORAGE_FAILURE = 38;
+    /**
+     * A workflow task is failed because the workflow is paused before the task is started.
+     *
+     * Generated from protobuf enum <code>WORKFLOW_TASK_FAILED_CAUSE_WORKFLOW_PAUSE_REQUESTED_BEFORE_TASK_STARTED = 39;</code>
+     */
+    const WORKFLOW_TASK_FAILED_CAUSE_WORKFLOW_PAUSE_REQUESTED_BEFORE_TASK_STARTED = 39;
+    /**
+     * A workflow task failed because the request exceeded a size limit.
+     *
+     * Generated from protobuf enum <code>WORKFLOW_TASK_FAILED_CAUSE_REQUEST_TOO_LARGE = 40;</code>
+     */
+    const WORKFLOW_TASK_FAILED_CAUSE_REQUEST_TOO_LARGE = 40;
 
     private static $valueToName = [
         self::WORKFLOW_TASK_FAILED_CAUSE_UNSPECIFIED => 'WORKFLOW_TASK_FAILED_CAUSE_UNSPECIFIED',
@@ -245,6 +270,10 @@ class WorkflowTaskFailedCause
         self::WORKFLOW_TASK_FAILED_CAUSE_BAD_REQUEST_CANCEL_NEXUS_OPERATION_ATTRIBUTES => 'WORKFLOW_TASK_FAILED_CAUSE_BAD_REQUEST_CANCEL_NEXUS_OPERATION_ATTRIBUTES',
         self::WORKFLOW_TASK_FAILED_CAUSE_FEATURE_DISABLED => 'WORKFLOW_TASK_FAILED_CAUSE_FEATURE_DISABLED',
         self::WORKFLOW_TASK_FAILED_CAUSE_GRPC_MESSAGE_TOO_LARGE => 'WORKFLOW_TASK_FAILED_CAUSE_GRPC_MESSAGE_TOO_LARGE',
+        self::WORKFLOW_TASK_FAILED_CAUSE_PAYLOADS_TOO_LARGE => 'WORKFLOW_TASK_FAILED_CAUSE_PAYLOADS_TOO_LARGE',
+        self::WORKFLOW_TASK_FAILED_CAUSE_EXTERNAL_STORAGE_FAILURE => 'WORKFLOW_TASK_FAILED_CAUSE_EXTERNAL_STORAGE_FAILURE',
+        self::WORKFLOW_TASK_FAILED_CAUSE_WORKFLOW_PAUSE_REQUESTED_BEFORE_TASK_STARTED => 'WORKFLOW_TASK_FAILED_CAUSE_WORKFLOW_PAUSE_REQUESTED_BEFORE_TASK_STARTED',
+        self::WORKFLOW_TASK_FAILED_CAUSE_REQUEST_TOO_LARGE => 'WORKFLOW_TASK_FAILED_CAUSE_REQUEST_TOO_LARGE',
     ];
 
     public static function name($value)

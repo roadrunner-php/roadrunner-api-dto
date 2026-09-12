@@ -37,6 +37,12 @@ class RespondActivityTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      */
     protected $namespace = '';
     /**
+     * Resource ID for routing. Contains the workflow ID or activity ID for standalone activities.
+     *
+     * Generated from protobuf field <code>string resource_id = 8;</code>
+     */
+    protected $resource_id = '';
+    /**
      * Version info of the worker who processed this task. This message's `build_id` field should
      * always be set by SDKs. Workers opting into versioning will also set the `use_versioning`
      * field to true. See message docstrings for more.
@@ -75,6 +81,8 @@ class RespondActivityTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      *     @type string $identity
      *           The identity of the worker/client
      *     @type string $namespace
+     *     @type string $resource_id
+     *           Resource ID for routing. Contains the workflow ID or activity ID for standalone activities.
      *     @type \Temporal\Api\Common\V1\WorkerVersionStamp $worker_version
      *           Version info of the worker who processed this task. This message's `build_id` field should
      *           always be set by SDKs. Workers opting into versioning will also set the `use_versioning`
@@ -199,6 +207,32 @@ class RespondActivityTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
     {
         GPBUtil::checkString($var, True);
         $this->namespace = $var;
+
+        return $this;
+    }
+
+    /**
+     * Resource ID for routing. Contains the workflow ID or activity ID for standalone activities.
+     *
+     * Generated from protobuf field <code>string resource_id = 8;</code>
+     * @return string
+     */
+    public function getResourceId()
+    {
+        return $this->resource_id;
+    }
+
+    /**
+     * Resource ID for routing. Contains the workflow ID or activity ID for standalone activities.
+     *
+     * Generated from protobuf field <code>string resource_id = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setResourceId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->resource_id = $var;
 
         return $this;
     }

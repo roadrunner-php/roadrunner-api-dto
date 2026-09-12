@@ -32,6 +32,10 @@ class Request extends \Google\Protobuf\Internal\Message
      */
     protected $scheduled_time = null;
     /**
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.Request.Capabilities capabilities = 100;</code>
+     */
+    protected $capabilities = null;
+    /**
      * The endpoint this request was addressed to before forwarding to the worker.
      * Supported from server version 1.30.0.
      *
@@ -53,6 +57,7 @@ class Request extends \Google\Protobuf\Internal\Message
      *           The timestamp when the request was scheduled in the frontend.
      *           (-- api-linter: core::0142::time-field-names=disabled
      *               aip.dev/not-precedent: Not following linter rules. --)
+     *     @type \Temporal\Api\Nexus\V1\Request\Capabilities $capabilities
      *     @type \Temporal\Api\Nexus\V1\StartOperationRequest $start_operation
      *     @type \Temporal\Api\Nexus\V1\CancelOperationRequest $cancel_operation
      *     @type string $endpoint
@@ -129,6 +134,38 @@ class Request extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->scheduled_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.Request.Capabilities capabilities = 100;</code>
+     * @return \Temporal\Api\Nexus\V1\Request\Capabilities|null
+     */
+    public function getCapabilities()
+    {
+        return $this->capabilities;
+    }
+
+    public function hasCapabilities()
+    {
+        return isset($this->capabilities);
+    }
+
+    public function clearCapabilities()
+    {
+        unset($this->capabilities);
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.Request.Capabilities capabilities = 100;</code>
+     * @param \Temporal\Api\Nexus\V1\Request\Capabilities $var
+     * @return $this
+     */
+    public function setCapabilities($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\Request\Capabilities::class);
+        $this->capabilities = $var;
 
         return $this;
     }

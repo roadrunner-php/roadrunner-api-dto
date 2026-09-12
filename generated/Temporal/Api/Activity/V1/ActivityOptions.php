@@ -55,9 +55,26 @@ class ActivityOptions extends \Google\Protobuf\Internal\Message
      */
     protected $heartbeat_timeout = null;
     /**
+     * The retry policy for the activity. Will never exceed `schedule_to_close_timeout`.
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.RetryPolicy retry_policy = 6;</code>
      */
     protected $retry_policy = null;
+    /**
+     * Priority metadata. If this message is not present, or any fields are not
+     * present, they inherit the values from the workflow.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 7;</code>
+     */
+    protected $priority = null;
+    /**
+     * Time to wait before making the first activity task available for dispatch. This delay is not applied to retry attempts.
+     * When updated, the time is added to the original `schedule_time`, not to the current time.
+     * If the resulting time is in the past, the task is made available for dispatch immediately.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration start_delay = 8;</code>
+     */
+    protected $start_delay = null;
 
     /**
      * Constructor.
@@ -87,6 +104,14 @@ class ActivityOptions extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Duration $heartbeat_timeout
      *           Maximum permitted time between successful worker heartbeats.
      *     @type \Temporal\Api\Common\V1\RetryPolicy $retry_policy
+     *           The retry policy for the activity. Will never exceed `schedule_to_close_timeout`.
+     *     @type \Temporal\Api\Common\V1\Priority $priority
+     *           Priority metadata. If this message is not present, or any fields are not
+     *           present, they inherit the values from the workflow.
+     *     @type \Google\Protobuf\Duration $start_delay
+     *           Time to wait before making the first activity task available for dispatch. This delay is not applied to retry attempts.
+     *           When updated, the time is added to the original `schedule_time`, not to the current time.
+     *           If the resulting time is in the past, the task is made available for dispatch immediately.
      * }
      */
     public function __construct($data = NULL) {
@@ -295,6 +320,8 @@ class ActivityOptions extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The retry policy for the activity. Will never exceed `schedule_to_close_timeout`.
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.RetryPolicy retry_policy = 6;</code>
      * @return \Temporal\Api\Common\V1\RetryPolicy|null
      */
@@ -314,6 +341,8 @@ class ActivityOptions extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The retry policy for the activity. Will never exceed `schedule_to_close_timeout`.
+     *
      * Generated from protobuf field <code>.temporal.api.common.v1.RetryPolicy retry_policy = 6;</code>
      * @param \Temporal\Api\Common\V1\RetryPolicy $var
      * @return $this
@@ -322,6 +351,84 @@ class ActivityOptions extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\RetryPolicy::class);
         $this->retry_policy = $var;
+
+        return $this;
+    }
+
+    /**
+     * Priority metadata. If this message is not present, or any fields are not
+     * present, they inherit the values from the workflow.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 7;</code>
+     * @return \Temporal\Api\Common\V1\Priority|null
+     */
+    public function getPriority()
+    {
+        return $this->priority;
+    }
+
+    public function hasPriority()
+    {
+        return isset($this->priority);
+    }
+
+    public function clearPriority()
+    {
+        unset($this->priority);
+    }
+
+    /**
+     * Priority metadata. If this message is not present, or any fields are not
+     * present, they inherit the values from the workflow.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 7;</code>
+     * @param \Temporal\Api\Common\V1\Priority $var
+     * @return $this
+     */
+    public function setPriority($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Priority::class);
+        $this->priority = $var;
+
+        return $this;
+    }
+
+    /**
+     * Time to wait before making the first activity task available for dispatch. This delay is not applied to retry attempts.
+     * When updated, the time is added to the original `schedule_time`, not to the current time.
+     * If the resulting time is in the past, the task is made available for dispatch immediately.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration start_delay = 8;</code>
+     * @return \Google\Protobuf\Duration|null
+     */
+    public function getStartDelay()
+    {
+        return $this->start_delay;
+    }
+
+    public function hasStartDelay()
+    {
+        return isset($this->start_delay);
+    }
+
+    public function clearStartDelay()
+    {
+        unset($this->start_delay);
+    }
+
+    /**
+     * Time to wait before making the first activity task available for dispatch. This delay is not applied to retry attempts.
+     * When updated, the time is added to the original `schedule_time`, not to the current time.
+     * If the resulting time is in the past, the task is made available for dispatch immediately.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration start_delay = 8;</code>
+     * @param \Google\Protobuf\Duration $var
+     * @return $this
+     */
+    public function setStartDelay($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
+        $this->start_delay = $var;
 
         return $this;
     }

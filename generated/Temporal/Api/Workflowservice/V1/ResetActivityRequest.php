@@ -11,6 +11,7 @@ use Google\Protobuf\RepeatedField;
 
 /**
  * NOTE: keep in sync with temporal.api.batch.v1.BatchOperationResetActivities
+ * Deprecated. Use `ResetActivityExecutionRequest`.
  *
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.ResetActivityRequest</code>
  */
@@ -57,7 +58,7 @@ class ResetActivityRequest extends \Google\Protobuf\Internal\Message
     /**
      * If set, the activity options will be restored to the defaults.
      * Default options are then options activity was created with.
-     * They are part of the first SCHEDULE event.
+     * They are part of the first schedule event.
      *
      * Generated from protobuf field <code>bool restore_original_options = 9;</code>
      */
@@ -93,7 +94,7 @@ class ResetActivityRequest extends \Google\Protobuf\Internal\Message
      *     @type bool $restore_original_options
      *           If set, the activity options will be restored to the defaults.
      *           Default options are then options activity was created with.
-     *           They are part of the first SCHEDULE event.
+     *           They are part of the first schedule event.
      * }
      */
     public function __construct($data = NULL) {
@@ -377,7 +378,7 @@ class ResetActivityRequest extends \Google\Protobuf\Internal\Message
     /**
      * If set, the activity options will be restored to the defaults.
      * Default options are then options activity was created with.
-     * They are part of the first SCHEDULE event.
+     * They are part of the first schedule event.
      *
      * Generated from protobuf field <code>bool restore_original_options = 9;</code>
      * @return bool
@@ -390,7 +391,7 @@ class ResetActivityRequest extends \Google\Protobuf\Internal\Message
     /**
      * If set, the activity options will be restored to the defaults.
      * Default options are then options activity was created with.
-     * They are part of the first SCHEDULE event.
+     * They are part of the first schedule event.
      *
      * Generated from protobuf field <code>bool restore_original_options = 9;</code>
      * @param bool $var

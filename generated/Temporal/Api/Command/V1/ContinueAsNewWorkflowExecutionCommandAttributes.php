@@ -93,6 +93,14 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
      * @deprecated
      */
     protected $inherit_build_id = false;
+    /**
+     * Experimental. Optionally decide the versioning behavior that the first task of the new run should use.
+     * For example, choose to AutoUpgrade on continue-as-new instead of inheriting the pinned version
+     * of the previous run.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ContinueAsNewVersioningBehavior initial_versioning_behavior = 16;</code>
+     */
+    protected $initial_versioning_behavior = 0;
 
     /**
      * Constructor.
@@ -125,6 +133,10 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
      *           If this is set, the new execution inherits the Build ID of the current execution. Otherwise,
      *           the assignment rules will be used to independently assign a Build ID to the new execution.
      *           Deprecated. Only considered for versioning v0.2.
+     *     @type int $initial_versioning_behavior
+     *           Experimental. Optionally decide the versioning behavior that the first task of the new run should use.
+     *           For example, choose to AutoUpgrade on continue-as-new instead of inheriting the pinned version
+     *           of the previous run.
      * }
      */
     public function __construct($data = NULL) {
@@ -620,6 +632,36 @@ class ContinueAsNewWorkflowExecutionCommandAttributes extends \Google\Protobuf\I
         @trigger_error('inherit_build_id is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkBool($var);
         $this->inherit_build_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Experimental. Optionally decide the versioning behavior that the first task of the new run should use.
+     * For example, choose to AutoUpgrade on continue-as-new instead of inheriting the pinned version
+     * of the previous run.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ContinueAsNewVersioningBehavior initial_versioning_behavior = 16;</code>
+     * @return int
+     */
+    public function getInitialVersioningBehavior()
+    {
+        return $this->initial_versioning_behavior;
+    }
+
+    /**
+     * Experimental. Optionally decide the versioning behavior that the first task of the new run should use.
+     * For example, choose to AutoUpgrade on continue-as-new instead of inheriting the pinned version
+     * of the previous run.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ContinueAsNewVersioningBehavior initial_versioning_behavior = 16;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setInitialVersioningBehavior($var)
+    {
+        GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ContinueAsNewVersioningBehavior::class);
+        $this->initial_versioning_behavior = $var;
 
         return $this;
     }

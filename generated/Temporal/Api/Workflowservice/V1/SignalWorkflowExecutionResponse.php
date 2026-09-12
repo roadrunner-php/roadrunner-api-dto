@@ -14,6 +14,14 @@ use Google\Protobuf\RepeatedField;
  */
 class SignalWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Link to be associated with the WorkflowExecutionSignaled event.
+     * Added on the response to propagate the backlink.
+     * Available from Temporal server 1.31 and up.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Link link = 1;</code>
+     */
+    protected $link = null;
 
     /**
      * Constructor.
@@ -21,11 +29,55 @@ class SignalWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type \Temporal\Api\Common\V1\Link $link
+     *           Link to be associated with the WorkflowExecutionSignaled event.
+     *           Added on the response to propagate the backlink.
+     *           Available from Temporal server 1.31 and up.
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Temporal\Api\Workflowservice\V1\RequestResponse::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Link to be associated with the WorkflowExecutionSignaled event.
+     * Added on the response to propagate the backlink.
+     * Available from Temporal server 1.31 and up.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Link link = 1;</code>
+     * @return \Temporal\Api\Common\V1\Link|null
+     */
+    public function getLink()
+    {
+        return $this->link;
+    }
+
+    public function hasLink()
+    {
+        return isset($this->link);
+    }
+
+    public function clearLink()
+    {
+        unset($this->link);
+    }
+
+    /**
+     * Link to be associated with the WorkflowExecutionSignaled event.
+     * Added on the response to propagate the backlink.
+     * Available from Temporal server 1.31 and up.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Link link = 1;</code>
+     * @param \Temporal\Api\Common\V1\Link $var
+     * @return $this
+     */
+    public function setLink($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Link::class);
+        $this->link = $var;
+
+        return $this;
     }
 
 }

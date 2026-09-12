@@ -22,6 +22,10 @@ class WorkflowExecutionAlreadyStartedFailure extends \Google\Protobuf\Internal\M
      * Generated from protobuf field <code>string run_id = 2;</code>
      */
     protected $run_id = '';
+    /**
+     * Generated from protobuf field <code>string first_execution_run_id = 3;</code>
+     */
+    protected $first_execution_run_id = '';
 
     /**
      * Constructor.
@@ -31,6 +35,7 @@ class WorkflowExecutionAlreadyStartedFailure extends \Google\Protobuf\Internal\M
      *
      *     @type string $start_request_id
      *     @type string $run_id
+     *     @type string $first_execution_run_id
      * }
      */
     public function __construct($data = NULL) {
@@ -78,6 +83,28 @@ class WorkflowExecutionAlreadyStartedFailure extends \Google\Protobuf\Internal\M
     {
         GPBUtil::checkString($var, True);
         $this->run_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string first_execution_run_id = 3;</code>
+     * @return string
+     */
+    public function getFirstExecutionRunId()
+    {
+        return $this->first_execution_run_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string first_execution_run_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFirstExecutionRunId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->first_execution_run_id = $var;
 
         return $this;
     }

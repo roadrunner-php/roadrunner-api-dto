@@ -28,7 +28,7 @@ class OperatorServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Operatorservice\V1\AddSearchAttributesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall<\Temporal\Api\Operatorservice\V1\AddSearchAttributesResponse>
+     * @return \Grpc\UnaryCall
      */
     public function AddSearchAttributes(\Temporal\Api\Operatorservice\V1\AddSearchAttributesRequest $argument,
       $metadata = [], $options = []) {
@@ -45,7 +45,7 @@ class OperatorServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Operatorservice\V1\RemoveSearchAttributesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall<\Temporal\Api\Operatorservice\V1\RemoveSearchAttributesResponse>
+     * @return \Grpc\UnaryCall
      */
     public function RemoveSearchAttributes(\Temporal\Api\Operatorservice\V1\RemoveSearchAttributesRequest $argument,
       $metadata = [], $options = []) {
@@ -60,7 +60,7 @@ class OperatorServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Operatorservice\V1\ListSearchAttributesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall<\Temporal\Api\Operatorservice\V1\ListSearchAttributesResponse>
+     * @return \Grpc\UnaryCall
      */
     public function ListSearchAttributes(\Temporal\Api\Operatorservice\V1\ListSearchAttributesRequest $argument,
       $metadata = [], $options = []) {
@@ -75,7 +75,7 @@ class OperatorServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Operatorservice\V1\DeleteNamespaceRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall<\Temporal\Api\Operatorservice\V1\DeleteNamespaceResponse>
+     * @return \Grpc\UnaryCall
      */
     public function DeleteNamespace(\Temporal\Api\Operatorservice\V1\DeleteNamespaceRequest $argument,
       $metadata = [], $options = []) {
@@ -90,7 +90,7 @@ class OperatorServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Operatorservice\V1\AddOrUpdateRemoteClusterRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall<\Temporal\Api\Operatorservice\V1\AddOrUpdateRemoteClusterResponse>
+     * @return \Grpc\UnaryCall
      */
     public function AddOrUpdateRemoteCluster(\Temporal\Api\Operatorservice\V1\AddOrUpdateRemoteClusterRequest $argument,
       $metadata = [], $options = []) {
@@ -105,7 +105,7 @@ class OperatorServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Operatorservice\V1\RemoveRemoteClusterRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall<\Temporal\Api\Operatorservice\V1\RemoveRemoteClusterResponse>
+     * @return \Grpc\UnaryCall
      */
     public function RemoveRemoteCluster(\Temporal\Api\Operatorservice\V1\RemoveRemoteClusterRequest $argument,
       $metadata = [], $options = []) {
@@ -120,7 +120,7 @@ class OperatorServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Operatorservice\V1\ListClustersRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall<\Temporal\Api\Operatorservice\V1\ListClustersResponse>
+     * @return \Grpc\UnaryCall
      */
     public function ListClusters(\Temporal\Api\Operatorservice\V1\ListClustersRequest $argument,
       $metadata = [], $options = []) {
@@ -135,7 +135,7 @@ class OperatorServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Operatorservice\V1\GetNexusEndpointRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall<\Temporal\Api\Operatorservice\V1\GetNexusEndpointResponse>
+     * @return \Grpc\UnaryCall
      */
     public function GetNexusEndpoint(\Temporal\Api\Operatorservice\V1\GetNexusEndpointRequest $argument,
       $metadata = [], $options = []) {
@@ -152,7 +152,7 @@ class OperatorServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Operatorservice\V1\CreateNexusEndpointRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall<\Temporal\Api\Operatorservice\V1\CreateNexusEndpointResponse>
+     * @return \Grpc\UnaryCall
      */
     public function CreateNexusEndpoint(\Temporal\Api\Operatorservice\V1\CreateNexusEndpointRequest $argument,
       $metadata = [], $options = []) {
@@ -171,7 +171,7 @@ class OperatorServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Operatorservice\V1\UpdateNexusEndpointRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall<\Temporal\Api\Operatorservice\V1\UpdateNexusEndpointResponse>
+     * @return \Grpc\UnaryCall
      */
     public function UpdateNexusEndpoint(\Temporal\Api\Operatorservice\V1\UpdateNexusEndpointRequest $argument,
       $metadata = [], $options = []) {
@@ -186,7 +186,7 @@ class OperatorServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Operatorservice\V1\DeleteNexusEndpointRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall<\Temporal\Api\Operatorservice\V1\DeleteNexusEndpointResponse>
+     * @return \Grpc\UnaryCall
      */
     public function DeleteNexusEndpoint(\Temporal\Api\Operatorservice\V1\DeleteNexusEndpointRequest $argument,
       $metadata = [], $options = []) {
@@ -204,7 +204,7 @@ class OperatorServiceClient extends \Grpc\BaseStub {
      * @param \Temporal\Api\Operatorservice\V1\ListNexusEndpointsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
-     * @return \Grpc\UnaryCall<\Temporal\Api\Operatorservice\V1\ListNexusEndpointsResponse>
+     * @return \Grpc\UnaryCall
      */
     public function ListNexusEndpoints(\Temporal\Api\Operatorservice\V1\ListNexusEndpointsRequest $argument,
       $metadata = [], $options = []) {

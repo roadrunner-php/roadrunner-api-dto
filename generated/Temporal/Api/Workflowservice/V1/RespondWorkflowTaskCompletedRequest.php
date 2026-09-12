@@ -74,6 +74,12 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      */
     protected $namespace = '';
     /**
+     * Resource ID for routing. Contains the workflow ID from the original task.
+     *
+     * Generated from protobuf field <code>string resource_id = 18;</code>
+     */
+    protected $resource_id = '';
+    /**
      * Version info of the worker who processed this task. This message's `build_id` field should
      * always be set by SDKs. Workers opting into versioning will also set the `use_versioning`
      * field to true. See message docstrings for more.
@@ -130,6 +136,36 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentOptions deployment_options = 17;</code>
      */
     protected $deployment_options = null;
+    /**
+     * A unique key for this worker instance, used for tracking worker lifecycle.
+     * This is guaranteed to be unique, whereas identity is not guaranteed to be unique.
+     *
+     * Generated from protobuf field <code>string worker_instance_key = 19;</code>
+     */
+    protected $worker_instance_key = '';
+    /**
+     * A dedicated per-worker Nexus task queue on which the server sends control
+     * tasks (e.g. activity cancellation) to this specific worker instance.
+     *
+     * Generated from protobuf field <code>string worker_control_task_queue = 20;</code>
+     */
+    protected $worker_control_task_queue = '';
+    /**
+     * 0-indexed page number when the workflow task completion is split across multiple
+     * requests ("pages"). 0 for single-page requests. May only be set to non-zero value
+     * when the namespace capability workflow_task_completion_pagination is true.
+     *
+     * Generated from protobuf field <code>int32 page_number = 21;</code>
+     */
+    protected $page_number = 0;
+    /**
+     * True for non-final pages of a paginated workflow task completion. The final page's
+     * `page_number` tells the server how many intermediate pages (0..page_number-1) preceded it.
+     * May only be used when the namespace capability workflow_task_completion_pagination is true.
+     *
+     * Generated from protobuf field <code>bool intermediate_page = 22;</code>
+     */
+    protected $intermediate_page = false;
 
     /**
      * Constructor.
@@ -160,6 +196,8 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      *     @type array|\Google\Protobuf\Internal\MapField $query_results
      *           Responses to the `queries` field in the task being responded to
      *     @type string $namespace
+     *     @type string $resource_id
+     *           Resource ID for routing. Contains the workflow ID from the original task.
      *     @type \Temporal\Api\Common\V1\WorkerVersionStamp $worker_version_stamp
      *           Version info of the worker who processed this task. This message's `build_id` field should
      *           always be set by SDKs. Workers opting into versioning will also set the `use_versioning`
@@ -183,6 +221,20 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      *           UNSPECIFIED means versioning is not enabled in the worker.
      *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentOptions $deployment_options
      *           Worker deployment options that user has set in the worker.
+     *     @type string $worker_instance_key
+     *           A unique key for this worker instance, used for tracking worker lifecycle.
+     *           This is guaranteed to be unique, whereas identity is not guaranteed to be unique.
+     *     @type string $worker_control_task_queue
+     *           A dedicated per-worker Nexus task queue on which the server sends control
+     *           tasks (e.g. activity cancellation) to this specific worker instance.
+     *     @type int $page_number
+     *           0-indexed page number when the workflow task completion is split across multiple
+     *           requests ("pages"). 0 for single-page requests. May only be set to non-zero value
+     *           when the namespace capability workflow_task_completion_pagination is true.
+     *     @type bool $intermediate_page
+     *           True for non-final pages of a paginated workflow task completion. The final page's
+     *           `page_number` tells the server how many intermediate pages (0..page_number-1) preceded it.
+     *           May only be used when the namespace capability workflow_task_completion_pagination is true.
      * }
      */
     public function __construct($data = NULL) {
@@ -444,6 +496,32 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
     {
         GPBUtil::checkString($var, True);
         $this->namespace = $var;
+
+        return $this;
+    }
+
+    /**
+     * Resource ID for routing. Contains the workflow ID from the original task.
+     *
+     * Generated from protobuf field <code>string resource_id = 18;</code>
+     * @return string
+     */
+    public function getResourceId()
+    {
+        return $this->resource_id;
+    }
+
+    /**
+     * Resource ID for routing. Contains the workflow ID from the original task.
+     *
+     * Generated from protobuf field <code>string resource_id = 18;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setResourceId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->resource_id = $var;
 
         return $this;
     }
@@ -746,6 +824,122 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentOptions::class);
         $this->deployment_options = $var;
+
+        return $this;
+    }
+
+    /**
+     * A unique key for this worker instance, used for tracking worker lifecycle.
+     * This is guaranteed to be unique, whereas identity is not guaranteed to be unique.
+     *
+     * Generated from protobuf field <code>string worker_instance_key = 19;</code>
+     * @return string
+     */
+    public function getWorkerInstanceKey()
+    {
+        return $this->worker_instance_key;
+    }
+
+    /**
+     * A unique key for this worker instance, used for tracking worker lifecycle.
+     * This is guaranteed to be unique, whereas identity is not guaranteed to be unique.
+     *
+     * Generated from protobuf field <code>string worker_instance_key = 19;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setWorkerInstanceKey($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->worker_instance_key = $var;
+
+        return $this;
+    }
+
+    /**
+     * A dedicated per-worker Nexus task queue on which the server sends control
+     * tasks (e.g. activity cancellation) to this specific worker instance.
+     *
+     * Generated from protobuf field <code>string worker_control_task_queue = 20;</code>
+     * @return string
+     */
+    public function getWorkerControlTaskQueue()
+    {
+        return $this->worker_control_task_queue;
+    }
+
+    /**
+     * A dedicated per-worker Nexus task queue on which the server sends control
+     * tasks (e.g. activity cancellation) to this specific worker instance.
+     *
+     * Generated from protobuf field <code>string worker_control_task_queue = 20;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setWorkerControlTaskQueue($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->worker_control_task_queue = $var;
+
+        return $this;
+    }
+
+    /**
+     * 0-indexed page number when the workflow task completion is split across multiple
+     * requests ("pages"). 0 for single-page requests. May only be set to non-zero value
+     * when the namespace capability workflow_task_completion_pagination is true.
+     *
+     * Generated from protobuf field <code>int32 page_number = 21;</code>
+     * @return int
+     */
+    public function getPageNumber()
+    {
+        return $this->page_number;
+    }
+
+    /**
+     * 0-indexed page number when the workflow task completion is split across multiple
+     * requests ("pages"). 0 for single-page requests. May only be set to non-zero value
+     * when the namespace capability workflow_task_completion_pagination is true.
+     *
+     * Generated from protobuf field <code>int32 page_number = 21;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setPageNumber($var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->page_number = $var;
+
+        return $this;
+    }
+
+    /**
+     * True for non-final pages of a paginated workflow task completion. The final page's
+     * `page_number` tells the server how many intermediate pages (0..page_number-1) preceded it.
+     * May only be used when the namespace capability workflow_task_completion_pagination is true.
+     *
+     * Generated from protobuf field <code>bool intermediate_page = 22;</code>
+     * @return bool
+     */
+    public function getIntermediatePage()
+    {
+        return $this->intermediate_page;
+    }
+
+    /**
+     * True for non-final pages of a paginated workflow task completion. The final page's
+     * `page_number` tells the server how many intermediate pages (0..page_number-1) preceded it.
+     * May only be used when the namespace capability workflow_task_completion_pagination is true.
+     *
+     * Generated from protobuf field <code>bool intermediate_page = 22;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIntermediatePage($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->intermediate_page = $var;
 
         return $this;
     }

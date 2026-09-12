@@ -404,6 +404,24 @@ class EventType
      * Generated from protobuf enum <code>EVENT_TYPE_NEXUS_OPERATION_CANCEL_REQUEST_FAILED = 57;</code>
      */
     const EVENT_TYPE_NEXUS_OPERATION_CANCEL_REQUEST_FAILED = 57;
+    /**
+     * An event that indicates that the workflow execution has been paused.
+     *
+     * Generated from protobuf enum <code>EVENT_TYPE_WORKFLOW_EXECUTION_PAUSED = 58;</code>
+     */
+    const EVENT_TYPE_WORKFLOW_EXECUTION_PAUSED = 58;
+    /**
+     * An event that indicates that the previously paused workflow execution has been unpaused.
+     *
+     * Generated from protobuf enum <code>EVENT_TYPE_WORKFLOW_EXECUTION_UNPAUSED = 59;</code>
+     */
+    const EVENT_TYPE_WORKFLOW_EXECUTION_UNPAUSED = 59;
+    /**
+     * An event that indicates time skipping advanced time or was disabled automatically after a bound was reached.
+     *
+     * Generated from protobuf enum <code>EVENT_TYPE_WORKFLOW_EXECUTION_TIME_SKIPPING_TRANSITIONED = 60;</code>
+     */
+    const EVENT_TYPE_WORKFLOW_EXECUTION_TIME_SKIPPING_TRANSITIONED = 60;
 
     private static $valueToName = [
         self::EVENT_TYPE_UNSPECIFIED => 'EVENT_TYPE_UNSPECIFIED',
@@ -464,6 +482,9 @@ class EventType
         self::EVENT_TYPE_WORKFLOW_EXECUTION_OPTIONS_UPDATED => 'EVENT_TYPE_WORKFLOW_EXECUTION_OPTIONS_UPDATED',
         self::EVENT_TYPE_NEXUS_OPERATION_CANCEL_REQUEST_COMPLETED => 'EVENT_TYPE_NEXUS_OPERATION_CANCEL_REQUEST_COMPLETED',
         self::EVENT_TYPE_NEXUS_OPERATION_CANCEL_REQUEST_FAILED => 'EVENT_TYPE_NEXUS_OPERATION_CANCEL_REQUEST_FAILED',
+        self::EVENT_TYPE_WORKFLOW_EXECUTION_PAUSED => 'EVENT_TYPE_WORKFLOW_EXECUTION_PAUSED',
+        self::EVENT_TYPE_WORKFLOW_EXECUTION_UNPAUSED => 'EVENT_TYPE_WORKFLOW_EXECUTION_UNPAUSED',
+        self::EVENT_TYPE_WORKFLOW_EXECUTION_TIME_SKIPPING_TRANSITIONED => 'EVENT_TYPE_WORKFLOW_EXECUTION_TIME_SKIPPING_TRANSITIONED',
     ];
 
     public static function name($value)

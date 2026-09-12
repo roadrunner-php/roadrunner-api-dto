@@ -56,6 +56,12 @@ class ClusterMetadata extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool is_connection_enabled = 6;</code>
      */
     protected $is_connection_enabled = false;
+    /**
+     * A flag to indicate if replication is enabled.
+     *
+     * Generated from protobuf field <code>bool is_replication_enabled = 8;</code>
+     */
+    protected $is_replication_enabled = false;
 
     /**
      * Constructor.
@@ -77,6 +83,8 @@ class ClusterMetadata extends \Google\Protobuf\Internal\Message
      *           History service shard number.
      *     @type bool $is_connection_enabled
      *           A flag to indicate if a connection is active.
+     *     @type bool $is_replication_enabled
+     *           A flag to indicate if replication is enabled.
      * }
      */
     public function __construct($data = NULL) {
@@ -262,6 +270,32 @@ class ClusterMetadata extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->is_connection_enabled = $var;
+
+        return $this;
+    }
+
+    /**
+     * A flag to indicate if replication is enabled.
+     *
+     * Generated from protobuf field <code>bool is_replication_enabled = 8;</code>
+     * @return bool
+     */
+    public function getIsReplicationEnabled()
+    {
+        return $this->is_replication_enabled;
+    }
+
+    /**
+     * A flag to indicate if replication is enabled.
+     *
+     * Generated from protobuf field <code>bool is_replication_enabled = 8;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsReplicationEnabled($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_replication_enabled = $var;
 
         return $this;
     }

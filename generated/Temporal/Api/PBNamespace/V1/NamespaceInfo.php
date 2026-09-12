@@ -47,6 +47,12 @@ class NamespaceInfo extends \Google\Protobuf\Internal\Message
      */
     protected $capabilities = null;
     /**
+     * Namespace configured limits
+     *
+     * Generated from protobuf field <code>.temporal.api.namespace.v1.NamespaceInfo.Limits limits = 8;</code>
+     */
+    protected $limits = null;
+    /**
      * Whether scheduled workflows are supported on this namespace. This is only needed
      * temporarily while the feature is experimental, so we can give it a high tag.
      *
@@ -69,6 +75,8 @@ class NamespaceInfo extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type \Temporal\Api\PBNamespace\V1\NamespaceInfo\Capabilities $capabilities
      *           All capabilities the namespace supports.
+     *     @type \Temporal\Api\PBNamespace\V1\NamespaceInfo\Limits $limits
+     *           Namespace configured limits
      *     @type bool $supports_schedules
      *           Whether scheduled workflows are supported on this namespace. This is only needed
      *           temporarily while the feature is experimental, so we can give it a high tag.
@@ -247,6 +255,42 @@ class NamespaceInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\PBNamespace\V1\NamespaceInfo\Capabilities::class);
         $this->capabilities = $var;
+
+        return $this;
+    }
+
+    /**
+     * Namespace configured limits
+     *
+     * Generated from protobuf field <code>.temporal.api.namespace.v1.NamespaceInfo.Limits limits = 8;</code>
+     * @return \Temporal\Api\PBNamespace\V1\NamespaceInfo\Limits|null
+     */
+    public function getLimits()
+    {
+        return $this->limits;
+    }
+
+    public function hasLimits()
+    {
+        return isset($this->limits);
+    }
+
+    public function clearLimits()
+    {
+        unset($this->limits);
+    }
+
+    /**
+     * Namespace configured limits
+     *
+     * Generated from protobuf field <code>.temporal.api.namespace.v1.NamespaceInfo.Limits limits = 8;</code>
+     * @param \Temporal\Api\PBNamespace\V1\NamespaceInfo\Limits $var
+     * @return $this
+     */
+    public function setLimits($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\PBNamespace\V1\NamespaceInfo\Limits::class);
+        $this->limits = $var;
 
         return $this;
     }

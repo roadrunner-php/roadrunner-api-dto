@@ -52,6 +52,12 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      */
     protected $namespace = '';
     /**
+     * Resource ID for routing. Contains the workflow ID from the original task.
+     *
+     * Generated from protobuf field <code>string resource_id = 11;</code>
+     */
+    protected $resource_id = '';
+    /**
      * Protocol messages piggybacking on a WFT as a transport
      *
      * Generated from protobuf field <code>repeated .temporal.api.protocol.v1.Message messages = 7;</code>
@@ -102,6 +108,8 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      *           Deprecated. Use `deployment_options` instead.
      *           Worker process' unique binary id
      *     @type string $namespace
+     *     @type string $resource_id
+     *           Resource ID for routing. Contains the workflow ID from the original task.
      *     @type \Temporal\Api\Protocol\V1\Message[] $messages
      *           Protocol messages piggybacking on a WFT as a transport
      *     @type \Temporal\Api\Common\V1\WorkerVersionStamp $worker_version
@@ -290,6 +298,32 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->namespace = $var;
+
+        return $this;
+    }
+
+    /**
+     * Resource ID for routing. Contains the workflow ID from the original task.
+     *
+     * Generated from protobuf field <code>string resource_id = 11;</code>
+     * @return string
+     */
+    public function getResourceId()
+    {
+        return $this->resource_id;
+    }
+
+    /**
+     * Resource ID for routing. Contains the workflow ID from the original task.
+     *
+     * Generated from protobuf field <code>string resource_id = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setResourceId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->resource_id = $var;
 
         return $this;
     }

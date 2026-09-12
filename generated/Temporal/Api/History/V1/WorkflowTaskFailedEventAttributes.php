@@ -37,7 +37,8 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      */
     protected $failure = null;
     /**
-     * If a worker explicitly failed this task, it's identity. TODO: What is this set to if server fails the task?
+     * If a worker explicitly failed this task, this field contains the worker's identity.
+     * When the server generates the failure internally this field is set as 'history-service'.
      *
      * Generated from protobuf field <code>string identity = 5;</code>
      */
@@ -55,7 +56,8 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      */
     protected $new_run_id = '';
     /**
-     * TODO: ?
+     * Version of the event where the history branch was forked. Used by multi-cluster replication
+     * during resets to identify the correct history branch.
      *
      * Generated from protobuf field <code>int64 fork_event_version = 8;</code>
      */
@@ -93,13 +95,15 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      *     @type \Temporal\Api\Failure\V1\Failure $failure
      *           The failure details
      *     @type string $identity
-     *           If a worker explicitly failed this task, it's identity. TODO: What is this set to if server fails the task?
+     *           If a worker explicitly failed this task, this field contains the worker's identity.
+     *           When the server generates the failure internally this field is set as 'history-service'.
      *     @type string $base_run_id
      *           The original run id of the workflow. For reset workflow.
      *     @type string $new_run_id
      *           If the workflow is being reset, the new run id.
      *     @type int|string $fork_event_version
-     *           TODO: ?
+     *           Version of the event where the history branch was forked. Used by multi-cluster replication
+     *           during resets to identify the correct history branch.
      *     @type string $binary_checksum
      *           Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
      *           If a worker explicitly failed this task, its binary id
@@ -226,7 +230,8 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * If a worker explicitly failed this task, it's identity. TODO: What is this set to if server fails the task?
+     * If a worker explicitly failed this task, this field contains the worker's identity.
+     * When the server generates the failure internally this field is set as 'history-service'.
      *
      * Generated from protobuf field <code>string identity = 5;</code>
      * @return string
@@ -237,7 +242,8 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * If a worker explicitly failed this task, it's identity. TODO: What is this set to if server fails the task?
+     * If a worker explicitly failed this task, this field contains the worker's identity.
+     * When the server generates the failure internally this field is set as 'history-service'.
      *
      * Generated from protobuf field <code>string identity = 5;</code>
      * @param string $var
@@ -304,7 +310,8 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * TODO: ?
+     * Version of the event where the history branch was forked. Used by multi-cluster replication
+     * during resets to identify the correct history branch.
      *
      * Generated from protobuf field <code>int64 fork_event_version = 8;</code>
      * @return int|string
@@ -315,7 +322,8 @@ class WorkflowTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * TODO: ?
+     * Version of the event where the history branch was forked. Used by multi-cluster replication
+     * during resets to identify the correct history branch.
      *
      * Generated from protobuf field <code>int64 fork_event_version = 8;</code>
      * @param int|string $var

@@ -19,6 +19,10 @@ class ShutdownWorkerRequest extends \Google\Protobuf\Internal\Message
      */
     protected $namespace = '';
     /**
+     * sticky_task_queue may not always be populated. We want to ensure all workers
+     * send a shutdown request to update worker state for heartbeating, as well
+     * as cancel pending poll calls early, instead of waiting for timeouts.
+     *
      * Generated from protobuf field <code>string sticky_task_queue = 2;</code>
      */
     protected $sticky_task_queue = '';
@@ -34,6 +38,29 @@ class ShutdownWorkerRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.worker.v1.WorkerHeartbeat worker_heartbeat = 5;</code>
      */
     protected $worker_heartbeat = null;
+    /**
+     * Technically this is also sent in the WorkerHeartbeat, but
+     * since worker heartbeating can be turned off, this needs
+     * to be a separate, top-level field.
+     *
+     * Generated from protobuf field <code>string worker_instance_key = 6;</code>
+     */
+    protected $worker_instance_key = '';
+    /**
+     * Task queue name the worker is polling on. This allows server to cancel
+     * all outstanding poll RPC calls from SDK. This avoids a race condition that
+     * can lead to tasks being lost.
+     *
+     * Generated from protobuf field <code>string task_queue = 7;</code>
+     */
+    protected $task_queue = '';
+    /**
+     * Task queue types that help server cancel outstanding poll RPC
+     * calls from SDK. This avoids a race condition that can lead to tasks being lost.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.enums.v1.TaskQueueType task_queue_types = 8;</code>
+     */
+    private $task_queue_types;
 
     /**
      * Constructor.
@@ -43,9 +70,23 @@ class ShutdownWorkerRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $namespace
      *     @type string $sticky_task_queue
+     *           sticky_task_queue may not always be populated. We want to ensure all workers
+     *           send a shutdown request to update worker state for heartbeating, as well
+     *           as cancel pending poll calls early, instead of waiting for timeouts.
      *     @type string $identity
      *     @type string $reason
      *     @type \Temporal\Api\Worker\V1\WorkerHeartbeat $worker_heartbeat
+     *     @type string $worker_instance_key
+     *           Technically this is also sent in the WorkerHeartbeat, but
+     *           since worker heartbeating can be turned off, this needs
+     *           to be a separate, top-level field.
+     *     @type string $task_queue
+     *           Task queue name the worker is polling on. This allows server to cancel
+     *           all outstanding poll RPC calls from SDK. This avoids a race condition that
+     *           can lead to tasks being lost.
+     *     @type int[] $task_queue_types
+     *           Task queue types that help server cancel outstanding poll RPC
+     *           calls from SDK. This avoids a race condition that can lead to tasks being lost.
      * }
      */
     public function __construct($data = NULL) {
@@ -76,6 +117,10 @@ class ShutdownWorkerRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * sticky_task_queue may not always be populated. We want to ensure all workers
+     * send a shutdown request to update worker state for heartbeating, as well
+     * as cancel pending poll calls early, instead of waiting for timeouts.
+     *
      * Generated from protobuf field <code>string sticky_task_queue = 2;</code>
      * @return string
      */
@@ -85,6 +130,10 @@ class ShutdownWorkerRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * sticky_task_queue may not always be populated. We want to ensure all workers
+     * send a shutdown request to update worker state for heartbeating, as well
+     * as cancel pending poll calls early, instead of waiting for timeouts.
+     *
      * Generated from protobuf field <code>string sticky_task_queue = 2;</code>
      * @param string $var
      * @return $this
@@ -169,6 +218,94 @@ class ShutdownWorkerRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Worker\V1\WorkerHeartbeat::class);
         $this->worker_heartbeat = $var;
+
+        return $this;
+    }
+
+    /**
+     * Technically this is also sent in the WorkerHeartbeat, but
+     * since worker heartbeating can be turned off, this needs
+     * to be a separate, top-level field.
+     *
+     * Generated from protobuf field <code>string worker_instance_key = 6;</code>
+     * @return string
+     */
+    public function getWorkerInstanceKey()
+    {
+        return $this->worker_instance_key;
+    }
+
+    /**
+     * Technically this is also sent in the WorkerHeartbeat, but
+     * since worker heartbeating can be turned off, this needs
+     * to be a separate, top-level field.
+     *
+     * Generated from protobuf field <code>string worker_instance_key = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setWorkerInstanceKey($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->worker_instance_key = $var;
+
+        return $this;
+    }
+
+    /**
+     * Task queue name the worker is polling on. This allows server to cancel
+     * all outstanding poll RPC calls from SDK. This avoids a race condition that
+     * can lead to tasks being lost.
+     *
+     * Generated from protobuf field <code>string task_queue = 7;</code>
+     * @return string
+     */
+    public function getTaskQueue()
+    {
+        return $this->task_queue;
+    }
+
+    /**
+     * Task queue name the worker is polling on. This allows server to cancel
+     * all outstanding poll RPC calls from SDK. This avoids a race condition that
+     * can lead to tasks being lost.
+     *
+     * Generated from protobuf field <code>string task_queue = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTaskQueue($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->task_queue = $var;
+
+        return $this;
+    }
+
+    /**
+     * Task queue types that help server cancel outstanding poll RPC
+     * calls from SDK. This avoids a race condition that can lead to tasks being lost.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.enums.v1.TaskQueueType task_queue_types = 8;</code>
+     * @return RepeatedField<int>
+     */
+    public function getTaskQueueTypes()
+    {
+        return $this->task_queue_types;
+    }
+
+    /**
+     * Task queue types that help server cancel outstanding poll RPC
+     * calls from SDK. This avoids a race condition that can lead to tasks being lost.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.enums.v1.TaskQueueType task_queue_types = 8;</code>
+     * @param int[] $var
+     * @return $this
+     */
+    public function setTaskQueueTypes($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Temporal\Api\Enums\V1\TaskQueueType::class);
+        $this->task_queue_types = $arr;
 
         return $this;
     }

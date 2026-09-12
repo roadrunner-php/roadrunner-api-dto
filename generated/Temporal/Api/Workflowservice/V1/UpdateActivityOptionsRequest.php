@@ -11,6 +11,7 @@ use Google\Protobuf\RepeatedField;
 
 /**
  * NOTE: keep in sync with temporal.api.batch.v1.BatchOperationUpdateActivityOptions
+ * Deprecated. Use `UpdateActivityExecutionOptionsRequest`.
  *
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.UpdateActivityOptionsRequest</code>
  */
@@ -49,7 +50,7 @@ class UpdateActivityOptionsRequest extends \Google\Protobuf\Internal\Message
     /**
      * If set, the activity options will be restored to the default.
      * Default options are then options activity was created with.
-     * They are part of the first SCHEDULE event.
+     * They are part of the first schedule event.
      * This flag cannot be combined with any other option; if you supply
      * restore_original together with other options, the request will be rejected.
      *
@@ -83,7 +84,7 @@ class UpdateActivityOptionsRequest extends \Google\Protobuf\Internal\Message
      *     @type bool $restore_original
      *           If set, the activity options will be restored to the default.
      *           Default options are then options activity was created with.
-     *           They are part of the first SCHEDULE event.
+     *           They are part of the first schedule event.
      *           This flag cannot be combined with any other option; if you supply
      *           restore_original together with other options, the request will be rejected.
      * }
@@ -349,7 +350,7 @@ class UpdateActivityOptionsRequest extends \Google\Protobuf\Internal\Message
     /**
      * If set, the activity options will be restored to the default.
      * Default options are then options activity was created with.
-     * They are part of the first SCHEDULE event.
+     * They are part of the first schedule event.
      * This flag cannot be combined with any other option; if you supply
      * restore_original together with other options, the request will be rejected.
      *
@@ -364,7 +365,7 @@ class UpdateActivityOptionsRequest extends \Google\Protobuf\Internal\Message
     /**
      * If set, the activity options will be restored to the default.
      * Default options are then options activity was created with.
-     * They are part of the first SCHEDULE event.
+     * They are part of the first schedule event.
      * This flag cannot be combined with any other option; if you supply
      * restore_original together with other options, the request will be rejected.
      *

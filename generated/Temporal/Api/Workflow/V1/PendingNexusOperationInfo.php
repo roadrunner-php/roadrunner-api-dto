@@ -64,7 +64,9 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
     protected $state = 0;
     /**
      * The number of attempts made to deliver the start operation request.
-     * This number represents a minimum bound since the attempt is incremented after the request completes.
+     * This number is approximate, it is incremented when a task is added to the history queue.
+     * In practice, there could be more attempts if a task is executed but fails to commit, or less attempts if a task
+     * was never executed.
      *
      * Generated from protobuf field <code>int32 attempt = 8;</code>
      */
@@ -110,6 +112,22 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string operation_token = 15;</code>
      */
     protected $operation_token = '';
+    /**
+     * Schedule-to-start timeout for this operation.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "to" is used to indicate interval. --)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_start_timeout = 16;</code>
+     */
+    protected $schedule_to_start_timeout = null;
+    /**
+     * Start-to-close timeout for this operation.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "to" is used to indicate interval. --)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration start_to_close_timeout = 17;</code>
+     */
+    protected $start_to_close_timeout = null;
 
     /**
      * Constructor.
@@ -137,7 +155,9 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
      *     @type int $state
      *     @type int $attempt
      *           The number of attempts made to deliver the start operation request.
-     *           This number represents a minimum bound since the attempt is incremented after the request completes.
+     *           This number is approximate, it is incremented when a task is added to the history queue.
+     *           In practice, there could be more attempts if a task is executed but fails to commit, or less attempts if a task
+     *           was never executed.
      *     @type \Google\Protobuf\Timestamp $last_attempt_complete_time
      *           The time when the last attempt completed.
      *     @type \Temporal\Api\Failure\V1\Failure $last_attempt_failure
@@ -152,6 +172,14 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
      *           If the state is BLOCKED, blocked reason provides additional information.
      *     @type string $operation_token
      *           Operation token. Only set for asynchronous operations after a successful StartOperation call.
+     *     @type \Google\Protobuf\Duration $schedule_to_start_timeout
+     *           Schedule-to-start timeout for this operation.
+     *           (-- api-linter: core::0140::prepositions=disabled
+     *               aip.dev/not-precedent: "to" is used to indicate interval. --)
+     *     @type \Google\Protobuf\Duration $start_to_close_timeout
+     *           Start-to-close timeout for this operation.
+     *           (-- api-linter: core::0140::prepositions=disabled
+     *               aip.dev/not-precedent: "to" is used to indicate interval. --)
      * }
      */
     public function __construct($data = NULL) {
@@ -375,7 +403,9 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * The number of attempts made to deliver the start operation request.
-     * This number represents a minimum bound since the attempt is incremented after the request completes.
+     * This number is approximate, it is incremented when a task is added to the history queue.
+     * In practice, there could be more attempts if a task is executed but fails to commit, or less attempts if a task
+     * was never executed.
      *
      * Generated from protobuf field <code>int32 attempt = 8;</code>
      * @return int
@@ -387,7 +417,9 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * The number of attempts made to deliver the start operation request.
-     * This number represents a minimum bound since the attempt is incremented after the request completes.
+     * This number is approximate, it is incremented when a task is added to the history queue.
+     * In practice, there could be more attempts if a task is executed but fails to commit, or less attempts if a task
+     * was never executed.
      *
      * Generated from protobuf field <code>int32 attempt = 8;</code>
      * @param int $var
@@ -617,6 +649,86 @@ class PendingNexusOperationInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->operation_token = $var;
+
+        return $this;
+    }
+
+    /**
+     * Schedule-to-start timeout for this operation.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "to" is used to indicate interval. --)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_start_timeout = 16;</code>
+     * @return \Google\Protobuf\Duration|null
+     */
+    public function getScheduleToStartTimeout()
+    {
+        return $this->schedule_to_start_timeout;
+    }
+
+    public function hasScheduleToStartTimeout()
+    {
+        return isset($this->schedule_to_start_timeout);
+    }
+
+    public function clearScheduleToStartTimeout()
+    {
+        unset($this->schedule_to_start_timeout);
+    }
+
+    /**
+     * Schedule-to-start timeout for this operation.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "to" is used to indicate interval. --)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration schedule_to_start_timeout = 16;</code>
+     * @param \Google\Protobuf\Duration $var
+     * @return $this
+     */
+    public function setScheduleToStartTimeout($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
+        $this->schedule_to_start_timeout = $var;
+
+        return $this;
+    }
+
+    /**
+     * Start-to-close timeout for this operation.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "to" is used to indicate interval. --)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration start_to_close_timeout = 17;</code>
+     * @return \Google\Protobuf\Duration|null
+     */
+    public function getStartToCloseTimeout()
+    {
+        return $this->start_to_close_timeout;
+    }
+
+    public function hasStartToCloseTimeout()
+    {
+        return isset($this->start_to_close_timeout);
+    }
+
+    public function clearStartToCloseTimeout()
+    {
+        unset($this->start_to_close_timeout);
+    }
+
+    /**
+     * Start-to-close timeout for this operation.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "to" is used to indicate interval. --)
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration start_to_close_timeout = 17;</code>
+     * @param \Google\Protobuf\Duration $var
+     * @return $this
+     */
+    public function setStartToCloseTimeout($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
+        $this->start_to_close_timeout = $var;
 
         return $this;
     }

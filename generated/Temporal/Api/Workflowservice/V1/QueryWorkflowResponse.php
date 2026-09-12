@@ -22,6 +22,12 @@ class QueryWorkflowResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.query.v1.QueryRejected query_rejected = 2;</code>
      */
     protected $query_rejected = null;
+    /**
+     * Holds the link to the Workflow execution that processed the Query. 
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Link link = 3;</code>
+     */
+    protected $link = null;
 
     /**
      * Constructor.
@@ -31,6 +37,8 @@ class QueryWorkflowResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type \Temporal\Api\Common\V1\Payloads $query_result
      *     @type \Temporal\Api\Query\V1\QueryRejected $query_rejected
+     *     @type \Temporal\Api\Common\V1\Link $link
+     *           Holds the link to the Workflow execution that processed the Query. 
      * }
      */
     public function __construct($data = NULL) {
@@ -98,6 +106,42 @@ class QueryWorkflowResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Query\V1\QueryRejected::class);
         $this->query_rejected = $var;
+
+        return $this;
+    }
+
+    /**
+     * Holds the link to the Workflow execution that processed the Query. 
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Link link = 3;</code>
+     * @return \Temporal\Api\Common\V1\Link|null
+     */
+    public function getLink()
+    {
+        return $this->link;
+    }
+
+    public function hasLink()
+    {
+        return isset($this->link);
+    }
+
+    public function clearLink()
+    {
+        unset($this->link);
+    }
+
+    /**
+     * Holds the link to the Workflow execution that processed the Query. 
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Link link = 3;</code>
+     * @param \Temporal\Api\Common\V1\Link $var
+     * @return $this
+     */
+    public function setLink($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Link::class);
+        $this->link = $var;
 
         return $this;
     }

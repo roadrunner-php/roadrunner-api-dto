@@ -39,6 +39,12 @@ class FetchWorkerConfigRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkerSelector selector = 6;</code>
      */
     protected $selector = null;
+    /**
+     * Resource ID for routing. Contains the worker grouping key.
+     *
+     * Generated from protobuf field <code>string resource_id = 7;</code>
+     */
+    protected $resource_id = '';
 
     /**
      * Constructor.
@@ -55,6 +61,8 @@ class FetchWorkerConfigRequest extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Common\V1\WorkerSelector $selector
      *           Defines which workers should receive this command.
      *           only single worker is supported at this time.
+     *     @type string $resource_id
+     *           Resource ID for routing. Contains the worker grouping key.
      * }
      */
     public function __construct($data = NULL) {
@@ -174,6 +182,32 @@ class FetchWorkerConfigRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerSelector::class);
         $this->selector = $var;
+
+        return $this;
+    }
+
+    /**
+     * Resource ID for routing. Contains the worker grouping key.
+     *
+     * Generated from protobuf field <code>string resource_id = 7;</code>
+     * @return string
+     */
+    public function getResourceId()
+    {
+        return $this->resource_id;
+    }
+
+    /**
+     * Resource ID for routing. Contains the worker grouping key.
+     *
+     * Generated from protobuf field <code>string resource_id = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setResourceId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->resource_id = $var;
 
         return $this;
     }

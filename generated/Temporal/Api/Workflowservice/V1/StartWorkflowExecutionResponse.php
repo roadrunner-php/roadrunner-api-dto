@@ -21,6 +21,12 @@ class StartWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
      */
     protected $run_id = '';
     /**
+     * If the workflow was started as a result of a de-dupe, this field will contain the run id of the first execution in the chain.
+     *
+     * Generated from protobuf field <code>string first_execution_run_id = 6;</code>
+     */
+    protected $first_execution_run_id = '';
+    /**
      * If true, a new workflow was started.
      *
      * Generated from protobuf field <code>bool started = 3;</code>
@@ -56,6 +62,8 @@ class StartWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
      *
      *     @type string $run_id
      *           The run id of the workflow that was started - or used (via WorkflowIdConflictPolicy USE_EXISTING).
+     *     @type string $first_execution_run_id
+     *           If the workflow was started as a result of a de-dupe, this field will contain the run id of the first execution in the chain.
      *     @type bool $started
      *           If true, a new workflow was started.
      *     @type int $status
@@ -96,6 +104,32 @@ class StartWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->run_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * If the workflow was started as a result of a de-dupe, this field will contain the run id of the first execution in the chain.
+     *
+     * Generated from protobuf field <code>string first_execution_run_id = 6;</code>
+     * @return string
+     */
+    public function getFirstExecutionRunId()
+    {
+        return $this->first_execution_run_id;
+    }
+
+    /**
+     * If the workflow was started as a result of a de-dupe, this field will contain the run id of the first execution in the chain.
+     *
+     * Generated from protobuf field <code>string first_execution_run_id = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFirstExecutionRunId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->first_execution_run_id = $var;
 
         return $this;
     }

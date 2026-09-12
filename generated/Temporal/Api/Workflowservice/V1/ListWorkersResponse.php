@@ -15,9 +15,19 @@ use Google\Protobuf\RepeatedField;
 class ListWorkersResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>repeated .temporal.api.worker.v1.WorkerInfo workers_info = 1;</code>
+     * Deprecated: Use workers instead. This field returns full WorkerInfo which
+     * includes expensive runtime metrics. We will stop populating this field in the future.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.worker.v1.WorkerInfo workers_info = 1 [deprecated = true];</code>
+     * @deprecated
      */
     private $workers_info;
+    /**
+     * Limited worker information.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.worker.v1.WorkerListInfo workers = 3;</code>
+     */
+    private $workers;
     /**
      * Next page token
      *
@@ -32,6 +42,10 @@ class ListWorkersResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Temporal\Api\Worker\V1\WorkerInfo[] $workers_info
+     *           Deprecated: Use workers instead. This field returns full WorkerInfo which
+     *           includes expensive runtime metrics. We will stop populating this field in the future.
+     *     @type \Temporal\Api\Worker\V1\WorkerListInfo[] $workers
+     *           Limited worker information.
      *     @type string $next_page_token
      *           Next page token
      * }
@@ -42,23 +56,63 @@ class ListWorkersResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .temporal.api.worker.v1.WorkerInfo workers_info = 1;</code>
+     * Deprecated: Use workers instead. This field returns full WorkerInfo which
+     * includes expensive runtime metrics. We will stop populating this field in the future.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.worker.v1.WorkerInfo workers_info = 1 [deprecated = true];</code>
      * @return RepeatedField<\Temporal\Api\Worker\V1\WorkerInfo>
+     * @deprecated
      */
     public function getWorkersInfo()
     {
+        if ($this->workers_info->count() !== 0) {
+            @trigger_error('workers_info is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->workers_info;
     }
 
     /**
-     * Generated from protobuf field <code>repeated .temporal.api.worker.v1.WorkerInfo workers_info = 1;</code>
+     * Deprecated: Use workers instead. This field returns full WorkerInfo which
+     * includes expensive runtime metrics. We will stop populating this field in the future.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.worker.v1.WorkerInfo workers_info = 1 [deprecated = true];</code>
      * @param \Temporal\Api\Worker\V1\WorkerInfo[] $var
      * @return $this
+     * @deprecated
      */
     public function setWorkersInfo($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Worker\V1\WorkerInfo::class);
+        if ($arr->count() !== 0) {
+            @trigger_error('workers_info is deprecated.', E_USER_DEPRECATED);
+        }
         $this->workers_info = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Limited worker information.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.worker.v1.WorkerListInfo workers = 3;</code>
+     * @return RepeatedField<\Temporal\Api\Worker\V1\WorkerListInfo>
+     */
+    public function getWorkers()
+    {
+        return $this->workers;
+    }
+
+    /**
+     * Limited worker information.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.worker.v1.WorkerListInfo workers = 3;</code>
+     * @param \Temporal\Api\Worker\V1\WorkerListInfo[] $var
+     * @return $this
+     */
+    public function setWorkers($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Worker\V1\WorkerListInfo::class);
+        $this->workers = $arr;
 
         return $this;
     }

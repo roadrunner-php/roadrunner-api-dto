@@ -17,7 +17,7 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
     /**
      * Specifies which Deployment Version should receive new workflow executions and tasks of
      * existing unversioned or AutoUpgrade workflows.
-     * Nil value means no Version in this Deployment (except Ramping Version, if present) receives traffic other than tasks of previously Pinned workflows. In absence of a Current Version, remaining traffic after any ramp (if set)  goes to unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.). 
+     * Nil value means no Version in this Deployment (except Ramping Version, if present) receives traffic other than tasks of previously Pinned workflows. In absence of a Current Version, remaining traffic after any ramp (if set)  goes to unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.).
      * Note: Current Version is overridden by the Ramping Version for a portion of traffic when ramp percentage
      * is non-zero (see `ramping_deployment_version` and `ramping_version_percentage`).
      *
@@ -77,7 +77,7 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
      */
     protected $ramping_version_percentage_changed_time = null;
     /**
-     * Monotonically increasing value which is incremented on every mutation 
+     * Monotonically increasing value which is incremented on every mutation
      * to any field of this message to achieve eventual consistency between task queues and their partitions.
      *
      * Generated from protobuf field <code>int64 revision_number = 10;</code>
@@ -93,7 +93,7 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $current_deployment_version
      *           Specifies which Deployment Version should receive new workflow executions and tasks of
      *           existing unversioned or AutoUpgrade workflows.
-     *           Nil value means no Version in this Deployment (except Ramping Version, if present) receives traffic other than tasks of previously Pinned workflows. In absence of a Current Version, remaining traffic after any ramp (if set)  goes to unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.). 
+     *           Nil value means no Version in this Deployment (except Ramping Version, if present) receives traffic other than tasks of previously Pinned workflows. In absence of a Current Version, remaining traffic after any ramp (if set)  goes to unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.).
      *           Note: Current Version is overridden by the Ramping Version for a portion of traffic when ramp percentage
      *           is non-zero (see `ramping_deployment_version` and `ramping_version_percentage`).
      *     @type string $current_version
@@ -119,7 +119,7 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
      *           Last time ramping version percentage was changed.
      *           If ramping version is changed, this is also updated, even if the percentage stays the same.
      *     @type int|string $revision_number
-     *           Monotonically increasing value which is incremented on every mutation 
+     *           Monotonically increasing value which is incremented on every mutation
      *           to any field of this message to achieve eventual consistency between task queues and their partitions.
      * }
      */
@@ -131,7 +131,7 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
     /**
      * Specifies which Deployment Version should receive new workflow executions and tasks of
      * existing unversioned or AutoUpgrade workflows.
-     * Nil value means no Version in this Deployment (except Ramping Version, if present) receives traffic other than tasks of previously Pinned workflows. In absence of a Current Version, remaining traffic after any ramp (if set)  goes to unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.). 
+     * Nil value means no Version in this Deployment (except Ramping Version, if present) receives traffic other than tasks of previously Pinned workflows. In absence of a Current Version, remaining traffic after any ramp (if set)  goes to unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.).
      * Note: Current Version is overridden by the Ramping Version for a portion of traffic when ramp percentage
      * is non-zero (see `ramping_deployment_version` and `ramping_version_percentage`).
      *
@@ -156,7 +156,7 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
     /**
      * Specifies which Deployment Version should receive new workflow executions and tasks of
      * existing unversioned or AutoUpgrade workflows.
-     * Nil value means no Version in this Deployment (except Ramping Version, if present) receives traffic other than tasks of previously Pinned workflows. In absence of a Current Version, remaining traffic after any ramp (if set)  goes to unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.). 
+     * Nil value means no Version in this Deployment (except Ramping Version, if present) receives traffic other than tasks of previously Pinned workflows. In absence of a Current Version, remaining traffic after any ramp (if set)  goes to unversioned workers (those with `UNVERSIONED` (or unspecified) `WorkerVersioningMode`.).
      * Note: Current Version is overridden by the Ramping Version for a portion of traffic when ramp percentage
      * is non-zero (see `ramping_deployment_version` and `ramping_version_percentage`).
      *
@@ -423,7 +423,7 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Monotonically increasing value which is incremented on every mutation 
+     * Monotonically increasing value which is incremented on every mutation
      * to any field of this message to achieve eventual consistency between task queues and their partitions.
      *
      * Generated from protobuf field <code>int64 revision_number = 10;</code>
@@ -435,7 +435,7 @@ class RoutingConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Monotonically increasing value which is incremented on every mutation 
+     * Monotonically increasing value which is incremented on every mutation
      * to any field of this message to achieve eventual consistency between task queues and their partitions.
      *
      * Generated from protobuf field <code>int64 revision_number = 10;</code>

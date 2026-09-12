@@ -139,6 +139,18 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .temporal.api.worker.v1.PluginInfo plugins = 23;</code>
      */
     private $plugins;
+    /**
+     * Storage drivers in use by this SDK.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.worker.v1.StorageDriverInfo drivers = 24;</code>
+     */
+    private $drivers;
+    /**
+     * Information about the environment this SDK is running in.
+     *
+     * Generated from protobuf field <code>.temporal.api.worker.v1.EnvironmentInfo environment = 25;</code>
+     */
+    protected $environment = null;
 
     /**
      * Constructor.
@@ -185,6 +197,10 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
      *           Current cache size, expressed in number of Workflow Executions.
      *     @type \Temporal\Api\Worker\V1\PluginInfo[] $plugins
      *           Plugins currently in use by this SDK.
+     *     @type \Temporal\Api\Worker\V1\StorageDriverInfo[] $drivers
+     *           Storage drivers in use by this SDK.
+     *     @type \Temporal\Api\Worker\V1\EnvironmentInfo $environment
+     *           Information about the environment this SDK is running in.
      * }
      */
     public function __construct($data = NULL) {
@@ -880,6 +896,68 @@ class WorkerHeartbeat extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Worker\V1\PluginInfo::class);
         $this->plugins = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Storage drivers in use by this SDK.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.worker.v1.StorageDriverInfo drivers = 24;</code>
+     * @return RepeatedField<\Temporal\Api\Worker\V1\StorageDriverInfo>
+     */
+    public function getDrivers()
+    {
+        return $this->drivers;
+    }
+
+    /**
+     * Storage drivers in use by this SDK.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.worker.v1.StorageDriverInfo drivers = 24;</code>
+     * @param \Temporal\Api\Worker\V1\StorageDriverInfo[] $var
+     * @return $this
+     */
+    public function setDrivers($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Worker\V1\StorageDriverInfo::class);
+        $this->drivers = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Information about the environment this SDK is running in.
+     *
+     * Generated from protobuf field <code>.temporal.api.worker.v1.EnvironmentInfo environment = 25;</code>
+     * @return \Temporal\Api\Worker\V1\EnvironmentInfo|null
+     */
+    public function getEnvironment()
+    {
+        return $this->environment;
+    }
+
+    public function hasEnvironment()
+    {
+        return isset($this->environment);
+    }
+
+    public function clearEnvironment()
+    {
+        unset($this->environment);
+    }
+
+    /**
+     * Information about the environment this SDK is running in.
+     *
+     * Generated from protobuf field <code>.temporal.api.worker.v1.EnvironmentInfo environment = 25;</code>
+     * @param \Temporal\Api\Worker\V1\EnvironmentInfo $var
+     * @return $this
+     */
+    public function setEnvironment($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Worker\V1\EnvironmentInfo::class);
+        $this->environment = $var;
 
         return $this;
     }

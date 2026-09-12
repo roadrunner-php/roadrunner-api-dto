@@ -17,29 +17,65 @@ class BatchOperationType
      */
     const BATCH_OPERATION_TYPE_UNSPECIFIED = 0;
     /**
-     * Generated from protobuf enum <code>BATCH_OPERATION_TYPE_TERMINATE = 1;</code>
+     * DEPRECATED: Use BATCH_OPERATION_TYPE_TERMINATE_WORKFLOW instead.
+     *
+     * Generated from protobuf enum <code>BATCH_OPERATION_TYPE_TERMINATE = 1 [deprecated = true];</code>
      */
     const BATCH_OPERATION_TYPE_TERMINATE = 1;
     /**
-     * Generated from protobuf enum <code>BATCH_OPERATION_TYPE_CANCEL = 2;</code>
+     * Generated from protobuf enum <code>BATCH_OPERATION_TYPE_TERMINATE_WORKFLOW = 13;</code>
+     */
+    const BATCH_OPERATION_TYPE_TERMINATE_WORKFLOW = 13;
+    /**
+     * DEPRECATED: Use BATCH_OPERATION_TYPE_CANCEL_WORKFLOW instead.
+     *
+     * Generated from protobuf enum <code>BATCH_OPERATION_TYPE_CANCEL = 2 [deprecated = true];</code>
      */
     const BATCH_OPERATION_TYPE_CANCEL = 2;
     /**
-     * Generated from protobuf enum <code>BATCH_OPERATION_TYPE_SIGNAL = 3;</code>
+     * Generated from protobuf enum <code>BATCH_OPERATION_TYPE_CANCEL_WORKFLOW = 14;</code>
+     */
+    const BATCH_OPERATION_TYPE_CANCEL_WORKFLOW = 14;
+    /**
+     * DEPRECATED: Use BATCH_OPERATION_TYPE_SIGNAL_WORKFLOW instead.
+     *
+     * Generated from protobuf enum <code>BATCH_OPERATION_TYPE_SIGNAL = 3 [deprecated = true];</code>
      */
     const BATCH_OPERATION_TYPE_SIGNAL = 3;
     /**
-     * Generated from protobuf enum <code>BATCH_OPERATION_TYPE_DELETE = 4;</code>
+     * Generated from protobuf enum <code>BATCH_OPERATION_TYPE_SIGNAL_WORKFLOW = 15;</code>
+     */
+    const BATCH_OPERATION_TYPE_SIGNAL_WORKFLOW = 15;
+    /**
+     * DEPRECATED: Use BATCH_OPERATION_TYPE_DELETE_WORKFLOW instead.
+     *
+     * Generated from protobuf enum <code>BATCH_OPERATION_TYPE_DELETE = 4 [deprecated = true];</code>
      */
     const BATCH_OPERATION_TYPE_DELETE = 4;
     /**
-     * Generated from protobuf enum <code>BATCH_OPERATION_TYPE_RESET = 5;</code>
+     * Generated from protobuf enum <code>BATCH_OPERATION_TYPE_DELETE_WORKFLOW = 16;</code>
+     */
+    const BATCH_OPERATION_TYPE_DELETE_WORKFLOW = 16;
+    /**
+     * DEPRECATED: Use BATCH_OPERATION_TYPE_RESET_WORKFLOW instead.
+     *
+     * Generated from protobuf enum <code>BATCH_OPERATION_TYPE_RESET = 5 [deprecated = true];</code>
      */
     const BATCH_OPERATION_TYPE_RESET = 5;
     /**
-     * Generated from protobuf enum <code>BATCH_OPERATION_TYPE_UPDATE_EXECUTION_OPTIONS = 6;</code>
+     * Generated from protobuf enum <code>BATCH_OPERATION_TYPE_RESET_WORKFLOW = 17;</code>
+     */
+    const BATCH_OPERATION_TYPE_RESET_WORKFLOW = 17;
+    /**
+     * DEPRECATED: Use BATCH_OPERATION_TYPE_UPDATE_WORKFLOW_EXECUTION_OPTIONS instead.
+     *
+     * Generated from protobuf enum <code>BATCH_OPERATION_TYPE_UPDATE_EXECUTION_OPTIONS = 6 [deprecated = true];</code>
      */
     const BATCH_OPERATION_TYPE_UPDATE_EXECUTION_OPTIONS = 6;
+    /**
+     * Generated from protobuf enum <code>BATCH_OPERATION_TYPE_UPDATE_WORKFLOW_EXECUTION_OPTIONS = 18;</code>
+     */
+    const BATCH_OPERATION_TYPE_UPDATE_WORKFLOW_EXECUTION_OPTIONS = 18;
     /**
      * Generated from protobuf enum <code>BATCH_OPERATION_TYPE_UNPAUSE_ACTIVITY = 7;</code>
      */
@@ -52,18 +88,39 @@ class BatchOperationType
      * Generated from protobuf enum <code>BATCH_OPERATION_TYPE_RESET_ACTIVITY = 9;</code>
      */
     const BATCH_OPERATION_TYPE_RESET_ACTIVITY = 9;
+    /**
+     * Generated from protobuf enum <code>BATCH_OPERATION_TYPE_TERMINATE_ACTIVITY = 10;</code>
+     */
+    const BATCH_OPERATION_TYPE_TERMINATE_ACTIVITY = 10;
+    /**
+     * Generated from protobuf enum <code>BATCH_OPERATION_TYPE_CANCEL_ACTIVITY = 11;</code>
+     */
+    const BATCH_OPERATION_TYPE_CANCEL_ACTIVITY = 11;
+    /**
+     * Generated from protobuf enum <code>BATCH_OPERATION_TYPE_DELETE_ACTIVITY = 12;</code>
+     */
+    const BATCH_OPERATION_TYPE_DELETE_ACTIVITY = 12;
 
     private static $valueToName = [
         self::BATCH_OPERATION_TYPE_UNSPECIFIED => 'BATCH_OPERATION_TYPE_UNSPECIFIED',
         self::BATCH_OPERATION_TYPE_TERMINATE => 'BATCH_OPERATION_TYPE_TERMINATE',
+        self::BATCH_OPERATION_TYPE_TERMINATE_WORKFLOW => 'BATCH_OPERATION_TYPE_TERMINATE_WORKFLOW',
         self::BATCH_OPERATION_TYPE_CANCEL => 'BATCH_OPERATION_TYPE_CANCEL',
+        self::BATCH_OPERATION_TYPE_CANCEL_WORKFLOW => 'BATCH_OPERATION_TYPE_CANCEL_WORKFLOW',
         self::BATCH_OPERATION_TYPE_SIGNAL => 'BATCH_OPERATION_TYPE_SIGNAL',
+        self::BATCH_OPERATION_TYPE_SIGNAL_WORKFLOW => 'BATCH_OPERATION_TYPE_SIGNAL_WORKFLOW',
         self::BATCH_OPERATION_TYPE_DELETE => 'BATCH_OPERATION_TYPE_DELETE',
+        self::BATCH_OPERATION_TYPE_DELETE_WORKFLOW => 'BATCH_OPERATION_TYPE_DELETE_WORKFLOW',
         self::BATCH_OPERATION_TYPE_RESET => 'BATCH_OPERATION_TYPE_RESET',
+        self::BATCH_OPERATION_TYPE_RESET_WORKFLOW => 'BATCH_OPERATION_TYPE_RESET_WORKFLOW',
         self::BATCH_OPERATION_TYPE_UPDATE_EXECUTION_OPTIONS => 'BATCH_OPERATION_TYPE_UPDATE_EXECUTION_OPTIONS',
+        self::BATCH_OPERATION_TYPE_UPDATE_WORKFLOW_EXECUTION_OPTIONS => 'BATCH_OPERATION_TYPE_UPDATE_WORKFLOW_EXECUTION_OPTIONS',
         self::BATCH_OPERATION_TYPE_UNPAUSE_ACTIVITY => 'BATCH_OPERATION_TYPE_UNPAUSE_ACTIVITY',
         self::BATCH_OPERATION_TYPE_UPDATE_ACTIVITY_OPTIONS => 'BATCH_OPERATION_TYPE_UPDATE_ACTIVITY_OPTIONS',
         self::BATCH_OPERATION_TYPE_RESET_ACTIVITY => 'BATCH_OPERATION_TYPE_RESET_ACTIVITY',
+        self::BATCH_OPERATION_TYPE_TERMINATE_ACTIVITY => 'BATCH_OPERATION_TYPE_TERMINATE_ACTIVITY',
+        self::BATCH_OPERATION_TYPE_CANCEL_ACTIVITY => 'BATCH_OPERATION_TYPE_CANCEL_ACTIVITY',
+        self::BATCH_OPERATION_TYPE_DELETE_ACTIVITY => 'BATCH_OPERATION_TYPE_DELETE_ACTIVITY',
     ];
 
     public static function name($value)

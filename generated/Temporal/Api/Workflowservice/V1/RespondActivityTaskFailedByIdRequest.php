@@ -21,13 +21,14 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
      */
     protected $namespace = '';
     /**
-     * Id of the workflow which scheduled this activity
+     * Id of the workflow which scheduled this activity, leave empty to target a standalone activity
      *
      * Generated from protobuf field <code>string workflow_id = 2;</code>
      */
     protected $workflow_id = '';
     /**
-     * Run Id of the workflow which scheduled this activity
+     * For a workflow activity - the run ID of the workflow which scheduled this activity.
+     * For a standalone activity - the run ID of the activity.
      *
      * Generated from protobuf field <code>string run_id = 3;</code>
      */
@@ -56,6 +57,12 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
      * Generated from protobuf field <code>.temporal.api.common.v1.Payloads last_heartbeat_details = 7;</code>
      */
     protected $last_heartbeat_details = null;
+    /**
+     * Resource ID for routing. Contains "workflow:workflow_id" or "activity:activity_id" for standalone activities.
+     *
+     * Generated from protobuf field <code>string resource_id = 8;</code>
+     */
+    protected $resource_id = '';
 
     /**
      * Constructor.
@@ -66,9 +73,10 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
      *     @type string $namespace
      *           Namespace of the workflow which scheduled this activity
      *     @type string $workflow_id
-     *           Id of the workflow which scheduled this activity
+     *           Id of the workflow which scheduled this activity, leave empty to target a standalone activity
      *     @type string $run_id
-     *           Run Id of the workflow which scheduled this activity
+     *           For a workflow activity - the run ID of the workflow which scheduled this activity.
+     *           For a standalone activity - the run ID of the activity.
      *     @type string $activity_id
      *           Id of the activity to fail
      *     @type \Temporal\Api\Failure\V1\Failure $failure
@@ -77,6 +85,8 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
      *           The identity of the worker/client
      *     @type \Temporal\Api\Common\V1\Payloads $last_heartbeat_details
      *           Additional details to be stored as last activity heartbeat
+     *     @type string $resource_id
+     *           Resource ID for routing. Contains "workflow:workflow_id" or "activity:activity_id" for standalone activities.
      * }
      */
     public function __construct($data = NULL) {
@@ -111,7 +121,7 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
-     * Id of the workflow which scheduled this activity
+     * Id of the workflow which scheduled this activity, leave empty to target a standalone activity
      *
      * Generated from protobuf field <code>string workflow_id = 2;</code>
      * @return string
@@ -122,7 +132,7 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
-     * Id of the workflow which scheduled this activity
+     * Id of the workflow which scheduled this activity, leave empty to target a standalone activity
      *
      * Generated from protobuf field <code>string workflow_id = 2;</code>
      * @param string $var
@@ -137,7 +147,8 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
-     * Run Id of the workflow which scheduled this activity
+     * For a workflow activity - the run ID of the workflow which scheduled this activity.
+     * For a standalone activity - the run ID of the activity.
      *
      * Generated from protobuf field <code>string run_id = 3;</code>
      * @return string
@@ -148,7 +159,8 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
     }
 
     /**
-     * Run Id of the workflow which scheduled this activity
+     * For a workflow activity - the run ID of the workflow which scheduled this activity.
+     * For a standalone activity - the run ID of the activity.
      *
      * Generated from protobuf field <code>string run_id = 3;</code>
      * @param string $var
@@ -282,6 +294,32 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->last_heartbeat_details = $var;
+
+        return $this;
+    }
+
+    /**
+     * Resource ID for routing. Contains "workflow:workflow_id" or "activity:activity_id" for standalone activities.
+     *
+     * Generated from protobuf field <code>string resource_id = 8;</code>
+     * @return string
+     */
+    public function getResourceId()
+    {
+        return $this->resource_id;
+    }
+
+    /**
+     * Resource ID for routing. Contains "workflow:workflow_id" or "activity:activity_id" for standalone activities.
+     *
+     * Generated from protobuf field <code>string resource_id = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setResourceId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->resource_id = $var;
 
         return $this;
     }

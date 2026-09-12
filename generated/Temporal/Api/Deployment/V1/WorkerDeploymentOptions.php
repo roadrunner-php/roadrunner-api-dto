@@ -11,14 +11,13 @@ use Google\Protobuf\RepeatedField;
 
 /**
  * Worker Deployment options set in SDK that need to be sent to server in every poll.
- * Experimental. Worker Deployments are experimental and might significantly change in the future.
  *
  * Generated from protobuf message <code>temporal.api.deployment.v1.WorkerDeploymentOptions</code>
  */
 class WorkerDeploymentOptions extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. Worker Deployment name.
+     * Required when `worker_versioning_mode==VERSIONED`.
      *
      * Generated from protobuf field <code>string deployment_name = 1;</code>
      */
@@ -46,7 +45,7 @@ class WorkerDeploymentOptions extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $deployment_name
-     *           Required. Worker Deployment name.
+     *           Required when `worker_versioning_mode==VERSIONED`.
      *     @type string $build_id
      *           The Build ID of the worker. Required when `worker_versioning_mode==VERSIONED`, in which case,
      *           the worker will be part of a Deployment Version.
@@ -62,7 +61,7 @@ class WorkerDeploymentOptions extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Worker Deployment name.
+     * Required when `worker_versioning_mode==VERSIONED`.
      *
      * Generated from protobuf field <code>string deployment_name = 1;</code>
      * @return string
@@ -73,7 +72,7 @@ class WorkerDeploymentOptions extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Worker Deployment name.
+     * Required when `worker_versioning_mode==VERSIONED`.
      *
      * Generated from protobuf field <code>string deployment_name = 1;</code>
      * @param string $var

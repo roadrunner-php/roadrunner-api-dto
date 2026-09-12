@@ -15,7 +15,10 @@ use Google\Protobuf\RepeatedField;
 class StartChildWorkflowExecutionCommandAttributes extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string namespace = 1;</code>
+     * Deprecated. Cross-namespace operations are disabled by default as of server 1.30.1.
+     *
+     * Generated from protobuf field <code>string namespace = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $namespace = '';
     /**
@@ -106,6 +109,13 @@ class StartChildWorkflowExecutionCommandAttributes extends \Google\Protobuf\Inte
      * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 18;</code>
      */
     protected $priority = null;
+    /**
+     * Versioning override for the child workflow. If present, this explicit override takes
+     * precedence over versioning behavior inherited from the parent workflow.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 19;</code>
+     */
+    protected $versioning_override = null;
 
     /**
      * Constructor.
@@ -114,6 +124,7 @@ class StartChildWorkflowExecutionCommandAttributes extends \Google\Protobuf\Inte
      *     Optional. Data for populating the Message object.
      *
      *     @type string $namespace
+     *           Deprecated. Cross-namespace operations are disabled by default as of server 1.30.1.
      *     @type string $workflow_id
      *     @type \Temporal\Api\Common\V1\WorkflowType $workflow_type
      *     @type \Temporal\Api\Taskqueue\V1\TaskQueue $task_queue
@@ -142,6 +153,9 @@ class StartChildWorkflowExecutionCommandAttributes extends \Google\Protobuf\Inte
      *     @type \Temporal\Api\Common\V1\Priority $priority
      *           Priority metadata. If this message is not present, or any fields are not
      *           present, they inherit the values from the workflow.
+     *     @type \Temporal\Api\Workflow\V1\VersioningOverride $versioning_override
+     *           Versioning override for the child workflow. If present, this explicit override takes
+     *           precedence over versioning behavior inherited from the parent workflow.
      * }
      */
     public function __construct($data = NULL) {
@@ -150,21 +164,31 @@ class StartChildWorkflowExecutionCommandAttributes extends \Google\Protobuf\Inte
     }
 
     /**
-     * Generated from protobuf field <code>string namespace = 1;</code>
+     * Deprecated. Cross-namespace operations are disabled by default as of server 1.30.1.
+     *
+     * Generated from protobuf field <code>string namespace = 1 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getNamespace()
     {
+        if ($this->namespace !== '') {
+            @trigger_error('namespace is deprecated.', E_USER_DEPRECATED);
+        }
         return $this->namespace;
     }
 
     /**
-     * Generated from protobuf field <code>string namespace = 1;</code>
+     * Deprecated. Cross-namespace operations are disabled by default as of server 1.30.1.
+     *
+     * Generated from protobuf field <code>string namespace = 1 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setNamespace($var)
     {
+        @trigger_error('namespace is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->namespace = $var;
 
@@ -695,6 +719,44 @@ class StartChildWorkflowExecutionCommandAttributes extends \Google\Protobuf\Inte
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Priority::class);
         $this->priority = $var;
+
+        return $this;
+    }
+
+    /**
+     * Versioning override for the child workflow. If present, this explicit override takes
+     * precedence over versioning behavior inherited from the parent workflow.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 19;</code>
+     * @return \Temporal\Api\Workflow\V1\VersioningOverride|null
+     */
+    public function getVersioningOverride()
+    {
+        return $this->versioning_override;
+    }
+
+    public function hasVersioningOverride()
+    {
+        return isset($this->versioning_override);
+    }
+
+    public function clearVersioningOverride()
+    {
+        unset($this->versioning_override);
+    }
+
+    /**
+     * Versioning override for the child workflow. If present, this explicit override takes
+     * precedence over versioning behavior inherited from the parent workflow.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 19;</code>
+     * @param \Temporal\Api\Workflow\V1\VersioningOverride $var
+     * @return $this
+     */
+    public function setVersioningOverride($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\VersioningOverride::class);
+        $this->versioning_override = $var;
 
         return $this;
     }

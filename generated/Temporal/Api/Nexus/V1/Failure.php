@@ -22,6 +22,10 @@ class Failure extends \Google\Protobuf\Internal\Message
      */
     protected $message = '';
     /**
+     * Generated from protobuf field <code>string stack_trace = 4;</code>
+     */
+    protected $stack_trace = '';
+    /**
      * Generated from protobuf field <code>map<string, string> metadata = 2;</code>
      */
     private $metadata;
@@ -31,6 +35,10 @@ class Failure extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bytes details = 3;</code>
      */
     protected $details = '';
+    /**
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.Failure cause = 5;</code>
+     */
+    protected $cause = null;
 
     /**
      * Constructor.
@@ -39,9 +47,11 @@ class Failure extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $message
+     *     @type string $stack_trace
      *     @type array|\Google\Protobuf\Internal\MapField $metadata
      *     @type string $details
      *           UTF-8 encoded JSON serializable details.
+     *     @type \Temporal\Api\Nexus\V1\Failure $cause
      * }
      */
     public function __construct($data = NULL) {
@@ -67,6 +77,28 @@ class Failure extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->message = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string stack_trace = 4;</code>
+     * @return string
+     */
+    public function getStackTrace()
+    {
+        return $this->stack_trace;
+    }
+
+    /**
+     * Generated from protobuf field <code>string stack_trace = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setStackTrace($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->stack_trace = $var;
 
         return $this;
     }
@@ -115,6 +147,38 @@ class Failure extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, False);
         $this->details = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.Failure cause = 5;</code>
+     * @return \Temporal\Api\Nexus\V1\Failure|null
+     */
+    public function getCause()
+    {
+        return $this->cause;
+    }
+
+    public function hasCause()
+    {
+        return isset($this->cause);
+    }
+
+    public function clearCause()
+    {
+        unset($this->cause);
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.Failure cause = 5;</code>
+     * @param \Temporal\Api\Nexus\V1\Failure $var
+     * @return $this
+     */
+    public function setCause($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\Failure::class);
+        $this->cause = $var;
 
         return $this;
     }

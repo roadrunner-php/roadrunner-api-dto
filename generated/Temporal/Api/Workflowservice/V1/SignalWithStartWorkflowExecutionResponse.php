@@ -21,11 +21,25 @@ class SignalWithStartWorkflowExecutionResponse extends \Google\Protobuf\Internal
      */
     protected $run_id = '';
     /**
+     * If the workflow was started as a result of a de-dupe, this field will contain the run id of the first execution in the chain.
+     *
+     * Generated from protobuf field <code>string first_execution_run_id = 4;</code>
+     */
+    protected $first_execution_run_id = '';
+    /**
      * If true, a new workflow was started.
      *
      * Generated from protobuf field <code>bool started = 2;</code>
      */
     protected $started = false;
+    /**
+     * Link to be associated with the WorkflowExecutionSignaled event.
+     * Added on the response to propagate the backlink.
+     * Available from Temporal server 1.31 and up.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Link signal_link = 3;</code>
+     */
+    protected $signal_link = null;
 
     /**
      * Constructor.
@@ -35,8 +49,14 @@ class SignalWithStartWorkflowExecutionResponse extends \Google\Protobuf\Internal
      *
      *     @type string $run_id
      *           The run id of the workflow that was started - or just signaled, if it was already running.
+     *     @type string $first_execution_run_id
+     *           If the workflow was started as a result of a de-dupe, this field will contain the run id of the first execution in the chain.
      *     @type bool $started
      *           If true, a new workflow was started.
+     *     @type \Temporal\Api\Common\V1\Link $signal_link
+     *           Link to be associated with the WorkflowExecutionSignaled event.
+     *           Added on the response to propagate the backlink.
+     *           Available from Temporal server 1.31 and up.
      * }
      */
     public function __construct($data = NULL) {
@@ -71,6 +91,32 @@ class SignalWithStartWorkflowExecutionResponse extends \Google\Protobuf\Internal
     }
 
     /**
+     * If the workflow was started as a result of a de-dupe, this field will contain the run id of the first execution in the chain.
+     *
+     * Generated from protobuf field <code>string first_execution_run_id = 4;</code>
+     * @return string
+     */
+    public function getFirstExecutionRunId()
+    {
+        return $this->first_execution_run_id;
+    }
+
+    /**
+     * If the workflow was started as a result of a de-dupe, this field will contain the run id of the first execution in the chain.
+     *
+     * Generated from protobuf field <code>string first_execution_run_id = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFirstExecutionRunId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->first_execution_run_id = $var;
+
+        return $this;
+    }
+
+    /**
      * If true, a new workflow was started.
      *
      * Generated from protobuf field <code>bool started = 2;</code>
@@ -92,6 +138,46 @@ class SignalWithStartWorkflowExecutionResponse extends \Google\Protobuf\Internal
     {
         GPBUtil::checkBool($var);
         $this->started = $var;
+
+        return $this;
+    }
+
+    /**
+     * Link to be associated with the WorkflowExecutionSignaled event.
+     * Added on the response to propagate the backlink.
+     * Available from Temporal server 1.31 and up.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Link signal_link = 3;</code>
+     * @return \Temporal\Api\Common\V1\Link|null
+     */
+    public function getSignalLink()
+    {
+        return $this->signal_link;
+    }
+
+    public function hasSignalLink()
+    {
+        return isset($this->signal_link);
+    }
+
+    public function clearSignalLink()
+    {
+        unset($this->signal_link);
+    }
+
+    /**
+     * Link to be associated with the WorkflowExecutionSignaled event.
+     * Added on the response to propagate the backlink.
+     * Available from Temporal server 1.31 and up.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.Link signal_link = 3;</code>
+     * @param \Temporal\Api\Common\V1\Link $var
+     * @return $this
+     */
+    public function setSignalLink($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Link::class);
+        $this->signal_link = $var;
 
         return $this;
     }

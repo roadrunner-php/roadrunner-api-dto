@@ -84,7 +84,6 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
     /**
      * The Worker Deployment Version that completed this task. Must be set if `versioning_behavior`
      * is set. This value updates workflow execution's `versioning_info.version`.
-     * Experimental. Worker Deployments are experimental and might significantly change in the future.
      * Deprecated. Replaced with `deployment_version`.
      *
      * Generated from protobuf field <code>string worker_deployment_version = 9 [deprecated = true];</code>
@@ -94,7 +93,6 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
     /**
      * The name of Worker Deployment that completed this task. Must be set if `versioning_behavior`
      * is set. This value updates workflow execution's `worker_deployment_name`.
-     * Experimental. Worker Deployments are experimental and might significantly change in the future.
      *
      * Generated from protobuf field <code>string worker_deployment_name = 10;</code>
      */
@@ -102,7 +100,6 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
     /**
      * The Worker Deployment Version that completed this task. Must be set if `versioning_behavior`
      * is set. This value updates workflow execution's `versioning_info.deployment_version`.
-     * Experimental. Worker Deployments are experimental and might significantly change in the future.
      *
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion deployment_version = 11;</code>
      */
@@ -145,16 +142,13 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
      *     @type string $worker_deployment_version
      *           The Worker Deployment Version that completed this task. Must be set if `versioning_behavior`
      *           is set. This value updates workflow execution's `versioning_info.version`.
-     *           Experimental. Worker Deployments are experimental and might significantly change in the future.
      *           Deprecated. Replaced with `deployment_version`.
      *     @type string $worker_deployment_name
      *           The name of Worker Deployment that completed this task. Must be set if `versioning_behavior`
      *           is set. This value updates workflow execution's `worker_deployment_name`.
-     *           Experimental. Worker Deployments are experimental and might significantly change in the future.
      *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $deployment_version
      *           The Worker Deployment Version that completed this task. Must be set if `versioning_behavior`
      *           is set. This value updates workflow execution's `versioning_info.deployment_version`.
-     *           Experimental. Worker Deployments are experimental and might significantly change in the future.
      * }
      */
     public function __construct($data = NULL) {
@@ -485,7 +479,6 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
     /**
      * The Worker Deployment Version that completed this task. Must be set if `versioning_behavior`
      * is set. This value updates workflow execution's `versioning_info.version`.
-     * Experimental. Worker Deployments are experimental and might significantly change in the future.
      * Deprecated. Replaced with `deployment_version`.
      *
      * Generated from protobuf field <code>string worker_deployment_version = 9 [deprecated = true];</code>
@@ -503,7 +496,6 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
     /**
      * The Worker Deployment Version that completed this task. Must be set if `versioning_behavior`
      * is set. This value updates workflow execution's `versioning_info.version`.
-     * Experimental. Worker Deployments are experimental and might significantly change in the future.
      * Deprecated. Replaced with `deployment_version`.
      *
      * Generated from protobuf field <code>string worker_deployment_version = 9 [deprecated = true];</code>
@@ -523,7 +515,6 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
     /**
      * The name of Worker Deployment that completed this task. Must be set if `versioning_behavior`
      * is set. This value updates workflow execution's `worker_deployment_name`.
-     * Experimental. Worker Deployments are experimental and might significantly change in the future.
      *
      * Generated from protobuf field <code>string worker_deployment_name = 10;</code>
      * @return string
@@ -536,7 +527,6 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
     /**
      * The name of Worker Deployment that completed this task. Must be set if `versioning_behavior`
      * is set. This value updates workflow execution's `worker_deployment_name`.
-     * Experimental. Worker Deployments are experimental and might significantly change in the future.
      *
      * Generated from protobuf field <code>string worker_deployment_name = 10;</code>
      * @param string $var
@@ -553,7 +543,6 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
     /**
      * The Worker Deployment Version that completed this task. Must be set if `versioning_behavior`
      * is set. This value updates workflow execution's `versioning_info.deployment_version`.
-     * Experimental. Worker Deployments are experimental and might significantly change in the future.
      *
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion deployment_version = 11;</code>
      * @return \Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null
@@ -576,7 +565,6 @@ class WorkflowTaskCompletedEventAttributes extends \Google\Protobuf\Internal\Mes
     /**
      * The Worker Deployment Version that completed this task. Must be set if `versioning_behavior`
      * is set. This value updates workflow execution's `versioning_info.deployment_version`.
-     * Experimental. Worker Deployments are experimental and might significantly change in the future.
      *
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion deployment_version = 11;</code>
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var

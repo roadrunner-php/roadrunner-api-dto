@@ -129,9 +129,9 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      */
     protected $header = null;
     /**
-     * Time to wait before dispatching the first workflow task. Cannot be used with `cron_schedule`.
+     * Time to wait before making the first workflow task available for dispatch. Cannot be used with `cron_schedule`.
      * Note that the signal will be delivered with the first workflow task. If the workflow gets
-     * another SignalWithStartWorkflow before the delay a workflow task will be dispatched immediately
+     * another SignalWithStartWorkflow before the delay a workflow task will be made available for dispatch immediately
      * and the rest of the delay period will be ignored, even if that request also had a delay.
      * Signal via SignalWorkflowExecution will not unblock the workflow.
      *
@@ -165,6 +165,12 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 26;</code>
      */
     protected $priority = null;
+    /**
+     * Time-skipping configuration. If not set, time skipping is disabled.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 27;</code>
+     */
+    protected $time_skipping_config = null;
 
     /**
      * Constructor.
@@ -212,9 +218,9 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      *     @type \Temporal\Api\Common\V1\SearchAttributes $search_attributes
      *     @type \Temporal\Api\Common\V1\Header $header
      *     @type \Google\Protobuf\Duration $workflow_start_delay
-     *           Time to wait before dispatching the first workflow task. Cannot be used with `cron_schedule`.
+     *           Time to wait before making the first workflow task available for dispatch. Cannot be used with `cron_schedule`.
      *           Note that the signal will be delivered with the first workflow task. If the workflow gets
-     *           another SignalWithStartWorkflow before the delay a workflow task will be dispatched immediately
+     *           another SignalWithStartWorkflow before the delay a workflow task will be made available for dispatch immediately
      *           and the rest of the delay period will be ignored, even if that request also had a delay.
      *           Signal via SignalWorkflowExecution will not unblock the workflow.
      *     @type \Temporal\Api\Sdk\V1\UserMetadata $user_metadata
@@ -228,6 +234,8 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      *           To unset the override after the workflow is running, use UpdateWorkflowExecutionOptions.
      *     @type \Temporal\Api\Common\V1\Priority $priority
      *           Priority metadata
+     *     @type \Temporal\Api\Common\V1\TimeSkippingConfig $time_skipping_config
+     *           Time-skipping configuration. If not set, time skipping is disabled.
      * }
      */
     public function __construct($data = NULL) {
@@ -858,9 +866,9 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     }
 
     /**
-     * Time to wait before dispatching the first workflow task. Cannot be used with `cron_schedule`.
+     * Time to wait before making the first workflow task available for dispatch. Cannot be used with `cron_schedule`.
      * Note that the signal will be delivered with the first workflow task. If the workflow gets
-     * another SignalWithStartWorkflow before the delay a workflow task will be dispatched immediately
+     * another SignalWithStartWorkflow before the delay a workflow task will be made available for dispatch immediately
      * and the rest of the delay period will be ignored, even if that request also had a delay.
      * Signal via SignalWorkflowExecution will not unblock the workflow.
      *
@@ -883,9 +891,9 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     }
 
     /**
-     * Time to wait before dispatching the first workflow task. Cannot be used with `cron_schedule`.
+     * Time to wait before making the first workflow task available for dispatch. Cannot be used with `cron_schedule`.
      * Note that the signal will be delivered with the first workflow task. If the workflow gets
-     * another SignalWithStartWorkflow before the delay a workflow task will be dispatched immediately
+     * another SignalWithStartWorkflow before the delay a workflow task will be made available for dispatch immediately
      * and the rest of the delay period will be ignored, even if that request also had a delay.
      * Signal via SignalWorkflowExecution will not unblock the workflow.
      *
@@ -1037,6 +1045,42 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     {
         GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Priority::class);
         $this->priority = $var;
+
+        return $this;
+    }
+
+    /**
+     * Time-skipping configuration. If not set, time skipping is disabled.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 27;</code>
+     * @return \Temporal\Api\Common\V1\TimeSkippingConfig|null
+     */
+    public function getTimeSkippingConfig()
+    {
+        return $this->time_skipping_config;
+    }
+
+    public function hasTimeSkippingConfig()
+    {
+        return isset($this->time_skipping_config);
+    }
+
+    public function clearTimeSkippingConfig()
+    {
+        unset($this->time_skipping_config);
+    }
+
+    /**
+     * Time-skipping configuration. If not set, time skipping is disabled.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 27;</code>
+     * @param \Temporal\Api\Common\V1\TimeSkippingConfig $var
+     * @return $this
+     */
+    public function setTimeSkippingConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\TimeSkippingConfig::class);
+        $this->time_skipping_config = $var;
 
         return $this;
     }
