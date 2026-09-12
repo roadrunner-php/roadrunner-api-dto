@@ -67,9 +67,9 @@ class HandlerError extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setErrorType($var)
+    public function setErrorType(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->error_type = $var;
 
         return $this;
@@ -99,9 +99,8 @@ class HandlerError extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Nexus\V1\Failure $var
      * @return $this
      */
-    public function setFailure($var)
+    public function setFailure(\Temporal\Api\Nexus\V1\Failure|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\Failure::class);
         $this->failure = $var;
 
         return $this;
@@ -111,7 +110,7 @@ class HandlerError extends \Google\Protobuf\Internal\Message
      * Retry behavior, defaults to the retry behavior of the error type as defined in the spec.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.NexusHandlerErrorRetryBehavior retry_behavior = 3;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\NexusHandlerErrorRetryBehavior}
      */
     public function getRetryBehavior()
     {
@@ -122,10 +121,10 @@ class HandlerError extends \Google\Protobuf\Internal\Message
      * Retry behavior, defaults to the retry behavior of the error type as defined in the spec.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.NexusHandlerErrorRetryBehavior retry_behavior = 3;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\NexusHandlerErrorRetryBehavior}
      * @return $this
      */
-    public function setRetryBehavior($var)
+    public function setRetryBehavior(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\NexusHandlerErrorRetryBehavior::class);
         $this->retry_behavior = $var;

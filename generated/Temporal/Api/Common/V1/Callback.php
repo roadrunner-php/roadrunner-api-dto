@@ -62,9 +62,8 @@ class Callback extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Callback\Nexus $var
      * @return $this
      */
-    public function setNexus($var)
+    public function setNexus(\Temporal\Api\Common\V1\Callback\Nexus|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Callback\Nexus::class);
         $this->writeOneof(2, $var);
 
         return $this;
@@ -89,9 +88,8 @@ class Callback extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Callback\Internal $var
      * @return $this
      */
-    public function setInternal($var)
+    public function setInternal(\Temporal\Api\Common\V1\Callback\Internal|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Callback\Internal::class);
         $this->writeOneof(3, $var);
 
         return $this;
@@ -117,7 +115,7 @@ class Callback extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Link[] $var
      * @return $this
      */
-    public function setLinks($var)
+    public function setLinks(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Link::class);
         $this->links = $arr;

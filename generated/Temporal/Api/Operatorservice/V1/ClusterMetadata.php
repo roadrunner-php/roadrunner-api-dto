@@ -110,9 +110,9 @@ class ClusterMetadata extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setClusterName($var)
+    public function setClusterName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->cluster_name = $var;
 
         return $this;
@@ -136,9 +136,9 @@ class ClusterMetadata extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setClusterId($var)
+    public function setClusterId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->cluster_id = $var;
 
         return $this;
@@ -162,9 +162,9 @@ class ClusterMetadata extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAddress($var)
+    public function setAddress(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->address = $var;
 
         return $this;
@@ -188,9 +188,9 @@ class ClusterMetadata extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setHttpAddress($var)
+    public function setHttpAddress(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->http_address = $var;
 
         return $this;
@@ -214,7 +214,7 @@ class ClusterMetadata extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setInitialFailoverVersion($var)
+    public function setInitialFailoverVersion(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->initial_failover_version = $var;
@@ -240,7 +240,7 @@ class ClusterMetadata extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setHistoryShardCount($var)
+    public function setHistoryShardCount(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->history_shard_count = $var;
@@ -266,9 +266,8 @@ class ClusterMetadata extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setIsConnectionEnabled($var)
+    public function setIsConnectionEnabled(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->is_connection_enabled = $var;
 
         return $this;
@@ -292,9 +291,8 @@ class ClusterMetadata extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setIsReplicationEnabled($var)
+    public function setIsReplicationEnabled(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->is_replication_enabled = $var;
 
         return $this;

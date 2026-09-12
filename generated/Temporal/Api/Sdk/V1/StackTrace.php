@@ -56,7 +56,7 @@ class StackTrace extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Sdk\V1\StackTraceFileLocation[] $var
      * @return $this
      */
-    public function setLocations($var)
+    public function setLocations(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Sdk\V1\StackTraceFileLocation::class);
         $this->locations = $arr;

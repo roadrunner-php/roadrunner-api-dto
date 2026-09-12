@@ -40,7 +40,7 @@ class ComputeConfigScalingGroupSummary extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.enums.v1.TaskQueueType task_queue_types = 1;</code>
-     * @return RepeatedField<int>
+     * @return RepeatedField<int> one of the values in {@see \Temporal\Api\Enums\V1\TaskQueueType}
      */
     public function getTaskQueueTypes()
     {
@@ -49,10 +49,10 @@ class ComputeConfigScalingGroupSummary extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>repeated .temporal.api.enums.v1.TaskQueueType task_queue_types = 1;</code>
-     * @param int[] $var
+     * @param int[] $var one of the values in {@see \Temporal\Api\Enums\V1\TaskQueueType}
      * @return $this
      */
-    public function setTaskQueueTypes($var)
+    public function setTaskQueueTypes(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Temporal\Api\Enums\V1\TaskQueueType::class);
         $this->task_queue_types = $arr;
@@ -74,9 +74,9 @@ class ComputeConfigScalingGroupSummary extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setProviderType($var)
+    public function setProviderType(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->provider_type = $var;
 
         return $this;

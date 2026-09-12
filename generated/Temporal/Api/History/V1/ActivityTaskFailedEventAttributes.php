@@ -104,9 +104,8 @@ class ActivityTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
      */
-    public function setFailure($var)
+    public function setFailure(\Temporal\Api\Failure\V1\Failure|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
         $this->failure = $var;
 
         return $this;
@@ -130,7 +129,7 @@ class ActivityTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      * @param int|string $var
      * @return $this
      */
-    public function setScheduledEventId($var)
+    public function setScheduledEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->scheduled_event_id = $var;
@@ -156,7 +155,7 @@ class ActivityTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      * @param int|string $var
      * @return $this
      */
-    public function setStartedEventId($var)
+    public function setStartedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->started_event_id = $var;
@@ -182,9 +181,9 @@ class ActivityTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -192,7 +191,7 @@ class ActivityTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.RetryState retry_state = 5;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\RetryState}
      */
     public function getRetryState()
     {
@@ -201,10 +200,10 @@ class ActivityTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.RetryState retry_state = 5;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\RetryState}
      * @return $this
      */
-    public function setRetryState($var)
+    public function setRetryState(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\RetryState::class);
         $this->retry_state = $var;
@@ -251,10 +250,9 @@ class ActivityTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      * @return $this
      * @deprecated
      */
-    public function setWorkerVersion($var)
+    public function setWorkerVersion(\Temporal\Api\Common\V1\WorkerVersionStamp|null $var)
     {
         @trigger_error('worker_version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerVersionStamp::class);
         $this->worker_version = $var;
 
         return $this;

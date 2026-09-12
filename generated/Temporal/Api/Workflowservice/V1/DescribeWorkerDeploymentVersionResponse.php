@@ -65,9 +65,8 @@ class DescribeWorkerDeploymentVersionResponse extends \Google\Protobuf\Internal\
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersionInfo $var
      * @return $this
      */
-    public function setWorkerDeploymentVersionInfo($var)
+    public function setWorkerDeploymentVersionInfo(\Temporal\Api\Deployment\V1\WorkerDeploymentVersionInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersionInfo::class);
         $this->worker_deployment_version_info = $var;
 
         return $this;
@@ -91,7 +90,7 @@ class DescribeWorkerDeploymentVersionResponse extends \Google\Protobuf\Internal\
      * @param \Temporal\Api\Workflowservice\V1\DescribeWorkerDeploymentVersionResponse\VersionTaskQueue[] $var
      * @return $this
      */
-    public function setVersionTaskQueues($var)
+    public function setVersionTaskQueues(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Workflowservice\V1\DescribeWorkerDeploymentVersionResponse\VersionTaskQueue::class);
         $this->version_task_queues = $arr;

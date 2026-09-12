@@ -113,9 +113,9 @@ class UpdateTaskQueueConfigRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -135,9 +135,9 @@ class UpdateTaskQueueConfigRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -161,9 +161,9 @@ class UpdateTaskQueueConfigRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->task_queue = $var;
 
         return $this;
@@ -171,7 +171,7 @@ class UpdateTaskQueueConfigRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.TaskQueueType task_queue_type = 4;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\TaskQueueType}
      */
     public function getTaskQueueType()
     {
@@ -180,10 +180,10 @@ class UpdateTaskQueueConfigRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.TaskQueueType task_queue_type = 4;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\TaskQueueType}
      * @return $this
      */
-    public function setTaskQueueType($var)
+    public function setTaskQueueType(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\TaskQueueType::class);
         $this->task_queue_type = $var;
@@ -225,9 +225,8 @@ class UpdateTaskQueueConfigRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflowservice\V1\UpdateTaskQueueConfigRequest\RateLimitUpdate $var
      * @return $this
      */
-    public function setUpdateQueueRateLimit($var)
+    public function setUpdateQueueRateLimit(\Temporal\Api\Workflowservice\V1\UpdateTaskQueueConfigRequest\RateLimitUpdate|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflowservice\V1\UpdateTaskQueueConfigRequest\RateLimitUpdate::class);
         $this->update_queue_rate_limit = $var;
 
         return $this;
@@ -265,9 +264,8 @@ class UpdateTaskQueueConfigRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflowservice\V1\UpdateTaskQueueConfigRequest\RateLimitUpdate $var
      * @return $this
      */
-    public function setUpdateFairnessKeyRateLimitDefault($var)
+    public function setUpdateFairnessKeyRateLimitDefault(\Temporal\Api\Workflowservice\V1\UpdateTaskQueueConfigRequest\RateLimitUpdate|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflowservice\V1\UpdateTaskQueueConfigRequest\RateLimitUpdate::class);
         $this->update_fairness_key_rate_limit_default = $var;
 
         return $this;
@@ -293,7 +291,7 @@ class UpdateTaskQueueConfigRequest extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setSetFairnessWeightOverrides($var)
+    public function setSetFairnessWeightOverrides(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::FLOAT);
         $this->set_fairness_weight_overrides = $arr;
@@ -323,7 +321,7 @@ class UpdateTaskQueueConfigRequest extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setUnsetFairnessWeightOverrides($var)
+    public function setUnsetFairnessWeightOverrides(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->unset_fairness_weight_overrides = $arr;

@@ -57,9 +57,9 @@ class NamespaceReplicationConfig extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setActiveClusterName($var)
+    public function setActiveClusterName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->active_cluster_name = $var;
 
         return $this;
@@ -79,7 +79,7 @@ class NamespaceReplicationConfig extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Replication\V1\ClusterReplicationConfig[] $var
      * @return $this
      */
-    public function setClusters($var)
+    public function setClusters(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Replication\V1\ClusterReplicationConfig::class);
         $this->clusters = $arr;
@@ -89,7 +89,7 @@ class NamespaceReplicationConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.ReplicationState state = 3;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ReplicationState}
      */
     public function getState()
     {
@@ -98,10 +98,10 @@ class NamespaceReplicationConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.ReplicationState state = 3;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ReplicationState}
      * @return $this
      */
-    public function setState($var)
+    public function setState(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ReplicationState::class);
         $this->state = $var;

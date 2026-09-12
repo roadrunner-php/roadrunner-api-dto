@@ -90,7 +90,7 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setHeader($var)
+    public function setHeader(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->header = $arr;
@@ -130,9 +130,8 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setScheduledTime($var)
+    public function setScheduledTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->scheduled_time = $var;
 
         return $this;
@@ -162,9 +161,8 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Nexus\V1\Request\Capabilities $var
      * @return $this
      */
-    public function setCapabilities($var)
+    public function setCapabilities(\Temporal\Api\Nexus\V1\Request\Capabilities|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\Request\Capabilities::class);
         $this->capabilities = $var;
 
         return $this;
@@ -189,9 +187,8 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Nexus\V1\StartOperationRequest $var
      * @return $this
      */
-    public function setStartOperation($var)
+    public function setStartOperation(\Temporal\Api\Nexus\V1\StartOperationRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\StartOperationRequest::class);
         $this->writeOneof(3, $var);
 
         return $this;
@@ -216,9 +213,8 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Nexus\V1\CancelOperationRequest $var
      * @return $this
      */
-    public function setCancelOperation($var)
+    public function setCancelOperation(\Temporal\Api\Nexus\V1\CancelOperationRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\CancelOperationRequest::class);
         $this->writeOneof(4, $var);
 
         return $this;
@@ -244,9 +240,9 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setEndpoint($var)
+    public function setEndpoint(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->endpoint = $var;
 
         return $this;

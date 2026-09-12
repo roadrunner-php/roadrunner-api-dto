@@ -75,9 +75,8 @@ class SendPushNotificationRequest extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\PushRecipient $var
      * @return $this
      */
-    public function setRecipient($var)
+    public function setRecipient(\RoadRunner\Centrifugal\API\DTO\V1\PushRecipient|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\PushRecipient::class);
         $this->recipient = $var;
 
         return $this;
@@ -107,9 +106,8 @@ class SendPushNotificationRequest extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\PushNotification $var
      * @return $this
      */
-    public function setNotification($var)
+    public function setNotification(\RoadRunner\Centrifugal\API\DTO\V1\PushNotification|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\PushNotification::class);
         $this->notification = $var;
 
         return $this;
@@ -133,9 +131,9 @@ class SendPushNotificationRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setUid($var)
+    public function setUid(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->uid = $var;
 
         return $this;
@@ -155,7 +153,7 @@ class SendPushNotificationRequest extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setSendAt($var)
+    public function setSendAt(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->send_at = $var;

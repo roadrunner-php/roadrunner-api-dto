@@ -47,7 +47,7 @@ class BatchResponse extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\Reply[] $var
      * @return $this
      */
-    public function setReplies($var)
+    public function setReplies(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\Centrifugal\API\DTO\V1\Reply::class);
         $this->replies = $arr;

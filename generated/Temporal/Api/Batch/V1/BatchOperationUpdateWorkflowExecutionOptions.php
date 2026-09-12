@@ -75,9 +75,9 @@ class BatchOperationUpdateWorkflowExecutionOptions extends \Google\Protobuf\Inte
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -111,9 +111,8 @@ class BatchOperationUpdateWorkflowExecutionOptions extends \Google\Protobuf\Inte
      * @param \Temporal\Api\Workflow\V1\WorkflowExecutionOptions $var
      * @return $this
      */
-    public function setWorkflowExecutionOptions($var)
+    public function setWorkflowExecutionOptions(\Temporal\Api\Workflow\V1\WorkflowExecutionOptions|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\WorkflowExecutionOptions::class);
         $this->workflow_execution_options = $var;
 
         return $this;
@@ -149,9 +148,8 @@ class BatchOperationUpdateWorkflowExecutionOptions extends \Google\Protobuf\Inte
      * @param \Google\Protobuf\FieldMask $var
      * @return $this
      */
-    public function setUpdateMask($var)
+    public function setUpdateMask(\Google\Protobuf\FieldMask|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\FieldMask::class);
         $this->update_mask = $var;
 
         return $this;

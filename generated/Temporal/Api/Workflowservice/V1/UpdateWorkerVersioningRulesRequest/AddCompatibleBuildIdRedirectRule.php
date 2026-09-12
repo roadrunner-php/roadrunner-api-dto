@@ -60,9 +60,8 @@ class AddCompatibleBuildIdRedirectRule extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\CompatibleBuildIdRedirectRule $var
      * @return $this
      */
-    public function setRule($var)
+    public function setRule(\Temporal\Api\Taskqueue\V1\CompatibleBuildIdRedirectRule|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\CompatibleBuildIdRedirectRule::class);
         $this->rule = $var;
 
         return $this;

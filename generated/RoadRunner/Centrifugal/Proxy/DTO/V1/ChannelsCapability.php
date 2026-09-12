@@ -57,7 +57,7 @@ class ChannelsCapability extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setChannels($var)
+    public function setChannels(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->channels = $arr;
@@ -79,7 +79,7 @@ class ChannelsCapability extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setAllow($var)
+    public function setAllow(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->allow = $arr;
@@ -101,9 +101,9 @@ class ChannelsCapability extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setMatch($var)
+    public function setMatch(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->match = $var;
 
         return $this;

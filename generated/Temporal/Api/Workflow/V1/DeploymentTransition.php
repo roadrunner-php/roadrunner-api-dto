@@ -71,9 +71,8 @@ class DeploymentTransition extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\Deployment $var
      * @return $this
      */
-    public function setDeployment($var)
+    public function setDeployment(\Temporal\Api\Deployment\V1\Deployment|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\Deployment::class);
         $this->deployment = $var;
 
         return $this;

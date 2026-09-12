@@ -73,10 +73,10 @@ class Async extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setOperationId($var)
+    public function setOperationId(string $var)
     {
         @trigger_error('operation_id is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->operation_id = $var;
 
         return $this;
@@ -96,7 +96,7 @@ class Async extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Nexus\V1\Link[] $var
      * @return $this
      */
-    public function setLinks($var)
+    public function setLinks(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Nexus\V1\Link::class);
         $this->links = $arr;
@@ -118,9 +118,9 @@ class Async extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setOperationToken($var)
+    public function setOperationToken(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->operation_token = $var;
 
         return $this;

@@ -62,9 +62,8 @@ class SubRefreshResult extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setExpired($var)
+    public function setExpired(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->expired = $var;
 
         return $this;
@@ -84,7 +83,7 @@ class SubRefreshResult extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setExpireAt($var)
+    public function setExpireAt(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->expire_at = $var;
@@ -106,9 +105,9 @@ class SubRefreshResult extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setInfo($var)
+    public function setInfo(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->info = $var;
 
         return $this;
@@ -128,9 +127,9 @@ class SubRefreshResult extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setB64Info($var)
+    public function setB64Info(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->b64info = $var;
 
         return $this;

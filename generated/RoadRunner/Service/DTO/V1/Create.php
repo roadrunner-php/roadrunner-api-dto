@@ -90,9 +90,9 @@ class Create extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setName($var)
+    public function setName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->name = $var;
 
         return $this;
@@ -112,9 +112,9 @@ class Create extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setCommand($var)
+    public function setCommand(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->command = $var;
 
         return $this;
@@ -134,7 +134,7 @@ class Create extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setProcessNum($var)
+    public function setProcessNum(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->process_num = $var;
@@ -156,7 +156,7 @@ class Create extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setExecTimeout($var)
+    public function setExecTimeout(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->exec_timeout = $var;
@@ -178,9 +178,8 @@ class Create extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setRemainAfterExit($var)
+    public function setRemainAfterExit(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->remain_after_exit = $var;
 
         return $this;
@@ -200,7 +199,7 @@ class Create extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setEnv($var)
+    public function setEnv(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->env = $arr;
@@ -222,7 +221,7 @@ class Create extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setRestartSec($var)
+    public function setRestartSec(int|string $var)
     {
         GPBUtil::checkUint64($var);
         $this->restart_sec = $var;
@@ -248,9 +247,8 @@ class Create extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setServiceNameInLogs($var)
+    public function setServiceNameInLogs(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->service_name_in_logs = $var;
 
         return $this;
@@ -270,7 +268,7 @@ class Create extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setTimeoutStopSec($var)
+    public function setTimeoutStopSec(int|string $var)
     {
         GPBUtil::checkUint64($var);
         $this->timeout_stop_sec = $var;

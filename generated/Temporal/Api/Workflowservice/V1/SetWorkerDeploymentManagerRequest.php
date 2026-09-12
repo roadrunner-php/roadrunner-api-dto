@@ -82,9 +82,9 @@ class SetWorkerDeploymentManagerRequest extends \Google\Protobuf\Internal\Messag
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -104,9 +104,9 @@ class SetWorkerDeploymentManagerRequest extends \Google\Protobuf\Internal\Messag
      * @param string $var
      * @return $this
      */
-    public function setDeploymentName($var)
+    public function setDeploymentName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->deployment_name = $var;
 
         return $this;
@@ -137,9 +137,9 @@ class SetWorkerDeploymentManagerRequest extends \Google\Protobuf\Internal\Messag
      * @param string $var
      * @return $this
      */
-    public function setManagerIdentity($var)
+    public function setManagerIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->writeOneof(3, $var);
 
         return $this;
@@ -168,9 +168,8 @@ class SetWorkerDeploymentManagerRequest extends \Google\Protobuf\Internal\Messag
      * @param bool $var
      * @return $this
      */
-    public function setSelf($var)
+    public function setSelf(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->writeOneof(4, $var);
 
         return $this;
@@ -200,9 +199,9 @@ class SetWorkerDeploymentManagerRequest extends \Google\Protobuf\Internal\Messag
      * @param string $var
      * @return $this
      */
-    public function setConflictToken($var)
+    public function setConflictToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->conflict_token = $var;
 
         return $this;
@@ -226,9 +225,9 @@ class SetWorkerDeploymentManagerRequest extends \Google\Protobuf\Internal\Messag
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;

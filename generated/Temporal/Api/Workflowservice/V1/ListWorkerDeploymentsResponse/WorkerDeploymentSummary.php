@@ -84,9 +84,9 @@ class WorkerDeploymentSummary extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setName($var)
+    public function setName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->name = $var;
 
         return $this;
@@ -116,9 +116,8 @@ class WorkerDeploymentSummary extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setCreateTime($var)
+    public function setCreateTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->create_time = $var;
 
         return $this;
@@ -148,9 +147,8 @@ class WorkerDeploymentSummary extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\RoutingConfig $var
      * @return $this
      */
-    public function setRoutingConfig($var)
+    public function setRoutingConfig(\Temporal\Api\Deployment\V1\RoutingConfig|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\RoutingConfig::class);
         $this->routing_config = $var;
 
         return $this;
@@ -184,9 +182,8 @@ class WorkerDeploymentSummary extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary $var
      * @return $this
      */
-    public function setLatestVersionSummary($var)
+    public function setLatestVersionSummary(\Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary::class);
         $this->latest_version_summary = $var;
 
         return $this;
@@ -220,9 +217,8 @@ class WorkerDeploymentSummary extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary $var
      * @return $this
      */
-    public function setCurrentVersionSummary($var)
+    public function setCurrentVersionSummary(\Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary::class);
         $this->current_version_summary = $var;
 
         return $this;
@@ -256,9 +252,8 @@ class WorkerDeploymentSummary extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary $var
      * @return $this
      */
-    public function setRampingVersionSummary($var)
+    public function setRampingVersionSummary(\Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentInfo\WorkerDeploymentVersionSummary::class);
         $this->ramping_version_summary = $var;
 
         return $this;

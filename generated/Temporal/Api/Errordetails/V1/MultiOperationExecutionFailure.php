@@ -62,7 +62,7 @@ class MultiOperationExecutionFailure extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Errordetails\V1\MultiOperationExecutionFailure\OperationStatus[] $var
      * @return $this
      */
-    public function setStatuses($var)
+    public function setStatuses(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Errordetails\V1\MultiOperationExecutionFailure\OperationStatus::class);
         $this->statuses = $arr;

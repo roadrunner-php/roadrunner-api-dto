@@ -150,22 +150,6 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * Generated from protobuf field <code>string worker_control_task_queue = 20;</code>
      */
     protected $worker_control_task_queue = '';
-    /**
-     * 0-indexed page number when the workflow task completion is split across multiple
-     * requests ("pages"). 0 for single-page requests. May only be set to non-zero value
-     * when the namespace capability workflow_task_completion_pagination is true.
-     *
-     * Generated from protobuf field <code>int32 page_number = 21;</code>
-     */
-    protected $page_number = 0;
-    /**
-     * True for non-final pages of a paginated workflow task completion. The final page's
-     * `page_number` tells the server how many intermediate pages (0..page_number-1) preceded it.
-     * May only be used when the namespace capability workflow_task_completion_pagination is true.
-     *
-     * Generated from protobuf field <code>bool intermediate_page = 22;</code>
-     */
-    protected $intermediate_page = false;
 
     /**
      * Constructor.
@@ -227,14 +211,6 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      *     @type string $worker_control_task_queue
      *           A dedicated per-worker Nexus task queue on which the server sends control
      *           tasks (e.g. activity cancellation) to this specific worker instance.
-     *     @type int $page_number
-     *           0-indexed page number when the workflow task completion is split across multiple
-     *           requests ("pages"). 0 for single-page requests. May only be set to non-zero value
-     *           when the namespace capability workflow_task_completion_pagination is true.
-     *     @type bool $intermediate_page
-     *           True for non-final pages of a paginated workflow task completion. The final page's
-     *           `page_number` tells the server how many intermediate pages (0..page_number-1) preceded it.
-     *           May only be used when the namespace capability workflow_task_completion_pagination is true.
      * }
      */
     public function __construct($data = NULL) {
@@ -260,9 +236,9 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * @param string $var
      * @return $this
      */
-    public function setTaskToken($var)
+    public function setTaskToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->task_token = $var;
 
         return $this;
@@ -286,7 +262,7 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * @param \Temporal\Api\Command\V1\Command[] $var
      * @return $this
      */
-    public function setCommands($var)
+    public function setCommands(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Command\V1\Command::class);
         $this->commands = $arr;
@@ -312,9 +288,9 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -350,9 +326,8 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * @param \Temporal\Api\Taskqueue\V1\StickyExecutionAttributes $var
      * @return $this
      */
-    public function setStickyAttributes($var)
+    public function setStickyAttributes(\Temporal\Api\Taskqueue\V1\StickyExecutionAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\StickyExecutionAttributes::class);
         $this->sticky_attributes = $var;
 
         return $this;
@@ -378,9 +353,8 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * @param bool $var
      * @return $this
      */
-    public function setReturnNewWorkflowTask($var)
+    public function setReturnNewWorkflowTask(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->return_new_workflow_task = $var;
 
         return $this;
@@ -410,9 +384,8 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * @param bool $var
      * @return $this
      */
-    public function setForceCreateNewWorkflowTask($var)
+    public function setForceCreateNewWorkflowTask(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->force_create_new_workflow_task = $var;
 
         return $this;
@@ -443,10 +416,10 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * @return $this
      * @deprecated
      */
-    public function setBinaryChecksum($var)
+    public function setBinaryChecksum(string $var)
     {
         @trigger_error('binary_checksum is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->binary_checksum = $var;
 
         return $this;
@@ -470,7 +443,7 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setQueryResults($var)
+    public function setQueryResults(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Query\V1\WorkflowQueryResult::class);
         $this->query_results = $arr;
@@ -492,9 +465,9 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -518,9 +491,9 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * @param string $var
      * @return $this
      */
-    public function setResourceId($var)
+    public function setResourceId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->resource_id = $var;
 
         return $this;
@@ -569,10 +542,9 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * @return $this
      * @deprecated
      */
-    public function setWorkerVersionStamp($var)
+    public function setWorkerVersionStamp(\Temporal\Api\Common\V1\WorkerVersionStamp|null $var)
     {
         @trigger_error('worker_version_stamp is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerVersionStamp::class);
         $this->worker_version_stamp = $var;
 
         return $this;
@@ -596,7 +568,7 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * @param \Temporal\Api\Protocol\V1\Message[] $var
      * @return $this
      */
-    public function setMessages($var)
+    public function setMessages(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Protocol\V1\Message::class);
         $this->messages = $arr;
@@ -634,9 +606,8 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * @param \Temporal\Api\Sdk\V1\WorkflowTaskCompletedMetadata $var
      * @return $this
      */
-    public function setSdkMetadata($var)
+    public function setSdkMetadata(\Temporal\Api\Sdk\V1\WorkflowTaskCompletedMetadata|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Sdk\V1\WorkflowTaskCompletedMetadata::class);
         $this->sdk_metadata = $var;
 
         return $this;
@@ -670,9 +641,8 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * @param \Temporal\Api\Common\V1\MeteringMetadata $var
      * @return $this
      */
-    public function setMeteringMetadata($var)
+    public function setMeteringMetadata(\Temporal\Api\Common\V1\MeteringMetadata|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\MeteringMetadata::class);
         $this->metering_metadata = $var;
 
         return $this;
@@ -706,9 +676,8 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * @param \Temporal\Api\Workflowservice\V1\RespondWorkflowTaskCompletedRequest\Capabilities $var
      * @return $this
      */
-    public function setCapabilities($var)
+    public function setCapabilities(\Temporal\Api\Workflowservice\V1\RespondWorkflowTaskCompletedRequest\Capabilities|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflowservice\V1\RespondWorkflowTaskCompletedRequest\Capabilities::class);
         $this->capabilities = $var;
 
         return $this;
@@ -755,10 +724,9 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * @return $this
      * @deprecated
      */
-    public function setDeployment($var)
+    public function setDeployment(\Temporal\Api\Deployment\V1\Deployment|null $var)
     {
         @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\Deployment::class);
         $this->deployment = $var;
 
         return $this;
@@ -769,7 +737,7 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * UNSPECIFIED means versioning is not enabled in the worker.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.VersioningBehavior versioning_behavior = 16;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\VersioningBehavior}
      */
     public function getVersioningBehavior()
     {
@@ -781,10 +749,10 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * UNSPECIFIED means versioning is not enabled in the worker.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.VersioningBehavior versioning_behavior = 16;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\VersioningBehavior}
      * @return $this
      */
-    public function setVersioningBehavior($var)
+    public function setVersioningBehavior(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\VersioningBehavior::class);
         $this->versioning_behavior = $var;
@@ -820,9 +788,8 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentOptions $var
      * @return $this
      */
-    public function setDeploymentOptions($var)
+    public function setDeploymentOptions(\Temporal\Api\Deployment\V1\WorkerDeploymentOptions|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentOptions::class);
         $this->deployment_options = $var;
 
         return $this;
@@ -848,9 +815,9 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * @param string $var
      * @return $this
      */
-    public function setWorkerInstanceKey($var)
+    public function setWorkerInstanceKey(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->worker_instance_key = $var;
 
         return $this;
@@ -876,70 +843,10 @@ class RespondWorkflowTaskCompletedRequest extends \Google\Protobuf\Internal\Mess
      * @param string $var
      * @return $this
      */
-    public function setWorkerControlTaskQueue($var)
+    public function setWorkerControlTaskQueue(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->worker_control_task_queue = $var;
-
-        return $this;
-    }
-
-    /**
-     * 0-indexed page number when the workflow task completion is split across multiple
-     * requests ("pages"). 0 for single-page requests. May only be set to non-zero value
-     * when the namespace capability workflow_task_completion_pagination is true.
-     *
-     * Generated from protobuf field <code>int32 page_number = 21;</code>
-     * @return int
-     */
-    public function getPageNumber()
-    {
-        return $this->page_number;
-    }
-
-    /**
-     * 0-indexed page number when the workflow task completion is split across multiple
-     * requests ("pages"). 0 for single-page requests. May only be set to non-zero value
-     * when the namespace capability workflow_task_completion_pagination is true.
-     *
-     * Generated from protobuf field <code>int32 page_number = 21;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setPageNumber($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->page_number = $var;
-
-        return $this;
-    }
-
-    /**
-     * True for non-final pages of a paginated workflow task completion. The final page's
-     * `page_number` tells the server how many intermediate pages (0..page_number-1) preceded it.
-     * May only be used when the namespace capability workflow_task_completion_pagination is true.
-     *
-     * Generated from protobuf field <code>bool intermediate_page = 22;</code>
-     * @return bool
-     */
-    public function getIntermediatePage()
-    {
-        return $this->intermediate_page;
-    }
-
-    /**
-     * True for non-final pages of a paginated workflow task completion. The final page's
-     * `page_number` tells the server how many intermediate pages (0..page_number-1) preceded it.
-     * May only be used when the namespace capability workflow_task_completion_pagination is true.
-     *
-     * Generated from protobuf field <code>bool intermediate_page = 22;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setIntermediatePage($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->intermediate_page = $var;
 
         return $this;
     }

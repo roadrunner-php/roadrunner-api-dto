@@ -96,9 +96,9 @@ class UpdateWorkflowExecutionOptionsRequest extends \Google\Protobuf\Internal\Me
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -136,9 +136,8 @@ class UpdateWorkflowExecutionOptionsRequest extends \Google\Protobuf\Internal\Me
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
      * @return $this
      */
-    public function setWorkflowExecution($var)
+    public function setWorkflowExecution(\Temporal\Api\Common\V1\WorkflowExecution|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->workflow_execution = $var;
 
         return $this;
@@ -172,9 +171,8 @@ class UpdateWorkflowExecutionOptionsRequest extends \Google\Protobuf\Internal\Me
      * @param \Temporal\Api\Workflow\V1\WorkflowExecutionOptions $var
      * @return $this
      */
-    public function setWorkflowExecutionOptions($var)
+    public function setWorkflowExecutionOptions(\Temporal\Api\Workflow\V1\WorkflowExecutionOptions|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\WorkflowExecutionOptions::class);
         $this->workflow_execution_options = $var;
 
         return $this;
@@ -210,9 +208,8 @@ class UpdateWorkflowExecutionOptionsRequest extends \Google\Protobuf\Internal\Me
      * @param \Google\Protobuf\FieldMask $var
      * @return $this
      */
-    public function setUpdateMask($var)
+    public function setUpdateMask(\Google\Protobuf\FieldMask|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\FieldMask::class);
         $this->update_mask = $var;
 
         return $this;
@@ -236,9 +233,9 @@ class UpdateWorkflowExecutionOptionsRequest extends \Google\Protobuf\Internal\Me
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;

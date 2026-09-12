@@ -162,7 +162,7 @@ class Message extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setId($var)
+    public function setId(int|string $var)
     {
         GPBUtil::checkUint64($var);
         $this->id = $var;
@@ -188,9 +188,9 @@ class Message extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setCommand($var)
+    public function setCommand(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->command = $var;
 
         return $this;
@@ -214,9 +214,9 @@ class Message extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setOptions($var)
+    public function setOptions(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->options = $var;
 
         return $this;
@@ -250,9 +250,8 @@ class Message extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
      */
-    public function setFailure($var)
+    public function setFailure(\Temporal\Api\Failure\V1\Failure|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
         $this->failure = $var;
 
         return $this;
@@ -286,9 +285,8 @@ class Message extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setPayloads($var)
+    public function setPayloads(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->payloads = $var;
 
         return $this;
@@ -322,9 +320,8 @@ class Message extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Header $var
      * @return $this
      */
-    public function setHeader($var)
+    public function setHeader(\Temporal\Api\Common\V1\Header|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Header::class);
         $this->header = $var;
 
         return $this;
@@ -348,7 +345,7 @@ class Message extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setHistoryLength($var)
+    public function setHistoryLength(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->history_length = $var;
@@ -374,9 +371,9 @@ class Message extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRunId($var)
+    public function setRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->run_id = $var;
 
         return $this;
@@ -400,9 +397,9 @@ class Message extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->task_queue = $var;
 
         return $this;
@@ -426,9 +423,9 @@ class Message extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTickTime($var)
+    public function setTickTime(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->tick_time = $var;
 
         return $this;
@@ -452,9 +449,8 @@ class Message extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setReplay($var)
+    public function setReplay(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->replay = $var;
 
         return $this;
@@ -478,9 +474,8 @@ class Message extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setContinueAsNewSuggested($var)
+    public function setContinueAsNewSuggested(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->continue_as_new_suggested = $var;
 
         return $this;
@@ -506,7 +501,7 @@ class Message extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setHistorySize($var)
+    public function setHistorySize(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->history_size = $var;
@@ -532,7 +527,7 @@ class Message extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setWwpid($var)
+    public function setWwpid(int|string $var)
     {
         GPBUtil::checkUint64($var);
         $this->wwpid = $var;

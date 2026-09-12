@@ -285,9 +285,8 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
      * @return $this
      */
-    public function setExecution($var)
+    public function setExecution(\Temporal\Api\Common\V1\WorkflowExecution|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->execution = $var;
 
         return $this;
@@ -317,9 +316,8 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\WorkflowType $var
      * @return $this
      */
-    public function setType($var)
+    public function setType(\Temporal\Api\Common\V1\WorkflowType|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowType::class);
         $this->type = $var;
 
         return $this;
@@ -349,9 +347,8 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setStartTime($var)
+    public function setStartTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->start_time = $var;
 
         return $this;
@@ -381,9 +378,8 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setCloseTime($var)
+    public function setCloseTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->close_time = $var;
 
         return $this;
@@ -391,7 +387,7 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowExecutionStatus status = 5;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\WorkflowExecutionStatus}
      */
     public function getStatus()
     {
@@ -400,10 +396,10 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowExecutionStatus status = 5;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\WorkflowExecutionStatus}
      * @return $this
      */
-    public function setStatus($var)
+    public function setStatus(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\WorkflowExecutionStatus::class);
         $this->status = $var;
@@ -425,7 +421,7 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setHistoryLength($var)
+    public function setHistoryLength(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->history_length = $var;
@@ -447,9 +443,9 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setParentNamespaceId($var)
+    public function setParentNamespaceId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->parent_namespace_id = $var;
 
         return $this;
@@ -479,9 +475,8 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
      * @return $this
      */
-    public function setParentExecution($var)
+    public function setParentExecution(\Temporal\Api\Common\V1\WorkflowExecution|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->parent_execution = $var;
 
         return $this;
@@ -511,9 +506,8 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setExecutionTime($var)
+    public function setExecutionTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->execution_time = $var;
 
         return $this;
@@ -543,9 +537,8 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Memo $var
      * @return $this
      */
-    public function setMemo($var)
+    public function setMemo(\Temporal\Api\Common\V1\Memo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Memo::class);
         $this->memo = $var;
 
         return $this;
@@ -575,9 +568,8 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\SearchAttributes $var
      * @return $this
      */
-    public function setSearchAttributes($var)
+    public function setSearchAttributes(\Temporal\Api\Common\V1\SearchAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\SearchAttributes::class);
         $this->search_attributes = $var;
 
         return $this;
@@ -607,9 +599,8 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflow\V1\ResetPoints $var
      * @return $this
      */
-    public function setAutoResetPoints($var)
+    public function setAutoResetPoints(\Temporal\Api\Workflow\V1\ResetPoints|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\ResetPoints::class);
         $this->auto_reset_points = $var;
 
         return $this;
@@ -629,9 +620,9 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->task_queue = $var;
 
         return $this;
@@ -651,7 +642,7 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setStateTransitionCount($var)
+    public function setStateTransitionCount(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->state_transition_count = $var;
@@ -673,7 +664,7 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setHistorySizeBytes($var)
+    public function setHistorySizeBytes(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->history_size_bytes = $var;
@@ -720,10 +711,9 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setMostRecentWorkerVersionStamp($var)
+    public function setMostRecentWorkerVersionStamp(\Temporal\Api\Common\V1\WorkerVersionStamp|null $var)
     {
         @trigger_error('most_recent_worker_version_stamp is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerVersionStamp::class);
         $this->most_recent_worker_version_stamp = $var;
 
         return $this;
@@ -759,9 +749,8 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setExecutionDuration($var)
+    public function setExecutionDuration(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->execution_duration = $var;
 
         return $this;
@@ -825,9 +814,8 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
      * @return $this
      */
-    public function setRootExecution($var)
+    public function setRootExecution(\Temporal\Api\Common\V1\WorkflowExecution|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->root_execution = $var;
 
         return $this;
@@ -868,10 +856,10 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setAssignedBuildId($var)
+    public function setAssignedBuildId(string $var)
     {
         @trigger_error('assigned_build_id is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->assigned_build_id = $var;
 
         return $this;
@@ -904,10 +892,10 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setInheritedBuildId($var)
+    public function setInheritedBuildId(string $var)
     {
         @trigger_error('inherited_build_id is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->inherited_build_id = $var;
 
         return $this;
@@ -941,9 +929,9 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setFirstRunId($var)
+    public function setFirstRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->first_run_id = $var;
 
         return $this;
@@ -981,9 +969,8 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflow\V1\WorkflowExecutionVersioningInfo $var
      * @return $this
      */
-    public function setVersioningInfo($var)
+    public function setVersioningInfo(\Temporal\Api\Workflow\V1\WorkflowExecutionVersioningInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\WorkflowExecutionVersioningInfo::class);
         $this->versioning_info = $var;
 
         return $this;
@@ -1007,9 +994,9 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setWorkerDeploymentName($var)
+    public function setWorkerDeploymentName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->worker_deployment_name = $var;
 
         return $this;
@@ -1043,9 +1030,8 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Priority $var
      * @return $this
      */
-    public function setPriority($var)
+    public function setPriority(\Temporal\Api\Common\V1\Priority|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Priority::class);
         $this->priority = $var;
 
         return $this;
@@ -1069,7 +1055,7 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setExternalPayloadSizeBytes($var)
+    public function setExternalPayloadSizeBytes(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->external_payload_size_bytes = $var;
@@ -1095,7 +1081,7 @@ class WorkflowExecutionInfo extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setExternalPayloadCount($var)
+    public function setExternalPayloadCount(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->external_payload_count = $var;

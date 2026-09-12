@@ -52,7 +52,7 @@ class ListSchedulesResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Schedule\V1\ScheduleListEntry[] $var
      * @return $this
      */
-    public function setSchedules($var)
+    public function setSchedules(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Schedule\V1\ScheduleListEntry::class);
         $this->schedules = $arr;
@@ -74,9 +74,9 @@ class ListSchedulesResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNextPageToken($var)
+    public function setNextPageToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->next_page_token = $var;
 
         return $this;

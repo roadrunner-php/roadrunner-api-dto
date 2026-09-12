@@ -59,7 +59,7 @@ class ListClustersResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Operatorservice\V1\ClusterMetadata[] $var
      * @return $this
      */
-    public function setClusters($var)
+    public function setClusters(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Operatorservice\V1\ClusterMetadata::class);
         $this->clusters = $arr;
@@ -81,9 +81,9 @@ class ListClustersResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNextPageToken($var)
+    public function setNextPageToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->next_page_token = $var;
 
         return $this;

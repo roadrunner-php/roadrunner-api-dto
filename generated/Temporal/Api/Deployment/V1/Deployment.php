@@ -85,9 +85,9 @@ class Deployment extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSeriesName($var)
+    public function setSeriesName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->series_name = $var;
 
         return $this;
@@ -113,9 +113,9 @@ class Deployment extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setBuildId($var)
+    public function setBuildId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->build_id = $var;
 
         return $this;

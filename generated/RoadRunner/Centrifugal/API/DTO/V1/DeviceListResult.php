@@ -57,7 +57,7 @@ class DeviceListResult extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\Device[] $var
      * @return $this
      */
-    public function setItems($var)
+    public function setItems(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\Centrifugal\API\DTO\V1\Device::class);
         $this->items = $arr;
@@ -79,9 +79,9 @@ class DeviceListResult extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNextCursor($var)
+    public function setNextCursor(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->next_cursor = $var;
 
         return $this;
@@ -101,7 +101,7 @@ class DeviceListResult extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setTotalCount($var)
+    public function setTotalCount(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->total_count = $var;

@@ -10,8 +10,6 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
- * Deprecated. Use `UpdateActivityExecutionOptionsResponse`.
- *
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.UpdateActivityOptionsResponse</code>
  */
 class UpdateActivityOptionsResponse extends \Google\Protobuf\Internal\Message
@@ -66,9 +64,8 @@ class UpdateActivityOptionsResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Activity\V1\ActivityOptions $var
      * @return $this
      */
-    public function setActivityOptions($var)
+    public function setActivityOptions(\Temporal\Api\Activity\V1\ActivityOptions|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Activity\V1\ActivityOptions::class);
         $this->activity_options = $var;
 
         return $this;

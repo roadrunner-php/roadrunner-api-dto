@@ -107,9 +107,9 @@ class UpdateWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -147,9 +147,8 @@ class UpdateWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
      * @return $this
      */
-    public function setWorkflowExecution($var)
+    public function setWorkflowExecution(\Temporal\Api\Common\V1\WorkflowExecution|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->workflow_execution = $var;
 
         return $this;
@@ -177,9 +176,9 @@ class UpdateWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setFirstExecutionRunId($var)
+    public function setFirstExecutionRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->first_execution_run_id = $var;
 
         return $this;
@@ -221,9 +220,8 @@ class UpdateWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Update\V1\WaitPolicy $var
      * @return $this
      */
-    public function setWaitPolicy($var)
+    public function setWaitPolicy(\Temporal\Api\Update\V1\WaitPolicy|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Update\V1\WaitPolicy::class);
         $this->wait_policy = $var;
 
         return $this;
@@ -259,9 +257,8 @@ class UpdateWorkflowExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Update\V1\Request $var
      * @return $this
      */
-    public function setRequest($var)
+    public function setRequest(\Temporal\Api\Update\V1\Request|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Update\V1\Request::class);
         $this->request = $var;
 
         return $this;

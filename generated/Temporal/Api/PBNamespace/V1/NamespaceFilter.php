@@ -62,9 +62,8 @@ class NamespaceFilter extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setIncludeDeleted($var)
+    public function setIncludeDeleted(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->include_deleted = $var;
 
         return $this;

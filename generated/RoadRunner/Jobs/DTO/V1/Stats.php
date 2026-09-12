@@ -47,7 +47,7 @@ class Stats extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Jobs\DTO\V1\Stat[] $var
      * @return $this
      */
-    public function setStats($var)
+    public function setStats(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\Jobs\DTO\V1\Stat::class);
         $this->stats = $arr;

@@ -67,14 +67,6 @@ class ActivityOptions extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 7;</code>
      */
     protected $priority = null;
-    /**
-     * Time to wait before making the first activity task available for dispatch. This delay is not applied to retry attempts.
-     * When updated, the time is added to the original `schedule_time`, not to the current time.
-     * If the resulting time is in the past, the task is made available for dispatch immediately.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Duration start_delay = 8;</code>
-     */
-    protected $start_delay = null;
 
     /**
      * Constructor.
@@ -108,10 +100,6 @@ class ActivityOptions extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Common\V1\Priority $priority
      *           Priority metadata. If this message is not present, or any fields are not
      *           present, they inherit the values from the workflow.
-     *     @type \Google\Protobuf\Duration $start_delay
-     *           Time to wait before making the first activity task available for dispatch. This delay is not applied to retry attempts.
-     *           When updated, the time is added to the original `schedule_time`, not to the current time.
-     *           If the resulting time is in the past, the task is made available for dispatch immediately.
      * }
      */
     public function __construct($data = NULL) {
@@ -143,9 +131,8 @@ class ActivityOptions extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\TaskQueue $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(\Temporal\Api\Taskqueue\V1\TaskQueue|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueue::class);
         $this->task_queue = $var;
 
         return $this;
@@ -185,9 +172,8 @@ class ActivityOptions extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setScheduleToCloseTimeout($var)
+    public function setScheduleToCloseTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->schedule_to_close_timeout = $var;
 
         return $this;
@@ -231,9 +217,8 @@ class ActivityOptions extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setScheduleToStartTimeout($var)
+    public function setScheduleToStartTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->schedule_to_start_timeout = $var;
 
         return $this;
@@ -275,9 +260,8 @@ class ActivityOptions extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setStartToCloseTimeout($var)
+    public function setStartToCloseTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->start_to_close_timeout = $var;
 
         return $this;
@@ -311,9 +295,8 @@ class ActivityOptions extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setHeartbeatTimeout($var)
+    public function setHeartbeatTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->heartbeat_timeout = $var;
 
         return $this;
@@ -347,9 +330,8 @@ class ActivityOptions extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\RetryPolicy $var
      * @return $this
      */
-    public function setRetryPolicy($var)
+    public function setRetryPolicy(\Temporal\Api\Common\V1\RetryPolicy|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\RetryPolicy::class);
         $this->retry_policy = $var;
 
         return $this;
@@ -385,50 +367,9 @@ class ActivityOptions extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Priority $var
      * @return $this
      */
-    public function setPriority($var)
+    public function setPriority(\Temporal\Api\Common\V1\Priority|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Priority::class);
         $this->priority = $var;
-
-        return $this;
-    }
-
-    /**
-     * Time to wait before making the first activity task available for dispatch. This delay is not applied to retry attempts.
-     * When updated, the time is added to the original `schedule_time`, not to the current time.
-     * If the resulting time is in the past, the task is made available for dispatch immediately.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Duration start_delay = 8;</code>
-     * @return \Google\Protobuf\Duration|null
-     */
-    public function getStartDelay()
-    {
-        return $this->start_delay;
-    }
-
-    public function hasStartDelay()
-    {
-        return isset($this->start_delay);
-    }
-
-    public function clearStartDelay()
-    {
-        unset($this->start_delay);
-    }
-
-    /**
-     * Time to wait before making the first activity task available for dispatch. This delay is not applied to retry attempts.
-     * When updated, the time is added to the original `schedule_time`, not to the current time.
-     * If the resulting time is in the past, the task is made available for dispatch immediately.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Duration start_delay = 8;</code>
-     * @param \Google\Protobuf\Duration $var
-     * @return $this
-     */
-    public function setStartDelay($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
-        $this->start_delay = $var;
 
         return $this;
     }

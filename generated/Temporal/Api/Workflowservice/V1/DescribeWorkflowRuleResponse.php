@@ -64,9 +64,8 @@ class DescribeWorkflowRuleResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Rules\V1\WorkflowRule $var
      * @return $this
      */
-    public function setRule($var)
+    public function setRule(\Temporal\Api\Rules\V1\WorkflowRule|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Rules\V1\WorkflowRule::class);
         $this->rule = $var;
 
         return $this;

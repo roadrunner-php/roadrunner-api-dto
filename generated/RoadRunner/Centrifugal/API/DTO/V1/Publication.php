@@ -69,9 +69,9 @@ class Publication extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setData($var)
+    public function setData(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->data = $var;
 
         return $this;
@@ -101,9 +101,8 @@ class Publication extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\ClientInfo $var
      * @return $this
      */
-    public function setInfo($var)
+    public function setInfo(\RoadRunner\Centrifugal\API\DTO\V1\ClientInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\ClientInfo::class);
         $this->info = $var;
 
         return $this;
@@ -123,7 +122,7 @@ class Publication extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setOffset($var)
+    public function setOffset(int|string $var)
     {
         GPBUtil::checkUint64($var);
         $this->offset = $var;
@@ -145,7 +144,7 @@ class Publication extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setTags($var)
+    public function setTags(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->tags = $arr;

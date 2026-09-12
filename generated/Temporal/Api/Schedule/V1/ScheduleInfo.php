@@ -85,12 +85,6 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
      * @deprecated
      */
     protected $invalid_schedule_error = '';
-    /**
-     * Size of the schedule's internal state (including payloads) in bytes.
-     *
-     * Generated from protobuf field <code>int64 state_size_bytes = 12;</code>
-     */
-    protected $state_size_bytes = 0;
 
     /**
      * Constructor.
@@ -125,8 +119,6 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $update_time
      *     @type string $invalid_schedule_error
      *           Deprecated.
-     *     @type int|string $state_size_bytes
-     *           Size of the schedule's internal state (including payloads) in bytes.
      * }
      */
     public function __construct($data = NULL) {
@@ -152,7 +144,7 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setActionCount($var)
+    public function setActionCount(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->action_count = $var;
@@ -178,7 +170,7 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setMissedCatchupWindow($var)
+    public function setMissedCatchupWindow(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->missed_catchup_window = $var;
@@ -204,7 +196,7 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setOverlapSkipped($var)
+    public function setOverlapSkipped(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->overlap_skipped = $var;
@@ -230,7 +222,7 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setBufferDropped($var)
+    public function setBufferDropped(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->buffer_dropped = $var;
@@ -260,7 +252,7 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setBufferSize($var)
+    public function setBufferSize(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->buffer_size = $var;
@@ -294,7 +286,7 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\WorkflowExecution[] $var
      * @return $this
      */
-    public function setRunningWorkflows($var)
+    public function setRunningWorkflows(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->running_workflows = $arr;
@@ -320,7 +312,7 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Schedule\V1\ScheduleActionResult[] $var
      * @return $this
      */
-    public function setRecentActions($var)
+    public function setRecentActions(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Schedule\V1\ScheduleActionResult::class);
         $this->recent_actions = $arr;
@@ -346,7 +338,7 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp[] $var
      * @return $this
      */
-    public function setFutureActionTimes($var)
+    public function setFutureActionTimes(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Protobuf\Timestamp::class);
         $this->future_action_times = $arr;
@@ -382,9 +374,8 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setCreateTime($var)
+    public function setCreateTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->create_time = $var;
 
         return $this;
@@ -414,9 +405,8 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setUpdateTime($var)
+    public function setUpdateTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->update_time = $var;
 
         return $this;
@@ -445,37 +435,11 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setInvalidScheduleError($var)
+    public function setInvalidScheduleError(string $var)
     {
         @trigger_error('invalid_schedule_error is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->invalid_schedule_error = $var;
-
-        return $this;
-    }
-
-    /**
-     * Size of the schedule's internal state (including payloads) in bytes.
-     *
-     * Generated from protobuf field <code>int64 state_size_bytes = 12;</code>
-     * @return int|string
-     */
-    public function getStateSizeBytes()
-    {
-        return $this->state_size_bytes;
-    }
-
-    /**
-     * Size of the schedule's internal state (including payloads) in bytes.
-     *
-     * Generated from protobuf field <code>int64 state_size_bytes = 12;</code>
-     * @param int|string $var
-     * @return $this
-     */
-    public function setStateSizeBytes($var)
-    {
-        GPBUtil::checkInt64($var);
-        $this->state_size_bytes = $var;
 
         return $this;
     }

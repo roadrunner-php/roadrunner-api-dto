@@ -986,7 +986,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
 
     /**
      * Deprecated. Use `UpdateWorkerVersioningRules`.
-     * Will be removed in server version v1.32.0.
      *
      * Allows users to specify sets of worker build id versions on a per task queue basis. Versions
      * are ordered, and may be either compatible with some extant version, or a new incompatible
@@ -1018,7 +1017,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
 
     /**
      * Deprecated. Use `GetWorkerVersioningRules`.
-     * Will be removed in server version v1.32.0.
      * Fetches the worker build id versioning sets for a task queue.
      * @param \Temporal\Api\Workflowservice\V1\GetWorkerBuildIdCompatibilityRequest $argument input argument
      * @param array $metadata metadata
@@ -1055,7 +1053,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * the target Build ID of a redirect rule is able to process event histories made by the source
      * Build ID by using [Patching](https://docs.temporal.io/workflows#patching) or other means.
      *
-     * Will be removed in server version v1.32.0.
+     * WARNING: Worker Versioning is not yet stable and the API and behavior may change incompatibly.
      * (-- api-linter: core::0127::http-annotation=disabled
      *     aip.dev/not-precedent: We do yet expose versioning API to HTTP. --)
      * @param \Temporal\Api\Workflowservice\V1\UpdateWorkerVersioningRulesRequest $argument input argument
@@ -1073,7 +1071,7 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
 
     /**
      * Fetches the Build ID assignment and redirect rules for a Task Queue.
-     * Will be removed in server version v1.32.0.
+     * WARNING: Worker Versioning is not yet stable and the API and behavior may change incompatibly.
      * @param \Temporal\Api\Workflowservice\V1\GetWorkerVersioningRulesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -1089,7 +1087,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
 
     /**
      * Deprecated. Use `DescribeTaskQueue`.
-     * Will be removed in server version v1.32.0.
      *
      * Fetches task reachability to determine whether a worker may be retired.
      * The request may specify task queues to query for or let the server fetch all task queues mapped to the given
@@ -1816,21 +1813,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * CountWorkers counts the number of workers in a specific namespace.
-     * @param \Temporal\Api\Workflowservice\V1\CountWorkersRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function CountWorkers(\Temporal\Api\Workflowservice\V1\CountWorkersRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/CountWorkers',
-        $argument,
-        ['\Temporal\Api\Workflowservice\V1\CountWorkersResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
      * Updates task queue configuration.
      * For the overall queue rate limit: the rate limit set by this api overrides the worker-set rate limit,
      * which uncouples the rate limit from the worker lifecycle.
@@ -1955,24 +1937,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * StartNexusOperationExecution starts a new Nexus operation.
-     *
-     * Returns a `NexusOperationExecutionAlreadyStarted` error if an instance already exists with same operation ID in this
-     * namespace unless permitted by the specified ID conflict policy.
-     * @param \Temporal\Api\Workflowservice\V1\StartNexusOperationExecutionRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function StartNexusOperationExecution(\Temporal\Api\Workflowservice\V1\StartNexusOperationExecutionRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/StartNexusOperationExecution',
-        $argument,
-        ['\Temporal\Api\Workflowservice\V1\StartNexusOperationExecutionResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
      * DescribeActivityExecution returns information about an activity execution.
      * It can be used to:
      * - Get current activity info without waiting
@@ -1988,25 +1952,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/DescribeActivityExecution',
         $argument,
         ['\Temporal\Api\Workflowservice\V1\DescribeActivityExecutionResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * DescribeNexusOperationExecution returns information about a Nexus operation.
-     * Supported use cases include:
-     * - Get current operation info without waiting
-     * - Long-poll for next state change and return new operation info
-     * Response can optionally include operation input or outcome (if the operation has completed).
-     * @param \Temporal\Api\Workflowservice\V1\DescribeNexusOperationExecutionRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function DescribeNexusOperationExecution(\Temporal\Api\Workflowservice\V1\DescribeNexusOperationExecutionRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/DescribeNexusOperationExecution',
-        $argument,
-        ['\Temporal\Api\Workflowservice\V1\DescribeNexusOperationExecutionResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -2027,22 +1972,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * PollNexusOperationExecution long-polls for a Nexus operation for a given wait stage to complete and returns
-     * the outcome (result or failure).
-     * @param \Temporal\Api\Workflowservice\V1\PollNexusOperationExecutionRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function PollNexusOperationExecution(\Temporal\Api\Workflowservice\V1\PollNexusOperationExecutionRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/PollNexusOperationExecution',
-        $argument,
-        ['\Temporal\Api\Workflowservice\V1\PollNexusOperationExecutionResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
      * ListActivityExecutions is a visibility API to list activity executions in a specific namespace.
      * @param \Temporal\Api\Workflowservice\V1\ListActivityExecutionsRequest $argument input argument
      * @param array $metadata metadata
@@ -2058,21 +1987,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * ListNexusOperationExecutions is a visibility API to list Nexus operations in a specific namespace.
-     * @param \Temporal\Api\Workflowservice\V1\ListNexusOperationExecutionsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function ListNexusOperationExecutions(\Temporal\Api\Workflowservice\V1\ListNexusOperationExecutionsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ListNexusOperationExecutions',
-        $argument,
-        ['\Temporal\Api\Workflowservice\V1\ListNexusOperationExecutionsResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
      * CountActivityExecutions is a visibility API to count activity executions in a specific namespace.
      * @param \Temporal\Api\Workflowservice\V1\CountActivityExecutionsRequest $argument input argument
      * @param array $metadata metadata
@@ -2084,21 +1998,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/CountActivityExecutions',
         $argument,
         ['\Temporal\Api\Workflowservice\V1\CountActivityExecutionsResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * CountNexusOperationExecutions is a visibility API to count Nexus operations in a specific namespace.
-     * @param \Temporal\Api\Workflowservice\V1\CountNexusOperationExecutionsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function CountNexusOperationExecutions(\Temporal\Api\Workflowservice\V1\CountNexusOperationExecutionsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/CountNexusOperationExecutions',
-        $argument,
-        ['\Temporal\Api\Workflowservice\V1\CountNexusOperationExecutionsResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -2119,25 +2018,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RequestCancelActivityExecution',
         $argument,
         ['\Temporal\Api\Workflowservice\V1\RequestCancelActivityExecutionResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * RequestCancelNexusOperationExecution requests cancellation of a Nexus operation.
-     *
-     * Requesting to cancel an operation does not automatically transition the operation to canceled status.
-     * The operation will only transition to canceled status if it supports cancellation and the handler
-     * processes the cancellation request.
-     * @param \Temporal\Api\Workflowservice\V1\RequestCancelNexusOperationExecutionRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function RequestCancelNexusOperationExecution(\Temporal\Api\Workflowservice\V1\RequestCancelNexusOperationExecutionRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/RequestCancelNexusOperationExecution',
-        $argument,
-        ['\Temporal\Api\Workflowservice\V1\RequestCancelNexusOperationExecutionResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -2177,149 +2057,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/DeleteActivityExecution',
         $argument,
         ['\Temporal\Api\Workflowservice\V1\DeleteActivityExecutionResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * PauseActivityExecution pauses the execution of an activity specified by its ID.
-     * This API can be used to target a workflow activity or a standalone activity
-     *
-     * Pausing an activity means:
-     * - If the activity is currently waiting for a retry or is running and subsequently fails,
-     *   it will not be rescheduled until it is unpaused.
-     * - If the activity is already paused, calling this method will have no effect.
-     * - If the activity is running and finishes successfully, the activity will be completed.
-     * - If the activity is running and finishes with failure:
-     *   * if there is no retry left - the activity will be completed.
-     *   * if there are more retries left - the activity will be paused.
-     * For long-running activities:
-     * - activities in paused state will send a cancellation with "activity_paused" set to 'true' in response to 'RecordActivityTaskHeartbeat'.
-     *
-     * Returns a `NotFound` error if there is no pending activity with the provided ID
-     * @param \Temporal\Api\Workflowservice\V1\PauseActivityExecutionRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function PauseActivityExecution(\Temporal\Api\Workflowservice\V1\PauseActivityExecutionRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/PauseActivityExecution',
-        $argument,
-        ['\Temporal\Api\Workflowservice\V1\PauseActivityExecutionResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * ResetActivityExecution resets the execution of an activity specified by its ID.
-     * This API can be used to target a workflow activity or a standalone activity.
-     *
-     * Resetting an activity means:
-     * * number of attempts will be reset to 0.
-     * * activity timeouts will be reset.
-     * * if the activity is waiting for retry, and it is not paused or 'keep_paused' is not provided:
-     *    it will be scheduled immediately (* see 'jitter' flag)
-     *
-     * Returns a `NotFound` error if there is no pending activity with the provided ID or type.
-     * @param \Temporal\Api\Workflowservice\V1\ResetActivityExecutionRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function ResetActivityExecution(\Temporal\Api\Workflowservice\V1\ResetActivityExecutionRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/ResetActivityExecution',
-        $argument,
-        ['\Temporal\Api\Workflowservice\V1\ResetActivityExecutionResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * UnpauseActivityExecution unpauses the execution of an activity specified by its ID.
-     * This API can be used to target a workflow activity or a standalone activity.
-     *
-     * If activity is not paused, this call will have no effect.
-     * If the activity was paused while waiting for retry, it will be scheduled immediately (* see 'jitter' flag).
-     * Once the activity is unpaused, all timeout timers will be regenerated.
-     *
-     * Returns a `NotFound` error if there is no pending activity with the provided ID
-     * @param \Temporal\Api\Workflowservice\V1\UnpauseActivityExecutionRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function UnpauseActivityExecution(\Temporal\Api\Workflowservice\V1\UnpauseActivityExecutionRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/UnpauseActivityExecution',
-        $argument,
-        ['\Temporal\Api\Workflowservice\V1\UnpauseActivityExecutionResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * UpdateActivityExecutionOptions is called by the client to update the options of an activity by its ID.
-     * This API can be used to target a workflow activity or a standalone activity.
-     * @param \Temporal\Api\Workflowservice\V1\UpdateActivityExecutionOptionsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function UpdateActivityExecutionOptions(\Temporal\Api\Workflowservice\V1\UpdateActivityExecutionOptionsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/UpdateActivityExecutionOptions',
-        $argument,
-        ['\Temporal\Api\Workflowservice\V1\UpdateActivityExecutionOptionsResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * TerminateNexusOperationExecution terminates an existing Nexus operation immediately.
-     *
-     * Termination happens immediately and the operation handler cannot react to it. A terminated operation will have
-     * its outcome set to a failure with a termination reason.
-     * @param \Temporal\Api\Workflowservice\V1\TerminateNexusOperationExecutionRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function TerminateNexusOperationExecution(\Temporal\Api\Workflowservice\V1\TerminateNexusOperationExecutionRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/TerminateNexusOperationExecution',
-        $argument,
-        ['\Temporal\Api\Workflowservice\V1\TerminateNexusOperationExecutionResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * DeleteNexusOperationExecution asynchronously deletes a specific Nexus operation run (when
-     * run_id is provided) or the latest run (when run_id is not provided). If the operation
-     * is running, it will be terminated before deletion.
-     *
-     * (-- api-linter: core::0127::http-annotation=disabled
-     *     aip.dev/not-precedent: Nexus operation deletion not exposed to HTTP, users should use cancel or terminate. --)
-     * @param \Temporal\Api\Workflowservice\V1\DeleteNexusOperationExecutionRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function DeleteNexusOperationExecution(\Temporal\Api\Workflowservice\V1\DeleteNexusOperationExecutionRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/DeleteNexusOperationExecution',
-        $argument,
-        ['\Temporal\Api\Workflowservice\V1\DeleteNexusOperationExecutionResponse', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * @param \Temporal\Api\Workflowservice\V1\PollWorkflowExecutionTimeSkippingRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function PollWorkflowExecutionTimeSkipping(\Temporal\Api\Workflowservice\V1\PollWorkflowExecutionTimeSkippingRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/temporal.api.workflowservice.v1.WorkflowService/PollWorkflowExecutionTimeSkipping',
-        $argument,
-        ['\Temporal\Api\Workflowservice\V1\PollWorkflowExecutionTimeSkippingResponse', 'decode'],
         $metadata, $options);
     }
 

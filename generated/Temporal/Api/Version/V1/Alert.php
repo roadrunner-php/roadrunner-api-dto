@@ -54,9 +54,9 @@ class Alert extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setMessage($var)
+    public function setMessage(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->message = $var;
 
         return $this;
@@ -64,7 +64,7 @@ class Alert extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.Severity severity = 2;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\Severity}
      */
     public function getSeverity()
     {
@@ -73,10 +73,10 @@ class Alert extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.Severity severity = 2;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\Severity}
      * @return $this
      */
-    public function setSeverity($var)
+    public function setSeverity(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\Severity::class);
         $this->severity = $var;

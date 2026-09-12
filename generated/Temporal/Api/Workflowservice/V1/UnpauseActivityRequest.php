@@ -10,8 +10,6 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
- * Deprecated. Use `UnpauseActivityExecutionRequest`.
- *
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.UnpauseActivityRequest</code>
  */
 class UnpauseActivityRequest extends \Google\Protobuf\Internal\Message
@@ -103,9 +101,9 @@ class UnpauseActivityRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -139,9 +137,8 @@ class UnpauseActivityRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
      * @return $this
      */
-    public function setExecution($var)
+    public function setExecution(\Temporal\Api\Common\V1\WorkflowExecution|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->execution = $var;
 
         return $this;
@@ -165,9 +162,9 @@ class UnpauseActivityRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -196,9 +193,9 @@ class UnpauseActivityRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->writeOneof(4, $var);
 
         return $this;
@@ -227,9 +224,9 @@ class UnpauseActivityRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setType($var)
+    public function setType(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->writeOneof(5, $var);
 
         return $this;
@@ -258,9 +255,8 @@ class UnpauseActivityRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setUnpauseAll($var)
+    public function setUnpauseAll(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->writeOneof(6, $var);
 
         return $this;
@@ -284,9 +280,8 @@ class UnpauseActivityRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setResetAttempts($var)
+    public function setResetAttempts(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->reset_attempts = $var;
 
         return $this;
@@ -310,9 +305,8 @@ class UnpauseActivityRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setResetHeartbeat($var)
+    public function setResetHeartbeat(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->reset_heartbeat = $var;
 
         return $this;
@@ -346,9 +340,8 @@ class UnpauseActivityRequest extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setJitter($var)
+    public function setJitter(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->jitter = $var;
 
         return $this;

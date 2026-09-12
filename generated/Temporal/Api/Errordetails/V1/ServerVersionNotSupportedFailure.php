@@ -52,9 +52,9 @@ class ServerVersionNotSupportedFailure extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setServerVersion($var)
+    public function setServerVersion(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->server_version = $var;
 
         return $this;
@@ -74,9 +74,9 @@ class ServerVersionNotSupportedFailure extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setClientSupportedServerVersions($var)
+    public function setClientSupportedServerVersions(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->client_supported_server_versions = $var;
 
         return $this;

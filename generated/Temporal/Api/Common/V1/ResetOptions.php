@@ -98,9 +98,8 @@ class ResetOptions extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\GPBEmpty $var
      * @return $this
      */
-    public function setFirstWorkflowTask($var)
+    public function setFirstWorkflowTask(\Google\Protobuf\GPBEmpty|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\GPBEmpty::class);
         $this->writeOneof(1, $var);
 
         return $this;
@@ -129,9 +128,8 @@ class ResetOptions extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\GPBEmpty $var
      * @return $this
      */
-    public function setLastWorkflowTask($var)
+    public function setLastWorkflowTask(\Google\Protobuf\GPBEmpty|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\GPBEmpty::class);
         $this->writeOneof(2, $var);
 
         return $this;
@@ -164,7 +162,7 @@ class ResetOptions extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setWorkflowTaskId($var)
+    public function setWorkflowTaskId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->writeOneof(3, $var);
@@ -203,9 +201,9 @@ class ResetOptions extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setBuildId($var)
+    public function setBuildId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->writeOneof(4, $var);
 
         return $this;
@@ -216,7 +214,7 @@ class ResetOptions extends \Google\Protobuf\Internal\Message
      * Default: RESET_REAPPLY_TYPE_SIGNAL
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 10 [deprecated = true];</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ResetReapplyType}
      * @deprecated
      */
     public function getResetReapplyType()
@@ -232,11 +230,11 @@ class ResetOptions extends \Google\Protobuf\Internal\Message
      * Default: RESET_REAPPLY_TYPE_SIGNAL
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ResetReapplyType reset_reapply_type = 10 [deprecated = true];</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ResetReapplyType}
      * @return $this
      * @deprecated
      */
-    public function setResetReapplyType($var)
+    public function setResetReapplyType(int $var)
     {
         @trigger_error('reset_reapply_type is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ResetReapplyType::class);
@@ -265,9 +263,8 @@ class ResetOptions extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setCurrentRunOnly($var)
+    public function setCurrentRunOnly(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->current_run_only = $var;
 
         return $this;
@@ -277,7 +274,7 @@ class ResetOptions extends \Google\Protobuf\Internal\Message
      * Event types not to be reapplied
      *
      * Generated from protobuf field <code>repeated .temporal.api.enums.v1.ResetReapplyExcludeType reset_reapply_exclude_types = 12;</code>
-     * @return RepeatedField<int>
+     * @return RepeatedField<int> one of the values in {@see \Temporal\Api\Enums\V1\ResetReapplyExcludeType}
      */
     public function getResetReapplyExcludeTypes()
     {
@@ -288,10 +285,10 @@ class ResetOptions extends \Google\Protobuf\Internal\Message
      * Event types not to be reapplied
      *
      * Generated from protobuf field <code>repeated .temporal.api.enums.v1.ResetReapplyExcludeType reset_reapply_exclude_types = 12;</code>
-     * @param int[] $var
+     * @param int[] $var one of the values in {@see \Temporal\Api\Enums\V1\ResetReapplyExcludeType}
      * @return $this
      */
-    public function setResetReapplyExcludeTypes($var)
+    public function setResetReapplyExcludeTypes(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Temporal\Api\Enums\V1\ResetReapplyExcludeType::class);
         $this->reset_reapply_exclude_types = $arr;

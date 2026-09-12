@@ -56,9 +56,9 @@ class ActivityExecutionAlreadyStartedFailure extends \Google\Protobuf\Internal\M
      * @param string $var
      * @return $this
      */
-    public function setStartRequestId($var)
+    public function setStartRequestId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->start_request_id = $var;
 
         return $this;
@@ -78,9 +78,9 @@ class ActivityExecutionAlreadyStartedFailure extends \Google\Protobuf\Internal\M
      * @param string $var
      * @return $this
      */
-    public function setRunId($var)
+    public function setRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->run_id = $var;
 
         return $this;

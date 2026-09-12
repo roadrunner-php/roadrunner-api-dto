@@ -283,7 +283,7 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * Note that `behavior` is overridden by `versioning_override` if the latter is present.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.VersioningBehavior behavior = 1;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\VersioningBehavior}
      */
     public function getBehavior()
     {
@@ -305,10 +305,10 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * Note that `behavior` is overridden by `versioning_override` if the latter is present.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.VersioningBehavior behavior = 1;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\VersioningBehavior}
      * @return $this
      */
-    public function setBehavior($var)
+    public function setBehavior(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\VersioningBehavior::class);
         $this->behavior = $var;
@@ -365,10 +365,9 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setDeployment($var)
+    public function setDeployment(\Temporal\Api\Deployment\V1\Deployment|null $var)
     {
         @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\Deployment::class);
         $this->deployment = $var;
 
         return $this;
@@ -397,10 +396,10 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setVersion($var)
+    public function setVersion(string $var)
     {
         @trigger_error('version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->version = $var;
 
         return $this;
@@ -456,9 +455,8 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
      * @return $this
      */
-    public function setDeploymentVersion($var)
+    public function setDeploymentVersion(\Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
         $this->deployment_version = $var;
 
         return $this;
@@ -502,9 +500,8 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflow\V1\VersioningOverride $var
      * @return $this
      */
-    public function setVersioningOverride($var)
+    public function setVersioningOverride(\Temporal\Api\Workflow\V1\VersioningOverride|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\VersioningOverride::class);
         $this->versioning_override = $var;
 
         return $this;
@@ -581,10 +578,9 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setDeploymentTransition($var)
+    public function setDeploymentTransition(\Temporal\Api\Workflow\V1\DeploymentTransition|null $var)
     {
         @trigger_error('deployment_transition is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\DeploymentTransition::class);
         $this->deployment_transition = $var;
 
         return $this;
@@ -652,9 +648,8 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflow\V1\DeploymentVersionTransition $var
      * @return $this
      */
-    public function setVersionTransition($var)
+    public function setVersionTransition(\Temporal\Api\Workflow\V1\DeploymentVersionTransition|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\DeploymentVersionTransition::class);
         $this->version_transition = $var;
 
         return $this;
@@ -690,7 +685,7 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setRevisionNumber($var)
+    public function setRevisionNumber(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->revision_number = $var;
@@ -710,7 +705,7 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * to ContinueAsNewVersioningBehaviorAutoUpgrade if the behavior of the workflow is AutoUpgrade.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ContinueAsNewVersioningBehavior continue_as_new_initial_versioning_behavior = 9;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ContinueAsNewVersioningBehavior}
      */
     public function getContinueAsNewInitialVersioningBehavior()
     {
@@ -729,10 +724,10 @@ class WorkflowExecutionVersioningInfo extends \Google\Protobuf\Internal\Message
      * to ContinueAsNewVersioningBehaviorAutoUpgrade if the behavior of the workflow is AutoUpgrade.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ContinueAsNewVersioningBehavior continue_as_new_initial_versioning_behavior = 9;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ContinueAsNewVersioningBehavior}
      * @return $this
      */
-    public function setContinueAsNewInitialVersioningBehavior($var)
+    public function setContinueAsNewInitialVersioningBehavior(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ContinueAsNewVersioningBehavior::class);
         $this->continue_as_new_initial_versioning_behavior = $var;

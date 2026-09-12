@@ -41,21 +41,11 @@ class TaskQueueKind
      * Generated from protobuf enum <code>TASK_QUEUE_KIND_STICKY = 2;</code>
      */
     const TASK_QUEUE_KIND_STICKY = 2;
-    /**
-     * A worker-commands task queue is used for server-to-worker communication (e.g. activity
-     * cancellations). These queues are ephemeral and per-worker-process — they exist only for
-     * the lifetime of the worker process. Used with TASK_QUEUE_TYPE_NEXUS and polled via
-     * PollNexusTaskQueue.
-     *
-     * Generated from protobuf enum <code>TASK_QUEUE_KIND_WORKER_COMMANDS = 3;</code>
-     */
-    const TASK_QUEUE_KIND_WORKER_COMMANDS = 3;
 
     private static $valueToName = [
         self::TASK_QUEUE_KIND_UNSPECIFIED => 'TASK_QUEUE_KIND_UNSPECIFIED',
         self::TASK_QUEUE_KIND_NORMAL => 'TASK_QUEUE_KIND_NORMAL',
         self::TASK_QUEUE_KIND_STICKY => 'TASK_QUEUE_KIND_STICKY',
-        self::TASK_QUEUE_KIND_WORKER_COMMANDS => 'TASK_QUEUE_KIND_WORKER_COMMANDS',
     ];
 
     public static function name($value)

@@ -72,7 +72,7 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setIds($var)
+    public function setIds(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->ids = $arr;
@@ -94,7 +94,7 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setUsers($var)
+    public function setUsers(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->users = $arr;
@@ -126,9 +126,8 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\DeviceUserUpdate $var
      * @return $this
      */
-    public function setUserUpdate($var)
+    public function setUserUpdate(\RoadRunner\Centrifugal\API\DTO\V1\DeviceUserUpdate|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\DeviceUserUpdate::class);
         $this->user_update = $var;
 
         return $this;
@@ -158,9 +157,8 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\DeviceMetaUpdate $var
      * @return $this
      */
-    public function setMetaUpdate($var)
+    public function setMetaUpdate(\RoadRunner\Centrifugal\API\DTO\V1\DeviceMetaUpdate|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\DeviceMetaUpdate::class);
         $this->meta_update = $var;
 
         return $this;
@@ -196,9 +194,8 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicsUpdate $var
      * @return $this
      */
-    public function setTopicsUpdate($var)
+    public function setTopicsUpdate(\RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicsUpdate|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicsUpdate::class);
         $this->topics_update = $var;
 
         return $this;

@@ -49,7 +49,7 @@ class ExecuteCommandsRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\WorkerCommand[] $var
      * @return $this
      */
-    public function setCommands($var)
+    public function setCommands(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Worker\V1\WorkerCommand::class);
         $this->commands = $arr;

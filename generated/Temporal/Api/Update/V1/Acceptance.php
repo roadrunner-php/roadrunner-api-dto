@@ -60,9 +60,9 @@ class Acceptance extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAcceptedRequestMessageId($var)
+    public function setAcceptedRequestMessageId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->accepted_request_message_id = $var;
 
         return $this;
@@ -82,7 +82,7 @@ class Acceptance extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setAcceptedRequestSequencingEventId($var)
+    public function setAcceptedRequestSequencingEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->accepted_request_sequencing_event_id = $var;
@@ -114,9 +114,8 @@ class Acceptance extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Update\V1\Request $var
      * @return $this
      */
-    public function setAcceptedRequest($var)
+    public function setAcceptedRequest(\Temporal\Api\Update\V1\Request|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Update\V1\Request::class);
         $this->accepted_request = $var;
 
         return $this;

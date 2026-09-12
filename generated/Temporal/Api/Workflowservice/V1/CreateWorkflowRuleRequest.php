@@ -91,9 +91,9 @@ class CreateWorkflowRuleRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -127,9 +127,8 @@ class CreateWorkflowRuleRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Rules\V1\WorkflowRuleSpec $var
      * @return $this
      */
-    public function setSpec($var)
+    public function setSpec(\Temporal\Api\Rules\V1\WorkflowRuleSpec|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Rules\V1\WorkflowRuleSpec::class);
         $this->spec = $var;
 
         return $this;
@@ -157,9 +156,8 @@ class CreateWorkflowRuleRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setForceScan($var)
+    public function setForceScan(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->force_scan = $var;
 
         return $this;
@@ -183,9 +181,9 @@ class CreateWorkflowRuleRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRequestId($var)
+    public function setRequestId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->request_id = $var;
 
         return $this;
@@ -209,9 +207,9 @@ class CreateWorkflowRuleRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -235,9 +233,9 @@ class CreateWorkflowRuleRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setDescription($var)
+    public function setDescription(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->description = $var;
 
         return $this;

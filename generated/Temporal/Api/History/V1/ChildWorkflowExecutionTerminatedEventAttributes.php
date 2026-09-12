@@ -89,9 +89,9 @@ class ChildWorkflowExecutionTerminatedEventAttributes extends \Google\Protobuf\I
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -111,9 +111,9 @@ class ChildWorkflowExecutionTerminatedEventAttributes extends \Google\Protobuf\I
      * @param string $var
      * @return $this
      */
-    public function setNamespaceId($var)
+    public function setNamespaceId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace_id = $var;
 
         return $this;
@@ -143,9 +143,8 @@ class ChildWorkflowExecutionTerminatedEventAttributes extends \Google\Protobuf\I
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
      * @return $this
      */
-    public function setWorkflowExecution($var)
+    public function setWorkflowExecution(\Temporal\Api\Common\V1\WorkflowExecution|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->workflow_execution = $var;
 
         return $this;
@@ -175,9 +174,8 @@ class ChildWorkflowExecutionTerminatedEventAttributes extends \Google\Protobuf\I
      * @param \Temporal\Api\Common\V1\WorkflowType $var
      * @return $this
      */
-    public function setWorkflowType($var)
+    public function setWorkflowType(\Temporal\Api\Common\V1\WorkflowType|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowType::class);
         $this->workflow_type = $var;
 
         return $this;
@@ -201,7 +199,7 @@ class ChildWorkflowExecutionTerminatedEventAttributes extends \Google\Protobuf\I
      * @param int|string $var
      * @return $this
      */
-    public function setInitiatedEventId($var)
+    public function setInitiatedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->initiated_event_id = $var;
@@ -227,7 +225,7 @@ class ChildWorkflowExecutionTerminatedEventAttributes extends \Google\Protobuf\I
      * @param int|string $var
      * @return $this
      */
-    public function setStartedEventId($var)
+    public function setStartedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->started_event_id = $var;

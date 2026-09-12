@@ -79,9 +79,8 @@ class VersionInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Version\V1\ReleaseInfo $var
      * @return $this
      */
-    public function setCurrent($var)
+    public function setCurrent(\Temporal\Api\Version\V1\ReleaseInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Version\V1\ReleaseInfo::class);
         $this->current = $var;
 
         return $this;
@@ -111,9 +110,8 @@ class VersionInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Version\V1\ReleaseInfo $var
      * @return $this
      */
-    public function setRecommended($var)
+    public function setRecommended(\Temporal\Api\Version\V1\ReleaseInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Version\V1\ReleaseInfo::class);
         $this->recommended = $var;
 
         return $this;
@@ -133,9 +131,9 @@ class VersionInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setInstructions($var)
+    public function setInstructions(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->instructions = $var;
 
         return $this;
@@ -155,7 +153,7 @@ class VersionInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Version\V1\Alert[] $var
      * @return $this
      */
-    public function setAlerts($var)
+    public function setAlerts(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Version\V1\Alert::class);
         $this->alerts = $arr;
@@ -187,9 +185,8 @@ class VersionInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setLastUpdateTime($var)
+    public function setLastUpdateTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_update_time = $var;
 
         return $this;

@@ -77,9 +77,8 @@ class UpdateWorkflowOptions extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflow\V1\WorkflowExecutionOptions $var
      * @return $this
      */
-    public function setWorkflowExecutionOptions($var)
+    public function setWorkflowExecutionOptions(\Temporal\Api\Workflow\V1\WorkflowExecutionOptions|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\WorkflowExecutionOptions::class);
         $this->workflow_execution_options = $var;
 
         return $this;
@@ -115,9 +114,8 @@ class UpdateWorkflowOptions extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\FieldMask $var
      * @return $this
      */
-    public function setUpdateMask($var)
+    public function setUpdateMask(\Google\Protobuf\FieldMask|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\FieldMask::class);
         $this->update_mask = $var;
 
         return $this;

@@ -32,39 +32,6 @@ class PollNexusTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.PollerScalingDecision poller_scaling_decision = 3;</code>
      */
     protected $poller_scaling_decision = null;
-    /**
-     * This poller group ID identifies the owner of the nexus task awaiting for synchronous
-     * response.
-     * Corresponding `RespondNexusTaskCompleted` and `RespondNexusTaskFailed` calls should pass this
-     * value for proper response routing.
-     *
-     * Generated from protobuf field <code>string poller_group_id = 4;</code>
-     */
-    protected $poller_group_id = '';
-    /**
-     * The weighted list of poller groups IDs that client should use for future polls to this task
-     * queue. Client is expected to:
-     *   1. Maintain minimum number of pollers no less than the number of groups.
-     *   2. Try to assign the next poll to a group without any pending polls,
-     *   3. If every group has some pending polls, assign the next poll to a group randomly
-     *     according to the weights.
-     *
-     * Generated from protobuf field <code>repeated .temporal.api.taskqueue.v1.PollerGroupInfo poller_group_infos = 5 [deprecated = true];</code>
-     * @deprecated
-     */
-    private $poller_group_infos;
-    /**
-     * The weighted, versioned list of poller groups IDs that client should use for future polls to
-     * this task queue. Client should ignore this if it has already applied a snapshot with a
-     * version greater than or equal to `poller_groups_info.version`. Client is expected to:
-     *   1. Maintain minimum number of pollers no less than the number of groups.
-     *   2. Try to assign the next poll to a group without any pending polls,
-     *   3. If every group has some pending polls, assign the next poll to a group randomly
-     *     according to the weights.
-     *
-     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.PollerGroupsInfo poller_groups_info = 6;</code>
-     */
-    protected $poller_groups_info = null;
 
     /**
      * Constructor.
@@ -78,26 +45,6 @@ class PollNexusTaskQueueResponse extends \Google\Protobuf\Internal\Message
      *           Embedded request as translated from the incoming frontend request.
      *     @type \Temporal\Api\Taskqueue\V1\PollerScalingDecision $poller_scaling_decision
      *           Server-advised information the SDK may use to adjust its poller count.
-     *     @type string $poller_group_id
-     *           This poller group ID identifies the owner of the nexus task awaiting for synchronous
-     *           response.
-     *           Corresponding `RespondNexusTaskCompleted` and `RespondNexusTaskFailed` calls should pass this
-     *           value for proper response routing.
-     *     @type \Temporal\Api\Taskqueue\V1\PollerGroupInfo[] $poller_group_infos
-     *           The weighted list of poller groups IDs that client should use for future polls to this task
-     *           queue. Client is expected to:
-     *             1. Maintain minimum number of pollers no less than the number of groups.
-     *             2. Try to assign the next poll to a group without any pending polls,
-     *             3. If every group has some pending polls, assign the next poll to a group randomly
-     *               according to the weights.
-     *     @type \Temporal\Api\Taskqueue\V1\PollerGroupsInfo $poller_groups_info
-     *           The weighted, versioned list of poller groups IDs that client should use for future polls to
-     *           this task queue. Client should ignore this if it has already applied a snapshot with a
-     *           version greater than or equal to `poller_groups_info.version`. Client is expected to:
-     *             1. Maintain minimum number of pollers no less than the number of groups.
-     *             2. Try to assign the next poll to a group without any pending polls,
-     *             3. If every group has some pending polls, assign the next poll to a group randomly
-     *               according to the weights.
      * }
      */
     public function __construct($data = NULL) {
@@ -123,9 +70,9 @@ class PollNexusTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTaskToken($var)
+    public function setTaskToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->task_token = $var;
 
         return $this;
@@ -159,9 +106,8 @@ class PollNexusTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Nexus\V1\Request $var
      * @return $this
      */
-    public function setRequest($var)
+    public function setRequest(\Temporal\Api\Nexus\V1\Request|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\Request::class);
         $this->request = $var;
 
         return $this;
@@ -195,134 +141,9 @@ class PollNexusTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\PollerScalingDecision $var
      * @return $this
      */
-    public function setPollerScalingDecision($var)
+    public function setPollerScalingDecision(\Temporal\Api\Taskqueue\V1\PollerScalingDecision|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\PollerScalingDecision::class);
         $this->poller_scaling_decision = $var;
-
-        return $this;
-    }
-
-    /**
-     * This poller group ID identifies the owner of the nexus task awaiting for synchronous
-     * response.
-     * Corresponding `RespondNexusTaskCompleted` and `RespondNexusTaskFailed` calls should pass this
-     * value for proper response routing.
-     *
-     * Generated from protobuf field <code>string poller_group_id = 4;</code>
-     * @return string
-     */
-    public function getPollerGroupId()
-    {
-        return $this->poller_group_id;
-    }
-
-    /**
-     * This poller group ID identifies the owner of the nexus task awaiting for synchronous
-     * response.
-     * Corresponding `RespondNexusTaskCompleted` and `RespondNexusTaskFailed` calls should pass this
-     * value for proper response routing.
-     *
-     * Generated from protobuf field <code>string poller_group_id = 4;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setPollerGroupId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->poller_group_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * The weighted list of poller groups IDs that client should use for future polls to this task
-     * queue. Client is expected to:
-     *   1. Maintain minimum number of pollers no less than the number of groups.
-     *   2. Try to assign the next poll to a group without any pending polls,
-     *   3. If every group has some pending polls, assign the next poll to a group randomly
-     *     according to the weights.
-     *
-     * Generated from protobuf field <code>repeated .temporal.api.taskqueue.v1.PollerGroupInfo poller_group_infos = 5 [deprecated = true];</code>
-     * @return RepeatedField<\Temporal\Api\Taskqueue\V1\PollerGroupInfo>
-     * @deprecated
-     */
-    public function getPollerGroupInfos()
-    {
-        if ($this->poller_group_infos->count() !== 0) {
-            @trigger_error('poller_group_infos is deprecated.', E_USER_DEPRECATED);
-        }
-        return $this->poller_group_infos;
-    }
-
-    /**
-     * The weighted list of poller groups IDs that client should use for future polls to this task
-     * queue. Client is expected to:
-     *   1. Maintain minimum number of pollers no less than the number of groups.
-     *   2. Try to assign the next poll to a group without any pending polls,
-     *   3. If every group has some pending polls, assign the next poll to a group randomly
-     *     according to the weights.
-     *
-     * Generated from protobuf field <code>repeated .temporal.api.taskqueue.v1.PollerGroupInfo poller_group_infos = 5 [deprecated = true];</code>
-     * @param \Temporal\Api\Taskqueue\V1\PollerGroupInfo[] $var
-     * @return $this
-     * @deprecated
-     */
-    public function setPollerGroupInfos($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Taskqueue\V1\PollerGroupInfo::class);
-        if ($arr->count() !== 0) {
-            @trigger_error('poller_group_infos is deprecated.', E_USER_DEPRECATED);
-        }
-        $this->poller_group_infos = $arr;
-
-        return $this;
-    }
-
-    /**
-     * The weighted, versioned list of poller groups IDs that client should use for future polls to
-     * this task queue. Client should ignore this if it has already applied a snapshot with a
-     * version greater than or equal to `poller_groups_info.version`. Client is expected to:
-     *   1. Maintain minimum number of pollers no less than the number of groups.
-     *   2. Try to assign the next poll to a group without any pending polls,
-     *   3. If every group has some pending polls, assign the next poll to a group randomly
-     *     according to the weights.
-     *
-     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.PollerGroupsInfo poller_groups_info = 6;</code>
-     * @return \Temporal\Api\Taskqueue\V1\PollerGroupsInfo|null
-     */
-    public function getPollerGroupsInfo()
-    {
-        return $this->poller_groups_info;
-    }
-
-    public function hasPollerGroupsInfo()
-    {
-        return isset($this->poller_groups_info);
-    }
-
-    public function clearPollerGroupsInfo()
-    {
-        unset($this->poller_groups_info);
-    }
-
-    /**
-     * The weighted, versioned list of poller groups IDs that client should use for future polls to
-     * this task queue. Client should ignore this if it has already applied a snapshot with a
-     * version greater than or equal to `poller_groups_info.version`. Client is expected to:
-     *   1. Maintain minimum number of pollers no less than the number of groups.
-     *   2. Try to assign the next poll to a group without any pending polls,
-     *   3. If every group has some pending polls, assign the next poll to a group randomly
-     *     according to the weights.
-     *
-     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.PollerGroupsInfo poller_groups_info = 6;</code>
-     * @param \Temporal\Api\Taskqueue\V1\PollerGroupsInfo $var
-     * @return $this
-     */
-    public function setPollerGroupsInfo($var)
-    {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\PollerGroupsInfo::class);
-        $this->poller_groups_info = $var;
 
         return $this;
     }

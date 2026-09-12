@@ -92,9 +92,9 @@ class ConnectResult extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setUser($var)
+    public function setUser(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->user = $var;
 
         return $this;
@@ -114,7 +114,7 @@ class ConnectResult extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setExpireAt($var)
+    public function setExpireAt(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->expire_at = $var;
@@ -136,9 +136,9 @@ class ConnectResult extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setInfo($var)
+    public function setInfo(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->info = $var;
 
         return $this;
@@ -158,9 +158,9 @@ class ConnectResult extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setB64Info($var)
+    public function setB64Info(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->b64info = $var;
 
         return $this;
@@ -180,9 +180,9 @@ class ConnectResult extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setData($var)
+    public function setData(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->data = $var;
 
         return $this;
@@ -202,9 +202,9 @@ class ConnectResult extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setB64Data($var)
+    public function setB64Data(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->b64data = $var;
 
         return $this;
@@ -224,7 +224,7 @@ class ConnectResult extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setChannels($var)
+    public function setChannels(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->channels = $arr;
@@ -246,7 +246,7 @@ class ConnectResult extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setSubs($var)
+    public function setSubs(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\Centrifugal\Proxy\DTO\V1\SubscribeOptions::class);
         $this->subs = $arr;
@@ -268,9 +268,9 @@ class ConnectResult extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setMeta($var)
+    public function setMeta(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->meta = $var;
 
         return $this;
@@ -290,7 +290,7 @@ class ConnectResult extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\Proxy\DTO\V1\ChannelsCapability[] $var
      * @return $this
      */
-    public function setCaps($var)
+    public function setCaps(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\Centrifugal\Proxy\DTO\V1\ChannelsCapability::class);
         $this->caps = $arr;

@@ -129,9 +129,8 @@ class CallbackInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Callback $var
      * @return $this
      */
-    public function setCallback($var)
+    public function setCallback(\Temporal\Api\Common\V1\Callback|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Callback::class);
         $this->callback = $var;
 
         return $this;
@@ -165,9 +164,8 @@ class CallbackInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflow\V1\CallbackInfo\Trigger $var
      * @return $this
      */
-    public function setTrigger($var)
+    public function setTrigger(\Temporal\Api\Workflow\V1\CallbackInfo\Trigger|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\CallbackInfo\Trigger::class);
         $this->trigger = $var;
 
         return $this;
@@ -201,9 +199,8 @@ class CallbackInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setRegistrationTime($var)
+    public function setRegistrationTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->registration_time = $var;
 
         return $this;
@@ -211,7 +208,7 @@ class CallbackInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.CallbackState state = 4;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\CallbackState}
      */
     public function getState()
     {
@@ -220,10 +217,10 @@ class CallbackInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.CallbackState state = 4;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\CallbackState}
      * @return $this
      */
-    public function setState($var)
+    public function setState(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\CallbackState::class);
         $this->state = $var;
@@ -251,7 +248,7 @@ class CallbackInfo extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setAttempt($var)
+    public function setAttempt(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->attempt = $var;
@@ -287,9 +284,8 @@ class CallbackInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setLastAttemptCompleteTime($var)
+    public function setLastAttemptCompleteTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_attempt_complete_time = $var;
 
         return $this;
@@ -323,9 +319,8 @@ class CallbackInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
      */
-    public function setLastAttemptFailure($var)
+    public function setLastAttemptFailure(\Temporal\Api\Failure\V1\Failure|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
         $this->last_attempt_failure = $var;
 
         return $this;
@@ -359,9 +354,8 @@ class CallbackInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setNextAttemptScheduleTime($var)
+    public function setNextAttemptScheduleTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->next_attempt_schedule_time = $var;
 
         return $this;
@@ -385,9 +379,9 @@ class CallbackInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setBlockedReason($var)
+    public function setBlockedReason(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->blocked_reason = $var;
 
         return $this;

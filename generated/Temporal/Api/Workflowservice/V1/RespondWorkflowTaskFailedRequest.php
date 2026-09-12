@@ -148,9 +148,9 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTaskToken($var)
+    public function setTaskToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->task_token = $var;
 
         return $this;
@@ -161,7 +161,7 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * apply to worker responses. See the type's doc for more.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowTaskFailedCause cause = 2;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\WorkflowTaskFailedCause}
      */
     public function getCause()
     {
@@ -173,10 +173,10 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * apply to worker responses. See the type's doc for more.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowTaskFailedCause cause = 2;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\WorkflowTaskFailedCause}
      * @return $this
      */
-    public function setCause($var)
+    public function setCause(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\WorkflowTaskFailedCause::class);
         $this->cause = $var;
@@ -212,9 +212,8 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
      */
-    public function setFailure($var)
+    public function setFailure(\Temporal\Api\Failure\V1\Failure|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
         $this->failure = $var;
 
         return $this;
@@ -238,9 +237,9 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -271,10 +270,10 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setBinaryChecksum($var)
+    public function setBinaryChecksum(string $var)
     {
         @trigger_error('binary_checksum is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->binary_checksum = $var;
 
         return $this;
@@ -294,9 +293,9 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -320,9 +319,9 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setResourceId($var)
+    public function setResourceId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->resource_id = $var;
 
         return $this;
@@ -346,7 +345,7 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Protocol\V1\Message[] $var
      * @return $this
      */
-    public function setMessages($var)
+    public function setMessages(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Protocol\V1\Message::class);
         $this->messages = $arr;
@@ -397,10 +396,9 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setWorkerVersion($var)
+    public function setWorkerVersion(\Temporal\Api\Common\V1\WorkerVersionStamp|null $var)
     {
         @trigger_error('worker_version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerVersionStamp::class);
         $this->worker_version = $var;
 
         return $this;
@@ -447,10 +445,9 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setDeployment($var)
+    public function setDeployment(\Temporal\Api\Deployment\V1\Deployment|null $var)
     {
         @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\Deployment::class);
         $this->deployment = $var;
 
         return $this;
@@ -484,9 +481,8 @@ class RespondWorkflowTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentOptions $var
      * @return $this
      */
-    public function setDeploymentOptions($var)
+    public function setDeploymentOptions(\Temporal\Api\Deployment\V1\WorkerDeploymentOptions|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentOptions::class);
         $this->deployment_options = $var;
 
         return $this;

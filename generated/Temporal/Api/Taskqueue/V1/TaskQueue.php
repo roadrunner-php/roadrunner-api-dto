@@ -67,9 +67,9 @@ class TaskQueue extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setName($var)
+    public function setName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->name = $var;
 
         return $this;
@@ -79,7 +79,7 @@ class TaskQueue extends \Google\Protobuf\Internal\Message
      * Default: TASK_QUEUE_KIND_NORMAL.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.TaskQueueKind kind = 2;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\TaskQueueKind}
      */
     public function getKind()
     {
@@ -90,10 +90,10 @@ class TaskQueue extends \Google\Protobuf\Internal\Message
      * Default: TASK_QUEUE_KIND_NORMAL.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.TaskQueueKind kind = 2;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\TaskQueueKind}
      * @return $this
      */
-    public function setKind($var)
+    public function setKind(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\TaskQueueKind::class);
         $this->kind = $var;
@@ -121,9 +121,9 @@ class TaskQueue extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNormalName($var)
+    public function setNormalName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->normal_name = $var;
 
         return $this;

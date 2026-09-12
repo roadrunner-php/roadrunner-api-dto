@@ -74,54 +74,6 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool poller_autoscaling = 9;</code>
      */
     protected $poller_autoscaling = false;
-    /**
-     * True if the namespace supports worker commands (server-to-worker communication via control queues).
-     *
-     * Generated from protobuf field <code>bool worker_commands = 10;</code>
-     */
-    protected $worker_commands = false;
-    /**
-     * True if the namespace supports standalone Nexus operations.
-     *
-     * Generated from protobuf field <code>bool standalone_nexus_operation = 11;</code>
-     */
-    protected $standalone_nexus_operation = false;
-    /**
-     * True if the namespace supports attaching callbacks on workflow updates
-     *
-     * Generated from protobuf field <code>bool workflow_update_callbacks = 12;</code>
-     */
-    protected $workflow_update_callbacks = false;
-    /**
-     * When true, workers should use poller autoscaling by default unless explicitly configured otherwise.
-     *
-     * Generated from protobuf field <code>bool poller_autoscaling_auto_enroll = 13;</code>
-     */
-    protected $poller_autoscaling_auto_enroll = false;
-    /**
-     * True if the namespace supports pagination of `RespondWorkflowTaskCompleted` request.
-     *
-     * Generated from protobuf field <code>bool workflow_task_completion_pagination = 14;</code>
-     */
-    protected $workflow_task_completion_pagination = false;
-    /**
-     * True if the namespace supports start delay for standalone activities.
-     *
-     * Generated from protobuf field <code>bool standalone_activity_start_delay = 15;</code>
-     */
-    protected $standalone_activity_start_delay = false;
-    /**
-     * True if the namespace supports batch operations for standalone activities.
-     *
-     * Generated from protobuf field <code>bool standalone_activity_batch_operations = 16;</code>
-     */
-    protected $standalone_activity_batch_operations = false;
-    /**
-     * True if the namespace supports standalone activity operator commands.
-     *
-     * Generated from protobuf field <code>bool standalone_activity_operator_commands = 17;</code>
-     */
-    protected $standalone_activity_operator_commands = false;
 
     /**
      * Constructor.
@@ -151,22 +103,6 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      *           rather than terminating any open polls on shutdown.
      *     @type bool $poller_autoscaling
      *           True if the namespace supports poller autoscaling
-     *     @type bool $worker_commands
-     *           True if the namespace supports worker commands (server-to-worker communication via control queues).
-     *     @type bool $standalone_nexus_operation
-     *           True if the namespace supports standalone Nexus operations.
-     *     @type bool $workflow_update_callbacks
-     *           True if the namespace supports attaching callbacks on workflow updates
-     *     @type bool $poller_autoscaling_auto_enroll
-     *           When true, workers should use poller autoscaling by default unless explicitly configured otherwise.
-     *     @type bool $workflow_task_completion_pagination
-     *           True if the namespace supports pagination of `RespondWorkflowTaskCompleted` request.
-     *     @type bool $standalone_activity_start_delay
-     *           True if the namespace supports start delay for standalone activities.
-     *     @type bool $standalone_activity_batch_operations
-     *           True if the namespace supports batch operations for standalone activities.
-     *     @type bool $standalone_activity_operator_commands
-     *           True if the namespace supports standalone activity operator commands.
      * }
      */
     public function __construct($data = NULL) {
@@ -192,9 +128,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setEagerWorkflowStart($var)
+    public function setEagerWorkflowStart(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->eager_workflow_start = $var;
 
         return $this;
@@ -218,9 +153,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setSyncUpdate($var)
+    public function setSyncUpdate(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->sync_update = $var;
 
         return $this;
@@ -244,9 +178,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setAsyncUpdate($var)
+    public function setAsyncUpdate(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->async_update = $var;
 
         return $this;
@@ -270,9 +203,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setWorkerHeartbeats($var)
+    public function setWorkerHeartbeats(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->worker_heartbeats = $var;
 
         return $this;
@@ -296,9 +228,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setReportedProblemsSearchAttribute($var)
+    public function setReportedProblemsSearchAttribute(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->reported_problems_search_attribute = $var;
 
         return $this;
@@ -322,9 +253,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setWorkflowPause($var)
+    public function setWorkflowPause(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->workflow_pause = $var;
 
         return $this;
@@ -348,9 +278,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setStandaloneActivities($var)
+    public function setStandaloneActivities(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->standalone_activities = $var;
 
         return $this;
@@ -382,9 +311,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setWorkerPollCompleteOnShutdown($var)
+    public function setWorkerPollCompleteOnShutdown(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->worker_poll_complete_on_shutdown = $var;
 
         return $this;
@@ -408,218 +336,9 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setPollerAutoscaling($var)
+    public function setPollerAutoscaling(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->poller_autoscaling = $var;
-
-        return $this;
-    }
-
-    /**
-     * True if the namespace supports worker commands (server-to-worker communication via control queues).
-     *
-     * Generated from protobuf field <code>bool worker_commands = 10;</code>
-     * @return bool
-     */
-    public function getWorkerCommands()
-    {
-        return $this->worker_commands;
-    }
-
-    /**
-     * True if the namespace supports worker commands (server-to-worker communication via control queues).
-     *
-     * Generated from protobuf field <code>bool worker_commands = 10;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setWorkerCommands($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->worker_commands = $var;
-
-        return $this;
-    }
-
-    /**
-     * True if the namespace supports standalone Nexus operations.
-     *
-     * Generated from protobuf field <code>bool standalone_nexus_operation = 11;</code>
-     * @return bool
-     */
-    public function getStandaloneNexusOperation()
-    {
-        return $this->standalone_nexus_operation;
-    }
-
-    /**
-     * True if the namespace supports standalone Nexus operations.
-     *
-     * Generated from protobuf field <code>bool standalone_nexus_operation = 11;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setStandaloneNexusOperation($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->standalone_nexus_operation = $var;
-
-        return $this;
-    }
-
-    /**
-     * True if the namespace supports attaching callbacks on workflow updates
-     *
-     * Generated from protobuf field <code>bool workflow_update_callbacks = 12;</code>
-     * @return bool
-     */
-    public function getWorkflowUpdateCallbacks()
-    {
-        return $this->workflow_update_callbacks;
-    }
-
-    /**
-     * True if the namespace supports attaching callbacks on workflow updates
-     *
-     * Generated from protobuf field <code>bool workflow_update_callbacks = 12;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setWorkflowUpdateCallbacks($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->workflow_update_callbacks = $var;
-
-        return $this;
-    }
-
-    /**
-     * When true, workers should use poller autoscaling by default unless explicitly configured otherwise.
-     *
-     * Generated from protobuf field <code>bool poller_autoscaling_auto_enroll = 13;</code>
-     * @return bool
-     */
-    public function getPollerAutoscalingAutoEnroll()
-    {
-        return $this->poller_autoscaling_auto_enroll;
-    }
-
-    /**
-     * When true, workers should use poller autoscaling by default unless explicitly configured otherwise.
-     *
-     * Generated from protobuf field <code>bool poller_autoscaling_auto_enroll = 13;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setPollerAutoscalingAutoEnroll($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->poller_autoscaling_auto_enroll = $var;
-
-        return $this;
-    }
-
-    /**
-     * True if the namespace supports pagination of `RespondWorkflowTaskCompleted` request.
-     *
-     * Generated from protobuf field <code>bool workflow_task_completion_pagination = 14;</code>
-     * @return bool
-     */
-    public function getWorkflowTaskCompletionPagination()
-    {
-        return $this->workflow_task_completion_pagination;
-    }
-
-    /**
-     * True if the namespace supports pagination of `RespondWorkflowTaskCompleted` request.
-     *
-     * Generated from protobuf field <code>bool workflow_task_completion_pagination = 14;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setWorkflowTaskCompletionPagination($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->workflow_task_completion_pagination = $var;
-
-        return $this;
-    }
-
-    /**
-     * True if the namespace supports start delay for standalone activities.
-     *
-     * Generated from protobuf field <code>bool standalone_activity_start_delay = 15;</code>
-     * @return bool
-     */
-    public function getStandaloneActivityStartDelay()
-    {
-        return $this->standalone_activity_start_delay;
-    }
-
-    /**
-     * True if the namespace supports start delay for standalone activities.
-     *
-     * Generated from protobuf field <code>bool standalone_activity_start_delay = 15;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setStandaloneActivityStartDelay($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->standalone_activity_start_delay = $var;
-
-        return $this;
-    }
-
-    /**
-     * True if the namespace supports batch operations for standalone activities.
-     *
-     * Generated from protobuf field <code>bool standalone_activity_batch_operations = 16;</code>
-     * @return bool
-     */
-    public function getStandaloneActivityBatchOperations()
-    {
-        return $this->standalone_activity_batch_operations;
-    }
-
-    /**
-     * True if the namespace supports batch operations for standalone activities.
-     *
-     * Generated from protobuf field <code>bool standalone_activity_batch_operations = 16;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setStandaloneActivityBatchOperations($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->standalone_activity_batch_operations = $var;
-
-        return $this;
-    }
-
-    /**
-     * True if the namespace supports standalone activity operator commands.
-     *
-     * Generated from protobuf field <code>bool standalone_activity_operator_commands = 17;</code>
-     * @return bool
-     */
-    public function getStandaloneActivityOperatorCommands()
-    {
-        return $this->standalone_activity_operator_commands;
-    }
-
-    /**
-     * True if the namespace supports standalone activity operator commands.
-     *
-     * Generated from protobuf field <code>bool standalone_activity_operator_commands = 17;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setStandaloneActivityOperatorCommands($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->standalone_activity_operator_commands = $var;
 
         return $this;
     }

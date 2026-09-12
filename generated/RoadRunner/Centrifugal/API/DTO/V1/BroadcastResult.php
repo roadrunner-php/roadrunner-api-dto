@@ -47,7 +47,7 @@ class BroadcastResult extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\PublishResponse[] $var
      * @return $this
      */
-    public function setResponses($var)
+    public function setResponses(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\Centrifugal\API\DTO\V1\PublishResponse::class);
         $this->responses = $arr;

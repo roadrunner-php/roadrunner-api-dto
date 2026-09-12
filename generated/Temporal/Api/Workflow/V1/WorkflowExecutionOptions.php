@@ -27,16 +27,11 @@ class WorkflowExecutionOptions extends \Google\Protobuf\Internal\Message
      */
     protected $priority = null;
     /**
-     * The time-skipping configuration for this workflow execution.
-     * When `fast_forward` is set, time will be fast-forwarded to a future point relative
-     * to the current workflow timestamp. Each call takes effect, even if
-     * `fast_forward` is set to the same duration, since the target time is recalculated
-     * from the current timestamp on every call.
-     * This field must be updated as a whole; updating individual sub-fields is not supported.
-     * When setting the update mask in `UpdateWorkflowExecutionOptionsRequest`, 
-     * `BatchOperationUpdateWorkflowExecutionOptions`, etc., use a mask that covers the entire field.
+     * Time-skipping configuration for this workflow execution.
+     * If not set, the time-skipping conf will not get updated upon request, 
+     * i.e. the existing time-skipping conf will be preserved.
      *
-     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 3;</code>
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.TimeSkippingConfig time_skipping_config = 3;</code>
      */
     protected $time_skipping_config = null;
 
@@ -50,15 +45,10 @@ class WorkflowExecutionOptions extends \Google\Protobuf\Internal\Message
      *           If set, takes precedence over the Versioning Behavior sent by the SDK on Workflow Task completion.
      *     @type \Temporal\Api\Common\V1\Priority $priority
      *           If set, overrides the workflow's priority sent by the SDK.
-     *     @type \Temporal\Api\Common\V1\TimeSkippingConfig $time_skipping_config
-     *           The time-skipping configuration for this workflow execution.
-     *           When `fast_forward` is set, time will be fast-forwarded to a future point relative
-     *           to the current workflow timestamp. Each call takes effect, even if
-     *           `fast_forward` is set to the same duration, since the target time is recalculated
-     *           from the current timestamp on every call.
-     *           This field must be updated as a whole; updating individual sub-fields is not supported.
-     *           When setting the update mask in `UpdateWorkflowExecutionOptionsRequest`, 
-     *           `BatchOperationUpdateWorkflowExecutionOptions`, etc., use a mask that covers the entire field.
+     *     @type \Temporal\Api\Workflow\V1\TimeSkippingConfig $time_skipping_config
+     *           Time-skipping configuration for this workflow execution.
+     *           If not set, the time-skipping conf will not get updated upon request, 
+     *           i.e. the existing time-skipping conf will be preserved.
      * }
      */
     public function __construct($data = NULL) {
@@ -94,9 +84,8 @@ class WorkflowExecutionOptions extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflow\V1\VersioningOverride $var
      * @return $this
      */
-    public function setVersioningOverride($var)
+    public function setVersioningOverride(\Temporal\Api\Workflow\V1\VersioningOverride|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\VersioningOverride::class);
         $this->versioning_override = $var;
 
         return $this;
@@ -130,26 +119,20 @@ class WorkflowExecutionOptions extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Priority $var
      * @return $this
      */
-    public function setPriority($var)
+    public function setPriority(\Temporal\Api\Common\V1\Priority|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Priority::class);
         $this->priority = $var;
 
         return $this;
     }
 
     /**
-     * The time-skipping configuration for this workflow execution.
-     * When `fast_forward` is set, time will be fast-forwarded to a future point relative
-     * to the current workflow timestamp. Each call takes effect, even if
-     * `fast_forward` is set to the same duration, since the target time is recalculated
-     * from the current timestamp on every call.
-     * This field must be updated as a whole; updating individual sub-fields is not supported.
-     * When setting the update mask in `UpdateWorkflowExecutionOptionsRequest`, 
-     * `BatchOperationUpdateWorkflowExecutionOptions`, etc., use a mask that covers the entire field.
+     * Time-skipping configuration for this workflow execution.
+     * If not set, the time-skipping conf will not get updated upon request, 
+     * i.e. the existing time-skipping conf will be preserved.
      *
-     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 3;</code>
-     * @return \Temporal\Api\Common\V1\TimeSkippingConfig|null
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.TimeSkippingConfig time_skipping_config = 3;</code>
+     * @return \Temporal\Api\Workflow\V1\TimeSkippingConfig|null
      */
     public function getTimeSkippingConfig()
     {
@@ -167,22 +150,16 @@ class WorkflowExecutionOptions extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The time-skipping configuration for this workflow execution.
-     * When `fast_forward` is set, time will be fast-forwarded to a future point relative
-     * to the current workflow timestamp. Each call takes effect, even if
-     * `fast_forward` is set to the same duration, since the target time is recalculated
-     * from the current timestamp on every call.
-     * This field must be updated as a whole; updating individual sub-fields is not supported.
-     * When setting the update mask in `UpdateWorkflowExecutionOptionsRequest`, 
-     * `BatchOperationUpdateWorkflowExecutionOptions`, etc., use a mask that covers the entire field.
+     * Time-skipping configuration for this workflow execution.
+     * If not set, the time-skipping conf will not get updated upon request, 
+     * i.e. the existing time-skipping conf will be preserved.
      *
-     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 3;</code>
-     * @param \Temporal\Api\Common\V1\TimeSkippingConfig $var
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.TimeSkippingConfig time_skipping_config = 3;</code>
+     * @param \Temporal\Api\Workflow\V1\TimeSkippingConfig $var
      * @return $this
      */
-    public function setTimeSkippingConfig($var)
+    public function setTimeSkippingConfig(\Temporal\Api\Workflow\V1\TimeSkippingConfig|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\TimeSkippingConfig::class);
         $this->time_skipping_config = $var;
 
         return $this;

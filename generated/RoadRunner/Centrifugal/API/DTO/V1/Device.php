@@ -92,9 +92,9 @@ class Device extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->id = $var;
 
         return $this;
@@ -114,9 +114,9 @@ class Device extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setPlatform($var)
+    public function setPlatform(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->platform = $var;
 
         return $this;
@@ -136,9 +136,9 @@ class Device extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setProvider($var)
+    public function setProvider(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->provider = $var;
 
         return $this;
@@ -158,9 +158,9 @@ class Device extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setToken($var)
+    public function setToken(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->token = $var;
 
         return $this;
@@ -180,9 +180,9 @@ class Device extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setUser($var)
+    public function setUser(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->user = $var;
 
         return $this;
@@ -202,7 +202,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setCreatedAt($var)
+    public function setCreatedAt(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->created_at = $var;
@@ -224,7 +224,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setUpdatedAt($var)
+    public function setUpdatedAt(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->updated_at = $var;
@@ -246,7 +246,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setMeta($var)
+    public function setMeta(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->meta = $arr;
@@ -274,7 +274,7 @@ class Device extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setTopics($var)
+    public function setTopics(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->topics = $arr;

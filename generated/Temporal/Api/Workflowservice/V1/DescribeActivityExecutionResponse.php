@@ -21,8 +21,7 @@ class DescribeActivityExecutionResponse extends \Google\Protobuf\Internal\Messag
      */
     protected $run_id = '';
     /**
-     * Information about the activity execution. Fields heartbeat_details and last_failure are omitted unless
-     * the request has include_heartbeat_details or include_last_failure set to true, respectively.
+     * Information about the activity execution.
      *
      * Generated from protobuf field <code>.temporal.api.activity.v1.ActivityExecutionInfo info = 2;</code>
      */
@@ -46,12 +45,6 @@ class DescribeActivityExecutionResponse extends \Google\Protobuf\Internal\Messag
      * Generated from protobuf field <code>bytes long_poll_token = 5;</code>
      */
     protected $long_poll_token = '';
-    /**
-     * Callbacks attached to this activity execution and their current state.
-     *
-     * Generated from protobuf field <code>repeated .temporal.api.activity.v1.CallbackInfo callbacks = 6;</code>
-     */
-    private $callbacks;
 
     /**
      * Constructor.
@@ -62,8 +55,7 @@ class DescribeActivityExecutionResponse extends \Google\Protobuf\Internal\Messag
      *     @type string $run_id
      *           The run ID of the activity, useful when run_id was not specified in the request.
      *     @type \Temporal\Api\Activity\V1\ActivityExecutionInfo $info
-     *           Information about the activity execution. Fields heartbeat_details and last_failure are omitted unless
-     *           the request has include_heartbeat_details or include_last_failure set to true, respectively.
+     *           Information about the activity execution.
      *     @type \Temporal\Api\Common\V1\Payloads $input
      *           Serialized activity input, passed as arguments to the activity function.
      *           Only set if include_input was true in the request.
@@ -71,8 +63,6 @@ class DescribeActivityExecutionResponse extends \Google\Protobuf\Internal\Messag
      *           Only set if the activity is completed and include_outcome was true in the request.
      *     @type string $long_poll_token
      *           Token for follow-on long-poll requests. Absent only if the activity is complete.
-     *     @type \Temporal\Api\Activity\V1\CallbackInfo[] $callbacks
-     *           Callbacks attached to this activity execution and their current state.
      * }
      */
     public function __construct($data = NULL) {
@@ -98,17 +88,16 @@ class DescribeActivityExecutionResponse extends \Google\Protobuf\Internal\Messag
      * @param string $var
      * @return $this
      */
-    public function setRunId($var)
+    public function setRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->run_id = $var;
 
         return $this;
     }
 
     /**
-     * Information about the activity execution. Fields heartbeat_details and last_failure are omitted unless
-     * the request has include_heartbeat_details or include_last_failure set to true, respectively.
+     * Information about the activity execution.
      *
      * Generated from protobuf field <code>.temporal.api.activity.v1.ActivityExecutionInfo info = 2;</code>
      * @return \Temporal\Api\Activity\V1\ActivityExecutionInfo|null
@@ -129,16 +118,14 @@ class DescribeActivityExecutionResponse extends \Google\Protobuf\Internal\Messag
     }
 
     /**
-     * Information about the activity execution. Fields heartbeat_details and last_failure are omitted unless
-     * the request has include_heartbeat_details or include_last_failure set to true, respectively.
+     * Information about the activity execution.
      *
      * Generated from protobuf field <code>.temporal.api.activity.v1.ActivityExecutionInfo info = 2;</code>
      * @param \Temporal\Api\Activity\V1\ActivityExecutionInfo $var
      * @return $this
      */
-    public function setInfo($var)
+    public function setInfo(\Temporal\Api\Activity\V1\ActivityExecutionInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Activity\V1\ActivityExecutionInfo::class);
         $this->info = $var;
 
         return $this;
@@ -174,9 +161,8 @@ class DescribeActivityExecutionResponse extends \Google\Protobuf\Internal\Messag
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setInput($var)
+    public function setInput(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->input = $var;
 
         return $this;
@@ -210,9 +196,8 @@ class DescribeActivityExecutionResponse extends \Google\Protobuf\Internal\Messag
      * @param \Temporal\Api\Activity\V1\ActivityExecutionOutcome $var
      * @return $this
      */
-    public function setOutcome($var)
+    public function setOutcome(\Temporal\Api\Activity\V1\ActivityExecutionOutcome|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Activity\V1\ActivityExecutionOutcome::class);
         $this->outcome = $var;
 
         return $this;
@@ -236,36 +221,10 @@ class DescribeActivityExecutionResponse extends \Google\Protobuf\Internal\Messag
      * @param string $var
      * @return $this
      */
-    public function setLongPollToken($var)
+    public function setLongPollToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->long_poll_token = $var;
-
-        return $this;
-    }
-
-    /**
-     * Callbacks attached to this activity execution and their current state.
-     *
-     * Generated from protobuf field <code>repeated .temporal.api.activity.v1.CallbackInfo callbacks = 6;</code>
-     * @return RepeatedField<\Temporal\Api\Activity\V1\CallbackInfo>
-     */
-    public function getCallbacks()
-    {
-        return $this->callbacks;
-    }
-
-    /**
-     * Callbacks attached to this activity execution and their current state.
-     *
-     * Generated from protobuf field <code>repeated .temporal.api.activity.v1.CallbackInfo callbacks = 6;</code>
-     * @param \Temporal\Api\Activity\V1\CallbackInfo[] $var
-     * @return $this
-     */
-    public function setCallbacks($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Activity\V1\CallbackInfo::class);
-        $this->callbacks = $arr;
 
         return $this;
     }

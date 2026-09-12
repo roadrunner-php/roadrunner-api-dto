@@ -51,9 +51,8 @@ class WorkerCommandResult extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Worker\V1\CancelActivityResult $var
      * @return $this
      */
-    public function setCancelActivity($var)
+    public function setCancelActivity(\Temporal\Api\Worker\V1\CancelActivityResult|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Worker\V1\CancelActivityResult::class);
         $this->writeOneof(1, $var);
 
         return $this;

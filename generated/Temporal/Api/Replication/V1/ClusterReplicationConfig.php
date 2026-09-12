@@ -47,9 +47,9 @@ class ClusterReplicationConfig extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setClusterName($var)
+    public function setClusterName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->cluster_name = $var;
 
         return $this;

@@ -59,9 +59,9 @@ class UnsuccessfulOperationError extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setOperationState($var)
+    public function setOperationState(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->operation_state = $var;
 
         return $this;
@@ -91,9 +91,8 @@ class UnsuccessfulOperationError extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Nexus\V1\Failure $var
      * @return $this
      */
-    public function setFailure($var)
+    public function setFailure(\Temporal\Api\Nexus\V1\Failure|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\Failure::class);
         $this->failure = $var;
 
         return $this;

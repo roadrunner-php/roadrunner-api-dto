@@ -64,9 +64,8 @@ class CreateNexusEndpointRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Nexus\V1\EndpointSpec $var
      * @return $this
      */
-    public function setSpec($var)
+    public function setSpec(\Temporal\Api\Nexus\V1\EndpointSpec|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\EndpointSpec::class);
         $this->spec = $var;
 
         return $this;

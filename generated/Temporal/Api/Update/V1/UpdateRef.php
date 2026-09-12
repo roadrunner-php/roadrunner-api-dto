@@ -64,9 +64,8 @@ class UpdateRef extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
      * @return $this
      */
-    public function setWorkflowExecution($var)
+    public function setWorkflowExecution(\Temporal\Api\Common\V1\WorkflowExecution|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->workflow_execution = $var;
 
         return $this;
@@ -86,9 +85,9 @@ class UpdateRef extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setUpdateId($var)
+    public function setUpdateId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->update_id = $var;
 
         return $this;

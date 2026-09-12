@@ -62,9 +62,8 @@ class TimestampedCompatibleBuildIdRedirectRule extends \Google\Protobuf\Internal
      * @param \Temporal\Api\Taskqueue\V1\CompatibleBuildIdRedirectRule $var
      * @return $this
      */
-    public function setRule($var)
+    public function setRule(\Temporal\Api\Taskqueue\V1\CompatibleBuildIdRedirectRule|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\CompatibleBuildIdRedirectRule::class);
         $this->rule = $var;
 
         return $this;
@@ -94,9 +93,8 @@ class TimestampedCompatibleBuildIdRedirectRule extends \Google\Protobuf\Internal
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setCreateTime($var)
+    public function setCreateTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->create_time = $var;
 
         return $this;

@@ -92,9 +92,9 @@ class GetWorkflowExecutionHistoryRequest extends \Google\Protobuf\Internal\Messa
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -124,9 +124,8 @@ class GetWorkflowExecutionHistoryRequest extends \Google\Protobuf\Internal\Messa
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
      * @return $this
      */
-    public function setExecution($var)
+    public function setExecution(\Temporal\Api\Common\V1\WorkflowExecution|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->execution = $var;
 
         return $this;
@@ -146,7 +145,7 @@ class GetWorkflowExecutionHistoryRequest extends \Google\Protobuf\Internal\Messa
      * @param int $var
      * @return $this
      */
-    public function setMaximumPageSize($var)
+    public function setMaximumPageSize(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->maximum_page_size = $var;
@@ -174,9 +173,9 @@ class GetWorkflowExecutionHistoryRequest extends \Google\Protobuf\Internal\Messa
      * @param string $var
      * @return $this
      */
-    public function setNextPageToken($var)
+    public function setNextPageToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->next_page_token = $var;
 
         return $this;
@@ -202,9 +201,8 @@ class GetWorkflowExecutionHistoryRequest extends \Google\Protobuf\Internal\Messa
      * @param bool $var
      * @return $this
      */
-    public function setWaitNewEvent($var)
+    public function setWaitNewEvent(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->wait_new_event = $var;
 
         return $this;
@@ -215,7 +213,7 @@ class GetWorkflowExecutionHistoryRequest extends \Google\Protobuf\Internal\Messa
      * Default: HISTORY_EVENT_FILTER_TYPE_ALL_EVENT.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.HistoryEventFilterType history_event_filter_type = 6;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\HistoryEventFilterType}
      */
     public function getHistoryEventFilterType()
     {
@@ -227,10 +225,10 @@ class GetWorkflowExecutionHistoryRequest extends \Google\Protobuf\Internal\Messa
      * Default: HISTORY_EVENT_FILTER_TYPE_ALL_EVENT.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.HistoryEventFilterType history_event_filter_type = 6;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\HistoryEventFilterType}
      * @return $this
      */
-    public function setHistoryEventFilterType($var)
+    public function setHistoryEventFilterType(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\HistoryEventFilterType::class);
         $this->history_event_filter_type = $var;
@@ -252,9 +250,8 @@ class GetWorkflowExecutionHistoryRequest extends \Google\Protobuf\Internal\Messa
      * @param bool $var
      * @return $this
      */
-    public function setSkipArchival($var)
+    public function setSkipArchival(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->skip_archival = $var;
 
         return $this;

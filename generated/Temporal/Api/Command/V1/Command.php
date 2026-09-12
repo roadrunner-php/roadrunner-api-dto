@@ -32,12 +32,6 @@ class Command extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.sdk.v1.UserMetadata user_metadata = 301;</code>
      */
     protected $user_metadata = null;
-    /**
-     * Event Group Markers attached to the command by the workflow author.
-     *
-     * Generated from protobuf field <code>repeated .temporal.api.sdk.v1.EventGroupMarker event_group_markers = 302;</code>
-     */
-    private $event_group_markers;
     protected $attributes;
 
     /**
@@ -57,8 +51,6 @@ class Command extends \Google\Protobuf\Internal\Message
      *              are used by user interfaces to show fixed as-of-start workflow summary and details.
      *            * start_timer_command_attributes - populates temporal.api.history.v1.HistoryEvent for timer
      *              started where the summary is used to identify the timer.
-     *     @type \Temporal\Api\Sdk\V1\EventGroupMarker[] $event_group_markers
-     *           Event Group Markers attached to the command by the workflow author.
      *     @type \Temporal\Api\Command\V1\ScheduleActivityTaskCommandAttributes $schedule_activity_task_command_attributes
      *     @type \Temporal\Api\Command\V1\StartTimerCommandAttributes $start_timer_command_attributes
      *     @type \Temporal\Api\Command\V1\CompleteWorkflowExecutionCommandAttributes $complete_workflow_execution_command_attributes
@@ -86,7 +78,7 @@ class Command extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.CommandType command_type = 1;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\CommandType}
      */
     public function getCommandType()
     {
@@ -95,10 +87,10 @@ class Command extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.CommandType command_type = 1;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\CommandType}
      * @return $this
      */
-    public function setCommandType($var)
+    public function setCommandType(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\CommandType::class);
         $this->command_type = $var;
@@ -150,36 +142,9 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Sdk\V1\UserMetadata $var
      * @return $this
      */
-    public function setUserMetadata($var)
+    public function setUserMetadata(\Temporal\Api\Sdk\V1\UserMetadata|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Sdk\V1\UserMetadata::class);
         $this->user_metadata = $var;
-
-        return $this;
-    }
-
-    /**
-     * Event Group Markers attached to the command by the workflow author.
-     *
-     * Generated from protobuf field <code>repeated .temporal.api.sdk.v1.EventGroupMarker event_group_markers = 302;</code>
-     * @return RepeatedField<\Temporal\Api\Sdk\V1\EventGroupMarker>
-     */
-    public function getEventGroupMarkers()
-    {
-        return $this->event_group_markers;
-    }
-
-    /**
-     * Event Group Markers attached to the command by the workflow author.
-     *
-     * Generated from protobuf field <code>repeated .temporal.api.sdk.v1.EventGroupMarker event_group_markers = 302;</code>
-     * @param \Temporal\Api\Sdk\V1\EventGroupMarker[] $var
-     * @return $this
-     */
-    public function setEventGroupMarkers($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Sdk\V1\EventGroupMarker::class);
-        $this->event_group_markers = $arr;
 
         return $this;
     }
@@ -203,9 +168,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Command\V1\ScheduleActivityTaskCommandAttributes $var
      * @return $this
      */
-    public function setScheduleActivityTaskCommandAttributes($var)
+    public function setScheduleActivityTaskCommandAttributes(\Temporal\Api\Command\V1\ScheduleActivityTaskCommandAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Command\V1\ScheduleActivityTaskCommandAttributes::class);
         $this->writeOneof(2, $var);
 
         return $this;
@@ -230,9 +194,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Command\V1\StartTimerCommandAttributes $var
      * @return $this
      */
-    public function setStartTimerCommandAttributes($var)
+    public function setStartTimerCommandAttributes(\Temporal\Api\Command\V1\StartTimerCommandAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Command\V1\StartTimerCommandAttributes::class);
         $this->writeOneof(3, $var);
 
         return $this;
@@ -257,9 +220,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Command\V1\CompleteWorkflowExecutionCommandAttributes $var
      * @return $this
      */
-    public function setCompleteWorkflowExecutionCommandAttributes($var)
+    public function setCompleteWorkflowExecutionCommandAttributes(\Temporal\Api\Command\V1\CompleteWorkflowExecutionCommandAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Command\V1\CompleteWorkflowExecutionCommandAttributes::class);
         $this->writeOneof(4, $var);
 
         return $this;
@@ -284,9 +246,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Command\V1\FailWorkflowExecutionCommandAttributes $var
      * @return $this
      */
-    public function setFailWorkflowExecutionCommandAttributes($var)
+    public function setFailWorkflowExecutionCommandAttributes(\Temporal\Api\Command\V1\FailWorkflowExecutionCommandAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Command\V1\FailWorkflowExecutionCommandAttributes::class);
         $this->writeOneof(5, $var);
 
         return $this;
@@ -311,9 +272,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Command\V1\RequestCancelActivityTaskCommandAttributes $var
      * @return $this
      */
-    public function setRequestCancelActivityTaskCommandAttributes($var)
+    public function setRequestCancelActivityTaskCommandAttributes(\Temporal\Api\Command\V1\RequestCancelActivityTaskCommandAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Command\V1\RequestCancelActivityTaskCommandAttributes::class);
         $this->writeOneof(6, $var);
 
         return $this;
@@ -338,9 +298,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Command\V1\CancelTimerCommandAttributes $var
      * @return $this
      */
-    public function setCancelTimerCommandAttributes($var)
+    public function setCancelTimerCommandAttributes(\Temporal\Api\Command\V1\CancelTimerCommandAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Command\V1\CancelTimerCommandAttributes::class);
         $this->writeOneof(7, $var);
 
         return $this;
@@ -365,9 +324,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Command\V1\CancelWorkflowExecutionCommandAttributes $var
      * @return $this
      */
-    public function setCancelWorkflowExecutionCommandAttributes($var)
+    public function setCancelWorkflowExecutionCommandAttributes(\Temporal\Api\Command\V1\CancelWorkflowExecutionCommandAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Command\V1\CancelWorkflowExecutionCommandAttributes::class);
         $this->writeOneof(8, $var);
 
         return $this;
@@ -392,9 +350,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Command\V1\RequestCancelExternalWorkflowExecutionCommandAttributes $var
      * @return $this
      */
-    public function setRequestCancelExternalWorkflowExecutionCommandAttributes($var)
+    public function setRequestCancelExternalWorkflowExecutionCommandAttributes(\Temporal\Api\Command\V1\RequestCancelExternalWorkflowExecutionCommandAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Command\V1\RequestCancelExternalWorkflowExecutionCommandAttributes::class);
         $this->writeOneof(9, $var);
 
         return $this;
@@ -419,9 +376,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Command\V1\RecordMarkerCommandAttributes $var
      * @return $this
      */
-    public function setRecordMarkerCommandAttributes($var)
+    public function setRecordMarkerCommandAttributes(\Temporal\Api\Command\V1\RecordMarkerCommandAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Command\V1\RecordMarkerCommandAttributes::class);
         $this->writeOneof(10, $var);
 
         return $this;
@@ -446,9 +402,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Command\V1\ContinueAsNewWorkflowExecutionCommandAttributes $var
      * @return $this
      */
-    public function setContinueAsNewWorkflowExecutionCommandAttributes($var)
+    public function setContinueAsNewWorkflowExecutionCommandAttributes(\Temporal\Api\Command\V1\ContinueAsNewWorkflowExecutionCommandAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Command\V1\ContinueAsNewWorkflowExecutionCommandAttributes::class);
         $this->writeOneof(11, $var);
 
         return $this;
@@ -473,9 +428,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Command\V1\StartChildWorkflowExecutionCommandAttributes $var
      * @return $this
      */
-    public function setStartChildWorkflowExecutionCommandAttributes($var)
+    public function setStartChildWorkflowExecutionCommandAttributes(\Temporal\Api\Command\V1\StartChildWorkflowExecutionCommandAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Command\V1\StartChildWorkflowExecutionCommandAttributes::class);
         $this->writeOneof(12, $var);
 
         return $this;
@@ -500,9 +454,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Command\V1\SignalExternalWorkflowExecutionCommandAttributes $var
      * @return $this
      */
-    public function setSignalExternalWorkflowExecutionCommandAttributes($var)
+    public function setSignalExternalWorkflowExecutionCommandAttributes(\Temporal\Api\Command\V1\SignalExternalWorkflowExecutionCommandAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Command\V1\SignalExternalWorkflowExecutionCommandAttributes::class);
         $this->writeOneof(13, $var);
 
         return $this;
@@ -527,9 +480,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Command\V1\UpsertWorkflowSearchAttributesCommandAttributes $var
      * @return $this
      */
-    public function setUpsertWorkflowSearchAttributesCommandAttributes($var)
+    public function setUpsertWorkflowSearchAttributesCommandAttributes(\Temporal\Api\Command\V1\UpsertWorkflowSearchAttributesCommandAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Command\V1\UpsertWorkflowSearchAttributesCommandAttributes::class);
         $this->writeOneof(14, $var);
 
         return $this;
@@ -554,9 +506,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Command\V1\ProtocolMessageCommandAttributes $var
      * @return $this
      */
-    public function setProtocolMessageCommandAttributes($var)
+    public function setProtocolMessageCommandAttributes(\Temporal\Api\Command\V1\ProtocolMessageCommandAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Command\V1\ProtocolMessageCommandAttributes::class);
         $this->writeOneof(15, $var);
 
         return $this;
@@ -585,9 +536,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Command\V1\ModifyWorkflowPropertiesCommandAttributes $var
      * @return $this
      */
-    public function setModifyWorkflowPropertiesCommandAttributes($var)
+    public function setModifyWorkflowPropertiesCommandAttributes(\Temporal\Api\Command\V1\ModifyWorkflowPropertiesCommandAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Command\V1\ModifyWorkflowPropertiesCommandAttributes::class);
         $this->writeOneof(17, $var);
 
         return $this;
@@ -612,9 +562,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Command\V1\ScheduleNexusOperationCommandAttributes $var
      * @return $this
      */
-    public function setScheduleNexusOperationCommandAttributes($var)
+    public function setScheduleNexusOperationCommandAttributes(\Temporal\Api\Command\V1\ScheduleNexusOperationCommandAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Command\V1\ScheduleNexusOperationCommandAttributes::class);
         $this->writeOneof(18, $var);
 
         return $this;
@@ -639,9 +588,8 @@ class Command extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Command\V1\RequestCancelNexusOperationCommandAttributes $var
      * @return $this
      */
-    public function setRequestCancelNexusOperationCommandAttributes($var)
+    public function setRequestCancelNexusOperationCommandAttributes(\Temporal\Api\Command\V1\RequestCancelNexusOperationCommandAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Command\V1\RequestCancelNexusOperationCommandAttributes::class);
         $this->writeOneof(19, $var);
 
         return $this;
