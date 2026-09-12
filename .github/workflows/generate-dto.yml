@@ -68,9 +68,19 @@ jobs:
 
       - name: 🛠️ Install protoc and the gRPC PHP plugin
         if: steps.api.outputs.changed == 'true'
+        env:
+          # Pinned to match the google/protobuf runtime in composer.json
+          # (^5.34). apt ships libprotoc 3.21, whose legacy PHP output would
+          # rewrite every generated file; only the grpc plugin is taken from
+          # apt, since gRPC stub output does not depend on this version.
+          PROTOC_VERSION: "34.2"
         run: |
+          curl -fsSL -o /tmp/protoc.zip \
+            "https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOC_VERSION}/protoc-${PROTOC_VERSION}-linux-x86_64.zip"
+          sudo unzip -o /tmp/protoc.zip -d /usr/local 'bin/protoc' 'include/*'
           sudo apt-get update
-          sudo apt-get install -y protobuf-compiler protobuf-compiler-grpc
+          sudo apt-get install -y protobuf-compiler-grpc
+          protoc --version
 
       - name: ⚙️ Generate the DTOs
         if: steps.api.outputs.changed == 'true'
