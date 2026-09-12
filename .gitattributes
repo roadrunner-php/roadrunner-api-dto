@@ -1,6 +1,23 @@
-/.github export-ignore
-/api export-ignore
-.gitattributes export-ignore
-.gitignore export-ignore
-generate.sh export-ignore
-.gitmodules export-ignore
+# Line-ending normalization for text files.
+* text=auto
+
+# PHP-aware hunk headers in `git diff`.
+*.php diff=php
+
+# Manifest: each bump touches its own line — take both sides on overlap
+# instead of raising a conflict.
+/composer.json merge=union
+
+# Default: nothing is included in the `composer archive` of the package.
+# Re-include only the files consumers actually need below.
+* export-ignore
+
+# Package manifest and top-level documentation.
+/composer.json   -export-ignore
+/LICENSE         -export-ignore
+/README.md       -export-ignore
+/CHANGELOG.md    -export-ignore
+
+# Generated PHP DTOs, autoloaded through composer.json PSR-4.
+/generated       -export-ignore
+/generated/**    -export-ignore
