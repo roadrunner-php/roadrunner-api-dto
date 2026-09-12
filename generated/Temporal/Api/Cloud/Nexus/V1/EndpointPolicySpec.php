@@ -54,8 +54,9 @@ class EndpointPolicySpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Nexus\V1\AllowedCloudNamespacePolicySpec $var
      * @return $this
      */
-    public function setAllowedCloudNamespacePolicySpec(\Temporal\Api\Cloud\Nexus\V1\AllowedCloudNamespacePolicySpec|null $var)
+    public function setAllowedCloudNamespacePolicySpec($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Nexus\V1\AllowedCloudNamespacePolicySpec::class);
         $this->writeOneof(1, $var);
 
         return $this;

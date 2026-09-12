@@ -94,8 +94,9 @@ class CreateNamespaceRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\NamespaceSpec $var
      * @return $this
      */
-    public function setSpec(\Temporal\Api\Cloud\PBNamespace\V1\NamespaceSpec|null $var)
+    public function setSpec($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\NamespaceSpec::class);
         $this->spec = $var;
 
         return $this;
@@ -121,9 +122,9 @@ class CreateNamespaceRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAsyncOperationId(string $var)
+    public function setAsyncOperationId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->async_operation_id = $var;
 
         return $this;
@@ -149,7 +150,7 @@ class CreateNamespaceRequest extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setTags(array|\Google\Protobuf\Internal\MapField $var)
+    public function setTags($var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->tags = $arr;
@@ -177,9 +178,9 @@ class CreateNamespaceRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setProjectId(string $var)
+    public function setProjectId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->project_id = $var;
 
         return $this;

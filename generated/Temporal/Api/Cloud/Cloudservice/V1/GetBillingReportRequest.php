@@ -54,9 +54,9 @@ class GetBillingReportRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setBillingReportId(string $var)
+    public function setBillingReportId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->billing_report_id = $var;
 
         return $this;

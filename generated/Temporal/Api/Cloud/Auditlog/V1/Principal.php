@@ -82,9 +82,9 @@ class Principal extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setType(string $var)
+    public function setType($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->type = $var;
 
         return $this;
@@ -108,9 +108,9 @@ class Principal extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setId(string $var)
+    public function setId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->id = $var;
 
         return $this;
@@ -134,9 +134,9 @@ class Principal extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setName(string $var)
+    public function setName($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->name = $var;
 
         return $this;
@@ -160,9 +160,9 @@ class Principal extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setApiKeyId(string $var)
+    public function setApiKeyId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->api_key_id = $var;
 
         return $this;

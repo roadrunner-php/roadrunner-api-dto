@@ -112,10 +112,10 @@ class MtlsAuthSpec extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setAcceptedClientCaDeprecated(string $var)
+    public function setAcceptedClientCaDeprecated($var)
     {
         @trigger_error('accepted_client_ca_deprecated is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->accepted_client_ca_deprecated = $var;
 
         return $this;
@@ -143,9 +143,9 @@ class MtlsAuthSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAcceptedClientCa(string $var)
+    public function setAcceptedClientCa($var)
     {
-        GPBUtil::checkString($var, false);
+        GPBUtil::checkString($var, False);
         $this->accepted_client_ca = $var;
 
         return $this;
@@ -173,7 +173,7 @@ class MtlsAuthSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\CertificateFilterSpec[] $var
      * @return $this
      */
-    public function setCertificateFilters(array|RepeatedField $var)
+    public function setCertificateFilters($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Cloud\PBNamespace\V1\CertificateFilterSpec::class);
         $this->certificate_filters = $arr;
@@ -203,8 +203,9 @@ class MtlsAuthSpec extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setEnabled(bool $var)
+    public function setEnabled($var)
     {
+        GPBUtil::checkBool($var);
         $this->enabled = $var;
 
         return $this;

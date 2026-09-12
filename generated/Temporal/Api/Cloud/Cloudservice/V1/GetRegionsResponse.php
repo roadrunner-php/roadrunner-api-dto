@@ -54,7 +54,7 @@ class GetRegionsResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Region\V1\Region[] $var
      * @return $this
      */
-    public function setRegions(array|RepeatedField $var)
+    public function setRegions($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Cloud\Region\V1\Region::class);
         $this->regions = $arr;

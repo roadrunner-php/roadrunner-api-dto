@@ -64,8 +64,9 @@ class GetApiKeyResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Identity\V1\ApiKey $var
      * @return $this
      */
-    public function setApiKey(\Temporal\Api\Cloud\Identity\V1\ApiKey|null $var)
+    public function setApiKey($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Identity\V1\ApiKey::class);
         $this->api_key = $var;
 
         return $this;

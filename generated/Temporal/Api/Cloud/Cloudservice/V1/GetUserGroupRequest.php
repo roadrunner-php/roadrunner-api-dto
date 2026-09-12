@@ -54,9 +54,9 @@ class GetUserGroupRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setGroupId(string $var)
+    public function setGroupId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->group_id = $var;
 
         return $this;

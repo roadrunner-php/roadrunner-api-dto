@@ -74,9 +74,9 @@ class CreateApiKeyResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setKeyId(string $var)
+    public function setKeyId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->key_id = $var;
 
         return $this;
@@ -104,9 +104,9 @@ class CreateApiKeyResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setToken(string $var)
+    public function setToken($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->token = $var;
 
         return $this;
@@ -140,8 +140,9 @@ class CreateApiKeyResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Operation\V1\AsyncOperation $var
      * @return $this
      */
-    public function setAsyncOperation(\Temporal\Api\Cloud\Operation\V1\AsyncOperation|null $var)
+    public function setAsyncOperation($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Operation\V1\AsyncOperation::class);
         $this->async_operation = $var;
 
         return $this;

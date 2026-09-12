@@ -54,9 +54,9 @@ class GetConnectivityRuleRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setConnectivityRuleId(string $var)
+    public function setConnectivityRuleId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->connectivity_rule_id = $var;
 
         return $this;

@@ -72,8 +72,9 @@ class Permission extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Identity\V1\CustomRoleSpec\Resources $var
      * @return $this
      */
-    public function setResources(\Temporal\Api\Cloud\Identity\V1\CustomRoleSpec\Resources|null $var)
+    public function setResources($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Identity\V1\CustomRoleSpec\Resources::class);
         $this->resources = $var;
 
         return $this;
@@ -97,7 +98,7 @@ class Permission extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setActions(array|RepeatedField $var)
+    public function setActions($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->actions = $arr;

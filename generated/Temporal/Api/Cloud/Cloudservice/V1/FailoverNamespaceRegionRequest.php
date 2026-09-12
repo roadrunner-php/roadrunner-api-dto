@@ -72,9 +72,9 @@ class FailoverNamespaceRegionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace(string $var)
+    public function setNamespace($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->namespace = $var;
 
         return $this;
@@ -100,9 +100,9 @@ class FailoverNamespaceRegionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRegion(string $var)
+    public function setRegion($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->region = $var;
 
         return $this;
@@ -126,9 +126,9 @@ class FailoverNamespaceRegionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAsyncOperationId(string $var)
+    public function setAsyncOperationId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->async_operation_id = $var;
 
         return $this;

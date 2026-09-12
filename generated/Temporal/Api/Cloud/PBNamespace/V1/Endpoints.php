@@ -70,9 +70,9 @@ class Endpoints extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setWebAddress(string $var)
+    public function setWebAddress($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->web_address = $var;
 
         return $this;
@@ -96,9 +96,9 @@ class Endpoints extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setMtlsGrpcAddress(string $var)
+    public function setMtlsGrpcAddress($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->mtls_grpc_address = $var;
 
         return $this;
@@ -122,9 +122,9 @@ class Endpoints extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setGrpcAddress(string $var)
+    public function setGrpcAddress($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->grpc_address = $var;
 
         return $this;

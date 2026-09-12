@@ -254,9 +254,9 @@ class NamespaceSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setName(string $var)
+    public function setName($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->name = $var;
 
         return $this;
@@ -280,7 +280,7 @@ class NamespaceSpec extends \Google\Protobuf\Internal\Message
      */
     public function getRegions()
     {
-        if (count($this->regions) !== 0) {
+        if ($this->regions->count() !== 0) {
             @trigger_error('regions is deprecated.', E_USER_DEPRECATED);
         }
         return $this->regions;
@@ -303,10 +303,10 @@ class NamespaceSpec extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setRegions(array|RepeatedField $var)
+    public function setRegions($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        if (count($arr) !== 0) {
+        if ($arr->count() !== 0) {
             @trigger_error('regions is deprecated.', E_USER_DEPRECATED);
         }
         $this->regions = $arr;
@@ -336,7 +336,7 @@ class NamespaceSpec extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setRetentionDays(int $var)
+    public function setRetentionDays($var)
     {
         GPBUtil::checkInt32($var);
         $this->retention_days = $var;
@@ -374,8 +374,9 @@ class NamespaceSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\MtlsAuthSpec $var
      * @return $this
      */
-    public function setMtlsAuth(\Temporal\Api\Cloud\PBNamespace\V1\MtlsAuthSpec|null $var)
+    public function setMtlsAuth($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\MtlsAuthSpec::class);
         $this->mtls_auth = $var;
 
         return $this;
@@ -413,8 +414,9 @@ class NamespaceSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\ApiKeyAuthSpec $var
      * @return $this
      */
-    public function setApiKeyAuth(\Temporal\Api\Cloud\PBNamespace\V1\ApiKeyAuthSpec|null $var)
+    public function setApiKeyAuth($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\ApiKeyAuthSpec::class);
         $this->api_key_auth = $var;
 
         return $this;
@@ -435,7 +437,7 @@ class NamespaceSpec extends \Google\Protobuf\Internal\Message
      */
     public function getCustomSearchAttributes()
     {
-        if (count($this->custom_search_attributes) !== 0) {
+        if ($this->custom_search_attributes->count() !== 0) {
             @trigger_error('custom_search_attributes is deprecated.', E_USER_DEPRECATED);
         }
         return $this->custom_search_attributes;
@@ -455,10 +457,10 @@ class NamespaceSpec extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setCustomSearchAttributes(array|\Google\Protobuf\Internal\MapField $var)
+    public function setCustomSearchAttributes($var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
-        if (count($arr) !== 0) {
+        if ($arr->count() !== 0) {
             @trigger_error('custom_search_attributes is deprecated.', E_USER_DEPRECATED);
         }
         $this->custom_search_attributes = $arr;
@@ -494,7 +496,7 @@ class NamespaceSpec extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setSearchAttributes(array|\Google\Protobuf\Internal\MapField $var)
+    public function setSearchAttributes($var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::ENUM, \Temporal\Api\Cloud\PBNamespace\V1\NamespaceSpec\SearchAttributeType::class);
         $this->search_attributes = $arr;
@@ -532,8 +534,9 @@ class NamespaceSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\CodecServerSpec $var
      * @return $this
      */
-    public function setCodecServer(\Temporal\Api\Cloud\PBNamespace\V1\CodecServerSpec|null $var)
+    public function setCodecServer($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\CodecServerSpec::class);
         $this->codec_server = $var;
 
         return $this;
@@ -569,8 +572,9 @@ class NamespaceSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\LifecycleSpec $var
      * @return $this
      */
-    public function setLifecycle(\Temporal\Api\Cloud\PBNamespace\V1\LifecycleSpec|null $var)
+    public function setLifecycle($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\LifecycleSpec::class);
         $this->lifecycle = $var;
 
         return $this;
@@ -606,8 +610,9 @@ class NamespaceSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\HighAvailabilitySpec $var
      * @return $this
      */
-    public function setHighAvailability(\Temporal\Api\Cloud\PBNamespace\V1\HighAvailabilitySpec|null $var)
+    public function setHighAvailability($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\HighAvailabilitySpec::class);
         $this->high_availability = $var;
 
         return $this;
@@ -635,7 +640,7 @@ class NamespaceSpec extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setConnectivityRuleIds(array|RepeatedField $var)
+    public function setConnectivityRuleIds($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->connectivity_rule_ids = $arr;
@@ -681,8 +686,9 @@ class NamespaceSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\CapacitySpec $var
      * @return $this
      */
-    public function setCapacitySpec(\Temporal\Api\Cloud\PBNamespace\V1\CapacitySpec|null $var)
+    public function setCapacitySpec($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\CapacitySpec::class);
         $this->capacity_spec = $var;
 
         return $this;
@@ -718,7 +724,7 @@ class NamespaceSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\ReplicaSpec[] $var
      * @return $this
      */
-    public function setReplicas(array|RepeatedField $var)
+    public function setReplicas($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Cloud\PBNamespace\V1\ReplicaSpec::class);
         $this->replicas = $arr;
@@ -758,8 +764,9 @@ class NamespaceSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\FairnessSpec $var
      * @return $this
      */
-    public function setFairness(\Temporal\Api\Cloud\PBNamespace\V1\FairnessSpec|null $var)
+    public function setFairness($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\FairnessSpec::class);
         $this->fairness = $var;
 
         return $this;

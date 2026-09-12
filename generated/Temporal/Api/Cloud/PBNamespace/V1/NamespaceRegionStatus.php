@@ -96,10 +96,10 @@ class NamespaceRegionStatus extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setStateDeprecated(string $var)
+    public function setStateDeprecated($var)
     {
         @trigger_error('state_deprecated is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->state_deprecated = $var;
 
         return $this;
@@ -111,7 +111,7 @@ class NamespaceRegionStatus extends \Google\Protobuf\Internal\Message
      * temporal:enums:replaces=state_deprecated
      *
      * Generated from protobuf field <code>.temporal.api.cloud.namespace.v1.NamespaceRegionStatus.State state = 3;</code>
-     * @return int one of the values in {@see \Temporal\Api\Cloud\PBNamespace\V1\NamespaceRegionStatus\State}
+     * @return int
      */
     public function getState()
     {
@@ -124,10 +124,10 @@ class NamespaceRegionStatus extends \Google\Protobuf\Internal\Message
      * temporal:enums:replaces=state_deprecated
      *
      * Generated from protobuf field <code>.temporal.api.cloud.namespace.v1.NamespaceRegionStatus.State state = 3;</code>
-     * @param int $var one of the values in {@see \Temporal\Api\Cloud\PBNamespace\V1\NamespaceRegionStatus\State}
+     * @param int $var
      * @return $this
      */
-    public function setState(int $var)
+    public function setState($var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Cloud\PBNamespace\V1\NamespaceRegionStatus\State::class);
         $this->state = $var;
@@ -153,9 +153,9 @@ class NamespaceRegionStatus extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAsyncOperationId(string $var)
+    public function setAsyncOperationId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->async_operation_id = $var;
 
         return $this;

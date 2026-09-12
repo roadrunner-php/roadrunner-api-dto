@@ -62,7 +62,7 @@ class GetProjectsResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Project\V1\Project[] $var
      * @return $this
      */
-    public function setProjects(array|RepeatedField $var)
+    public function setProjects($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Cloud\Project\V1\Project::class);
         $this->projects = $arr;
@@ -88,9 +88,9 @@ class GetProjectsResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNextPageToken(string $var)
+    public function setNextPageToken($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->next_page_token = $var;
 
         return $this;

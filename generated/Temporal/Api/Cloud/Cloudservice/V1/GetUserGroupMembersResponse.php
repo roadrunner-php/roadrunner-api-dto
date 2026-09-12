@@ -62,7 +62,7 @@ class GetUserGroupMembersResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Identity\V1\UserGroupMember[] $var
      * @return $this
      */
-    public function setMembers(array|RepeatedField $var)
+    public function setMembers($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Cloud\Identity\V1\UserGroupMember::class);
         $this->members = $arr;
@@ -88,9 +88,9 @@ class GetUserGroupMembersResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNextPageToken(string $var)
+    public function setNextPageToken($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->next_page_token = $var;
 
         return $this;

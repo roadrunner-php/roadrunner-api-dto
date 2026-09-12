@@ -90,7 +90,7 @@ class GetNamespacesRequest extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setPageSize(int $var)
+    public function setPageSize($var)
     {
         GPBUtil::checkInt32($var);
         $this->page_size = $var;
@@ -118,9 +118,9 @@ class GetNamespacesRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setPageToken(string $var)
+    public function setPageToken($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->page_token = $var;
 
         return $this;
@@ -146,9 +146,9 @@ class GetNamespacesRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setName(string $var)
+    public function setName($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->name = $var;
 
         return $this;
@@ -172,9 +172,9 @@ class GetNamespacesRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setProjectId(string $var)
+    public function setProjectId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->project_id = $var;
 
         return $this;

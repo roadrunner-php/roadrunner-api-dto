@@ -58,7 +58,7 @@ class Limits extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setActionsPerSecondLimit(int $var)
+    public function setActionsPerSecondLimit($var)
     {
         GPBUtil::checkInt32($var);
         $this->actions_per_second_limit = $var;

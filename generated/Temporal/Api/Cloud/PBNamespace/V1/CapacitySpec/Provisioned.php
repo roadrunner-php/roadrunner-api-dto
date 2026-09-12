@@ -58,8 +58,9 @@ class Provisioned extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setValue(float $var)
+    public function setValue($var)
     {
+        GPBUtil::checkDouble($var);
         $this->value = $var;
 
         return $this;

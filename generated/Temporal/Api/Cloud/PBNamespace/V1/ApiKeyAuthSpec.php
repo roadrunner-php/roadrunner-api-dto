@@ -58,8 +58,9 @@ class ApiKeyAuthSpec extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setEnabled(bool $var)
+    public function setEnabled($var)
     {
+        GPBUtil::checkBool($var);
         $this->enabled = $var;
 
         return $this;

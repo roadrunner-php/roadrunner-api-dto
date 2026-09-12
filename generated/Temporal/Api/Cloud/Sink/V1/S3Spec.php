@@ -86,9 +86,9 @@ class S3Spec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRoleName(string $var)
+    public function setRoleName($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->role_name = $var;
 
         return $this;
@@ -112,9 +112,9 @@ class S3Spec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setBucketName(string $var)
+    public function setBucketName($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->bucket_name = $var;
 
         return $this;
@@ -138,9 +138,9 @@ class S3Spec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRegion(string $var)
+    public function setRegion($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->region = $var;
 
         return $this;
@@ -164,9 +164,9 @@ class S3Spec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setKmsArn(string $var)
+    public function setKmsArn($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->kms_arn = $var;
 
         return $this;
@@ -190,9 +190,9 @@ class S3Spec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAwsAccountId(string $var)
+    public function setAwsAccountId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->aws_account_id = $var;
 
         return $this;

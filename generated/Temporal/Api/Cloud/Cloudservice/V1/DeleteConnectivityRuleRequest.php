@@ -74,9 +74,9 @@ class DeleteConnectivityRuleRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setConnectivityRuleId(string $var)
+    public function setConnectivityRuleId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->connectivity_rule_id = $var;
 
         return $this;
@@ -102,9 +102,9 @@ class DeleteConnectivityRuleRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setResourceVersion(string $var)
+    public function setResourceVersion($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->resource_version = $var;
 
         return $this;
@@ -130,9 +130,9 @@ class DeleteConnectivityRuleRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAsyncOperationId(string $var)
+    public function setAsyncOperationId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->async_operation_id = $var;
 
         return $this;

@@ -70,9 +70,9 @@ class Resources extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setResourceType(string $var)
+    public function setResourceType($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->resource_type = $var;
 
         return $this;
@@ -96,7 +96,7 @@ class Resources extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setResourceIds(array|RepeatedField $var)
+    public function setResourceIds($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->resource_ids = $arr;
@@ -122,8 +122,9 @@ class Resources extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setAllowAll(bool $var)
+    public function setAllowAll($var)
     {
+        GPBUtil::checkBool($var);
         $this->allow_all = $var;
 
         return $this;

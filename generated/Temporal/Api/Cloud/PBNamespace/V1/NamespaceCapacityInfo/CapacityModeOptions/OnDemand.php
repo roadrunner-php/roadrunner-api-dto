@@ -58,8 +58,9 @@ class OnDemand extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setApsLimit(float $var)
+    public function setApsLimit($var)
     {
+        GPBUtil::checkDouble($var);
         $this->aps_limit = $var;
 
         return $this;

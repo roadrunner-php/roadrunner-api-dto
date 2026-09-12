@@ -62,7 +62,7 @@ class GetAccountAuditLogSinksResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Account\V1\AuditLogSink[] $var
      * @return $this
      */
-    public function setSinks(array|RepeatedField $var)
+    public function setSinks($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Cloud\Account\V1\AuditLogSink::class);
         $this->sinks = $arr;
@@ -88,9 +88,9 @@ class GetAccountAuditLogSinksResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNextPageToken(string $var)
+    public function setNextPageToken($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->next_page_token = $var;
 
         return $this;

@@ -64,8 +64,9 @@ class CustomErrorMessage extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\CodecServerSpec\CustomErrorMessage\ErrorMessage $var
      * @return $this
      */
-    public function setDefault(\Temporal\Api\Cloud\PBNamespace\V1\CodecServerSpec\CustomErrorMessage\ErrorMessage|null $var)
+    public function setDefault($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\CodecServerSpec\CustomErrorMessage\ErrorMessage::class);
         $this->default = $var;
 
         return $this;

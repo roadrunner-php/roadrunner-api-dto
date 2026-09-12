@@ -35,7 +35,7 @@ class ProjectAccess extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.cloud.identity.v1.ProjectAccess.ProjectRole role = 1;</code>
-     * @return int one of the values in {@see \Temporal\Api\Cloud\Identity\V1\ProjectAccess\ProjectRole}
+     * @return int
      */
     public function getRole()
     {
@@ -44,10 +44,10 @@ class ProjectAccess extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.cloud.identity.v1.ProjectAccess.ProjectRole role = 1;</code>
-     * @param int $var one of the values in {@see \Temporal\Api\Cloud\Identity\V1\ProjectAccess\ProjectRole}
+     * @param int $var
      * @return $this
      */
-    public function setRole(int $var)
+    public function setRole($var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Cloud\Identity\V1\ProjectAccess\ProjectRole::class);
         $this->role = $var;

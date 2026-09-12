@@ -64,8 +64,9 @@ class GetBillingReportResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Billing\V1\BillingReport $var
      * @return $this
      */
-    public function setBillingReport(\Temporal\Api\Cloud\Billing\V1\BillingReport|null $var)
+    public function setBillingReport($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Billing\V1\BillingReport::class);
         $this->billing_report = $var;
 
         return $this;

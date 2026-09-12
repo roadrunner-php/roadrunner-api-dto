@@ -70,9 +70,9 @@ class CustomRoleSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setName(string $var)
+    public function setName($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->name = $var;
 
         return $this;
@@ -96,9 +96,9 @@ class CustomRoleSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setDescription(string $var)
+    public function setDescription($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->description = $var;
 
         return $this;
@@ -122,7 +122,7 @@ class CustomRoleSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Identity\V1\CustomRoleSpec\Permission[] $var
      * @return $this
      */
-    public function setPermissions(array|RepeatedField $var)
+    public function setPermissions($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Cloud\Identity\V1\CustomRoleSpec\Permission::class);
         $this->permissions = $arr;

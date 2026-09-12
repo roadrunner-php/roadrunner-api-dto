@@ -114,10 +114,10 @@ class AccountAccess extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setRoleDeprecated(string $var)
+    public function setRoleDeprecated($var)
     {
         @trigger_error('role_deprecated is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->role_deprecated = $var;
 
         return $this;
@@ -129,7 +129,7 @@ class AccountAccess extends \Google\Protobuf\Internal\Message
      * temporal:enums:replaces=role_deprecated
      *
      * Generated from protobuf field <code>.temporal.api.cloud.identity.v1.AccountAccess.Role role = 2;</code>
-     * @return int one of the values in {@see \Temporal\Api\Cloud\Identity\V1\AccountAccess\Role}
+     * @return int
      */
     public function getRole()
     {
@@ -142,10 +142,10 @@ class AccountAccess extends \Google\Protobuf\Internal\Message
      * temporal:enums:replaces=role_deprecated
      *
      * Generated from protobuf field <code>.temporal.api.cloud.identity.v1.AccountAccess.Role role = 2;</code>
-     * @param int $var one of the values in {@see \Temporal\Api\Cloud\Identity\V1\AccountAccess\Role}
+     * @param int $var
      * @return $this
      */
-    public function setRole(int $var)
+    public function setRole($var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Cloud\Identity\V1\AccountAccess\Role::class);
         $this->role = $var;
@@ -173,7 +173,7 @@ class AccountAccess extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setCustomRoles(array|RepeatedField $var)
+    public function setCustomRoles($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->custom_roles = $arr;

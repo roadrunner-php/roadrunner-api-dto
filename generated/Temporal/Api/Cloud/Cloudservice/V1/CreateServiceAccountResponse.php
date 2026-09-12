@@ -62,9 +62,9 @@ class CreateServiceAccountResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setServiceAccountId(string $var)
+    public function setServiceAccountId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->service_account_id = $var;
 
         return $this;
@@ -98,8 +98,9 @@ class CreateServiceAccountResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Operation\V1\AsyncOperation $var
      * @return $this
      */
-    public function setAsyncOperation(\Temporal\Api\Cloud\Operation\V1\AsyncOperation|null $var)
+    public function setAsyncOperation($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Operation\V1\AsyncOperation::class);
         $this->async_operation = $var;
 
         return $this;

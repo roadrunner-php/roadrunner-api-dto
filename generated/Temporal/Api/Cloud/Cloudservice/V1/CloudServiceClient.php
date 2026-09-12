@@ -244,7 +244,6 @@ class CloudServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @deprecated
      * Add a new region to a namespace
      * Deprecated: Use the UpdateNamespace() to add new replica in the namespace spec instead.
      * @param \Temporal\Api\Cloud\Cloudservice\V1\AddNamespaceRegionRequest $argument input argument
@@ -261,7 +260,6 @@ class CloudServiceClient extends \Grpc\BaseStub {
     }
 
     /**
-     * @deprecated
      * Delete a region from a namespace
      * Deprecated: Use the UpdateNamespace() to delete a replica in the namespace spec instead.
      * @param \Temporal\Api\Cloud\Cloudservice\V1\DeleteNamespaceRegionRequest $argument input argument

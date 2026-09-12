@@ -110,9 +110,9 @@ class ExportSink extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setName(string $var)
+    public function setName($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->name = $var;
 
         return $this;
@@ -136,9 +136,9 @@ class ExportSink extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setResourceVersion(string $var)
+    public function setResourceVersion($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->resource_version = $var;
 
         return $this;
@@ -148,7 +148,7 @@ class ExportSink extends \Google\Protobuf\Internal\Message
      * The current state of the export sink.
      *
      * Generated from protobuf field <code>.temporal.api.cloud.resource.v1.ResourceState state = 3;</code>
-     * @return int one of the values in {@see \Temporal\Api\Cloud\Resource\V1\ResourceState}
+     * @return int
      */
     public function getState()
     {
@@ -159,10 +159,10 @@ class ExportSink extends \Google\Protobuf\Internal\Message
      * The current state of the export sink.
      *
      * Generated from protobuf field <code>.temporal.api.cloud.resource.v1.ResourceState state = 3;</code>
-     * @param int $var one of the values in {@see \Temporal\Api\Cloud\Resource\V1\ResourceState}
+     * @param int $var
      * @return $this
      */
-    public function setState(int $var)
+    public function setState($var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Cloud\Resource\V1\ResourceState::class);
         $this->state = $var;
@@ -198,8 +198,9 @@ class ExportSink extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\ExportSinkSpec $var
      * @return $this
      */
-    public function setSpec(\Temporal\Api\Cloud\PBNamespace\V1\ExportSinkSpec|null $var)
+    public function setSpec($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\ExportSinkSpec::class);
         $this->spec = $var;
 
         return $this;
@@ -209,7 +210,7 @@ class ExportSink extends \Google\Protobuf\Internal\Message
      * The health status of the export sink.
      *
      * Generated from protobuf field <code>.temporal.api.cloud.namespace.v1.ExportSink.Health health = 5;</code>
-     * @return int one of the values in {@see \Temporal\Api\Cloud\PBNamespace\V1\ExportSink\Health}
+     * @return int
      */
     public function getHealth()
     {
@@ -220,10 +221,10 @@ class ExportSink extends \Google\Protobuf\Internal\Message
      * The health status of the export sink.
      *
      * Generated from protobuf field <code>.temporal.api.cloud.namespace.v1.ExportSink.Health health = 5;</code>
-     * @param int $var one of the values in {@see \Temporal\Api\Cloud\PBNamespace\V1\ExportSink\Health}
+     * @param int $var
      * @return $this
      */
-    public function setHealth(int $var)
+    public function setHealth($var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Cloud\PBNamespace\V1\ExportSink\Health::class);
         $this->health = $var;
@@ -249,9 +250,9 @@ class ExportSink extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setErrorMessage(string $var)
+    public function setErrorMessage($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->error_message = $var;
 
         return $this;
@@ -285,8 +286,9 @@ class ExportSink extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setLatestDataExportTime(\Google\Protobuf\Timestamp|null $var)
+    public function setLatestDataExportTime($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->latest_data_export_time = $var;
 
         return $this;
@@ -320,8 +322,9 @@ class ExportSink extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setLastHealthCheckTime(\Google\Protobuf\Timestamp|null $var)
+    public function setLastHealthCheckTime($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_health_check_time = $var;
 
         return $this;

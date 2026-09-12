@@ -64,8 +64,9 @@ class GetCustomRoleResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Identity\V1\CustomRole $var
      * @return $this
      */
-    public function setCustomRole(\Temporal\Api\Cloud\Identity\V1\CustomRole|null $var)
+    public function setCustomRole($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Identity\V1\CustomRole::class);
         $this->custom_role = $var;
 
         return $this;

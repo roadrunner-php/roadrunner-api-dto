@@ -69,9 +69,9 @@ class AuditLogSinkSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setName(string $var)
+    public function setName($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->name = $var;
 
         return $this;
@@ -100,8 +100,9 @@ class AuditLogSinkSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Sink\V1\KinesisSpec $var
      * @return $this
      */
-    public function setKinesisSink(\Temporal\Api\Cloud\Sink\V1\KinesisSpec|null $var)
+    public function setKinesisSink($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Sink\V1\KinesisSpec::class);
         $this->writeOneof(2, $var);
 
         return $this;
@@ -130,8 +131,9 @@ class AuditLogSinkSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Sink\V1\PubSubSpec $var
      * @return $this
      */
-    public function setPubSubSink(\Temporal\Api\Cloud\Sink\V1\PubSubSpec|null $var)
+    public function setPubSubSink($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Sink\V1\PubSubSpec::class);
         $this->writeOneof(3, $var);
 
         return $this;
@@ -155,8 +157,9 @@ class AuditLogSinkSpec extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setEnabled(bool $var)
+    public function setEnabled($var)
     {
+        GPBUtil::checkBool($var);
         $this->enabled = $var;
 
         return $this;

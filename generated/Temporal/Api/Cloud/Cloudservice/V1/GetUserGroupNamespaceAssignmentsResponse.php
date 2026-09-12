@@ -62,7 +62,7 @@ class GetUserGroupNamespaceAssignmentsResponse extends \Google\Protobuf\Internal
      * @param \Temporal\Api\Cloud\Identity\V1\UserGroupNamespaceAssignment[] $var
      * @return $this
      */
-    public function setGroups(array|RepeatedField $var)
+    public function setGroups($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Cloud\Identity\V1\UserGroupNamespaceAssignment::class);
         $this->groups = $arr;
@@ -88,9 +88,9 @@ class GetUserGroupNamespaceAssignmentsResponse extends \Google\Protobuf\Internal
      * @param string $var
      * @return $this
      */
-    public function setNextPageToken(string $var)
+    public function setNextPageToken($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->next_page_token = $var;
 
         return $this;

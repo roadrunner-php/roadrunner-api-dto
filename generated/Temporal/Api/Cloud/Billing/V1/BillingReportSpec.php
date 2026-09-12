@@ -104,8 +104,9 @@ class BillingReportSpec extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setStartTimeInclusive(\Google\Protobuf\Timestamp|null $var)
+    public function setStartTimeInclusive($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->start_time_inclusive = $var;
 
         return $this;
@@ -139,8 +140,9 @@ class BillingReportSpec extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setEndTimeExclusive(\Google\Protobuf\Timestamp|null $var)
+    public function setEndTimeExclusive($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->end_time_exclusive = $var;
 
         return $this;
@@ -176,8 +178,9 @@ class BillingReportSpec extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setDownloadUrlExpirationDuration(\Google\Protobuf\Duration|null $var)
+    public function setDownloadUrlExpirationDuration($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->download_url_expiration_duration = $var;
 
         return $this;
@@ -203,9 +206,9 @@ class BillingReportSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setDescription(string $var)
+    public function setDescription($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->description = $var;
 
         return $this;
@@ -217,7 +220,7 @@ class BillingReportSpec extends \Google\Protobuf\Internal\Message
      * temporal:versioning:min_version=v0.16.0
      *
      * Generated from protobuf field <code>.temporal.api.cloud.billing.v1.BillingReportSpec.BillingReportGranularity granularity = 5;</code>
-     * @return int one of the values in {@see \Temporal\Api\Cloud\Billing\V1\BillingReportSpec\BillingReportGranularity}
+     * @return int
      */
     public function getGranularity()
     {
@@ -230,10 +233,10 @@ class BillingReportSpec extends \Google\Protobuf\Internal\Message
      * temporal:versioning:min_version=v0.16.0
      *
      * Generated from protobuf field <code>.temporal.api.cloud.billing.v1.BillingReportSpec.BillingReportGranularity granularity = 5;</code>
-     * @param int $var one of the values in {@see \Temporal\Api\Cloud\Billing\V1\BillingReportSpec\BillingReportGranularity}
+     * @param int $var
      * @return $this
      */
-    public function setGranularity(int $var)
+    public function setGranularity($var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Cloud\Billing\V1\BillingReportSpec\BillingReportGranularity::class);
         $this->granularity = $var;

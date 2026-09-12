@@ -92,10 +92,10 @@ class NamespaceAccess extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setPermissionDeprecated(string $var)
+    public function setPermissionDeprecated($var)
     {
         @trigger_error('permission_deprecated is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->permission_deprecated = $var;
 
         return $this;
@@ -107,7 +107,7 @@ class NamespaceAccess extends \Google\Protobuf\Internal\Message
      * temporal:enums:replaces=permission_deprecated
      *
      * Generated from protobuf field <code>.temporal.api.cloud.identity.v1.NamespaceAccess.Permission permission = 2;</code>
-     * @return int one of the values in {@see \Temporal\Api\Cloud\Identity\V1\NamespaceAccess\Permission}
+     * @return int
      */
     public function getPermission()
     {
@@ -120,10 +120,10 @@ class NamespaceAccess extends \Google\Protobuf\Internal\Message
      * temporal:enums:replaces=permission_deprecated
      *
      * Generated from protobuf field <code>.temporal.api.cloud.identity.v1.NamespaceAccess.Permission permission = 2;</code>
-     * @param int $var one of the values in {@see \Temporal\Api\Cloud\Identity\V1\NamespaceAccess\Permission}
+     * @param int $var
      * @return $this
      */
-    public function setPermission(int $var)
+    public function setPermission($var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Cloud\Identity\V1\NamespaceAccess\Permission::class);
         $this->permission = $var;

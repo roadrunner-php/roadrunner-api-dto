@@ -54,9 +54,9 @@ class GoogleGroupFilter extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setEmailAddress(string $var)
+    public function setEmailAddress($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->email_address = $var;
 
         return $this;

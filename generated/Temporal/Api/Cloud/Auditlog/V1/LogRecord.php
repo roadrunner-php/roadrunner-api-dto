@@ -130,8 +130,9 @@ class LogRecord extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setEmitTime(\Google\Protobuf\Timestamp|null $var)
+    public function setEmitTime($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->emit_time = $var;
 
         return $this;
@@ -155,9 +156,9 @@ class LogRecord extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setOperation(string $var)
+    public function setOperation($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->operation = $var;
 
         return $this;
@@ -181,9 +182,9 @@ class LogRecord extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setStatus(string $var)
+    public function setStatus($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->status = $var;
 
         return $this;
@@ -207,7 +208,7 @@ class LogRecord extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setVersion(int $var)
+    public function setVersion($var)
     {
         GPBUtil::checkInt32($var);
         $this->version = $var;
@@ -233,9 +234,9 @@ class LogRecord extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setLogId(string $var)
+    public function setLogId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->log_id = $var;
 
         return $this;
@@ -269,8 +270,9 @@ class LogRecord extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Auditlog\V1\Principal $var
      * @return $this
      */
-    public function setPrincipal(\Temporal\Api\Cloud\Auditlog\V1\Principal|null $var)
+    public function setPrincipal($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Auditlog\V1\Principal::class);
         $this->principal = $var;
 
         return $this;
@@ -304,8 +306,9 @@ class LogRecord extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Struct $var
      * @return $this
      */
-    public function setRawDetails(\Google\Protobuf\Struct|null $var)
+    public function setRawDetails($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Struct::class);
         $this->raw_details = $var;
 
         return $this;
@@ -329,9 +332,9 @@ class LogRecord extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setXForwardedFor(string $var)
+    public function setXForwardedFor($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->x_forwarded_for = $var;
 
         return $this;
@@ -355,9 +358,9 @@ class LogRecord extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAsyncOperationId(string $var)
+    public function setAsyncOperationId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->async_operation_id = $var;
 
         return $this;

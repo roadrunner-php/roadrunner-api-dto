@@ -72,8 +72,9 @@ class Invitation extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setCreatedTime(\Google\Protobuf\Timestamp|null $var)
+    public function setCreatedTime($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->created_time = $var;
 
         return $this;
@@ -107,8 +108,9 @@ class Invitation extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setExpiredTime(\Google\Protobuf\Timestamp|null $var)
+    public function setExpiredTime($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->expired_time = $var;
 
         return $this;

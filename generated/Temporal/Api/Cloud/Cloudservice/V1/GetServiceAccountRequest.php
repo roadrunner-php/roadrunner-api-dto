@@ -54,9 +54,9 @@ class GetServiceAccountRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setServiceAccountId(string $var)
+    public function setServiceAccountId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->service_account_id = $var;
 
         return $this;

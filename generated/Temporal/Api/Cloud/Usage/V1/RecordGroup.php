@@ -59,7 +59,7 @@ class RecordGroup extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Usage\V1\GroupBy[] $var
      * @return $this
      */
-    public function setGroupBys(array|RepeatedField $var)
+    public function setGroupBys($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Cloud\Usage\V1\GroupBy::class);
         $this->group_bys = $arr;
@@ -81,7 +81,7 @@ class RecordGroup extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Usage\V1\Record[] $var
      * @return $this
      */
-    public function setRecords(array|RepeatedField $var)
+    public function setRecords($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Cloud\Usage\V1\Record::class);
         $this->records = $arr;

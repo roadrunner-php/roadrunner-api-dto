@@ -64,8 +64,9 @@ class Capacity extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\Capacity\OnDemand $var
      * @return $this
      */
-    public function setOnDemand(\Temporal\Api\Cloud\PBNamespace\V1\Capacity\OnDemand|null $var)
+    public function setOnDemand($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\Capacity\OnDemand::class);
         $this->writeOneof(1, $var);
 
         return $this;
@@ -94,8 +95,9 @@ class Capacity extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\Capacity\Provisioned $var
      * @return $this
      */
-    public function setProvisioned(\Temporal\Api\Cloud\PBNamespace\V1\Capacity\Provisioned|null $var)
+    public function setProvisioned($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\Capacity\Provisioned::class);
         $this->writeOneof(2, $var);
 
         return $this;
@@ -129,8 +131,9 @@ class Capacity extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\Capacity\Request $var
      * @return $this
      */
-    public function setLatestRequest(\Temporal\Api\Cloud\PBNamespace\V1\Capacity\Request|null $var)
+    public function setLatestRequest($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\Capacity\Request::class);
         $this->latest_request = $var;
 
         return $this;

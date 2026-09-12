@@ -82,7 +82,7 @@ class GetAuditLogsRequest extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setPageSize(int $var)
+    public function setPageSize($var)
     {
         GPBUtil::checkInt32($var);
         $this->page_size = $var;
@@ -108,9 +108,9 @@ class GetAuditLogsRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setPageToken(string $var)
+    public function setPageToken($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->page_token = $var;
 
         return $this;
@@ -144,8 +144,9 @@ class GetAuditLogsRequest extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setStartTimeInclusive(\Google\Protobuf\Timestamp|null $var)
+    public function setStartTimeInclusive($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->start_time_inclusive = $var;
 
         return $this;
@@ -179,8 +180,9 @@ class GetAuditLogsRequest extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setEndTimeExclusive(\Google\Protobuf\Timestamp|null $var)
+    public function setEndTimeExclusive($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->end_time_exclusive = $var;
 
         return $this;

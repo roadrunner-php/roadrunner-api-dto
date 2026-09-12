@@ -127,9 +127,9 @@ class ApiKeySpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setOwnerId(string $var)
+    public function setOwnerId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->owner_id = $var;
 
         return $this;
@@ -166,10 +166,10 @@ class ApiKeySpec extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setOwnerTypeDeprecated(string $var)
+    public function setOwnerTypeDeprecated($var)
     {
         @trigger_error('owner_type_deprecated is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->owner_type_deprecated = $var;
 
         return $this;
@@ -181,7 +181,7 @@ class ApiKeySpec extends \Google\Protobuf\Internal\Message
      * temporal:enums:replaces=owner_type_deprecated
      *
      * Generated from protobuf field <code>.temporal.api.cloud.identity.v1.OwnerType owner_type = 7;</code>
-     * @return int one of the values in {@see \Temporal\Api\Cloud\Identity\V1\OwnerType}
+     * @return int
      */
     public function getOwnerType()
     {
@@ -194,10 +194,10 @@ class ApiKeySpec extends \Google\Protobuf\Internal\Message
      * temporal:enums:replaces=owner_type_deprecated
      *
      * Generated from protobuf field <code>.temporal.api.cloud.identity.v1.OwnerType owner_type = 7;</code>
-     * @param int $var one of the values in {@see \Temporal\Api\Cloud\Identity\V1\OwnerType}
+     * @param int $var
      * @return $this
      */
-    public function setOwnerType(int $var)
+    public function setOwnerType($var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Cloud\Identity\V1\OwnerType::class);
         $this->owner_type = $var;
@@ -223,9 +223,9 @@ class ApiKeySpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setDisplayName(string $var)
+    public function setDisplayName($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->display_name = $var;
 
         return $this;
@@ -249,9 +249,9 @@ class ApiKeySpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setDescription(string $var)
+    public function setDescription($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->description = $var;
 
         return $this;
@@ -285,8 +285,9 @@ class ApiKeySpec extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setExpiryTime(\Google\Protobuf\Timestamp|null $var)
+    public function setExpiryTime($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->expiry_time = $var;
 
         return $this;
@@ -310,8 +311,9 @@ class ApiKeySpec extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setDisabled(bool $var)
+    public function setDisabled($var)
     {
+        GPBUtil::checkBool($var);
         $this->disabled = $var;
 
         return $this;

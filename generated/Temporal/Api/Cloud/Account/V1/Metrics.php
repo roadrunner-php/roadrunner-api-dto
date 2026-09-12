@@ -58,9 +58,9 @@ class Metrics extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setUri(string $var)
+    public function setUri($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->uri = $var;
 
         return $this;

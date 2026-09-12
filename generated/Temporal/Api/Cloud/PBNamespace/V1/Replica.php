@@ -80,9 +80,9 @@ class Replica extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setId(string $var)
+    public function setId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->id = $var;
 
         return $this;
@@ -106,8 +106,9 @@ class Replica extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setIsPrimary(bool $var)
+    public function setIsPrimary($var)
     {
+        GPBUtil::checkBool($var);
         $this->is_primary = $var;
 
         return $this;
@@ -117,7 +118,7 @@ class Replica extends \Google\Protobuf\Internal\Message
      * The current state of this replica.
      *
      * Generated from protobuf field <code>.temporal.api.cloud.namespace.v1.Replica.ReplicaState state = 3;</code>
-     * @return int one of the values in {@see \Temporal\Api\Cloud\PBNamespace\V1\Replica\ReplicaState}
+     * @return int
      */
     public function getState()
     {
@@ -128,10 +129,10 @@ class Replica extends \Google\Protobuf\Internal\Message
      * The current state of this replica.
      *
      * Generated from protobuf field <code>.temporal.api.cloud.namespace.v1.Replica.ReplicaState state = 3;</code>
-     * @param int $var one of the values in {@see \Temporal\Api\Cloud\PBNamespace\V1\Replica\ReplicaState}
+     * @param int $var
      * @return $this
      */
-    public function setState(int $var)
+    public function setState($var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Cloud\PBNamespace\V1\Replica\ReplicaState::class);
         $this->state = $var;
@@ -157,9 +158,9 @@ class Replica extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRegion(string $var)
+    public function setRegion($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->region = $var;
 
         return $this;

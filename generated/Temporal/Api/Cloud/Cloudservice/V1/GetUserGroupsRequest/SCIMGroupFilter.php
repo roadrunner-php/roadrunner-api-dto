@@ -54,9 +54,9 @@ class SCIMGroupFilter extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdpId(string $var)
+    public function setIdpId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->idp_id = $var;
 
         return $this;

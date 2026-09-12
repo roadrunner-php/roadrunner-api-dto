@@ -72,9 +72,9 @@ class DeleteNexusEndpointRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setEndpointId(string $var)
+    public function setEndpointId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->endpoint_id = $var;
 
         return $this;
@@ -100,9 +100,9 @@ class DeleteNexusEndpointRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setResourceVersion(string $var)
+    public function setResourceVersion($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->resource_version = $var;
 
         return $this;
@@ -126,9 +126,9 @@ class DeleteNexusEndpointRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAsyncOperationId(string $var)
+    public function setAsyncOperationId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->async_operation_id = $var;
 
         return $this;

@@ -80,9 +80,9 @@ class UpdateApiKeyRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setKeyId(string $var)
+    public function setKeyId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->key_id = $var;
 
         return $this;
@@ -116,8 +116,9 @@ class UpdateApiKeyRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Identity\V1\ApiKeySpec $var
      * @return $this
      */
-    public function setSpec(\Temporal\Api\Cloud\Identity\V1\ApiKeySpec|null $var)
+    public function setSpec($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Identity\V1\ApiKeySpec::class);
         $this->spec = $var;
 
         return $this;
@@ -143,9 +144,9 @@ class UpdateApiKeyRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setResourceVersion(string $var)
+    public function setResourceVersion($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->resource_version = $var;
 
         return $this;
@@ -169,9 +170,9 @@ class UpdateApiKeyRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAsyncOperationId(string $var)
+    public function setAsyncOperationId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->async_operation_id = $var;
 
         return $this;

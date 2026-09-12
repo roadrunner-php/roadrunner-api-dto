@@ -80,9 +80,9 @@ class UpdateNexusEndpointRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setEndpointId(string $var)
+    public function setEndpointId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->endpoint_id = $var;
 
         return $this;
@@ -116,8 +116,9 @@ class UpdateNexusEndpointRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Nexus\V1\EndpointSpec $var
      * @return $this
      */
-    public function setSpec(\Temporal\Api\Cloud\Nexus\V1\EndpointSpec|null $var)
+    public function setSpec($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Nexus\V1\EndpointSpec::class);
         $this->spec = $var;
 
         return $this;
@@ -143,9 +144,9 @@ class UpdateNexusEndpointRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setResourceVersion(string $var)
+    public function setResourceVersion($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->resource_version = $var;
 
         return $this;
@@ -169,9 +170,9 @@ class UpdateNexusEndpointRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAsyncOperationId(string $var)
+    public function setAsyncOperationId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->async_operation_id = $var;
 
         return $this;

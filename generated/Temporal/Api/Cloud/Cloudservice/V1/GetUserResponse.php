@@ -64,8 +64,9 @@ class GetUserResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Identity\V1\User $var
      * @return $this
      */
-    public function setUser(\Temporal\Api\Cloud\Identity\V1\User|null $var)
+    public function setUser($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Identity\V1\User::class);
         $this->user = $var;
 
         return $this;

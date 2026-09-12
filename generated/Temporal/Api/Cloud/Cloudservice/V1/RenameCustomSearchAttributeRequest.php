@@ -90,9 +90,9 @@ class RenameCustomSearchAttributeRequest extends \Google\Protobuf\Internal\Messa
      * @param string $var
      * @return $this
      */
-    public function setNamespace(string $var)
+    public function setNamespace($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->namespace = $var;
 
         return $this;
@@ -116,9 +116,9 @@ class RenameCustomSearchAttributeRequest extends \Google\Protobuf\Internal\Messa
      * @param string $var
      * @return $this
      */
-    public function setExistingCustomSearchAttributeName(string $var)
+    public function setExistingCustomSearchAttributeName($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->existing_custom_search_attribute_name = $var;
 
         return $this;
@@ -142,9 +142,9 @@ class RenameCustomSearchAttributeRequest extends \Google\Protobuf\Internal\Messa
      * @param string $var
      * @return $this
      */
-    public function setNewCustomSearchAttributeName(string $var)
+    public function setNewCustomSearchAttributeName($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->new_custom_search_attribute_name = $var;
 
         return $this;
@@ -170,9 +170,9 @@ class RenameCustomSearchAttributeRequest extends \Google\Protobuf\Internal\Messa
      * @param string $var
      * @return $this
      */
-    public function setResourceVersion(string $var)
+    public function setResourceVersion($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->resource_version = $var;
 
         return $this;
@@ -198,9 +198,9 @@ class RenameCustomSearchAttributeRequest extends \Google\Protobuf\Internal\Messa
      * @param string $var
      * @return $this
      */
-    public function setAsyncOperationId(string $var)
+    public function setAsyncOperationId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->async_operation_id = $var;
 
         return $this;

@@ -54,9 +54,9 @@ class GetCustomRoleRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRoleId(string $var)
+    public function setRoleId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->role_id = $var;
 
         return $this;

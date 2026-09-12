@@ -90,8 +90,9 @@ class Summary extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setStartTime(\Google\Protobuf\Timestamp|null $var)
+    public function setStartTime($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->start_time = $var;
 
         return $this;
@@ -125,8 +126,9 @@ class Summary extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setEndTime(\Google\Protobuf\Timestamp|null $var)
+    public function setEndTime($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->end_time = $var;
 
         return $this;
@@ -150,7 +152,7 @@ class Summary extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Usage\V1\RecordGroup[] $var
      * @return $this
      */
-    public function setRecordGroups(array|RepeatedField $var)
+    public function setRecordGroups($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Cloud\Usage\V1\RecordGroup::class);
         $this->record_groups = $arr;
@@ -178,8 +180,9 @@ class Summary extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setIncomplete(bool $var)
+    public function setIncomplete($var)
     {
+        GPBUtil::checkBool($var);
         $this->incomplete = $var;
 
         return $this;

@@ -64,8 +64,9 @@ class HighAvailabilitySpec extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setDisableManagedFailover(bool $var)
+    public function setDisableManagedFailover($var)
     {
+        GPBUtil::checkBool($var);
         $this->disable_managed_failover = $var;
 
         return $this;
@@ -91,8 +92,9 @@ class HighAvailabilitySpec extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setDisablePassivePollerForwarding(bool $var)
+    public function setDisablePassivePollerForwarding($var)
     {
+        GPBUtil::checkBool($var);
         $this->disable_passive_poller_forwarding = $var;
 
         return $this;

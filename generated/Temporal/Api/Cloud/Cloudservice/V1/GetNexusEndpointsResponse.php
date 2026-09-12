@@ -62,7 +62,7 @@ class GetNexusEndpointsResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Nexus\V1\Endpoint[] $var
      * @return $this
      */
-    public function setEndpoints(array|RepeatedField $var)
+    public function setEndpoints($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Cloud\Nexus\V1\Endpoint::class);
         $this->endpoints = $arr;
@@ -88,9 +88,9 @@ class GetNexusEndpointsResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNextPageToken(string $var)
+    public function setNextPageToken($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->next_page_token = $var;
 
         return $this;

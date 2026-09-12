@@ -57,8 +57,9 @@ class Summary extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setMean(float $var)
+    public function setMean($var)
     {
+        GPBUtil::checkDouble($var);
         $this->mean = $var;
 
         return $this;
@@ -78,8 +79,9 @@ class Summary extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setP90(float $var)
+    public function setP90($var)
     {
+        GPBUtil::checkDouble($var);
         $this->p90 = $var;
 
         return $this;
@@ -99,8 +101,9 @@ class Summary extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setP99(float $var)
+    public function setP99($var)
     {
+        GPBUtil::checkDouble($var);
         $this->p99 = $var;
 
         return $this;

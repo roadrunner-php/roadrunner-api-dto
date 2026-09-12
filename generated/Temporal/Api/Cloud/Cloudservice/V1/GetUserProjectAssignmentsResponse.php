@@ -62,7 +62,7 @@ class GetUserProjectAssignmentsResponse extends \Google\Protobuf\Internal\Messag
      * @param \Temporal\Api\Cloud\Identity\V1\UserProjectAssignment[] $var
      * @return $this
      */
-    public function setUsers(array|RepeatedField $var)
+    public function setUsers($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Cloud\Identity\V1\UserProjectAssignment::class);
         $this->users = $arr;
@@ -88,9 +88,9 @@ class GetUserProjectAssignmentsResponse extends \Google\Protobuf\Internal\Messag
      * @param string $var
      * @return $this
      */
-    public function setNextPageToken(string $var)
+    public function setNextPageToken($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->next_page_token = $var;
 
         return $this;

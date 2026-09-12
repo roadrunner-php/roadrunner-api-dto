@@ -68,8 +68,9 @@ class AccountSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Account\V1\MetricsSpec $var
      * @return $this
      */
-    public function setMetrics(\Temporal\Api\Cloud\Account\V1\MetricsSpec|null $var)
+    public function setMetrics($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Account\V1\MetricsSpec::class);
         $this->metrics = $var;
 
         return $this;

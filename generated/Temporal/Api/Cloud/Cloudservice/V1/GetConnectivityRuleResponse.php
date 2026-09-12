@@ -57,8 +57,9 @@ class GetConnectivityRuleResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Connectivityrule\V1\ConnectivityRule $var
      * @return $this
      */
-    public function setConnectivityRule(\Temporal\Api\Cloud\Connectivityrule\V1\ConnectivityRule|null $var)
+    public function setConnectivityRule($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Connectivityrule\V1\ConnectivityRule::class);
         $this->connectivity_rule = $var;
 
         return $this;

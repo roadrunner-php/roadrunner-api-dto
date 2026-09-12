@@ -62,9 +62,9 @@ class ValidateNamespaceExportSinkRequest extends \Google\Protobuf\Internal\Messa
      * @param string $var
      * @return $this
      */
-    public function setNamespace(string $var)
+    public function setNamespace($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->namespace = $var;
 
         return $this;
@@ -98,8 +98,9 @@ class ValidateNamespaceExportSinkRequest extends \Google\Protobuf\Internal\Messa
      * @param \Temporal\Api\Cloud\PBNamespace\V1\ExportSinkSpec $var
      * @return $this
      */
-    public function setSpec(\Temporal\Api\Cloud\PBNamespace\V1\ExportSinkSpec|null $var)
+    public function setSpec($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\ExportSinkSpec::class);
         $this->spec = $var;
 
         return $this;

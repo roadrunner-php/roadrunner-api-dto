@@ -94,9 +94,9 @@ class NamespaceCapacityInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace(string $var)
+    public function setNamespace($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->namespace = $var;
 
         return $this;
@@ -120,8 +120,9 @@ class NamespaceCapacityInfo extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setHasLegacyLimits(bool $var)
+    public function setHasLegacyLimits($var)
     {
+        GPBUtil::checkBool($var);
         $this->has_legacy_limits = $var;
 
         return $this;
@@ -157,8 +158,9 @@ class NamespaceCapacityInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\Capacity $var
      * @return $this
      */
-    public function setCurrentCapacity(\Temporal\Api\Cloud\PBNamespace\V1\Capacity|null $var)
+    public function setCurrentCapacity($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\Capacity::class);
         $this->current_capacity = $var;
 
         return $this;
@@ -194,8 +196,9 @@ class NamespaceCapacityInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\NamespaceCapacityInfo\CapacityModeOptions $var
      * @return $this
      */
-    public function setModeOptions(\Temporal\Api\Cloud\PBNamespace\V1\NamespaceCapacityInfo\CapacityModeOptions|null $var)
+    public function setModeOptions($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\NamespaceCapacityInfo\CapacityModeOptions::class);
         $this->mode_options = $var;
 
         return $this;
@@ -231,8 +234,9 @@ class NamespaceCapacityInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\NamespaceCapacityInfo\Stats $var
      * @return $this
      */
-    public function setStats(\Temporal\Api\Cloud\PBNamespace\V1\NamespaceCapacityInfo\Stats|null $var)
+    public function setStats($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\NamespaceCapacityInfo\Stats::class);
         $this->stats = $var;
 
         return $this;

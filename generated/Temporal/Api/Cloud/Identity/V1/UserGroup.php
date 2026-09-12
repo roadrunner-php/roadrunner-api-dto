@@ -125,9 +125,9 @@ class UserGroup extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setId(string $var)
+    public function setId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->id = $var;
 
         return $this;
@@ -153,9 +153,9 @@ class UserGroup extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setResourceVersion(string $var)
+    public function setResourceVersion($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->resource_version = $var;
 
         return $this;
@@ -189,8 +189,9 @@ class UserGroup extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Identity\V1\UserGroupSpec $var
      * @return $this
      */
-    public function setSpec(\Temporal\Api\Cloud\Identity\V1\UserGroupSpec|null $var)
+    public function setSpec($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Identity\V1\UserGroupSpec::class);
         $this->spec = $var;
 
         return $this;
@@ -223,10 +224,10 @@ class UserGroup extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setStateDeprecated(string $var)
+    public function setStateDeprecated($var)
     {
         @trigger_error('state_deprecated is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->state_deprecated = $var;
 
         return $this;
@@ -239,7 +240,7 @@ class UserGroup extends \Google\Protobuf\Internal\Message
      * temporal:enums:replaces=state_deprecated
      *
      * Generated from protobuf field <code>.temporal.api.cloud.resource.v1.ResourceState state = 8;</code>
-     * @return int one of the values in {@see \Temporal\Api\Cloud\Resource\V1\ResourceState}
+     * @return int
      */
     public function getState()
     {
@@ -253,10 +254,10 @@ class UserGroup extends \Google\Protobuf\Internal\Message
      * temporal:enums:replaces=state_deprecated
      *
      * Generated from protobuf field <code>.temporal.api.cloud.resource.v1.ResourceState state = 8;</code>
-     * @param int $var one of the values in {@see \Temporal\Api\Cloud\Resource\V1\ResourceState}
+     * @param int $var
      * @return $this
      */
-    public function setState(int $var)
+    public function setState($var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Cloud\Resource\V1\ResourceState::class);
         $this->state = $var;
@@ -282,9 +283,9 @@ class UserGroup extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAsyncOperationId(string $var)
+    public function setAsyncOperationId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->async_operation_id = $var;
 
         return $this;
@@ -318,8 +319,9 @@ class UserGroup extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setCreatedTime(\Google\Protobuf\Timestamp|null $var)
+    public function setCreatedTime($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->created_time = $var;
 
         return $this;
@@ -355,8 +357,9 @@ class UserGroup extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setLastModifiedTime(\Google\Protobuf\Timestamp|null $var)
+    public function setLastModifiedTime($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_modified_time = $var;
 
         return $this;

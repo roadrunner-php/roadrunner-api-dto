@@ -131,9 +131,9 @@ class AsyncOperation extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setId(string $var)
+    public function setId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->id = $var;
 
         return $this;
@@ -168,10 +168,10 @@ class AsyncOperation extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setStateDeprecated(string $var)
+    public function setStateDeprecated($var)
     {
         @trigger_error('state_deprecated is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->state_deprecated = $var;
 
         return $this;
@@ -183,7 +183,7 @@ class AsyncOperation extends \Google\Protobuf\Internal\Message
      * temporal:enums:replaces=state_deprecated
      *
      * Generated from protobuf field <code>.temporal.api.cloud.operation.v1.AsyncOperation.State state = 9;</code>
-     * @return int one of the values in {@see \Temporal\Api\Cloud\Operation\V1\AsyncOperation\State}
+     * @return int
      */
     public function getState()
     {
@@ -196,10 +196,10 @@ class AsyncOperation extends \Google\Protobuf\Internal\Message
      * temporal:enums:replaces=state_deprecated
      *
      * Generated from protobuf field <code>.temporal.api.cloud.operation.v1.AsyncOperation.State state = 9;</code>
-     * @param int $var one of the values in {@see \Temporal\Api\Cloud\Operation\V1\AsyncOperation\State}
+     * @param int $var
      * @return $this
      */
-    public function setState(int $var)
+    public function setState($var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Cloud\Operation\V1\AsyncOperation\State::class);
         $this->state = $var;
@@ -235,8 +235,9 @@ class AsyncOperation extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setCheckDuration(\Google\Protobuf\Duration|null $var)
+    public function setCheckDuration($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->check_duration = $var;
 
         return $this;
@@ -260,9 +261,9 @@ class AsyncOperation extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setOperationType(string $var)
+    public function setOperationType($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->operation_type = $var;
 
         return $this;
@@ -298,8 +299,9 @@ class AsyncOperation extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Any $var
      * @return $this
      */
-    public function setOperationInput(\Google\Protobuf\Any|null $var)
+    public function setOperationInput($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Any::class);
         $this->operation_input = $var;
 
         return $this;
@@ -323,9 +325,9 @@ class AsyncOperation extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setFailureReason(string $var)
+    public function setFailureReason($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->failure_reason = $var;
 
         return $this;
@@ -359,8 +361,9 @@ class AsyncOperation extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setStartedTime(\Google\Protobuf\Timestamp|null $var)
+    public function setStartedTime($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->started_time = $var;
 
         return $this;
@@ -394,8 +397,9 @@ class AsyncOperation extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setFinishedTime(\Google\Protobuf\Timestamp|null $var)
+    public function setFinishedTime($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->finished_time = $var;
 
         return $this;

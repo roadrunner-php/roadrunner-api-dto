@@ -104,9 +104,9 @@ class BillingReport extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setId(string $var)
+    public function setId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->id = $var;
 
         return $this;
@@ -116,7 +116,7 @@ class BillingReport extends \Google\Protobuf\Internal\Message
      * The current state of the billing report.
      *
      * Generated from protobuf field <code>.temporal.api.cloud.billing.v1.BillingReport.BillingReportState state = 2;</code>
-     * @return int one of the values in {@see \Temporal\Api\Cloud\Billing\V1\BillingReport\BillingReportState}
+     * @return int
      */
     public function getState()
     {
@@ -127,10 +127,10 @@ class BillingReport extends \Google\Protobuf\Internal\Message
      * The current state of the billing report.
      *
      * Generated from protobuf field <code>.temporal.api.cloud.billing.v1.BillingReport.BillingReportState state = 2;</code>
-     * @param int $var one of the values in {@see \Temporal\Api\Cloud\Billing\V1\BillingReport\BillingReportState}
+     * @param int $var
      * @return $this
      */
-    public function setState(int $var)
+    public function setState($var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Cloud\Billing\V1\BillingReport\BillingReportState::class);
         $this->state = $var;
@@ -166,8 +166,9 @@ class BillingReport extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Billing\V1\BillingReportSpec $var
      * @return $this
      */
-    public function setSpec(\Temporal\Api\Cloud\Billing\V1\BillingReportSpec|null $var)
+    public function setSpec($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Billing\V1\BillingReportSpec::class);
         $this->spec = $var;
 
         return $this;
@@ -193,7 +194,7 @@ class BillingReport extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Billing\V1\BillingReport\Download[] $var
      * @return $this
      */
-    public function setDownloadInfo(array|RepeatedField $var)
+    public function setDownloadInfo($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Cloud\Billing\V1\BillingReport\Download::class);
         $this->download_info = $arr;
@@ -229,8 +230,9 @@ class BillingReport extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setRequestedTime(\Google\Protobuf\Timestamp|null $var)
+    public function setRequestedTime($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->requested_time = $var;
 
         return $this;
@@ -264,8 +266,9 @@ class BillingReport extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setGeneratedTime(\Google\Protobuf\Timestamp|null $var)
+    public function setGeneratedTime($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->generated_time = $var;
 
         return $this;
@@ -289,9 +292,9 @@ class BillingReport extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAsyncOperationId(string $var)
+    public function setAsyncOperationId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->async_operation_id = $var;
 
         return $this;

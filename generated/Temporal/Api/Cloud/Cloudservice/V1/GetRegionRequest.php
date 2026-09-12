@@ -54,9 +54,9 @@ class GetRegionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRegion(string $var)
+    public function setRegion($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->region = $var;
 
         return $this;

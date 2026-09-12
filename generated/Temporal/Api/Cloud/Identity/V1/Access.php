@@ -99,8 +99,9 @@ class Access extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Identity\V1\AccountAccess $var
      * @return $this
      */
-    public function setAccountAccess(\Temporal\Api\Cloud\Identity\V1\AccountAccess|null $var)
+    public function setAccountAccess($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Identity\V1\AccountAccess::class);
         $this->account_access = $var;
 
         return $this;
@@ -126,7 +127,7 @@ class Access extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setNamespaceAccesses(array|\Google\Protobuf\Internal\MapField $var)
+    public function setNamespaceAccesses($var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Cloud\Identity\V1\NamespaceAccess::class);
         $this->namespace_accesses = $arr;
@@ -156,7 +157,7 @@ class Access extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setProjectAccesses(array|\Google\Protobuf\Internal\MapField $var)
+    public function setProjectAccesses($var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Cloud\Identity\V1\ProjectAccess::class);
         $this->project_accesses = $arr;
@@ -175,7 +176,7 @@ class Access extends \Google\Protobuf\Internal\Message
      */
     public function getCustomRolesDeprecated()
     {
-        if (count($this->custom_roles_deprecated) !== 0) {
+        if ($this->custom_roles_deprecated->count() !== 0) {
             @trigger_error('custom_roles_deprecated is deprecated.', E_USER_DEPRECATED);
         }
         return $this->custom_roles_deprecated;
@@ -191,10 +192,10 @@ class Access extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setCustomRolesDeprecated(array|RepeatedField $var)
+    public function setCustomRolesDeprecated($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
-        if (count($arr) !== 0) {
+        if ($arr->count() !== 0) {
             @trigger_error('custom_roles_deprecated is deprecated.', E_USER_DEPRECATED);
         }
         $this->custom_roles_deprecated = $arr;

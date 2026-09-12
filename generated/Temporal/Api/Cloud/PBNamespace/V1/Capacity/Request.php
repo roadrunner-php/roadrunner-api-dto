@@ -72,7 +72,7 @@ class Request extends \Google\Protobuf\Internal\Message
      * The current state of the capacity request (e.g. in-progress, completed, failed).
      *
      * Generated from protobuf field <code>.temporal.api.cloud.namespace.v1.Capacity.Request.State state = 1;</code>
-     * @return int one of the values in {@see \Temporal\Api\Cloud\PBNamespace\V1\Capacity\Request\State}
+     * @return int
      */
     public function getState()
     {
@@ -83,10 +83,10 @@ class Request extends \Google\Protobuf\Internal\Message
      * The current state of the capacity request (e.g. in-progress, completed, failed).
      *
      * Generated from protobuf field <code>.temporal.api.cloud.namespace.v1.Capacity.Request.State state = 1;</code>
-     * @param int $var one of the values in {@see \Temporal\Api\Cloud\PBNamespace\V1\Capacity\Request\State}
+     * @param int $var
      * @return $this
      */
-    public function setState(int $var)
+    public function setState($var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Cloud\PBNamespace\V1\Capacity\Request\State::class);
         $this->state = $var;
@@ -122,8 +122,9 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setStartTime(\Google\Protobuf\Timestamp|null $var)
+    public function setStartTime($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->start_time = $var;
 
         return $this;
@@ -157,8 +158,9 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setEndTime(\Google\Protobuf\Timestamp|null $var)
+    public function setEndTime($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->end_time = $var;
 
         return $this;
@@ -182,9 +184,9 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAsyncOperationId(string $var)
+    public function setAsyncOperationId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->async_operation_id = $var;
 
         return $this;
@@ -218,8 +220,9 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\CapacitySpec $var
      * @return $this
      */
-    public function setSpec(\Temporal\Api\Cloud\PBNamespace\V1\CapacitySpec|null $var)
+    public function setSpec($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\CapacitySpec::class);
         $this->spec = $var;
 
         return $this;

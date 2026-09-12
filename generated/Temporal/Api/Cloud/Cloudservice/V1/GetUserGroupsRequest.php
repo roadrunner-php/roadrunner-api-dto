@@ -98,7 +98,7 @@ class GetUserGroupsRequest extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setPageSize(int $var)
+    public function setPageSize($var)
     {
         GPBUtil::checkInt32($var);
         $this->page_size = $var;
@@ -124,9 +124,9 @@ class GetUserGroupsRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setPageToken(string $var)
+    public function setPageToken($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->page_token = $var;
 
         return $this;
@@ -150,9 +150,9 @@ class GetUserGroupsRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace(string $var)
+    public function setNamespace($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->namespace = $var;
 
         return $this;
@@ -176,9 +176,9 @@ class GetUserGroupsRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setDisplayName(string $var)
+    public function setDisplayName($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->display_name = $var;
 
         return $this;
@@ -212,8 +212,9 @@ class GetUserGroupsRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Cloudservice\V1\GetUserGroupsRequest\GoogleGroupFilter $var
      * @return $this
      */
-    public function setGoogleGroup(\Temporal\Api\Cloud\Cloudservice\V1\GetUserGroupsRequest\GoogleGroupFilter|null $var)
+    public function setGoogleGroup($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Cloudservice\V1\GetUserGroupsRequest\GoogleGroupFilter::class);
         $this->google_group = $var;
 
         return $this;
@@ -247,8 +248,9 @@ class GetUserGroupsRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Cloudservice\V1\GetUserGroupsRequest\SCIMGroupFilter $var
      * @return $this
      */
-    public function setScimGroup(\Temporal\Api\Cloud\Cloudservice\V1\GetUserGroupsRequest\SCIMGroupFilter|null $var)
+    public function setScimGroup($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Cloudservice\V1\GetUserGroupsRequest\SCIMGroupFilter::class);
         $this->scim_group = $var;
 
         return $this;

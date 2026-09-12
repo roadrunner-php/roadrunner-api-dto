@@ -104,9 +104,9 @@ class AuditLogSink extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setName(string $var)
+    public function setName($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->name = $var;
 
         return $this;
@@ -130,9 +130,9 @@ class AuditLogSink extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setResourceVersion(string $var)
+    public function setResourceVersion($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->resource_version = $var;
 
         return $this;
@@ -142,7 +142,7 @@ class AuditLogSink extends \Google\Protobuf\Internal\Message
      * The current state of the audit log sink.
      *
      * Generated from protobuf field <code>.temporal.api.cloud.resource.v1.ResourceState state = 3;</code>
-     * @return int one of the values in {@see \Temporal\Api\Cloud\Resource\V1\ResourceState}
+     * @return int
      */
     public function getState()
     {
@@ -153,10 +153,10 @@ class AuditLogSink extends \Google\Protobuf\Internal\Message
      * The current state of the audit log sink.
      *
      * Generated from protobuf field <code>.temporal.api.cloud.resource.v1.ResourceState state = 3;</code>
-     * @param int $var one of the values in {@see \Temporal\Api\Cloud\Resource\V1\ResourceState}
+     * @param int $var
      * @return $this
      */
-    public function setState(int $var)
+    public function setState($var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Cloud\Resource\V1\ResourceState::class);
         $this->state = $var;
@@ -192,8 +192,9 @@ class AuditLogSink extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Account\V1\AuditLogSinkSpec $var
      * @return $this
      */
-    public function setSpec(\Temporal\Api\Cloud\Account\V1\AuditLogSinkSpec|null $var)
+    public function setSpec($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Account\V1\AuditLogSinkSpec::class);
         $this->spec = $var;
 
         return $this;
@@ -203,7 +204,7 @@ class AuditLogSink extends \Google\Protobuf\Internal\Message
      * The health status of the audit log sink.
      *
      * Generated from protobuf field <code>.temporal.api.cloud.account.v1.AuditLogSink.Health health = 5;</code>
-     * @return int one of the values in {@see \Temporal\Api\Cloud\Account\V1\AuditLogSink\Health}
+     * @return int
      */
     public function getHealth()
     {
@@ -214,10 +215,10 @@ class AuditLogSink extends \Google\Protobuf\Internal\Message
      * The health status of the audit log sink.
      *
      * Generated from protobuf field <code>.temporal.api.cloud.account.v1.AuditLogSink.Health health = 5;</code>
-     * @param int $var one of the values in {@see \Temporal\Api\Cloud\Account\V1\AuditLogSink\Health}
+     * @param int $var
      * @return $this
      */
-    public function setHealth(int $var)
+    public function setHealth($var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Cloud\Account\V1\AuditLogSink\Health::class);
         $this->health = $var;
@@ -243,9 +244,9 @@ class AuditLogSink extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setErrorMessage(string $var)
+    public function setErrorMessage($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->error_message = $var;
 
         return $this;
@@ -279,8 +280,9 @@ class AuditLogSink extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setLastSucceededTime(\Google\Protobuf\Timestamp|null $var)
+    public function setLastSucceededTime($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_succeeded_time = $var;
 
         return $this;

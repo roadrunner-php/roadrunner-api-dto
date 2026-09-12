@@ -64,8 +64,9 @@ class ValidateAccountAuditLogSinkRequest extends \Google\Protobuf\Internal\Messa
      * @param \Temporal\Api\Cloud\Account\V1\AuditLogSinkSpec $var
      * @return $this
      */
-    public function setSpec(\Temporal\Api\Cloud\Account\V1\AuditLogSinkSpec|null $var)
+    public function setSpec($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Account\V1\AuditLogSinkSpec::class);
         $this->spec = $var;
 
         return $this;

@@ -71,9 +71,9 @@ class UserGroupSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setDisplayName(string $var)
+    public function setDisplayName($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->display_name = $var;
 
         return $this;
@@ -107,8 +107,9 @@ class UserGroupSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Identity\V1\Access $var
      * @return $this
      */
-    public function setAccess(\Temporal\Api\Cloud\Identity\V1\Access|null $var)
+    public function setAccess($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Identity\V1\Access::class);
         $this->access = $var;
 
         return $this;
@@ -137,8 +138,9 @@ class UserGroupSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Identity\V1\GoogleGroupSpec $var
      * @return $this
      */
-    public function setGoogleGroup(\Temporal\Api\Cloud\Identity\V1\GoogleGroupSpec|null $var)
+    public function setGoogleGroup($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Identity\V1\GoogleGroupSpec::class);
         $this->writeOneof(3, $var);
 
         return $this;
@@ -169,8 +171,9 @@ class UserGroupSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Identity\V1\SCIMGroupSpec $var
      * @return $this
      */
-    public function setScimGroup(\Temporal\Api\Cloud\Identity\V1\SCIMGroupSpec|null $var)
+    public function setScimGroup($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Identity\V1\SCIMGroupSpec::class);
         $this->writeOneof(4, $var);
 
         return $this;
@@ -201,8 +204,9 @@ class UserGroupSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Identity\V1\CloudGroupSpec $var
      * @return $this
      */
-    public function setCloudGroup(\Temporal\Api\Cloud\Identity\V1\CloudGroupSpec|null $var)
+    public function setCloudGroup($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Identity\V1\CloudGroupSpec::class);
         $this->writeOneof(5, $var);
 
         return $this;

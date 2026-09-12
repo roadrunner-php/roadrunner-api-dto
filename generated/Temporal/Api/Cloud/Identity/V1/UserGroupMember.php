@@ -62,8 +62,9 @@ class UserGroupMember extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Identity\V1\UserGroupMemberId $var
      * @return $this
      */
-    public function setMemberId(\Temporal\Api\Cloud\Identity\V1\UserGroupMemberId|null $var)
+    public function setMemberId($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Identity\V1\UserGroupMemberId::class);
         $this->member_id = $var;
 
         return $this;
@@ -93,8 +94,9 @@ class UserGroupMember extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setCreatedTime(\Google\Protobuf\Timestamp|null $var)
+    public function setCreatedTime($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->created_time = $var;
 
         return $this;

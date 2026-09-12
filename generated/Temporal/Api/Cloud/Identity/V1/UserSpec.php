@@ -62,9 +62,9 @@ class UserSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setEmail(string $var)
+    public function setEmail($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->email = $var;
 
         return $this;
@@ -98,8 +98,9 @@ class UserSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Identity\V1\Access $var
      * @return $this
      */
-    public function setAccess(\Temporal\Api\Cloud\Identity\V1\Access|null $var)
+    public function setAccess($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Identity\V1\Access::class);
         $this->access = $var;
 
         return $this;

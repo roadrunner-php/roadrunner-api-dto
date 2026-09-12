@@ -94,9 +94,9 @@ class AzureBlobSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTenantId(string $var)
+    public function setTenantId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->tenant_id = $var;
 
         return $this;
@@ -120,9 +120,9 @@ class AzureBlobSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setStorageAccount(string $var)
+    public function setStorageAccount($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->storage_account = $var;
 
         return $this;
@@ -146,9 +146,9 @@ class AzureBlobSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setContainerName(string $var)
+    public function setContainerName($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->container_name = $var;
 
         return $this;
@@ -172,9 +172,9 @@ class AzureBlobSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRegion(string $var)
+    public function setRegion($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->region = $var;
 
         return $this;
@@ -198,9 +198,9 @@ class AzureBlobSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSubscriptionId(string $var)
+    public function setSubscriptionId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->subscription_id = $var;
 
         return $this;
@@ -224,9 +224,9 @@ class AzureBlobSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setResourceGroup(string $var)
+    public function setResourceGroup($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->resource_group = $var;
 
         return $this;

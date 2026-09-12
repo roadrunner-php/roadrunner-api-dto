@@ -60,8 +60,9 @@ class PublicConnectivityRule extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setEnableStableIps(bool $var)
+    public function setEnableStableIps($var)
     {
+        GPBUtil::checkBool($var);
         $this->enable_stable_ips = $var;
 
         return $this;

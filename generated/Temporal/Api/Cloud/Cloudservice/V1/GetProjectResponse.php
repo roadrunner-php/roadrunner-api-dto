@@ -64,8 +64,9 @@ class GetProjectResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Project\V1\Project $var
      * @return $this
      */
-    public function setProject(\Temporal\Api\Cloud\Project\V1\Project|null $var)
+    public function setProject($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Project\V1\Project::class);
         $this->project = $var;
 
         return $this;

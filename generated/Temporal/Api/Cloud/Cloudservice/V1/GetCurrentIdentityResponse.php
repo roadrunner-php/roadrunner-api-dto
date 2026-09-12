@@ -64,8 +64,9 @@ class GetCurrentIdentityResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Identity\V1\User $var
      * @return $this
      */
-    public function setUser(\Temporal\Api\Cloud\Identity\V1\User|null $var)
+    public function setUser($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Identity\V1\User::class);
         $this->writeOneof(1, $var);
 
         return $this;
@@ -94,8 +95,9 @@ class GetCurrentIdentityResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Identity\V1\ServiceAccount $var
      * @return $this
      */
-    public function setServiceAccount(\Temporal\Api\Cloud\Identity\V1\ServiceAccount|null $var)
+    public function setServiceAccount($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Identity\V1\ServiceAccount::class);
         $this->writeOneof(2, $var);
 
         return $this;
@@ -129,8 +131,9 @@ class GetCurrentIdentityResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Identity\V1\ApiKey $var
      * @return $this
      */
-    public function setPrincipalApiKey(\Temporal\Api\Cloud\Identity\V1\ApiKey|null $var)
+    public function setPrincipalApiKey($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Identity\V1\ApiKey::class);
         $this->principal_api_key = $var;
 
         return $this;

@@ -97,9 +97,9 @@ class Region extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setId(string $var)
+    public function setId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->id = $var;
 
         return $this;
@@ -134,10 +134,10 @@ class Region extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setCloudProviderDeprecated(string $var)
+    public function setCloudProviderDeprecated($var)
     {
         @trigger_error('cloud_provider_deprecated is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->cloud_provider_deprecated = $var;
 
         return $this;
@@ -149,7 +149,7 @@ class Region extends \Google\Protobuf\Internal\Message
      * temporal:enums:replaces=cloud_provider_deprecated
      *
      * Generated from protobuf field <code>.temporal.api.cloud.region.v1.Region.CloudProvider cloud_provider = 5;</code>
-     * @return int one of the values in {@see \Temporal\Api\Cloud\Region\V1\Region\CloudProvider}
+     * @return int
      */
     public function getCloudProvider()
     {
@@ -162,10 +162,10 @@ class Region extends \Google\Protobuf\Internal\Message
      * temporal:enums:replaces=cloud_provider_deprecated
      *
      * Generated from protobuf field <code>.temporal.api.cloud.region.v1.Region.CloudProvider cloud_provider = 5;</code>
-     * @param int $var one of the values in {@see \Temporal\Api\Cloud\Region\V1\Region\CloudProvider}
+     * @param int $var
      * @return $this
      */
-    public function setCloudProvider(int $var)
+    public function setCloudProvider($var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Cloud\Region\V1\Region\CloudProvider::class);
         $this->cloud_provider = $var;
@@ -191,9 +191,9 @@ class Region extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setCloudProviderRegion(string $var)
+    public function setCloudProviderRegion($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->cloud_provider_region = $var;
 
         return $this;
@@ -217,9 +217,9 @@ class Region extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setLocation(string $var)
+    public function setLocation($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->location = $var;
 
         return $this;

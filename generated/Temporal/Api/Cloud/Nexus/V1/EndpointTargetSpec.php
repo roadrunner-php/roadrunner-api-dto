@@ -54,8 +54,9 @@ class EndpointTargetSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Nexus\V1\WorkerTargetSpec $var
      * @return $this
      */
-    public function setWorkerTargetSpec(\Temporal\Api\Cloud\Nexus\V1\WorkerTargetSpec|null $var)
+    public function setWorkerTargetSpec($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Nexus\V1\WorkerTargetSpec::class);
         $this->writeOneof(1, $var);
 
         return $this;

@@ -58,9 +58,9 @@ class MetricsSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAcceptedClientCa(string $var)
+    public function setAcceptedClientCa($var)
     {
-        GPBUtil::checkString($var, false);
+        GPBUtil::checkString($var, False);
         $this->accepted_client_ca = $var;
 
         return $this;

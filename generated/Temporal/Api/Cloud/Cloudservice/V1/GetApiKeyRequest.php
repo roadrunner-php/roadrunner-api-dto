@@ -54,9 +54,9 @@ class GetApiKeyRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setKeyId(string $var)
+    public function setKeyId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->key_id = $var;
 
         return $this;

@@ -88,9 +88,9 @@ class ExportSinkSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setName(string $var)
+    public function setName($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->name = $var;
 
         return $this;
@@ -114,8 +114,9 @@ class ExportSinkSpec extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setEnabled(bool $var)
+    public function setEnabled($var)
     {
+        GPBUtil::checkBool($var);
         $this->enabled = $var;
 
         return $this;
@@ -149,8 +150,9 @@ class ExportSinkSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Sink\V1\S3Spec $var
      * @return $this
      */
-    public function setS3(\Temporal\Api\Cloud\Sink\V1\S3Spec|null $var)
+    public function setS3($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Sink\V1\S3Spec::class);
         $this->s3 = $var;
 
         return $this;
@@ -184,8 +186,9 @@ class ExportSinkSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Sink\V1\GCSSpec $var
      * @return $this
      */
-    public function setGcs(\Temporal\Api\Cloud\Sink\V1\GCSSpec|null $var)
+    public function setGcs($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Sink\V1\GCSSpec::class);
         $this->gcs = $var;
 
         return $this;
@@ -221,8 +224,9 @@ class ExportSinkSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Sink\V1\AzureBlobSpec $var
      * @return $this
      */
-    public function setAzureBlob(\Temporal\Api\Cloud\Sink\V1\AzureBlobSpec|null $var)
+    public function setAzureBlob($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Sink\V1\AzureBlobSpec::class);
         $this->azure_blob = $var;
 
         return $this;

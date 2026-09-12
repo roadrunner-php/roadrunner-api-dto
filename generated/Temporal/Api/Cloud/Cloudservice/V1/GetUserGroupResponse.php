@@ -64,8 +64,9 @@ class GetUserGroupResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Identity\V1\UserGroup $var
      * @return $this
      */
-    public function setGroup(\Temporal\Api\Cloud\Identity\V1\UserGroup|null $var)
+    public function setGroup($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Identity\V1\UserGroup::class);
         $this->group = $var;
 
         return $this;

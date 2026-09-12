@@ -64,8 +64,9 @@ class GetNamespaceResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\PBNamespace $var
      * @return $this
      */
-    public function setNamespace(\Temporal\Api\Cloud\PBNamespace\V1\PBNamespace|null $var)
+    public function setNamespace($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\PBNamespace::class);
         $this->namespace = $var;
 
         return $this;

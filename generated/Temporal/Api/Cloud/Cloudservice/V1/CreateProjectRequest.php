@@ -74,8 +74,9 @@ class CreateProjectRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Project\V1\ProjectSpec $var
      * @return $this
      */
-    public function setSpec(\Temporal\Api\Cloud\Project\V1\ProjectSpec|null $var)
+    public function setSpec($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Project\V1\ProjectSpec::class);
         $this->spec = $var;
 
         return $this;
@@ -101,9 +102,9 @@ class CreateProjectRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAsyncOperationId(string $var)
+    public function setAsyncOperationId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->async_operation_id = $var;
 
         return $this;

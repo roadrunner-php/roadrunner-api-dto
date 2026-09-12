@@ -64,8 +64,9 @@ class Stats extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\NamespaceCapacityInfo\Stats\Summary $var
      * @return $this
      */
-    public function setAps(\Temporal\Api\Cloud\PBNamespace\V1\NamespaceCapacityInfo\Stats\Summary|null $var)
+    public function setAps($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\NamespaceCapacityInfo\Stats\Summary::class);
         $this->aps = $var;
 
         return $this;

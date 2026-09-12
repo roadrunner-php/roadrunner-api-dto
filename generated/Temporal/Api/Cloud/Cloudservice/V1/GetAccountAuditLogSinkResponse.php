@@ -64,8 +64,9 @@ class GetAccountAuditLogSinkResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Account\V1\AuditLogSink $var
      * @return $this
      */
-    public function setSink(\Temporal\Api\Cloud\Account\V1\AuditLogSink|null $var)
+    public function setSink($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Account\V1\AuditLogSink::class);
         $this->sink = $var;
 
         return $this;

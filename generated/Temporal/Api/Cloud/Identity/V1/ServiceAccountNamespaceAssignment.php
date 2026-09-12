@@ -86,9 +86,9 @@ class ServiceAccountNamespaceAssignment extends \Google\Protobuf\Internal\Messag
      * @param string $var
      * @return $this
      */
-    public function setId(string $var)
+    public function setId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->id = $var;
 
         return $this;
@@ -112,9 +112,9 @@ class ServiceAccountNamespaceAssignment extends \Google\Protobuf\Internal\Messag
      * @param string $var
      * @return $this
      */
-    public function setName(string $var)
+    public function setName($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->name = $var;
 
         return $this;
@@ -148,8 +148,9 @@ class ServiceAccountNamespaceAssignment extends \Google\Protobuf\Internal\Messag
      * @param \Temporal\Api\Cloud\Identity\V1\NamespaceAccess $var
      * @return $this
      */
-    public function setNamespaceAccess(\Temporal\Api\Cloud\Identity\V1\NamespaceAccess|null $var)
+    public function setNamespaceAccess($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Identity\V1\NamespaceAccess::class);
         $this->namespace_access = $var;
 
         return $this;
@@ -173,8 +174,9 @@ class ServiceAccountNamespaceAssignment extends \Google\Protobuf\Internal\Messag
      * @param bool $var
      * @return $this
      */
-    public function setInheritedAccess(bool $var)
+    public function setInheritedAccess($var)
     {
+        GPBUtil::checkBool($var);
         $this->inherited_access = $var;
 
         return $this;
@@ -198,9 +200,9 @@ class ServiceAccountNamespaceAssignment extends \Google\Protobuf\Internal\Messag
      * @param string $var
      * @return $this
      */
-    public function setResourceVersion(string $var)
+    public function setResourceVersion($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->resource_version = $var;
 
         return $this;

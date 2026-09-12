@@ -103,9 +103,9 @@ class EndpointSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setName(string $var)
+    public function setName($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->name = $var;
 
         return $this;
@@ -139,8 +139,9 @@ class EndpointSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Nexus\V1\EndpointTargetSpec $var
      * @return $this
      */
-    public function setTargetSpec(\Temporal\Api\Cloud\Nexus\V1\EndpointTargetSpec|null $var)
+    public function setTargetSpec($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Nexus\V1\EndpointTargetSpec::class);
         $this->target_spec = $var;
 
         return $this;
@@ -168,7 +169,7 @@ class EndpointSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Nexus\V1\EndpointPolicySpec[] $var
      * @return $this
      */
-    public function setPolicySpecs(array|RepeatedField $var)
+    public function setPolicySpecs($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Cloud\Nexus\V1\EndpointPolicySpec::class);
         $this->policy_specs = $arr;
@@ -201,10 +202,10 @@ class EndpointSpec extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setDescriptionDeprecated(string $var)
+    public function setDescriptionDeprecated($var)
     {
         @trigger_error('description_deprecated is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->description_deprecated = $var;
 
         return $this;
@@ -240,8 +241,9 @@ class EndpointSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Payload $var
      * @return $this
      */
-    public function setDescription(\Temporal\Api\Common\V1\Payload|null $var)
+    public function setDescription($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payload::class);
         $this->description = $var;
 
         return $this;

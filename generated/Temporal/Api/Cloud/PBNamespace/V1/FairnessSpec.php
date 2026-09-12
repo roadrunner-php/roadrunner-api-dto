@@ -54,8 +54,9 @@ class FairnessSpec extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setTaskQueueFairnessEnabled(bool $var)
+    public function setTaskQueueFairnessEnabled($var)
     {
+        GPBUtil::checkBool($var);
         $this->task_queue_fairness_enabled = $var;
 
         return $this;

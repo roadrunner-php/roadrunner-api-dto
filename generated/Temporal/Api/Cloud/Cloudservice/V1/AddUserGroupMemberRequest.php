@@ -72,9 +72,9 @@ class AddUserGroupMemberRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setGroupId(string $var)
+    public function setGroupId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->group_id = $var;
 
         return $this;
@@ -108,8 +108,9 @@ class AddUserGroupMemberRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Identity\V1\UserGroupMemberId $var
      * @return $this
      */
-    public function setMemberId(\Temporal\Api\Cloud\Identity\V1\UserGroupMemberId|null $var)
+    public function setMemberId($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Identity\V1\UserGroupMemberId::class);
         $this->member_id = $var;
 
         return $this;
@@ -135,9 +136,9 @@ class AddUserGroupMemberRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAsyncOperationId(string $var)
+    public function setAsyncOperationId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->async_operation_id = $var;
 
         return $this;

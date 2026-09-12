@@ -72,9 +72,9 @@ class ProjectScopedAccess extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setProjectId(string $var)
+    public function setProjectId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->project_id = $var;
 
         return $this;
@@ -108,8 +108,9 @@ class ProjectScopedAccess extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Identity\V1\ProjectAccess $var
      * @return $this
      */
-    public function setAccess(\Temporal\Api\Cloud\Identity\V1\ProjectAccess|null $var)
+    public function setAccess($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Identity\V1\ProjectAccess::class);
         $this->access = $var;
 
         return $this;
@@ -135,7 +136,7 @@ class ProjectScopedAccess extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setNamespaceAccesses(array|\Google\Protobuf\Internal\MapField $var)
+    public function setNamespaceAccesses($var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Cloud\Identity\V1\NamespaceAccess::class);
         $this->namespace_accesses = $arr;

@@ -70,7 +70,7 @@ class Provisioned extends \Google\Protobuf\Internal\Message
      * @param float[] $var
      * @return $this
      */
-    public function setValidTruValues(array|RepeatedField $var)
+    public function setValidTruValues($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::DOUBLE);
         $this->valid_tru_values = $arr;
@@ -100,8 +100,9 @@ class Provisioned extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setMaxAvailableTruValue(float $var)
+    public function setMaxAvailableTruValue($var)
     {
+        GPBUtil::checkDouble($var);
         $this->max_available_tru_value = $var;
 
         return $this;

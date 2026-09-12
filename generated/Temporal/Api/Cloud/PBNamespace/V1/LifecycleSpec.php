@@ -54,8 +54,9 @@ class LifecycleSpec extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setEnableDeleteProtection(bool $var)
+    public function setEnableDeleteProtection($var)
     {
+        GPBUtil::checkBool($var);
         $this->enable_delete_protection = $var;
 
         return $this;

@@ -70,9 +70,9 @@ class ProjectSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setDisplayName(string $var)
+    public function setDisplayName($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->display_name = $var;
 
         return $this;
@@ -96,9 +96,9 @@ class ProjectSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setDescription(string $var)
+    public function setDescription($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->description = $var;
 
         return $this;
@@ -132,8 +132,9 @@ class ProjectSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Project\V1\LifecycleSpec $var
      * @return $this
      */
-    public function setLifecycle(\Temporal\Api\Cloud\Project\V1\LifecycleSpec|null $var)
+    public function setLifecycle($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Project\V1\LifecycleSpec::class);
         $this->lifecycle = $var;
 
         return $this;

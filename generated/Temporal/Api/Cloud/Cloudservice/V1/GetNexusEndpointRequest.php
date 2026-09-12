@@ -54,9 +54,9 @@ class GetNexusEndpointRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setEndpointId(string $var)
+    public function setEndpointId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->endpoint_id = $var;
 
         return $this;

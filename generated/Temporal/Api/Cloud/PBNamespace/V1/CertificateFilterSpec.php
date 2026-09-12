@@ -88,9 +88,9 @@ class CertificateFilterSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setCommonName(string $var)
+    public function setCommonName($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->common_name = $var;
 
         return $this;
@@ -116,9 +116,9 @@ class CertificateFilterSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setOrganization(string $var)
+    public function setOrganization($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->organization = $var;
 
         return $this;
@@ -144,9 +144,9 @@ class CertificateFilterSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setOrganizationalUnit(string $var)
+    public function setOrganizationalUnit($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->organizational_unit = $var;
 
         return $this;
@@ -172,9 +172,9 @@ class CertificateFilterSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSubjectAlternativeName(string $var)
+    public function setSubjectAlternativeName($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->subject_alternative_name = $var;
 
         return $this;

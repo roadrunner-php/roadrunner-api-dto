@@ -62,7 +62,7 @@ class AWSPrivateLinkInfo extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setAllowedPrincipalArns(array|RepeatedField $var)
+    public function setAllowedPrincipalArns($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->allowed_principal_arns = $arr;
@@ -88,7 +88,7 @@ class AWSPrivateLinkInfo extends \Google\Protobuf\Internal\Message
      * @param string[] $var
      * @return $this
      */
-    public function setVpcEndpointServiceNames(array|RepeatedField $var)
+    public function setVpcEndpointServiceNames($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->vpc_endpoint_service_names = $arr;

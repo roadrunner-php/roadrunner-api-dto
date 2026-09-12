@@ -66,7 +66,7 @@ class GetUsageResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Usage\V1\Summary[] $var
      * @return $this
      */
-    public function setSummaries(array|RepeatedField $var)
+    public function setSummaries($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Cloud\Usage\V1\Summary::class);
         $this->summaries = $arr;
@@ -92,9 +92,9 @@ class GetUsageResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNextPageToken(string $var)
+    public function setNextPageToken($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->next_page_token = $var;
 
         return $this;

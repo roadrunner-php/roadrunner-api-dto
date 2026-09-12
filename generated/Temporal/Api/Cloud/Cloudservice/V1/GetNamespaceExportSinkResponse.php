@@ -64,8 +64,9 @@ class GetNamespaceExportSinkResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\ExportSink $var
      * @return $this
      */
-    public function setSink(\Temporal\Api\Cloud\PBNamespace\V1\ExportSink|null $var)
+    public function setSink($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\ExportSink::class);
         $this->sink = $var;
 
         return $this;

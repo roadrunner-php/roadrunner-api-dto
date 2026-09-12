@@ -64,8 +64,9 @@ class GetNamespaceCapacityInfoResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\NamespaceCapacityInfo $var
      * @return $this
      */
-    public function setCapacityInfo(\Temporal\Api\Cloud\PBNamespace\V1\NamespaceCapacityInfo|null $var)
+    public function setCapacityInfo($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\NamespaceCapacityInfo::class);
         $this->capacity_info = $var;
 
         return $this;

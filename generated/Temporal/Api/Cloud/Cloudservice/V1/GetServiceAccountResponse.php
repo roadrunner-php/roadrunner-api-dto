@@ -64,8 +64,9 @@ class GetServiceAccountResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Identity\V1\ServiceAccount $var
      * @return $this
      */
-    public function setServiceAccount(\Temporal\Api\Cloud\Identity\V1\ServiceAccount|null $var)
+    public function setServiceAccount($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Identity\V1\ServiceAccount::class);
         $this->service_account = $var;
 
         return $this;

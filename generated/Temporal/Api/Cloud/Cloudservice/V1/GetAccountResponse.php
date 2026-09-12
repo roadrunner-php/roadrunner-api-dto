@@ -64,8 +64,9 @@ class GetAccountResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Account\V1\Account $var
      * @return $this
      */
-    public function setAccount(\Temporal\Api\Cloud\Account\V1\Account|null $var)
+    public function setAccount($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Account\V1\Account::class);
         $this->account = $var;
 
         return $this;

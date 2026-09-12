@@ -40,7 +40,7 @@ class GroupBy extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.cloud.usage.v1.GroupByKey key = 1;</code>
-     * @return int one of the values in {@see \Temporal\Api\Cloud\Usage\V1\GroupByKey}
+     * @return int
      */
     public function getKey()
     {
@@ -49,10 +49,10 @@ class GroupBy extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.cloud.usage.v1.GroupByKey key = 1;</code>
-     * @param int $var one of the values in {@see \Temporal\Api\Cloud\Usage\V1\GroupByKey}
+     * @param int $var
      * @return $this
      */
-    public function setKey(int $var)
+    public function setKey($var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Cloud\Usage\V1\GroupByKey::class);
         $this->key = $var;
@@ -74,9 +74,9 @@ class GroupBy extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setValue(string $var)
+    public function setValue($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->value = $var;
 
         return $this;

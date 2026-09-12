@@ -45,7 +45,7 @@ class Record extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.cloud.usage.v1.RecordType type = 1;</code>
-     * @return int one of the values in {@see \Temporal\Api\Cloud\Usage\V1\RecordType}
+     * @return int
      */
     public function getType()
     {
@@ -54,10 +54,10 @@ class Record extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.cloud.usage.v1.RecordType type = 1;</code>
-     * @param int $var one of the values in {@see \Temporal\Api\Cloud\Usage\V1\RecordType}
+     * @param int $var
      * @return $this
      */
-    public function setType(int $var)
+    public function setType($var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Cloud\Usage\V1\RecordType::class);
         $this->type = $var;
@@ -67,7 +67,7 @@ class Record extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.cloud.usage.v1.RecordUnit unit = 2;</code>
-     * @return int one of the values in {@see \Temporal\Api\Cloud\Usage\V1\RecordUnit}
+     * @return int
      */
     public function getUnit()
     {
@@ -76,10 +76,10 @@ class Record extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.cloud.usage.v1.RecordUnit unit = 2;</code>
-     * @param int $var one of the values in {@see \Temporal\Api\Cloud\Usage\V1\RecordUnit}
+     * @param int $var
      * @return $this
      */
-    public function setUnit(int $var)
+    public function setUnit($var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Cloud\Usage\V1\RecordUnit::class);
         $this->unit = $var;
@@ -101,8 +101,9 @@ class Record extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setValue(float $var)
+    public function setValue($var)
     {
+        GPBUtil::checkDouble($var);
         $this->value = $var;
 
         return $this;

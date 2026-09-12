@@ -62,9 +62,9 @@ class ErrorMessage extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setMessage(string $var)
+    public function setMessage($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->message = $var;
 
         return $this;
@@ -88,9 +88,9 @@ class ErrorMessage extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setLink(string $var)
+    public function setLink($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->link = $var;
 
         return $this;

@@ -70,9 +70,9 @@ class PubSubSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setServiceAccountId(string $var)
+    public function setServiceAccountId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->service_account_id = $var;
 
         return $this;
@@ -96,9 +96,9 @@ class PubSubSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTopicName(string $var)
+    public function setTopicName($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->topic_name = $var;
 
         return $this;
@@ -122,9 +122,9 @@ class PubSubSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setGcpProjectId(string $var)
+    public function setGcpProjectId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->gcp_project_id = $var;
 
         return $this;

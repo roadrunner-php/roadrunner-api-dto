@@ -58,8 +58,9 @@ class ConnectivityRuleSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Connectivityrule\V1\PublicConnectivityRule $var
      * @return $this
      */
-    public function setPublicRule(\Temporal\Api\Cloud\Connectivityrule\V1\PublicConnectivityRule|null $var)
+    public function setPublicRule($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Connectivityrule\V1\PublicConnectivityRule::class);
         $this->writeOneof(1, $var);
 
         return $this;
@@ -88,8 +89,9 @@ class ConnectivityRuleSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Connectivityrule\V1\PrivateConnectivityRule $var
      * @return $this
      */
-    public function setPrivateRule(\Temporal\Api\Cloud\Connectivityrule\V1\PrivateConnectivityRule|null $var)
+    public function setPrivateRule($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Connectivityrule\V1\PrivateConnectivityRule::class);
         $this->writeOneof(2, $var);
 
         return $this;

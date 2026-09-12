@@ -86,9 +86,9 @@ class UserProjectAssignment extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setId(string $var)
+    public function setId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->id = $var;
 
         return $this;
@@ -112,9 +112,9 @@ class UserProjectAssignment extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setEmail(string $var)
+    public function setEmail($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->email = $var;
 
         return $this;
@@ -148,8 +148,9 @@ class UserProjectAssignment extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Identity\V1\ProjectAccess $var
      * @return $this
      */
-    public function setProjectAccess(\Temporal\Api\Cloud\Identity\V1\ProjectAccess|null $var)
+    public function setProjectAccess($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Identity\V1\ProjectAccess::class);
         $this->project_access = $var;
 
         return $this;
@@ -173,8 +174,9 @@ class UserProjectAssignment extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setInheritedAccess(bool $var)
+    public function setInheritedAccess($var)
     {
+        GPBUtil::checkBool($var);
         $this->inherited_access = $var;
 
         return $this;
@@ -198,9 +200,9 @@ class UserProjectAssignment extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setResourceVersion(string $var)
+    public function setResourceVersion($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->resource_version = $var;
 
         return $this;

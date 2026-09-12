@@ -214,9 +214,9 @@ class PBNamespace extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace(string $var)
+    public function setNamespace($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->namespace = $var;
 
         return $this;
@@ -242,9 +242,9 @@ class PBNamespace extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setResourceVersion(string $var)
+    public function setResourceVersion($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->resource_version = $var;
 
         return $this;
@@ -278,8 +278,9 @@ class PBNamespace extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\NamespaceSpec $var
      * @return $this
      */
-    public function setSpec(\Temporal\Api\Cloud\PBNamespace\V1\NamespaceSpec|null $var)
+    public function setSpec($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\NamespaceSpec::class);
         $this->spec = $var;
 
         return $this;
@@ -312,10 +313,10 @@ class PBNamespace extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setStateDeprecated(string $var)
+    public function setStateDeprecated($var)
     {
         @trigger_error('state_deprecated is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->state_deprecated = $var;
 
         return $this;
@@ -328,7 +329,7 @@ class PBNamespace extends \Google\Protobuf\Internal\Message
      * temporal:enums:replaces=state_deprecated
      *
      * Generated from protobuf field <code>.temporal.api.cloud.resource.v1.ResourceState state = 13;</code>
-     * @return int one of the values in {@see \Temporal\Api\Cloud\Resource\V1\ResourceState}
+     * @return int
      */
     public function getState()
     {
@@ -342,10 +343,10 @@ class PBNamespace extends \Google\Protobuf\Internal\Message
      * temporal:enums:replaces=state_deprecated
      *
      * Generated from protobuf field <code>.temporal.api.cloud.resource.v1.ResourceState state = 13;</code>
-     * @param int $var one of the values in {@see \Temporal\Api\Cloud\Resource\V1\ResourceState}
+     * @param int $var
      * @return $this
      */
-    public function setState(int $var)
+    public function setState($var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Cloud\Resource\V1\ResourceState::class);
         $this->state = $var;
@@ -371,9 +372,9 @@ class PBNamespace extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAsyncOperationId(string $var)
+    public function setAsyncOperationId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->async_operation_id = $var;
 
         return $this;
@@ -407,8 +408,9 @@ class PBNamespace extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\Endpoints $var
      * @return $this
      */
-    public function setEndpoints(\Temporal\Api\Cloud\PBNamespace\V1\Endpoints|null $var)
+    public function setEndpoints($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\Endpoints::class);
         $this->endpoints = $var;
 
         return $this;
@@ -432,9 +434,9 @@ class PBNamespace extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setActiveRegion(string $var)
+    public function setActiveRegion($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->active_region = $var;
 
         return $this;
@@ -468,8 +470,9 @@ class PBNamespace extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\Limits $var
      * @return $this
      */
-    public function setLimits(\Temporal\Api\Cloud\PBNamespace\V1\Limits|null $var)
+    public function setLimits($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\Limits::class);
         $this->limits = $var;
 
         return $this;
@@ -493,7 +496,7 @@ class PBNamespace extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\PrivateConnectivity[] $var
      * @return $this
      */
-    public function setPrivateConnectivities(array|RepeatedField $var)
+    public function setPrivateConnectivities($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Cloud\PBNamespace\V1\PrivateConnectivity::class);
         $this->private_connectivities = $arr;
@@ -529,8 +532,9 @@ class PBNamespace extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setCreatedTime(\Google\Protobuf\Timestamp|null $var)
+    public function setCreatedTime($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->created_time = $var;
 
         return $this;
@@ -566,8 +570,9 @@ class PBNamespace extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setLastModifiedTime(\Google\Protobuf\Timestamp|null $var)
+    public function setLastModifiedTime($var)
     {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_modified_time = $var;
 
         return $this;
@@ -585,7 +590,7 @@ class PBNamespace extends \Google\Protobuf\Internal\Message
      */
     public function getRegionStatus()
     {
-        if (count($this->region_status) !== 0) {
+        if ($this->region_status->count() !== 0) {
             @trigger_error('region_status is deprecated.', E_USER_DEPRECATED);
         }
         return $this->region_status;
@@ -602,10 +607,10 @@ class PBNamespace extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setRegionStatus(array|\Google\Protobuf\Internal\MapField $var)
+    public function setRegionStatus($var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Cloud\PBNamespace\V1\NamespaceRegionStatus::class);
-        if (count($arr) !== 0) {
+        if ($arr->count() !== 0) {
             @trigger_error('region_status is deprecated.', E_USER_DEPRECATED);
         }
         $this->region_status = $arr;
@@ -631,7 +636,7 @@ class PBNamespace extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Connectivityrule\V1\ConnectivityRule[] $var
      * @return $this
      */
-    public function setConnectivityRules(array|RepeatedField $var)
+    public function setConnectivityRules($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Cloud\Connectivityrule\V1\ConnectivityRule::class);
         $this->connectivity_rules = $arr;
@@ -657,7 +662,7 @@ class PBNamespace extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setTags(array|\Google\Protobuf\Internal\MapField $var)
+    public function setTags($var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->tags = $arr;
@@ -693,8 +698,9 @@ class PBNamespace extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\Capacity $var
      * @return $this
      */
-    public function setCapacity(\Temporal\Api\Cloud\PBNamespace\V1\Capacity|null $var)
+    public function setCapacity($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\Capacity::class);
         $this->capacity = $var;
 
         return $this;
@@ -720,7 +726,7 @@ class PBNamespace extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\Replica[] $var
      * @return $this
      */
-    public function setReplicas(array|RepeatedField $var)
+    public function setReplicas($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Cloud\PBNamespace\V1\Replica::class);
         $this->replicas = $arr;
@@ -746,9 +752,9 @@ class PBNamespace extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setProjectId(string $var)
+    public function setProjectId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->project_id = $var;
 
         return $this;

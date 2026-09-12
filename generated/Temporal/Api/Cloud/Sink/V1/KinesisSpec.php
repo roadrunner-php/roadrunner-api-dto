@@ -70,9 +70,9 @@ class KinesisSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRoleName(string $var)
+    public function setRoleName($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->role_name = $var;
 
         return $this;
@@ -96,9 +96,9 @@ class KinesisSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setDestinationUri(string $var)
+    public function setDestinationUri($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->destination_uri = $var;
 
         return $this;
@@ -122,9 +122,9 @@ class KinesisSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRegion(string $var)
+    public function setRegion($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->region = $var;
 
         return $this;

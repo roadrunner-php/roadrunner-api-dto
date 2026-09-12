@@ -54,9 +54,9 @@ class AllowedCloudNamespacePolicySpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespaceId(string $var)
+    public function setNamespaceId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->namespace_id = $var;
 
         return $this;

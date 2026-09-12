@@ -78,9 +78,9 @@ class GCSSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSaId(string $var)
+    public function setSaId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->sa_id = $var;
 
         return $this;
@@ -104,9 +104,9 @@ class GCSSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setBucketName(string $var)
+    public function setBucketName($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->bucket_name = $var;
 
         return $this;
@@ -130,9 +130,9 @@ class GCSSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setGcpProjectId(string $var)
+    public function setGcpProjectId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->gcp_project_id = $var;
 
         return $this;
@@ -156,9 +156,9 @@ class GCSSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRegion(string $var)
+    public function setRegion($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->region = $var;
 
         return $this;

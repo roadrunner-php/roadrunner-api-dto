@@ -54,9 +54,9 @@ class GetUserRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setUserId(string $var)
+    public function setUserId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->user_id = $var;
 
         return $this;

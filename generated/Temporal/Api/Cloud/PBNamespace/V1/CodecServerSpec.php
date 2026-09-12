@@ -80,9 +80,9 @@ class CodecServerSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setEndpoint(string $var)
+    public function setEndpoint($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->endpoint = $var;
 
         return $this;
@@ -106,8 +106,9 @@ class CodecServerSpec extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setPassAccessToken(bool $var)
+    public function setPassAccessToken($var)
     {
+        GPBUtil::checkBool($var);
         $this->pass_access_token = $var;
 
         return $this;
@@ -131,8 +132,9 @@ class CodecServerSpec extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setIncludeCrossOriginCredentials(bool $var)
+    public function setIncludeCrossOriginCredentials($var)
     {
+        GPBUtil::checkBool($var);
         $this->include_cross_origin_credentials = $var;
 
         return $this;
@@ -168,8 +170,9 @@ class CodecServerSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\CodecServerSpec\CustomErrorMessage $var
      * @return $this
      */
-    public function setCustomErrorMessage(\Temporal\Api\Cloud\PBNamespace\V1\CodecServerSpec\CustomErrorMessage|null $var)
+    public function setCustomErrorMessage($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\CodecServerSpec\CustomErrorMessage::class);
         $this->custom_error_message = $var;
 
         return $this;

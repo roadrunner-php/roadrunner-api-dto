@@ -64,9 +64,9 @@ class PrivateConnectivity extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRegion(string $var)
+    public function setRegion($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->region = $var;
 
         return $this;
@@ -102,8 +102,9 @@ class PrivateConnectivity extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\AWSPrivateLinkInfo $var
      * @return $this
      */
-    public function setAwsPrivateLink(\Temporal\Api\Cloud\PBNamespace\V1\AWSPrivateLinkInfo|null $var)
+    public function setAwsPrivateLink($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\AWSPrivateLinkInfo::class);
         $this->aws_private_link = $var;
 
         return $this;

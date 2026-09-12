@@ -62,7 +62,7 @@ class GetAuditLogsResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Auditlog\V1\LogRecord[] $var
      * @return $this
      */
-    public function setLogs(array|RepeatedField $var)
+    public function setLogs($var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Cloud\Auditlog\V1\LogRecord::class);
         $this->logs = $arr;
@@ -88,9 +88,9 @@ class GetAuditLogsResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNextPageToken(string $var)
+    public function setNextPageToken($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->next_page_token = $var;
 
         return $this;

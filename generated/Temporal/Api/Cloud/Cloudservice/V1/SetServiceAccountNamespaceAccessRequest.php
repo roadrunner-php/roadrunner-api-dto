@@ -88,9 +88,9 @@ class SetServiceAccountNamespaceAccessRequest extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setServiceAccountId(string $var)
+    public function setServiceAccountId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->service_account_id = $var;
 
         return $this;
@@ -114,9 +114,9 @@ class SetServiceAccountNamespaceAccessRequest extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setNamespace(string $var)
+    public function setNamespace($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->namespace = $var;
 
         return $this;
@@ -150,8 +150,9 @@ class SetServiceAccountNamespaceAccessRequest extends \Google\Protobuf\Internal\
      * @param \Temporal\Api\Cloud\Identity\V1\NamespaceAccess $var
      * @return $this
      */
-    public function setAccess(\Temporal\Api\Cloud\Identity\V1\NamespaceAccess|null $var)
+    public function setAccess($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Identity\V1\NamespaceAccess::class);
         $this->access = $var;
 
         return $this;
@@ -177,9 +178,9 @@ class SetServiceAccountNamespaceAccessRequest extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setResourceVersion(string $var)
+    public function setResourceVersion($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->resource_version = $var;
 
         return $this;
@@ -203,9 +204,9 @@ class SetServiceAccountNamespaceAccessRequest extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setAsyncOperationId(string $var)
+    public function setAsyncOperationId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->async_operation_id = $var;
 
         return $this;

@@ -106,9 +106,9 @@ class PrivateConnectivityRule extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setConnectionId(string $var)
+    public function setConnectionId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->connection_id = $var;
 
         return $this;
@@ -134,9 +134,9 @@ class PrivateConnectivityRule extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setGcpProjectId(string $var)
+    public function setGcpProjectId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->gcp_project_id = $var;
 
         return $this;
@@ -162,9 +162,9 @@ class PrivateConnectivityRule extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRegion(string $var)
+    public function setRegion($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->region = $var;
 
         return $this;
@@ -194,9 +194,9 @@ class PrivateConnectivityRule extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setAzurePeResourceId(string $var)
+    public function setAzurePeResourceId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->azure_pe_resource_id = $var;
 
         return $this;

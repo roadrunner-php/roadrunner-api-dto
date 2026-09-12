@@ -97,7 +97,7 @@ class GetApiKeysRequest extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setPageSize(int $var)
+    public function setPageSize($var)
     {
         GPBUtil::checkInt32($var);
         $this->page_size = $var;
@@ -123,9 +123,9 @@ class GetApiKeysRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setPageToken(string $var)
+    public function setPageToken($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->page_token = $var;
 
         return $this;
@@ -149,9 +149,9 @@ class GetApiKeysRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setOwnerId(string $var)
+    public function setOwnerId($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->owner_id = $var;
 
         return $this;
@@ -184,10 +184,10 @@ class GetApiKeysRequest extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setOwnerTypeDeprecated(string $var)
+    public function setOwnerTypeDeprecated($var)
     {
         @trigger_error('owner_type_deprecated is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->owner_type_deprecated = $var;
 
         return $this;
@@ -198,7 +198,7 @@ class GetApiKeysRequest extends \Google\Protobuf\Internal\Message
      * temporal:enums:replaces=owner_type_deprecated
      *
      * Generated from protobuf field <code>.temporal.api.cloud.identity.v1.OwnerType owner_type = 5;</code>
-     * @return int one of the values in {@see \Temporal\Api\Cloud\Identity\V1\OwnerType}
+     * @return int
      */
     public function getOwnerType()
     {
@@ -210,10 +210,10 @@ class GetApiKeysRequest extends \Google\Protobuf\Internal\Message
      * temporal:enums:replaces=owner_type_deprecated
      *
      * Generated from protobuf field <code>.temporal.api.cloud.identity.v1.OwnerType owner_type = 5;</code>
-     * @param int $var one of the values in {@see \Temporal\Api\Cloud\Identity\V1\OwnerType}
+     * @param int $var
      * @return $this
      */
-    public function setOwnerType(int $var)
+    public function setOwnerType($var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Cloud\Identity\V1\OwnerType::class);
         $this->owner_type = $var;

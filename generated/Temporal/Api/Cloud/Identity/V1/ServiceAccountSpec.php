@@ -106,9 +106,9 @@ class ServiceAccountSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setName(string $var)
+    public function setName($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->name = $var;
 
         return $this;
@@ -148,8 +148,9 @@ class ServiceAccountSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Identity\V1\Access $var
      * @return $this
      */
-    public function setAccess(\Temporal\Api\Cloud\Identity\V1\Access|null $var)
+    public function setAccess($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Identity\V1\Access::class);
         $this->access = $var;
 
         return $this;
@@ -189,8 +190,9 @@ class ServiceAccountSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Identity\V1\NamespaceScopedAccess $var
      * @return $this
      */
-    public function setNamespaceScopedAccess(\Temporal\Api\Cloud\Identity\V1\NamespaceScopedAccess|null $var)
+    public function setNamespaceScopedAccess($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Identity\V1\NamespaceScopedAccess::class);
         $this->namespace_scoped_access = $var;
 
         return $this;
@@ -226,8 +228,9 @@ class ServiceAccountSpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\Identity\V1\ProjectScopedAccess $var
      * @return $this
      */
-    public function setProjectScopedAccess(\Temporal\Api\Cloud\Identity\V1\ProjectScopedAccess|null $var)
+    public function setProjectScopedAccess($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\Identity\V1\ProjectScopedAccess::class);
         $this->project_scoped_access = $var;
 
         return $this;
@@ -253,9 +256,9 @@ class ServiceAccountSpec extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setDescription(string $var)
+    public function setDescription($var)
     {
-        GPBUtil::checkString($var, true);
+        GPBUtil::checkString($var, True);
         $this->description = $var;
 
         return $this;

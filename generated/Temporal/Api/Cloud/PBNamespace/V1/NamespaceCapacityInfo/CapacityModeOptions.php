@@ -72,8 +72,9 @@ class CapacityModeOptions extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\NamespaceCapacityInfo\CapacityModeOptions\Provisioned $var
      * @return $this
      */
-    public function setProvisioned(\Temporal\Api\Cloud\PBNamespace\V1\NamespaceCapacityInfo\CapacityModeOptions\Provisioned|null $var)
+    public function setProvisioned($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\NamespaceCapacityInfo\CapacityModeOptions\Provisioned::class);
         $this->provisioned = $var;
 
         return $this;
@@ -107,8 +108,9 @@ class CapacityModeOptions extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\NamespaceCapacityInfo\CapacityModeOptions\OnDemand $var
      * @return $this
      */
-    public function setOnDemand(\Temporal\Api\Cloud\PBNamespace\V1\NamespaceCapacityInfo\CapacityModeOptions\OnDemand|null $var)
+    public function setOnDemand($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\NamespaceCapacityInfo\CapacityModeOptions\OnDemand::class);
         $this->on_demand = $var;
 
         return $this;

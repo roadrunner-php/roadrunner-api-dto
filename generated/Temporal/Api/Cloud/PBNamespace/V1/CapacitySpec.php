@@ -58,8 +58,9 @@ class CapacitySpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\CapacitySpec\OnDemand $var
      * @return $this
      */
-    public function setOnDemand(\Temporal\Api\Cloud\PBNamespace\V1\CapacitySpec\OnDemand|null $var)
+    public function setOnDemand($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\CapacitySpec\OnDemand::class);
         $this->writeOneof(1, $var);
 
         return $this;
@@ -88,8 +89,9 @@ class CapacitySpec extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Cloud\PBNamespace\V1\CapacitySpec\Provisioned $var
      * @return $this
      */
-    public function setProvisioned(\Temporal\Api\Cloud\PBNamespace\V1\CapacitySpec\Provisioned|null $var)
+    public function setProvisioned($var)
     {
+        GPBUtil::checkMessage($var, \Temporal\Api\Cloud\PBNamespace\V1\CapacitySpec\Provisioned::class);
         $this->writeOneof(2, $var);
 
         return $this;
