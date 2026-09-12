@@ -74,9 +74,9 @@ class TimerStartedEventAttributes extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTimerId($var)
+    public function setTimerId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->timer_id = $var;
 
         return $this;
@@ -114,9 +114,8 @@ class TimerStartedEventAttributes extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setStartToFireTimeout($var)
+    public function setStartToFireTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->start_to_fire_timeout = $var;
 
         return $this;
@@ -140,7 +139,7 @@ class TimerStartedEventAttributes extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setWorkflowTaskCompletedEventId($var)
+    public function setWorkflowTaskCompletedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->workflow_task_completed_event_id = $var;

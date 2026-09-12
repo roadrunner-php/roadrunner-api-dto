@@ -92,9 +92,9 @@ class NodeResult extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setUid($var)
+    public function setUid(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->uid = $var;
 
         return $this;
@@ -114,9 +114,9 @@ class NodeResult extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setName($var)
+    public function setName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->name = $var;
 
         return $this;
@@ -136,9 +136,9 @@ class NodeResult extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setVersion($var)
+    public function setVersion(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->version = $var;
 
         return $this;
@@ -158,7 +158,7 @@ class NodeResult extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setNumClients($var)
+    public function setNumClients(int $var)
     {
         GPBUtil::checkUint32($var);
         $this->num_clients = $var;
@@ -180,7 +180,7 @@ class NodeResult extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setNumUsers($var)
+    public function setNumUsers(int $var)
     {
         GPBUtil::checkUint32($var);
         $this->num_users = $var;
@@ -202,7 +202,7 @@ class NodeResult extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setNumChannels($var)
+    public function setNumChannels(int $var)
     {
         GPBUtil::checkUint32($var);
         $this->num_channels = $var;
@@ -224,7 +224,7 @@ class NodeResult extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setUptime($var)
+    public function setUptime(int $var)
     {
         GPBUtil::checkUint32($var);
         $this->uptime = $var;
@@ -256,9 +256,8 @@ class NodeResult extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\Metrics $var
      * @return $this
      */
-    public function setMetrics($var)
+    public function setMetrics(\RoadRunner\Centrifugal\API\DTO\V1\Metrics|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\Metrics::class);
         $this->metrics = $var;
 
         return $this;
@@ -288,9 +287,8 @@ class NodeResult extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\Process $var
      * @return $this
      */
-    public function setProcess($var)
+    public function setProcess(\RoadRunner\Centrifugal\API\DTO\V1\Process|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\Process::class);
         $this->process = $var;
 
         return $this;
@@ -310,7 +308,7 @@ class NodeResult extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setNumSubs($var)
+    public function setNumSubs(int $var)
     {
         GPBUtil::checkUint32($var);
         $this->num_subs = $var;

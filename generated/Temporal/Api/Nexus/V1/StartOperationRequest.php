@@ -104,9 +104,9 @@ class StartOperationRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setService($var)
+    public function setService(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->service = $var;
 
         return $this;
@@ -130,9 +130,9 @@ class StartOperationRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setOperation($var)
+    public function setOperation(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->operation = $var;
 
         return $this;
@@ -156,9 +156,9 @@ class StartOperationRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRequestId($var)
+    public function setRequestId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->request_id = $var;
 
         return $this;
@@ -182,9 +182,9 @@ class StartOperationRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setCallback($var)
+    public function setCallback(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->callback = $var;
 
         return $this;
@@ -218,9 +218,8 @@ class StartOperationRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Payload $var
      * @return $this
      */
-    public function setPayload($var)
+    public function setPayload(\Temporal\Api\Common\V1\Payload|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payload::class);
         $this->payload = $var;
 
         return $this;
@@ -244,7 +243,7 @@ class StartOperationRequest extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setCallbackHeader($var)
+    public function setCallbackHeader(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->callback_header = $arr;
@@ -270,7 +269,7 @@ class StartOperationRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Nexus\V1\Link[] $var
      * @return $this
      */
-    public function setLinks($var)
+    public function setLinks(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Nexus\V1\Link::class);
         $this->links = $arr;

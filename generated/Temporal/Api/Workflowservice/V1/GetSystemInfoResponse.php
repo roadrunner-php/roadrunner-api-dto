@@ -62,9 +62,9 @@ class GetSystemInfoResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setServerVersion($var)
+    public function setServerVersion(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->server_version = $var;
 
         return $this;
@@ -98,9 +98,8 @@ class GetSystemInfoResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflowservice\V1\GetSystemInfoResponse\Capabilities $var
      * @return $this
      */
-    public function setCapabilities($var)
+    public function setCapabilities(\Temporal\Api\Workflowservice\V1\GetSystemInfoResponse\Capabilities|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflowservice\V1\GetSystemInfoResponse\Capabilities::class);
         $this->capabilities = $var;
 
         return $this;

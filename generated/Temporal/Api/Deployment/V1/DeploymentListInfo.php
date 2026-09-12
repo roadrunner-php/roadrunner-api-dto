@@ -74,9 +74,8 @@ class DeploymentListInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\Deployment $var
      * @return $this
      */
-    public function setDeployment($var)
+    public function setDeployment(\Temporal\Api\Deployment\V1\Deployment|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\Deployment::class);
         $this->deployment = $var;
 
         return $this;
@@ -106,9 +105,8 @@ class DeploymentListInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setCreateTime($var)
+    public function setCreateTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->create_time = $var;
 
         return $this;
@@ -132,9 +130,8 @@ class DeploymentListInfo extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setIsCurrent($var)
+    public function setIsCurrent(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->is_current = $var;
 
         return $this;

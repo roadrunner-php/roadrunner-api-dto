@@ -63,7 +63,7 @@ class DeleteBuildIdAssignmentRule extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setRuleIndex($var)
+    public function setRuleIndex(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->rule_index = $var;
@@ -97,9 +97,8 @@ class DeleteBuildIdAssignmentRule extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setForce($var)
+    public function setForce(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->force = $var;
 
         return $this;

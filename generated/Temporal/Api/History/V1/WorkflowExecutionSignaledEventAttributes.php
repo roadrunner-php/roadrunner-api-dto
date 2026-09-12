@@ -52,13 +52,6 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
      * Generated from protobuf field <code>.temporal.api.common.v1.WorkflowExecution external_workflow_execution = 6;</code>
      */
     protected $external_workflow_execution = null;
-    /**
-     * The request ID of the Signal request, used by the server to attach this to
-     * the correct Event ID when generating link.
-     *
-     * Generated from protobuf field <code>string request_id = 7;</code>
-     */
-    protected $request_id = '';
 
     /**
      * Constructor.
@@ -79,9 +72,6 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
      *           Deprecated. This field is never respected and should always be set to false.
      *     @type \Temporal\Api\Common\V1\WorkflowExecution $external_workflow_execution
      *           When signal origin is a workflow execution, this field is set.
-     *     @type string $request_id
-     *           The request ID of the Signal request, used by the server to attach this to
-     *           the correct Event ID when generating link.
      * }
      */
     public function __construct($data = NULL) {
@@ -107,9 +97,9 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
      * @param string $var
      * @return $this
      */
-    public function setSignalName($var)
+    public function setSignalName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->signal_name = $var;
 
         return $this;
@@ -143,9 +133,8 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setInput($var)
+    public function setInput(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->input = $var;
 
         return $this;
@@ -169,9 +158,9 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -207,9 +196,8 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
      * @param \Temporal\Api\Common\V1\Header $var
      * @return $this
      */
-    public function setHeader($var)
+    public function setHeader(\Temporal\Api\Common\V1\Header|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Header::class);
         $this->header = $var;
 
         return $this;
@@ -238,10 +226,9 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
      * @return $this
      * @deprecated
      */
-    public function setSkipGenerateWorkflowTask($var)
+    public function setSkipGenerateWorkflowTask(bool $var)
     {
         @trigger_error('skip_generate_workflow_task is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkBool($var);
         $this->skip_generate_workflow_task = $var;
 
         return $this;
@@ -275,38 +262,9 @@ class WorkflowExecutionSignaledEventAttributes extends \Google\Protobuf\Internal
      * @param \Temporal\Api\Common\V1\WorkflowExecution $var
      * @return $this
      */
-    public function setExternalWorkflowExecution($var)
+    public function setExternalWorkflowExecution(\Temporal\Api\Common\V1\WorkflowExecution|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowExecution::class);
         $this->external_workflow_execution = $var;
-
-        return $this;
-    }
-
-    /**
-     * The request ID of the Signal request, used by the server to attach this to
-     * the correct Event ID when generating link.
-     *
-     * Generated from protobuf field <code>string request_id = 7;</code>
-     * @return string
-     */
-    public function getRequestId()
-    {
-        return $this->request_id;
-    }
-
-    /**
-     * The request ID of the Signal request, used by the server to attach this to
-     * the correct Event ID when generating link.
-     *
-     * Generated from protobuf field <code>string request_id = 7;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setRequestId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->request_id = $var;
 
         return $this;
     }

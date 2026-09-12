@@ -50,9 +50,8 @@ class Response extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflowservice\V1\StartWorkflowExecutionResponse $var
      * @return $this
      */
-    public function setStartWorkflow($var)
+    public function setStartWorkflow(\Temporal\Api\Workflowservice\V1\StartWorkflowExecutionResponse|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflowservice\V1\StartWorkflowExecutionResponse::class);
         $this->writeOneof(1, $var);
 
         return $this;
@@ -77,9 +76,8 @@ class Response extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflowservice\V1\UpdateWorkflowExecutionResponse $var
      * @return $this
      */
-    public function setUpdateWorkflow($var)
+    public function setUpdateWorkflow(\Temporal\Api\Workflowservice\V1\UpdateWorkflowExecutionResponse|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflowservice\V1\UpdateWorkflowExecutionResponse::class);
         $this->writeOneof(2, $var);
 
         return $this;

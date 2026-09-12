@@ -47,9 +47,9 @@ class DeleteCompatibleBuildIdRedirectRule extends \Google\Protobuf\Internal\Mess
      * @param string $var
      * @return $this
      */
-    public function setSourceBuildId($var)
+    public function setSourceBuildId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->source_build_id = $var;
 
         return $this;

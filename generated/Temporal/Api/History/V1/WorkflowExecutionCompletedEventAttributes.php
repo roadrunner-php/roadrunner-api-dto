@@ -80,9 +80,8 @@ class WorkflowExecutionCompletedEventAttributes extends \Google\Protobuf\Interna
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setResult($var)
+    public function setResult(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->result = $var;
 
         return $this;
@@ -106,7 +105,7 @@ class WorkflowExecutionCompletedEventAttributes extends \Google\Protobuf\Interna
      * @param int|string $var
      * @return $this
      */
-    public function setWorkflowTaskCompletedEventId($var)
+    public function setWorkflowTaskCompletedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->workflow_task_completed_event_id = $var;
@@ -132,9 +131,9 @@ class WorkflowExecutionCompletedEventAttributes extends \Google\Protobuf\Interna
      * @param string $var
      * @return $this
      */
-    public function setNewExecutionRunId($var)
+    public function setNewExecutionRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->new_execution_run_id = $var;
 
         return $this;

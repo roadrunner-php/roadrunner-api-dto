@@ -76,9 +76,9 @@ class ApplicationFailureInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setType($var)
+    public function setType(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->type = $var;
 
         return $this;
@@ -98,9 +98,8 @@ class ApplicationFailureInfo extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setNonRetryable($var)
+    public function setNonRetryable(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->non_retryable = $var;
 
         return $this;
@@ -130,9 +129,8 @@ class ApplicationFailureInfo extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setDetails($var)
+    public function setDetails(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->details = $var;
 
         return $this;
@@ -172,9 +170,8 @@ class ApplicationFailureInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setNextRetryDelay($var)
+    public function setNextRetryDelay(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->next_retry_delay = $var;
 
         return $this;
@@ -182,7 +179,7 @@ class ApplicationFailureInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.ApplicationErrorCategory category = 5;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ApplicationErrorCategory}
      */
     public function getCategory()
     {
@@ -191,10 +188,10 @@ class ApplicationFailureInfo extends \Google\Protobuf\Internal\Message
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.ApplicationErrorCategory category = 5;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ApplicationErrorCategory}
      * @return $this
      */
-    public function setCategory($var)
+    public function setCategory(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ApplicationErrorCategory::class);
         $this->category = $var;

@@ -47,7 +47,7 @@ class ChannelInfo extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setNumClients($var)
+    public function setNumClients(int $var)
     {
         GPBUtil::checkUint32($var);
         $this->num_clients = $var;

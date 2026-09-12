@@ -97,9 +97,8 @@ class BackfillRequest extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setStartTime($var)
+    public function setStartTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->start_time = $var;
 
         return $this;
@@ -129,9 +128,8 @@ class BackfillRequest extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setEndTime($var)
+    public function setEndTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->end_time = $var;
 
         return $this;
@@ -141,7 +139,7 @@ class BackfillRequest extends \Google\Protobuf\Internal\Message
      * If set, override overlap policy for this request.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ScheduleOverlapPolicy overlap_policy = 3;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ScheduleOverlapPolicy}
      */
     public function getOverlapPolicy()
     {
@@ -152,10 +150,10 @@ class BackfillRequest extends \Google\Protobuf\Internal\Message
      * If set, override overlap policy for this request.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ScheduleOverlapPolicy overlap_policy = 3;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ScheduleOverlapPolicy}
      * @return $this
      */
-    public function setOverlapPolicy($var)
+    public function setOverlapPolicy(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ScheduleOverlapPolicy::class);
         $this->overlap_policy = $var;

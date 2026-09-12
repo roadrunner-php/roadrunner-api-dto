@@ -64,9 +64,9 @@ class Meta extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setUpdateId($var)
+    public function setUpdateId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->update_id = $var;
 
         return $this;
@@ -90,9 +90,9 @@ class Meta extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;

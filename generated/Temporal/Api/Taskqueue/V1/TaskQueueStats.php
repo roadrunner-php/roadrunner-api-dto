@@ -72,15 +72,6 @@ class TaskQueueStats extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>float tasks_dispatch_rate = 4;</code>
      */
     protected $tasks_dispatch_rate = 0.0;
-    /**
-     * Whether rate limiting blocked any dispatches within the recent observation window (approximately
-     * 30 seconds). When true, adding more workers will not increase throughput — the bottleneck is the
-     * rate limit, not worker count. This field is useful for auto-scaling systems to avoid unnecessary
-     * scale-up.
-     *
-     * Generated from protobuf field <code>bool rate_limiting_active = 5;</code>
-     */
-    protected $rate_limiting_active = false;
 
     /**
      * Constructor.
@@ -126,11 +117,6 @@ class TaskQueueStats extends \Google\Protobuf\Internal\Message
      *           - Tasks going to Sticky queue are not accounted for. Note that, typically, only the first workflow task of each
      *             workflow goes to a normal queue, and the rest workflow tasks go to the Sticky queue associated with a specific
      *             worker instance.
-     *     @type bool $rate_limiting_active
-     *           Whether rate limiting blocked any dispatches within the recent observation window (approximately
-     *           30 seconds). When true, adding more workers will not increase throughput — the bottleneck is the
-     *           rate limit, not worker count. This field is useful for auto-scaling systems to avoid unnecessary
-     *           scale-up.
      * }
      */
     public function __construct($data = NULL) {
@@ -164,7 +150,7 @@ class TaskQueueStats extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setApproximateBacklogCount($var)
+    public function setApproximateBacklogCount(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->approximate_backlog_count = $var;
@@ -208,9 +194,8 @@ class TaskQueueStats extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setApproximateBacklogAge($var)
+    public function setApproximateBacklogAge(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->approximate_backlog_age = $var;
 
         return $this;
@@ -256,9 +241,8 @@ class TaskQueueStats extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setTasksAddRate($var)
+    public function setTasksAddRate(float $var)
     {
-        GPBUtil::checkFloat($var);
         $this->tasks_add_rate = $var;
 
         return $this;
@@ -304,42 +288,9 @@ class TaskQueueStats extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setTasksDispatchRate($var)
+    public function setTasksDispatchRate(float $var)
     {
-        GPBUtil::checkFloat($var);
         $this->tasks_dispatch_rate = $var;
-
-        return $this;
-    }
-
-    /**
-     * Whether rate limiting blocked any dispatches within the recent observation window (approximately
-     * 30 seconds). When true, adding more workers will not increase throughput — the bottleneck is the
-     * rate limit, not worker count. This field is useful for auto-scaling systems to avoid unnecessary
-     * scale-up.
-     *
-     * Generated from protobuf field <code>bool rate_limiting_active = 5;</code>
-     * @return bool
-     */
-    public function getRateLimitingActive()
-    {
-        return $this->rate_limiting_active;
-    }
-
-    /**
-     * Whether rate limiting blocked any dispatches within the recent observation window (approximately
-     * 30 seconds). When true, adding more workers will not increase throughput — the bottleneck is the
-     * rate limit, not worker count. This field is useful for auto-scaling systems to avoid unnecessary
-     * scale-up.
-     *
-     * Generated from protobuf field <code>bool rate_limiting_active = 5;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setRateLimitingActive($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->rate_limiting_active = $var;
 
         return $this;
     }

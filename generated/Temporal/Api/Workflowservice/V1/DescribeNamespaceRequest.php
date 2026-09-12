@@ -22,15 +22,6 @@ class DescribeNamespaceRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string id = 2;</code>
      */
     protected $id = '';
-    /**
-     * If true, the server may serve the response from an eventually-consistent
-     * source instead of reading through to persistence. Defaults to false,
-     * which preserves read-after-write consistency. SDKs should set this when
-     * fetching namespace capabilities on worker/client startup.
-     *
-     * Generated from protobuf field <code>bool weak_consistency = 3;</code>
-     */
-    protected $weak_consistency = false;
 
     /**
      * Constructor.
@@ -40,11 +31,6 @@ class DescribeNamespaceRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $namespace
      *     @type string $id
-     *     @type bool $weak_consistency
-     *           If true, the server may serve the response from an eventually-consistent
-     *           source instead of reading through to persistence. Defaults to false,
-     *           which preserves read-after-write consistency. SDKs should set this when
-     *           fetching namespace capabilities on worker/client startup.
      * }
      */
     public function __construct($data = NULL) {
@@ -66,9 +52,9 @@ class DescribeNamespaceRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -88,42 +74,10 @@ class DescribeNamespaceRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->id = $var;
-
-        return $this;
-    }
-
-    /**
-     * If true, the server may serve the response from an eventually-consistent
-     * source instead of reading through to persistence. Defaults to false,
-     * which preserves read-after-write consistency. SDKs should set this when
-     * fetching namespace capabilities on worker/client startup.
-     *
-     * Generated from protobuf field <code>bool weak_consistency = 3;</code>
-     * @return bool
-     */
-    public function getWeakConsistency()
-    {
-        return $this->weak_consistency;
-    }
-
-    /**
-     * If true, the server may serve the response from an eventually-consistent
-     * source instead of reading through to persistence. Defaults to false,
-     * which preserves read-after-write consistency. SDKs should set this when
-     * fetching namespace capabilities on worker/client startup.
-     *
-     * Generated from protobuf field <code>bool weak_consistency = 3;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setWeakConsistency($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->weak_consistency = $var;
 
         return $this;
     }

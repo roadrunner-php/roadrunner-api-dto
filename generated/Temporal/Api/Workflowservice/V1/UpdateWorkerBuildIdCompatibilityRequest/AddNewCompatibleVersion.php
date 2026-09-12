@@ -78,9 +78,9 @@ class AddNewCompatibleVersion extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNewBuildId($var)
+    public function setNewBuildId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->new_build_id = $var;
 
         return $this;
@@ -108,9 +108,9 @@ class AddNewCompatibleVersion extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setExistingCompatibleBuildId($var)
+    public function setExistingCompatibleBuildId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->existing_compatible_build_id = $var;
 
         return $this;
@@ -138,9 +138,8 @@ class AddNewCompatibleVersion extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setMakeSetDefault($var)
+    public function setMakeSetDefault(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->make_set_default = $var;
 
         return $this;

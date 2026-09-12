@@ -52,7 +52,7 @@ class ListWorkflowRulesResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Rules\V1\WorkflowRule[] $var
      * @return $this
      */
-    public function setRules($var)
+    public function setRules(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Rules\V1\WorkflowRule::class);
         $this->rules = $arr;
@@ -74,9 +74,9 @@ class ListWorkflowRulesResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNextPageToken($var)
+    public function setNextPageToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->next_page_token = $var;
 
         return $this;

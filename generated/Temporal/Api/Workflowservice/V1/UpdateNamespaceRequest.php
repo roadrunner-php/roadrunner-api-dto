@@ -80,9 +80,9 @@ class UpdateNamespaceRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -112,9 +112,8 @@ class UpdateNamespaceRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\PBNamespace\V1\UpdateNamespaceInfo $var
      * @return $this
      */
-    public function setUpdateInfo($var)
+    public function setUpdateInfo(\Temporal\Api\PBNamespace\V1\UpdateNamespaceInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\PBNamespace\V1\UpdateNamespaceInfo::class);
         $this->update_info = $var;
 
         return $this;
@@ -144,9 +143,8 @@ class UpdateNamespaceRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\PBNamespace\V1\NamespaceConfig $var
      * @return $this
      */
-    public function setConfig($var)
+    public function setConfig(\Temporal\Api\PBNamespace\V1\NamespaceConfig|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\PBNamespace\V1\NamespaceConfig::class);
         $this->config = $var;
 
         return $this;
@@ -176,9 +174,8 @@ class UpdateNamespaceRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Replication\V1\NamespaceReplicationConfig $var
      * @return $this
      */
-    public function setReplicationConfig($var)
+    public function setReplicationConfig(\Temporal\Api\Replication\V1\NamespaceReplicationConfig|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Replication\V1\NamespaceReplicationConfig::class);
         $this->replication_config = $var;
 
         return $this;
@@ -198,9 +195,9 @@ class UpdateNamespaceRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setSecurityToken($var)
+    public function setSecurityToken(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->security_token = $var;
 
         return $this;
@@ -220,9 +217,9 @@ class UpdateNamespaceRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setDeleteBadBinary($var)
+    public function setDeleteBadBinary(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->delete_bad_binary = $var;
 
         return $this;
@@ -246,9 +243,8 @@ class UpdateNamespaceRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setPromoteNamespace($var)
+    public function setPromoteNamespace(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->promote_namespace = $var;
 
         return $this;

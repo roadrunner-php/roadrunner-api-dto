@@ -36,13 +36,6 @@ class RespondNexusTaskCompletedRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.nexus.v1.Response response = 4;</code>
      */
     protected $response = null;
-    /**
-     * Client must forward the poller_group_id received in PollNexusTaskQueueResponse for proper
-     * routing of the response.
-     *
-     * Generated from protobuf field <code>string poller_group_id = 5;</code>
-     */
-    protected $poller_group_id = '';
 
     /**
      * Constructor.
@@ -57,9 +50,6 @@ class RespondNexusTaskCompletedRequest extends \Google\Protobuf\Internal\Message
      *           A unique identifier for this task as received via a poll response.
      *     @type \Temporal\Api\Nexus\V1\Response $response
      *           Embedded response to be translated into a frontend response.
-     *     @type string $poller_group_id
-     *           Client must forward the poller_group_id received in PollNexusTaskQueueResponse for proper
-     *           routing of the response.
      * }
      */
     public function __construct($data = NULL) {
@@ -81,9 +71,9 @@ class RespondNexusTaskCompletedRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -107,9 +97,9 @@ class RespondNexusTaskCompletedRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -133,9 +123,9 @@ class RespondNexusTaskCompletedRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTaskToken($var)
+    public function setTaskToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->task_token = $var;
 
         return $this;
@@ -169,38 +159,9 @@ class RespondNexusTaskCompletedRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Nexus\V1\Response $var
      * @return $this
      */
-    public function setResponse($var)
+    public function setResponse(\Temporal\Api\Nexus\V1\Response|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\Response::class);
         $this->response = $var;
-
-        return $this;
-    }
-
-    /**
-     * Client must forward the poller_group_id received in PollNexusTaskQueueResponse for proper
-     * routing of the response.
-     *
-     * Generated from protobuf field <code>string poller_group_id = 5;</code>
-     * @return string
-     */
-    public function getPollerGroupId()
-    {
-        return $this->poller_group_id;
-    }
-
-    /**
-     * Client must forward the poller_group_id received in PollNexusTaskQueueResponse for proper
-     * routing of the response.
-     *
-     * Generated from protobuf field <code>string poller_group_id = 5;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setPollerGroupId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->poller_group_id = $var;
 
         return $this;
     }

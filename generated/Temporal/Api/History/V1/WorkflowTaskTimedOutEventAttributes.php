@@ -67,7 +67,7 @@ class WorkflowTaskTimedOutEventAttributes extends \Google\Protobuf\Internal\Mess
      * @param int|string $var
      * @return $this
      */
-    public function setScheduledEventId($var)
+    public function setScheduledEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->scheduled_event_id = $var;
@@ -93,7 +93,7 @@ class WorkflowTaskTimedOutEventAttributes extends \Google\Protobuf\Internal\Mess
      * @param int|string $var
      * @return $this
      */
-    public function setStartedEventId($var)
+    public function setStartedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->started_event_id = $var;
@@ -103,7 +103,7 @@ class WorkflowTaskTimedOutEventAttributes extends \Google\Protobuf\Internal\Mess
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.TimeoutType timeout_type = 3;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\TimeoutType}
      */
     public function getTimeoutType()
     {
@@ -112,10 +112,10 @@ class WorkflowTaskTimedOutEventAttributes extends \Google\Protobuf\Internal\Mess
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.TimeoutType timeout_type = 3;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\TimeoutType}
      * @return $this
      */
-    public function setTimeoutType($var)
+    public function setTimeoutType(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\TimeoutType::class);
         $this->timeout_type = $var;

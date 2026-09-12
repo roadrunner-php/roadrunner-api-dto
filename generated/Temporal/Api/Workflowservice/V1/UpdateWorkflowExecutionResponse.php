@@ -43,12 +43,6 @@ class UpdateWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.enums.v1.UpdateWorkflowExecutionLifecycleStage stage = 3;</code>
      */
     protected $stage = 0;
-    /**
-     * Link to the update event. May be null if the update has not yet been accepted.
-     *
-     * Generated from protobuf field <code>.temporal.api.common.v1.Link link = 4;</code>
-     */
-    protected $link = null;
 
     /**
      * Constructor.
@@ -73,8 +67,6 @@ class UpdateWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
      *           time was reached before the Update reached the stage specified in the
      *           request WaitPolicy, and before the context deadline expired; clients may
      *           may then retry the call as needed.
-     *     @type \Temporal\Api\Common\V1\Link $link
-     *           Link to the update event. May be null if the update has not yet been accepted.
      * }
      */
     public function __construct($data = NULL) {
@@ -110,9 +102,8 @@ class UpdateWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Update\V1\UpdateRef $var
      * @return $this
      */
-    public function setUpdateRef($var)
+    public function setUpdateRef(\Temporal\Api\Update\V1\UpdateRef|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Update\V1\UpdateRef::class);
         $this->update_ref = $var;
 
         return $this;
@@ -150,9 +141,8 @@ class UpdateWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Update\V1\Outcome $var
      * @return $this
      */
-    public function setOutcome($var)
+    public function setOutcome(\Temporal\Api\Update\V1\Outcome|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Update\V1\Outcome::class);
         $this->outcome = $var;
 
         return $this;
@@ -171,7 +161,7 @@ class UpdateWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
      * may then retry the call as needed.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.UpdateWorkflowExecutionLifecycleStage stage = 3;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\UpdateWorkflowExecutionLifecycleStage}
      */
     public function getStage()
     {
@@ -191,49 +181,13 @@ class UpdateWorkflowExecutionResponse extends \Google\Protobuf\Internal\Message
      * may then retry the call as needed.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.UpdateWorkflowExecutionLifecycleStage stage = 3;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\UpdateWorkflowExecutionLifecycleStage}
      * @return $this
      */
-    public function setStage($var)
+    public function setStage(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\UpdateWorkflowExecutionLifecycleStage::class);
         $this->stage = $var;
-
-        return $this;
-    }
-
-    /**
-     * Link to the update event. May be null if the update has not yet been accepted.
-     *
-     * Generated from protobuf field <code>.temporal.api.common.v1.Link link = 4;</code>
-     * @return \Temporal\Api\Common\V1\Link|null
-     */
-    public function getLink()
-    {
-        return $this->link;
-    }
-
-    public function hasLink()
-    {
-        return isset($this->link);
-    }
-
-    public function clearLink()
-    {
-        unset($this->link);
-    }
-
-    /**
-     * Link to the update event. May be null if the update has not yet been accepted.
-     *
-     * Generated from protobuf field <code>.temporal.api.common.v1.Link link = 4;</code>
-     * @param \Temporal\Api\Common\V1\Link $var
-     * @return $this
-     */
-    public function setLink($var)
-    {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Link::class);
-        $this->link = $var;
 
         return $this;
     }

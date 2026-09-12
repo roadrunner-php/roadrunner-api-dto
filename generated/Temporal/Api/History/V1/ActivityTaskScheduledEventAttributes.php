@@ -173,9 +173,9 @@ class ActivityTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      * @param string $var
      * @return $this
      */
-    public function setActivityId($var)
+    public function setActivityId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->activity_id = $var;
 
         return $this;
@@ -205,9 +205,8 @@ class ActivityTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      * @param \Temporal\Api\Common\V1\ActivityType $var
      * @return $this
      */
-    public function setActivityType($var)
+    public function setActivityType(\Temporal\Api\Common\V1\ActivityType|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\ActivityType::class);
         $this->activity_type = $var;
 
         return $this;
@@ -237,9 +236,8 @@ class ActivityTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      * @param \Temporal\Api\Taskqueue\V1\TaskQueue $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(\Temporal\Api\Taskqueue\V1\TaskQueue|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueue::class);
         $this->task_queue = $var;
 
         return $this;
@@ -269,9 +267,8 @@ class ActivityTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      * @param \Temporal\Api\Common\V1\Header $var
      * @return $this
      */
-    public function setHeader($var)
+    public function setHeader(\Temporal\Api\Common\V1\Header|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Header::class);
         $this->header = $var;
 
         return $this;
@@ -301,9 +298,8 @@ class ActivityTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setInput($var)
+    public function setInput(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->input = $var;
 
         return $this;
@@ -343,9 +339,8 @@ class ActivityTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setScheduleToCloseTimeout($var)
+    public function setScheduleToCloseTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->schedule_to_close_timeout = $var;
 
         return $this;
@@ -389,9 +384,8 @@ class ActivityTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setScheduleToStartTimeout($var)
+    public function setScheduleToStartTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->schedule_to_start_timeout = $var;
 
         return $this;
@@ -433,9 +427,8 @@ class ActivityTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setStartToCloseTimeout($var)
+    public function setStartToCloseTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->start_to_close_timeout = $var;
 
         return $this;
@@ -469,9 +462,8 @@ class ActivityTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setHeartbeatTimeout($var)
+    public function setHeartbeatTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->heartbeat_timeout = $var;
 
         return $this;
@@ -495,7 +487,7 @@ class ActivityTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      * @param int|string $var
      * @return $this
      */
-    public function setWorkflowTaskCompletedEventId($var)
+    public function setWorkflowTaskCompletedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->workflow_task_completed_event_id = $var;
@@ -535,9 +527,8 @@ class ActivityTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      * @param \Temporal\Api\Common\V1\RetryPolicy $var
      * @return $this
      */
-    public function setRetryPolicy($var)
+    public function setRetryPolicy(\Temporal\Api\Common\V1\RetryPolicy|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\RetryPolicy::class);
         $this->retry_policy = $var;
 
         return $this;
@@ -570,10 +561,9 @@ class ActivityTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      * @return $this
      * @deprecated
      */
-    public function setUseWorkflowBuildId($var)
+    public function setUseWorkflowBuildId(bool $var)
     {
         @trigger_error('use_workflow_build_id is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkBool($var);
         $this->use_workflow_build_id = $var;
 
         return $this;
@@ -609,9 +599,8 @@ class ActivityTaskScheduledEventAttributes extends \Google\Protobuf\Internal\Mes
      * @param \Temporal\Api\Common\V1\Priority $var
      * @return $this
      */
-    public function setPriority($var)
+    public function setPriority(\Temporal\Api\Common\V1\Priority|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Priority::class);
         $this->priority = $var;
 
         return $this;

@@ -26,12 +26,6 @@ class StartActivityExecutionResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool started = 2;</code>
      */
     protected $started = false;
-    /**
-     * Link to the started activity.
-     *
-     * Generated from protobuf field <code>.temporal.api.common.v1.Link link = 3;</code>
-     */
-    protected $link = null;
 
     /**
      * Constructor.
@@ -43,8 +37,6 @@ class StartActivityExecutionResponse extends \Google\Protobuf\Internal\Message
      *           The run ID of the activity that was started - or used (via ACTIVITY_ID_CONFLICT_POLICY_USE_EXISTING).
      *     @type bool $started
      *           If true, a new activity was started.
-     *     @type \Temporal\Api\Common\V1\Link $link
-     *           Link to the started activity.
      * }
      */
     public function __construct($data = NULL) {
@@ -70,9 +62,9 @@ class StartActivityExecutionResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRunId($var)
+    public function setRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->run_id = $var;
 
         return $this;
@@ -96,46 +88,9 @@ class StartActivityExecutionResponse extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setStarted($var)
+    public function setStarted(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->started = $var;
-
-        return $this;
-    }
-
-    /**
-     * Link to the started activity.
-     *
-     * Generated from protobuf field <code>.temporal.api.common.v1.Link link = 3;</code>
-     * @return \Temporal\Api\Common\V1\Link|null
-     */
-    public function getLink()
-    {
-        return $this->link;
-    }
-
-    public function hasLink()
-    {
-        return isset($this->link);
-    }
-
-    public function clearLink()
-    {
-        unset($this->link);
-    }
-
-    /**
-     * Link to the started activity.
-     *
-     * Generated from protobuf field <code>.temporal.api.common.v1.Link link = 3;</code>
-     * @param \Temporal\Api\Common\V1\Link $var
-     * @return $this
-     */
-    public function setLink($var)
-    {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Link::class);
-        $this->link = $var;
 
         return $this;
     }

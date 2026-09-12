@@ -72,9 +72,8 @@ class Capabilities extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setDiscardSpeculativeWorkflowTaskWithEvents($var)
+    public function setDiscardSpeculativeWorkflowTaskWithEvents(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->discard_speculative_workflow_task_with_events = $var;
 
         return $this;

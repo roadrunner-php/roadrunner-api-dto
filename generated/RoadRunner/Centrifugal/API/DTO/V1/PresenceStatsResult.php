@@ -52,7 +52,7 @@ class PresenceStatsResult extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setNumClients($var)
+    public function setNumClients(int $var)
     {
         GPBUtil::checkUint32($var);
         $this->num_clients = $var;
@@ -74,7 +74,7 @@ class PresenceStatsResult extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setNumUsers($var)
+    public function setNumUsers(int $var)
     {
         GPBUtil::checkUint32($var);
         $this->num_users = $var;

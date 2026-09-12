@@ -57,9 +57,8 @@ class UpdateTaskQueueConfigResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\TaskQueueConfig $var
      * @return $this
      */
-    public function setConfig($var)
+    public function setConfig(\Temporal\Api\Taskqueue\V1\TaskQueueConfig|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueueConfig::class);
         $this->config = $var;
 
         return $this;

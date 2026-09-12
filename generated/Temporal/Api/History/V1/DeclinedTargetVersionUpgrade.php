@@ -21,15 +21,6 @@ class DeclinedTargetVersionUpgrade extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentVersion deployment_version = 1;</code>
      */
     protected $deployment_version = null;
-    /**
-     * Revision number of the task queue routing config at the time the target
-     * was declined. If an incoming target's revision is <= this value, it is
-     * not newer and is not used for deciding whether or not to suppress the
-     * upgrade signal.
-     *
-     * Generated from protobuf field <code>int64 revision_number = 2;</code>
-     */
-    protected $revision_number = 0;
 
     /**
      * Constructor.
@@ -38,11 +29,6 @@ class DeclinedTargetVersionUpgrade extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $deployment_version
-     *     @type int|string $revision_number
-     *           Revision number of the task queue routing config at the time the target
-     *           was declined. If an incoming target's revision is <= this value, it is
-     *           not newer and is not used for deciding whether or not to suppress the
-     *           upgrade signal.
      * }
      */
     public function __construct($data = NULL) {
@@ -74,42 +60,9 @@ class DeclinedTargetVersionUpgrade extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
      * @return $this
      */
-    public function setDeploymentVersion($var)
+    public function setDeploymentVersion(\Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
         $this->deployment_version = $var;
-
-        return $this;
-    }
-
-    /**
-     * Revision number of the task queue routing config at the time the target
-     * was declined. If an incoming target's revision is <= this value, it is
-     * not newer and is not used for deciding whether or not to suppress the
-     * upgrade signal.
-     *
-     * Generated from protobuf field <code>int64 revision_number = 2;</code>
-     * @return int|string
-     */
-    public function getRevisionNumber()
-    {
-        return $this->revision_number;
-    }
-
-    /**
-     * Revision number of the task queue routing config at the time the target
-     * was declined. If an incoming target's revision is <= this value, it is
-     * not newer and is not used for deciding whether or not to suppress the
-     * upgrade signal.
-     *
-     * Generated from protobuf field <code>int64 revision_number = 2;</code>
-     * @param int|string $var
-     * @return $this
-     */
-    public function setRevisionNumber($var)
-    {
-        GPBUtil::checkInt64($var);
-        $this->revision_number = $var;
 
         return $this;
     }

@@ -43,13 +43,6 @@ class RespondNexusTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 5;</code>
      */
     protected $failure = null;
-    /**
-     * Client must forward the poller_group_id received in PollNexusTaskQueueResponse for proper
-     * routing of the response.
-     *
-     * Generated from protobuf field <code>string poller_group_id = 6;</code>
-     */
-    protected $poller_group_id = '';
 
     /**
      * Constructor.
@@ -66,9 +59,6 @@ class RespondNexusTaskFailedRequest extends \Google\Protobuf\Internal\Message
      *           Deprecated. Use the failure field instead.
      *     @type \Temporal\Api\Failure\V1\Failure $failure
      *           The error the handler failed with. Must contain a NexusHandlerFailureInfo object.
-     *     @type string $poller_group_id
-     *           Client must forward the poller_group_id received in PollNexusTaskQueueResponse for proper
-     *           routing of the response.
      * }
      */
     public function __construct($data = NULL) {
@@ -90,9 +80,9 @@ class RespondNexusTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -116,9 +106,9 @@ class RespondNexusTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -142,9 +132,9 @@ class RespondNexusTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setTaskToken($var)
+    public function setTaskToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->task_token = $var;
 
         return $this;
@@ -187,10 +177,9 @@ class RespondNexusTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setError($var)
+    public function setError(\Temporal\Api\Nexus\V1\HandlerError|null $var)
     {
         @trigger_error('error is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Nexus\V1\HandlerError::class);
         $this->error = $var;
 
         return $this;
@@ -224,38 +213,9 @@ class RespondNexusTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
      */
-    public function setFailure($var)
+    public function setFailure(\Temporal\Api\Failure\V1\Failure|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
         $this->failure = $var;
-
-        return $this;
-    }
-
-    /**
-     * Client must forward the poller_group_id received in PollNexusTaskQueueResponse for proper
-     * routing of the response.
-     *
-     * Generated from protobuf field <code>string poller_group_id = 6;</code>
-     * @return string
-     */
-    public function getPollerGroupId()
-    {
-        return $this->poller_group_id;
-    }
-
-    /**
-     * Client must forward the poller_group_id received in PollNexusTaskQueueResponse for proper
-     * routing of the response.
-     *
-     * Generated from protobuf field <code>string poller_group_id = 6;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setPollerGroupId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->poller_group_id = $var;
 
         return $this;
     }

@@ -89,9 +89,8 @@ class ActivityTaskTimedOutEventAttributes extends \Google\Protobuf\Internal\Mess
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
      */
-    public function setFailure($var)
+    public function setFailure(\Temporal\Api\Failure\V1\Failure|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
         $this->failure = $var;
 
         return $this;
@@ -115,7 +114,7 @@ class ActivityTaskTimedOutEventAttributes extends \Google\Protobuf\Internal\Mess
      * @param int|string $var
      * @return $this
      */
-    public function setScheduledEventId($var)
+    public function setScheduledEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->scheduled_event_id = $var;
@@ -141,7 +140,7 @@ class ActivityTaskTimedOutEventAttributes extends \Google\Protobuf\Internal\Mess
      * @param int|string $var
      * @return $this
      */
-    public function setStartedEventId($var)
+    public function setStartedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->started_event_id = $var;
@@ -151,7 +150,7 @@ class ActivityTaskTimedOutEventAttributes extends \Google\Protobuf\Internal\Mess
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.RetryState retry_state = 4;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\RetryState}
      */
     public function getRetryState()
     {
@@ -160,10 +159,10 @@ class ActivityTaskTimedOutEventAttributes extends \Google\Protobuf\Internal\Mess
 
     /**
      * Generated from protobuf field <code>.temporal.api.enums.v1.RetryState retry_state = 4;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\RetryState}
      * @return $this
      */
-    public function setRetryState($var)
+    public function setRetryState(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\RetryState::class);
         $this->retry_state = $var;

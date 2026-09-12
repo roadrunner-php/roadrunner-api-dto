@@ -84,9 +84,9 @@ class WorkflowDefinition extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setType($var)
+    public function setType(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->type = $var;
 
         return $this;
@@ -110,7 +110,7 @@ class WorkflowDefinition extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Sdk\V1\WorkflowInteractionDefinition[] $var
      * @return $this
      */
-    public function setQueryDefinitions($var)
+    public function setQueryDefinitions(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Sdk\V1\WorkflowInteractionDefinition::class);
         $this->query_definitions = $arr;
@@ -136,7 +136,7 @@ class WorkflowDefinition extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Sdk\V1\WorkflowInteractionDefinition[] $var
      * @return $this
      */
-    public function setSignalDefinitions($var)
+    public function setSignalDefinitions(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Sdk\V1\WorkflowInteractionDefinition::class);
         $this->signal_definitions = $arr;
@@ -162,7 +162,7 @@ class WorkflowDefinition extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Sdk\V1\WorkflowInteractionDefinition[] $var
      * @return $this
      */
-    public function setUpdateDefinitions($var)
+    public function setUpdateDefinitions(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Sdk\V1\WorkflowInteractionDefinition::class);
         $this->update_definitions = $arr;

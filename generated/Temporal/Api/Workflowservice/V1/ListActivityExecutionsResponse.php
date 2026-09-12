@@ -55,7 +55,7 @@ class ListActivityExecutionsResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Activity\V1\ActivityExecutionListInfo[] $var
      * @return $this
      */
-    public function setExecutions($var)
+    public function setExecutions(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Activity\V1\ActivityExecutionListInfo::class);
         $this->executions = $arr;
@@ -81,9 +81,9 @@ class ListActivityExecutionsResponse extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNextPageToken($var)
+    public function setNextPageToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->next_page_token = $var;
 
         return $this;

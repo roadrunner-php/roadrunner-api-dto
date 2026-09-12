@@ -64,9 +64,8 @@ class UpdateWorkerDeploymentVersionMetadataResponse extends \Google\Protobuf\Int
      * @param \Temporal\Api\Deployment\V1\VersionMetadata $var
      * @return $this
      */
-    public function setMetadata($var)
+    public function setMetadata(\Temporal\Api\Deployment\V1\VersionMetadata|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\VersionMetadata::class);
         $this->metadata = $var;
 
         return $this;

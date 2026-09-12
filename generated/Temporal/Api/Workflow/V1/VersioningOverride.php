@@ -58,18 +58,9 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Temporal\Api\Workflow\V1\VersioningOverride\PinnedOverride $pinned
-     *           Override the workflow to have Pinned behavior. This is a sticky override:
-     *           Workflow Tasks continue to route according to this override until it is
-     *           explicitly removed.
+     *           Override the workflow to have Pinned behavior.
      *     @type bool $auto_upgrade
      *           Override the workflow to have AutoUpgrade behavior.
-     *     @type \Temporal\Api\Workflow\V1\VersioningOverride\OneTimeOverride $one_time
-     *           Override Workflow Task routing to a specific Worker Deployment Version until
-     *           one Workflow Task completes there. After completion, the workflow execution's
-     *           Versioning Behavior and Deployment Version come from the worker's completion
-     *           response.
-     *           (-- api-linter: core::0142::time-field-type=disabled
-     *               aip.dev/not-precedent: one_time describes one-time routing semantics, not a timestamp or duration. --)
      *     @type int $behavior
      *           Required.
      *           Deprecated. Use `override`.
@@ -90,9 +81,7 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Override the workflow to have Pinned behavior. This is a sticky override:
-     * Workflow Tasks continue to route according to this override until it is
-     * explicitly removed.
+     * Override the workflow to have Pinned behavior.
      *
      * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride.PinnedOverride pinned = 3;</code>
      * @return \Temporal\Api\Workflow\V1\VersioningOverride\PinnedOverride|null
@@ -108,17 +97,14 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Override the workflow to have Pinned behavior. This is a sticky override:
-     * Workflow Tasks continue to route according to this override until it is
-     * explicitly removed.
+     * Override the workflow to have Pinned behavior.
      *
      * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride.PinnedOverride pinned = 3;</code>
      * @param \Temporal\Api\Workflow\V1\VersioningOverride\PinnedOverride $var
      * @return $this
      */
-    public function setPinned($var)
+    public function setPinned(\Temporal\Api\Workflow\V1\VersioningOverride\PinnedOverride|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\VersioningOverride\PinnedOverride::class);
         $this->writeOneof(3, $var);
 
         return $this;
@@ -147,51 +133,9 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setAutoUpgrade($var)
+    public function setAutoUpgrade(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->writeOneof(4, $var);
-
-        return $this;
-    }
-
-    /**
-     * Override Workflow Task routing to a specific Worker Deployment Version until
-     * one Workflow Task completes there. After completion, the workflow execution's
-     * Versioning Behavior and Deployment Version come from the worker's completion
-     * response.
-     * (-- api-linter: core::0142::time-field-type=disabled
-     *     aip.dev/not-precedent: one_time describes one-time routing semantics, not a timestamp or duration. --)
-     *
-     * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride.OneTimeOverride one_time = 5;</code>
-     * @return \Temporal\Api\Workflow\V1\VersioningOverride\OneTimeOverride|null
-     */
-    public function getOneTime()
-    {
-        return $this->readOneof(5);
-    }
-
-    public function hasOneTime()
-    {
-        return $this->hasOneof(5);
-    }
-
-    /**
-     * Override Workflow Task routing to a specific Worker Deployment Version until
-     * one Workflow Task completes there. After completion, the workflow execution's
-     * Versioning Behavior and Deployment Version come from the worker's completion
-     * response.
-     * (-- api-linter: core::0142::time-field-type=disabled
-     *     aip.dev/not-precedent: one_time describes one-time routing semantics, not a timestamp or duration. --)
-     *
-     * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride.OneTimeOverride one_time = 5;</code>
-     * @param \Temporal\Api\Workflow\V1\VersioningOverride\OneTimeOverride $var
-     * @return $this
-     */
-    public function setOneTime($var)
-    {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\VersioningOverride\OneTimeOverride::class);
-        $this->writeOneof(5, $var);
 
         return $this;
     }
@@ -201,7 +145,7 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
      * Deprecated. Use `override`.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.VersioningBehavior behavior = 1 [deprecated = true];</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\VersioningBehavior}
      * @deprecated
      */
     public function getBehavior()
@@ -217,11 +161,11 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
      * Deprecated. Use `override`.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.VersioningBehavior behavior = 1 [deprecated = true];</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\VersioningBehavior}
      * @return $this
      * @deprecated
      */
-    public function setBehavior($var)
+    public function setBehavior(int $var)
     {
         @trigger_error('behavior is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\VersioningBehavior::class);
@@ -271,10 +215,9 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setDeployment($var)
+    public function setDeployment(\Temporal\Api\Deployment\V1\Deployment|null $var)
     {
         @trigger_error('deployment is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\Deployment::class);
         $this->deployment = $var;
 
         return $this;
@@ -309,10 +252,10 @@ class VersioningOverride extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setPinnedVersion($var)
+    public function setPinnedVersion(string $var)
     {
         @trigger_error('pinned_version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->pinned_version = $var;
 
         return $this;

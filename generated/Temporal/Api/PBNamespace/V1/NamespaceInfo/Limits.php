@@ -28,14 +28,6 @@ class Limits extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int64 memo_size_limit_error = 2;</code>
      */
     protected $memo_size_limit_error = 0;
-    /**
-     * Maximum total size in bytes of a single RespondWorkflowTaskCompleted request.
-     * Requests exceeding this fail the workflow task with
-     * WORKFLOW_TASK_FAILED_CAUSE_REQUEST_TOO_LARGE. 0 means no explicit limit.
-     *
-     * Generated from protobuf field <code>int64 workflow_task_completion_size_limit_error = 3;</code>
-     */
-    protected $workflow_task_completion_size_limit_error = 0;
 
     /**
      * Constructor.
@@ -49,10 +41,6 @@ class Limits extends \Google\Protobuf\Internal\Message
      *           When exceeded, the server will reject the operation with an error.
      *     @type int|string $memo_size_limit_error
      *           Maximum total memo size in bytes per workflow execution.
-     *     @type int|string $workflow_task_completion_size_limit_error
-     *           Maximum total size in bytes of a single RespondWorkflowTaskCompleted request.
-     *           Requests exceeding this fail the workflow task with
-     *           WORKFLOW_TASK_FAILED_CAUSE_REQUEST_TOO_LARGE. 0 means no explicit limit.
      * }
      */
     public function __construct($data = NULL) {
@@ -82,7 +70,7 @@ class Limits extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setBlobSizeLimitError($var)
+    public function setBlobSizeLimitError(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->blob_size_limit_error = $var;
@@ -108,40 +96,10 @@ class Limits extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setMemoSizeLimitError($var)
+    public function setMemoSizeLimitError(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->memo_size_limit_error = $var;
-
-        return $this;
-    }
-
-    /**
-     * Maximum total size in bytes of a single RespondWorkflowTaskCompleted request.
-     * Requests exceeding this fail the workflow task with
-     * WORKFLOW_TASK_FAILED_CAUSE_REQUEST_TOO_LARGE. 0 means no explicit limit.
-     *
-     * Generated from protobuf field <code>int64 workflow_task_completion_size_limit_error = 3;</code>
-     * @return int|string
-     */
-    public function getWorkflowTaskCompletionSizeLimitError()
-    {
-        return $this->workflow_task_completion_size_limit_error;
-    }
-
-    /**
-     * Maximum total size in bytes of a single RespondWorkflowTaskCompleted request.
-     * Requests exceeding this fail the workflow task with
-     * WORKFLOW_TASK_FAILED_CAUSE_REQUEST_TOO_LARGE. 0 means no explicit limit.
-     *
-     * Generated from protobuf field <code>int64 workflow_task_completion_size_limit_error = 3;</code>
-     * @param int|string $var
-     * @return $this
-     */
-    public function setWorkflowTaskCompletionSizeLimitError($var)
-    {
-        GPBUtil::checkInt64($var);
-        $this->workflow_task_completion_size_limit_error = $var;
 
         return $this;
     }

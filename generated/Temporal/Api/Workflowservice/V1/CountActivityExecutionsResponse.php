@@ -80,7 +80,7 @@ class CountActivityExecutionsResponse extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setCount($var)
+    public function setCount(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->count = $var;
@@ -108,7 +108,7 @@ class CountActivityExecutionsResponse extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflowservice\V1\CountActivityExecutionsResponse\AggregationGroup[] $var
      * @return $this
      */
-    public function setGroups($var)
+    public function setGroups(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Workflowservice\V1\CountActivityExecutionsResponse\AggregationGroup::class);
         $this->groups = $arr;

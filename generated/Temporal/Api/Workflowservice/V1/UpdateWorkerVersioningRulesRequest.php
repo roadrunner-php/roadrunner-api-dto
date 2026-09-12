@@ -82,9 +82,9 @@ class UpdateWorkerVersioningRulesRequest extends \Google\Protobuf\Internal\Messa
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -104,9 +104,9 @@ class UpdateWorkerVersioningRulesRequest extends \Google\Protobuf\Internal\Messa
      * @param string $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->task_queue = $var;
 
         return $this;
@@ -138,9 +138,9 @@ class UpdateWorkerVersioningRulesRequest extends \Google\Protobuf\Internal\Messa
      * @param string $var
      * @return $this
      */
-    public function setConflictToken($var)
+    public function setConflictToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->conflict_token = $var;
 
         return $this;
@@ -165,9 +165,8 @@ class UpdateWorkerVersioningRulesRequest extends \Google\Protobuf\Internal\Messa
      * @param \Temporal\Api\Workflowservice\V1\UpdateWorkerVersioningRulesRequest\InsertBuildIdAssignmentRule $var
      * @return $this
      */
-    public function setInsertAssignmentRule($var)
+    public function setInsertAssignmentRule(\Temporal\Api\Workflowservice\V1\UpdateWorkerVersioningRulesRequest\InsertBuildIdAssignmentRule|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflowservice\V1\UpdateWorkerVersioningRulesRequest\InsertBuildIdAssignmentRule::class);
         $this->writeOneof(4, $var);
 
         return $this;
@@ -192,9 +191,8 @@ class UpdateWorkerVersioningRulesRequest extends \Google\Protobuf\Internal\Messa
      * @param \Temporal\Api\Workflowservice\V1\UpdateWorkerVersioningRulesRequest\ReplaceBuildIdAssignmentRule $var
      * @return $this
      */
-    public function setReplaceAssignmentRule($var)
+    public function setReplaceAssignmentRule(\Temporal\Api\Workflowservice\V1\UpdateWorkerVersioningRulesRequest\ReplaceBuildIdAssignmentRule|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflowservice\V1\UpdateWorkerVersioningRulesRequest\ReplaceBuildIdAssignmentRule::class);
         $this->writeOneof(5, $var);
 
         return $this;
@@ -219,9 +217,8 @@ class UpdateWorkerVersioningRulesRequest extends \Google\Protobuf\Internal\Messa
      * @param \Temporal\Api\Workflowservice\V1\UpdateWorkerVersioningRulesRequest\DeleteBuildIdAssignmentRule $var
      * @return $this
      */
-    public function setDeleteAssignmentRule($var)
+    public function setDeleteAssignmentRule(\Temporal\Api\Workflowservice\V1\UpdateWorkerVersioningRulesRequest\DeleteBuildIdAssignmentRule|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflowservice\V1\UpdateWorkerVersioningRulesRequest\DeleteBuildIdAssignmentRule::class);
         $this->writeOneof(6, $var);
 
         return $this;
@@ -246,9 +243,8 @@ class UpdateWorkerVersioningRulesRequest extends \Google\Protobuf\Internal\Messa
      * @param \Temporal\Api\Workflowservice\V1\UpdateWorkerVersioningRulesRequest\AddCompatibleBuildIdRedirectRule $var
      * @return $this
      */
-    public function setAddCompatibleRedirectRule($var)
+    public function setAddCompatibleRedirectRule(\Temporal\Api\Workflowservice\V1\UpdateWorkerVersioningRulesRequest\AddCompatibleBuildIdRedirectRule|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflowservice\V1\UpdateWorkerVersioningRulesRequest\AddCompatibleBuildIdRedirectRule::class);
         $this->writeOneof(7, $var);
 
         return $this;
@@ -273,9 +269,8 @@ class UpdateWorkerVersioningRulesRequest extends \Google\Protobuf\Internal\Messa
      * @param \Temporal\Api\Workflowservice\V1\UpdateWorkerVersioningRulesRequest\ReplaceCompatibleBuildIdRedirectRule $var
      * @return $this
      */
-    public function setReplaceCompatibleRedirectRule($var)
+    public function setReplaceCompatibleRedirectRule(\Temporal\Api\Workflowservice\V1\UpdateWorkerVersioningRulesRequest\ReplaceCompatibleBuildIdRedirectRule|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflowservice\V1\UpdateWorkerVersioningRulesRequest\ReplaceCompatibleBuildIdRedirectRule::class);
         $this->writeOneof(8, $var);
 
         return $this;
@@ -300,9 +295,8 @@ class UpdateWorkerVersioningRulesRequest extends \Google\Protobuf\Internal\Messa
      * @param \Temporal\Api\Workflowservice\V1\UpdateWorkerVersioningRulesRequest\DeleteCompatibleBuildIdRedirectRule $var
      * @return $this
      */
-    public function setDeleteCompatibleRedirectRule($var)
+    public function setDeleteCompatibleRedirectRule(\Temporal\Api\Workflowservice\V1\UpdateWorkerVersioningRulesRequest\DeleteCompatibleBuildIdRedirectRule|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflowservice\V1\UpdateWorkerVersioningRulesRequest\DeleteCompatibleBuildIdRedirectRule::class);
         $this->writeOneof(9, $var);
 
         return $this;
@@ -327,9 +321,8 @@ class UpdateWorkerVersioningRulesRequest extends \Google\Protobuf\Internal\Messa
      * @param \Temporal\Api\Workflowservice\V1\UpdateWorkerVersioningRulesRequest\CommitBuildId $var
      * @return $this
      */
-    public function setCommitBuildId($var)
+    public function setCommitBuildId(\Temporal\Api\Workflowservice\V1\UpdateWorkerVersioningRulesRequest\CommitBuildId|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflowservice\V1\UpdateWorkerVersioningRulesRequest\CommitBuildId::class);
         $this->writeOneof(10, $var);
 
         return $this;

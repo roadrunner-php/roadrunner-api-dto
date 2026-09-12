@@ -84,9 +84,8 @@ class RespondWorkflowTaskCompletedResponse extends \Google\Protobuf\Internal\Mes
      * @param \Temporal\Api\Workflowservice\V1\PollWorkflowTaskQueueResponse $var
      * @return $this
      */
-    public function setWorkflowTask($var)
+    public function setWorkflowTask(\Temporal\Api\Workflowservice\V1\PollWorkflowTaskQueueResponse|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflowservice\V1\PollWorkflowTaskQueueResponse::class);
         $this->workflow_task = $var;
 
         return $this;
@@ -110,7 +109,7 @@ class RespondWorkflowTaskCompletedResponse extends \Google\Protobuf\Internal\Mes
      * @param \Temporal\Api\Workflowservice\V1\PollActivityTaskQueueResponse[] $var
      * @return $this
      */
-    public function setActivityTasks($var)
+    public function setActivityTasks(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Workflowservice\V1\PollActivityTaskQueueResponse::class);
         $this->activity_tasks = $arr;
@@ -140,7 +139,7 @@ class RespondWorkflowTaskCompletedResponse extends \Google\Protobuf\Internal\Mes
      * @param int|string $var
      * @return $this
      */
-    public function setResetHistoryEventId($var)
+    public function setResetHistoryEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->reset_history_event_id = $var;

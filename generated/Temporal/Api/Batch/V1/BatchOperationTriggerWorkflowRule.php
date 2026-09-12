@@ -61,9 +61,9 @@ class BatchOperationTriggerWorkflowRule extends \Google\Protobuf\Internal\Messag
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -92,9 +92,9 @@ class BatchOperationTriggerWorkflowRule extends \Google\Protobuf\Internal\Messag
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->writeOneof(2, $var);
 
         return $this;
@@ -123,9 +123,8 @@ class BatchOperationTriggerWorkflowRule extends \Google\Protobuf\Internal\Messag
      * @param \Temporal\Api\Rules\V1\WorkflowRuleSpec $var
      * @return $this
      */
-    public function setSpec($var)
+    public function setSpec(\Temporal\Api\Rules\V1\WorkflowRuleSpec|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Rules\V1\WorkflowRuleSpec::class);
         $this->writeOneof(3, $var);
 
         return $this;

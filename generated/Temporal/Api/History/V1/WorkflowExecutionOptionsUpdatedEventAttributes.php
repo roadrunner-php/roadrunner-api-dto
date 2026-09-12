@@ -54,24 +54,11 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      */
     protected $priority = null;
     /**
-     * TimeSkippingConfig override upserted in this event. Represents the full config.
+     * If set, the time-skipping configuration was changed. Contains the full updated configuration.
      *
-     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 7;</code>
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.TimeSkippingConfig time_skipping_config = 7;</code>
      */
     protected $time_skipping_config = null;
-    /**
-     * Indicates the time skipping config was updated by the recent call to update
-     * workflow execution options.
-     *
-     * Generated from protobuf field <code>bool time_skipping_config_updated = 9;</code>
-     */
-    protected $time_skipping_config_updated = false;
-    /**
-     * Updates to workflow updates options.
-     *
-     * Generated from protobuf field <code>repeated .temporal.api.history.v1.WorkflowExecutionOptionsUpdatedEventAttributes.WorkflowUpdateOptionsUpdate workflow_update_options = 8;</code>
-     */
-    private $workflow_update_options;
 
     /**
      * Constructor.
@@ -94,13 +81,8 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      *     @type \Temporal\Api\Common\V1\Priority $priority
      *           Priority override upserted in this event. Represents the full priority; not just partial fields.
      *           Ignored if nil.
-     *     @type \Temporal\Api\Common\V1\TimeSkippingConfig $time_skipping_config
-     *           TimeSkippingConfig override upserted in this event. Represents the full config.
-     *     @type bool $time_skipping_config_updated
-     *           Indicates the time skipping config was updated by the recent call to update
-     *           workflow execution options.
-     *     @type \Temporal\Api\History\V1\WorkflowExecutionOptionsUpdatedEventAttributes\WorkflowUpdateOptionsUpdate[] $workflow_update_options
-     *           Updates to workflow updates options.
+     *     @type \Temporal\Api\Workflow\V1\TimeSkippingConfig $time_skipping_config
+     *           If set, the time-skipping configuration was changed. Contains the full updated configuration.
      * }
      */
     public function __construct($data = NULL) {
@@ -138,9 +120,8 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      * @param \Temporal\Api\Workflow\V1\VersioningOverride $var
      * @return $this
      */
-    public function setVersioningOverride($var)
+    public function setVersioningOverride(\Temporal\Api\Workflow\V1\VersioningOverride|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\VersioningOverride::class);
         $this->versioning_override = $var;
 
         return $this;
@@ -164,9 +145,8 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      * @param bool $var
      * @return $this
      */
-    public function setUnsetVersioningOverride($var)
+    public function setUnsetVersioningOverride(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->unset_versioning_override = $var;
 
         return $this;
@@ -192,9 +172,9 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      * @param string $var
      * @return $this
      */
-    public function setAttachedRequestId($var)
+    public function setAttachedRequestId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->attached_request_id = $var;
 
         return $this;
@@ -218,7 +198,7 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      * @param \Temporal\Api\Common\V1\Callback[] $var
      * @return $this
      */
-    public function setAttachedCompletionCallbacks($var)
+    public function setAttachedCompletionCallbacks(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Callback::class);
         $this->attached_completion_callbacks = $arr;
@@ -244,9 +224,9 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -282,19 +262,18 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      * @param \Temporal\Api\Common\V1\Priority $var
      * @return $this
      */
-    public function setPriority($var)
+    public function setPriority(\Temporal\Api\Common\V1\Priority|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Priority::class);
         $this->priority = $var;
 
         return $this;
     }
 
     /**
-     * TimeSkippingConfig override upserted in this event. Represents the full config.
+     * If set, the time-skipping configuration was changed. Contains the full updated configuration.
      *
-     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 7;</code>
-     * @return \Temporal\Api\Common\V1\TimeSkippingConfig|null
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.TimeSkippingConfig time_skipping_config = 7;</code>
+     * @return \Temporal\Api\Workflow\V1\TimeSkippingConfig|null
      */
     public function getTimeSkippingConfig()
     {
@@ -312,70 +291,15 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
     }
 
     /**
-     * TimeSkippingConfig override upserted in this event. Represents the full config.
+     * If set, the time-skipping configuration was changed. Contains the full updated configuration.
      *
-     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 7;</code>
-     * @param \Temporal\Api\Common\V1\TimeSkippingConfig $var
+     * Generated from protobuf field <code>.temporal.api.workflow.v1.TimeSkippingConfig time_skipping_config = 7;</code>
+     * @param \Temporal\Api\Workflow\V1\TimeSkippingConfig $var
      * @return $this
      */
-    public function setTimeSkippingConfig($var)
+    public function setTimeSkippingConfig(\Temporal\Api\Workflow\V1\TimeSkippingConfig|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\TimeSkippingConfig::class);
         $this->time_skipping_config = $var;
-
-        return $this;
-    }
-
-    /**
-     * Indicates the time skipping config was updated by the recent call to update
-     * workflow execution options.
-     *
-     * Generated from protobuf field <code>bool time_skipping_config_updated = 9;</code>
-     * @return bool
-     */
-    public function getTimeSkippingConfigUpdated()
-    {
-        return $this->time_skipping_config_updated;
-    }
-
-    /**
-     * Indicates the time skipping config was updated by the recent call to update
-     * workflow execution options.
-     *
-     * Generated from protobuf field <code>bool time_skipping_config_updated = 9;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setTimeSkippingConfigUpdated($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->time_skipping_config_updated = $var;
-
-        return $this;
-    }
-
-    /**
-     * Updates to workflow updates options.
-     *
-     * Generated from protobuf field <code>repeated .temporal.api.history.v1.WorkflowExecutionOptionsUpdatedEventAttributes.WorkflowUpdateOptionsUpdate workflow_update_options = 8;</code>
-     * @return RepeatedField<\Temporal\Api\History\V1\WorkflowExecutionOptionsUpdatedEventAttributes\WorkflowUpdateOptionsUpdate>
-     */
-    public function getWorkflowUpdateOptions()
-    {
-        return $this->workflow_update_options;
-    }
-
-    /**
-     * Updates to workflow updates options.
-     *
-     * Generated from protobuf field <code>repeated .temporal.api.history.v1.WorkflowExecutionOptionsUpdatedEventAttributes.WorkflowUpdateOptionsUpdate workflow_update_options = 8;</code>
-     * @param \Temporal\Api\History\V1\WorkflowExecutionOptionsUpdatedEventAttributes\WorkflowUpdateOptionsUpdate[] $var
-     * @return $this
-     */
-    public function setWorkflowUpdateOptions($var)
-    {
-        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\History\V1\WorkflowExecutionOptionsUpdatedEventAttributes\WorkflowUpdateOptionsUpdate::class);
-        $this->workflow_update_options = $arr;
 
         return $this;
     }

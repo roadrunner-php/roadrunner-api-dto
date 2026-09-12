@@ -94,9 +94,9 @@ class ComputeProvider extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setType($var)
+    public function setType(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->type = $var;
 
         return $this;
@@ -138,9 +138,8 @@ class ComputeProvider extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Payload $var
      * @return $this
      */
-    public function setDetails($var)
+    public function setDetails(\Temporal\Api\Common\V1\Payload|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payload::class);
         $this->details = $var;
 
         return $this;
@@ -166,9 +165,9 @@ class ComputeProvider extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNexusEndpoint($var)
+    public function setNexusEndpoint(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->nexus_endpoint = $var;
 
         return $this;

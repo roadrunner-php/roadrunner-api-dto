@@ -62,9 +62,8 @@ class PresenceResponse extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\Error $var
      * @return $this
      */
-    public function setError($var)
+    public function setError(\RoadRunner\Centrifugal\API\DTO\V1\Error|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\Error::class);
         $this->error = $var;
 
         return $this;
@@ -94,9 +93,8 @@ class PresenceResponse extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\PresenceResult $var
      * @return $this
      */
-    public function setResult($var)
+    public function setResult(\RoadRunner\Centrifugal\API\DTO\V1\PresenceResult|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\API\DTO\V1\PresenceResult::class);
         $this->result = $var;
 
         return $this;

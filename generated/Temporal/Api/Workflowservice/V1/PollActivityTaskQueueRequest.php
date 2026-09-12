@@ -23,15 +23,6 @@ class PollActivityTaskQueueRequest extends \Google\Protobuf\Internal\Message
      */
     protected $task_queue = null;
     /**
-     * Unless this is the first poll, the client must pass one of the poller group IDs received in
-     * `poller_group_infos` of the last the PollActivityTaskQueueResponse according to the
-     * instructions. If not set, the poll is routed randomly which can cause it to be blocked
-     * without receiving a task while the queue actually has tasks in another server location.
-     *
-     * Generated from protobuf field <code>string poller_group_id = 10;</code>
-     */
-    protected $poller_group_id = '';
-    /**
      * The identity of the worker/client
      *
      * Generated from protobuf field <code>string identity = 3;</code>
@@ -79,11 +70,6 @@ class PollActivityTaskQueueRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $namespace
      *     @type \Temporal\Api\Taskqueue\V1\TaskQueue $task_queue
-     *     @type string $poller_group_id
-     *           Unless this is the first poll, the client must pass one of the poller group IDs received in
-     *           `poller_group_infos` of the last the PollActivityTaskQueueResponse according to the
-     *           instructions. If not set, the poll is routed randomly which can cause it to be blocked
-     *           without receiving a task while the queue actually has tasks in another server location.
      *     @type string $identity
      *           The identity of the worker/client
      *     @type string $worker_instance_key
@@ -120,9 +106,9 @@ class PollActivityTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -152,42 +138,9 @@ class PollActivityTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\TaskQueue $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(\Temporal\Api\Taskqueue\V1\TaskQueue|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueue::class);
         $this->task_queue = $var;
-
-        return $this;
-    }
-
-    /**
-     * Unless this is the first poll, the client must pass one of the poller group IDs received in
-     * `poller_group_infos` of the last the PollActivityTaskQueueResponse according to the
-     * instructions. If not set, the poll is routed randomly which can cause it to be blocked
-     * without receiving a task while the queue actually has tasks in another server location.
-     *
-     * Generated from protobuf field <code>string poller_group_id = 10;</code>
-     * @return string
-     */
-    public function getPollerGroupId()
-    {
-        return $this->poller_group_id;
-    }
-
-    /**
-     * Unless this is the first poll, the client must pass one of the poller group IDs received in
-     * `poller_group_infos` of the last the PollActivityTaskQueueResponse according to the
-     * instructions. If not set, the poll is routed randomly which can cause it to be blocked
-     * without receiving a task while the queue actually has tasks in another server location.
-     *
-     * Generated from protobuf field <code>string poller_group_id = 10;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setPollerGroupId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->poller_group_id = $var;
 
         return $this;
     }
@@ -210,9 +163,9 @@ class PollActivityTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -238,9 +191,9 @@ class PollActivityTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setWorkerInstanceKey($var)
+    public function setWorkerInstanceKey(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->worker_instance_key = $var;
 
         return $this;
@@ -266,9 +219,9 @@ class PollActivityTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setWorkerControlTaskQueue($var)
+    public function setWorkerControlTaskQueue(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->worker_control_task_queue = $var;
 
         return $this;
@@ -298,9 +251,8 @@ class PollActivityTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Taskqueue\V1\TaskQueueMetadata $var
      * @return $this
      */
-    public function setTaskQueueMetadata($var)
+    public function setTaskQueueMetadata(\Temporal\Api\Taskqueue\V1\TaskQueueMetadata|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueueMetadata::class);
         $this->task_queue_metadata = $var;
 
         return $this;
@@ -347,10 +299,9 @@ class PollActivityTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @return $this
      * @deprecated
      */
-    public function setWorkerVersionCapabilities($var)
+    public function setWorkerVersionCapabilities(\Temporal\Api\Common\V1\WorkerVersionCapabilities|null $var)
     {
         @trigger_error('worker_version_capabilities is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerVersionCapabilities::class);
         $this->worker_version_capabilities = $var;
 
         return $this;
@@ -384,9 +335,8 @@ class PollActivityTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentOptions $var
      * @return $this
      */
-    public function setDeploymentOptions($var)
+    public function setDeploymentOptions(\Temporal\Api\Deployment\V1\WorkerDeploymentOptions|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentOptions::class);
         $this->deployment_options = $var;
 
         return $this;

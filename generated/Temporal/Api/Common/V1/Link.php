@@ -29,9 +29,6 @@ class Link extends \Google\Protobuf\Internal\Message
      *
      *     @type \Temporal\Api\Common\V1\Link\WorkflowEvent $workflow_event
      *     @type \Temporal\Api\Common\V1\Link\BatchJob $batch_job
-     *     @type \Temporal\Api\Common\V1\Link\Activity $activity
-     *     @type \Temporal\Api\Common\V1\Link\NexusOperation $nexus_operation
-     *     @type \Temporal\Api\Common\V1\Link\Workflow $workflow
      * }
      */
     public function __construct($data = NULL) {
@@ -58,9 +55,8 @@ class Link extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Link\WorkflowEvent $var
      * @return $this
      */
-    public function setWorkflowEvent($var)
+    public function setWorkflowEvent(\Temporal\Api\Common\V1\Link\WorkflowEvent|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Link\WorkflowEvent::class);
         $this->writeOneof(1, $var);
 
         return $this;
@@ -85,91 +81,9 @@ class Link extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Link\BatchJob $var
      * @return $this
      */
-    public function setBatchJob($var)
+    public function setBatchJob(\Temporal\Api\Common\V1\Link\BatchJob|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Link\BatchJob::class);
         $this->writeOneof(2, $var);
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.temporal.api.common.v1.Link.Activity activity = 3;</code>
-     * @return \Temporal\Api\Common\V1\Link\Activity|null
-     */
-    public function getActivity()
-    {
-        return $this->readOneof(3);
-    }
-
-    public function hasActivity()
-    {
-        return $this->hasOneof(3);
-    }
-
-    /**
-     * Generated from protobuf field <code>.temporal.api.common.v1.Link.Activity activity = 3;</code>
-     * @param \Temporal\Api\Common\V1\Link\Activity $var
-     * @return $this
-     */
-    public function setActivity($var)
-    {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Link\Activity::class);
-        $this->writeOneof(3, $var);
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.temporal.api.common.v1.Link.NexusOperation nexus_operation = 4;</code>
-     * @return \Temporal\Api\Common\V1\Link\NexusOperation|null
-     */
-    public function getNexusOperation()
-    {
-        return $this->readOneof(4);
-    }
-
-    public function hasNexusOperation()
-    {
-        return $this->hasOneof(4);
-    }
-
-    /**
-     * Generated from protobuf field <code>.temporal.api.common.v1.Link.NexusOperation nexus_operation = 4;</code>
-     * @param \Temporal\Api\Common\V1\Link\NexusOperation $var
-     * @return $this
-     */
-    public function setNexusOperation($var)
-    {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Link\NexusOperation::class);
-        $this->writeOneof(4, $var);
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.temporal.api.common.v1.Link.Workflow workflow = 5;</code>
-     * @return \Temporal\Api\Common\V1\Link\Workflow|null
-     */
-    public function getWorkflow()
-    {
-        return $this->readOneof(5);
-    }
-
-    public function hasWorkflow()
-    {
-        return $this->hasOneof(5);
-    }
-
-    /**
-     * Generated from protobuf field <code>.temporal.api.common.v1.Link.Workflow workflow = 5;</code>
-     * @param \Temporal\Api\Common\V1\Link\Workflow $var
-     * @return $this
-     */
-    public function setWorkflow($var)
-    {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Link\Workflow::class);
-        $this->writeOneof(5, $var);
 
         return $this;
     }

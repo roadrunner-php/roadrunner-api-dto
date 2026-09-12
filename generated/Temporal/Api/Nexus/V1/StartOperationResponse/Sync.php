@@ -64,9 +64,8 @@ class Sync extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Payload $var
      * @return $this
      */
-    public function setPayload($var)
+    public function setPayload(\Temporal\Api\Common\V1\Payload|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payload::class);
         $this->payload = $var;
 
         return $this;
@@ -86,7 +85,7 @@ class Sync extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Nexus\V1\Link[] $var
      * @return $this
      */
-    public function setLinks($var)
+    public function setLinks(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Nexus\V1\Link::class);
         $this->links = $arr;

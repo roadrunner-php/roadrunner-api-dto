@@ -122,7 +122,7 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * @param int|string $var
      * @return $this
      */
-    public function setScheduledEventId($var)
+    public function setScheduledEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->scheduled_event_id = $var;
@@ -148,9 +148,9 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -184,9 +184,9 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * @param string $var
      * @return $this
      */
-    public function setRequestId($var)
+    public function setRequestId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->request_id = $var;
 
         return $this;
@@ -210,7 +210,7 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * @param int $var
      * @return $this
      */
-    public function setAttempt($var)
+    public function setAttempt(int $var)
     {
         GPBUtil::checkInt32($var);
         $this->attempt = $var;
@@ -248,9 +248,8 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
      */
-    public function setLastFailure($var)
+    public function setLastFailure(\Temporal\Api\Failure\V1\Failure|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
         $this->last_failure = $var;
 
         return $this;
@@ -295,10 +294,9 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * @return $this
      * @deprecated
      */
-    public function setWorkerVersion($var)
+    public function setWorkerVersion(\Temporal\Api\Common\V1\WorkerVersionStamp|null $var)
     {
         @trigger_error('worker_version is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkerVersionStamp::class);
         $this->worker_version = $var;
 
         return $this;
@@ -331,7 +329,7 @@ class ActivityTaskStartedEventAttributes extends \Google\Protobuf\Internal\Messa
      * @return $this
      * @deprecated
      */
-    public function setBuildIdRedirectCounter($var)
+    public function setBuildIdRedirectCounter(int|string $var)
     {
         @trigger_error('build_id_redirect_counter is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkInt64($var);

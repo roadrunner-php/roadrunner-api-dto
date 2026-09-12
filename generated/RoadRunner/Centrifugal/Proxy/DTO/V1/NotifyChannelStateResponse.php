@@ -62,9 +62,8 @@ class NotifyChannelStateResponse extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\Proxy\DTO\V1\NotifyChannelStateResult $var
      * @return $this
      */
-    public function setResult($var)
+    public function setResult(\RoadRunner\Centrifugal\Proxy\DTO\V1\NotifyChannelStateResult|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\Proxy\DTO\V1\NotifyChannelStateResult::class);
         $this->result = $var;
 
         return $this;
@@ -94,9 +93,8 @@ class NotifyChannelStateResponse extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\Proxy\DTO\V1\Error $var
      * @return $this
      */
-    public function setError($var)
+    public function setError(\RoadRunner\Centrifugal\Proxy\DTO\V1\Error|null $var)
     {
-        GPBUtil::checkMessage($var, \RoadRunner\Centrifugal\Proxy\DTO\V1\Error::class);
         $this->error = $var;
 
         return $this;

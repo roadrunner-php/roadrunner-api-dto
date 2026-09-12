@@ -64,7 +64,7 @@ class ActivityPropertiesModifiedExternallyEventAttributes extends \Google\Protob
      * @param int|string $var
      * @return $this
      */
-    public function setScheduledEventId($var)
+    public function setScheduledEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->scheduled_event_id = $var;
@@ -102,9 +102,8 @@ class ActivityPropertiesModifiedExternallyEventAttributes extends \Google\Protob
      * @param \Temporal\Api\Common\V1\RetryPolicy $var
      * @return $this
      */
-    public function setNewRetryPolicy($var)
+    public function setNewRetryPolicy(\Temporal\Api\Common\V1\RetryPolicy|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\RetryPolicy::class);
         $this->new_retry_policy = $var;
 
         return $this;

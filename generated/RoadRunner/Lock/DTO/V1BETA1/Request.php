@@ -62,9 +62,9 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setResource($var)
+    public function setResource(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->resource = $var;
 
         return $this;
@@ -84,9 +84,9 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->id = $var;
 
         return $this;
@@ -98,7 +98,7 @@ class Request extends \Google\Protobuf\Internal\Message
      */
     public function getTtl()
     {
-        return isset($this->ttl) ? $this->ttl : 0;
+        return isset($this->ttl) ? $this->ttl : GPBUtil::compatibleInt64(0, '0');
     }
 
     public function hasTtl()
@@ -116,7 +116,7 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setTtl($var)
+    public function setTtl(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->ttl = $var;
@@ -130,7 +130,7 @@ class Request extends \Google\Protobuf\Internal\Message
      */
     public function getWait()
     {
-        return isset($this->wait) ? $this->wait : 0;
+        return isset($this->wait) ? $this->wait : GPBUtil::compatibleInt64(0, '0');
     }
 
     public function hasWait()
@@ -148,7 +148,7 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setWait($var)
+    public function setWait(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->wait = $var;

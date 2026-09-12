@@ -121,26 +121,6 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 20;</code>
      */
     protected $priority = null;
-    /**
-     * The propagated time-skipping configuration for the child workflow.
-     *
-     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 21;</code>
-     */
-    protected $time_skipping_config = null;
-    /**
-     * The time-skipping state propagated from the parent workflow. This can be nil if no time skipping
-     * has occurred or there is no previous run.
-     *
-     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingStatePropagation time_skipping_state_propagation = 23;</code>
-     */
-    protected $time_skipping_state_propagation = null;
-    /**
-     * Versioning override requested for the child workflow. If present, this explicit override
-     * takes precedence over versioning behavior inherited from the parent workflow.
-     *
-     * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 24;</code>
-     */
-    protected $versioning_override = null;
 
     /**
      * Constructor.
@@ -182,14 +162,6 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      *           Deprecated. Only considered for versioning v0.2.
      *     @type \Temporal\Api\Common\V1\Priority $priority
      *           Priority metadata
-     *     @type \Temporal\Api\Common\V1\TimeSkippingConfig $time_skipping_config
-     *           The propagated time-skipping configuration for the child workflow.
-     *     @type \Temporal\Api\Common\V1\TimeSkippingStatePropagation $time_skipping_state_propagation
-     *           The time-skipping state propagated from the parent workflow. This can be nil if no time skipping
-     *           has occurred or there is no previous run.
-     *     @type \Temporal\Api\Workflow\V1\VersioningOverride $versioning_override
-     *           Versioning override requested for the child workflow. If present, this explicit override
-     *           takes precedence over versioning behavior inherited from the parent workflow.
      * }
      */
     public function __construct($data = NULL) {
@@ -217,9 +189,9 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -239,9 +211,9 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      * @param string $var
      * @return $this
      */
-    public function setNamespaceId($var)
+    public function setNamespaceId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace_id = $var;
 
         return $this;
@@ -261,9 +233,9 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      * @param string $var
      * @return $this
      */
-    public function setWorkflowId($var)
+    public function setWorkflowId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->workflow_id = $var;
 
         return $this;
@@ -293,9 +265,8 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      * @param \Temporal\Api\Common\V1\WorkflowType $var
      * @return $this
      */
-    public function setWorkflowType($var)
+    public function setWorkflowType(\Temporal\Api\Common\V1\WorkflowType|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\WorkflowType::class);
         $this->workflow_type = $var;
 
         return $this;
@@ -325,9 +296,8 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      * @param \Temporal\Api\Taskqueue\V1\TaskQueue $var
      * @return $this
      */
-    public function setTaskQueue($var)
+    public function setTaskQueue(\Temporal\Api\Taskqueue\V1\TaskQueue|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Taskqueue\V1\TaskQueue::class);
         $this->task_queue = $var;
 
         return $this;
@@ -357,9 +327,8 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setInput($var)
+    public function setInput(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->input = $var;
 
         return $this;
@@ -393,9 +362,8 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setWorkflowExecutionTimeout($var)
+    public function setWorkflowExecutionTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->workflow_execution_timeout = $var;
 
         return $this;
@@ -429,9 +397,8 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setWorkflowRunTimeout($var)
+    public function setWorkflowRunTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->workflow_run_timeout = $var;
 
         return $this;
@@ -465,9 +432,8 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setWorkflowTaskTimeout($var)
+    public function setWorkflowTaskTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->workflow_task_timeout = $var;
 
         return $this;
@@ -477,7 +443,7 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      * Default: PARENT_CLOSE_POLICY_TERMINATE.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ParentClosePolicy parent_close_policy = 9;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ParentClosePolicy}
      */
     public function getParentClosePolicy()
     {
@@ -488,10 +454,10 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      * Default: PARENT_CLOSE_POLICY_TERMINATE.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.ParentClosePolicy parent_close_policy = 9;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ParentClosePolicy}
      * @return $this
      */
-    public function setParentClosePolicy($var)
+    public function setParentClosePolicy(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ParentClosePolicy::class);
         $this->parent_close_policy = $var;
@@ -522,10 +488,10 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      * @return $this
      * @deprecated
      */
-    public function setControl($var)
+    public function setControl(string $var)
     {
         @trigger_error('control is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->control = $var;
 
         return $this;
@@ -549,7 +515,7 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      * @param int|string $var
      * @return $this
      */
-    public function setWorkflowTaskCompletedEventId($var)
+    public function setWorkflowTaskCompletedEventId(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->workflow_task_completed_event_id = $var;
@@ -561,7 +527,7 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      * Default: WORKFLOW_ID_REUSE_POLICY_ALLOW_DUPLICATE.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowIdReusePolicy workflow_id_reuse_policy = 12;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\WorkflowIdReusePolicy}
      */
     public function getWorkflowIdReusePolicy()
     {
@@ -572,10 +538,10 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      * Default: WORKFLOW_ID_REUSE_POLICY_ALLOW_DUPLICATE.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.WorkflowIdReusePolicy workflow_id_reuse_policy = 12;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\WorkflowIdReusePolicy}
      * @return $this
      */
-    public function setWorkflowIdReusePolicy($var)
+    public function setWorkflowIdReusePolicy(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\WorkflowIdReusePolicy::class);
         $this->workflow_id_reuse_policy = $var;
@@ -607,9 +573,8 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      * @param \Temporal\Api\Common\V1\RetryPolicy $var
      * @return $this
      */
-    public function setRetryPolicy($var)
+    public function setRetryPolicy(\Temporal\Api\Common\V1\RetryPolicy|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\RetryPolicy::class);
         $this->retry_policy = $var;
 
         return $this;
@@ -633,9 +598,9 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      * @param string $var
      * @return $this
      */
-    public function setCronSchedule($var)
+    public function setCronSchedule(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->cron_schedule = $var;
 
         return $this;
@@ -665,9 +630,8 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      * @param \Temporal\Api\Common\V1\Header $var
      * @return $this
      */
-    public function setHeader($var)
+    public function setHeader(\Temporal\Api\Common\V1\Header|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Header::class);
         $this->header = $var;
 
         return $this;
@@ -697,9 +661,8 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      * @param \Temporal\Api\Common\V1\Memo $var
      * @return $this
      */
-    public function setMemo($var)
+    public function setMemo(\Temporal\Api\Common\V1\Memo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Memo::class);
         $this->memo = $var;
 
         return $this;
@@ -729,9 +692,8 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      * @param \Temporal\Api\Common\V1\SearchAttributes $var
      * @return $this
      */
-    public function setSearchAttributes($var)
+    public function setSearchAttributes(\Temporal\Api\Common\V1\SearchAttributes|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\SearchAttributes::class);
         $this->search_attributes = $var;
 
         return $this;
@@ -764,10 +726,9 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      * @return $this
      * @deprecated
      */
-    public function setInheritBuildId($var)
+    public function setInheritBuildId(bool $var)
     {
         @trigger_error('inherit_build_id is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkBool($var);
         $this->inherit_build_id = $var;
 
         return $this;
@@ -801,122 +762,9 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      * @param \Temporal\Api\Common\V1\Priority $var
      * @return $this
      */
-    public function setPriority($var)
+    public function setPriority(\Temporal\Api\Common\V1\Priority|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Priority::class);
         $this->priority = $var;
-
-        return $this;
-    }
-
-    /**
-     * The propagated time-skipping configuration for the child workflow.
-     *
-     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 21;</code>
-     * @return \Temporal\Api\Common\V1\TimeSkippingConfig|null
-     */
-    public function getTimeSkippingConfig()
-    {
-        return $this->time_skipping_config;
-    }
-
-    public function hasTimeSkippingConfig()
-    {
-        return isset($this->time_skipping_config);
-    }
-
-    public function clearTimeSkippingConfig()
-    {
-        unset($this->time_skipping_config);
-    }
-
-    /**
-     * The propagated time-skipping configuration for the child workflow.
-     *
-     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 21;</code>
-     * @param \Temporal\Api\Common\V1\TimeSkippingConfig $var
-     * @return $this
-     */
-    public function setTimeSkippingConfig($var)
-    {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\TimeSkippingConfig::class);
-        $this->time_skipping_config = $var;
-
-        return $this;
-    }
-
-    /**
-     * The time-skipping state propagated from the parent workflow. This can be nil if no time skipping
-     * has occurred or there is no previous run.
-     *
-     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingStatePropagation time_skipping_state_propagation = 23;</code>
-     * @return \Temporal\Api\Common\V1\TimeSkippingStatePropagation|null
-     */
-    public function getTimeSkippingStatePropagation()
-    {
-        return $this->time_skipping_state_propagation;
-    }
-
-    public function hasTimeSkippingStatePropagation()
-    {
-        return isset($this->time_skipping_state_propagation);
-    }
-
-    public function clearTimeSkippingStatePropagation()
-    {
-        unset($this->time_skipping_state_propagation);
-    }
-
-    /**
-     * The time-skipping state propagated from the parent workflow. This can be nil if no time skipping
-     * has occurred or there is no previous run.
-     *
-     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingStatePropagation time_skipping_state_propagation = 23;</code>
-     * @param \Temporal\Api\Common\V1\TimeSkippingStatePropagation $var
-     * @return $this
-     */
-    public function setTimeSkippingStatePropagation($var)
-    {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\TimeSkippingStatePropagation::class);
-        $this->time_skipping_state_propagation = $var;
-
-        return $this;
-    }
-
-    /**
-     * Versioning override requested for the child workflow. If present, this explicit override
-     * takes precedence over versioning behavior inherited from the parent workflow.
-     *
-     * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 24;</code>
-     * @return \Temporal\Api\Workflow\V1\VersioningOverride|null
-     */
-    public function getVersioningOverride()
-    {
-        return $this->versioning_override;
-    }
-
-    public function hasVersioningOverride()
-    {
-        return isset($this->versioning_override);
-    }
-
-    public function clearVersioningOverride()
-    {
-        unset($this->versioning_override);
-    }
-
-    /**
-     * Versioning override requested for the child workflow. If present, this explicit override
-     * takes precedence over versioning behavior inherited from the parent workflow.
-     *
-     * Generated from protobuf field <code>.temporal.api.workflow.v1.VersioningOverride versioning_override = 24;</code>
-     * @param \Temporal\Api\Workflow\V1\VersioningOverride $var
-     * @return $this
-     */
-    public function setVersioningOverride($var)
-    {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\VersioningOverride::class);
-        $this->versioning_override = $var;
 
         return $this;
     }

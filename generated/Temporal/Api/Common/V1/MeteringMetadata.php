@@ -72,7 +72,7 @@ class MeteringMetadata extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setNonfirstLocalActivityExecutionAttempts($var)
+    public function setNonfirstLocalActivityExecutionAttempts(int $var)
     {
         GPBUtil::checkUint32($var);
         $this->nonfirst_local_activity_execution_attempts = $var;

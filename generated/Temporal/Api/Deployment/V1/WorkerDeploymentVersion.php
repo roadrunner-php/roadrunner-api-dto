@@ -80,9 +80,9 @@ class WorkerDeploymentVersion extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setBuildId($var)
+    public function setBuildId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->build_id = $var;
 
         return $this;
@@ -106,9 +106,9 @@ class WorkerDeploymentVersion extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setDeploymentName($var)
+    public function setDeploymentName(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->deployment_name = $var;
 
         return $this;

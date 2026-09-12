@@ -47,7 +47,7 @@ class Statuses extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Service\DTO\V1\Status[] $var
      * @return $this
      */
-    public function setStatus($var)
+    public function setStatus(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\Service\DTO\V1\Status::class);
         $this->status = $arr;

@@ -71,9 +71,8 @@ class FailoverStatus extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setFailoverTime($var)
+    public function setFailoverTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->failover_time = $var;
 
         return $this;
@@ -93,7 +92,7 @@ class FailoverStatus extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setFailoverVersion($var)
+    public function setFailoverVersion(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->failover_version = $var;

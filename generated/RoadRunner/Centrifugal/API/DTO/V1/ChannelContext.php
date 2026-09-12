@@ -47,7 +47,7 @@ class ChannelContext extends \Google\Protobuf\Internal\Message
      * @param int $var
      * @return $this
      */
-    public function setSource($var)
+    public function setSource(int $var)
     {
         GPBUtil::checkUint32($var);
         $this->source = $var;

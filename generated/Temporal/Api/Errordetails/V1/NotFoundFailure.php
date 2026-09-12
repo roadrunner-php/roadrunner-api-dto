@@ -52,9 +52,9 @@ class NotFoundFailure extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setCurrentCluster($var)
+    public function setCurrentCluster(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->current_cluster = $var;
 
         return $this;
@@ -74,9 +74,9 @@ class NotFoundFailure extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setActiveCluster($var)
+    public function setActiveCluster(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->active_cluster = $var;
 
         return $this;

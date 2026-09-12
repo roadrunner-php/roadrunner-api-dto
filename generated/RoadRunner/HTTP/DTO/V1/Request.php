@@ -94,9 +94,9 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRemoteAddr($var)
+    public function setRemoteAddr(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->remote_addr = $var;
 
         return $this;
@@ -116,9 +116,9 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setProtocol($var)
+    public function setProtocol(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->protocol = $var;
 
         return $this;
@@ -138,9 +138,9 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setMethod($var)
+    public function setMethod(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->method = $var;
 
         return $this;
@@ -160,9 +160,9 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setUri($var)
+    public function setUri(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->uri = $var;
 
         return $this;
@@ -182,7 +182,7 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setHeader($var)
+    public function setHeader(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\HTTP\DTO\V1\HeaderValue::class);
         $this->header = $arr;
@@ -204,7 +204,7 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setCookies($var)
+    public function setCookies(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\HTTP\DTO\V1\HeaderValue::class);
         $this->cookies = $arr;
@@ -226,9 +226,9 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRawQuery($var)
+    public function setRawQuery(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->raw_query = $var;
 
         return $this;
@@ -248,9 +248,8 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setParsed($var)
+    public function setParsed(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->parsed = $var;
 
         return $this;
@@ -270,9 +269,9 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setUploads($var)
+    public function setUploads(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->uploads = $var;
 
         return $this;
@@ -292,7 +291,7 @@ class Request extends \Google\Protobuf\Internal\Message
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setAttributes($var)
+    public function setAttributes(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\HTTP\DTO\V1\HeaderValue::class);
         $this->attributes = $arr;

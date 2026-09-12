@@ -16,13 +16,6 @@ use Google\Protobuf\RepeatedField;
  */
 class ActivityExecutionOutcome extends \Google\Protobuf\Internal\Message
 {
-    /**
-     * The retry state associated with an unsuccessful activity execution.
-     * This field is only meaningful when `failure` is set.
-     *
-     * Generated from protobuf field <code>.temporal.api.enums.v1.RetryState retry_state = 3;</code>
-     */
-    protected $retry_state = 0;
     protected $value;
 
     /**
@@ -35,9 +28,6 @@ class ActivityExecutionOutcome extends \Google\Protobuf\Internal\Message
      *           The result if the activity completed successfully.
      *     @type \Temporal\Api\Failure\V1\Failure $failure
      *           The failure if the activity completed unsuccessfully.
-     *     @type int $retry_state
-     *           The retry state associated with an unsuccessful activity execution.
-     *           This field is only meaningful when `failure` is set.
      * }
      */
     public function __construct($data = NULL) {
@@ -68,9 +58,8 @@ class ActivityExecutionOutcome extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Common\V1\Payloads $var
      * @return $this
      */
-    public function setResult($var)
+    public function setResult(\Temporal\Api\Common\V1\Payloads|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payloads::class);
         $this->writeOneof(1, $var);
 
         return $this;
@@ -99,38 +88,9 @@ class ActivityExecutionOutcome extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Failure\V1\Failure $var
      * @return $this
      */
-    public function setFailure($var)
+    public function setFailure(\Temporal\Api\Failure\V1\Failure|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Failure\V1\Failure::class);
         $this->writeOneof(2, $var);
-
-        return $this;
-    }
-
-    /**
-     * The retry state associated with an unsuccessful activity execution.
-     * This field is only meaningful when `failure` is set.
-     *
-     * Generated from protobuf field <code>.temporal.api.enums.v1.RetryState retry_state = 3;</code>
-     * @return int
-     */
-    public function getRetryState()
-    {
-        return $this->retry_state;
-    }
-
-    /**
-     * The retry state associated with an unsuccessful activity execution.
-     * This field is only meaningful when `failure` is set.
-     *
-     * Generated from protobuf field <code>.temporal.api.enums.v1.RetryState retry_state = 3;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setRetryState($var)
-    {
-        GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\RetryState::class);
-        $this->retry_state = $var;
 
         return $this;
     }

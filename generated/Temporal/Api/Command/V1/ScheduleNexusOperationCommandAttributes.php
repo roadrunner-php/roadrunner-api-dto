@@ -162,9 +162,9 @@ class ScheduleNexusOperationCommandAttributes extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setEndpoint($var)
+    public function setEndpoint(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->endpoint = $var;
 
         return $this;
@@ -188,9 +188,9 @@ class ScheduleNexusOperationCommandAttributes extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setService($var)
+    public function setService(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->service = $var;
 
         return $this;
@@ -214,9 +214,9 @@ class ScheduleNexusOperationCommandAttributes extends \Google\Protobuf\Internal\
      * @param string $var
      * @return $this
      */
-    public function setOperation($var)
+    public function setOperation(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->operation = $var;
 
         return $this;
@@ -254,9 +254,8 @@ class ScheduleNexusOperationCommandAttributes extends \Google\Protobuf\Internal\
      * @param \Temporal\Api\Common\V1\Payload $var
      * @return $this
      */
-    public function setInput($var)
+    public function setInput(\Temporal\Api\Common\V1\Payload|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Common\V1\Payload::class);
         $this->input = $var;
 
         return $this;
@@ -298,9 +297,8 @@ class ScheduleNexusOperationCommandAttributes extends \Google\Protobuf\Internal\
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setScheduleToCloseTimeout($var)
+    public function setScheduleToCloseTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->schedule_to_close_timeout = $var;
 
         return $this;
@@ -334,7 +332,7 @@ class ScheduleNexusOperationCommandAttributes extends \Google\Protobuf\Internal\
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setNexusHeader($var)
+    public function setNexusHeader(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->nexus_header = $arr;
@@ -384,9 +382,8 @@ class ScheduleNexusOperationCommandAttributes extends \Google\Protobuf\Internal\
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setScheduleToStartTimeout($var)
+    public function setScheduleToStartTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->schedule_to_start_timeout = $var;
 
         return $this;
@@ -436,9 +433,8 @@ class ScheduleNexusOperationCommandAttributes extends \Google\Protobuf\Internal\
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setStartToCloseTimeout($var)
+    public function setStartToCloseTimeout(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->start_to_close_timeout = $var;
 
         return $this;

@@ -49,9 +49,8 @@ class Response extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setOk($var)
+    public function setOk(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->ok = $var;
 
         return $this;

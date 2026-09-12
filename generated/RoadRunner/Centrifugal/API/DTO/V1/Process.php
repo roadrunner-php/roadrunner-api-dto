@@ -52,9 +52,8 @@ class Process extends \Google\Protobuf\Internal\Message
      * @param float $var
      * @return $this
      */
-    public function setCpu($var)
+    public function setCpu(float $var)
     {
-        GPBUtil::checkDouble($var);
         $this->cpu = $var;
 
         return $this;
@@ -74,7 +73,7 @@ class Process extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setRss($var)
+    public function setRss(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->rss = $var;

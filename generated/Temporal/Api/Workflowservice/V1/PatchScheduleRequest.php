@@ -83,9 +83,9 @@ class PatchScheduleRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -109,9 +109,9 @@ class PatchScheduleRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setScheduleId($var)
+    public function setScheduleId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->schedule_id = $var;
 
         return $this;
@@ -141,9 +141,8 @@ class PatchScheduleRequest extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Schedule\V1\SchedulePatch $var
      * @return $this
      */
-    public function setPatch($var)
+    public function setPatch(\Temporal\Api\Schedule\V1\SchedulePatch|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Schedule\V1\SchedulePatch::class);
         $this->patch = $var;
 
         return $this;
@@ -167,9 +166,9 @@ class PatchScheduleRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;
@@ -193,9 +192,9 @@ class PatchScheduleRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRequestId($var)
+    public function setRequestId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->request_id = $var;
 
         return $this;

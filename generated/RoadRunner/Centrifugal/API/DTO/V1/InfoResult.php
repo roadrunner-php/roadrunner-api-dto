@@ -47,7 +47,7 @@ class InfoResult extends \Google\Protobuf\Internal\Message
      * @param \RoadRunner\Centrifugal\API\DTO\V1\NodeResult[] $var
      * @return $this
      */
-    public function setNodes($var)
+    public function setNodes(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\Centrifugal\API\DTO\V1\NodeResult::class);
         $this->nodes = $arr;

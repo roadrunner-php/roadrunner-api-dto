@@ -92,9 +92,8 @@ class DescribeWorkflowExecutionResponse extends \Google\Protobuf\Internal\Messag
      * @param \Temporal\Api\Workflow\V1\WorkflowExecutionConfig $var
      * @return $this
      */
-    public function setExecutionConfig($var)
+    public function setExecutionConfig(\Temporal\Api\Workflow\V1\WorkflowExecutionConfig|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\WorkflowExecutionConfig::class);
         $this->execution_config = $var;
 
         return $this;
@@ -124,9 +123,8 @@ class DescribeWorkflowExecutionResponse extends \Google\Protobuf\Internal\Messag
      * @param \Temporal\Api\Workflow\V1\WorkflowExecutionInfo $var
      * @return $this
      */
-    public function setWorkflowExecutionInfo($var)
+    public function setWorkflowExecutionInfo(\Temporal\Api\Workflow\V1\WorkflowExecutionInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\WorkflowExecutionInfo::class);
         $this->workflow_execution_info = $var;
 
         return $this;
@@ -146,7 +144,7 @@ class DescribeWorkflowExecutionResponse extends \Google\Protobuf\Internal\Messag
      * @param \Temporal\Api\Workflow\V1\PendingActivityInfo[] $var
      * @return $this
      */
-    public function setPendingActivities($var)
+    public function setPendingActivities(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Workflow\V1\PendingActivityInfo::class);
         $this->pending_activities = $arr;
@@ -168,7 +166,7 @@ class DescribeWorkflowExecutionResponse extends \Google\Protobuf\Internal\Messag
      * @param \Temporal\Api\Workflow\V1\PendingChildExecutionInfo[] $var
      * @return $this
      */
-    public function setPendingChildren($var)
+    public function setPendingChildren(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Workflow\V1\PendingChildExecutionInfo::class);
         $this->pending_children = $arr;
@@ -200,9 +198,8 @@ class DescribeWorkflowExecutionResponse extends \Google\Protobuf\Internal\Messag
      * @param \Temporal\Api\Workflow\V1\PendingWorkflowTaskInfo $var
      * @return $this
      */
-    public function setPendingWorkflowTask($var)
+    public function setPendingWorkflowTask(\Temporal\Api\Workflow\V1\PendingWorkflowTaskInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\PendingWorkflowTaskInfo::class);
         $this->pending_workflow_task = $var;
 
         return $this;
@@ -222,7 +219,7 @@ class DescribeWorkflowExecutionResponse extends \Google\Protobuf\Internal\Messag
      * @param \Temporal\Api\Workflow\V1\CallbackInfo[] $var
      * @return $this
      */
-    public function setCallbacks($var)
+    public function setCallbacks(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Workflow\V1\CallbackInfo::class);
         $this->callbacks = $arr;
@@ -244,7 +241,7 @@ class DescribeWorkflowExecutionResponse extends \Google\Protobuf\Internal\Messag
      * @param \Temporal\Api\Workflow\V1\PendingNexusOperationInfo[] $var
      * @return $this
      */
-    public function setPendingNexusOperations($var)
+    public function setPendingNexusOperations(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Workflow\V1\PendingNexusOperationInfo::class);
         $this->pending_nexus_operations = $arr;
@@ -276,9 +273,8 @@ class DescribeWorkflowExecutionResponse extends \Google\Protobuf\Internal\Messag
      * @param \Temporal\Api\Workflow\V1\WorkflowExecutionExtendedInfo $var
      * @return $this
      */
-    public function setWorkflowExtendedInfo($var)
+    public function setWorkflowExtendedInfo(\Temporal\Api\Workflow\V1\WorkflowExecutionExtendedInfo|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflow\V1\WorkflowExecutionExtendedInfo::class);
         $this->workflow_extended_info = $var;
 
         return $this;

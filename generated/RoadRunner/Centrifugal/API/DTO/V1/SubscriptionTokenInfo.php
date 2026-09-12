@@ -52,9 +52,9 @@ class SubscriptionTokenInfo extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setUid($var)
+    public function setUid(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->uid = $var;
 
         return $this;
@@ -74,7 +74,7 @@ class SubscriptionTokenInfo extends \Google\Protobuf\Internal\Message
      * @param int|string $var
      * @return $this
      */
-    public function setIssuedAt($var)
+    public function setIssuedAt(int|string $var)
     {
         GPBUtil::checkInt64($var);
         $this->issued_at = $var;

@@ -74,9 +74,8 @@ class IntervalSpec extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setInterval($var)
+    public function setInterval(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->interval = $var;
 
         return $this;
@@ -106,9 +105,8 @@ class IntervalSpec extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Duration $var
      * @return $this
      */
-    public function setPhase($var)
+    public function setPhase(\Google\Protobuf\Duration|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->phase = $var;
 
         return $this;

@@ -62,7 +62,7 @@ class VersionDrainageInfo extends \Google\Protobuf\Internal\Message
      * Set to DRAINED when no more open pinned workflows exist on this version.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.VersionDrainageStatus status = 1;</code>
-     * @return int
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\VersionDrainageStatus}
      */
     public function getStatus()
     {
@@ -74,10 +74,10 @@ class VersionDrainageInfo extends \Google\Protobuf\Internal\Message
      * Set to DRAINED when no more open pinned workflows exist on this version.
      *
      * Generated from protobuf field <code>.temporal.api.enums.v1.VersionDrainageStatus status = 1;</code>
-     * @param int $var
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\VersionDrainageStatus}
      * @return $this
      */
-    public function setStatus($var)
+    public function setStatus(int $var)
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\VersionDrainageStatus::class);
         $this->status = $var;
@@ -113,9 +113,8 @@ class VersionDrainageInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setLastChangedTime($var)
+    public function setLastChangedTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_changed_time = $var;
 
         return $this;
@@ -149,9 +148,8 @@ class VersionDrainageInfo extends \Google\Protobuf\Internal\Message
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
-    public function setLastCheckedTime($var)
+    public function setLastCheckedTime(\Google\Protobuf\Timestamp|null $var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->last_checked_time = $var;
 
         return $this;

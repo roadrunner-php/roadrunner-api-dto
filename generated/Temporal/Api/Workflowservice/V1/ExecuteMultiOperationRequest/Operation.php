@@ -67,9 +67,8 @@ class Operation extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflowservice\V1\StartWorkflowExecutionRequest $var
      * @return $this
      */
-    public function setStartWorkflow($var)
+    public function setStartWorkflow(\Temporal\Api\Workflowservice\V1\StartWorkflowExecutionRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflowservice\V1\StartWorkflowExecutionRequest::class);
         $this->writeOneof(1, $var);
 
         return $this;
@@ -102,9 +101,8 @@ class Operation extends \Google\Protobuf\Internal\Message
      * @param \Temporal\Api\Workflowservice\V1\UpdateWorkflowExecutionRequest $var
      * @return $this
      */
-    public function setUpdateWorkflow($var)
+    public function setUpdateWorkflow(\Temporal\Api\Workflowservice\V1\UpdateWorkflowExecutionRequest|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Workflowservice\V1\UpdateWorkflowExecutionRequest::class);
         $this->writeOneof(2, $var);
 
         return $this;

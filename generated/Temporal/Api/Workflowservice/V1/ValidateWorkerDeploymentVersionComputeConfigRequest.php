@@ -83,9 +83,9 @@ class ValidateWorkerDeploymentVersionComputeConfigRequest extends \Google\Protob
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -119,9 +119,8 @@ class ValidateWorkerDeploymentVersionComputeConfigRequest extends \Google\Protob
      * @param \Temporal\Api\Deployment\V1\WorkerDeploymentVersion $var
      * @return $this
      */
-    public function setDeploymentVersion($var)
+    public function setDeploymentVersion(\Temporal\Api\Deployment\V1\WorkerDeploymentVersion|null $var)
     {
-        GPBUtil::checkMessage($var, \Temporal\Api\Deployment\V1\WorkerDeploymentVersion::class);
         $this->deployment_version = $var;
 
         return $this;
@@ -147,7 +146,7 @@ class ValidateWorkerDeploymentVersionComputeConfigRequest extends \Google\Protob
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
-    public function setComputeConfigScalingGroups($var)
+    public function setComputeConfigScalingGroups(array|\Google\Protobuf\Internal\MapField $var)
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Compute\V1\ComputeConfigScalingGroupUpdate::class);
         $this->compute_config_scaling_groups = $arr;
@@ -173,7 +172,7 @@ class ValidateWorkerDeploymentVersionComputeConfigRequest extends \Google\Protob
      * @param string[] $var
      * @return $this
      */
-    public function setRemoveComputeConfigScalingGroups($var)
+    public function setRemoveComputeConfigScalingGroups(array|RepeatedField $var)
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->remove_compute_config_scaling_groups = $arr;
@@ -199,9 +198,9 @@ class ValidateWorkerDeploymentVersionComputeConfigRequest extends \Google\Protob
      * @param string $var
      * @return $this
      */
-    public function setIdentity($var)
+    public function setIdentity(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->identity = $var;
 
         return $this;

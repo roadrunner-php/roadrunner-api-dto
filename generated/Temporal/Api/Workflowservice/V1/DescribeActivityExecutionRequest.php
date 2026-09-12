@@ -51,18 +51,6 @@ class DescribeActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bytes long_poll_token = 6;</code>
      */
     protected $long_poll_token = '';
-    /**
-     * Include the heartbeat_details field inside info in the response if available.
-     *
-     * Generated from protobuf field <code>bool include_heartbeat_details = 7;</code>
-     */
-    protected $include_heartbeat_details = false;
-    /**
-     * Include the last_failure field inside info in the response if available.
-     *
-     * Generated from protobuf field <code>bool include_last_failure = 8;</code>
-     */
-    protected $include_last_failure = false;
 
     /**
      * Constructor.
@@ -85,10 +73,6 @@ class DescribeActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      *           Note that activity state may change multiple times between requests, therefore it is not
      *           guaranteed that a client making a sequence of long-poll requests will see a complete
      *           sequence of state changes.
-     *     @type bool $include_heartbeat_details
-     *           Include the heartbeat_details field inside info in the response if available.
-     *     @type bool $include_last_failure
-     *           Include the last_failure field inside info in the response if available.
      * }
      */
     public function __construct($data = NULL) {
@@ -110,9 +94,9 @@ class DescribeActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setNamespace($var)
+    public function setNamespace(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->namespace = $var;
 
         return $this;
@@ -132,9 +116,9 @@ class DescribeActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setActivityId($var)
+    public function setActivityId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->activity_id = $var;
 
         return $this;
@@ -158,9 +142,9 @@ class DescribeActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setRunId($var)
+    public function setRunId(string $var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkString($var, true);
         $this->run_id = $var;
 
         return $this;
@@ -184,9 +168,8 @@ class DescribeActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setIncludeInput($var)
+    public function setIncludeInput(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->include_input = $var;
 
         return $this;
@@ -210,9 +193,8 @@ class DescribeActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param bool $var
      * @return $this
      */
-    public function setIncludeOutcome($var)
+    public function setIncludeOutcome(bool $var)
     {
-        GPBUtil::checkBool($var);
         $this->include_outcome = $var;
 
         return $this;
@@ -246,62 +228,10 @@ class DescribeActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * @param string $var
      * @return $this
      */
-    public function setLongPollToken($var)
+    public function setLongPollToken(string $var)
     {
-        GPBUtil::checkString($var, False);
+        GPBUtil::checkString($var, false);
         $this->long_poll_token = $var;
-
-        return $this;
-    }
-
-    /**
-     * Include the heartbeat_details field inside info in the response if available.
-     *
-     * Generated from protobuf field <code>bool include_heartbeat_details = 7;</code>
-     * @return bool
-     */
-    public function getIncludeHeartbeatDetails()
-    {
-        return $this->include_heartbeat_details;
-    }
-
-    /**
-     * Include the heartbeat_details field inside info in the response if available.
-     *
-     * Generated from protobuf field <code>bool include_heartbeat_details = 7;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setIncludeHeartbeatDetails($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->include_heartbeat_details = $var;
-
-        return $this;
-    }
-
-    /**
-     * Include the last_failure field inside info in the response if available.
-     *
-     * Generated from protobuf field <code>bool include_last_failure = 8;</code>
-     * @return bool
-     */
-    public function getIncludeLastFailure()
-    {
-        return $this->include_last_failure;
-    }
-
-    /**
-     * Include the last_failure field inside info in the response if available.
-     *
-     * Generated from protobuf field <code>bool include_last_failure = 8;</code>
-     * @param bool $var
-     * @return $this
-     */
-    public function setIncludeLastFailure($var)
-    {
-        GPBUtil::checkBool($var);
-        $this->include_last_failure = $var;
 
         return $this;
     }
