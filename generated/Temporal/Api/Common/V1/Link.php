@@ -32,6 +32,7 @@ class Link extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Common\V1\Link\Activity $activity
      *     @type \Temporal\Api\Common\V1\Link\NexusOperation $nexus_operation
      *     @type \Temporal\Api\Common\V1\Link\Workflow $workflow
+     *     @type \Temporal\Api\Common\V1\Link\Callback $callback
      * }
      */
     public function __construct($data = NULL) {
@@ -165,6 +166,32 @@ class Link extends \Google\Protobuf\Internal\Message
     public function setWorkflow(\Temporal\Api\Common\V1\Link\Workflow|null $var)
     {
         $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.common.v1.Link.Callback callback = 6;</code>
+     * @return \Temporal\Api\Common\V1\Link\Callback|null
+     */
+    public function getCallback()
+    {
+        return $this->readOneof(6);
+    }
+
+    public function hasCallback()
+    {
+        return $this->hasOneof(6);
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.common.v1.Link.Callback callback = 6;</code>
+     * @param \Temporal\Api\Common\V1\Link\Callback $var
+     * @return $this
+     */
+    public function setCallback(\Temporal\Api\Common\V1\Link\Callback|null $var)
+    {
+        $this->writeOneof(6, $var);
 
         return $this;
     }

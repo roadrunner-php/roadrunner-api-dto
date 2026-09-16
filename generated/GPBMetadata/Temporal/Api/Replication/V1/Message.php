@@ -15,10 +15,11 @@ class Message
         if (static::$is_initialized == true) {
           return;
         }
+        \GPBMetadata\Google\Protobuf\Duration::initOnce();
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         \GPBMetadata\Temporal\Api\Enums\V1\PBNamespace::initOnce();
         $pool->internalAddGeneratedFile(
-            "\x0A\xEA\x04\x0A)temporal/api/replication/v1/message.proto\x12\x1Btemporal.api.replication.v1\x1A%temporal/api/enums/v1/namespace.proto\"0\x0A\x18ClusterReplicationConfig\x12\x14\x0A\x0Ccluster_name\x18\x01 \x01(\x09\"\xBA\x01\x0A\x1ANamespaceReplicationConfig\x12\x1B\x0A\x13active_cluster_name\x18\x01 \x01(\x09\x12G\x0A\x08clusters\x18\x02 \x03(\x0B25.temporal.api.replication.v1.ClusterReplicationConfig\x126\x0A\x05state\x18\x03 \x01(\x0E2'.temporal.api.enums.v1.ReplicationState\"]\x0A\x0EFailoverStatus\x121\x0A\x0Dfailover_time\x18\x01 \x01(\x0B2\x1A.google.protobuf.Timestamp\x12\x18\x0A\x10failover_version\x18\x02 \x01(\x03B\xA2\x01\x0A\x1Eio.temporal.api.replication.v1B\x0CMessageProtoP\x01Z-go.temporal.io/api/replication/v1;replication\xAA\x02\x1DTemporalio.Api.Replication.V1\xEA\x02 Temporalio::Api::Replication::V1b\x06proto3"
+            "\x0A\xC9\x05\x0A)temporal/api/replication/v1/message.proto\x12\x1Btemporal.api.replication.v1\x1A\x1Fgoogle/protobuf/timestamp.proto\x1A%temporal/api/enums/v1/namespace.proto\"n\x0A\x18ClusterReplicationConfig\x12\x14\x0A\x0Ccluster_name\x18\x01 \x01(\x09\x12<\x0A\x19replication_ramp_duration\x18\x02 \x01(\x0B2\x19.google.protobuf.Duration\"\xBA\x01\x0A\x1ANamespaceReplicationConfig\x12\x1B\x0A\x13active_cluster_name\x18\x01 \x01(\x09\x12G\x0A\x08clusters\x18\x02 \x03(\x0B25.temporal.api.replication.v1.ClusterReplicationConfig\x126\x0A\x05state\x18\x03 \x01(\x0E2'.temporal.api.enums.v1.ReplicationState\"]\x0A\x0EFailoverStatus\x121\x0A\x0Dfailover_time\x18\x01 \x01(\x0B2\x1A.google.protobuf.Timestamp\x12\x18\x0A\x10failover_version\x18\x02 \x01(\x03B\xA2\x01\x0A\x1Eio.temporal.api.replication.v1B\x0CMessageProtoP\x01Z-go.temporal.io/api/replication/v1;replication\xAA\x02\x1DTemporalio.Api.Replication.V1\xEA\x02 Temporalio::Api::Replication::V1b\x06proto3"
         , true);
 
         static::$is_initialized = true;

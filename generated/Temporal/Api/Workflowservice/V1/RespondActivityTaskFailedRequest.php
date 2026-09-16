@@ -73,6 +73,12 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentOptions deployment_options = 8;</code>
      */
     protected $deployment_options = null;
+    /**
+     * Why did the task fail? When unset, the failure is treated as an unspecified activity failure.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ActivityTaskFailedCause cause = 10;</code>
+     */
+    protected $cause = 0;
 
     /**
      * Constructor.
@@ -102,6 +108,8 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
      *           Deprecated. Replaced with `deployment_options`.
      *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentOptions $deployment_options
      *           Worker deployment options that user has set in the worker.
+     *     @type int $cause
+     *           Why did the task fail? When unset, the failure is treated as an unspecified activity failure.
      * }
      */
     public function __construct($data = NULL) {
@@ -410,6 +418,32 @@ class RespondActivityTaskFailedRequest extends \Google\Protobuf\Internal\Message
     public function setDeploymentOptions(\Temporal\Api\Deployment\V1\WorkerDeploymentOptions|null $var)
     {
         $this->deployment_options = $var;
+
+        return $this;
+    }
+
+    /**
+     * Why did the task fail? When unset, the failure is treated as an unspecified activity failure.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ActivityTaskFailedCause cause = 10;</code>
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ActivityTaskFailedCause}
+     */
+    public function getCause()
+    {
+        return $this->cause;
+    }
+
+    /**
+     * Why did the task fail? When unset, the failure is treated as an unspecified activity failure.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ActivityTaskFailedCause cause = 10;</code>
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ActivityTaskFailedCause}
+     * @return $this
+     */
+    public function setCause(int $var)
+    {
+        GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ActivityTaskFailedCause::class);
+        $this->cause = $var;
 
         return $this;
     }

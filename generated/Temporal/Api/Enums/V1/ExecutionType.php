@@ -28,11 +28,18 @@ class ExecutionType
      * Generated from protobuf enum <code>EXECUTION_TYPE_ACTIVITY = 2;</code>
      */
     const EXECUTION_TYPE_ACTIVITY = 2;
+    /**
+     * A Nexus operation execution archetype. This is reserved for standalone Nexus operations.
+     *
+     * Generated from protobuf enum <code>EXECUTION_TYPE_NEXUS_OPERATION = 3;</code>
+     */
+    const EXECUTION_TYPE_NEXUS_OPERATION = 3;
 
     private static $valueToName = [
         self::EXECUTION_TYPE_UNSPECIFIED => 'EXECUTION_TYPE_UNSPECIFIED',
         self::EXECUTION_TYPE_WORKFLOW => 'EXECUTION_TYPE_WORKFLOW',
         self::EXECUTION_TYPE_ACTIVITY => 'EXECUTION_TYPE_ACTIVITY',
+        self::EXECUTION_TYPE_NEXUS_OPERATION => 'EXECUTION_TYPE_NEXUS_OPERATION',
     ];
 
     public static function name($value)

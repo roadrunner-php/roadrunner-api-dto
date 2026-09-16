@@ -17,13 +17,13 @@ class ResourceExhaustedScope
      */
     const RESOURCE_EXHAUSTED_SCOPE_UNSPECIFIED = 0;
     /**
-     * Exhausted resource is a system-level resource.
+     * Exhausted resource is a namespace-level resource.
      *
      * Generated from protobuf enum <code>RESOURCE_EXHAUSTED_SCOPE_NAMESPACE = 1;</code>
      */
     const RESOURCE_EXHAUSTED_SCOPE_NAMESPACE = 1;
     /**
-     * Exhausted resource is a namespace-level resource.
+     * Exhausted resource is a system-level resource.
      *
      * Generated from protobuf enum <code>RESOURCE_EXHAUSTED_SCOPE_SYSTEM = 2;</code>
      */

@@ -10,6 +10,9 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
+ * Nexus callbacks are used to delivery Nexus operation completions, as defined in the Nexus RPC spec: 
+ * https://github.com/nexus-rpc/api/blob/main/SPEC.md#callback-urls
+ *
  * Generated from protobuf message <code>temporal.api.common.v1.Callback.Nexus</code>
  */
 class Nexus extends \Google\Protobuf\Internal\Message
