@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.17.0](https://github.com/roadrunner-php/roadrunner-api-dto/compare/v1.16.0...v1.17.0) (2026-09-16)
+
+
+### Features
+
+* update API to 4.24.0 ([#34](https://github.com/roadrunner-php/roadrunner-api-dto/issues/34)) ([cf9a4dc](https://github.com/roadrunner-php/roadrunner-api-dto/commit/cf9a4dc1fa5764755d71b8b966d31154611bf182))
+
 ## [1.16.0](https://github.com/roadrunner-php/roadrunner-api-dto/compare/v1.15.0...v1.16.0) (2026-09-12)
 
 
