@@ -10,8 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
- * Identifies a specific execution within a namespace. This is used for standalone activities
- * executions in batch jobs currently.
+ * Identifies a specific execution within a namespace.
  *
  * Generated from protobuf message <code>temporal.api.common.v1.Execution</code>
  */

@@ -18,6 +18,13 @@ class ClusterReplicationConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string cluster_name = 1;</code>
      */
     protected $cluster_name = '';
+    /**
+     * Ramp duration when this cluster is added as passive by UpdateNamespace; unset or non-positive disables gradual connect.
+     * This field is not persisted and is omitted from namespace responses.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration replication_ramp_duration = 2;</code>
+     */
+    protected $replication_ramp_duration = null;
 
     /**
      * Constructor.
@@ -26,6 +33,9 @@ class ClusterReplicationConfig extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $cluster_name
+     *     @type \Google\Protobuf\Duration $replication_ramp_duration
+     *           Ramp duration when this cluster is added as passive by UpdateNamespace; unset or non-positive disables gradual connect.
+     *           This field is not persisted and is omitted from namespace responses.
      * }
      */
     public function __construct($data = NULL) {
@@ -51,6 +61,43 @@ class ClusterReplicationConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, true);
         $this->cluster_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Ramp duration when this cluster is added as passive by UpdateNamespace; unset or non-positive disables gradual connect.
+     * This field is not persisted and is omitted from namespace responses.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration replication_ramp_duration = 2;</code>
+     * @return \Google\Protobuf\Duration|null
+     */
+    public function getReplicationRampDuration()
+    {
+        return $this->replication_ramp_duration;
+    }
+
+    public function hasReplicationRampDuration()
+    {
+        return isset($this->replication_ramp_duration);
+    }
+
+    public function clearReplicationRampDuration()
+    {
+        unset($this->replication_ramp_duration);
+    }
+
+    /**
+     * Ramp duration when this cluster is added as passive by UpdateNamespace; unset or non-positive disables gradual connect.
+     * This field is not persisted and is omitted from namespace responses.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration replication_ramp_duration = 2;</code>
+     * @param \Google\Protobuf\Duration $var
+     * @return $this
+     */
+    public function setReplicationRampDuration(\Google\Protobuf\Duration|null $var)
+    {
+        $this->replication_ramp_duration = $var;
 
         return $this;
     }

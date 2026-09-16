@@ -50,6 +50,12 @@ class ActivityTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      * @deprecated
      */
     protected $worker_version = null;
+    /**
+     * Why did the task fail? When unset, the failure is treated as an unspecified activity failure.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ActivityTaskFailedCause cause = 7;</code>
+     */
+    protected $cause = 0;
 
     /**
      * Constructor.
@@ -69,6 +75,8 @@ class ActivityTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
      *     @type \Temporal\Api\Common\V1\WorkerVersionStamp $worker_version
      *           Version info of the worker who processed this workflow task.
      *           Deprecated. This field should be cleaned up when versioning-2 API is removed. [cleanup-experimental-wv]
+     *     @type int $cause
+     *           Why did the task fail? When unset, the failure is treated as an unspecified activity failure.
      * }
      */
     public function __construct($data = NULL) {
@@ -254,6 +262,32 @@ class ActivityTaskFailedEventAttributes extends \Google\Protobuf\Internal\Messag
     {
         @trigger_error('worker_version is deprecated.', E_USER_DEPRECATED);
         $this->worker_version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Why did the task fail? When unset, the failure is treated as an unspecified activity failure.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ActivityTaskFailedCause cause = 7;</code>
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ActivityTaskFailedCause}
+     */
+    public function getCause()
+    {
+        return $this->cause;
+    }
+
+    /**
+     * Why did the task fail? When unset, the failure is treated as an unspecified activity failure.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ActivityTaskFailedCause cause = 7;</code>
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ActivityTaskFailedCause}
+     * @return $this
+     */
+    public function setCause(int $var)
+    {
+        GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ActivityTaskFailedCause::class);
+        $this->cause = $var;
 
         return $this;
     }

@@ -63,6 +63,13 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
      * Generated from protobuf field <code>string resource_id = 8;</code>
      */
     protected $resource_id = '';
+    /**
+     * Why did the activity task fail? Optional; when unset the failure is treated as a normal
+     * activity failure. See the type's doc for more.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ActivityTaskFailedCause cause = 9;</code>
+     */
+    protected $cause = 0;
 
     /**
      * Constructor.
@@ -87,6 +94,9 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
      *           Additional details to be stored as last activity heartbeat
      *     @type string $resource_id
      *           Resource ID for routing. Contains "workflow:workflow_id" or "activity:activity_id" for standalone activities.
+     *     @type int $cause
+     *           Why did the activity task fail? Optional; when unset the failure is treated as a normal
+     *           activity failure. See the type's doc for more.
      * }
      */
     public function __construct($data = NULL) {
@@ -318,6 +328,34 @@ class RespondActivityTaskFailedByIdRequest extends \Google\Protobuf\Internal\Mes
     {
         GPBUtil::checkString($var, true);
         $this->resource_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Why did the activity task fail? Optional; when unset the failure is treated as a normal
+     * activity failure. See the type's doc for more.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ActivityTaskFailedCause cause = 9;</code>
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\ActivityTaskFailedCause}
+     */
+    public function getCause()
+    {
+        return $this->cause;
+    }
+
+    /**
+     * Why did the activity task fail? Optional; when unset the failure is treated as a normal
+     * activity failure. See the type's doc for more.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.ActivityTaskFailedCause cause = 9;</code>
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\ActivityTaskFailedCause}
+     * @return $this
+     */
+    public function setCause(int $var)
+    {
+        GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ActivityTaskFailedCause::class);
+        $this->cause = $var;
 
         return $this;
     }

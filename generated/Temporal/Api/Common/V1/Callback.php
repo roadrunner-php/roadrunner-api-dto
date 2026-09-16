@@ -33,6 +33,7 @@ class Callback extends \Google\Protobuf\Internal\Message
      *
      *     @type \Temporal\Api\Common\V1\Callback\Nexus $nexus
      *     @type \Temporal\Api\Common\V1\Callback\Internal $internal
+     *     @type \Temporal\Api\Common\V1\Callback\NexusHandler $nexus_handler
      *     @type \Temporal\Api\Common\V1\Link[] $links
      *           Links associated with the callback. It can be used to link to underlying resources of the
      *           callback.
@@ -91,6 +92,32 @@ class Callback extends \Google\Protobuf\Internal\Message
     public function setInternal(\Temporal\Api\Common\V1\Callback\Internal|null $var)
     {
         $this->writeOneof(3, $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.common.v1.Callback.NexusHandler nexus_handler = 4;</code>
+     * @return \Temporal\Api\Common\V1\Callback\NexusHandler|null
+     */
+    public function getNexusHandler()
+    {
+        return $this->readOneof(4);
+    }
+
+    public function hasNexusHandler()
+    {
+        return $this->hasOneof(4);
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.common.v1.Callback.NexusHandler nexus_handler = 4;</code>
+     * @param \Temporal\Api\Common\V1\Callback\NexusHandler $var
+     * @return $this
+     */
+    public function setNexusHandler(\Temporal\Api\Common\V1\Callback\NexusHandler|null $var)
+    {
+        $this->writeOneof(4, $var);
 
         return $this;
     }

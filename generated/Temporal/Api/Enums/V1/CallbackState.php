@@ -51,7 +51,7 @@ class CallbackState
      */
     const CALLBACK_STATE_SUCCEEDED = 5;
     /**
-     * Callback is blocked (eg: by circuit breaker).
+     * Callback is blocked, e.g. by circuit breaker.
      *
      * Generated from protobuf enum <code>CALLBACK_STATE_BLOCKED = 6;</code>
      */

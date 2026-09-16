@@ -1118,7 +1118,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
 
     /**
      * Describes a worker deployment.
-     * Experimental. This API might significantly change or be removed in a future release.
      * Deprecated. Replaced with `DescribeWorkerDeploymentVersion`.
      * @param \Temporal\Api\Workflowservice\V1\DescribeDeploymentRequest $argument input argument
      * @param array $metadata metadata
@@ -1135,7 +1134,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
 
     /**
      * Describes a worker deployment version.
-     * Experimental. This API might significantly change or be removed in a future release.
      * @param \Temporal\Api\Workflowservice\V1\DescribeWorkerDeploymentVersionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -1152,7 +1150,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     /**
      * Lists worker deployments in the namespace. Optionally can filter based on deployment series
      * name.
-     * Experimental. This API might significantly change or be removed in a future release.
      * Deprecated. Replaced with `ListWorkerDeployments`.
      * @param \Temporal\Api\Workflowservice\V1\ListDeploymentsRequest $argument input argument
      * @param array $metadata metadata
@@ -1174,7 +1171,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      * Calculating reachability is relatively expensive. Therefore, server might return a recently
      * cached value. In such a case, the `last_update_time` will inform you about the actual
      * reachability calculation time.
-     * Experimental. This API might significantly change or be removed in a future release.
      * Deprecated. Replaced with `DrainageInfo` returned by `DescribeWorkerDeploymentVersion`.
      * @param \Temporal\Api\Workflowservice\V1\GetDeploymentReachabilityRequest $argument input argument
      * @param array $metadata metadata
@@ -1191,7 +1187,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
 
     /**
      * Returns the current deployment (and its info) for a given deployment series.
-     * Experimental. This API might significantly change or be removed in a future release.
      * Deprecated. Replaced by `current_version` returned by `DescribeWorkerDeployment`.
      * @param \Temporal\Api\Workflowservice\V1\GetCurrentDeploymentRequest $argument input argument
      * @param array $metadata metadata
@@ -1209,7 +1204,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     /**
      * Sets a deployment as the current deployment for its deployment series. Can optionally update
      * the metadata of the deployment as well.
-     * Experimental. This API might significantly change or be removed in a future release.
      * Deprecated. Replaced by `SetWorkerDeploymentCurrentVersion`.
      * @param \Temporal\Api\Workflowservice\V1\SetCurrentDeploymentRequest $argument input argument
      * @param array $metadata metadata
@@ -1227,7 +1221,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     /**
      * Set/unset the Current Version of a Worker Deployment. Automatically unsets the Ramping
      * Version if it is the Version being set as Current.
-     * Experimental. This API might significantly change or be removed in a future release.
      * @param \Temporal\Api\Workflowservice\V1\SetWorkerDeploymentCurrentVersionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -1243,7 +1236,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
 
     /**
      * Describes a Worker Deployment.
-     * Experimental. This API might significantly change or be removed in a future release.
      * @param \Temporal\Api\Workflowservice\V1\DescribeWorkerDeploymentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -1260,7 +1252,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     /**
      * Deletes records of (an old) Deployment. A deployment can only be deleted if
      * it has no Version in it.
-     * Experimental. This API might significantly change or be removed in a future release.
      * @param \Temporal\Api\Workflowservice\V1\DeleteWorkerDeploymentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -1281,7 +1272,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
      *  - It has no active pollers (none of the task queues in the Version have pollers)
      *  - It is not draining (see WorkerDeploymentVersionInfo.drainage_info). This condition
      *    can be skipped by passing `skip-drainage=true`.
-     * Experimental. This API might significantly change or be removed in a future release.
      * @param \Temporal\Api\Workflowservice\V1\DeleteWorkerDeploymentVersionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -1298,7 +1288,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     /**
      * Set/unset the Ramping Version of a Worker Deployment and its ramp percentage. Can be used for
      * gradual ramp to unversioned workers too.
-     * Experimental. This API might significantly change or be removed in a future release.
      * @param \Temporal\Api\Workflowservice\V1\SetWorkerDeploymentRampingVersionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -1314,7 +1303,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
 
     /**
      * Lists all Worker Deployments that are tracked in the Namespace.
-     * Experimental. This API might significantly change or be removed in a future release.
      * @param \Temporal\Api\Workflowservice\V1\ListWorkerDeploymentsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -1398,7 +1386,6 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
 
     /**
      * Updates the user-given metadata attached to a Worker Deployment Version.
-     * Experimental. This API might significantly change or be removed in a future release.
      * @param \Temporal\Api\Workflowservice\V1\UpdateWorkerDeploymentVersionMetadataRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

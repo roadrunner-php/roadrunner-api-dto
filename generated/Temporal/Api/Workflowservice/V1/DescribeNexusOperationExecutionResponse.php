@@ -39,6 +39,13 @@ class DescribeNexusOperationExecutionResponse extends \Google\Protobuf\Internal\
      * Generated from protobuf field <code>bytes long_poll_token = 6;</code>
      */
     protected $long_poll_token = '';
+    /**
+     * Completion callbacks to be invoked once the Nexus operation reaches a terminal state.
+     * They will remain in the CALLBACK_STATE_STANDBY state until the Nexus operation is finished.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.nexusoperation.v1.CallbackInfo completion_callbacks = 7;</code>
+     */
+    private $completion_callbacks;
     protected $outcome;
 
     /**
@@ -60,6 +67,9 @@ class DescribeNexusOperationExecutionResponse extends \Google\Protobuf\Internal\
      *           The failure if the operation completed unsuccessfully.
      *     @type string $long_poll_token
      *           Token for follow-on long-poll requests. Absent only if the operation is complete.
+     *     @type \Temporal\Api\Nexusoperation\V1\CallbackInfo[] $completion_callbacks
+     *           Completion callbacks to be invoked once the Nexus operation reaches a terminal state.
+     *           They will remain in the CALLBACK_STATE_STANDBY state until the Nexus operation is finished.
      * }
      */
     public function __construct($data = NULL) {
@@ -247,6 +257,34 @@ class DescribeNexusOperationExecutionResponse extends \Google\Protobuf\Internal\
     {
         GPBUtil::checkString($var, false);
         $this->long_poll_token = $var;
+
+        return $this;
+    }
+
+    /**
+     * Completion callbacks to be invoked once the Nexus operation reaches a terminal state.
+     * They will remain in the CALLBACK_STATE_STANDBY state until the Nexus operation is finished.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.nexusoperation.v1.CallbackInfo completion_callbacks = 7;</code>
+     * @return RepeatedField<\Temporal\Api\Nexusoperation\V1\CallbackInfo>
+     */
+    public function getCompletionCallbacks()
+    {
+        return $this->completion_callbacks;
+    }
+
+    /**
+     * Completion callbacks to be invoked once the Nexus operation reaches a terminal state.
+     * They will remain in the CALLBACK_STATE_STANDBY state until the Nexus operation is finished.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.nexusoperation.v1.CallbackInfo completion_callbacks = 7;</code>
+     * @param \Temporal\Api\Nexusoperation\V1\CallbackInfo[] $var
+     * @return $this
+     */
+    public function setCompletionCallbacks(array|RepeatedField $var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Nexusoperation\V1\CallbackInfo::class);
+        $this->completion_callbacks = $arr;
 
         return $this;
     }

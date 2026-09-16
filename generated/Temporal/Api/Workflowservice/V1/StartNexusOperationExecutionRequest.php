@@ -110,6 +110,14 @@ class StartNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Mess
      */
     protected $id_conflict_policy = 0;
     /**
+     * Defines actions to be done to the existing running standalone Nexus when the conflict policy
+     * NEXUS_OPERATION_ID_CONFLICT_POLICY_USE_EXISTING is used. If not set or set to a empty object
+     * (all options with default value), it will not modify the running operation.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexusoperation.v1.OnConflictOptions on_conflict_options = 17;</code>
+     */
+    protected $on_conflict_options = null;
+    /**
      * Search attributes for indexing.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.SearchAttributes search_attributes = 14;</code>
@@ -132,6 +140,19 @@ class StartNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Mess
      * Generated from protobuf field <code>.temporal.api.sdk.v1.UserMetadata user_metadata = 16;</code>
      */
     protected $user_metadata = null;
+    /**
+     * Completion callbacks to be invoked once the Nexus operation reaches a terminal state.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Callback completion_callbacks = 18;</code>
+     */
+    private $completion_callbacks;
+    /**
+     * Links to be associated with the Nexus operation. Callbacks may also have associated links;
+     * links already included with a callback should not be duplicated here.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 19;</code>
+     */
+    private $links;
 
     /**
      * Constructor.
@@ -183,6 +204,10 @@ class StartNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Mess
      *     @type int $id_conflict_policy
      *           Defines how to resolve an operation id conflict with a *running* operation.
      *           The default policy is NEXUS_OPERATION_ID_CONFLICT_POLICY_FAIL.
+     *     @type \Temporal\Api\Nexusoperation\V1\OnConflictOptions $on_conflict_options
+     *           Defines actions to be done to the existing running standalone Nexus when the conflict policy
+     *           NEXUS_OPERATION_ID_CONFLICT_POLICY_USE_EXISTING is used. If not set or set to a empty object
+     *           (all options with default value), it will not modify the running operation.
      *     @type \Temporal\Api\Common\V1\SearchAttributes $search_attributes
      *           Search attributes for indexing.
      *     @type array|\Google\Protobuf\Internal\MapField $nexus_header
@@ -194,6 +219,11 @@ class StartNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Mess
      *           transmitted to Nexus operations that may be external and are not traditional payloads.
      *     @type \Temporal\Api\Sdk\V1\UserMetadata $user_metadata
      *           Metadata for use by user interfaces to display the fixed as-of-start summary and details of the operation.
+     *     @type \Temporal\Api\Common\V1\Callback[] $completion_callbacks
+     *           Completion callbacks to be invoked once the Nexus operation reaches a terminal state.
+     *     @type \Temporal\Api\Common\V1\Link[] $links
+     *           Links to be associated with the Nexus operation. Callbacks may also have associated links;
+     *           links already included with a callback should not be duplicated here.
      * }
      */
     public function __construct($data = NULL) {
@@ -610,6 +640,45 @@ class StartNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Mess
     }
 
     /**
+     * Defines actions to be done to the existing running standalone Nexus when the conflict policy
+     * NEXUS_OPERATION_ID_CONFLICT_POLICY_USE_EXISTING is used. If not set or set to a empty object
+     * (all options with default value), it will not modify the running operation.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexusoperation.v1.OnConflictOptions on_conflict_options = 17;</code>
+     * @return \Temporal\Api\Nexusoperation\V1\OnConflictOptions|null
+     */
+    public function getOnConflictOptions()
+    {
+        return $this->on_conflict_options;
+    }
+
+    public function hasOnConflictOptions()
+    {
+        return isset($this->on_conflict_options);
+    }
+
+    public function clearOnConflictOptions()
+    {
+        unset($this->on_conflict_options);
+    }
+
+    /**
+     * Defines actions to be done to the existing running standalone Nexus when the conflict policy
+     * NEXUS_OPERATION_ID_CONFLICT_POLICY_USE_EXISTING is used. If not set or set to a empty object
+     * (all options with default value), it will not modify the running operation.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexusoperation.v1.OnConflictOptions on_conflict_options = 17;</code>
+     * @param \Temporal\Api\Nexusoperation\V1\OnConflictOptions $var
+     * @return $this
+     */
+    public function setOnConflictOptions(\Temporal\Api\Nexusoperation\V1\OnConflictOptions|null $var)
+    {
+        $this->on_conflict_options = $var;
+
+        return $this;
+    }
+
+    /**
      * Search attributes for indexing.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.SearchAttributes search_attributes = 14;</code>
@@ -711,6 +780,60 @@ class StartNexusOperationExecutionRequest extends \Google\Protobuf\Internal\Mess
     public function setUserMetadata(\Temporal\Api\Sdk\V1\UserMetadata|null $var)
     {
         $this->user_metadata = $var;
+
+        return $this;
+    }
+
+    /**
+     * Completion callbacks to be invoked once the Nexus operation reaches a terminal state.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Callback completion_callbacks = 18;</code>
+     * @return RepeatedField<\Temporal\Api\Common\V1\Callback>
+     */
+    public function getCompletionCallbacks()
+    {
+        return $this->completion_callbacks;
+    }
+
+    /**
+     * Completion callbacks to be invoked once the Nexus operation reaches a terminal state.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Callback completion_callbacks = 18;</code>
+     * @param \Temporal\Api\Common\V1\Callback[] $var
+     * @return $this
+     */
+    public function setCompletionCallbacks(array|RepeatedField $var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Callback::class);
+        $this->completion_callbacks = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Links to be associated with the Nexus operation. Callbacks may also have associated links;
+     * links already included with a callback should not be duplicated here.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 19;</code>
+     * @return RepeatedField<\Temporal\Api\Common\V1\Link>
+     */
+    public function getLinks()
+    {
+        return $this->links;
+    }
+
+    /**
+     * Links to be associated with the Nexus operation. Callbacks may also have associated links;
+     * links already included with a callback should not be duplicated here.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 19;</code>
+     * @param \Temporal\Api\Common\V1\Link[] $var
+     * @return $this
+     */
+    public function setLinks(array|RepeatedField $var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Link::class);
+        $this->links = $arr;
 
         return $this;
     }

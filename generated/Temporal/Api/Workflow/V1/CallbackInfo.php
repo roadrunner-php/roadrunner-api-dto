@@ -69,6 +69,13 @@ class CallbackInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string blocked_reason = 9;</code>
      */
     protected $blocked_reason = '';
+    /**
+     * Server-generated request ID used as an idempotency token when invoking callbacks.
+     * It has no relation to caller-side request_id sent in operations like StartWorkflowExecutionRequest.
+     *
+     * Generated from protobuf field <code>string request_id = 10;</code>
+     */
+    protected $request_id = '';
 
     /**
      * Constructor.
@@ -94,6 +101,9 @@ class CallbackInfo extends \Google\Protobuf\Internal\Message
      *           The time when the next attempt is scheduled.
      *     @type string $blocked_reason
      *           If the state is BLOCKED, blocked reason provides additional information.
+     *     @type string $request_id
+     *           Server-generated request ID used as an idempotency token when invoking callbacks.
+     *           It has no relation to caller-side request_id sent in operations like StartWorkflowExecutionRequest.
      * }
      */
     public function __construct($data = NULL) {
@@ -383,6 +393,34 @@ class CallbackInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, true);
         $this->blocked_reason = $var;
+
+        return $this;
+    }
+
+    /**
+     * Server-generated request ID used as an idempotency token when invoking callbacks.
+     * It has no relation to caller-side request_id sent in operations like StartWorkflowExecutionRequest.
+     *
+     * Generated from protobuf field <code>string request_id = 10;</code>
+     * @return string
+     */
+    public function getRequestId()
+    {
+        return $this->request_id;
+    }
+
+    /**
+     * Server-generated request ID used as an idempotency token when invoking callbacks.
+     * It has no relation to caller-side request_id sent in operations like StartWorkflowExecutionRequest.
+     *
+     * Generated from protobuf field <code>string request_id = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRequestId(string $var)
+    {
+        GPBUtil::checkString($var, true);
+        $this->request_id = $var;
 
         return $this;
     }
