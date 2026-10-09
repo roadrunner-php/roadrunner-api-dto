@@ -1,48 +1,62 @@
-<a href="https://roadrunner.dev" target="_blank">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/roadrunner-server/.github/assets/8040338/e6bde856-4ec6-4a52-bd5b-bfe78736c1ff">
-    <img align="center" src="https://github.com/roadrunner-server/.github/assets/8040338/040fb694-1dd3-4865-9d29-8e0748c2c8b8">
-  </picture>
-</a>
+<p align="center">
+    <a href="https://roadrunner.dev"><picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://github.com/roadrunner-server/.github/assets/8040338/e6bde856-4ec6-4a52-bd5b-bfe78736c1ff">
+        <img alt="RoadRunner" src="https://github.com/roadrunner-server/.github/assets/8040338/040fb694-1dd3-4865-9d29-8e0748c2c8b8" style="width: 6in; display: block">
+    </picture></a>
+</p>
 
-# RoadRunner PHP API DTO
+<p align="center">Pre-generated PHP DTOs for the RoadRunner API protocol buffers</p>
 
-[![PHP Version Require](https://poser.pugx.org/roadrunner-php/roadrunner-api-dto/require/php)](https://packagist.org/packages/roadrunner-php/roadrunner-api-dto)
-[![Latest Stable Version](https://poser.pugx.org/roadrunner-php/roadrunner-api-dto/v/stable)](https://packagist.org/packages/roadrunner-php/roadrunner-api-dto)
-[![Total Downloads](https://poser.pugx.org/roadrunner-php/roadrunner-api-dto/downloads)](https://packagist.org/packages/roadrunner-php/roadrunner-api-dto)
+<div align="center">
 
-This is a GitHub repository and Composer package that provides PHP Data Transfer Object (DTO) messages for RoadRunner
-API protocol buffer files, available at https://github.com/roadrunner-server/api.
+[![Documentation](https://img.shields.io/badge/Documentation-blue?style=for-the-badge&logo=gitbook&logoColor=white)](https://docs.roadrunner.dev)
+[![Sponsor](https://img.shields.io/static/v1?style=for-the-badge&label=&message=Sponsor&logo=githubsponsors&logoColor=white&color=%23EA4AAA)](https://github.com/sponsors/roadrunner-server)
 
-With this repository, you can use pre-generated DTO messages for the following RoadRunner plugins:
+</div>
 
-- Centrifugo
-- HTTP
-- Jobs
-- KV
-- Lock
-- Plugins
-- Service
-- Status
-- WebSockets
+<br />
 
-The repository contains the pre-generated DTO files, and you can include the package in your PHP project to use them for
-making RPC calls to the RoadRunner server.
+This package provides PHP Data Transfer Object (DTO) messages generated from the [RoadRunner API](https://github.com/roadrunner-server/api) protocol buffer files. Include it in your PHP project to make RPC calls to the RoadRunner server without compiling the `.proto` files yourself.
 
-## Installation
+## Get Started
 
-You can install the package. Simply run the following command:
+### Installation
 
 ```bash
 composer require roadrunner-php/roadrunner-api-dto
 ```
 
+[![PHP](https://img.shields.io/packagist/php-v/roadrunner-php/roadrunner-api-dto.svg?style=flat-square&logo=php)](https://packagist.org/packages/roadrunner-php/roadrunner-api-dto)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/roadrunner-php/roadrunner-api-dto.svg?style=flat-square&logo=packagist)](https://packagist.org/packages/roadrunner-php/roadrunner-api-dto)
+[![License](https://img.shields.io/packagist/l/roadrunner-php/roadrunner-api-dto.svg?style=flat-square)](LICENSE)
+[![Total Downloads](https://img.shields.io/packagist/dt/roadrunner-php/roadrunner-api-dto.svg?style=flat-square)](https://packagist.org/packages/roadrunner-php/roadrunner-api-dto/stats)
+
+### What's inside
+
+DTO messages for the following RoadRunner plugins, under the `RoadRunner\` namespace:
+
+- App Logger
+- Centrifugo
+- HTTP
+- Jobs
+- KV
+- Lock
+- Service
+- Status
+- Temporal
+- WebSockets
+
+The package also ships the [Temporal API](https://github.com/temporalio/api) and [Temporal Cloud API](https://github.com/temporalio/api-cloud) messages and gRPC clients under the `Temporal\Api\` namespace. They depend on the `google/common-protos` package, which you need to install yourself.
+
 ## Generating DTOs
 
-If you would like to generate the DTOs yourself, you can use the `generate.sh` script. This script will generate the
-DTOs for all of the plugins, and place them in the `generated/` directory.
+If you would like to generate the DTOs yourself, use the `generate.sh` script. It generates the DTOs for all the plugins and places them in the `generated/` directory.
 
-But before that, you will need to compile the `grpc_php_plugin`. Follow [this instruction](https://github.com/grpc/grpc/blob/master/src/php/README.md#grpc_php_plugin-protoc-plugin) to build the file.
+You will need:
+
+- the `protoc` binary — the committed DTOs are generated with `protoc` v34, matching the `google/protobuf` runtime constraint;
+- the `grpc_php_plugin` — follow [this instruction](https://github.com/grpc/grpc/blob/master/src/php/README.md#grpc_php_plugin-protoc-plugin) to build it;
+- the API submodules: `git submodule update --init --recursive`.
 
 Then run:
 
@@ -50,12 +64,6 @@ Then run:
 ./generate.sh
 ```
 
-> Note: You will need to have the `protoc` >= 3.15 binary installed on your system.
-
 ## Contribution
 
 Contributions are welcome! If you would like to contribute to this project, please open an issue or pull request.
-
-## License
-
-This repository is licensed under the MIT license. See [LICENSE](./LICENSE) for more information.
