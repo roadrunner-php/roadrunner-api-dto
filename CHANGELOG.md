@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/roadrunner-php/roadrunner-api-dto/compare/v2.0.0...v2.0.1) (2026-10-09)
+
+
+### Documentation
+
+* refresh the README ([82ff008](https://github.com/roadrunner-php/roadrunner-api-dto/commit/82ff008bffe3638c4aa4173b5c0c90ba8ba0a34c))
+
 ## [2.0.0](https://github.com/roadrunner-php/roadrunner-api-dto/compare/v1.18.0...v2.0.0) (2026-10-09)
 
 
