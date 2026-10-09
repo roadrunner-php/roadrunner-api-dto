@@ -15,13 +15,13 @@ use Google\Protobuf\RepeatedField;
 class UpdatePushStatusRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * uid of push notification (matches SendPushNotificationResult.uid)
+     * analytics uid of push notification (should match SendPushNotificationRequest.analytics_uid)
      *
-     * Generated from protobuf field <code>string uid = 1;</code>
+     * Generated from protobuf field <code>string analytics_uid = 1;</code>
      */
-    protected $uid = '';
+    protected $analytics_uid = '';
     /**
-     * failed | sent | delivered | interacted
+     * delivered | interacted
      *
      * Generated from protobuf field <code>string status = 2;</code>
      */
@@ -45,10 +45,10 @@ class UpdatePushStatusRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $uid
-     *           uid of push notification (matches SendPushNotificationResult.uid)
+     *     @type string $analytics_uid
+     *           analytics uid of push notification (should match SendPushNotificationRequest.analytics_uid)
      *     @type string $status
-     *           failed | sent | delivered | interacted
+     *           delivered | interacted
      *     @type string $device_id
      *           Centrifugo device id.
      *     @type string $msg_id
@@ -61,33 +61,33 @@ class UpdatePushStatusRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * uid of push notification (matches SendPushNotificationResult.uid)
+     * analytics uid of push notification (should match SendPushNotificationRequest.analytics_uid)
      *
-     * Generated from protobuf field <code>string uid = 1;</code>
+     * Generated from protobuf field <code>string analytics_uid = 1;</code>
      * @return string
      */
-    public function getUid()
+    public function getAnalyticsUid()
     {
-        return $this->uid;
+        return $this->analytics_uid;
     }
 
     /**
-     * uid of push notification (matches SendPushNotificationResult.uid)
+     * analytics uid of push notification (should match SendPushNotificationRequest.analytics_uid)
      *
-     * Generated from protobuf field <code>string uid = 1;</code>
+     * Generated from protobuf field <code>string analytics_uid = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setUid(string $var)
+    public function setAnalyticsUid(string $var)
     {
         GPBUtil::checkString($var, true);
-        $this->uid = $var;
+        $this->analytics_uid = $var;
 
         return $this;
     }
 
     /**
-     * failed | sent | delivered | interacted
+     * delivered | interacted
      *
      * Generated from protobuf field <code>string status = 2;</code>
      * @return string
@@ -98,7 +98,7 @@ class UpdatePushStatusRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * failed | sent | delivered | interacted
+     * delivered | interacted
      *
      * Generated from protobuf field <code>string status = 2;</code>
      * @param string $var

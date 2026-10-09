@@ -16,7 +16,7 @@ class Status
           return;
         }
         $pool->internalAddGeneratedFile(
-            "\x0A\xF4\x01\x0A\x16status/v1/status.proto\x12\x09status.v1\"\x19\x0A\x07Request\x12\x0E\x0A\x06plugin\x18\x01 \x01(\x09\")\x0A\x08Response\x12\x0C\x0A\x04code\x18\x01 \x01(\x03\x12\x0F\x0A\x07message\x18\x02 \x01(\x09B\x80\x01Z<github.com/roadrunner-server/api/v4/build/status/v1;statusV1\xCA\x02\x18RoadRunner\\Status\\DTO\\V1\xE2\x02\$RoadRunner\\Status\\DTO\\V1\\GPBMetadatab\x06proto3"
+            "\x0A\xF0\x01\x0A\x16status/v1/status.proto\x12\x09status.v1\"\x19\x0A\x07Request\x12\x0E\x0A\x06plugin\x18\x01 \x01(\x09\")\x0A\x08Response\x12\x0C\x0A\x04code\x18\x01 \x01(\x03\x12\x0F\x0A\x07message\x18\x02 \x01(\x09B}Z9github.com/roadrunner-server/api-go/v6/status/v1;statusV1\xCA\x02\x18RoadRunner\\Status\\DTO\\V1\xE2\x02\$RoadRunner\\Status\\DTO\\V1\\GPBMetadatab\x06proto3"
         , true);
 
         static::$is_initialized = true;

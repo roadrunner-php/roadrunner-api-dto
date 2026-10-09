@@ -31,12 +31,17 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
      */
     protected $meta_update = null;
     /**
-     *DeviceLabelsUpdate labels_update = 7;
-     *DeviceScoresUpdate scores_update = 8;
-     *
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceTopicsUpdate topics_update = 6;</code>
      */
     protected $topics_update = null;
+    /**
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceTimezoneUpdate timezone_update = 7;</code>
+     */
+    protected $timezone_update = null;
+    /**
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceLocaleUpdate locale_update = 8;</code>
+     */
+    protected $locale_update = null;
 
     /**
      * Constructor.
@@ -49,8 +54,8 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceUserUpdate $user_update
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceMetaUpdate $meta_update
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicsUpdate $topics_update
-     *          DeviceLabelsUpdate labels_update = 7;
-     *          DeviceScoresUpdate scores_update = 8;
+     *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceTimezoneUpdate $timezone_update
+     *     @type \RoadRunner\Centrifugal\API\DTO\V1\DeviceLocaleUpdate $locale_update
      * }
      */
     public function __construct($data = NULL) {
@@ -165,9 +170,6 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *DeviceLabelsUpdate labels_update = 7;
-     *DeviceScoresUpdate scores_update = 8;
-     *
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceTopicsUpdate topics_update = 6;</code>
      * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicsUpdate|null
      */
@@ -187,9 +189,6 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *DeviceLabelsUpdate labels_update = 7;
-     *DeviceScoresUpdate scores_update = 8;
-     *
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceTopicsUpdate topics_update = 6;</code>
      * @param \RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicsUpdate $var
      * @return $this
@@ -197,6 +196,68 @@ class DeviceUpdateRequest extends \Google\Protobuf\Internal\Message
     public function setTopicsUpdate(\RoadRunner\Centrifugal\API\DTO\V1\DeviceTopicsUpdate|null $var)
     {
         $this->topics_update = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceTimezoneUpdate timezone_update = 7;</code>
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceTimezoneUpdate|null
+     */
+    public function getTimezoneUpdate()
+    {
+        return $this->timezone_update;
+    }
+
+    public function hasTimezoneUpdate()
+    {
+        return isset($this->timezone_update);
+    }
+
+    public function clearTimezoneUpdate()
+    {
+        unset($this->timezone_update);
+    }
+
+    /**
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceTimezoneUpdate timezone_update = 7;</code>
+     * @param \RoadRunner\Centrifugal\API\DTO\V1\DeviceTimezoneUpdate $var
+     * @return $this
+     */
+    public function setTimezoneUpdate(\RoadRunner\Centrifugal\API\DTO\V1\DeviceTimezoneUpdate|null $var)
+    {
+        $this->timezone_update = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceLocaleUpdate locale_update = 8;</code>
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\DeviceLocaleUpdate|null
+     */
+    public function getLocaleUpdate()
+    {
+        return $this->locale_update;
+    }
+
+    public function hasLocaleUpdate()
+    {
+        return isset($this->locale_update);
+    }
+
+    public function clearLocaleUpdate()
+    {
+        unset($this->locale_update);
+    }
+
+    /**
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.DeviceLocaleUpdate locale_update = 8;</code>
+     * @param \RoadRunner\Centrifugal\API\DTO\V1\DeviceLocaleUpdate $var
+     * @return $this
+     */
+    public function setLocaleUpdate(\RoadRunner\Centrifugal\API\DTO\V1\DeviceLocaleUpdate|null $var)
+    {
+        $this->locale_update = $var;
 
         return $this;
     }

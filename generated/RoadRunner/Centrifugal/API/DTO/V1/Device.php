@@ -47,12 +47,17 @@ class Device extends \Google\Protobuf\Internal\Message
      */
     private $meta;
     /**
-     *map<string, string> labels = 12;
-     *map<string, int64> scores = 13;
-     *
      * Generated from protobuf field <code>repeated string topics = 11;</code>
      */
     private $topics;
+    /**
+     * Generated from protobuf field <code>string timezone = 12;</code>
+     */
+    protected $timezone = '';
+    /**
+     * Generated from protobuf field <code>string locale = 13;</code>
+     */
+    protected $locale = '';
 
     /**
      * Constructor.
@@ -69,8 +74,8 @@ class Device extends \Google\Protobuf\Internal\Message
      *     @type int|string $updated_at
      *     @type array|\Google\Protobuf\Internal\MapField $meta
      *     @type string[] $topics
-     *          map<string, string> labels = 12;
-     *          map<string, int64> scores = 13;
+     *     @type string $timezone
+     *     @type string $locale
      * }
      */
     public function __construct($data = NULL) {
@@ -255,9 +260,6 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *map<string, string> labels = 12;
-     *map<string, int64> scores = 13;
-     *
      * Generated from protobuf field <code>repeated string topics = 11;</code>
      * @return RepeatedField<string>
      */
@@ -267,9 +269,6 @@ class Device extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *map<string, string> labels = 12;
-     *map<string, int64> scores = 13;
-     *
      * Generated from protobuf field <code>repeated string topics = 11;</code>
      * @param string[] $var
      * @return $this
@@ -278,6 +277,50 @@ class Device extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->topics = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string timezone = 12;</code>
+     * @return string
+     */
+    public function getTimezone()
+    {
+        return $this->timezone;
+    }
+
+    /**
+     * Generated from protobuf field <code>string timezone = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setTimezone(string $var)
+    {
+        GPBUtil::checkString($var, true);
+        $this->timezone = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 13;</code>
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->locale;
+    }
+
+    /**
+     * Generated from protobuf field <code>string locale = 13;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLocale(string $var)
+    {
+        GPBUtil::checkString($var, true);
+        $this->locale = $var;
 
         return $this;
     }
