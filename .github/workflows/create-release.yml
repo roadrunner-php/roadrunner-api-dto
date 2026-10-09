@@ -4,7 +4,7 @@
 on:  # yamllint disable-line rule:truthy
   push:
     branches:
-      - 1.x
+      - 2.x
 
 name: 📦 Create release
 
@@ -23,4 +23,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           config-file: .github/.release-please-config.json
           manifest-file: .github/version.json
-          target-branch: 1.x
+          target-branch: 2.x
