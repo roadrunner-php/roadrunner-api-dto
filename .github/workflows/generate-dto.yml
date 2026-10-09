@@ -25,7 +25,7 @@ jobs:
       - name: 📥 Check out the repository
         uses: actions/checkout@v6
         with:
-          ref: 1.x
+          ref: 2.x
           submodules: false
 
       - name: 🔗 Rewrite SSH submodule URLs to HTTPS
@@ -84,7 +84,7 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          base: 1.x
+          base: 2.x
           branch: deps/update-api
           commit-message: "feat: update API to ${{ steps.tags.outputs.version }}"
           title: "feat: update API to ${{ steps.tags.outputs.version }}"
