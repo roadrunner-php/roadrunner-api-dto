@@ -38,6 +38,18 @@ class PublishRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string idempotency_key = 6;</code>
      */
     protected $idempotency_key = '';
+    /**
+     * Generated from protobuf field <code>bool delta = 7;</code>
+     */
+    protected $delta = false;
+    /**
+     * Generated from protobuf field <code>uint64 version = 8;</code>
+     */
+    protected $version = 0;
+    /**
+     * Generated from protobuf field <code>string version_epoch = 9;</code>
+     */
+    protected $version_epoch = '';
 
     /**
      * Constructor.
@@ -51,6 +63,9 @@ class PublishRequest extends \Google\Protobuf\Internal\Message
      *     @type bool $skip_history
      *     @type array|\Google\Protobuf\Internal\MapField $tags
      *     @type string $idempotency_key
+     *     @type bool $delta
+     *     @type int|string $version
+     *     @type string $version_epoch
      * }
      */
     public function __construct($data = NULL) {
@@ -185,6 +200,71 @@ class PublishRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, true);
         $this->idempotency_key = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool delta = 7;</code>
+     * @return bool
+     */
+    public function getDelta()
+    {
+        return $this->delta;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool delta = 7;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setDelta(bool $var)
+    {
+        $this->delta = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 version = 8;</code>
+     * @return int|string
+     */
+    public function getVersion()
+    {
+        return $this->version;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 version = 8;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setVersion(int|string $var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string version_epoch = 9;</code>
+     * @return string
+     */
+    public function getVersionEpoch()
+    {
+        return $this->version_epoch;
+    }
+
+    /**
+     * Generated from protobuf field <code>string version_epoch = 9;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setVersionEpoch(string $var)
+    {
+        GPBUtil::checkString($var, true);
+        $this->version_epoch = $var;
 
         return $this;
     }

@@ -23,15 +23,53 @@ class SendPushNotificationRequest extends \Google\Protobuf\Internal\Message
      */
     protected $notification = null;
     /**
-     * unique identifier for push notification, used for matching in Centrifugo analytics.
+     * unique identifier for each push notification request, can be used to cancel push.
      *
      * Generated from protobuf field <code>string uid = 3;</code>
      */
     protected $uid = '';
     /**
+     * Unix seconds, if set - push will be sent at this time, if not set - immediately.
+     *
      * Generated from protobuf field <code>int64 send_at = 4;</code>
      */
     protected $send_at = 0;
+    /**
+     * makes processing heavier, but tolerates edge cases, like not losing inflight pushes due to temporary queue unavailability.
+     *
+     * Generated from protobuf field <code>bool optimize_for_reliability = 5;</code>
+     */
+    protected $optimize_for_reliability = false;
+    /**
+     * strategy for sending push notifications. Applicable only for pushes with filter recipient. When using this field Centrifugo processes devices one by one.
+     *
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.PushLimitStrategy limit_strategy = 6;</code>
+     */
+    protected $limit_strategy = null;
+    /**
+     * uid for push notification analytics, if not set - Centrifugo will use uid field.
+     *
+     * Generated from protobuf field <code>string analytics_uid = 7;</code>
+     */
+    protected $analytics_uid = '';
+    /**
+     * optional per language/locale localizations for push notification.
+     *
+     * Generated from protobuf field <code>map<string, .centrifugal.centrifugo.api.PushLocalization> localizations = 8;</code>
+     */
+    private $localizations;
+    /**
+     * if set - Centrifugo will use templating for push notification. Note that setting localizations enables templating automatically.
+     *
+     * Generated from protobuf field <code>bool use_templating = 9;</code>
+     */
+    protected $use_templating = false;
+    /**
+     * if set - Centrifugo will additionally load device meta during push sending, this meta becomes available in templating.
+     *
+     * Generated from protobuf field <code>bool use_meta = 10;</code>
+     */
+    protected $use_meta = false;
 
     /**
      * Constructor.
@@ -42,8 +80,21 @@ class SendPushNotificationRequest extends \Google\Protobuf\Internal\Message
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\PushRecipient $recipient
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\PushNotification $notification
      *     @type string $uid
-     *           unique identifier for push notification, used for matching in Centrifugo analytics.
+     *           unique identifier for each push notification request, can be used to cancel push.
      *     @type int|string $send_at
+     *           Unix seconds, if set - push will be sent at this time, if not set - immediately.
+     *     @type bool $optimize_for_reliability
+     *           makes processing heavier, but tolerates edge cases, like not losing inflight pushes due to temporary queue unavailability.
+     *     @type \RoadRunner\Centrifugal\API\DTO\V1\PushLimitStrategy $limit_strategy
+     *           strategy for sending push notifications. Applicable only for pushes with filter recipient. When using this field Centrifugo processes devices one by one.
+     *     @type string $analytics_uid
+     *           uid for push notification analytics, if not set - Centrifugo will use uid field.
+     *     @type array|\Google\Protobuf\Internal\MapField $localizations
+     *           optional per language/locale localizations for push notification.
+     *     @type bool $use_templating
+     *           if set - Centrifugo will use templating for push notification. Note that setting localizations enables templating automatically.
+     *     @type bool $use_meta
+     *           if set - Centrifugo will additionally load device meta during push sending, this meta becomes available in templating.
      * }
      */
     public function __construct($data = NULL) {
@@ -114,7 +165,7 @@ class SendPushNotificationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * unique identifier for push notification, used for matching in Centrifugo analytics.
+     * unique identifier for each push notification request, can be used to cancel push.
      *
      * Generated from protobuf field <code>string uid = 3;</code>
      * @return string
@@ -125,7 +176,7 @@ class SendPushNotificationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * unique identifier for push notification, used for matching in Centrifugo analytics.
+     * unique identifier for each push notification request, can be used to cancel push.
      *
      * Generated from protobuf field <code>string uid = 3;</code>
      * @param string $var
@@ -140,6 +191,8 @@ class SendPushNotificationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Unix seconds, if set - push will be sent at this time, if not set - immediately.
+     *
      * Generated from protobuf field <code>int64 send_at = 4;</code>
      * @return int|string
      */
@@ -149,6 +202,8 @@ class SendPushNotificationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Unix seconds, if set - push will be sent at this time, if not set - immediately.
+     *
      * Generated from protobuf field <code>int64 send_at = 4;</code>
      * @param int|string $var
      * @return $this
@@ -157,6 +212,168 @@ class SendPushNotificationRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->send_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * makes processing heavier, but tolerates edge cases, like not losing inflight pushes due to temporary queue unavailability.
+     *
+     * Generated from protobuf field <code>bool optimize_for_reliability = 5;</code>
+     * @return bool
+     */
+    public function getOptimizeForReliability()
+    {
+        return $this->optimize_for_reliability;
+    }
+
+    /**
+     * makes processing heavier, but tolerates edge cases, like not losing inflight pushes due to temporary queue unavailability.
+     *
+     * Generated from protobuf field <code>bool optimize_for_reliability = 5;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setOptimizeForReliability(bool $var)
+    {
+        $this->optimize_for_reliability = $var;
+
+        return $this;
+    }
+
+    /**
+     * strategy for sending push notifications. Applicable only for pushes with filter recipient. When using this field Centrifugo processes devices one by one.
+     *
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.PushLimitStrategy limit_strategy = 6;</code>
+     * @return \RoadRunner\Centrifugal\API\DTO\V1\PushLimitStrategy|null
+     */
+    public function getLimitStrategy()
+    {
+        return $this->limit_strategy;
+    }
+
+    public function hasLimitStrategy()
+    {
+        return isset($this->limit_strategy);
+    }
+
+    public function clearLimitStrategy()
+    {
+        unset($this->limit_strategy);
+    }
+
+    /**
+     * strategy for sending push notifications. Applicable only for pushes with filter recipient. When using this field Centrifugo processes devices one by one.
+     *
+     * Generated from protobuf field <code>.centrifugal.centrifugo.api.PushLimitStrategy limit_strategy = 6;</code>
+     * @param \RoadRunner\Centrifugal\API\DTO\V1\PushLimitStrategy $var
+     * @return $this
+     */
+    public function setLimitStrategy(\RoadRunner\Centrifugal\API\DTO\V1\PushLimitStrategy|null $var)
+    {
+        $this->limit_strategy = $var;
+
+        return $this;
+    }
+
+    /**
+     * uid for push notification analytics, if not set - Centrifugo will use uid field.
+     *
+     * Generated from protobuf field <code>string analytics_uid = 7;</code>
+     * @return string
+     */
+    public function getAnalyticsUid()
+    {
+        return $this->analytics_uid;
+    }
+
+    /**
+     * uid for push notification analytics, if not set - Centrifugo will use uid field.
+     *
+     * Generated from protobuf field <code>string analytics_uid = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAnalyticsUid(string $var)
+    {
+        GPBUtil::checkString($var, true);
+        $this->analytics_uid = $var;
+
+        return $this;
+    }
+
+    /**
+     * optional per language/locale localizations for push notification.
+     *
+     * Generated from protobuf field <code>map<string, .centrifugal.centrifugo.api.PushLocalization> localizations = 8;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getLocalizations()
+    {
+        return $this->localizations;
+    }
+
+    /**
+     * optional per language/locale localizations for push notification.
+     *
+     * Generated from protobuf field <code>map<string, .centrifugal.centrifugo.api.PushLocalization> localizations = 8;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setLocalizations(array|\Google\Protobuf\Internal\MapField $var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \RoadRunner\Centrifugal\API\DTO\V1\PushLocalization::class);
+        $this->localizations = $arr;
+
+        return $this;
+    }
+
+    /**
+     * if set - Centrifugo will use templating for push notification. Note that setting localizations enables templating automatically.
+     *
+     * Generated from protobuf field <code>bool use_templating = 9;</code>
+     * @return bool
+     */
+    public function getUseTemplating()
+    {
+        return $this->use_templating;
+    }
+
+    /**
+     * if set - Centrifugo will use templating for push notification. Note that setting localizations enables templating automatically.
+     *
+     * Generated from protobuf field <code>bool use_templating = 9;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUseTemplating(bool $var)
+    {
+        $this->use_templating = $var;
+
+        return $this;
+    }
+
+    /**
+     * if set - Centrifugo will additionally load device meta during push sending, this meta becomes available in templating.
+     *
+     * Generated from protobuf field <code>bool use_meta = 10;</code>
+     * @return bool
+     */
+    public function getUseMeta()
+    {
+        return $this->use_meta;
+    }
+
+    /**
+     * if set - Centrifugo will additionally load device meta during push sending, this meta becomes available in templating.
+     *
+     * Generated from protobuf field <code>bool use_meta = 10;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setUseMeta(bool $var)
+    {
+        $this->use_meta = $var;
 
         return $this;
     }

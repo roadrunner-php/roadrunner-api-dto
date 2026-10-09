@@ -31,8 +31,6 @@ class ConnectionInfo extends \Google\Protobuf\Internal\Message
      */
     protected $protocol = '';
     /**
-     * 5-7 dropped for backwards compatibility.
-     *
      * Generated from protobuf field <code>string user = 8;</code>
      */
     protected $user = '';
@@ -40,6 +38,16 @@ class ConnectionInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.ConnectionState state = 9;</code>
      */
     protected $state = null;
+    /**
+     * Generated from protobuf field <code>int64 connected_at_ms = 10;</code>
+     */
+    protected $connected_at_ms = 0;
+    /**
+     * can be -1 if not available.
+     *
+     * Generated from protobuf field <code>int64 ping_pong_latency_ms = 11;</code>
+     */
+    protected $ping_pong_latency_ms = 0;
 
     /**
      * Constructor.
@@ -52,8 +60,10 @@ class ConnectionInfo extends \Google\Protobuf\Internal\Message
      *     @type string $transport
      *     @type string $protocol
      *     @type string $user
-     *           5-7 dropped for backwards compatibility.
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\ConnectionState $state
+     *     @type int|string $connected_at_ms
+     *     @type int|string $ping_pong_latency_ms
+     *           can be -1 if not available.
      * }
      */
     public function __construct($data = NULL) {
@@ -150,8 +160,6 @@ class ConnectionInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 5-7 dropped for backwards compatibility.
-     *
      * Generated from protobuf field <code>string user = 8;</code>
      * @return string
      */
@@ -161,8 +169,6 @@ class ConnectionInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * 5-7 dropped for backwards compatibility.
-     *
      * Generated from protobuf field <code>string user = 8;</code>
      * @param string $var
      * @return $this
@@ -202,6 +208,54 @@ class ConnectionInfo extends \Google\Protobuf\Internal\Message
     public function setState(\RoadRunner\Centrifugal\API\DTO\V1\ConnectionState|null $var)
     {
         $this->state = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 connected_at_ms = 10;</code>
+     * @return int|string
+     */
+    public function getConnectedAtMs()
+    {
+        return $this->connected_at_ms;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 connected_at_ms = 10;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setConnectedAtMs(int|string $var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->connected_at_ms = $var;
+
+        return $this;
+    }
+
+    /**
+     * can be -1 if not available.
+     *
+     * Generated from protobuf field <code>int64 ping_pong_latency_ms = 11;</code>
+     * @return int|string
+     */
+    public function getPingPongLatencyMs()
+    {
+        return $this->ping_pong_latency_ms;
+    }
+
+    /**
+     * can be -1 if not available.
+     *
+     * Generated from protobuf field <code>int64 ping_pong_latency_ms = 11;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setPingPongLatencyMs(int|string $var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->ping_pong_latency_ms = $var;
 
         return $this;
     }

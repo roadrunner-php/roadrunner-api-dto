@@ -15,17 +15,9 @@ use Google\Protobuf\RepeatedField;
 class Reply extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint32 id = 1;</code>
-     */
-    protected $id = 0;
-    /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.Error error = 2;</code>
      */
     protected $error = null;
-    /**
-     * Generated from protobuf field <code>bytes result = 3;</code>
-     */
-    protected $result = '';
     /**
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.PublishResult publish = 4;</code>
      */
@@ -154,10 +146,6 @@ class Reply extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.centrifugal.centrifugo.api.CancelPushResult cancel_push = 35;</code>
      */
     protected $cancel_push = null;
-    /**
-     * Generated from protobuf field <code>.centrifugal.centrifugo.api.RateLimitResult rate_limit = 50;</code>
-     */
-    protected $rate_limit = null;
 
     /**
      * Constructor.
@@ -165,9 +153,7 @@ class Reply extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $id
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\Error $error
-     *     @type string $result
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\PublishResult $publish
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\BroadcastResult $broadcast
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\SubscribeResult $subscribe
@@ -200,34 +186,11 @@ class Reply extends \Google\Protobuf\Internal\Message
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\SendPushNotificationResult $send_push_notification
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\UpdatePushStatusResult $update_push_status
      *     @type \RoadRunner\Centrifugal\API\DTO\V1\CancelPushResult $cancel_push
-     *     @type \RoadRunner\Centrifugal\API\DTO\V1\RateLimitResult $rate_limit
      * }
      */
     public function __construct($data = NULL) {
         \RoadRunner\Centrifugal\API\DTO\V1\GPBMetadata\Api::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 id = 1;</code>
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Generated from protobuf field <code>uint32 id = 1;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setId(int $var)
-    {
-        GPBUtil::checkUint32($var);
-        $this->id = $var;
-
-        return $this;
     }
 
     /**
@@ -257,28 +220,6 @@ class Reply extends \Google\Protobuf\Internal\Message
     public function setError(\RoadRunner\Centrifugal\API\DTO\V1\Error|null $var)
     {
         $this->error = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>bytes result = 3;</code>
-     * @return string
-     */
-    public function getResult()
-    {
-        return $this->result;
-    }
-
-    /**
-     * Generated from protobuf field <code>bytes result = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setResult(string $var)
-    {
-        GPBUtil::checkString($var, false);
-        $this->result = $var;
 
         return $this;
     }
@@ -1271,37 +1212,6 @@ class Reply extends \Google\Protobuf\Internal\Message
     public function setCancelPush(\RoadRunner\Centrifugal\API\DTO\V1\CancelPushResult|null $var)
     {
         $this->cancel_push = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.centrifugal.centrifugo.api.RateLimitResult rate_limit = 50;</code>
-     * @return \RoadRunner\Centrifugal\API\DTO\V1\RateLimitResult|null
-     */
-    public function getRateLimit()
-    {
-        return $this->rate_limit;
-    }
-
-    public function hasRateLimit()
-    {
-        return isset($this->rate_limit);
-    }
-
-    public function clearRateLimit()
-    {
-        unset($this->rate_limit);
-    }
-
-    /**
-     * Generated from protobuf field <code>.centrifugal.centrifugo.api.RateLimitResult rate_limit = 50;</code>
-     * @param \RoadRunner\Centrifugal\API\DTO\V1\RateLimitResult $var
-     * @return $this
-     */
-    public function setRateLimit(\RoadRunner\Centrifugal\API\DTO\V1\RateLimitResult|null $var)
-    {
-        $this->rate_limit = $var;
 
         return $this;
     }

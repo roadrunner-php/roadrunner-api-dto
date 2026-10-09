@@ -27,9 +27,6 @@ class DeviceListRequest extends \Google\Protobuf\Internal\Message
      */
     protected $include_meta = false;
     /**
-     *bool include_labels = 5;
-     *bool include_scores = 6;
-     *
      * Generated from protobuf field <code>bool include_topics = 4;</code>
      */
     protected $include_topics = false;
@@ -52,8 +49,6 @@ class DeviceListRequest extends \Google\Protobuf\Internal\Message
      *     @type bool $include_total_count
      *     @type bool $include_meta
      *     @type bool $include_topics
-     *          bool include_labels = 5;
-     *          bool include_scores = 6;
      *     @type string $cursor
      *     @type int $limit
      * }
@@ -137,9 +132,6 @@ class DeviceListRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *bool include_labels = 5;
-     *bool include_scores = 6;
-     *
      * Generated from protobuf field <code>bool include_topics = 4;</code>
      * @return bool
      */
@@ -149,9 +141,6 @@ class DeviceListRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     *bool include_labels = 5;
-     *bool include_scores = 6;
-     *
      * Generated from protobuf field <code>bool include_topics = 4;</code>
      * @param bool $var
      * @return $this

@@ -16,7 +16,7 @@ class Applogger
           return;
         }
         $pool->internalAddGeneratedFile(
-            "\x0A\xB3\x02\x0A\x1Capplogger/v1/applogger.proto\x12\x0Capplogger.v1\"F\x0A\x08LogEntry\x12\x0F\x0A\x07message\x18\x01 \x01(\x09\x12)\x0A\x09log_attrs\x18\x02 \x03(\x0B2\x16.applogger.v1.LogAttrs\"&\x0A\x08LogAttrs\x12\x0B\x0A\x03key\x18\x01 \x01(\x09\x12\x0D\x0A\x05value\x18\x02 \x01(\x09\"\x0A\x0A\x08ResponseB\x80\x01Z6github.com/roadrunner-server/api/v4/build/applogger/v1\xCA\x02\x1BRoadRunner\\AppLogger\\DTO\\V1\xE2\x02'RoadRunner\\AppLogger\\DTO\\V1\\GPBMetadatab\x06proto3"
+            "\x0A\xBC\x02\x0A\x1Capplogger/v1/applogger.proto\x12\x0Capplogger.v1\"F\x0A\x08LogEntry\x12\x0F\x0A\x07message\x18\x01 \x01(\x09\x12)\x0A\x09log_attrs\x18\x02 \x03(\x0B2\x16.applogger.v1.LogAttrs\"&\x0A\x08LogAttrs\x12\x0B\x0A\x03key\x18\x01 \x01(\x09\x12\x0D\x0A\x05value\x18\x02 \x01(\x09\"\x0A\x0A\x08ResponseB\x89\x01Z?github.com/roadrunner-server/api-go/v6/applogger/v1;apploggerV1\xCA\x02\x1BRoadRunner\\AppLogger\\DTO\\V1\xE2\x02'RoadRunner\\AppLogger\\DTO\\V1\\GPBMetadatab\x06proto3"
         , true);
 
         static::$is_initialized = true;
