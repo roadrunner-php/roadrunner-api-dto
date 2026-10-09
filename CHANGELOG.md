@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/roadrunner-php/roadrunner-api-dto/compare/v1.18.0...v2.0.0) (2026-10-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* `RoadRunner\Centrifugal\API\DTO\V1\Command` loses `id`, `method`, `params` and `rate_limit`; `Reply` loses `id`, `result` and `rate_limit`; `UpdatePushStatusRequest::uid` is renamed to `analytics_uid`; `RateLimitRequest`, `RateLimitResponse` and `RateLimitResult` are removed, following the removal of `centrifuge.RateLimit` in RoadRunner v3.
+
+### Features
+
+* regenerate DTOs for API 6.0.0 ([#38](https://github.com/roadrunner-php/roadrunner-api-dto/issues/38)) ([843dfb1](https://github.com/roadrunner-php/roadrunner-api-dto/commit/843dfb19ad4d2549d674434306f2818fd0c7caa1))
+
 ## [1.18.0](https://github.com/roadrunner-php/roadrunner-api-dto/compare/v1.17.0...v1.18.0) (2026-10-09)
 
 
