@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://github.com/roadrunner-php/roadrunner-api-dto/compare/v2.0.0...v2.1.0) (2026-10-10)
+
+
+### Features
+
+* rename the package to roadrunner/api-dto ([5246175](https://github.com/roadrunner-php/roadrunner-api-dto/commit/5246175f5e10c745d6ac4e2cab1a335ef749a376))
+
+
+### Documentation
+
+* refresh the README ([82ff008](https://github.com/roadrunner-php/roadrunner-api-dto/commit/82ff008bffe3638c4aa4173b5c0c90ba8ba0a34c))
+
 ## [2.0.0](https://github.com/roadrunner-php/roadrunner-api-dto/compare/v1.18.0...v2.0.0) (2026-10-09)
 
 
