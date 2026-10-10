@@ -23,13 +23,13 @@ This package provides PHP Data Transfer Object (DTO) messages generated from the
 ### Installation
 
 ```bash
-composer require roadrunner-php/roadrunner-api-dto
+composer require roadrunner/api-dto
 ```
 
-[![PHP](https://img.shields.io/packagist/php-v/roadrunner-php/roadrunner-api-dto.svg?style=flat-square&logo=php)](https://packagist.org/packages/roadrunner-php/roadrunner-api-dto)
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/roadrunner-php/roadrunner-api-dto.svg?style=flat-square&logo=packagist)](https://packagist.org/packages/roadrunner-php/roadrunner-api-dto)
-[![License](https://img.shields.io/packagist/l/roadrunner-php/roadrunner-api-dto.svg?style=flat-square)](LICENSE)
-[![Total Downloads](https://img.shields.io/packagist/dt/roadrunner-php/roadrunner-api-dto.svg?style=flat-square)](https://packagist.org/packages/roadrunner-php/roadrunner-api-dto/stats)
+[![PHP](https://img.shields.io/packagist/php-v/roadrunner/api-dto.svg?style=flat-square&logo=php)](https://packagist.org/packages/roadrunner/api-dto)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/roadrunner/api-dto.svg?style=flat-square&logo=packagist)](https://packagist.org/packages/roadrunner/api-dto)
+[![License](https://img.shields.io/packagist/l/roadrunner/api-dto.svg?style=flat-square)](LICENSE)
+[![Total Downloads](https://img.shields.io/packagist/dt/roadrunner/api-dto.svg?style=flat-square)](https://packagist.org/packages/roadrunner/api-dto/stats)
 
 ### What's inside
 

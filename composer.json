@@ -1,23 +1,32 @@
 {
-  "name": "roadrunner-php/roadrunner-api-dto",
+  "name": "roadrunner/api-dto",
   "type": "library",
-  "description": "RoadRunner PHP API",
+  "description": "Pre-generated PHP DTOs for the RoadRunner API protocol buffers, used to make RPC calls to the RoadRunner server",
+  "keywords": [
+    "roadrunner",
+    "api",
+    "dto",
+    "protobuf",
+    "rpc",
+    "temporal"
+  ],
   "license": "MIT",
-  "homepage": "https://roadrunner.dev",
+  "homepage": "https://roadrunner.dev/",
   "support": {
     "docs": "https://docs.roadrunner.dev",
     "issues": "https://github.com/roadrunner-server/roadrunner/issues",
+    "source": "https://github.com/roadrunner-php/roadrunner-api-dto",
     "forum": "https://forum.roadrunner.dev",
     "chat": "https://discord.gg/V6EK4he"
   },
   "authors": [
     {
-      "name": "Pavel Butchnev (butschster)",
-      "email": "pavel.buchnev@spiralscout.com"
+      "name": "Pavel Buchnev",
+      "homepage": "https://github.com/butschster"
     },
     {
-      "name": "Aleksei Gagarin (roxblnfk)",
-      "email": "alexey.gagarin@spiralscout.com"
+      "name": "Aleksei Gagarin",
+      "homepage": "https://github.com/roxblnfk"
     },
     {
       "name": "RoadRunner Community",
@@ -33,6 +42,9 @@
   "require": {
     "php": "^8.1",
     "google/protobuf": "^4.31.1||^5.34.0"
+  },
+  "replace": {
+    "roadrunner-php/roadrunner-api-dto": "self.version"
   },
   "suggest": {
     "google/common-protos": "Required for Temporal API"
