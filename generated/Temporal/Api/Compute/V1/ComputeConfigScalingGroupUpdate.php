@@ -24,7 +24,7 @@ class ComputeConfigScalingGroupUpdate extends \Google\Protobuf\Internal\Message
      * - Empty mask for an existing scaling group is no-op: no change.
      * - Non-empty mask for an existing scaling group will update/unset only to the fields
      *   mentioned in the mask.
-     * - Accepted paths: "task_queue_types", "provider", "provider.type", "provider.details",
+     * - Accepted paths: "task_queue_types", "region_ids", "provider", "provider.type", "provider.details",
      *   "provider.nexus_endpoint", "scaler", "scaler.type", "scaler.details"
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -44,7 +44,7 @@ class ComputeConfigScalingGroupUpdate extends \Google\Protobuf\Internal\Message
      *           - Empty mask for an existing scaling group is no-op: no change.
      *           - Non-empty mask for an existing scaling group will update/unset only to the fields
      *             mentioned in the mask.
-     *           - Accepted paths: "task_queue_types", "provider", "provider.type", "provider.details",
+     *           - Accepted paths: "task_queue_types", "region_ids", "provider", "provider.type", "provider.details",
      *             "provider.nexus_endpoint", "scaler", "scaler.type", "scaler.details"
      * }
      */
@@ -90,7 +90,7 @@ class ComputeConfigScalingGroupUpdate extends \Google\Protobuf\Internal\Message
      * - Empty mask for an existing scaling group is no-op: no change.
      * - Non-empty mask for an existing scaling group will update/unset only to the fields
      *   mentioned in the mask.
-     * - Accepted paths: "task_queue_types", "provider", "provider.type", "provider.details",
+     * - Accepted paths: "task_queue_types", "region_ids", "provider", "provider.type", "provider.details",
      *   "provider.nexus_endpoint", "scaler", "scaler.type", "scaler.details"
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -117,7 +117,7 @@ class ComputeConfigScalingGroupUpdate extends \Google\Protobuf\Internal\Message
      * - Empty mask for an existing scaling group is no-op: no change.
      * - Non-empty mask for an existing scaling group will update/unset only to the fields
      *   mentioned in the mask.
-     * - Accepted paths: "task_queue_types", "provider", "provider.type", "provider.details",
+     * - Accepted paths: "task_queue_types", "region_ids", "provider", "provider.type", "provider.details",
      *   "provider.nexus_endpoint", "scaler", "scaler.type", "scaler.details"
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>

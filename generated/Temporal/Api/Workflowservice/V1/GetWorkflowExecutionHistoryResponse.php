@@ -35,6 +35,14 @@ class GetWorkflowExecutionHistoryResponse extends \Google\Protobuf\Internal\Mess
      * Generated from protobuf field <code>bool archived = 4;</code>
      */
     protected $archived = false;
+    /**
+     * Serialization context propagated from the Nexus caller that started this run.
+     * Returned on the initial request (without next_page_token) when present. Clients should
+     * retain it across paginated responses, which may omit it.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.PropagatedSerializationContext propagated_nexus_serialization_context = 5;</code>
+     */
+    protected $propagated_nexus_serialization_context = null;
 
     /**
      * Constructor.
@@ -49,6 +57,10 @@ class GetWorkflowExecutionHistoryResponse extends \Google\Protobuf\Internal\Mess
      *     @type string $next_page_token
      *           Will be set if there are more history events than were included in this response
      *     @type bool $archived
+     *     @type \Temporal\Api\Nexus\V1\PropagatedSerializationContext $propagated_nexus_serialization_context
+     *           Serialization context propagated from the Nexus caller that started this run.
+     *           Returned on the initial request (without next_page_token) when present. Clients should
+     *           retain it across paginated responses, which may omit it.
      * }
      */
     public function __construct($data = NULL) {
@@ -158,6 +170,45 @@ class GetWorkflowExecutionHistoryResponse extends \Google\Protobuf\Internal\Mess
     public function setArchived(bool $var)
     {
         $this->archived = $var;
+
+        return $this;
+    }
+
+    /**
+     * Serialization context propagated from the Nexus caller that started this run.
+     * Returned on the initial request (without next_page_token) when present. Clients should
+     * retain it across paginated responses, which may omit it.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.PropagatedSerializationContext propagated_nexus_serialization_context = 5;</code>
+     * @return \Temporal\Api\Nexus\V1\PropagatedSerializationContext|null
+     */
+    public function getPropagatedNexusSerializationContext()
+    {
+        return $this->propagated_nexus_serialization_context;
+    }
+
+    public function hasPropagatedNexusSerializationContext()
+    {
+        return isset($this->propagated_nexus_serialization_context);
+    }
+
+    public function clearPropagatedNexusSerializationContext()
+    {
+        unset($this->propagated_nexus_serialization_context);
+    }
+
+    /**
+     * Serialization context propagated from the Nexus caller that started this run.
+     * Returned on the initial request (without next_page_token) when present. Clients should
+     * retain it across paginated responses, which may omit it.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.PropagatedSerializationContext propagated_nexus_serialization_context = 5;</code>
+     * @param \Temporal\Api\Nexus\V1\PropagatedSerializationContext $var
+     * @return $this
+     */
+    public function setPropagatedNexusSerializationContext(\Temporal\Api\Nexus\V1\PropagatedSerializationContext|null $var)
+    {
+        $this->propagated_nexus_serialization_context = $var;
 
         return $this;
     }

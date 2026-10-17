@@ -161,6 +161,21 @@ class StartActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Duration start_delay = 22;</code>
      */
     protected $start_delay = null;
+    /**
+     * Serialization context propagated from the Nexus caller that started this activity.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.PropagatedSerializationContext propagated_nexus_serialization_context = 23;</code>
+     */
+    protected $propagated_nexus_serialization_context = null;
+    /**
+     * Request that the first activity task be returned directly in the start response instead of
+     * being dispatched through a task queue. If set to true, the caller is expected to have a
+     * worker available and capable of processing the task. The returned task will be marked as
+     * started. The server may ignore this request.
+     *
+     * Generated from protobuf field <code>bool request_eager_execution = 24;</code>
+     */
+    protected $request_eager_execution = false;
 
     /**
      * Constructor.
@@ -228,6 +243,13 @@ class StartActivityExecutionRequest extends \Google\Protobuf\Internal\Message
      *           Options for handling conflicts when using ACTIVITY_ID_CONFLICT_POLICY_USE_EXISTING.
      *     @type \Google\Protobuf\Duration $start_delay
      *           Time to wait before making the first activity task available for dispatch. This delay is not applied to retry attempts.
+     *     @type \Temporal\Api\Nexus\V1\PropagatedSerializationContext $propagated_nexus_serialization_context
+     *           Serialization context propagated from the Nexus caller that started this activity.
+     *     @type bool $request_eager_execution
+     *           Request that the first activity task be returned directly in the start response instead of
+     *           being dispatched through a task queue. If set to true, the caller is expected to have a
+     *           worker available and capable of processing the task. The returned task will be marked as
+     *           started. The server may ignore this request.
      * }
      */
     public function __construct($data = NULL) {
@@ -959,6 +981,72 @@ class StartActivityExecutionRequest extends \Google\Protobuf\Internal\Message
     public function setStartDelay(\Google\Protobuf\Duration|null $var)
     {
         $this->start_delay = $var;
+
+        return $this;
+    }
+
+    /**
+     * Serialization context propagated from the Nexus caller that started this activity.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.PropagatedSerializationContext propagated_nexus_serialization_context = 23;</code>
+     * @return \Temporal\Api\Nexus\V1\PropagatedSerializationContext|null
+     */
+    public function getPropagatedNexusSerializationContext()
+    {
+        return $this->propagated_nexus_serialization_context;
+    }
+
+    public function hasPropagatedNexusSerializationContext()
+    {
+        return isset($this->propagated_nexus_serialization_context);
+    }
+
+    public function clearPropagatedNexusSerializationContext()
+    {
+        unset($this->propagated_nexus_serialization_context);
+    }
+
+    /**
+     * Serialization context propagated from the Nexus caller that started this activity.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.PropagatedSerializationContext propagated_nexus_serialization_context = 23;</code>
+     * @param \Temporal\Api\Nexus\V1\PropagatedSerializationContext $var
+     * @return $this
+     */
+    public function setPropagatedNexusSerializationContext(\Temporal\Api\Nexus\V1\PropagatedSerializationContext|null $var)
+    {
+        $this->propagated_nexus_serialization_context = $var;
+
+        return $this;
+    }
+
+    /**
+     * Request that the first activity task be returned directly in the start response instead of
+     * being dispatched through a task queue. If set to true, the caller is expected to have a
+     * worker available and capable of processing the task. The returned task will be marked as
+     * started. The server may ignore this request.
+     *
+     * Generated from protobuf field <code>bool request_eager_execution = 24;</code>
+     * @return bool
+     */
+    public function getRequestEagerExecution()
+    {
+        return $this->request_eager_execution;
+    }
+
+    /**
+     * Request that the first activity task be returned directly in the start response instead of
+     * being dispatched through a task queue. If set to true, the caller is expected to have a
+     * worker available and capable of processing the task. The returned task will be marked as
+     * started. The server may ignore this request.
+     *
+     * Generated from protobuf field <code>bool request_eager_execution = 24;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setRequestEagerExecution(bool $var)
+    {
+        $this->request_eager_execution = $var;
 
         return $this;
     }

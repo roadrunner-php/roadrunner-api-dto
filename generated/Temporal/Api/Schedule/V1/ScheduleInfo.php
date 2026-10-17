@@ -91,6 +91,13 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int64 state_size_bytes = 12;</code>
      */
     protected $state_size_bytes = 0;
+    /**
+     * Information about time skipping for this schedule.
+     * If the schedule has never enabled time skipping, this will be unset.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingInfo time_skipping_info = 13;</code>
+     */
+    protected $time_skipping_info = null;
 
     /**
      * Constructor.
@@ -127,6 +134,9 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
      *           Deprecated.
      *     @type int|string $state_size_bytes
      *           Size of the schedule's internal state (including payloads) in bytes.
+     *     @type \Temporal\Api\Common\V1\TimeSkippingInfo $time_skipping_info
+     *           Information about time skipping for this schedule.
+     *           If the schedule has never enabled time skipping, this will be unset.
      * }
      */
     public function __construct($data = NULL) {
@@ -474,6 +484,43 @@ class ScheduleInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt64($var);
         $this->state_size_bytes = $var;
+
+        return $this;
+    }
+
+    /**
+     * Information about time skipping for this schedule.
+     * If the schedule has never enabled time skipping, this will be unset.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingInfo time_skipping_info = 13;</code>
+     * @return \Temporal\Api\Common\V1\TimeSkippingInfo|null
+     */
+    public function getTimeSkippingInfo()
+    {
+        return $this->time_skipping_info;
+    }
+
+    public function hasTimeSkippingInfo()
+    {
+        return isset($this->time_skipping_info);
+    }
+
+    public function clearTimeSkippingInfo()
+    {
+        unset($this->time_skipping_info);
+    }
+
+    /**
+     * Information about time skipping for this schedule.
+     * If the schedule has never enabled time skipping, this will be unset.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingInfo time_skipping_info = 13;</code>
+     * @param \Temporal\Api\Common\V1\TimeSkippingInfo $var
+     * @return $this
+     */
+    public function setTimeSkippingInfo(\Temporal\Api\Common\V1\TimeSkippingInfo|null $var)
+    {
+        $this->time_skipping_info = $var;
 
         return $this;
     }

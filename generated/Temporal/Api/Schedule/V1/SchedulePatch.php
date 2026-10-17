@@ -39,6 +39,13 @@ class SchedulePatch extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string unpause = 4;</code>
      */
     protected $unpause = '';
+    /**
+     * If set, applies the specified time-skipping configuration to this schedule,
+     * replacing any existing time-skipping configuration.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 5;</code>
+     */
+    protected $time_skipping_config = null;
 
     /**
      * Constructor.
@@ -56,6 +63,9 @@ class SchedulePatch extends \Google\Protobuf\Internal\Message
      *           If set, change the state to paused or unpaused (respectively) and set the
      *           notes field to the value of the string.
      *     @type string $unpause
+     *     @type \Temporal\Api\Common\V1\TimeSkippingConfig $time_skipping_config
+     *           If set, applies the specified time-skipping configuration to this schedule,
+     *           replacing any existing time-skipping configuration.
      * }
      */
     public function __construct($data = NULL) {
@@ -174,6 +184,43 @@ class SchedulePatch extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, true);
         $this->unpause = $var;
+
+        return $this;
+    }
+
+    /**
+     * If set, applies the specified time-skipping configuration to this schedule,
+     * replacing any existing time-skipping configuration.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 5;</code>
+     * @return \Temporal\Api\Common\V1\TimeSkippingConfig|null
+     */
+    public function getTimeSkippingConfig()
+    {
+        return $this->time_skipping_config;
+    }
+
+    public function hasTimeSkippingConfig()
+    {
+        return isset($this->time_skipping_config);
+    }
+
+    public function clearTimeSkippingConfig()
+    {
+        unset($this->time_skipping_config);
+    }
+
+    /**
+     * If set, applies the specified time-skipping configuration to this schedule,
+     * replacing any existing time-skipping configuration.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 5;</code>
+     * @param \Temporal\Api\Common\V1\TimeSkippingConfig $var
+     * @return $this
+     */
+    public function setTimeSkippingConfig(\Temporal\Api\Common\V1\TimeSkippingConfig|null $var)
+    {
+        $this->time_skipping_config = $var;
 
         return $this;
     }

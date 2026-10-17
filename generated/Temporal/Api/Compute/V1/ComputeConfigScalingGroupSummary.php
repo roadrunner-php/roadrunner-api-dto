@@ -22,6 +22,10 @@ class ComputeConfigScalingGroupSummary extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string provider_type = 2;</code>
      */
     protected $provider_type = '';
+    /**
+     * Generated from protobuf field <code>repeated string region_ids = 3;</code>
+     */
+    private $region_ids;
 
     /**
      * Constructor.
@@ -31,6 +35,7 @@ class ComputeConfigScalingGroupSummary extends \Google\Protobuf\Internal\Message
      *
      *     @type int[] $task_queue_types
      *     @type string $provider_type
+     *     @type string[] $region_ids
      * }
      */
     public function __construct($data = NULL) {
@@ -78,6 +83,28 @@ class ComputeConfigScalingGroupSummary extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, true);
         $this->provider_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string region_ids = 3;</code>
+     * @return RepeatedField<string>
+     */
+    public function getRegionIds()
+    {
+        return $this->region_ids;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string region_ids = 3;</code>
+     * @param string[] $var
+     * @return $this
+     */
+    public function setRegionIds(array|RepeatedField $var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->region_ids = $arr;
 
         return $this;
     }
