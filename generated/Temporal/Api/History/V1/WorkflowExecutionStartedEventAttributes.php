@@ -329,6 +329,12 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingStatePropagation time_skipping_state_propagation = 43;</code>
      */
     protected $time_skipping_state_propagation = null;
+    /**
+     * Serialization context propagated from the Nexus caller that started this workflow.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.PropagatedSerializationContext propagated_nexus_serialization_context = 44;</code>
+     */
+    protected $propagated_nexus_serialization_context = null;
 
     /**
      * Constructor.
@@ -493,6 +499,8 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      *     @type \Temporal\Api\Common\V1\TimeSkippingStatePropagation $time_skipping_state_propagation
      *           The time-skipping state propagated from a previous run of this workflow. This can be nil
      *           if no time skipping has occurred or there is no previous run.
+     *     @type \Temporal\Api\Nexus\V1\PropagatedSerializationContext $propagated_nexus_serialization_context
+     *           Serialization context propagated from the Nexus caller that started this workflow.
      * }
      */
     public function __construct($data = NULL) {
@@ -1936,6 +1944,41 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     public function setTimeSkippingStatePropagation(\Temporal\Api\Common\V1\TimeSkippingStatePropagation|null $var)
     {
         $this->time_skipping_state_propagation = $var;
+
+        return $this;
+    }
+
+    /**
+     * Serialization context propagated from the Nexus caller that started this workflow.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.PropagatedSerializationContext propagated_nexus_serialization_context = 44;</code>
+     * @return \Temporal\Api\Nexus\V1\PropagatedSerializationContext|null
+     */
+    public function getPropagatedNexusSerializationContext()
+    {
+        return $this->propagated_nexus_serialization_context;
+    }
+
+    public function hasPropagatedNexusSerializationContext()
+    {
+        return isset($this->propagated_nexus_serialization_context);
+    }
+
+    public function clearPropagatedNexusSerializationContext()
+    {
+        unset($this->propagated_nexus_serialization_context);
+    }
+
+    /**
+     * Serialization context propagated from the Nexus caller that started this workflow.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.PropagatedSerializationContext propagated_nexus_serialization_context = 44;</code>
+     * @param \Temporal\Api\Nexus\V1\PropagatedSerializationContext $var
+     * @return $this
+     */
+    public function setPropagatedNexusSerializationContext(\Temporal\Api\Nexus\V1\PropagatedSerializationContext|null $var)
+    {
+        $this->propagated_nexus_serialization_context = $var;
 
         return $this;
     }

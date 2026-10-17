@@ -10,8 +10,8 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
- * WorkflowExecutions is used by the Cloud Export feature to deserialize 
- * the exported file. It encapsulates a collection of workflow execution information.
+ * WorkflowExecutions is the legacy Cloud Export file format containing only workflow executions.
+ * New exporters should use ExportedExecutions.
  *
  * Generated from protobuf message <code>temporal.api.export.v1.WorkflowExecutions</code>
  */

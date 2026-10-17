@@ -32,6 +32,13 @@ class PollNexusOperationExecutionResponse extends \Google\Protobuf\Internal\Mess
      * Generated from protobuf field <code>string operation_token = 3;</code>
      */
     protected $operation_token = '';
+    /**
+     * Serialization context for this operation's payloads, derived from its stored target.
+     * For a reused operation, this is the original execution's context.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.PropagatedSerializationContext propagated_nexus_serialization_context = 6;</code>
+     */
+    protected $propagated_nexus_serialization_context = null;
     protected $outcome;
 
     /**
@@ -46,6 +53,9 @@ class PollNexusOperationExecutionResponse extends \Google\Protobuf\Internal\Mess
      *           The current stage of the operation. May be more advanced than the stage requested in the poll.
      *     @type string $operation_token
      *           Operation token. Only populated for asynchronous operations after a successful StartOperation call.
+     *     @type \Temporal\Api\Nexus\V1\PropagatedSerializationContext $propagated_nexus_serialization_context
+     *           Serialization context for this operation's payloads, derived from its stored target.
+     *           For a reused operation, this is the original execution's context.
      *     @type \Temporal\Api\Common\V1\Payload $result
      *           The result if the operation completed successfully.
      *     @type \Temporal\Api\Failure\V1\Failure $failure
@@ -131,6 +141,43 @@ class PollNexusOperationExecutionResponse extends \Google\Protobuf\Internal\Mess
     {
         GPBUtil::checkString($var, true);
         $this->operation_token = $var;
+
+        return $this;
+    }
+
+    /**
+     * Serialization context for this operation's payloads, derived from its stored target.
+     * For a reused operation, this is the original execution's context.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.PropagatedSerializationContext propagated_nexus_serialization_context = 6;</code>
+     * @return \Temporal\Api\Nexus\V1\PropagatedSerializationContext|null
+     */
+    public function getPropagatedNexusSerializationContext()
+    {
+        return $this->propagated_nexus_serialization_context;
+    }
+
+    public function hasPropagatedNexusSerializationContext()
+    {
+        return isset($this->propagated_nexus_serialization_context);
+    }
+
+    public function clearPropagatedNexusSerializationContext()
+    {
+        unset($this->propagated_nexus_serialization_context);
+    }
+
+    /**
+     * Serialization context for this operation's payloads, derived from its stored target.
+     * For a reused operation, this is the original execution's context.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.PropagatedSerializationContext propagated_nexus_serialization_context = 6;</code>
+     * @param \Temporal\Api\Nexus\V1\PropagatedSerializationContext $var
+     * @return $this
+     */
+    public function setPropagatedNexusSerializationContext(\Temporal\Api\Nexus\V1\PropagatedSerializationContext|null $var)
+    {
+        $this->propagated_nexus_serialization_context = $var;
 
         return $this;
     }
