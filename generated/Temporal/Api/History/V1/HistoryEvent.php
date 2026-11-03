@@ -181,6 +181,7 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\History\V1\WorkflowExecutionPausedEventAttributes $workflow_execution_paused_event_attributes
      *     @type \Temporal\Api\History\V1\WorkflowExecutionUnpausedEventAttributes $workflow_execution_unpaused_event_attributes
      *     @type \Temporal\Api\History\V1\WorkflowExecutionTimeSkippingTransitionedEventAttributes $workflow_execution_time_skipping_transitioned_event_attributes
+     *           Experimental.
      * }
      */
     public function __construct($data = NULL) {
@@ -2023,6 +2024,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Experimental.
+     *
      * Generated from protobuf field <code>.temporal.api.history.v1.WorkflowExecutionTimeSkippingTransitionedEventAttributes workflow_execution_time_skipping_transitioned_event_attributes = 65;</code>
      * @return \Temporal\Api\History\V1\WorkflowExecutionTimeSkippingTransitionedEventAttributes|null
      */
@@ -2037,6 +2040,8 @@ class HistoryEvent extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Experimental.
+     *
      * Generated from protobuf field <code>.temporal.api.history.v1.WorkflowExecutionTimeSkippingTransitionedEventAttributes workflow_execution_time_skipping_transitioned_event_attributes = 65;</code>
      * @param \Temporal\Api\History\V1\WorkflowExecutionTimeSkippingTransitionedEventAttributes $var
      * @return $this

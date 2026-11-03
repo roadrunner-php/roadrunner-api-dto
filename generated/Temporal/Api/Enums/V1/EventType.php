@@ -417,6 +417,7 @@ class EventType
      */
     const EVENT_TYPE_WORKFLOW_EXECUTION_UNPAUSED = 59;
     /**
+     * Experimental.
      * An event that indicates time skipping advanced time or was disabled automatically after a bound was reached.
      *
      * Generated from protobuf enum <code>EVENT_TYPE_WORKFLOW_EXECUTION_TIME_SKIPPING_TRANSITIONED = 60;</code>

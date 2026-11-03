@@ -16,8 +16,9 @@ class Message
           return;
         }
         \GPBMetadata\Temporal\Api\History\V1\Message::initOnce();
+        \GPBMetadata\Temporal\Api\Workflowservice\V1\RequestResponse::initOnce();
         $pool->internalAddGeneratedFile(
-            "\x0A\xEA\x02\x0A\$temporal/api/export/v1/message.proto\x12\x16temporal.api.export.v1\"F\x0A\x11WorkflowExecution\x121\x0A\x07history\x18\x01 \x01(\x0B2 .temporal.api.history.v1.History\"N\x0A\x12WorkflowExecutions\x128\x0A\x05items\x18\x01 \x03(\x0B2).temporal.api.export.v1.WorkflowExecutionB\x89\x01\x0A\x19io.temporal.api.export.v1B\x0CMessageProtoP\x01Z#go.temporal.io/api/export/v1;export\xAA\x02\x18Temporalio.Api.Export.V1\xEA\x02\x1BTemporalio::Api::Export::V1b\x06proto3"
+            "\x0A\xA1\x05\x0A\$temporal/api/export/v1/message.proto\x12\x16temporal.api.export.v1\x1A6temporal/api/workflowservice/v1/request_response.proto\"F\x0A\x11WorkflowExecution\x121\x0A\x07history\x18\x01 \x01(\x0B2 .temporal.api.history.v1.History\"N\x0A\x12WorkflowExecutions\x128\x0A\x05items\x18\x01 \x03(\x0B2).temporal.api.export.v1.WorkflowExecution\"i\x0A\x11ActivityExecution\x12T\x0A\x08activity\x18\x01 \x01(\x0B2B.temporal.api.workflowservice.v1.DescribeActivityExecutionResponse\"\x91\x01\x0A\x12ExportedExecutions\x12<\x0A\x09workflows\x18\x01 \x03(\x0B2).temporal.api.export.v1.WorkflowExecution\x12=\x0A\x0Aactivities\x18\x02 \x03(\x0B2).temporal.api.export.v1.ActivityExecutionB\x89\x01\x0A\x19io.temporal.api.export.v1B\x0CMessageProtoP\x01Z#go.temporal.io/api/export/v1;export\xAA\x02\x18Temporalio.Api.Export.V1\xEA\x02\x1BTemporalio::Api::Export::V1b\x06proto3"
         , true);
 
         static::$is_initialized = true;

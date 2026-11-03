@@ -122,12 +122,14 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      */
     protected $priority = null;
     /**
+     * Experimental.
      * The propagated time-skipping configuration for the child workflow.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 21;</code>
      */
     protected $time_skipping_config = null;
     /**
+     * Experimental.
      * The time-skipping state propagated from the parent workflow. This can be nil if no time skipping
      * has occurred or there is no previous run.
      *
@@ -183,8 +185,10 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
      *     @type \Temporal\Api\Common\V1\Priority $priority
      *           Priority metadata
      *     @type \Temporal\Api\Common\V1\TimeSkippingConfig $time_skipping_config
+     *           Experimental.
      *           The propagated time-skipping configuration for the child workflow.
      *     @type \Temporal\Api\Common\V1\TimeSkippingStatePropagation $time_skipping_state_propagation
+     *           Experimental.
      *           The time-skipping state propagated from the parent workflow. This can be nil if no time skipping
      *           has occurred or there is no previous run.
      *     @type \Temporal\Api\Workflow\V1\VersioningOverride $versioning_override
@@ -798,6 +802,7 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
     }
 
     /**
+     * Experimental.
      * The propagated time-skipping configuration for the child workflow.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 21;</code>
@@ -819,6 +824,7 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
     }
 
     /**
+     * Experimental.
      * The propagated time-skipping configuration for the child workflow.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 21;</code>
@@ -833,6 +839,7 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
     }
 
     /**
+     * Experimental.
      * The time-skipping state propagated from the parent workflow. This can be nil if no time skipping
      * has occurred or there is no previous run.
      *
@@ -855,6 +862,7 @@ class StartChildWorkflowExecutionInitiatedEventAttributes extends \Google\Protob
     }
 
     /**
+     * Experimental.
      * The time-skipping state propagated from the parent workflow. This can be nil if no time skipping
      * has occurred or there is no previous run.
      *

@@ -64,6 +64,14 @@ class UpdateTaskQueueConfigRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string unset_fairness_weight_overrides = 8;</code>
      */
     private $unset_fairness_weight_overrides;
+    /**
+     * Update queue-wide concurrency limit.
+     * If not set, this configuration is unchanged.
+     * If the `concurrency_limit` field in the `ConcurrencyLimitUpdate` is missing, remove the existing limit.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflowservice.v1.UpdateTaskQueueConfigRequest.ConcurrencyLimitUpdate update_queue_concurrency_limit = 9;</code>
+     */
+    protected $update_queue_concurrency_limit = null;
 
     /**
      * Constructor.
@@ -92,6 +100,10 @@ class UpdateTaskQueueConfigRequest extends \Google\Protobuf\Internal\Message
      *           If set, removes any existing fairness weight overrides for each specified fairness key.
      *           Fairness weights for corresponding keys fall back to the values set during task creation (if any),
      *           or to the default weight of 1.0.
+     *     @type \Temporal\Api\Workflowservice\V1\UpdateTaskQueueConfigRequest\ConcurrencyLimitUpdate $update_queue_concurrency_limit
+     *           Update queue-wide concurrency limit.
+     *           If not set, this configuration is unchanged.
+     *           If the `concurrency_limit` field in the `ConcurrencyLimitUpdate` is missing, remove the existing limit.
      * }
      */
     public function __construct($data = NULL) {
@@ -325,6 +337,45 @@ class UpdateTaskQueueConfigRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->unset_fairness_weight_overrides = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Update queue-wide concurrency limit.
+     * If not set, this configuration is unchanged.
+     * If the `concurrency_limit` field in the `ConcurrencyLimitUpdate` is missing, remove the existing limit.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflowservice.v1.UpdateTaskQueueConfigRequest.ConcurrencyLimitUpdate update_queue_concurrency_limit = 9;</code>
+     * @return \Temporal\Api\Workflowservice\V1\UpdateTaskQueueConfigRequest\ConcurrencyLimitUpdate|null
+     */
+    public function getUpdateQueueConcurrencyLimit()
+    {
+        return $this->update_queue_concurrency_limit;
+    }
+
+    public function hasUpdateQueueConcurrencyLimit()
+    {
+        return isset($this->update_queue_concurrency_limit);
+    }
+
+    public function clearUpdateQueueConcurrencyLimit()
+    {
+        unset($this->update_queue_concurrency_limit);
+    }
+
+    /**
+     * Update queue-wide concurrency limit.
+     * If not set, this configuration is unchanged.
+     * If the `concurrency_limit` field in the `ConcurrencyLimitUpdate` is missing, remove the existing limit.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflowservice.v1.UpdateTaskQueueConfigRequest.ConcurrencyLimitUpdate update_queue_concurrency_limit = 9;</code>
+     * @param \Temporal\Api\Workflowservice\V1\UpdateTaskQueueConfigRequest\ConcurrencyLimitUpdate $var
+     * @return $this
+     */
+    public function setUpdateQueueConcurrencyLimit(\Temporal\Api\Workflowservice\V1\UpdateTaskQueueConfigRequest\ConcurrencyLimitUpdate|null $var)
+    {
+        $this->update_queue_concurrency_limit = $var;
 
         return $this;
     }

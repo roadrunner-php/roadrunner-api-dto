@@ -10,6 +10,9 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
+ * Result of polling a workflow execution's time-skipping fast-forward.
+ * Experimental. Might change in the future.
+ *
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.PollWorkflowExecutionTimeSkippingResponse</code>
  */
 class PollWorkflowExecutionTimeSkippingResponse extends \Google\Protobuf\Internal\Message

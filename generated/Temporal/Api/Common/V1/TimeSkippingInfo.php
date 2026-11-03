@@ -11,6 +11,7 @@ use Google\Protobuf\RepeatedField;
 
 /**
  * Describes the current time-skipping state of a workflow execution.
+ * Experimental. Might change in the future.
  *
  * Generated from protobuf message <code>temporal.api.common.v1.TimeSkippingInfo</code>
  */

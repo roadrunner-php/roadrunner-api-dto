@@ -313,6 +313,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      */
     protected $declined_target_version_upgrade = null;
     /**
+     * Experimental.
      * Initial time-skipping configuration for this workflow execution, recorded at start time.
      * This may have been set explicitly via the start workflow request, or propagated from a
      * parent/previous execution.
@@ -323,12 +324,19 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      */
     protected $time_skipping_config = null;
     /**
+     * Experimental.
      * The time-skipping state propagated from a previous run of this workflow. This can be nil
      * if no time skipping has occurred or there is no previous run.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingStatePropagation time_skipping_state_propagation = 43;</code>
      */
     protected $time_skipping_state_propagation = null;
+    /**
+     * Serialization context propagated from the Nexus caller that started this workflow.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.PropagatedSerializationContext propagated_nexus_serialization_context = 44;</code>
+     */
+    protected $propagated_nexus_serialization_context = null;
 
     /**
      * Constructor.
@@ -485,14 +493,18 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
      *           Used internally by the server during continue-as-new and retry.
      *           Should not be read or interpreted by SDKs.
      *     @type \Temporal\Api\Common\V1\TimeSkippingConfig $time_skipping_config
+     *           Experimental.
      *           Initial time-skipping configuration for this workflow execution, recorded at start time.
      *           This may have been set explicitly via the start workflow request, or propagated from a
      *           parent/previous execution.
      *           The configuration may be updated after start via UpdateWorkflowExecutionOptions, which
      *           will be reflected in the WorkflowExecutionOptionsUpdatedEvent.
      *     @type \Temporal\Api\Common\V1\TimeSkippingStatePropagation $time_skipping_state_propagation
+     *           Experimental.
      *           The time-skipping state propagated from a previous run of this workflow. This can be nil
      *           if no time skipping has occurred or there is no previous run.
+     *     @type \Temporal\Api\Nexus\V1\PropagatedSerializationContext $propagated_nexus_serialization_context
+     *           Serialization context propagated from the Nexus caller that started this workflow.
      * }
      */
     public function __construct($data = NULL) {
@@ -1861,6 +1873,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     }
 
     /**
+     * Experimental.
      * Initial time-skipping configuration for this workflow execution, recorded at start time.
      * This may have been set explicitly via the start workflow request, or propagated from a
      * parent/previous execution.
@@ -1886,6 +1899,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     }
 
     /**
+     * Experimental.
      * Initial time-skipping configuration for this workflow execution, recorded at start time.
      * This may have been set explicitly via the start workflow request, or propagated from a
      * parent/previous execution.
@@ -1904,6 +1918,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     }
 
     /**
+     * Experimental.
      * The time-skipping state propagated from a previous run of this workflow. This can be nil
      * if no time skipping has occurred or there is no previous run.
      *
@@ -1926,6 +1941,7 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     }
 
     /**
+     * Experimental.
      * The time-skipping state propagated from a previous run of this workflow. This can be nil
      * if no time skipping has occurred or there is no previous run.
      *
@@ -1936,6 +1952,41 @@ class WorkflowExecutionStartedEventAttributes extends \Google\Protobuf\Internal\
     public function setTimeSkippingStatePropagation(\Temporal\Api\Common\V1\TimeSkippingStatePropagation|null $var)
     {
         $this->time_skipping_state_propagation = $var;
+
+        return $this;
+    }
+
+    /**
+     * Serialization context propagated from the Nexus caller that started this workflow.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.PropagatedSerializationContext propagated_nexus_serialization_context = 44;</code>
+     * @return \Temporal\Api\Nexus\V1\PropagatedSerializationContext|null
+     */
+    public function getPropagatedNexusSerializationContext()
+    {
+        return $this->propagated_nexus_serialization_context;
+    }
+
+    public function hasPropagatedNexusSerializationContext()
+    {
+        return isset($this->propagated_nexus_serialization_context);
+    }
+
+    public function clearPropagatedNexusSerializationContext()
+    {
+        unset($this->propagated_nexus_serialization_context);
+    }
+
+    /**
+     * Serialization context propagated from the Nexus caller that started this workflow.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.PropagatedSerializationContext propagated_nexus_serialization_context = 44;</code>
+     * @param \Temporal\Api\Nexus\V1\PropagatedSerializationContext $var
+     * @return $this
+     */
+    public function setPropagatedNexusSerializationContext(\Temporal\Api\Nexus\V1\PropagatedSerializationContext|null $var)
+    {
+        $this->propagated_nexus_serialization_context = $var;
 
         return $this;
     }

@@ -76,6 +76,18 @@ class ResourceExhaustedCause
      * Generated from protobuf enum <code>RESOURCE_EXHAUSTED_CAUSE_WORKER_DEPLOYMENT_LIMITS = 10;</code>
      */
     const RESOURCE_EXHAUSTED_CAUSE_WORKER_DEPLOYMENT_LIMITS = 10;
+    /**
+     * Namespace exceeds bandwidth limit.
+     *
+     * Generated from protobuf enum <code>RESOURCE_EXHAUSTED_CAUSE_BANDWIDTH_LIMIT = 11;</code>
+     */
+    const RESOURCE_EXHAUSTED_CAUSE_BANDWIDTH_LIMIT = 11;
+    /**
+     * Caller exceeds Nexus requests per second limit.
+     *
+     * Generated from protobuf enum <code>RESOURCE_EXHAUSTED_CAUSE_CALLER_RPS_LIMIT = 12;</code>
+     */
+    const RESOURCE_EXHAUSTED_CAUSE_CALLER_RPS_LIMIT = 12;
 
     private static $valueToName = [
         self::RESOURCE_EXHAUSTED_CAUSE_UNSPECIFIED => 'RESOURCE_EXHAUSTED_CAUSE_UNSPECIFIED',
@@ -89,6 +101,8 @@ class ResourceExhaustedCause
         self::RESOURCE_EXHAUSTED_CAUSE_CIRCUIT_BREAKER_OPEN => 'RESOURCE_EXHAUSTED_CAUSE_CIRCUIT_BREAKER_OPEN',
         self::RESOURCE_EXHAUSTED_CAUSE_OPS_LIMIT => 'RESOURCE_EXHAUSTED_CAUSE_OPS_LIMIT',
         self::RESOURCE_EXHAUSTED_CAUSE_WORKER_DEPLOYMENT_LIMITS => 'RESOURCE_EXHAUSTED_CAUSE_WORKER_DEPLOYMENT_LIMITS',
+        self::RESOURCE_EXHAUSTED_CAUSE_BANDWIDTH_LIMIT => 'RESOURCE_EXHAUSTED_CAUSE_BANDWIDTH_LIMIT',
+        self::RESOURCE_EXHAUSTED_CAUSE_CALLER_RPS_LIMIT => 'RESOURCE_EXHAUSTED_CAUSE_CALLER_RPS_LIMIT',
     ];
 
     public static function name($value)

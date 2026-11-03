@@ -12,6 +12,7 @@ use Google\Protobuf\RepeatedField;
 /**
  * The time-skipping state that needs to be propagated from one execution to another, or through a chain of runs
  * within the same execution.
+ * Experimental. Might change in the future.
  *
  * Generated from protobuf message <code>temporal.api.common.v1.TimeSkippingStatePropagation</code>
  */

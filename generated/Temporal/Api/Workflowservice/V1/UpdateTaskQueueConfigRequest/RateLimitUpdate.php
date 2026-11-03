@@ -15,13 +15,13 @@ use Google\Protobuf\RepeatedField;
 class RateLimitUpdate extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Rate Limit to be updated
+     * Rate limit to be updated
      *
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.RateLimit rate_limit = 1;</code>
      */
     protected $rate_limit = null;
     /**
-     * Reason for why the rate limit was set.
+     * Reason why the rate limit was updated
      *
      * Generated from protobuf field <code>string reason = 2;</code>
      */
@@ -34,9 +34,9 @@ class RateLimitUpdate extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Temporal\Api\Taskqueue\V1\RateLimit $rate_limit
-     *           Rate Limit to be updated
+     *           Rate limit to be updated
      *     @type string $reason
-     *           Reason for why the rate limit was set.
+     *           Reason why the rate limit was updated
      * }
      */
     public function __construct($data = NULL) {
@@ -45,7 +45,7 @@ class RateLimitUpdate extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Rate Limit to be updated
+     * Rate limit to be updated
      *
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.RateLimit rate_limit = 1;</code>
      * @return \Temporal\Api\Taskqueue\V1\RateLimit|null
@@ -66,7 +66,7 @@ class RateLimitUpdate extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Rate Limit to be updated
+     * Rate limit to be updated
      *
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.RateLimit rate_limit = 1;</code>
      * @param \Temporal\Api\Taskqueue\V1\RateLimit $var
@@ -80,7 +80,7 @@ class RateLimitUpdate extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Reason for why the rate limit was set.
+     * Reason why the rate limit was updated
      *
      * Generated from protobuf field <code>string reason = 2;</code>
      * @return string
@@ -91,7 +91,7 @@ class RateLimitUpdate extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Reason for why the rate limit was set.
+     * Reason why the rate limit was updated
      *
      * Generated from protobuf field <code>string reason = 2;</code>
      * @param string $var

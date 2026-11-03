@@ -27,6 +27,7 @@ class WorkflowExecutionOptions extends \Google\Protobuf\Internal\Message
      */
     protected $priority = null;
     /**
+     * Experimental.
      * The time-skipping configuration for this workflow execution.
      * When `fast_forward` is set, time will be fast-forwarded to a future point relative
      * to the current workflow timestamp. Each call takes effect, even if
@@ -51,6 +52,7 @@ class WorkflowExecutionOptions extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Common\V1\Priority $priority
      *           If set, overrides the workflow's priority sent by the SDK.
      *     @type \Temporal\Api\Common\V1\TimeSkippingConfig $time_skipping_config
+     *           Experimental.
      *           The time-skipping configuration for this workflow execution.
      *           When `fast_forward` is set, time will be fast-forwarded to a future point relative
      *           to the current workflow timestamp. Each call takes effect, even if
@@ -137,6 +139,7 @@ class WorkflowExecutionOptions extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Experimental.
      * The time-skipping configuration for this workflow execution.
      * When `fast_forward` is set, time will be fast-forwarded to a future point relative
      * to the current workflow timestamp. Each call takes effect, even if
@@ -165,6 +168,7 @@ class WorkflowExecutionOptions extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Experimental.
      * The time-skipping configuration for this workflow execution.
      * When `fast_forward` is set, time will be fast-forwarded to a future point relative
      * to the current workflow timestamp. Each call takes effect, even if

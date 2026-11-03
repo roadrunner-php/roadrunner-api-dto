@@ -11,6 +11,7 @@ use Google\Protobuf\RepeatedField;
 
 /**
  * TimeSkippingFastForwardInfo describes the current time-skipping fast-forward on an execution.
+ * Experimental. Might change in the future.
  *
  * Generated from protobuf message <code>temporal.api.common.v1.TimeSkippingFastForwardInfo</code>
  */

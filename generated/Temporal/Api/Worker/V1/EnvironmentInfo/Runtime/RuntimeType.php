@@ -59,6 +59,18 @@ class RuntimeType
      * Generated from protobuf enum <code>RUNTIME_TYPE_ROADRUNNER = 10;</code>
      */
     const RUNTIME_TYPE_ROADRUNNER = 10;
+    /**
+     * Report when the application is compiled ahead-of-time as a GraalVM native image.
+     *
+     * Generated from protobuf enum <code>RUNTIME_TYPE_GRAAL_AOT = 11;</code>
+     */
+    const RUNTIME_TYPE_GRAAL_AOT = 11;
+    /**
+     * Report when any registered Workflow or Activity implementation is a Kotlin class.
+     *
+     * Generated from protobuf enum <code>RUNTIME_TYPE_KOTLIN = 12;</code>
+     */
+    const RUNTIME_TYPE_KOTLIN = 12;
 
     private static $valueToName = [
         self::RUNTIME_TYPE_UNSPECIFIED => 'RUNTIME_TYPE_UNSPECIFIED',
@@ -72,6 +84,8 @@ class RuntimeType
         self::RUNTIME_TYPE_DOTNET_CORE => 'RUNTIME_TYPE_DOTNET_CORE',
         self::RUNTIME_TYPE_NATIVE => 'RUNTIME_TYPE_NATIVE',
         self::RUNTIME_TYPE_ROADRUNNER => 'RUNTIME_TYPE_ROADRUNNER',
+        self::RUNTIME_TYPE_GRAAL_AOT => 'RUNTIME_TYPE_GRAAL_AOT',
+        self::RUNTIME_TYPE_KOTLIN => 'RUNTIME_TYPE_KOTLIN',
     ];
 
     public static function name($value)

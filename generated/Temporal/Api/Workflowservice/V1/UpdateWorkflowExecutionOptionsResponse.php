@@ -21,6 +21,7 @@ class UpdateWorkflowExecutionOptionsResponse extends \Google\Protobuf\Internal\M
      */
     protected $workflow_execution_options = null;
     /**
+     * Experimental.
      * The Workflow Execution time when the options were updated. When time skipping is
      * enabled, this is the workflow's virtual time rather than wall-clock time.
      * This timestamp cannot be used for time-skipping fast-forward verification,
@@ -39,6 +40,7 @@ class UpdateWorkflowExecutionOptionsResponse extends \Google\Protobuf\Internal\M
      *     @type \Temporal\Api\Workflow\V1\WorkflowExecutionOptions $workflow_execution_options
      *           Workflow Execution options after update.
      *     @type \Google\Protobuf\Timestamp $update_time
+     *           Experimental.
      *           The Workflow Execution time when the options were updated. When time skipping is
      *           enabled, this is the workflow's virtual time rather than wall-clock time.
      *           This timestamp cannot be used for time-skipping fast-forward verification,
@@ -86,6 +88,7 @@ class UpdateWorkflowExecutionOptionsResponse extends \Google\Protobuf\Internal\M
     }
 
     /**
+     * Experimental.
      * The Workflow Execution time when the options were updated. When time skipping is
      * enabled, this is the workflow's virtual time rather than wall-clock time.
      * This timestamp cannot be used for time-skipping fast-forward verification,
@@ -110,6 +113,7 @@ class UpdateWorkflowExecutionOptionsResponse extends \Google\Protobuf\Internal\M
     }
 
     /**
+     * Experimental.
      * The Workflow Execution time when the options were updated. When time skipping is
      * enabled, this is the workflow's virtual time rather than wall-clock time.
      * This timestamp cannot be used for time-skipping fast-forward verification,

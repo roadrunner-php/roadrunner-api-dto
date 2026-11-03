@@ -2297,6 +2297,9 @@ class WorkflowServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * PollWorkflowExecutionTimeSkipping waits for a fast-forward outcome for a workflow execution.
+     *
+     * Experimental. Might change in the future.
      * @param \Temporal\Api\Workflowservice\V1\PollWorkflowExecutionTimeSkippingRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

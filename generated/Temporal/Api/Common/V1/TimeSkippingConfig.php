@@ -24,6 +24,7 @@ use Google\Protobuf\RepeatedField;
  * but a parent's fast_forward won't affect its child's execution. A flag is provided to disable propagation of the
  * "enabled" flag to child workflows; regardless of that flag, a child workflow inherits the virtual time from the
  * parent execution as its start time.
+ * Experimental. Might change in the future.
  *
  * Generated from protobuf message <code>temporal.api.common.v1.TimeSkippingConfig</code>
  */
