@@ -257,6 +257,41 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp execution_time = 38;</code>
      */
     protected $execution_time = null;
+    /**
+     * Serialization context propagated from the Nexus caller that started this activity.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.PropagatedSerializationContext propagated_nexus_serialization_context = 39;</code>
+     */
+    protected $propagated_nexus_serialization_context = null;
+    /**
+     * Indicates whether eager execution was requested for this activity and accepted by the server
+     * for its first task.
+     *
+     * Generated from protobuf field <code>bool eager_execution_accepted = 40;</code>
+     */
+    protected $eager_execution_accepted = false;
+    /**
+     * Authenticated principal by which this activity execution was started.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "by" identifies the authenticated actor. --)
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.ResolvedPrincipal started_by_principal = 41;</code>
+     */
+    protected $started_by_principal = null;
+    /**
+     * Authenticated principal by which this activity execution was closed.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "by" identifies the authenticated actor. --)
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.ResolvedPrincipal closed_by_principal = 42;</code>
+     */
+    protected $closed_by_principal = null;
+    /**
+     * Authenticated principal of the worker that most recently interacted with this activity execution.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.ResolvedPrincipal last_worker_principal = 43;</code>
+     */
+    protected $last_worker_principal = null;
 
     /**
      * Constructor.
@@ -358,6 +393,21 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $execution_time
      *           The time at which the first activity task is made available for dispatch, computed as
      *           `schedule_time + start_delay`. Same as `schedule_time` if `start_delay` is not set.
+     *     @type \Temporal\Api\Nexus\V1\PropagatedSerializationContext $propagated_nexus_serialization_context
+     *           Serialization context propagated from the Nexus caller that started this activity.
+     *     @type bool $eager_execution_accepted
+     *           Indicates whether eager execution was requested for this activity and accepted by the server
+     *           for its first task.
+     *     @type \Temporal\Api\Common\V1\ResolvedPrincipal $started_by_principal
+     *           Authenticated principal by which this activity execution was started.
+     *           (-- api-linter: core::0140::prepositions=disabled
+     *               aip.dev/not-precedent: "by" identifies the authenticated actor. --)
+     *     @type \Temporal\Api\Common\V1\ResolvedPrincipal $closed_by_principal
+     *           Authenticated principal by which this activity execution was closed.
+     *           (-- api-linter: core::0140::prepositions=disabled
+     *               aip.dev/not-precedent: "by" identifies the authenticated actor. --)
+     *     @type \Temporal\Api\Common\V1\ResolvedPrincipal $last_worker_principal
+     *           Authenticated principal of the worker that most recently interacted with this activity execution.
      * }
      */
     public function __construct($data = NULL) {
@@ -1591,6 +1641,181 @@ class ActivityExecutionInfo extends \Google\Protobuf\Internal\Message
     public function setExecutionTime(\Google\Protobuf\Timestamp|null $var)
     {
         $this->execution_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Serialization context propagated from the Nexus caller that started this activity.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.PropagatedSerializationContext propagated_nexus_serialization_context = 39;</code>
+     * @return \Temporal\Api\Nexus\V1\PropagatedSerializationContext|null
+     */
+    public function getPropagatedNexusSerializationContext()
+    {
+        return $this->propagated_nexus_serialization_context;
+    }
+
+    public function hasPropagatedNexusSerializationContext()
+    {
+        return isset($this->propagated_nexus_serialization_context);
+    }
+
+    public function clearPropagatedNexusSerializationContext()
+    {
+        unset($this->propagated_nexus_serialization_context);
+    }
+
+    /**
+     * Serialization context propagated from the Nexus caller that started this activity.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.PropagatedSerializationContext propagated_nexus_serialization_context = 39;</code>
+     * @param \Temporal\Api\Nexus\V1\PropagatedSerializationContext $var
+     * @return $this
+     */
+    public function setPropagatedNexusSerializationContext(\Temporal\Api\Nexus\V1\PropagatedSerializationContext|null $var)
+    {
+        $this->propagated_nexus_serialization_context = $var;
+
+        return $this;
+    }
+
+    /**
+     * Indicates whether eager execution was requested for this activity and accepted by the server
+     * for its first task.
+     *
+     * Generated from protobuf field <code>bool eager_execution_accepted = 40;</code>
+     * @return bool
+     */
+    public function getEagerExecutionAccepted()
+    {
+        return $this->eager_execution_accepted;
+    }
+
+    /**
+     * Indicates whether eager execution was requested for this activity and accepted by the server
+     * for its first task.
+     *
+     * Generated from protobuf field <code>bool eager_execution_accepted = 40;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEagerExecutionAccepted(bool $var)
+    {
+        $this->eager_execution_accepted = $var;
+
+        return $this;
+    }
+
+    /**
+     * Authenticated principal by which this activity execution was started.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "by" identifies the authenticated actor. --)
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.ResolvedPrincipal started_by_principal = 41;</code>
+     * @return \Temporal\Api\Common\V1\ResolvedPrincipal|null
+     */
+    public function getStartedByPrincipal()
+    {
+        return $this->started_by_principal;
+    }
+
+    public function hasStartedByPrincipal()
+    {
+        return isset($this->started_by_principal);
+    }
+
+    public function clearStartedByPrincipal()
+    {
+        unset($this->started_by_principal);
+    }
+
+    /**
+     * Authenticated principal by which this activity execution was started.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "by" identifies the authenticated actor. --)
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.ResolvedPrincipal started_by_principal = 41;</code>
+     * @param \Temporal\Api\Common\V1\ResolvedPrincipal $var
+     * @return $this
+     */
+    public function setStartedByPrincipal(\Temporal\Api\Common\V1\ResolvedPrincipal|null $var)
+    {
+        $this->started_by_principal = $var;
+
+        return $this;
+    }
+
+    /**
+     * Authenticated principal by which this activity execution was closed.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "by" identifies the authenticated actor. --)
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.ResolvedPrincipal closed_by_principal = 42;</code>
+     * @return \Temporal\Api\Common\V1\ResolvedPrincipal|null
+     */
+    public function getClosedByPrincipal()
+    {
+        return $this->closed_by_principal;
+    }
+
+    public function hasClosedByPrincipal()
+    {
+        return isset($this->closed_by_principal);
+    }
+
+    public function clearClosedByPrincipal()
+    {
+        unset($this->closed_by_principal);
+    }
+
+    /**
+     * Authenticated principal by which this activity execution was closed.
+     * (-- api-linter: core::0140::prepositions=disabled
+     *     aip.dev/not-precedent: "by" identifies the authenticated actor. --)
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.ResolvedPrincipal closed_by_principal = 42;</code>
+     * @param \Temporal\Api\Common\V1\ResolvedPrincipal $var
+     * @return $this
+     */
+    public function setClosedByPrincipal(\Temporal\Api\Common\V1\ResolvedPrincipal|null $var)
+    {
+        $this->closed_by_principal = $var;
+
+        return $this;
+    }
+
+    /**
+     * Authenticated principal of the worker that most recently interacted with this activity execution.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.ResolvedPrincipal last_worker_principal = 43;</code>
+     * @return \Temporal\Api\Common\V1\ResolvedPrincipal|null
+     */
+    public function getLastWorkerPrincipal()
+    {
+        return $this->last_worker_principal;
+    }
+
+    public function hasLastWorkerPrincipal()
+    {
+        return isset($this->last_worker_principal);
+    }
+
+    public function clearLastWorkerPrincipal()
+    {
+        unset($this->last_worker_principal);
+    }
+
+    /**
+     * Authenticated principal of the worker that most recently interacted with this activity execution.
+     *
+     * Generated from protobuf field <code>.temporal.api.common.v1.ResolvedPrincipal last_worker_principal = 43;</code>
+     * @param \Temporal\Api\Common\V1\ResolvedPrincipal $var
+     * @return $this
+     */
+    public function setLastWorkerPrincipal(\Temporal\Api\Common\V1\ResolvedPrincipal|null $var)
+    {
+        $this->last_worker_principal = $var;
 
         return $this;
     }

@@ -14,6 +14,7 @@ use Google\Protobuf\RepeatedField;
  * execution. Currently the only supported policy is waiting for completion of the fast-forward
  * identified by `fast_forward_id`; the poll also returns once anything else settles that outcome
  * (e.g. the execution ends or time skipping is disabled).
+ * Experimental. Might change in the future.
  *
  * Generated from protobuf message <code>temporal.api.workflowservice.v1.PollWorkflowExecutionTimeSkippingRequest</code>
  */

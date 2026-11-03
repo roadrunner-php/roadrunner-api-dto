@@ -169,6 +169,12 @@ class PollActivityTaskQueueResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.PollerGroupsInfo poller_groups_info = 22;</code>
      */
     protected $poller_groups_info = null;
+    /**
+     * Serialization context propagated from the Nexus caller that started this activity.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.PropagatedSerializationContext propagated_nexus_serialization_context = 23;</code>
+     */
+    protected $propagated_nexus_serialization_context = null;
 
     /**
      * Constructor.
@@ -243,6 +249,8 @@ class PollActivityTaskQueueResponse extends \Google\Protobuf\Internal\Message
      *             2. Try to assign the next poll to a group without any pending polls,
      *             3. If every group has some pending polls, assign the next poll to a group randomly
      *               according to the weights.
+     *     @type \Temporal\Api\Nexus\V1\PropagatedSerializationContext $propagated_nexus_serialization_context
+     *           Serialization context propagated from the Nexus caller that started this activity.
      * }
      */
     public function __construct($data = NULL) {
@@ -1014,6 +1022,41 @@ class PollActivityTaskQueueResponse extends \Google\Protobuf\Internal\Message
     public function setPollerGroupsInfo(\Temporal\Api\Taskqueue\V1\PollerGroupsInfo|null $var)
     {
         $this->poller_groups_info = $var;
+
+        return $this;
+    }
+
+    /**
+     * Serialization context propagated from the Nexus caller that started this activity.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.PropagatedSerializationContext propagated_nexus_serialization_context = 23;</code>
+     * @return \Temporal\Api\Nexus\V1\PropagatedSerializationContext|null
+     */
+    public function getPropagatedNexusSerializationContext()
+    {
+        return $this->propagated_nexus_serialization_context;
+    }
+
+    public function hasPropagatedNexusSerializationContext()
+    {
+        return isset($this->propagated_nexus_serialization_context);
+    }
+
+    public function clearPropagatedNexusSerializationContext()
+    {
+        unset($this->propagated_nexus_serialization_context);
+    }
+
+    /**
+     * Serialization context propagated from the Nexus caller that started this activity.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.PropagatedSerializationContext propagated_nexus_serialization_context = 23;</code>
+     * @param \Temporal\Api\Nexus\V1\PropagatedSerializationContext $var
+     * @return $this
+     */
+    public function setPropagatedNexusSerializationContext(\Temporal\Api\Nexus\V1\PropagatedSerializationContext|null $var)
+    {
+        $this->propagated_nexus_serialization_context = $var;
 
         return $this;
     }

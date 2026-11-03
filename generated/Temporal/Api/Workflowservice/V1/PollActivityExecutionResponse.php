@@ -24,6 +24,12 @@ class PollActivityExecutionResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.activity.v1.ActivityExecutionOutcome outcome = 2;</code>
      */
     protected $outcome = null;
+    /**
+     * Serialization context propagated from the Nexus caller that started this activity.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.PropagatedSerializationContext propagated_nexus_serialization_context = 3;</code>
+     */
+    protected $propagated_nexus_serialization_context = null;
 
     /**
      * Constructor.
@@ -34,6 +40,8 @@ class PollActivityExecutionResponse extends \Google\Protobuf\Internal\Message
      *     @type string $run_id
      *           The run ID of the activity, useful when run_id was not specified in the request.
      *     @type \Temporal\Api\Activity\V1\ActivityExecutionOutcome $outcome
+     *     @type \Temporal\Api\Nexus\V1\PropagatedSerializationContext $propagated_nexus_serialization_context
+     *           Serialization context propagated from the Nexus caller that started this activity.
      * }
      */
     public function __construct($data = NULL) {
@@ -94,6 +102,41 @@ class PollActivityExecutionResponse extends \Google\Protobuf\Internal\Message
     public function setOutcome(\Temporal\Api\Activity\V1\ActivityExecutionOutcome|null $var)
     {
         $this->outcome = $var;
+
+        return $this;
+    }
+
+    /**
+     * Serialization context propagated from the Nexus caller that started this activity.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.PropagatedSerializationContext propagated_nexus_serialization_context = 3;</code>
+     * @return \Temporal\Api\Nexus\V1\PropagatedSerializationContext|null
+     */
+    public function getPropagatedNexusSerializationContext()
+    {
+        return $this->propagated_nexus_serialization_context;
+    }
+
+    public function hasPropagatedNexusSerializationContext()
+    {
+        return isset($this->propagated_nexus_serialization_context);
+    }
+
+    public function clearPropagatedNexusSerializationContext()
+    {
+        unset($this->propagated_nexus_serialization_context);
+    }
+
+    /**
+     * Serialization context propagated from the Nexus caller that started this activity.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.PropagatedSerializationContext propagated_nexus_serialization_context = 3;</code>
+     * @param \Temporal\Api\Nexus\V1\PropagatedSerializationContext $var
+     * @return $this
+     */
+    public function setPropagatedNexusSerializationContext(\Temporal\Api\Nexus\V1\PropagatedSerializationContext|null $var)
+    {
+        $this->propagated_nexus_serialization_context = $var;
 
         return $this;
     }

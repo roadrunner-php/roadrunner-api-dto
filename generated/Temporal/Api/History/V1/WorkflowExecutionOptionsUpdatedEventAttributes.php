@@ -54,12 +54,14 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      */
     protected $priority = null;
     /**
+     * Experimental.
      * TimeSkippingConfig override upserted in this event. Represents the full config.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 7;</code>
      */
     protected $time_skipping_config = null;
     /**
+     * Experimental.
      * Indicates the time skipping config was updated by the recent call to update
      * workflow execution options.
      *
@@ -95,8 +97,10 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
      *           Priority override upserted in this event. Represents the full priority; not just partial fields.
      *           Ignored if nil.
      *     @type \Temporal\Api\Common\V1\TimeSkippingConfig $time_skipping_config
+     *           Experimental.
      *           TimeSkippingConfig override upserted in this event. Represents the full config.
      *     @type bool $time_skipping_config_updated
+     *           Experimental.
      *           Indicates the time skipping config was updated by the recent call to update
      *           workflow execution options.
      *     @type \Temporal\Api\History\V1\WorkflowExecutionOptionsUpdatedEventAttributes\WorkflowUpdateOptionsUpdate[] $workflow_update_options
@@ -288,6 +292,7 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
     }
 
     /**
+     * Experimental.
      * TimeSkippingConfig override upserted in this event. Represents the full config.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 7;</code>
@@ -309,6 +314,7 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
     }
 
     /**
+     * Experimental.
      * TimeSkippingConfig override upserted in this event. Represents the full config.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 7;</code>
@@ -323,6 +329,7 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
     }
 
     /**
+     * Experimental.
      * Indicates the time skipping config was updated by the recent call to update
      * workflow execution options.
      *
@@ -335,6 +342,7 @@ class WorkflowExecutionOptionsUpdatedEventAttributes extends \Google\Protobuf\In
     }
 
     /**
+     * Experimental.
      * Indicates the time skipping config was updated by the recent call to update
      * workflow execution options.
      *

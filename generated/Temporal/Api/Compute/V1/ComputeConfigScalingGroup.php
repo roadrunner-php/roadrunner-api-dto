@@ -23,6 +23,13 @@ class ComputeConfigScalingGroup extends \Google\Protobuf\Internal\Message
      */
     private $task_queue_types;
     /**
+     * Optional. If set, this scaling group is used only while the namespace is
+     * active in one of these regions.
+     *
+     * Generated from protobuf field <code>repeated string region_ids = 2;</code>
+     */
+    private $region_ids;
+    /**
      * Stores instructions for a worker control plane controller how to respond
      * to worker lifeycle events.
      *
@@ -47,6 +54,9 @@ class ComputeConfigScalingGroup extends \Google\Protobuf\Internal\Message
      *           Optional. The set of task queue types this scaling group serves.
      *           If not provided, this scaling group serves all not otherwise defined
      *           task types.
+     *     @type string[] $region_ids
+     *           Optional. If set, this scaling group is used only while the namespace is
+     *           active in one of these regions.
      *     @type \Temporal\Api\Compute\V1\ComputeProvider $provider
      *           Stores instructions for a worker control plane controller how to respond
      *           to worker lifeycle events.
@@ -86,6 +96,34 @@ class ComputeConfigScalingGroup extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Temporal\Api\Enums\V1\TaskQueueType::class);
         $this->task_queue_types = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Optional. If set, this scaling group is used only while the namespace is
+     * active in one of these regions.
+     *
+     * Generated from protobuf field <code>repeated string region_ids = 2;</code>
+     * @return RepeatedField<string>
+     */
+    public function getRegionIds()
+    {
+        return $this->region_ids;
+    }
+
+    /**
+     * Optional. If set, this scaling group is used only while the namespace is
+     * active in one of these regions.
+     *
+     * Generated from protobuf field <code>repeated string region_ids = 2;</code>
+     * @param string[] $var
+     * @return $this
+     */
+    public function setRegionIds(array|RepeatedField $var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->region_ids = $arr;
 
         return $this;
     }

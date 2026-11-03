@@ -166,6 +166,7 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      */
     protected $priority = null;
     /**
+     * Experimental.
      * Time-skipping configuration. If not set, time skipping is disabled.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 27;</code>
@@ -235,6 +236,7 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
      *     @type \Temporal\Api\Common\V1\Priority $priority
      *           Priority metadata
      *     @type \Temporal\Api\Common\V1\TimeSkippingConfig $time_skipping_config
+     *           Experimental.
      *           Time-skipping configuration. If not set, time skipping is disabled.
      * }
      */
@@ -1035,6 +1037,7 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     }
 
     /**
+     * Experimental.
      * Time-skipping configuration. If not set, time skipping is disabled.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 27;</code>
@@ -1056,6 +1059,7 @@ class SignalWithStartWorkflowExecutionRequest extends \Google\Protobuf\Internal\
     }
 
     /**
+     * Experimental.
      * Time-skipping configuration. If not set, time skipping is disabled.
      *
      * Generated from protobuf field <code>.temporal.api.common.v1.TimeSkippingConfig time_skipping_config = 27;</code>

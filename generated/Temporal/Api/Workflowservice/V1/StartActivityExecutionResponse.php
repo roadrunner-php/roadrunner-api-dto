@@ -32,6 +32,13 @@ class StartActivityExecutionResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.common.v1.Link link = 3;</code>
      */
     protected $link = null;
+    /**
+     * The first activity task when eager execution was requested and accepted.
+     * This is set only for the first attempt of a newly started activity.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflowservice.v1.PollActivityTaskQueueResponse eager_activity_task = 4;</code>
+     */
+    protected $eager_activity_task = null;
 
     /**
      * Constructor.
@@ -45,6 +52,9 @@ class StartActivityExecutionResponse extends \Google\Protobuf\Internal\Message
      *           If true, a new activity was started.
      *     @type \Temporal\Api\Common\V1\Link $link
      *           Link to the started activity.
+     *     @type \Temporal\Api\Workflowservice\V1\PollActivityTaskQueueResponse $eager_activity_task
+     *           The first activity task when eager execution was requested and accepted.
+     *           This is set only for the first attempt of a newly started activity.
      * }
      */
     public function __construct($data = NULL) {
@@ -134,6 +144,43 @@ class StartActivityExecutionResponse extends \Google\Protobuf\Internal\Message
     public function setLink(\Temporal\Api\Common\V1\Link|null $var)
     {
         $this->link = $var;
+
+        return $this;
+    }
+
+    /**
+     * The first activity task when eager execution was requested and accepted.
+     * This is set only for the first attempt of a newly started activity.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflowservice.v1.PollActivityTaskQueueResponse eager_activity_task = 4;</code>
+     * @return \Temporal\Api\Workflowservice\V1\PollActivityTaskQueueResponse|null
+     */
+    public function getEagerActivityTask()
+    {
+        return $this->eager_activity_task;
+    }
+
+    public function hasEagerActivityTask()
+    {
+        return isset($this->eager_activity_task);
+    }
+
+    public function clearEagerActivityTask()
+    {
+        unset($this->eager_activity_task);
+    }
+
+    /**
+     * The first activity task when eager execution was requested and accepted.
+     * This is set only for the first attempt of a newly started activity.
+     *
+     * Generated from protobuf field <code>.temporal.api.workflowservice.v1.PollActivityTaskQueueResponse eager_activity_task = 4;</code>
+     * @param \Temporal\Api\Workflowservice\V1\PollActivityTaskQueueResponse $var
+     * @return $this
+     */
+    public function setEagerActivityTask(\Temporal\Api\Workflowservice\V1\PollActivityTaskQueueResponse|null $var)
+    {
+        $this->eager_activity_task = $var;
 
         return $this;
     }

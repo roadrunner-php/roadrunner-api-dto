@@ -42,6 +42,12 @@ class Request extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .temporal.api.common.v1.Link links = 5;</code>
      */
     private $links;
+    /**
+     * Serialization context propagated from the Nexus caller that started this update.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.PropagatedSerializationContext propagated_nexus_serialization_context = 6;</code>
+     */
+    protected $propagated_nexus_serialization_context = null;
 
     /**
      * Constructor.
@@ -57,6 +63,8 @@ class Request extends \Google\Protobuf\Internal\Message
      *           Callbacks to be called by the server when this update reaches a terminal state.
      *     @type \Temporal\Api\Common\V1\Link[] $links
      *           Links to be associated with this update.
+     *     @type \Temporal\Api\Nexus\V1\PropagatedSerializationContext $propagated_nexus_serialization_context
+     *           Serialization context propagated from the Nexus caller that started this update.
      * }
      */
     public function __construct($data = NULL) {
@@ -200,6 +208,41 @@ class Request extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Link::class);
         $this->links = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Serialization context propagated from the Nexus caller that started this update.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.PropagatedSerializationContext propagated_nexus_serialization_context = 6;</code>
+     * @return \Temporal\Api\Nexus\V1\PropagatedSerializationContext|null
+     */
+    public function getPropagatedNexusSerializationContext()
+    {
+        return $this->propagated_nexus_serialization_context;
+    }
+
+    public function hasPropagatedNexusSerializationContext()
+    {
+        return isset($this->propagated_nexus_serialization_context);
+    }
+
+    public function clearPropagatedNexusSerializationContext()
+    {
+        unset($this->propagated_nexus_serialization_context);
+    }
+
+    /**
+     * Serialization context propagated from the Nexus caller that started this update.
+     *
+     * Generated from protobuf field <code>.temporal.api.nexus.v1.PropagatedSerializationContext propagated_nexus_serialization_context = 6;</code>
+     * @param \Temporal\Api\Nexus\V1\PropagatedSerializationContext $var
+     * @return $this
+     */
+    public function setPropagatedNexusSerializationContext(\Temporal\Api\Nexus\V1\PropagatedSerializationContext|null $var)
+    {
+        $this->propagated_nexus_serialization_context = $var;
 
         return $this;
     }

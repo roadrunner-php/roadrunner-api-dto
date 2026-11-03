@@ -15,7 +15,7 @@ use Google\Protobuf\RepeatedField;
 class TaskQueueConfig extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Unless modified, this is the system-defined rate limit.
+     * Rate limit for the whole queue.
      *
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.RateLimitConfig queue_rate_limit = 1;</code>
      */
@@ -32,6 +32,12 @@ class TaskQueueConfig extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<string, float> fairness_weight_overrides = 3;</code>
      */
     private $fairness_weight_overrides;
+    /**
+     * Concurrency limit for the whole queue.
+     *
+     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.ConcurrencyLimitConfig queue_concurrency_limit = 4;</code>
+     */
+    protected $queue_concurrency_limit = null;
 
     /**
      * Constructor.
@@ -40,11 +46,13 @@ class TaskQueueConfig extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Temporal\Api\Taskqueue\V1\RateLimitConfig $queue_rate_limit
-     *           Unless modified, this is the system-defined rate limit.
+     *           Rate limit for the whole queue.
      *     @type \Temporal\Api\Taskqueue\V1\RateLimitConfig $fairness_keys_rate_limit_default
      *           If set, each individual fairness key will be limited to this rate, scaled by the weight of the fairness key.
      *     @type array|\Google\Protobuf\Internal\MapField $fairness_weight_overrides
      *           If set, overrides the fairness weights for the corresponding fairness keys.
+     *     @type \Temporal\Api\Taskqueue\V1\ConcurrencyLimitConfig $queue_concurrency_limit
+     *           Concurrency limit for the whole queue.
      * }
      */
     public function __construct($data = NULL) {
@@ -53,7 +61,7 @@ class TaskQueueConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Unless modified, this is the system-defined rate limit.
+     * Rate limit for the whole queue.
      *
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.RateLimitConfig queue_rate_limit = 1;</code>
      * @return \Temporal\Api\Taskqueue\V1\RateLimitConfig|null
@@ -74,7 +82,7 @@ class TaskQueueConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Unless modified, this is the system-defined rate limit.
+     * Rate limit for the whole queue.
      *
      * Generated from protobuf field <code>.temporal.api.taskqueue.v1.RateLimitConfig queue_rate_limit = 1;</code>
      * @param \Temporal\Api\Taskqueue\V1\RateLimitConfig $var
@@ -144,6 +152,41 @@ class TaskQueueConfig extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::FLOAT);
         $this->fairness_weight_overrides = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Concurrency limit for the whole queue.
+     *
+     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.ConcurrencyLimitConfig queue_concurrency_limit = 4;</code>
+     * @return \Temporal\Api\Taskqueue\V1\ConcurrencyLimitConfig|null
+     */
+    public function getQueueConcurrencyLimit()
+    {
+        return $this->queue_concurrency_limit;
+    }
+
+    public function hasQueueConcurrencyLimit()
+    {
+        return isset($this->queue_concurrency_limit);
+    }
+
+    public function clearQueueConcurrencyLimit()
+    {
+        unset($this->queue_concurrency_limit);
+    }
+
+    /**
+     * Concurrency limit for the whole queue.
+     *
+     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.ConcurrencyLimitConfig queue_concurrency_limit = 4;</code>
+     * @param \Temporal\Api\Taskqueue\V1\ConcurrencyLimitConfig $var
+     * @return $this
+     */
+    public function setQueueConcurrencyLimit(\Temporal\Api\Taskqueue\V1\ConcurrencyLimitConfig|null $var)
+    {
+        $this->queue_concurrency_limit = $var;
 
         return $this;
     }

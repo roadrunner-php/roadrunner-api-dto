@@ -10,6 +10,9 @@ use Google\Protobuf\Internal\GPBUtil;
 use Google\Protobuf\RepeatedField;
 
 /**
+ * Controls a time-skipping fast-forward for an execution.
+ * Experimental. Might change in the future.
+ *
  * Generated from protobuf message <code>temporal.api.common.v1.FastForwardConfig</code>
  */
 class FastForwardConfig extends \Google\Protobuf\Internal\Message
