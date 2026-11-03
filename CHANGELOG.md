@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/roadrunner-php/roadrunner-api-dto/compare/v2.1.0...v2.2.0) (2026-11-03)
+
+
+### Features
+
+* update API to 6.1.0 ([#47](https://github.com/roadrunner-php/roadrunner-api-dto/issues/47)) ([40211a5](https://github.com/roadrunner-php/roadrunner-api-dto/commit/40211a53ba35cf7de8b4ac56312fea563135d5a7))
+
 ## [2.1.0](https://github.com/roadrunner-php/roadrunner-api-dto/compare/v2.0.0...v2.1.0) (2026-10-10)
 
 
