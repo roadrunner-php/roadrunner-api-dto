@@ -75,6 +75,12 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.deployment.v1.WorkerDeploymentOptions deployment_options = 6;</code>
      */
     protected $deployment_options = null;
+    /**
+     * Worker-reported poller pool state. Optional.
+     *
+     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.PollerPoolInfo poller_pool_info = 11;</code>
+     */
+    protected $poller_pool_info = null;
 
     /**
      * Constructor.
@@ -107,6 +113,8 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
      *           feature. See the `WorkerVersionCapabilities` docstring for more.
      *     @type \Temporal\Api\Deployment\V1\WorkerDeploymentOptions $deployment_options
      *           Worker deployment options that user has set in the worker.
+     *     @type \Temporal\Api\Taskqueue\V1\PollerPoolInfo $poller_pool_info
+     *           Worker-reported poller pool state. Optional.
      * }
      */
     public function __construct($data = NULL) {
@@ -397,6 +405,41 @@ class PollWorkflowTaskQueueRequest extends \Google\Protobuf\Internal\Message
     public function setDeploymentOptions(\Temporal\Api\Deployment\V1\WorkerDeploymentOptions|null $var)
     {
         $this->deployment_options = $var;
+
+        return $this;
+    }
+
+    /**
+     * Worker-reported poller pool state. Optional.
+     *
+     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.PollerPoolInfo poller_pool_info = 11;</code>
+     * @return \Temporal\Api\Taskqueue\V1\PollerPoolInfo|null
+     */
+    public function getPollerPoolInfo()
+    {
+        return $this->poller_pool_info;
+    }
+
+    public function hasPollerPoolInfo()
+    {
+        return isset($this->poller_pool_info);
+    }
+
+    public function clearPollerPoolInfo()
+    {
+        unset($this->poller_pool_info);
+    }
+
+    /**
+     * Worker-reported poller pool state. Optional.
+     *
+     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.PollerPoolInfo poller_pool_info = 11;</code>
+     * @param \Temporal\Api\Taskqueue\V1\PollerPoolInfo $var
+     * @return $this
+     */
+    public function setPollerPoolInfo(\Temporal\Api\Taskqueue\V1\PollerPoolInfo|null $var)
+    {
+        $this->poller_pool_info = $var;
 
         return $this;
     }

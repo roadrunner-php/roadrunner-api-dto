@@ -65,6 +65,12 @@ class PollNexusTaskQueueRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .temporal.api.worker.v1.WorkerHeartbeat worker_heartbeat = 7;</code>
      */
     private $worker_heartbeat;
+    /**
+     * Worker-reported poller pool state. Optional.
+     *
+     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.PollerPoolInfo poller_pool_info = 10;</code>
+     */
+    protected $poller_pool_info = null;
 
     /**
      * Constructor.
@@ -92,6 +98,8 @@ class PollNexusTaskQueueRequest extends \Google\Protobuf\Internal\Message
      *           Worker deployment options that user has set in the worker.
      *     @type \Temporal\Api\Worker\V1\WorkerHeartbeat[] $worker_heartbeat
      *           Worker info to be sent to the server.
+     *     @type \Temporal\Api\Taskqueue\V1\PollerPoolInfo $poller_pool_info
+     *           Worker-reported poller pool state. Optional.
      * }
      */
     public function __construct($data = NULL) {
@@ -344,6 +352,41 @@ class PollNexusTaskQueueRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Worker\V1\WorkerHeartbeat::class);
         $this->worker_heartbeat = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Worker-reported poller pool state. Optional.
+     *
+     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.PollerPoolInfo poller_pool_info = 10;</code>
+     * @return \Temporal\Api\Taskqueue\V1\PollerPoolInfo|null
+     */
+    public function getPollerPoolInfo()
+    {
+        return $this->poller_pool_info;
+    }
+
+    public function hasPollerPoolInfo()
+    {
+        return isset($this->poller_pool_info);
+    }
+
+    public function clearPollerPoolInfo()
+    {
+        unset($this->poller_pool_info);
+    }
+
+    /**
+     * Worker-reported poller pool state. Optional.
+     *
+     * Generated from protobuf field <code>.temporal.api.taskqueue.v1.PollerPoolInfo poller_pool_info = 10;</code>
+     * @param \Temporal\Api\Taskqueue\V1\PollerPoolInfo $var
+     * @return $this
+     */
+    public function setPollerPoolInfo(\Temporal\Api\Taskqueue\V1\PollerPoolInfo|null $var)
+    {
+        $this->poller_pool_info = $var;
 
         return $this;
     }
