@@ -88,6 +88,12 @@ class ResourceExhaustedCause
      * Generated from protobuf enum <code>RESOURCE_EXHAUSTED_CAUSE_CALLER_RPS_LIMIT = 12;</code>
      */
     const RESOURCE_EXHAUSTED_CAUSE_CALLER_RPS_LIMIT = 12;
+    /**
+     * Persistence rate limit exceeded on a single shard.
+     *
+     * Generated from protobuf enum <code>RESOURCE_EXHAUSTED_CAUSE_SHARD_PERSISTENCE_LIMIT = 13;</code>
+     */
+    const RESOURCE_EXHAUSTED_CAUSE_SHARD_PERSISTENCE_LIMIT = 13;
 
     private static $valueToName = [
         self::RESOURCE_EXHAUSTED_CAUSE_UNSPECIFIED => 'RESOURCE_EXHAUSTED_CAUSE_UNSPECIFIED',
@@ -103,6 +109,7 @@ class ResourceExhaustedCause
         self::RESOURCE_EXHAUSTED_CAUSE_WORKER_DEPLOYMENT_LIMITS => 'RESOURCE_EXHAUSTED_CAUSE_WORKER_DEPLOYMENT_LIMITS',
         self::RESOURCE_EXHAUSTED_CAUSE_BANDWIDTH_LIMIT => 'RESOURCE_EXHAUSTED_CAUSE_BANDWIDTH_LIMIT',
         self::RESOURCE_EXHAUSTED_CAUSE_CALLER_RPS_LIMIT => 'RESOURCE_EXHAUSTED_CAUSE_CALLER_RPS_LIMIT',
+        self::RESOURCE_EXHAUSTED_CAUSE_SHARD_PERSISTENCE_LIMIT => 'RESOURCE_EXHAUSTED_CAUSE_SHARD_PERSISTENCE_LIMIT',
     ];
 
     public static function name($value)

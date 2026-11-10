@@ -30,6 +30,13 @@ class WorkerPollerInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool is_autoscaling = 3;</code>
      */
     protected $is_autoscaling = false;
+    /**
+     * Number of pollers this poller pool is currently targeting, which may differ from current_pollers.
+     * 0 if unknown, such as a poller pool of fixed size.
+     *
+     * Generated from protobuf field <code>int32 target_pollers = 4;</code>
+     */
+    protected $target_pollers = 0;
 
     /**
      * Constructor.
@@ -42,6 +49,9 @@ class WorkerPollerInfo extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $last_successful_poll_time
      *     @type bool $is_autoscaling
      *           Set true if the number of concurrent pollers is auto-scaled
+     *     @type int $target_pollers
+     *           Number of pollers this poller pool is currently targeting, which may differ from current_pollers.
+     *           0 if unknown, such as a poller pool of fixed size.
      * }
      */
     public function __construct($data = NULL) {
@@ -127,6 +137,34 @@ class WorkerPollerInfo extends \Google\Protobuf\Internal\Message
     public function setIsAutoscaling(bool $var)
     {
         $this->is_autoscaling = $var;
+
+        return $this;
+    }
+
+    /**
+     * Number of pollers this poller pool is currently targeting, which may differ from current_pollers.
+     * 0 if unknown, such as a poller pool of fixed size.
+     *
+     * Generated from protobuf field <code>int32 target_pollers = 4;</code>
+     * @return int
+     */
+    public function getTargetPollers()
+    {
+        return $this->target_pollers;
+    }
+
+    /**
+     * Number of pollers this poller pool is currently targeting, which may differ from current_pollers.
+     * 0 if unknown, such as a poller pool of fixed size.
+     *
+     * Generated from protobuf field <code>int32 target_pollers = 4;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setTargetPollers(int $var)
+    {
+        GPBUtil::checkInt32($var);
+        $this->target_pollers = $var;
 
         return $this;
     }

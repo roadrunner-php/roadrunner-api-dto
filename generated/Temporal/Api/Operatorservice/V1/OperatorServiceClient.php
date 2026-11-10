@@ -86,6 +86,56 @@ class OperatorServiceClient extends \Grpc\BaseStub {
     }
 
     /**
+     * SoftDeleteNamespace moves a namespace to NAMESPACE_STATE_SOFT_DELETED on every cluster in its
+     * replication config. Executions stop making progress, but no data is removed. A running restore
+     * is marked failed. Idempotent.
+     * @param \Temporal\Api\Operatorservice\V1\SoftDeleteNamespaceRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function SoftDeleteNamespace(\Temporal\Api\Operatorservice\V1\SoftDeleteNamespaceRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.operatorservice.v1.OperatorService/SoftDeleteNamespace',
+        $argument,
+        ['\Temporal\Api\Operatorservice\V1\SoftDeleteNamespaceResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * RestoreNamespace moves a soft-deleted namespace back to NAMESPACE_STATE_REGISTERED on every
+     * cluster in its replication config, then starts a job that refreshes every execution so they
+     * resume. Returns UNAVAILABLE until every cluster has the new state; retry until it succeeds.
+     * Idempotent.
+     * @param \Temporal\Api\Operatorservice\V1\RestoreNamespaceRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function RestoreNamespace(\Temporal\Api\Operatorservice\V1\RestoreNamespaceRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.operatorservice.v1.OperatorService/RestoreNamespace',
+        $argument,
+        ['\Temporal\Api\Operatorservice\V1\RestoreNamespaceResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * DescribeNamespaceRestore reports the state and progress of the namespace's most recent restore.
+     * @param \Temporal\Api\Operatorservice\V1\DescribeNamespaceRestoreRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DescribeNamespaceRestore(\Temporal\Api\Operatorservice\V1\DescribeNamespaceRestoreRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/temporal.api.operatorservice.v1.OperatorService/DescribeNamespaceRestore',
+        $argument,
+        ['\Temporal\Api\Operatorservice\V1\DescribeNamespaceRestoreResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * AddOrUpdateRemoteCluster adds or updates remote cluster.
      * @param \Temporal\Api\Operatorservice\V1\AddOrUpdateRemoteClusterRequest $argument input argument
      * @param array $metadata metadata
