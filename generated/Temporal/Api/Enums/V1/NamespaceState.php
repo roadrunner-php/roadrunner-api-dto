@@ -28,12 +28,20 @@ class NamespaceState
      * Generated from protobuf enum <code>NAMESPACE_STATE_DELETED = 3;</code>
      */
     const NAMESPACE_STATE_DELETED = 3;
+    /**
+     * Set by OperatorService.SoftDeleteNamespace. Executions make no progress, but no data is
+     * removed until the namespace is restored or deleted.
+     *
+     * Generated from protobuf enum <code>NAMESPACE_STATE_SOFT_DELETED = 4;</code>
+     */
+    const NAMESPACE_STATE_SOFT_DELETED = 4;
 
     private static $valueToName = [
         self::NAMESPACE_STATE_UNSPECIFIED => 'NAMESPACE_STATE_UNSPECIFIED',
         self::NAMESPACE_STATE_REGISTERED => 'NAMESPACE_STATE_REGISTERED',
         self::NAMESPACE_STATE_DEPRECATED => 'NAMESPACE_STATE_DEPRECATED',
         self::NAMESPACE_STATE_DELETED => 'NAMESPACE_STATE_DELETED',
+        self::NAMESPACE_STATE_SOFT_DELETED => 'NAMESPACE_STATE_SOFT_DELETED',
     ];
 
     public static function name($value)
